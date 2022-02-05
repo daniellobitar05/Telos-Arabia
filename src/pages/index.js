@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
+import Header from "../components/NavBar";
 
 const Home = () => {
     return(
-        <NavBar />
+        <Header>
+            <li>XXX</li>
+        </Header>
     )
 }
 

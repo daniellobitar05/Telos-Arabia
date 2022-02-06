@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {CSSTransition} from "react-transition-group";
 import styled from "styled-components";
-import { Menu } from "..//Menu";
 import TelosLogo from "../SVG/telos_letter_logo.svg";
 import { motion } from "framer-motion";
 import {IconButton} from "@material-ui/core";
@@ -17,430 +16,192 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import HailIcon from '@mui/icons-material/Hail';
+import MenuIcon from '@mui/icons-material/Menu';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-
-
-/* const NavBarSection = styled.div`
-    width: 100vw;
-    height: 100px;
-    background: #4b0082;
+const Nav = styled.div`
+    height: 80px;
+    width: 100%;
+    background: ${props => props.theme.purple};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
-    
 `;
 
 const Image = styled.img`
     width: 100px;
-    height: auto;
-    padding-left: 40px;
-
-    @media screen and (max-width: 768px) {
-        padding-left: 40px;
-    }
-    @media screen and (max-width: 460px){
-        padding-left: 25px;
-    }
-`;
-
-
-
-
-
-const NavBar = () => {
-    return(
-        <NavBarSection>
-            <Image src={TelosLogo} alt="" />
-            <ul className="navbar-nav">{props.children}</ul>
-        </NavBarSection>
-    )
-} */
-
-const Nav = styled.nav`
-  height: var(--nav-size);
-  background-color: var(--bg-indigo);
-  padding: 0 1rem;
-  border-bottom: var(--border);
-`;
-
-const List = styled.ul`
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Image = styled.img`
-    width: 100px;
-    height: auto;
     padding-left: 30px;
-    
-
-    @media screen and (max-width: 768px) {
-        padding-left: 40px;
-    }
-    @media screen and (max-width: 460px){
-        padding-left: 25px;
+    @media screen and (min-width: 1100px){
+        padding-left: 20px;
     }
 `;
 
+const StyledMenuIcon = styled(MenuIcon)`
+    &&&{
+        color: white;
+        margin-right: 30px;
+        @media screen and (min-width: 1100px){
+            display: none;
+        }
+    }
+`;
 
-const Navitem = styled.li`
-    
-    color: white;
+const StyledCloseIcon = styled(HighlightOffIcon)`
+    &&&{
+        color: white;
+        transform: scale(1.2);
+        @media screen and (min-width: 1100px){
+            display: none;
+        }
+    }
+`;
+
+const StyledButton = styled(Button)`
+    &&&{
+        color: #ba55d3;
+        font-size: 16px;
+        border: 2px solid #ba55d3;
+        padding: 5px 15px;
+    }
+`;
+
+const SwitchIcon = styled.div`
+    color: gold;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
-
-const IconLink = styled.a`
-    padding-top: 10px;
-`;
-
-const StoreIcon = styled(StorefrontIcon)`
-    color: #9370db;
-    transition: filter 300ms;
-    transform: scale(1.2);
+    cursor: pointer;
     &:hover{
-        transform: scale(1.5);
-        transition: 0.1 all ease-in-out;
-        filter: brightness(1.2);
+       transform: scale(1.2);
+       transition: 0.4s all ease;
+   }
+`;
+
+const Burguer = styled(MenuIcon)`
+    &&&{
+        color: ${props => props.theme.text};
+        @media screen and (min-width: 1100px){
+            display: none;
+        }
     }
 `;
 
-const BuildIcon = styled(ConstructionIcon)`
-    color: #9370db;
-    transition: filter 300ms;
-    transform: scale(1.2);
-    &:hover{
-        transform: scale(1.5);
-        transition: 0.1 all ease-in-out;
-        filter: brightness(1.2);
+const Arrow = styled(KeyboardArrowDownIcon)`
+    &&&{
+        color: ${props => props.theme.text};
+        cursor: pointer;
+        
     }
 `;
 
-const LearnIcon = styled(SchoolIcon)`
-    color: #9370db;
-    transition: filter 300ms;
-    transform: scale(1.2);
-    &:hover{
-        transform: scale(1.5);
-        transition: 0.1 all ease-in-out;
-        filter: brightness(1.2);
-    }
-`;
-
-const ExpIcon = styled(ExploreIcon)`
-    color: #9370db;
-    transition: filter 300ms;
-    transform: scale(1.2);
-    &:hover{
-        transform: scale(1.5);
-        transition: 0.1 all ease-in-out;
-        filter: brightness(1.2);
+const Text = styled.h1`
+    &&&{
+        font-size: 20px;
+        color: ${props => props.theme.text};
+        padding: 0 5px 0px 10px;
+        
     }
 `;
 
 const AboutIcon = styled(HelpCenterIcon)`
-    color: #9370db;
-    transition: filter 300ms;
-    transform: scale(1.2);
-    &:hover{
-        transform: scale(1.5);
-        transition: 0.1 all ease-in-out;
-        filter: brightness(1.2);
+    &&&{
+        color: #ba55d3;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+`;
+const ExpIcon = styled(ExploreIcon)`
+    &&&{
+        color: #ba55d3;
+        cursor: pointer;
     }
 `;
 
-const AboutIconWhite = styled(AboutIcon)`
-    color: white;
+const LearnIcon = styled(SchoolIcon)`
+    &&&{
+        color: #ba55d3;
+        cursor: pointer;
+    }
 `;
 
-
-
-const Text = styled.h1`
-    font-size: 24px;
-    color: white;
-    justify-content: center;
-    padding-right: 10px;
+const BuildIcon = styled(ConstructionIcon)`
+    &&&{
+        color: #ba55d3;
+        cursor: pointer;
+    }
 `;
 
-const ArrowIcon1 = styled(KeyboardArrowDownIcon)`
-    color: white;
-    cursor: pointer;
-    
-`;
-const ArrowIcon2 = styled(KeyboardArrowDownIcon)`
-    color: white;
-    cursor: pointer;
-    
-`;
-const ArrowIcon3 = styled(KeyboardArrowDownIcon)`
-    color: white;
-    cursor: pointer;
-    
-`;
-const ArrowIcon4 = styled(KeyboardArrowDownIcon)`
-    color: white;
-    cursor: pointer;
-    
-`;
-const ArrowIcon5 = styled(KeyboardArrowDownIcon)`
-    color: white;
-    cursor: pointer;
-    
+const BuyIcon = styled(StorefrontIcon)`
+    &&&{
+        color: #ba55d3;
+        cursor: pointer;
+    }
 `;
 
-const IconWrapper = styled.div`
+const NavMenu = styled.div`
     display: inline-flex;
-    padding-top: 10px;
-`;
-
-const DropDown = styled.div`
-   position: absolute;
-   top: 100px;
-   width: 300px;
-   transform: translateX(-45%);
-   background-color: var(--bg-indigo);
-   border: var(--border);
-   border-radius: var(--border-radius);
-   padding: 1rem;
-   overflow: hidden;
-   text-align: center;
-`;
-
-
-const MenuItem = styled.a`
-    height: 50px;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-radius: var(--border-radius);
-    transition: background var(--speed);
-    padding: 0.5rem;
+    padding-top: 15px;
+    @media screen and (max-width: 1100px){
+            display: none;
+        }
+`;
+
+const Header = (props) => {
     
 
-    &:hover{
-       background-color: #9370db;
+    function changeTheme() {  
+        if(props.theme === "light") {
+            props.setTheme("dark");
+        } else {
+            props.setTheme("light");
+        }
     }
-`;
 
-const IconRight = styled.span`
-    margin-left: auto;
-    margin-right: 10px;
-`;
+    const icon = props.theme === "light" ? <DarkModeIcon /> : <LightModeIcon /> 
 
-const IconLeft = styled.span`
-    color: white;
-    padding-right: 20px;
     
-`;
 
-const ItemTitle = styled.h1`
-    margin-left: auto;
-    font-size: 20px;
-`;
+    
 
-
-const NavBar = (props) => {
     return(
         <Nav>
-            <List>
-                {props.children}
-            </List>
+            <Image src={TelosLogo} alt="logo" />
+            <IconButton onClick={changeTheme}><SwitchIcon >
+                {icon}
+            </SwitchIcon></IconButton>
+            
+            <NavMenu>
+                <AboutIcon />
+                <Text>عن</Text> 
+                <Arrow />
+            </NavMenu>
+            <NavMenu>
+                <ExpIcon />
+                <Text>يكتشف</Text> 
+                <Arrow />
+            </NavMenu>
+            <NavMenu>
+                <LearnIcon />
+                <Text>يكتشف</Text> 
+                <Arrow />
+            </NavMenu>
+            <NavMenu>
+                <BuildIcon />
+                <Text>يبني</Text> 
+                <Arrow />
+            </NavMenu>
+            <NavMenu>
+                <BuyIcon />
+                <Text>يشترى</Text> 
+                <Arrow />
+            </NavMenu>
+            <StyledButton>ابدأ الآن</StyledButton>
+            <IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>
         </Nav>
     )
 }
-
-const NavItem = (props) => {
-
-    const [open, setOpen] = useState(false);
-
-    return(
-        <Navitem>
-            <IconLink href="#" onClick={() => setOpen(!open)}>
-                {props.icon}
-            </IconLink>
-            {open && props.children}
-        </Navitem>
-    )
-}
-
-function DropDownMenuAbout(){
-
-    
-
-    function DropDownItem(props){
-        return(
-            <MenuItem href="#">
-            <IconLeft>{props.leftIcon}</IconLeft>
-            {props.children}
-            <IconRight>{props.rightIcon}</IconRight>
-        </MenuItem>
-        )
-    }
-
-
-    return(
-        <DropDown>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<NewspaperIcon />}>
-                <ItemTitle>News</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<AboutIconWhite />}>
-                <ItemTitle>About</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<GroupAddIcon />}>
-                <ItemTitle>Join the Team</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<EmojiPeopleIcon />}>
-                <ItemTitle>Meet the Team</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<HailIcon />}>
-                <ItemTitle>Meet the Board</ItemTitle>
-            </DropDownItem>
-        </DropDown>
-    )
-}
-
-function DropDownMenu(){
-
-    const [activeMenu, setActiveMenu] = useState('main');
-
-    function DropDownItem(props){
-        return(
-            <MenuItem href="#">
-            <IconLeft>{props.leftIcon}</IconLeft>
-            {props.children}
-            <IconRight>{props.rightIcon}</IconRight>
-        </MenuItem>
-        )
-    }
-
-
-    return(
-        <DropDown>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<NewspaperIcon />}>
-                <ItemTitle>News</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<AboutIconWhite />}>
-                <ItemTitle>About</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<GroupAddIcon />}>
-                <ItemTitle>Join the Team</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<EmojiPeopleIcon />}>
-                <ItemTitle>Meet the Team</ItemTitle>
-            </DropDownItem>
-            <DropDownItem
-            leftIcon={<KeyboardArrowLeftIcon />}
-            rightIcon={<HailIcon />}>
-                <ItemTitle>Meet the Board</ItemTitle>
-            </DropDownItem>
-        </DropDown>
-    )
-}
-
-const Header = () => {
-    return(
-        <NavBar>
-            <Image src={TelosLogo} alt="" />
-            <IconWrapper>
-                <IconButton><AboutIcon /></IconButton>
-                <Text>حول</Text>
-                <NavItem icon={<ArrowIcon1 />}>
-                    <DropDownMenuAbout />
-                </NavItem>
-            </IconWrapper>
-            <IconWrapper>
-                <IconButton><ExpIcon /></IconButton>
-                <Text>يكتشف</Text>
-                <NavItem icon={<ArrowIcon2 />}/>
-            </IconWrapper>
-            <IconWrapper>
-                <IconButton><LearnIcon /></IconButton>
-                <Text>يتعلم</Text>
-                <NavItem icon={<ArrowIcon3 />}/>
-            </IconWrapper>
-            <IconWrapper>
-                <IconButton><BuildIcon /></IconButton>
-                <Text>يبني</Text>
-                <NavItem icon={<ArrowIcon4 />}/>
-            </IconWrapper>
-            <IconWrapper>
-                <IconButton><StoreIcon /></IconButton>
-                <Text>يشترى</Text>
-                <NavItem icon={<ArrowIcon5 />}/>
-            </IconWrapper>
-            <Button size='small' sx={{color: '#9370db', fontSize: '18px', marginRight: '30px' , padding: '8px 15px', height: '40px', marginTop: '20px', border: '2px solid #9370db'}}>ابدأ الآن</Button>
-        </NavBar>
-    )
-}
-
-/* const Header = (props) => {
-
-    const [open, setOpen] = useState(false);
-
-    return (
-        <NavBar>
-            <Image src={TelosLogo} alt="" />
-            <NavItem>
-                <IconWrapper>
-                <IconButton><AboutIcon /></IconButton>
-                <Text>حول</Text>
-                <ArrowIcon onClick={() => setOpen(!open)}/>
-                {open && props.children}
-                </IconWrapper>
-            </NavItem>
-            <NavItem>
-                <IconWrapper>
-                <IconButton><ExpIcon /></IconButton>
-                <Text>يكتشف</Text>
-                <ArrowIcon />
-                </IconWrapper>
-            </NavItem>
-            <NavItem>
-                <IconWrapper>
-                <IconButton><LearnIcon /></IconButton>
-                <Text>يتعلم</Text>
-                <ArrowIcon />
-                </IconWrapper>
-            </NavItem>
-            <NavItem>
-                <IconWrapper>
-                <IconButton><BuildIcon /></IconButton>
-                <Text>يبني</Text>
-                <ArrowIcon />
-                </IconWrapper>
-            </NavItem>
-            <NavItem>
-                <IconWrapper>
-                <IconButton><StoreIcon /></IconButton>
-                <Text>يشترى</Text><ArrowIcon />
-                </IconWrapper>
-            </NavItem>
-            <StyledButton size='small' sx={{color: '#9370db', fontSize: '18px', marginRight: '10px', height: '40px', marginTop: '20px'}}>ابدأ الآن</StyledButton>
-        </NavBar>
-    )
-} */
 
 export default Header;

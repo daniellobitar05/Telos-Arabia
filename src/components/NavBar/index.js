@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {CSSTransition} from "react-transition-group";
 import styled from "styled-components";
 import TelosLogo from "../SVG/telos_letter_logo.svg";
@@ -38,25 +38,7 @@ const Image = styled.img`
     }
 `;
 
-const StyledMenuIcon = styled(MenuIcon)`
-    &&&{
-        color: white;
-        margin-right: 30px;
-        @media screen and (min-width: 1100px){
-            display: none;
-        }
-    }
-`;
 
-const StyledCloseIcon = styled(HighlightOffIcon)`
-    &&&{
-        color: white;
-        transform: scale(1.2);
-        @media screen and (min-width: 1100px){
-            display: none;
-        }
-    }
-`;
 
 const StyledButton = styled(Button)`
     &&&{
@@ -110,12 +92,18 @@ const AboutIcon = styled(HelpCenterIcon)`
         color: #ba55d3;
         border-radius: 50%;
         cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 const ExpIcon = styled(ExploreIcon)`
     &&&{
         color: #ba55d3;
         cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 
@@ -123,6 +111,9 @@ const LearnIcon = styled(SchoolIcon)`
     &&&{
         color: #ba55d3;
         cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 
@@ -130,6 +121,9 @@ const BuildIcon = styled(ConstructionIcon)`
     &&&{
         color: #ba55d3;
         cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 
@@ -137,6 +131,9 @@ const BuyIcon = styled(StorefrontIcon)`
     &&&{
         color: #ba55d3;
         cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
     }
 `;
 
@@ -148,6 +145,140 @@ const NavMenu = styled.div`
             display: none;
         }
 `;
+
+const AboutMenu = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: green;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+`;
+
+const ExploreMenu = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: red;
+    top: 100px;
+    left: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+`;
+
+const LearnMenu = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: orange;
+    top: 100px;
+    left: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+`;
+
+const BuildMenu = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: orange;
+    top: 100px;
+    left: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+`;
+
+const BuyMenu = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: orange;
+    top: 100px;
+    left: 820px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+`;
+
+const SubMenu = styled.div`
+    height: 95%;
+    width: 95%;
+    display: flex;
+    background: ${props => props.theme.purple};
+    border-radius: 20px;
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+`;
+
+const SmartphoneMenu = styled.div`
+    width: 300px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #ba55d3;
+    border-radius: 20px;
+    @media screen and (min-width: 1100px){
+        display: none;
+    }
+`;
+
+const NavItem = styled.li`
+
+`;
+
+const MenuButton = styled.a`
+
+`;
+
+const MenuItem = props => {
+
+    const [open, setOpen] = useState(false);
+
+    return(
+        <NavItem>
+            <MenuButton href="#" onClick={() => setOpen(!open)}>
+                {props.icon}
+            </MenuButton>
+            {open && props.children}
+        </NavItem>
+    )
+}
+
 
 const Header = (props) => {
     
@@ -162,45 +293,199 @@ const Header = (props) => {
 
     const icon = props.theme === "light" ? <DarkModeIcon /> : <LightModeIcon /> 
 
+    const [activeLearn, setActiveLearn] = useState("menuOneLearn");
+
+    let animateLearn = {};
+    if(activeLearn === "menuOneLearn") animateLearn = { opacity: 0, display: 'none' };
+    else if (activeLearn === "menuTwoLearn") animateLearn = {  opacity: 1 };
     
+
+    const switchLearnEnter = () => {
+        if(activeLearn === "menuOneLearn"){
+            setActiveLearn("menuTwoLearn");
+            setActiveAbout("menuOneAbout");
+            setActiveExplore("menuOneExplore");
+            setActiveBuy("menuOneBuy");
+            setActiveBuild("menuOneBuild");
+        } else if(activeLearn === "menuTwoLearn"){
+            setActiveLearn("menuOneLearn");
+        }
+    }
+
+    const switchLearnLeave = () => {
+        setActiveLearn("menuOneLearn");
+    }
+
+    const [activeAbout, setActiveAbout] = useState("menuOneAbout");
+
+    let animateAbout = {};
+    if(activeAbout === "menuOneAbout") animateAbout = { opacity: 0, display: 'none' };
+    else if (activeAbout === "menuTwoAbout") animateAbout = {  opacity: 1 };
+    
+
+    const switchAboutEnter = () => {
+        if(activeAbout === "menuOneAbout"){
+            setActiveAbout("menuTwoAbout");
+            setActiveLearn("menuOneLearn");
+            setActiveExplore("menuOneExplore");
+            setActiveBuy("menuOneBuy");
+            setActiveBuild("menuOneBuild");
+        } else if(activeAbout === "menuTwoAbout"){
+            setActiveAbout("menuOneAbout");
+        }
+    }
+
+    const switchAboutLeave = () => {
+        setActiveAbout("menuOneAbout");
+    }
+
+    const [activeExplore, setActiveExplore] = useState("menuOneExplore");
+
+    let animateExplore = {};
+    if(activeExplore === "menuOneExplore") animateExplore = { opacity: 0, display: 'none' };
+    else if (activeExplore === "menuTwoExplore") animateExplore = {  opacity: 1 };
+    
+
+    const switchExploreEnter = () => {
+        if(activeExplore === "menuOneExplore"){
+            setActiveExplore("menuTwoExplore");
+            setActiveAbout("menuOneAbout");
+            setActiveLearn("menuOneLearn");
+            setActiveBuy("menuOneBuy");
+            setActiveBuild("menuOneBuild");
+        } else if(activeExplore === "menuTwoExplore"){
+            setActiveExplore("menuOneExplore");
+            
+        }
+    }
+
+    const switchExploreLeave = () => {
+        setActiveExplore("menuOneExplore");
+    }
+
+    const [activeBuild, setActiveBuild] = useState("menuOneBuild");
+
+    let animateBuild = {};
+    if(activeBuild === "menuOneBuild") animateBuild = { opacity: 0, display: 'none' };
+    else if (activeBuild === "menuTwoBuild") animateBuild = {  opacity: 1 };
+    
+
+    const switchBuildEnter = () => {
+        if(activeBuild === "menuOneBuild"){
+            setActiveBuild("menuTwoBuild");
+            setActiveAbout("menuOneAbout");
+            setActiveLearn("menuOneLearn");
+            setActiveBuy("menuOneBuy");
+            setActiveExplore("menuOneExplore");
+        } else if(activeBuild === "menuTwoBuild"){
+            setActiveBuild("menuOneBuild");
+            
+        }
+    }
+
+    const switchBuildLeave = () => {
+        setActiveBuild("menuOneBuild");
+    }
+
+    const [activeBuy, setActiveBuy] = useState("menuOneBuy");
+
+    let animateBuy = {};
+    if(activeBuy === "menuOneBuy") animateBuy = { opacity: 0, display: 'none' };
+    else if (activeBuy === "menuTwoBuy") animateBuy = {  opacity: 1 };
+    
+
+    const switchBuyEnter = () => {
+        if(activeBuy === "menuOneBuy"){
+            setActiveBuy("menuTwoBuy");
+            setActiveAbout("menuOneAbout");
+            setActiveLearn("menuOneLearn");
+            setActiveExplore("menuOneExplore");
+            setActiveBuild("menuOneBuild");
+        } else if(activeBuy === "menuTwoBuy"){
+            setActiveBuy("menuOneBuy");
+            
+        }
+    }
+
+    const switchBuyLeave = () => {
+        setActiveBuy("menuOneBuy");
+    }
+
 
     
 
     return(
+        <>
         <Nav>
             <Image src={TelosLogo} alt="logo" />
             <IconButton onClick={changeTheme}><SwitchIcon >
                 {icon}
             </SwitchIcon></IconButton>
-            
             <NavMenu>
                 <AboutIcon />
                 <Text>عن</Text> 
-                <Arrow />
+                <Arrow onMouseEnter={switchAboutEnter}/>
+                <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
+                <AboutMenu>
+                    <SubMenu></SubMenu>
+                </AboutMenu>
+                </motion.div>
             </NavMenu>
             <NavMenu>
                 <ExpIcon />
                 <Text>يكتشف</Text> 
-                <Arrow />
+                <Arrow onMouseEnter={switchExploreEnter}  />
+                <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
+                <ExploreMenu>
+                    <SubMenu></SubMenu>
+                </ExploreMenu>
+                </motion.div>
             </NavMenu>
             <NavMenu>
                 <LearnIcon />
                 <Text>يكتشف</Text> 
-                <Arrow />
+                <Arrow onMouseEnter={switchLearnEnter}/>
+                <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
+                <LearnMenu>
+                    <SubMenu></SubMenu>
+                </LearnMenu>
+                </motion.div>
             </NavMenu>
             <NavMenu>
                 <BuildIcon />
                 <Text>يبني</Text> 
-                <Arrow />
+                <Arrow onMouseEnter={switchBuildEnter}/>
+                <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
+                    <BuildMenu>
+                        <SubMenu></SubMenu>
+                    </BuildMenu>
+                </motion.div>
             </NavMenu>
             <NavMenu>
                 <BuyIcon />
                 <Text>يشترى</Text> 
-                <Arrow />
+                <Arrow onMouseEnter={switchBuyEnter}/>
+                <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
+                    <BuyMenu>
+                        <SubMenu></SubMenu>
+                    </BuyMenu>
+                </motion.div>
             </NavMenu>
             <StyledButton>ابدأ الآن</StyledButton>
-            <IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>
+            <MenuItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
+                <p>FUCK YOU FILIP!!!</p>
+            </MenuItem>
         </Nav>
+        <Wrapper>
+        <SmartphoneMenu>
+            <SubMenu>
+                <MenuItem>
+                    <h1>SUCK IT FILIP!!!</h1>
+                </MenuItem>
+            </SubMenu>
+        </SmartphoneMenu>
+        </Wrapper>
+        </>
     )
 }
 

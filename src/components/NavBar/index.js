@@ -246,39 +246,25 @@ const SmartphoneMenu = styled.div`
     width: 300px;
     height: 450px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    background: transparent;
-    border: 2px solid #ba55d3;
+    background: black;
     border-radius: 20px;
     @media screen and (min-width: 1100px){
         display: none;
     }
 `;
 
-const NavItem = styled.li`
-
-`;
-
-const MenuButton = styled.a`
-
-`;
-
 const MenuItem = props => {
 
-    const [open, setOpen] = useState(false);
+    
 
     return(
         <NavItem>
-            <MenuButton href="#" onClick={() => setOpen(!open)}>
+            <MenuButton>
                 {props.icon}
             </MenuButton>
-            {open && props.children}
         </NavItem>
     )
 }
-
 
 const Header = (props) => {
     
@@ -472,18 +458,10 @@ const Header = (props) => {
                 </motion.div>
             </NavMenu>
             <StyledButton>ابدأ الآن</StyledButton>
-            <MenuItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
-                <p>FUCK YOU FILIP!!!</p>
-            </MenuItem>
+            <IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>
         </Nav>
         <Wrapper>
-        <SmartphoneMenu>
-            <SubMenu>
-                <MenuItem>
-                    <h1>SUCK IT FILIP!!!</h1>
-                </MenuItem>
-            </SubMenu>
-        </SmartphoneMenu>
+        <SmartphoneMenu></SmartphoneMenu>
         </Wrapper>
         </>
     )

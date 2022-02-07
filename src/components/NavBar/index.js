@@ -10,6 +10,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import ExploreIcon from '@mui/icons-material/Explore';
 import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Button } from "@mui/material";
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -20,6 +21,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import "./style.css";
 
 const Nav = styled.div`
     height: 80px;
@@ -46,6 +48,9 @@ const StyledButton = styled(Button)`
         font-size: 16px;
         border: 2px solid #ba55d3;
         padding: 5px 15px;
+        @media screen and (max-width: 1100px){
+            display: none;
+        }
     }
 `;
 
@@ -150,7 +155,6 @@ const AboutMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    background: green;
     top: 100px;
     left: 100px;
     display: flex;
@@ -166,7 +170,6 @@ const ExploreMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    background: red;
     top: 100px;
     left: 280px;
     display: flex;
@@ -182,7 +185,6 @@ const LearnMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    background: orange;
     top: 100px;
     left: 460px;
     display: flex;
@@ -198,7 +200,6 @@ const BuildMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    background: orange;
     top: 100px;
     left: 640px;
     display: flex;
@@ -214,7 +215,6 @@ const BuyMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    background: orange;
     top: 100px;
     left: 820px;
     display: flex;
@@ -253,18 +253,115 @@ const SmartphoneMenu = styled.div`
     }
 `;
 
-const MenuItem = props => {
+const List = styled.li`
+    list-style: none;
+`;
 
-    
+const MenuIconTwo = styled.a`
+
+`;
+
+const NavItem = (props) => {
+
+    const [open, setOpen] = useState(false);
 
     return(
-        <NavItem>
-            <MenuButton>
-                {props.icon}
-            </MenuButton>
-        </NavItem>
+        <List>
+        <MenuIconTwo onClick={() => setOpen(!open)}>
+        {props.icon}
+        </MenuIconTwo>
+        {open && props.children}
+        </List>
     )
 }
+
+const MenuMenuItem = styled.a`
+    height: 60px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: right;
+    padding
+    transition: background var(--speed);
+    &:hover{
+        background-color: #ba55d3;
+    }
+`;
+const IconLeft = styled.span`
+    padding-left: 20px;
+    padding-top: 4px;
+`;
+const IconRight = styled.span`
+    margin-left: auto;
+    transform: scale(1.2);
+    padding-right: 20px;
+`;
+const DropDown = styled.div`
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    transform: translateX(-45%);
+    border-radius: 20px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #ba55d3;
+    top: 100px;
+    left: 160px;
+`;
+
+const Menu = styled.div`
+    width: 100%;
+`;
+
+const DropDownMenu = () => {
+
+    const [activeMenu, setActiveMenu] = useState('main');
+
+    const DropDownItem = props => {
+        return(
+            <MenuMenuItem onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+                <IconLeft>{props.leftIcon}</IconLeft>
+                {props.children}
+                <IconRight>{props.rightIcon}</IconRight>
+            </MenuMenuItem>
+        );
+    }
+    
+    return(
+        <>
+        <CSSTransition in={activeMenu === 'main'} unmountOnExit timeout={500} classNames="menu-primary">
+        <DropDown>
+            <Menu>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuyIcon />} goToMenu="buy">BUY</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuildIcon/>}>BUILD</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<LearnIcon/>}>LEARN</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>}>EXPLORE</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<AboutIcon/>}>ABOUT</DropDownItem>
+            </Menu>
+        </DropDown>
+        </CSSTransition>
+
+        <CSSTransition in={activeMenu === 'buy'} unmountOnExit timeout={500} classNames="menu-secondary">
+        <DropDown>
+            <Menu>
+            <DropDownItem rightIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} >KUCOIN</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} >GATE</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} >PANCAKESWAP</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} >UNISWAP</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} >CRYPTOLOCALLY</DropDownItem>
+            </Menu>
+        </DropDown>
+        </CSSTransition>
+        </>
+
+          
+    )
+}
+
+
 
 const Header = (props) => {
     
@@ -458,11 +555,11 @@ const Header = (props) => {
                 </motion.div>
             </NavMenu>
             <StyledButton>ابدأ الآن</StyledButton>
-            <IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>
+            <NavItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
+                <DropDownMenu />
+            </NavItem>
         </Nav>
-        <Wrapper>
-        <SmartphoneMenu></SmartphoneMenu>
-        </Wrapper>
+        
         </>
     )
 }

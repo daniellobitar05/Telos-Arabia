@@ -261,6 +261,7 @@ const Nav = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
 `;
 
 const Image = styled.img`
@@ -562,6 +563,7 @@ const IconMiddle = styled.span`
 const DropDown = styled.div`
     position: absolute;
     width: 300px;
+    padding-right: 30vw;
     border-radius: 20px;
     background: black;
     overflow: hidden;

@@ -13,7 +13,6 @@ const Home = (props) => {
     return(
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
-        <TempSection />
         <HeroSection />
         </ThemeProvider>
     )

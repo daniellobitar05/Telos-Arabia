@@ -412,6 +412,7 @@ const AboutMenu = styled.div`
     border-radius: 20px;
     background: transparent;
     border: 2px solid #ba55d3;
+    z-index: 150;
 `;
 
 const ExploreMenu = styled.div`
@@ -427,6 +428,7 @@ const ExploreMenu = styled.div`
     border-radius: 20px;
     background: transparent;
     border: 2px solid #ba55d3;
+    z-index: 150;
 `;
 
 const LearnMenu = styled.div`
@@ -442,6 +444,7 @@ const LearnMenu = styled.div`
     border-radius: 20px;
     background: transparent;
     border: 2px solid #ba55d3;
+    z-index: 150;
 `;
 
 const BuildMenu = styled.div`
@@ -457,6 +460,7 @@ const BuildMenu = styled.div`
     border-radius: 20px;
     background: transparent;
     border: 2px solid #ba55d3;
+    z-index: 150;
 `;
 
 const BuyMenu = styled.div`
@@ -472,6 +476,7 @@ const BuyMenu = styled.div`
     border-radius: 20px;
     background: transparent;
     border: 2px solid #ba55d3;
+    z-index: 150;
 `;
 
 const SubMenu = styled.div`
@@ -480,6 +485,7 @@ const SubMenu = styled.div`
     display: flex;
     background: ${props => props.theme.purple};
     border-radius: 20px;
+    z-index: 150;
 `;
 
 const RoadMapIcon = styled(MapIcon)`
@@ -494,24 +500,7 @@ const RoadMapIcon = styled(MapIcon)`
     }
 `;
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-`;
 
-const SmartphoneMenu = styled.div`
-    width: 300px;
-    height: 450px;
-    display: flex;
-    background: black;
-    border-radius: 20px;
-    @media screen and (min-width: 1100px){
-        display: none;
-    }
-`;
 
 const List = styled.li`
     list-style: none;
@@ -577,9 +566,17 @@ const DropDown = styled.div`
     background: black;
     overflow: hidden;
     top: 100px;
-    left: 160px;
-    @media screen and (max-width: 1100px){
-        left: 30px;
+    z-index: 100;
+    @media screen and (min-width: 1100px){
+        
+    }
+
+    @media screen and (max-width: 768px){
+       
+    }
+
+    @media screen and (max-width: 660px){
+        
     }
 `;
 

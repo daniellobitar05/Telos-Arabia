@@ -550,6 +550,7 @@ const MenuMenuItem = styled.a`
     border-radius: 8px;
     align-items: center;
     justify-content: right;
+    z-index: 9999;
     transition: background var(--speed);
     &:hover{
         background-color: #dda0dd;
@@ -560,27 +561,30 @@ const MenuMenuItem = styled.a`
 const IconLeft = styled.span`
     padding-left: 20px;
     padding-top: 4px;
+    z-index: 9999;
 `;
 const IconRight = styled.span`
     margin-left: auto;
     transform: scale(1.2);
     padding-right: 20px;
+    z-index: 9999;
 `;
 const IconMiddle = styled.span`
     margin-left: auto;
     margin-right: auto;
     transform: scale(1.2);
     padding-left: 40px;
+    z-index: 9999;
 `;
 const DropDown = styled.div`
     position: absolute;
     width: 300px;
-    padding-right: 30vw;
+    margin-right: 280px;
     border-radius: 20px;
     background: black;
     overflow: hidden;
     top: 100px;
-    z-index: 1000;
+    z-index: 9999;
     @media screen and (min-width: 1100px){
         
     }
@@ -590,12 +594,13 @@ const DropDown = styled.div`
     }
 
     @media screen and (max-width: 660px){
-        
+        z-index: 9999;
     }
 `;
 
 const Menu = styled.div`
     width: 100%;
+    z-index: 9999;
 `;
 
 const DropDownMenu = () => {
@@ -722,6 +727,33 @@ const DropDownMenu = () => {
           
     )
 }
+
+const MainMenu = styled(motion.div)`
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+    margin-top: 100vh;
+    background: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+`;
+
+
+const SlideMenuItem = styled.div`
+    height: 50px;
+    width: 60%;
+    margin: 10px auto;
+    padding: 10px 30px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+
+`;
 
 
 
@@ -856,8 +888,23 @@ const Header = (props) => {
         setActiveBuy("menuOneBuy");
     }
 
+    const [active, setActive] = useState("menuOne");
+    let animateMenu = {};
+    if(active === "menuOne") animateMenu = { x: '100vw', display: "none"};
+    else if (active === "menuTwo") animateMenu = {  x: 0 };
 
+    let transition = {
+        type: 'tween',
+        duration: 0.2
+    }
     
+    const switchMenu = () => {
+        if(active === "menuOne"){
+            setActive("menuTwo");
+        } else if (active === "menuTwo"){
+            setActive("menuOne");
+        }
+    }
 
     return(
         <>
@@ -923,9 +970,16 @@ const Header = (props) => {
                 </motion.div>
             </NavMenu>
             <StyledButton>ابدأ الآن</StyledButton>
-            <NavItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
-                <DropDownMenu />
+            <NavItem icon={<IconButton style={{marginRight: '20px'}} onClick={switchMenu}><Burguer /></IconButton>}>
+               {/*  <DropDownMenu /> */}
             </NavItem>
+            <MainMenu animate={animateMenu} transition={transition}>
+                <SlideMenuItem><KeyboardArrowLeftIcon />BUY</SlideMenuItem>
+                <SlideMenuItem><KeyboardArrowLeftIcon />BUILD</SlideMenuItem>
+                <SlideMenuItem><KeyboardArrowLeftIcon />EXPLORE</SlideMenuItem>
+                <SlideMenuItem><KeyboardArrowLeftIcon />LEARN</SlideMenuItem>
+                <SlideMenuItem><KeyboardArrowLeftIcon />ABOUT</SlideMenuItem>
+            </MainMenu>
         </Nav>
         
         </>

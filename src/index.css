@@ -33,6 +33,19 @@ a {
   text-decoration: none;
 }
 
+#video1{
+  width: 100vw;
+}
+
+@media only screen and (max-width: 660px){
+  #video1{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    
+  }
+}
+
 
 /* nav {
   

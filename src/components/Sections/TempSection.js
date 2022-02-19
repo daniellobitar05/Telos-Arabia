@@ -1,41 +1,30 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import Logo from "../SVG/telos_logo.svg";
-import Video from "../videos/telos1.mp4";
+import Video1 from "../videos/telos1.mp4";
 
 const Section = styled.div`
+    
+    background: transparent;
+    width: 100%;
+    overflow: hidden;
+`;
+
+const VideoBack = styled.video`
     width: 100vw;
     height: 100vh;
-    z-index: 0;
-
     
-`;
-
-const Text = styled.h1`
-    font-size: 100px;
-    color: white;
-    display: flex;
-    padding-top: 20px;
-    @media screen and (max-width: 1100px){
-        text-align: center;
-    }
-
-`;
-
-const Image = styled.div`
-    width: 300px;
-    height: 100%;
-    display: flex;
-    background: green;
+    object-fit: cover;
+    background: transparent;
+    z-index: -1;
+    
 `;
 
 const TempSection = () => {
     return(
         <Section>
-            {/* <Text>موطن أسرع آلة افتراضية إيثريوم</Text> */}
-            <video src={Video} muted playsInline autoPlay loop></video>
+            <VideoBack autoPlay loop muted src={Video1} type="video.mp4" />
         </Section>
-    );
+    )
 }
 
 export default TempSection;

@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import {motion} from "framer-motion";
 import {Canvas, extend, useFrame, useLoader, useThree} from "@react-three/fiber";
 import Circle from "../images/telos_logo.png";
-import Logo from "../images/evm_logo.png";
+import Logo from "../images/telos_logo.png";
 import {Suspense, useMemo, useCallback, useRef} from "react";
 import Fast from "../SVG/fast.svg";
 import NoGas from "../SVG/nogas.svg";
@@ -136,10 +137,10 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-    width: 60%;
-    height: 80%;
+    width: 70%;
+    height: 90%;
     position: absolute;
-    top: 40%;
+    top: 80%;
     border: 1px solid ${props => props.theme.text};
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -150,65 +151,41 @@ const TextContainer = styled.div`
     grid-gap: 20px;
     grid-template-rows: 1fr 1fr;
     
+    
 
     @media screen and (max-width: 768px){
         width: 80%;
         height: 500px;
         top: 45%;
+        width: 90%;
     }
 
     @media screen and (max-width: 660px){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        top: 80%;
     }
     
     
 `;
 
-const Text = styled.h1`
-    font-size: 48px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: ${props => props.theme.body};
-    @media screen and (max-width: 1100px){
-        text-align: center;
-    }
-    @media screen and (max-width: 768px){
-        font-size: 64px;
-    }
 
-`;
 
-const Section = styled.div`
-    width: 100%;
-    height: 20vh;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    
-`;
 const Anim = styled.div`
     width: 100%;
     height: 140vh;
     padding-bottom: 400px;
     background-color: ${props => props.theme.body};
-`;
-
-const HeadLine = styled.h1`
-    font-size: 72px;
-    margin-top: -1600px;
-    color: white;
-
+    @media screen and (max-width: 768px){
+        height: 100vh;
+    }
     @media screen and (max-width: 660px){
-        font-size: 42px;
+        height: 200vh;
     }
 `;
+
+
 
 const Image = styled.img`
     width: 40%;
@@ -221,9 +198,10 @@ const Image = styled.img`
 const Title = styled.h1`
     font-size: 20px;
     color: aqua;
+    text-align: center;
     @media screen and (max-width: 660px){
         font-size: 14px;
-        text-align: center;
+        
     }
 `;
 
@@ -245,18 +223,21 @@ const Column = styled.div`
     
 `;
 
+const LogoImage = styled(motion.img)`
+    
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    
+`;
+
 const HeroSection = () => {
     return(
+        <>
         <Anim>
             <Suspense fallback={null}>
-            
-                
-            
                 <AnimationCanvas />
-                <Container>
-                    <HeadLine>
-                            موطن أسرع آلة افتراضية إيثريوم          
-                        </HeadLine>
+                {/* <Container>
                     <TextContainer>
                         <Column>
                         <Image src={NoFront} alt="" />
@@ -313,9 +294,10 @@ const HeroSection = () => {
                         </Subtitle>
                         </Column>
                     </TextContainer>
-                </Container>
+                </Container> */}
             </Suspense>
         </Anim>
+        </>
     )
 }
 

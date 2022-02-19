@@ -484,9 +484,21 @@ const SubMenu = styled.div`
     height: 95%;
     width: 95%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: ${props => props.theme.purple};
     border-radius: 20px;
     z-index: 150;
+`;
+
+const SubMenuItem = styled.div`
+    height: 60px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid white;
 `;
 
 const RoadMapIcon = styled(MapIcon)`
@@ -568,7 +580,7 @@ const DropDown = styled.div`
     background: black;
     overflow: hidden;
     top: 100px;
-    z-index: 100;
+    z-index: 1000;
     @media screen and (min-width: 1100px){
         
     }
@@ -857,7 +869,7 @@ const Header = (props) => {
             <NavMenu>
                 <AboutIcon />
                 <Text>عن</Text> 
-                <Arrow onMouseEnter={switchAboutEnter}/>
+                <Arrow onClick={switchAboutEnter}/>
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
                 <AboutMenu>
                     <SubMenu></SubMenu>
@@ -867,7 +879,7 @@ const Header = (props) => {
             <NavMenu>
                 <ExpIcon />
                 <Text>يكتشف</Text> 
-                <Arrow onMouseEnter={switchExploreEnter}  />
+                <Arrow onClick={switchExploreEnter}  />
                 <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
                 <ExploreMenu>
                     <SubMenu></SubMenu>
@@ -877,7 +889,7 @@ const Header = (props) => {
             <NavMenu>
                 <LearnIcon />
                 <Text>يكتشف</Text> 
-                <Arrow onMouseEnter={switchLearnEnter}/>
+                <Arrow onClick={switchLearnEnter}/>
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
                     <SubMenu></SubMenu>
@@ -887,7 +899,7 @@ const Header = (props) => {
             <NavMenu>
                 <BuildIcon />
                 <Text>يبني</Text> 
-                <Arrow onMouseEnter={switchBuildEnter}/>
+                <Arrow onClick={switchBuildEnter}/>
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
                         <SubMenu></SubMenu>
@@ -897,10 +909,16 @@ const Header = (props) => {
             <NavMenu>
                 <BuyIcon />
                 <Text>يشترى</Text> 
-                <Arrow onMouseEnter={switchBuyEnter}/>
+                <Arrow onClick={switchBuyEnter}/>
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>
-                        <SubMenu></SubMenu>
+                        <SubMenu>
+                            <SubMenuItem>KUCOIN</SubMenuItem>
+                            <SubMenuItem>KUCOIN</SubMenuItem>
+                            <SubMenuItem>KUCOIN</SubMenuItem>
+                            <SubMenuItem>KUCOIN</SubMenuItem>
+                            <SubMenuItem>KUCOIN</SubMenuItem>
+                        </SubMenu>
                     </BuyMenu>
                 </motion.div>
             </NavMenu>

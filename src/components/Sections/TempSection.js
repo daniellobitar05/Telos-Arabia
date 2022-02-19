@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
-import Video1 from "../videos/telos1.mp4";
+import Video1 from "../videos/telos2.mp4";
 
 const Section = styled.div`
-    
-    background: transparent;
+    position: fixed;
+    z-index: -1000;
     width: 100%;
+    height: 100%;
     overflow: hidden;
+    top: 0;
+    left: 0;
+    
 `;
 
+
 const VideoBack = styled.video`
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 100;
+    min-height: 100%;
+    min-width: 100%;
     
-    object-fit: cover;
-    background: transparent;
-    z-index: -1;
+    
     
 `;
 

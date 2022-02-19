@@ -520,6 +520,7 @@ const List = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
 `;
 
 const MenuIconTwo = styled.a`
@@ -550,7 +551,6 @@ const MenuMenuItem = styled.a`
     border-radius: 8px;
     align-items: center;
     justify-content: right;
-    z-index: 9999;
     transition: background var(--speed);
     &:hover{
         background-color: #dda0dd;
@@ -561,27 +561,24 @@ const MenuMenuItem = styled.a`
 const IconLeft = styled.span`
     padding-left: 20px;
     padding-top: 4px;
-    z-index: 9999;
 `;
 const IconRight = styled.span`
     margin-left: auto;
     transform: scale(1.2);
     padding-right: 20px;
-    z-index: 9999;
 `;
 const IconMiddle = styled.span`
     margin-left: auto;
     margin-right: auto;
     transform: scale(1.2);
-    padding-left: 40px;
-    z-index: 9999;
+    padding-left: 60px;
 `;
 const DropDown = styled.div`
     position: absolute;
     width: 300px;
-    margin-right: 280px;
+    padding-right: 10px;
     border-radius: 20px;
-    background: black;
+    background: purple;
     overflow: hidden;
     top: 100px;
     z-index: 9999;
@@ -594,13 +591,13 @@ const DropDown = styled.div`
     }
 
     @media screen and (max-width: 660px){
-        z-index: 9999;
+        right: 20px;
     }
 `;
 
 const Menu = styled.div`
     width: 100%;
-    z-index: 9999;
+    
 `;
 
 const DropDownMenu = () => {
@@ -640,11 +637,11 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'buy'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} ><a href="https://trade.kucoin.com/TLOS-USDT" target="_blank" rel="noreferrer"><Image src={Kucoin} alt="" style={{paddingLeft: '60px'}}/></a></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} ><a href="https://www.gate.io/es/trade/TLOS_USDT" target="_blank" rel="noreferrer"><Image src={Gate} alt="" style={{transform: 'scale(1.2)', paddingLeft: '50px'}}/></a></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} ><a href="https://pancakeswap.finance/swap?outputCurrency=0xb6c53431608e626ac81a9776ac3e999c5556717c" target="_blank" rel="noreferrer"><Image src={Pancake} alt="" style={{transform: 'scale(1.5)', paddingLeft: '50px'}}/></a></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} ><a href="https://app.uniswap.org/#/swap?use=V2%3FinputCurrency%3DETH&outputCurrency=0x7825e833d495f3d1c28872415a4aee339d26ac88&chain=mainnet" target="_blank" rel="noreferrer"><Image src={Uniswap} alt="" style={{transform: 'scale(1.5)', paddingLeft: '50px'}}/></a></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} ><a href="https://cryptolocally.com/en/crypto-offers/?type=buy&crypto=BTC&location=any&currency=any" target="_blank" rel="noreferrer"><Image src={Locally} alt="" style={{transform: 'scale(1.5)',paddingLeft: '50px', paddingTop: '5px'}}/></a></DropDownItem>
+            <DropDownItem  ><a href="https://trade.kucoin.com/TLOS-USDT" target="_blank" rel="noreferrer"><Image src={Kucoin} alt="" style={{paddingLeft: '90px'}}/></a></DropDownItem>
+            <DropDownItem  ><a href="https://www.gate.io/es/trade/TLOS_USDT" target="_blank" rel="noreferrer"><Image src={Gate} alt="" style={{transform: 'scale(1.2)', paddingLeft: '75px'}}/></a></DropDownItem>
+            <DropDownItem  ><a href="https://pancakeswap.finance/swap?outputCurrency=0xb6c53431608e626ac81a9776ac3e999c5556717c" target="_blank" rel="noreferrer"><Image src={Pancake} alt="" style={{transform: 'scale(1.5)', paddingLeft: '65px'}}/></a></DropDownItem>
+            <DropDownItem  ><a href="https://app.uniswap.org/#/swap?use=V2%3FinputCurrency%3DETH&outputCurrency=0x7825e833d495f3d1c28872415a4aee339d26ac88&chain=mainnet" target="_blank" rel="noreferrer"><Image src={Uniswap} alt="" style={{transform: 'scale(1.5)', paddingLeft: '70px'}}/></a></DropDownItem>
+            <DropDownItem  ><a href="https://cryptolocally.com/en/crypto-offers/?type=buy&crypto=BTC&location=any&currency=any" target="_blank" rel="noreferrer"><Image src={Locally} alt="" style={{transform: 'scale(1.5)',paddingLeft: '70px', paddingTop: '5px'}}/></a></DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -653,10 +650,10 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'build'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem>
+            <DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem>
+            <DropDownItem  rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem>
+            <DropDownItem  rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem>
+            <DropDownItem  rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -665,12 +662,12 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'learn'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<CommIcon />} >COMMUNITY RESOURCES</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BaseIcon/>} >KNOWLEDGE BASE</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<GovIcon/>}>GOVERNANCE</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<TokenIcon/>}>TLOS TOKENOMICS</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}>ESG BLOCKCHAIN</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}>EVM BLOCKCHAIN</DropDownItem>
+            <DropDownItem  rightIcon={<CommIcon />} >COMMUNITY RESOURCES</DropDownItem>
+            <DropDownItem  rightIcon={<BaseIcon/>} >KNOWLEDGE BASE</DropDownItem>
+            <DropDownItem  rightIcon={<GovIcon/>}>GOVERNANCE</DropDownItem>
+            <DropDownItem  rightIcon={<TokenIcon/>}>TLOS TOKENOMICS</DropDownItem>
+            <DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}>ESG BLOCKCHAIN</DropDownItem>
+            <DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}>EVM BLOCKCHAIN</DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -727,33 +724,6 @@ const DropDownMenu = () => {
           
     )
 }
-
-const MainMenu = styled(motion.div)`
-    position: absolute;
-    width: 100vw;
-    height: 90vh;
-    margin-top: 100vh;
-    background: green;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-`;
-
-
-const SlideMenuItem = styled.div`
-    height: 50px;
-    width: 60%;
-    margin: 10px auto;
-    padding: 10px 30px;
-    border: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 20px;
-
-`;
 
 
 
@@ -888,23 +858,8 @@ const Header = (props) => {
         setActiveBuy("menuOneBuy");
     }
 
-    const [active, setActive] = useState("menuOne");
-    let animateMenu = {};
-    if(active === "menuOne") animateMenu = { x: '100vw', display: "none"};
-    else if (active === "menuTwo") animateMenu = {  x: 0 };
 
-    let transition = {
-        type: 'tween',
-        duration: 0.2
-    }
     
-    const switchMenu = () => {
-        if(active === "menuOne"){
-            setActive("menuTwo");
-        } else if (active === "menuTwo"){
-            setActive("menuOne");
-        }
-    }
 
     return(
         <>
@@ -916,7 +871,7 @@ const Header = (props) => {
             <NavMenu>
                 <AboutIcon />
                 <Text>عن</Text> 
-                <Arrow onClick={switchAboutEnter}/>
+                <Arrow onMouseEnter={switchAboutEnter}/>
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
                 <AboutMenu>
                     <SubMenu></SubMenu>
@@ -926,7 +881,7 @@ const Header = (props) => {
             <NavMenu>
                 <ExpIcon />
                 <Text>يكتشف</Text> 
-                <Arrow onClick={switchExploreEnter}  />
+                <Arrow onMouseEnter={switchExploreEnter}  />
                 <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
                 <ExploreMenu>
                     <SubMenu></SubMenu>
@@ -936,7 +891,7 @@ const Header = (props) => {
             <NavMenu>
                 <LearnIcon />
                 <Text>يكتشف</Text> 
-                <Arrow onClick={switchLearnEnter}/>
+                <Arrow onMouseEnter={switchLearnEnter}/>
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
                     <SubMenu></SubMenu>
@@ -946,7 +901,7 @@ const Header = (props) => {
             <NavMenu>
                 <BuildIcon />
                 <Text>يبني</Text> 
-                <Arrow onClick={switchBuildEnter}/>
+                <Arrow onMouseEnter={switchBuildEnter}/>
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
                         <SubMenu></SubMenu>
@@ -956,7 +911,7 @@ const Header = (props) => {
             <NavMenu>
                 <BuyIcon />
                 <Text>يشترى</Text> 
-                <Arrow onClick={switchBuyEnter}/>
+                <Arrow onMouseEnter={switchBuyEnter}/>
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>
                         <SubMenu>
@@ -970,16 +925,9 @@ const Header = (props) => {
                 </motion.div>
             </NavMenu>
             <StyledButton>ابدأ الآن</StyledButton>
-            <NavItem icon={<IconButton style={{marginRight: '20px'}} onClick={switchMenu}><Burguer /></IconButton>}>
-               {/*  <DropDownMenu /> */}
+            <NavItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
+                <DropDownMenu />
             </NavItem>
-            <MainMenu animate={animateMenu} transition={transition}>
-                <SlideMenuItem><KeyboardArrowLeftIcon />BUY</SlideMenuItem>
-                <SlideMenuItem><KeyboardArrowLeftIcon />BUILD</SlideMenuItem>
-                <SlideMenuItem><KeyboardArrowLeftIcon />EXPLORE</SlideMenuItem>
-                <SlideMenuItem><KeyboardArrowLeftIcon />LEARN</SlideMenuItem>
-                <SlideMenuItem><KeyboardArrowLeftIcon />ABOUT</SlideMenuItem>
-            </MainMenu>
         </Nav>
         
         </>

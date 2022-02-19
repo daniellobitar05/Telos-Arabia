@@ -14,7 +14,7 @@ const Home = (props) => {
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
         <TempSection />
-        {/* <HeroSection /> */}
+        <HeroSection />
         </ThemeProvider>
     )
 }

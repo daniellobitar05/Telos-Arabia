@@ -134,13 +134,14 @@ const Container = styled.div`
     width: 100%;
     
     
+    
 `;
 
 const TextContainer = styled.div`
     width: 70%;
     height: 90%;
     position: absolute;
-    top: 80%;
+    top: 120%;
     border: 1px solid ${props => props.theme.text};
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -176,6 +177,7 @@ const Anim = styled.div`
     width: 100%;
     height: 140vh;
     padding-bottom: 400px;
+    margin-top: 100vh;
     background-color: ${props => props.theme.body};
     @media screen and (max-width: 768px){
         height: 100vh;

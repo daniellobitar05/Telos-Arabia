@@ -356,7 +356,7 @@ const HeroSection = () => {
             <Suspense fallback={null}>
                 <AnimationCanvas /> */}
                 <Container ref={ref}>
-                    
+                    <HeaderText>A ground Breaking Blockchain</HeaderText>
                     <TextContainer>
                         <Column>
                         <Image src={NoFront} alt="" animate={animation} whileHover={{scale: 1.1}}/>
@@ -413,7 +413,7 @@ const HeroSection = () => {
                         </Subtitle>
                         </Column>
                     </TextContainer>
-                    <HeaderText>Supporting the two leading smart contract protocols</HeaderText>
+                    
                     <ColumnWrapper ref={ref}>
                         <EmptyColumn></EmptyColumn>
                         <ColumnLeft>

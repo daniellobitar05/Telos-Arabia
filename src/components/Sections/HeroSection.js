@@ -157,10 +157,11 @@ const Container = styled.div`
     justify-content: center;
     width: 100%;
     background-color: ${props => props.theme.body};
-    height: 250vh;
+    height: 140vh;
     background-image: url(${Blub});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-attachment: fixed;
+    background-size: cover;
 `;
 
 const HeaderText = styled.div`
@@ -199,61 +200,8 @@ const TextContainer = styled.div`
     }
 `;
 
-const ColumnWrapper = styled.div`
-    z-index: 1100;
-    height: 60vh;
-    width: 100%;
-    
-    
-`;
 
-const EmptyColumn = styled.div`
-    height: 100%;
-    width: 10%;
-    
-    float: left;
-    @media screen and (max-width: 660px){
-        display: none;
-    }
-`;
 
-const ColumnLeft = styled.div`
-    height: 100%;
-    width: 40%;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    img{
-        width: 100px;
-        padding: 30px 0 20px 0;
-    }
-    @media screen and (max-width: 660px){
-        float: none;
-        width: 100%;
-        height: 50%;
-    }
-`;
-
-const ColumnRight = styled.div`
-    height: 100%;
-    width: 40%;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    img{
-        width: 75px;
-        padding: 20px 0 20px 0;
-    }
-    @media screen and (max-width: 660px){
-        float: none;
-        width: 100%;
-        height: 50%;
-    }
-`;
 
 const Image = styled(motion.img)`
     width: 40%;
@@ -413,23 +361,6 @@ const HeroSection = () => {
                         </Subtitle>
                         </Column>
                     </TextContainer>
-                    
-                    <ColumnWrapper ref={ref}>
-                        <EmptyColumn></EmptyColumn>
-                        <ColumnLeft>
-                            <Title>TELOS NATIVE</Title>
-                            <Image src={CPLUS} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                            <BigTitle><span>Native</span> C++</BigTitle>
-                            <Description>Telos natively runs EOSIO C++ smart contract technology. The leading decentralized stack for high throughput decentralized applications.</Description>
-                        </ColumnLeft>
-                        <ColumnRight>
-                            <Title>TELOS EVM</Title>
-                            <Image src={SOLID} alt="" animate={animation} whileHover={{scale: 1.1}} />
-                            <BigTitle><span>EVM</span> Solidity</BigTitle>
-                            <Description>Telos is the first EVM compatible blockchain built on EOSIO. Deploy and run your Ethereum Apps using Telos EVM for the most performant & secure DeFi available today.</Description>
-                        </ColumnRight>
-                        <EmptyColumn></EmptyColumn>
-                    </ColumnWrapper>
                 </Container>
            {/*  </Suspense>
         </Anim> */}

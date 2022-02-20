@@ -9,7 +9,7 @@ import SOLID from "../SVG/solidity.svg";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: green;
+    background: ${props => props.theme.body};
     @media screen and (max-width: 660px){
        
         height: 140vh;
@@ -17,11 +17,12 @@ const Section = styled.div`
 
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     height: 30vh;
     color: white;
     font-size: 52px;
     display: flex;
+    padding-top: 80px;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -95,7 +96,7 @@ const BigTitle = styled.div`
     }
 `;
 
-const Description = styled.div`
+const Description = styled(motion.div)`
     font-size: 14px;
     color: ${props => props.theme.text};
     padding: 0 100px;
@@ -115,11 +116,12 @@ const Protocol = () => {
 
     const animation = useAnimation();
     const animationTwo = useAnimation();
+    const animationThree = useAnimation();
 
     useEffect(() => {
         if(inView){
             animation.start({
-                pathLength: 1, scale: 1,
+                scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -127,24 +129,39 @@ const Protocol = () => {
         }
         if(!inView){
             animation.start({
-                pathLength: 0, scale: 0.2,
+                scale: 0.2,
             })
         }
-        console.log("use effect hook, inView = " + inView);
     }, [inView])
 
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0, scale: 1,
                 transition: {
-                    duration: 1, delay: 0.5,
+                    duration: 1, delay: 1,
                 }
             });
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '40px', scale: 0
+            })
+        }
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, scale: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, scale: 0.2,
             })
         }
         console.log("use effect hook, inView = " + inView);
@@ -152,7 +169,7 @@ const Protocol = () => {
 
     return(
         <Section ref={ref}>
-            <Title>Supporting the two leading Smart Contract protocols</Title>
+            <Title animate={animationThree}>Supporting the two leading Smart Contract protocols</Title>
             <EmptyColumn></EmptyColumn>
             <ColumnLeft>
                 <ColumnTitle animate={animation}>TELOS NATIVE</ColumnTitle>
@@ -161,7 +178,7 @@ const Protocol = () => {
                 <Description animate={animationTwo}>Telos natively runs EOSIO C++ smart contract technology. The leading decentralized stack for high throughput decentralized applications.</Description>
             </ColumnLeft>
             <ColumnRight>
-                <ColumnTitle animate={animation}>TELOS NATIVE</ColumnTitle>
+                <ColumnTitle animate={animation}>TELOS EVM</ColumnTitle>
                 <Image src={SOLID} alt=""  animate={animation} whileHover={{scale: 1.1}}/>
                 <BigTitle><span>EVM</span> Solidity</BigTitle>
                 <Description animate={animationTwo}>Telos is the first EVM compatible blockchain built on EOSIO. Deploy and run your Ethereum Apps using Telos EVM for the most performant & secure DeFi available today.</Description>

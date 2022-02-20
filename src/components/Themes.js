@@ -17,7 +17,7 @@ export const darkTheme = {
     body: "#000000",
     bodyBlue: "black",
     bodyShadow: "#59CBE8",
-    purple: "#663399",
+    purple: "#00008b",   
     horizontalGrey: "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,233,238,1) 50%, rgba(0,0,0,1) 100%)",
     verticalGrey: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,233,238,1) 50%, rgba(0,0,0,1) 100%)",
     horizontalGold: "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(244,176,15,1) 50%, rgba(0,0,0,1) 100%)",

@@ -3,13 +3,14 @@ import styled from "styled-components";
 import Video1 from "../videos/telos2.mp4";
 
 const Section = styled.div`
-    position: fixed;
+    position: absolute;
     z-index: -1000;
     width: 100%;
-    height: 100%;
+    height: 120%;
     overflow: hidden;
     top: 0;
     left: 0;
+    
     
 `;
 

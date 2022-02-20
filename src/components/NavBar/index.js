@@ -1,4 +1,4 @@
-import {useState, useContext} from "react";
+import {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
 import styled from "styled-components";
 import TelosLogo from "../SVG/telos_letter_logo.svg";
@@ -262,6 +262,12 @@ const Nav = styled.div`
     align-items: center;
     justify-content: space-between;
     position: sticky;
+    top: ${({ scrollNavDown }) => (scrollNavDown ? "-100px" : "0")};
+    transition: 0.8s all ease;
+    &:hover{
+        background: #4b0082;
+        transition: 0.8s all ease;
+    }
 `;
 
 const Image = styled.img`
@@ -318,6 +324,7 @@ const Arrow = styled(KeyboardArrowDownIcon)`
     &&&{
         color: ${props => props.theme.text};
         cursor: pointer;
+        
         
     }
 `;
@@ -397,7 +404,7 @@ const NavMenu = styled.div`
     padding-top: 15px;
     @media screen and (max-width: 1100px){
             display: none;
-        }
+    }
 `;
 
 const AboutMenu = styled.div`
@@ -419,7 +426,7 @@ const AboutMenu = styled.div`
 const ExploreMenu = styled.div`
     position: absolute;
     width: 300px;
-    height: 400px;
+    height: 550px;
     top: 100px;
     left: 280px;
     display: flex;
@@ -435,7 +442,7 @@ const ExploreMenu = styled.div`
 const LearnMenu = styled.div`
     position: absolute;
     width: 300px;
-    height: 400px;
+    height: 450px;
     top: 100px;
     left: 460px;
     display: flex;
@@ -451,7 +458,7 @@ const LearnMenu = styled.div`
 const BuildMenu = styled.div`
     position: absolute;
     width: 300px;
-    height: 400px;
+    height: 350px;
     top: 100px;
     left: 640px;
     display: flex;
@@ -487,18 +494,50 @@ const SubMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${props => props.theme.purple};
+    background: #4b0082;
     border-radius: 20px;
     z-index: 150;
 `;
 
+const SubMenuIcon = styled.div`
+    display: inline-flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    
+`;
+
+const MenuText = styled.div`
+    font-size: 20px;
+    color: white;
+    padding: 0 10px;
+    cursor: pointer;
+`;
+
+const SubMenuTitle = styled.div`
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+`;
+
+const MenuTitle = styled.div`
+    font-size: 20px;
+    color: white;
+    padding: 0 10px;
+`;
+
+
+
 const SubMenuItem = styled.div`
-    height: 60px;
+    height: 70px;
     width: 90%;
     display: flex;
     justify-content: center;
     border-radius: 20px;
-    border: 1px solid white;
+    img{
+        width: 150px;
+    }
 `;
 
 const RoadMapIcon = styled(MapIcon)`
@@ -728,6 +767,22 @@ const DropDownMenu = () => {
 
 
 const Header = (props) => {
+
+    const [scrollNavDown, setScrollNavDown] = useState(false);
+
+    const changeNavDown = () => {
+        if(window.scrollY >= 150) {
+            setScrollNavDown(true)
+            
+        } 
+        else {
+            setScrollNavDown(false)
+        }
+    }
+
+    useEffect(() => {
+       window.addEventListener('scroll', changeNavDown) 
+    }, []);
     
 
     function changeTheme() {  
@@ -858,12 +913,13 @@ const Header = (props) => {
         setActiveBuy("menuOneBuy");
     }
 
-
+    
+    
     
 
     return(
         <>
-        <Nav>
+        <Nav scrollNavDown={scrollNavDown}>
             <Image src={TelosLogo} alt="logo" />
             <IconButton onClick={changeTheme}><SwitchIcon >
                 {icon}
@@ -874,7 +930,28 @@ const Header = (props) => {
                 <Arrow onMouseEnter={switchAboutEnter}/>
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
                 <AboutMenu>
-                    <SubMenu></SubMenu>
+                    <SubMenu>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>NEWS</MenuText>
+                        <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>ABOUT</MenuText>
+                        <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>JOIN THE TEAM</MenuText>
+                        <GroupAddIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>MEET THE TEAM</MenuText>
+                        <EmojiPeopleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>MEET THE BOARD</MenuText>
+                        <MeetBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    </SubMenu>
                 </AboutMenu>
                 </motion.div>
             </NavMenu>
@@ -884,7 +961,48 @@ const Header = (props) => {
                 <Arrow onMouseEnter={switchExploreEnter}  />
                 <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
                 <ExploreMenu>
-                    <SubMenu></SubMenu>
+                    <SubMenu>
+                        <SubMenuTitle>
+                        <MenuTitle style={{borderBottom: '0.5px solid #00ff00', color: '#00ff00'}}>EVM PLATFORM</MenuTitle>
+                        <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
+                        </SubMenuTitle>
+                        <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>COMM. RESOURCES</MenuText>
+                        <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>KNOWLEDGE BASE</MenuText>
+                        <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>GOVERNANCE</MenuText>
+                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>TLOS TOKENOMICS</MenuText>
+                        <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <SubMenuTitle>
+                        <MenuTitle style={{borderBottom: '0.5px solid #00ff00', color: '#00ff00'}}>NATIVE PLATFORM</MenuTitle>
+                        <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
+                        </SubMenuTitle>
+                        <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>COMM. RESOURCES</MenuText>
+                        <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>KNOWLEDGE BASE</MenuText>
+                        <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>GOVERNANCE</MenuText>
+                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
+                        <MenuText>TLOS TOKENOMICS</MenuText>
+                        <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuTitle></motion.div>
+                    </SubMenu>
                 </ExploreMenu>
                 </motion.div>
             </NavMenu>
@@ -894,7 +1012,32 @@ const Header = (props) => {
                 <Arrow onMouseEnter={switchLearnEnter}/>
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
-                    <SubMenu></SubMenu>
+                    <SubMenu>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>COMM. RESOURCES</MenuText>
+                        <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>KNOWLEDGE BASE</MenuText>
+                        <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>GOVERNANCE</MenuText>
+                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>TLOS TOKENOMICS</MenuText>
+                        <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>ESG BLOCKCHAIN</MenuText>
+                        <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>
+                    </SubMenuIcon></motion.div>
+                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                        <MenuText>EVM BLOCKCHAIN</MenuText>
+                        <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
+                    </SubMenuIcon></motion.div>
+                    </SubMenu>
                 </LearnMenu>
                 </motion.div>
             </NavMenu>
@@ -904,7 +1047,24 @@ const Header = (props) => {
                 <Arrow onMouseEnter={switchBuildEnter}/>
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
-                        <SubMenu></SubMenu>
+                        <SubMenu>
+                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                                <MenuText>ROADMAP</MenuText>
+                                <MapIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                            </SubMenuIcon></motion.div>
+                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                                <MenuText>DEVELOPERS</MenuText>
+                                <DeveloperBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                            </SubMenuIcon></motion.div>
+                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                                <MenuText>DOCUMENTATION</MenuText>
+                                <ArticleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                            </SubMenuIcon></motion.div>
+                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                                <MenuText>GRANT PROGRAM</MenuText>
+                                <LocalFireDepartmentIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                            </SubMenuIcon></motion.div>
+                        </SubMenu>
                     </BuildMenu>
                 </motion.div>
             </NavMenu>
@@ -915,11 +1075,11 @@ const Header = (props) => {
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>
                         <SubMenu>
-                            <SubMenuItem>KUCOIN</SubMenuItem>
-                            <SubMenuItem>KUCOIN</SubMenuItem>
-                            <SubMenuItem>KUCOIN</SubMenuItem>
-                            <SubMenuItem>KUCOIN</SubMenuItem>
-                            <SubMenuItem>KUCOIN</SubMenuItem>
+                            <motion.div whileHover={{scale: 1.15}}><a href="https://trade.kucoin.com/TLOS-USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Kucoin} alt="" /></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}}><a href="https://www.gate.io/es/trade/TLOS_USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Gate} alt="" style={{transform: 'scaleY(1.4)'}}/></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}}><a href="https://pancakeswap.finance/swap?outputCurrency=0xb6c53431608e626ac81a9776ac3e999c5556717c" target="_blank" rel="noreferrer"><SubMenuItem><img src={Pancake} alt="" /></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}}><a href="https://app.uniswap.org/#/swap?use=V2%3FinputCurrency%3DETH&outputCurrency=0x7825e833d495f3d1c28872415a4aee339d26ac88&chain=mainnet" target="_blank" rel="noreferrer"><SubMenuItem><img src={Uniswap} alt="" style={{height: '50px', paddingTop: '10px'}}/></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}}><a href="https://cryptolocally.com/en/crypto-offers/?type=buy&crypto=BTC&location=any&currency=any" target="_blank" rel="noreferrer"><SubMenuItem><img src={Locally} alt="" style={{transform: 'scale(1.4)'}}/></SubMenuItem></a></motion.div>
                         </SubMenu>
                     </BuyMenu>
                 </motion.div>

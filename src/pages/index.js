@@ -4,7 +4,8 @@ import Header from "../components/NavBar";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import HeroSection from "../components/Sections/HeroSection";
-import TempSection from "../components/Sections/TempSection";
+import TopSection from "../components/Sections/TopSection";
+import Protocol from "../components/Sections/Protocol";
 
 const Home = (props) => {
 
@@ -13,8 +14,9 @@ const Home = (props) => {
     return(
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
-        <TempSection />
+        <TopSection />
         <HeroSection />
+        <Protocol />
         </ThemeProvider>
     )
 }

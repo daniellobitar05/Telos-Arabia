@@ -280,18 +280,17 @@ const Image = styled.img`
 
 
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(motion.button)`
     &&&{
         color: #ba55d3;
-        font-size: 16px;
+        font-size: 20px;
         border: 2px solid #ba55d3;
         padding: 5px 15px;
-        transition: filter 300ms;
+        border-radius: 20px;
+        background: transparent;
         cursor: pointer;
-        &:hover{
-            transform: scale(1.2);
-            filter: brightness(1.2);
-        }
+        font-weight: bold;
+        
         @media screen and (max-width: 1100px){
             display: none;
         }
@@ -324,6 +323,7 @@ const Arrow = styled(KeyboardArrowDownIcon)`
     &&&{
         color: ${props => props.theme.text};
         cursor: pointer;
+        margin-top: 10px;
         
         
     }
@@ -926,8 +926,10 @@ const Header = (props) => {
             </SwitchIcon></IconButton>
             <NavMenu>
                 <AboutIcon />
-                <Text>عن</Text> 
-                <Arrow onMouseEnter={switchAboutEnter}/>
+                <Text>عن</Text>
+                <motion.div whileHover={{rotate: '180deg'}}>
+                <Arrow onMouseEnter={switchAboutEnter} />
+                </motion.div> 
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
                 <AboutMenu>
                     <SubMenu>
@@ -958,12 +960,14 @@ const Header = (props) => {
             <NavMenu>
                 <ExpIcon />
                 <Text>يكتشف</Text> 
+                <motion.div whileHover={{rotate: '180deg'}}>
                 <Arrow onMouseEnter={switchExploreEnter}  />
+                </motion.div>
                 <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
                 <ExploreMenu>
                     <SubMenu>
                         <SubMenuTitle>
-                        <MenuTitle style={{borderBottom: '0.5px solid #00ff00', color: '#00ff00'}}>EVM PLATFORM</MenuTitle>
+                        <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>EVM PLATFORM</MenuTitle>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
                         <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
@@ -983,7 +987,7 @@ const Header = (props) => {
                         <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <SubMenuTitle>
-                        <MenuTitle style={{borderBottom: '0.5px solid #00ff00', color: '#00ff00'}}>NATIVE PLATFORM</MenuTitle>
+                        <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>NATIVE PLATFORM</MenuTitle>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
                         <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
@@ -1009,7 +1013,9 @@ const Header = (props) => {
             <NavMenu>
                 <LearnIcon />
                 <Text>يكتشف</Text> 
+                <motion.div whileHover={{rotate: '180deg'}}>
                 <Arrow onMouseEnter={switchLearnEnter}/>
+                </motion.div>
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
                     <SubMenu>
@@ -1044,7 +1050,9 @@ const Header = (props) => {
             <NavMenu>
                 <BuildIcon />
                 <Text>يبني</Text> 
+                <motion.div whileHover={{rotate: '180deg'}}>
                 <Arrow onMouseEnter={switchBuildEnter}/>
+                </motion.div>
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
                         <SubMenu>
@@ -1071,7 +1079,9 @@ const Header = (props) => {
             <NavMenu>
                 <BuyIcon />
                 <Text>يشترى</Text> 
+                <motion.div whileHover={{rotate: '180deg'}}>
                 <Arrow onMouseEnter={switchBuyEnter}/>
+                </motion.div>
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>
                         <SubMenu>
@@ -1084,7 +1094,7 @@ const Header = (props) => {
                     </BuyMenu>
                 </motion.div>
             </NavMenu>
-            <StyledButton>ابدأ الآن</StyledButton>
+            <StyledButton whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>ابدأ الآن</StyledButton>
             <NavItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
                 <DropDownMenu />
             </NavItem>

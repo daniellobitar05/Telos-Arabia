@@ -31,6 +31,8 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 660px){
         font-size: 24px;
         height: 20vh;
+        padding-top: 20px;
+        height: 20vh;
     }
 `;
 
@@ -80,6 +82,7 @@ const ColumnTitle = styled.div`
     font-size: 18px;
     padding-bottom: 40px;
     color: ${props => props.theme.text};
+    
 `;
 
 const Image = styled(motion.img)`

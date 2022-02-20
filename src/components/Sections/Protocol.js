@@ -10,6 +10,10 @@ const Section = styled.div`
     width: 100%;
     height: 100vh;
     background: green;
+    @media screen and (max-width: 660px){
+       
+        height: 140vh;
+    }
 
 `;
 
@@ -51,7 +55,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;
-        height: 40vh;
+        height: 60vh;
     }
 `;
 
@@ -67,7 +71,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;
-        height: 40vh;
+        height: 60vh;
     }
 `;
 
@@ -96,6 +100,9 @@ const Description = styled.div`
     color: ${props => props.theme.text};
     padding: 0 100px;
     text-align: center;
+    @media screen and (max-width: 660px){
+        padding: 0 40px;
+    }
 `;
 
 

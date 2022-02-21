@@ -329,11 +329,7 @@ const GetStartedSection = () => {
                 rotate: [0, 0, 360, 360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
                 }}
-                whileTap={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 360, 360, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    }}>
+                >
                 <img src={CEX} alt="cex" />
                 </Icon>
                 <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
@@ -343,12 +339,7 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                whileTap={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 360, 360, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    }}>
+                }}>
                 <img src={DEX} alt="dex" />
                 </Icon>
                 <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
@@ -384,12 +375,7 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                whileTap={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 360, 360, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    }}>
+                }}>
                     <img src={Native} alt="logo" />
                 </Icon>
             </SingleIcon>
@@ -400,12 +386,7 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, 360, 360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                whileTap={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 360, 360, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    }}>
+                }}>
                 <img src={CEX} alt="cex" />
                 </Icon>
                 <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
@@ -415,12 +396,7 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                whileTap={{
-                    scale: [1, 2, 2, 1, 1],
-                    rotate: [0, 0, 360, 360, 0],
-                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                    }}>
+                }}>
                 <img src={DEX} alt="dex" />
                 </Icon>
                 <InnerSubtititle>Send from DEX exchange</InnerSubtititle>

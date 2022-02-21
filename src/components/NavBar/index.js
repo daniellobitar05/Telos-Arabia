@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
+import {Link as LinkR} from "react-router-dom";
 import styled from "styled-components";
 import TelosLogo from "../SVG/telos_letter_logo.svg";
 import Locally from "../SVG/cryptolocally_logo.svg";
@@ -934,7 +935,7 @@ const Header = (props) => {
                 <AboutMenu>
                     <SubMenu>
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>NEWS</MenuText>
+                        <LinkR to="/News"><MenuText>NEWS</MenuText></LinkR>
                         <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/index.js";
 import { AnimatePresence } from "framer-motion";
+import Home from "./pages/index.js";
+import News from "./pages/News.js";
 //import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <AnimatePresence exitBeforeEnter>
               <Routes>
                 <Route exact path="/" element={<Home />}/>
+                <Route exact path="/News" element={<News />}/>
               </Routes>
             </AnimatePresence>
       </ScrollToTop>

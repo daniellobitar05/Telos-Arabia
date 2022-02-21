@@ -6,12 +6,15 @@ import { IconButton } from '@mui/material';
 import Wombat from "../images/wombat_logo.png";
 import Anchor from "../images/anchor_logo.png";
 import Meta from "../images/metamask_logo.png";
+import Native from "../images/telos_logo.png";
+import DEX from "../SVG/DEX.svg";
+import CEX from "../SVG/CEX.svg";
 
 import Tick from "../SVG/tick.svg"
 
 const Section = styled.div`
     width: 100%;
-    height: 200vh;
+    height: 240vh;
     background: black;
     display: flex;
     background: white;
@@ -33,7 +36,7 @@ const ColumnLeft = styled.div`
     height: 100%;
     float: left;
     align-self: center;
-    background: ${props => props.theme.body};
+    background: purple;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +53,7 @@ const ColumnRight = styled.div`
     height: 100%;
     float: left;
     align-self: center;
-    background: ${props => props.theme.body};
+    background: purple;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +67,7 @@ const ColumnRight = styled.div`
 
 const EmptyColumn = styled.div`
     width: 10%;
+    background: purple;
     height: 100%;
     float: left;
     @media screen and (max-width: 660px){
@@ -88,7 +92,7 @@ const Box = styled.div`
     align-items: center;
     justify-content: space-around;
     border-radius: 20px;
-    background: #666666;
+    background: indigo;
     margin-bottom: 40px;
     img{
         width: 100px;
@@ -123,7 +127,7 @@ const InnerTitle = styled.div`
 const InnerSubtititle = styled.div`
     font-size: 18px;
     color: ${props => props.theme.text};
-    padding: 20px 80px;
+    padding: 10px 50px;
     text-align: center;
     a{
         color: aqua;
@@ -161,14 +165,14 @@ const BoxTitle = styled.div`
 
 const TitledBox = styled.div`
     margin-top: 20px;
-    height: 200px;
+    height: 240px;
     width: 70%;
     background: red;
     display: grid;
     align-items: center;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     border-radius: 20px;
-    background: #666666;
+    background: indigo;
     margin-bottom: 20px;
     img{
         width: 100px;
@@ -210,7 +214,7 @@ const CopyIcon = styled(ContentCopyIcon)`
 `;
 
 const Hidden = styled.div`
-    height: 36px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -219,6 +223,50 @@ const Hidden = styled.div`
         font-size: 15px;
         margin-left: 10px;
     }
+`;
+
+const SingleIcon = styled.div`
+    display: flex;
+    height: 100px;
+    width: 35%;
+    margin-top: 30px;
+    img{
+        margin: auto;
+    }
+    
+`;
+
+const IconHolder = styled.div`
+    display: inline-flex;
+    justify-content: space-evenly;
+    height: 200px;
+    width: 90%;
+    margin-top: 30px;
+    
+`;
+
+const Icon = styled(motion.div)`
+    background: indigo;
+    display: flex;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 40px;
+    cursor: pointer;
+    
+    img{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        
+    }
+`;
+
+const IconColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 
@@ -271,13 +319,47 @@ const GetStartedSection = () => {
                     <BoxTitle>RECOMMENDED</BoxTitle>
                 </MiniColumn>
             </Box>
-            
+            <InnerSubtititle style={{lineHeight: '25px'}}>To use Anchor you will need to <a href="https://www.telos.net/signup" target="_blank" rel="noreferrer">create a free account</a> first. You can import the account using its Private Key in Setup Account » Import » Private Key</InnerSubtititle>
+            <InnerTitle >Send TLOS to your account</InnerTitle>
+            <InnerSubtititle style={{marginTop: '30px', padding: '0 80px'}}>Follow our guides to send TLOS to your new Telos Native account</InnerSubtititle>
+            <IconHolder>
+                <IconColumn>
+                <Icon whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 360, 360, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                whileTap={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 360, 360, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                    }}>
+                <img src={CEX} alt="cex" />
+                </Icon>
+                <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
+                </IconColumn>
+                <IconColumn>
+                <Icon whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, -360, -360, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                whileTap={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 360, 360, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                    }}>
+                <img src={DEX} alt="dex" />
+                </Icon>
+                <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
+                </IconColumn>
+            </IconHolder>
         </ColumnLeft>
         <ColumnRight>
             <ColumnTitle >TELOS EVM</ColumnTitle>
             <BigTitle>Install MetaMask</BigTitle>
             <Box>
-                <img src={Meta} alt="" /> 
+                <motion.img src={Meta} alt="" drag dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50,}} whileTap={{cursor: 'grabbing'}} style={{width: '150px', height: '150px', cursor: 'grab'}}/> 
             </Box>
             <InnerTitle>Import the Telos EVM RPC</InnerTitle>
             <InnerSubtititle >Import the following RPC into Metamask or any custom RPC wallet to create an account</InnerSubtititle>
@@ -297,6 +379,53 @@ const GetStartedSection = () => {
             <InnerSubtititle >You can also use <a href="https://chainlist.org/" target="_blank" rel="noreferrer">Chainlist</a> (search Telos)</InnerSubtititle>
             <InnerTitle >Send TLOS to your account</InnerTitle>
             <InnerSubtititle style={{marginTop: '30px', padding: '0 80px'}}>Follow our guides to send TLOS to your new Telos EVM account</InnerSubtititle>
+            <SingleIcon>
+                <Icon whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, -360, -360, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                whileTap={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 360, 360, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                    }}>
+                    <img src={Native} alt="logo" />
+                </Icon>
+            </SingleIcon>
+            <InnerSubtititle>Send from Telos Native</InnerSubtititle>
+            <IconHolder>
+                <IconColumn>
+                <Icon whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 360, 360, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                whileTap={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 360, 360, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                    }}>
+                <img src={CEX} alt="cex" />
+                </Icon>
+                <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
+                </IconColumn>
+                <IconColumn>
+                <Icon whileHover={{
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, -360, -360, 0],
+                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                whileTap={{
+                    scale: [1, 2, 2, 1, 1],
+                    rotate: [0, 0, 360, 360, 0],
+                    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                    }}>
+                <img src={DEX} alt="dex" />
+                </Icon>
+                <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
+                </IconColumn>
+            </IconHolder>
         </ColumnRight>
         <EmptyColumn />
     </Section>

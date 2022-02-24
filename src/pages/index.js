@@ -19,10 +19,10 @@ const Home = (props) => {
         <Header theme={theme} setTheme={setTheme} />
         {/* <TopSection /> */}
         <HeroSection />
-        <GroundSection />
+        {/* <GroundSection />
         <Protocol />
         <GetStartedSection />
-        <OutpacingSection />
+        <OutpacingSection /> */}
         </ThemeProvider>
     )
 }

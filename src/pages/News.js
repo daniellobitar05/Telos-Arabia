@@ -39,6 +39,9 @@ const Section = styled.div`
     width: 100%;
     height: 2500px;
     background: #00008b;
+    @media screen and (max-width: 768px) {
+        height: 1400px;
+    }
 `;
 
 const Wrapper = styled.figure`
@@ -46,7 +49,7 @@ const Wrapper = styled.figure`
     height: 400px;
     overflow: hidden;
     border-radius: 20px;
-
+    
   
 `;
 
@@ -65,6 +68,8 @@ const Container = styled.div`
         object-fit: cover;
         object-position: center;   
         transition: .3s ease;
+        
+        
     }
     img:hover{
         transform: scale(1.1, 1.1);
@@ -76,14 +81,14 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% / 3);
+    width: 33%;
     box-sizing: border-box;
     height: 2500px;
     float: left;
 
     @media screen and (max-width: 768px){
-        height: 1500px;
-        padding: 0 5px;
+        height: 1200px;
+        padding: 0;
     }
 `;
 
@@ -92,17 +97,17 @@ const ColumnMiddle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% / 3);
+    width: 33%;
     box-sizing: border-box;
     position: fixed;
-    left: calc(100% / 3);
+    left: calc(100% / 5);
     bottom: 0;
     height: 2500px;
     float: left;
 
     @media screen and (max-width: 768px){
-        height: 1500px;
-        padding: 0 5px;
+        height: 1200px;
+        padding: 0;
     }
 `;
 
@@ -111,14 +116,14 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% / 3);
+    width: 33%;
     box-sizing: border-box;
     height: 2500px;
     float: right;
 
     @media screen and (max-width: 768px){
-        height: 1500px;
-        padding: 0 5px;
+        height: 1200px;
+        padding: 0;
     }
 `;
 

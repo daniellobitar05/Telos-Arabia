@@ -759,7 +759,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'about'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem rightIcon={<NewsIcon/>}>NEWS</DropDownItem>
+            <LinkR to="/News"> <DropDownItem rightIcon={<NewsIcon/>}>NEWS</DropDownItem></LinkR>
             <DropDownItem rightIcon={<AboutIcon/>}>ABOUT</DropDownItem>
             <DropDownItem rightIcon={<JoinIcon/>}>JOIN THE TEAM</DropDownItem>
             <DropDownItem rightIcon={<MeetTeamIcon/>}>MEET THE TEAM</DropDownItem>

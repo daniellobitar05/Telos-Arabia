@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {CSSTransition} from "react-transition-group";
 import {Link as LinkR} from "react-router-dom";
+import {Link as LinkS} from "react-scroll";
 import styled from "styled-components";
 import TelosLogo from "../SVG/telos_letter_logo.svg";
 import Locally from "../SVG/cryptolocally_logo.svg";
@@ -265,6 +266,7 @@ const Nav = styled.div`
     position: sticky;
     top: ${({ scrollNavDown }) => (scrollNavDown ? "-100px" : "0")};
     transition: 0.8s all ease;
+    z-index: 1000;
     &:hover{
         background: #4b0082;
         transition: 0.8s all ease;
@@ -403,6 +405,7 @@ const NavMenu = styled.div`
     display: inline-flex;
     align-items: center;
     padding-top: 15px;
+    height: 50%;
     @media screen and (max-width: 1100px){
             display: none;
     }
@@ -412,8 +415,8 @@ const AboutMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    top: 100px;
-    left: 100px;
+    top: -100vh;
+    transform: translate(-100%, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -428,8 +431,8 @@ const ExploreMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 550px;
-    top: 100px;
-    left: 280px;
+    top: -100vh;
+    transform: translate(-100%, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -444,8 +447,8 @@ const LearnMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 450px;
-    top: 100px;
-    left: 460px;
+    top: -100vh;
+    transform: translate(-100%, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -460,8 +463,8 @@ const BuildMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 350px;
-    top: 100px;
-    left: 640px;
+    top: -100vh;
+    transform: translate(-100%, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -476,8 +479,8 @@ const BuyMenu = styled.div`
     position: absolute;
     width: 300px;
     height: 400px;
-    top: 100px;
-    left: 820px;
+    top: -100vh;
+    transform: translate(-100%, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -640,6 +643,12 @@ const Menu = styled.div`
     
 `;
 
+const NavWrapper = styled.div`
+    display: inline-flex;
+    align-items: center;
+    height: 50%;
+`;
+
 const DropDownMenu = () => {
 
     const [activeMenu, setActiveMenu] = useState('main');
@@ -771,19 +780,7 @@ const Header = (props) => {
 
     const [scrollNavDown, setScrollNavDown] = useState(false);
 
-    const changeNavDown = () => {
-        if(window.scrollY >= 150) {
-            setScrollNavDown(true)
-            
-        } 
-        else {
-            setScrollNavDown(false)
-        }
-    }
-
-    useEffect(() => {
-       window.addEventListener('scroll', changeNavDown) 
-    }, []);
+    
     
 
     function changeTheme() {  
@@ -799,8 +796,8 @@ const Header = (props) => {
     const [activeLearn, setActiveLearn] = useState("menuOneLearn");
 
     let animateLearn = {};
-    if(activeLearn === "menuOneLearn") animateLearn = { opacity: 0, display: 'none' };
-    else if (activeLearn === "menuTwoLearn") animateLearn = {  opacity: 1 };
+    if(activeLearn === "menuOneLearn") animateLearn = { y: '-100vh', opacity: 0};
+    else if (activeLearn === "menuTwoLearn") animateLearn = {  opacity: 1, y: '105vh' };
     
 
     const switchLearnEnter = () => {
@@ -822,8 +819,8 @@ const Header = (props) => {
     const [activeAbout, setActiveAbout] = useState("menuOneAbout");
 
     let animateAbout = {};
-    if(activeAbout === "menuOneAbout") animateAbout = { opacity: 0, display: 'none' };
-    else if (activeAbout === "menuTwoAbout") animateAbout = {  opacity: 1 };
+    if(activeAbout === "menuOneAbout") animateAbout = { y: '-100vh', opacity: 0};
+    else if (activeAbout === "menuTwoAbout") animateAbout = {  opacity: 1, y: '105vh' };
     
 
     const switchAboutEnter = () => {
@@ -845,8 +842,8 @@ const Header = (props) => {
     const [activeExplore, setActiveExplore] = useState("menuOneExplore");
 
     let animateExplore = {};
-    if(activeExplore === "menuOneExplore") animateExplore = { opacity: 0, display: 'none' };
-    else if (activeExplore === "menuTwoExplore") animateExplore = {  opacity: 1 };
+    if(activeExplore === "menuOneExplore") animateExplore = { y: '-100vh', opacity: 0};
+    else if (activeExplore === "menuTwoExplore") animateExplore = {  opacity: 1, y: '105vh' };
     
 
     const switchExploreEnter = () => {
@@ -869,8 +866,8 @@ const Header = (props) => {
     const [activeBuild, setActiveBuild] = useState("menuOneBuild");
 
     let animateBuild = {};
-    if(activeBuild === "menuOneBuild") animateBuild = { opacity: 0, display: 'none' };
-    else if (activeBuild === "menuTwoBuild") animateBuild = {  opacity: 1 };
+    if(activeBuild === "menuOneBuild") animateBuild = { y: '-100vh', opacity: 0};
+    else if (activeBuild === "menuTwoBuild") animateBuild = {  opacity: 1, y: '105vh' };
     
 
     const switchBuildEnter = () => {
@@ -893,8 +890,8 @@ const Header = (props) => {
     const [activeBuy, setActiveBuy] = useState("menuOneBuy");
 
     let animateBuy = {};
-    if(activeBuy === "menuOneBuy") animateBuy = { opacity: 0, display: 'none' };
-    else if (activeBuy === "menuTwoBuy") animateBuy = {  opacity: 1 };
+    if(activeBuy === "menuOneBuy") animateBuy = { y: '-100vh', opacity: 0};
+    else if (activeBuy === "menuTwoBuy") animateBuy = {  opacity: 1, y: '105vh' };
     
 
     const switchBuyEnter = () => {
@@ -915,7 +912,24 @@ const Header = (props) => {
     }
 
     
-    
+    const changeNavDown = () => {
+        if(window.scrollY >= 150) {
+            setScrollNavDown(true);
+            setActiveAbout("menuOneAbout");
+            setActiveBuy("menuOneBuy");
+            setActiveBuild("menuOneBuild");
+            setActiveLearn("menuOneLearn");
+            setActiveExplore("menuOneExplore");
+            
+        } 
+        else {
+            setScrollNavDown(false)
+        }
+    }
+
+    useEffect(() => {
+       window.addEventListener('scroll', changeNavDown) 
+    }, []);
     
 
     return(
@@ -926,12 +940,14 @@ const Header = (props) => {
                 {icon}
             </SwitchIcon></IconButton>
             <NavMenu>
+                <NavWrapper onClick={switchAboutEnter}>
                 <AboutIcon />
                 <Text>عن</Text>
-                <motion.div whileHover={{rotate: '180deg'}}>
-                <Arrow onMouseEnter={switchAboutEnter} />
+                <motion.div >
+                <Arrow  />
                 </motion.div> 
-                <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave}>
+                </NavWrapper>
+                <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave} scrollNavDown={switchAboutLeave}>
                 <AboutMenu>
                     <SubMenu>
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
@@ -961,8 +977,8 @@ const Header = (props) => {
             <NavMenu>
                 <ExpIcon />
                 <Text>يكتشف</Text> 
-                <motion.div whileHover={{rotate: '180deg'}}>
-                <Arrow onMouseEnter={switchExploreEnter}  />
+                <motion.div>
+                <Arrow onClick={switchExploreEnter}  />
                 </motion.div>
                 <motion.div animate={animateExplore} onMouseLeave={switchExploreLeave}>
                 <ExploreMenu>
@@ -1014,8 +1030,8 @@ const Header = (props) => {
             <NavMenu>
                 <LearnIcon />
                 <Text>يكتشف</Text> 
-                <motion.div whileHover={{rotate: '180deg'}}>
-                <Arrow onMouseEnter={switchLearnEnter}/>
+                <motion.div >
+                <Arrow onClick={switchLearnEnter}/>
                 </motion.div>
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
@@ -1051,8 +1067,8 @@ const Header = (props) => {
             <NavMenu>
                 <BuildIcon />
                 <Text>يبني</Text> 
-                <motion.div whileHover={{rotate: '180deg'}}>
-                <Arrow onMouseEnter={switchBuildEnter}/>
+                <motion.div >
+                <Arrow onClick={switchBuildEnter}/>
                 </motion.div>
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
@@ -1080,8 +1096,8 @@ const Header = (props) => {
             <NavMenu>
                 <BuyIcon />
                 <Text>يشترى</Text> 
-                <motion.div whileHover={{rotate: '180deg'}}>
-                <Arrow onMouseEnter={switchBuyEnter}/>
+                <motion.div >
+                <Arrow onClick={switchBuyEnter}/>
                 </motion.div>
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>

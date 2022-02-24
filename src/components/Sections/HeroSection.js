@@ -7,6 +7,7 @@ import {motion, useAnimation} from "framer-motion";
 import {Canvas, extend, useFrame, useLoader, useThree} from "@react-three/fiber";
 import Circle from "../images/telos_logo.png";
 import Logo from "../images/telos_logo.png";
+import LetterLogo from "../SVG/telos_letter_logo.svg";
 import Blub from "../images/telos_blub1.png";
 import {Suspense, useMemo, useCallback, useRef} from "react";
 import Fast from "../SVG/fast.svg";
@@ -17,7 +18,7 @@ import Eco from "../SVG/eco.svg";
 import Comm from "../SVG/comm.svg";
 import CPLUS from "../SVG/cplusplus.svg";
 import SOLID from "../SVG/solidity.svg";
-/* extend ({OrbitControls})
+extend ({OrbitControls})
 
 function CameraControls(){
 
@@ -133,21 +134,32 @@ function AnimationCanvas(){
 
 const Anim = styled.div`
     width: 100%;
-    height: 140vh;
-    padding-bottom: 400px;
-    margin-top: 100vh;
+    height: 100vh;
+    
+    background-image: url(${LetterLogo});
+    background-repeat: no-repeat;
+    background-size: 300px 100px;
+    background-position: 50% 40%;
     background-color: ${props => props.theme.body};
     @media screen and (max-width: 768px){
         height: 100vh;
     }
-    @media screen and (max-width: 660px){
-        height: 200vh;
-    }
+    
+`;
+
+const FrontDiv = styled.div`
+    background: transparent;
+    width: 80%;
+    display: flex;
+    left: 10%;
+    height: 90vh;
+    position: absolute;
+    top: 10%;
+    
 `;
 
 
 
- */
 
 
 const Container = styled.div`
@@ -158,10 +170,7 @@ const Container = styled.div`
     width: 100%;
     background-color: ${props => props.theme.body};
     height: 140vh;
-    background-image: url(${Blub});
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    
 `;
 
 const HeaderText = styled.div`
@@ -300,10 +309,11 @@ const HeroSection = () => {
 
     return(
         <>
-        {/* <Anim>
+        <Anim>
             <Suspense fallback={null}>
-                <AnimationCanvas /> */}
-                <Container ref={ref}>
+                <AnimationCanvas />
+                <FrontDiv></FrontDiv>
+                {/* <Container ref={ref}>
                     <HeaderText>A ground Breaking Blockchain</HeaderText>
                     <TextContainer>
                         <Column>
@@ -361,9 +371,9 @@ const HeroSection = () => {
                         </Subtitle>
                         </Column>
                     </TextContainer>
-                </Container>
-           {/*  </Suspense>
-        </Anim> */}
+                </Container> */}
+            </Suspense>
+        </Anim>
         </>
     )
 }

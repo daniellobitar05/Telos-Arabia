@@ -78,7 +78,7 @@ const ColumnRight = styled.div`
     }
 `;
 
-const ColumnTitle = styled.div`
+const ColumnTitle = styled(motion.div)`
     font-size: 18px;
     padding-bottom: 40px;
     color: ${props => props.theme.text};
@@ -90,7 +90,7 @@ const Image = styled(motion.img)`
 
 `;
 
-const BigTitle = styled.div`
+const BigTitle = styled(motion.div)`
     font-size: 24px;
     color: ${props => props.theme.text};
     padding-bottom: 30px;
@@ -126,7 +126,7 @@ const Protocol = () => {
             animation.start({
                 scale: 1,
                 transition: {
-                    duration: 1, 
+                    duration: 1, delay: 1
                 }
             });
         }
@@ -140,7 +140,7 @@ const Protocol = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0, scale: 1,
+                opacity: 1, y: 0, 
                 transition: {
                     duration: 1, delay: 1,
                 }
@@ -148,7 +148,7 @@ const Protocol = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px', scale: 0
+                opacity: 0, y: '40px',
             })
         }
     }, [inView])
@@ -175,15 +175,15 @@ const Protocol = () => {
             <Title animate={animationThree}>Supporting the two leading Smart Contract protocols</Title>
             <EmptyColumn></EmptyColumn>
             <ColumnLeft>
-                <ColumnTitle animate={animation}>TELOS NATIVE</ColumnTitle>
+                <ColumnTitle animate={animationTwo}>TELOS NATIVE</ColumnTitle>
                 <Image src={CPLUS} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                <BigTitle><span>Native</span> C++</BigTitle>
+                <BigTitle animate={animationTwo}><span>Native</span> C++</BigTitle>
                 <Description animate={animationTwo}>Telos natively runs EOSIO C++ smart contract technology. The leading decentralized stack for high throughput decentralized applications.</Description>
             </ColumnLeft>
             <ColumnRight>
-                <ColumnTitle animate={animation}>TELOS EVM</ColumnTitle>
+                <ColumnTitle animate={animationTwo}>TELOS EVM</ColumnTitle>
                 <Image src={SOLID} alt=""  animate={animation} whileHover={{scale: 1.1}}/>
-                <BigTitle><span>EVM</span> Solidity</BigTitle>
+                <BigTitle animate={animationTwo}><span>EVM</span> Solidity</BigTitle>
                 <Description animate={animationTwo}>Telos is the first EVM compatible blockchain built on EOSIO. Deploy and run your Ethereum Apps using Telos EVM for the most performant & secure DeFi available today.</Description>
             </ColumnRight>
             <EmptyColumn></EmptyColumn>

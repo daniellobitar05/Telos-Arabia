@@ -125,6 +125,9 @@ const ColumnRight = styled.div`
 const Date = styled.div`
     font-size: 14px;
     color: white;
+    @media screen and (max-width: 660px){
+        font-size: 10px;
+    }
     
 `;
 
@@ -134,6 +137,10 @@ const New = styled.div`
     font-size: 20px;
     color: white;
     padding: 10px 30px;
+    @media screen and (max-width: 660px){
+        font-size: 14px;
+        padding: 0 180px;
+    }
 `;
 
 
@@ -175,43 +182,43 @@ $(window).on('scroll',function(){
             <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
                 
                 <Section>
-                    <Image to="/"><img src={TelosLogo} alt="" /></Image>    
+                    
                     <ColumnLeft>
                         <Container>
                         <Wrapper>
                         <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg" />
                         
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                     </ColumnLeft>
 
@@ -221,36 +228,36 @@ $(window).on('scroll',function(){
                         <Wrapper>
                             <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
                         </Wrapper> 
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
                         </Wrapper> 
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
                         </Wrapper> 
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
                         </Wrapper> 
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                     </ColumnMiddle>
                             
@@ -260,36 +267,36 @@ $(window).on('scroll',function(){
                         <Wrapper>
                             <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg"/>
                         </Wrapper> 
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         <Container>
                         <Wrapper>
                             <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
                         </Wrapper>
-                        <Date>JANUARY 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        {/* <Date>JANUARY 20TH, 2022</Date>
+                        <New>The Telos Board Elections in a Nutshell</New> */}
                         </Container>
                         
 

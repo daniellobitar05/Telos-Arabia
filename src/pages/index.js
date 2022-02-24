@@ -7,6 +7,7 @@ import HeroSection from "../components/Sections/HeroSection";
 import TopSection from "../components/Sections/TopSection";
 import Protocol from "../components/Sections/Protocol";
 import GetStartedSection from "../components/Sections/GetStartedSection";
+import OutpacingSection from "../components/Sections/OutpacingSection";
 
 const Home = (props) => {
 
@@ -15,10 +16,11 @@ const Home = (props) => {
     return(
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
-        <TopSection />
+        {/* <TopSection /> */}
         <HeroSection />
         <Protocol />
         <GetStartedSection />
+        <OutpacingSection />
         </ThemeProvider>
     )
 }

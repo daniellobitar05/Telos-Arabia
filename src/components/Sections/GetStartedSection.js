@@ -19,6 +19,7 @@ const Section = styled.div`
     background: black;
     display: flex;
     background: white;
+    overflow-x: hidden;
     @media screen and (max-width: 660px){
         flex-direction: column;
         align-items: center;
@@ -71,7 +72,7 @@ const EmptyColumn = styled.div`
     background: purple;
     height: 100%;
     float: left;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         display: none;
     }
     
@@ -289,6 +290,9 @@ const HelpButton = styled(Button)`
         border: 1px solid aqua;
         border-radius: 15px;
         padding: 6px 20px;
+        @media screen and (max-width: 768px){
+            font-size: 16px;
+        }
     }
 `;
 

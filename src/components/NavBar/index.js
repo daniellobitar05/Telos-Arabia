@@ -796,8 +796,8 @@ const Header = (props) => {
     const [activeLearn, setActiveLearn] = useState("menuOneLearn");
 
     let animateLearn = {};
-    if(activeLearn === "menuOneLearn") animateLearn = { y: '-100vh', opacity: 0};
-    else if (activeLearn === "menuTwoLearn") animateLearn = {  opacity: 1, y: '105vh' };
+    if(activeLearn === "menuOneLearn") animateLearn = { y: '-100vh', opacity: 0, transition: {duration: 0.3, type: 'tween'}};
+    else if (activeLearn === "menuTwoLearn") animateLearn = {  opacity: 1, y: '107vh', transition: {duration: 0.3, type: 'tween'}};
     
 
     const switchLearnEnter = () => {
@@ -819,8 +819,8 @@ const Header = (props) => {
     const [activeAbout, setActiveAbout] = useState("menuOneAbout");
 
     let animateAbout = {};
-    if(activeAbout === "menuOneAbout") animateAbout = { y: '-100vh', opacity: 0};
-    else if (activeAbout === "menuTwoAbout") animateAbout = {  opacity: 1, y: '105vh' };
+    if(activeAbout === "menuOneAbout") animateAbout = { y: '-100vh', opacity: 0, transition: {duration: 0.3, type: 'tween'}};
+    else if (activeAbout === "menuTwoAbout") animateAbout = {  opacity: 1, y: '107vh', transition: {duration: 0.3, type: 'tween'}};
     
 
     const switchAboutEnter = () => {
@@ -842,8 +842,8 @@ const Header = (props) => {
     const [activeExplore, setActiveExplore] = useState("menuOneExplore");
 
     let animateExplore = {};
-    if(activeExplore === "menuOneExplore") animateExplore = { y: '-100vh', opacity: 0};
-    else if (activeExplore === "menuTwoExplore") animateExplore = {  opacity: 1, y: '105vh' };
+    if(activeExplore === "menuOneExplore") animateExplore = { y: '-100vh', opacity: 0, transition: {duration: 0.3, type: 'tween'}};
+    else if (activeExplore === "menuTwoExplore") animateExplore = {  opacity: 1, y: '107vh', transition: {duration: 0.3, type: 'tween'} };
     
 
     const switchExploreEnter = () => {
@@ -866,8 +866,8 @@ const Header = (props) => {
     const [activeBuild, setActiveBuild] = useState("menuOneBuild");
 
     let animateBuild = {};
-    if(activeBuild === "menuOneBuild") animateBuild = { y: '-100vh', opacity: 0};
-    else if (activeBuild === "menuTwoBuild") animateBuild = {  opacity: 1, y: '105vh' };
+    if(activeBuild === "menuOneBuild") animateBuild = { y: '-100vh', opacity: 0, transition: {duration: 0.3, type: 'tween'}};
+    else if (activeBuild === "menuTwoBuild") animateBuild = {  opacity: 1, y: '107vh', transition: {duration: 0.3, type: 'tween'} };
     
 
     const switchBuildEnter = () => {
@@ -890,8 +890,8 @@ const Header = (props) => {
     const [activeBuy, setActiveBuy] = useState("menuOneBuy");
 
     let animateBuy = {};
-    if(activeBuy === "menuOneBuy") animateBuy = { y: '-100vh', opacity: 0};
-    else if (activeBuy === "menuTwoBuy") animateBuy = {  opacity: 1, y: '105vh' };
+    if(activeBuy === "menuOneBuy") animateBuy = { y: '-100vh', opacity: 0, transition: {duration: 0.3, type: 'tween'}};
+    else if (activeBuy === "menuTwoBuy") animateBuy = {  opacity: 1, y: '107vh', transition: {duration: 0.3, type: 'tween'} };
     
 
     const switchBuyEnter = () => {
@@ -930,6 +930,7 @@ const Header = (props) => {
     useEffect(() => {
        window.addEventListener('scroll', changeNavDown) 
     }, []);
+    
     
 
     return(

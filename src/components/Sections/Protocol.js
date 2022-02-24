@@ -124,7 +124,7 @@ const Protocol = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                scale: 1,
+                scale: 1.5,
                 transition: {
                     duration: 1, delay: 1
                 }

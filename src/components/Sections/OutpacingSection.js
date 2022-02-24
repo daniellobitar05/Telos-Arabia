@@ -37,17 +37,11 @@ const Grid = styled.div`
     background: orange;
     
     grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+    grid-template-rows: 3fr 1fr 1r 1fr 1fr 1fr 1fr;
+`;
+
+const Row = styled.div`
     
-`;
-
-const Column = styled.div`
-    background: blue;
-    height: 80vh;
-`;
-
-const BigRow = styled.div`
-    background: white;
-    height: 50px;
 `;
 
 
@@ -57,21 +51,7 @@ const OutpacingSection = () => {
             <Title>Outpacing the market with tech, innovation and adoption</Title>
             <Wrapper>
             <Grid>
-                <Column>
-                    <BigRow></BigRow>
-                </Column>
-                <Column>
-                    
-                </Column>
-                <Column>
-                    
-                </Column>
-                <Column>
-                    
-                </Column>
-                <Column>
-                    
-                </Column>
+
             </Grid>
             </Wrapper>
         </Section>

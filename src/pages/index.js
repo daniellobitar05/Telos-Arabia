@@ -8,6 +8,7 @@ import TopSection from "../components/Sections/TopSection";
 import Protocol from "../components/Sections/Protocol";
 import GetStartedSection from "../components/Sections/GetStartedSection";
 import OutpacingSection from "../components/Sections/OutpacingSection";
+import GroundSection from "../components/Sections/GroundSection";
 
 const Home = (props) => {
 
@@ -18,6 +19,7 @@ const Home = (props) => {
         <Header theme={theme} setTheme={setTheme} />
         {/* <TopSection /> */}
         <HeroSection />
+        <GroundSection />
         <Protocol />
         <GetStartedSection />
         <OutpacingSection />

@@ -9,6 +9,7 @@ import Meta from "../images/metamask_logo.png";
 import Native from "../images/telos_logo.png";
 import DEX from "../SVG/DEX.svg";
 import CEX from "../SVG/CEX.svg";
+import {Button} from "@mui/material";
 
 import Tick from "../SVG/tick.svg"
 
@@ -225,7 +226,7 @@ const Hidden = styled.div`
     }
 `;
 
-const SingleIcon = styled.div`
+const SingleIcon = styled.a`
     display: flex;
     height: 100px;
     width: 35%;
@@ -268,6 +269,59 @@ const IconColumn = styled.div`
     align-items: center;
     justify-content: center;
 `;
+
+const HelpTitle = styled.div`
+    margin-top: 100px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 100px;
+`;
+
+const HelpButton = styled(Button)`
+    &&&{
+        z-index: 100;
+        background: purple;
+        font-size: 22px;
+        margin: 10px;
+        color: white;
+        font-weight: bold;
+        border: 1px solid aqua;
+        border-radius: 15px;
+        padding: 6px 20px;
+    }
+`;
+
+const Image = styled(motion.img)`
+    width: 200px;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+`;
+
+const imageOneVariants = {
+    hidden: {
+        opacity: 0.5, x: 0
+    }, 
+    visible: {
+        opacity: 1, x: '-50px', transition: {
+            duration: 1, type: 'tween'
+        }
+    }
+}
+
+const ImageHolder = styled.div`
+    ${Image}:nth-child(1){
+        z-index: 1;
+        transform: translate(-250%, -100%);
+    }
+    ${Image}:nth-child(2){
+        transform: translate(-250%, -75%);
+    }
+`;
+
+
+
 
 
 const GetStartedSection = () => {
@@ -345,6 +399,9 @@ const GetStartedSection = () => {
                 <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
                 </IconColumn>
             </IconHolder>
+            <HelpTitle >NEED MORE HELP?</HelpTitle>
+            <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>VISIT OUR HELP CENTER</HelpButton></motion.div>
+            <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>CONTACT US ON TELEGRAM</HelpButton></motion.div>
         </ColumnLeft>
         <ColumnRight>
             <ColumnTitle >TELOS EVM</ColumnTitle>
@@ -370,7 +427,7 @@ const GetStartedSection = () => {
             <InnerSubtititle >You can also use <a href="https://chainlist.org/" target="_blank" rel="noreferrer">Chainlist</a> (search Telos)</InnerSubtititle>
             <InnerTitle >Send TLOS to your account</InnerTitle>
             <InnerSubtititle style={{marginTop: '30px', padding: '0 80px'}}>Follow our guides to send TLOS to your new Telos EVM account</InnerSubtititle>
-            <SingleIcon>
+            <SingleIcon href="https://help.telos.net/en_US/evm/how-to-deposit-tlos-on-the-telos-evm" target= "blank" rel="noreferrer">
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],

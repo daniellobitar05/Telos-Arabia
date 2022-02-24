@@ -20,8 +20,8 @@ const Home = (props) => {
         {/* <TopSection /> */}
         <HeroSection />
          <GroundSection />
-        {/*<Protocol />
-        <GetStartedSection />
+        <Protocol />
+        {/*<GetStartedSection />
         <OutpacingSection /> */}
         </ThemeProvider>
     )

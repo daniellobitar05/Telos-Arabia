@@ -9,7 +9,7 @@ import SOLID from "../SVG/solidity.svg";
 const Section = styled.div`
     width: 100%;
     height: 120vh;
-    background: linear-gradient(180deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(27,59,213,1) 100%);
+    background: black;
     @media screen and (max-width: 660px){
        
         height: 140vh;

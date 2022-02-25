@@ -18,7 +18,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(71,6,113,1) 50%, rgba(146,16,205,1) 100%);
+    background: black;
     height: 140vh;
 `;
 

@@ -9,6 +9,7 @@ import Protocol from "../components/Sections/Protocol";
 import GetStartedSection from "../components/Sections/GetStartedSection";
 import OutpacingSection from "../components/Sections/OutpacingSection";
 import GroundSection from "../components/Sections/GroundSection";
+import Footer from "../components/Sections/Footer";
 
 const Home = (props) => {
 
@@ -23,6 +24,7 @@ const Home = (props) => {
         <Protocol />
         <GetStartedSection />
         {/*<OutpacingSection /> */}
+        <Footer />
         </ThemeProvider>
     )
 }

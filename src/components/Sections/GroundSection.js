@@ -18,17 +18,17 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: ${props => props.theme.body};
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(71,6,113,1) 50%, rgba(146,16,205,1) 100%);
     height: 140vh;
 `;
 
 const HeaderText = styled.div`
-    font-size: 52px;
+    font-size: 100px;
     color: ${props => props.theme.text};
     padding: 80px 50px;
     text-align: center;
     @media screen and (max-width: 660px){
-        font-size: 32px;
+        font-size: 70px;
     }
 `;
 
@@ -68,7 +68,7 @@ const Column = styled.div`
 `;
 
 const Image = styled(motion.img)`
-    width: 40%;
+    width: 35%;
 
     @media screen and (max-width: 660px){
         width: 30%;
@@ -77,23 +77,23 @@ const Image = styled(motion.img)`
 `;
 
 const Title = styled(motion.h1)`
-    font-size: 20px;
+    font-size: 30px;
     color: aqua;
     text-align: center;
     @media screen and (max-width: 660px){
-        font-size: 14px;
+        font-size: 18px;
         
     }
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 14px;
+    font-size: 22px;
     color: white;
     text-align: center;
     padding: 0 20px;
     @media screen and (max-width: 660px){
-        font-size: 10px;
-        padding: 0;
+        font-size: 14px;
+        padding: 0px;
     }
 `;
 
@@ -142,60 +142,60 @@ const GroundSection = () => {
 
     return(
         <Section ref={ref}>
-            <HeaderText>A ground Breaking Blockchain</HeaderText>
+            <HeaderText>ض تهد بلوكتشين</HeaderText>
             <TextContainer>
                 <Column>
                     <Image src={NoFront} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                     <Title animate={animation}>
-                        No Front Running
+                         لا تشغيل أمامي  
                     </Title>
                     <Subtitle animate={animationTwo}>
-                        First in, first out transactions functionally eliminate front running
+                    أوًلا ، المعاملات الصادرة أولتلغي وظيفًيا التشغيلالأمامي
                     </Subtitle>
                 </Column>
                 <Column>
                         <Image src={NoGas} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>
-                            No Gas Fees
+                        بدون رسوم : 
                         </Title>
                         <Subtitle animate={animationTwo}>
-                        No gas fees on Native and insignificant fees on EVM to keep spammers away
+                        لا توجد رسوم على تلوس ناتف
                         </Subtitle>
                         </Column>
                         <Column>
                         <Image src={Fast} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>
-                            Fast & Scalable
+                        سريع وقابل للتحجيم
                         </Title>
                         <Subtitle animate={animationTwo}>
-                        Battle tested 10 000 transactions per second and 0.5s block
+                        تلوس من اسرع بلوكتشينات العالم: ١٠٠٠٠ تحويلة بالثانية
                         </Subtitle>
                         </Column>
                         <Column>
                         <Image src={Comm} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>
-                            Community Governed
+                        حكم المجتمع
                         </Title>
                         <Subtitle animate={animationTwo}>
-                        Using our Governance Engine our community decides on everything from proposals to board members
+                        باستخدام محرك الحوكمة ، يقرر مجتمعنا كل شيء بد ًءمن المقترحات وحتى أعضاء مجلس الإدارة
                         </Subtitle>
                         </Column>
                         <Column>
                         <Image src={Eco} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>
-                            Eco-Friendly
+                        صديقة للبيئة
                         </Title>
                         <Subtitle animate={animationTwo}>
-                        The most energy efficient blockchain, we also aim to offset all of our carbon emissions
+                        سلسلة الكتل الأكثر كفاءة في استخدام الطاقة ، نهدفي ًضا إلى تعويض جميع انبعاثات الكربون لدينا
                         </Subtitle>
                         </Column>
                         <Column>
                         <Image src={Decent} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>
-                            Decentralized
+                        لامركزية
                         </Title>
                         <Subtitle animate={animationTwo} >
-                        Our Block Producers are located around the world and cannot be owned by the same entity
+                        منتجي القوالب موجودون في جميع أنحاء العالم وليمكن أن يمتلكهم نفس الكيان
                         </Subtitle>
                         </Column>
             </TextContainer>

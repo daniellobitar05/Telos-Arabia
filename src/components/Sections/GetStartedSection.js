@@ -15,10 +15,10 @@ import Tick from "../SVG/tick.svg"
 
 const Section = styled.div`
     width: 100%;
-    height: 240vh;
-    background: black;
+    height: 260vh;
+    
     display: flex;
-    background: white;
+    
     overflow-x: hidden;
     @media screen and (max-width: 660px){
         flex-direction: column;
@@ -79,10 +79,13 @@ const EmptyColumn = styled.div`
 `;
 
 const ColumnTitle = styled.div`
-    font-size: 18px;
+    font-size: 48px;
     padding: 40px 0;
     color: ${props => props.theme.text};
     text-align: center;
+    @media screen and (max-width: 768px){
+        font-size: 36px;
+    }
     
 
 `;
@@ -120,16 +123,17 @@ const BigTitle = styled.div`
 `;
 
 const InnerTitle = styled.div`
-    font-size: 22px;
+    font-size: 32px;
     color: ${props => props.theme.text};
     font-weight: bold;
-    padding: 30px 30px;
+    margin: 40px 0;
 `;
 
 const InnerSubtititle = styled.div`
-    font-size: 18px;
+    font-size: 20px;
+    
     color: ${props => props.theme.text};
-    padding: 10px 50px;
+    line-height: 15px;
     text-align: center;
     a{
         color: aqua;
@@ -201,6 +205,8 @@ const BoxLine = styled.div`
     
     span{
         font-weight: bold;
+        margin-left: auto;
+        margin-right: 20px;
     }
     @media screen and (max-width: 660px){
         font-size: 12px;
@@ -229,9 +235,9 @@ const Hidden = styled.div`
 
 const SingleIcon = styled.a`
     display: flex;
-    height: 100px;
+    height: 200px;
     width: 35%;
-    margin-top: 30px;
+    
     img{
         margin: auto;
     }
@@ -243,14 +249,14 @@ const IconHolder = styled.div`
     justify-content: space-evenly;
     height: 200px;
     width: 90%;
-    margin-top: 30px;
+    
     
 `;
 
 const Icon = styled(motion.div)`
     background: indigo;
     display: flex;
-    margin: auto;
+    margin: auto auto 30px auto;
     height: 100px;
     width: 100px;
     border-radius: 40px;
@@ -272,17 +278,17 @@ const IconColumn = styled.div`
 `;
 
 const HelpTitle = styled.div`
-    margin-top: 100px;
+    margin-top: 240px;
     color: white;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 `;
 
 const HelpButton = styled(Button)`
     &&&{
         z-index: 100;
-        background: purple;
+        background: linear-gradient(90deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(47,230,231,1) 100%);
         font-size: 22px;
         margin: 10px;
         color: white;
@@ -290,6 +296,7 @@ const HelpButton = styled(Button)`
         border: 1px solid aqua;
         border-radius: 15px;
         padding: 6px 20px;
+        margin-bottom: 20px;
         @media screen and (max-width: 768px){
             font-size: 16px;
         }
@@ -367,8 +374,8 @@ const GetStartedSection = () => {
     <Section>
         <EmptyColumn />
         <ColumnLeft>
-            <ColumnTitle >TELOS NATIVE</ColumnTitle>
-            <BigTitle>Choose a signer</BigTitle>
+            <ColumnTitle >تيلوس ناتيف</ColumnTitle>
+            <BigTitle>اختر موقعا </BigTitle>
             <Box>
                 <MiniColumn><img src={Wombat} alt="" /><BoxTitle>Wombat</BoxTitle></MiniColumn>
                 <MiniColumn>
@@ -377,9 +384,9 @@ const GetStartedSection = () => {
                     <BoxTitle>RECOMMENDED</BoxTitle>
                 </MiniColumn>
             </Box>
-            <InnerSubtititle style={{lineHeight: '25px'}}>To use Anchor you will need to <a href="https://www.telos.net/signup" target="_blank" rel="noreferrer">create a free account</a> first. You can import the account using its Private Key in Setup Account » Import » Private Key</InnerSubtititle>
-            <InnerTitle >Send TLOS to your account</InnerTitle>
-            <InnerSubtititle style={{marginTop: '30px', padding: '0 80px'}}>Follow our guides to send TLOS to your new Telos Native account</InnerSubtititle>
+            <InnerSubtititle >ستحتاج إلى إنشاء حساب  Anchor لاستخدام <p> يمكنك استيراد الحساب باستخدام<span></span>.مجاني أول</p><p> المفتاح الخاص<span></span>»استيراد<span></span>» مفتاحه الخاص في حساب الإعداد</p></InnerSubtititle>
+            <InnerTitle > إلى حسابك TLOS أرسل </InnerTitle>
+            <InnerSubtititle > <p>اتبع أدلتنا لإرسال تيلوس إلى حساب تيلوس الأصلي</p><p> الأصلي الجديد الخاص بك</p></InnerSubtititle>
             <IconHolder>
                 <IconColumn>
                 <Icon whileHover={{
@@ -390,7 +397,7 @@ const GetStartedSection = () => {
                 >
                 <img src={CEX} alt="cex" />
                 </Icon>
-                <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
+                <InnerSubtititle>DEX أرسل من محقظة </InnerSubtititle>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
@@ -400,21 +407,21 @@ const GetStartedSection = () => {
                 }}>
                 <img src={DEX} alt="dex" />
                 </Icon>
-                <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
+                <InnerSubtititle>CEX رسل من محقظة </InnerSubtititle>
                 </IconColumn>
             </IconHolder>
-            <HelpTitle >NEED MORE HELP?</HelpTitle>
-            <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>VISIT OUR HELP CENTER</HelpButton></motion.div>
-            <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>CONTACT US ON TELEGRAM</HelpButton></motion.div>
+            <HelpTitle >هل تريد المزيد من المساعدة؟</HelpTitle>
+            <a href="https://help.telos.net/" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>قم بزيارة مركز المساعدة الخاص بنا</HelpButton></motion.div></a>
+            <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>Telegram اتصل بنا على </HelpButton></motion.div></a>
         </ColumnLeft>
         <ColumnRight>
-            <ColumnTitle >TELOS EVM</ColumnTitle>
-            <BigTitle>Install MetaMask</BigTitle>
+            <ColumnTitle >EVM تيلوس </ColumnTitle>
+            <BigTitle>MetaMask قم بتثبيت </BigTitle>
             <Box>
                 <motion.img src={Meta} alt="" drag dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50,}} whileTap={{cursor: 'grabbing'}} style={{width: '150px', height: '150px', cursor: 'grab'}}/> 
             </Box>
-            <InnerTitle>Import the Telos EVM RPC</InnerTitle>
-            <InnerSubtititle >Import the following RPC into Metamask or any custom RPC wallet to create an account</InnerSubtititle>
+            <InnerTitle>RPC EVM قم باستيراد تيلوس  </InnerTitle>
+            <InnerSubtititle >Metamask التالي إلى  RPC قم باستيراد <p>مخصصة لإنشاء حساب RPC أو أي محفظة</p></InnerSubtititle>
             <Hidden>
             {copied && <><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="12" fill="green"/>
@@ -422,15 +429,15 @@ const GetStartedSection = () => {
                         </svg><span>Copied!!!</span></>}
             </Hidden>
             <TitledBox>
-                <BoxLine><IconButton onClick={CopyAddress}><CopyIcon /></IconButton><span>RPC URL:</span><p >https://mainnet.telos.net/evm</p></BoxLine>
-                <BoxLine><IconButton onClick={CopyChain}><CopyIcon /></IconButton><span>Chain name:</span><p >Telos EVM Mainnet</p></BoxLine>
-                <BoxLine><IconButton onClick={CopyChainID}><CopyIcon /></IconButton><span>Chain ID:</span><p>40</p></BoxLine>
-                <BoxLine><IconButton onClick={CopySymbol}><CopyIcon /></IconButton><span>Symbol:</span><p >TLOS</p></BoxLine>
-                <BoxLine><IconButton onClick={CopyExplorer}><CopyIcon /></IconButton><span>Block Explorer URL:</span><p >https://teloscan.io</p></BoxLine>
+                <BoxLine><IconButton onClick={CopyAddress}><CopyIcon /></IconButton><p >https://mainnet.telos.net/evm</p><span> URL: RPC</span></BoxLine>
+                <BoxLine><IconButton onClick={CopyChain}><CopyIcon /></IconButton><p >Telos EVM Mainnet</p><span>Chain name:</span></BoxLine>
+                <BoxLine><IconButton onClick={CopyChainID}><CopyIcon /></IconButton><p>40</p><span>Chain ID:</span></BoxLine>
+                <BoxLine><IconButton onClick={CopySymbol}><CopyIcon /></IconButton><p >TLOS</p><span>Symbol:</span></BoxLine>
+                <BoxLine><IconButton onClick={CopyExplorer}><CopyIcon /></IconButton><p >https://teloscan.io</p><span>Block Explorer URL:</span></BoxLine>
             </TitledBox>
-            <InnerSubtititle >You can also use <a href="https://chainlist.org/" target="_blank" rel="noreferrer">Chainlist</a> (search Telos)</InnerSubtititle>
-            <InnerTitle >Send TLOS to your account</InnerTitle>
-            <InnerSubtititle style={{marginTop: '30px', padding: '0 80px'}}>Follow our guides to send TLOS to your new Telos EVM account</InnerSubtititle>
+            <InnerSubtititle >(البحث عن تيلوس)  <a href="https://chainlist.org/" target="_blank" rel="noreferrer">Chainlist</a> يمكنك أي ًضا استخدام قائمة</InnerSubtititle>
+            <InnerTitle style={{padding: '30px'}}>رسل تيلوس إلى حسابك</InnerTitle>
+            <InnerSubtititle >EVM اتبع أدلتنا لإرسال تيلوس إلى حساب تيلوس <p>الجديد الخاص بك</p></InnerSubtititle>
             <SingleIcon href="https://help.telos.net/en_US/evm/how-to-deposit-tlos-on-the-telos-evm" target= "blank" rel="noreferrer">
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
@@ -440,7 +447,7 @@ const GetStartedSection = () => {
                     <img src={Native} alt="logo" />
                 </Icon>
             </SingleIcon>
-            <InnerSubtititle>Send from Telos Native</InnerSubtititle>
+            <InnerSubtititle>أرسل من تيلوس ناتيف </InnerSubtititle>
             <IconHolder>
                 <IconColumn>
                 <Icon whileHover={{
@@ -450,7 +457,7 @@ const GetStartedSection = () => {
                 }}>
                 <img src={CEX} alt="cex" />
                 </Icon>
-                <InnerSubtititle>Send from CEX exchange</InnerSubtititle>
+                <InnerSubtititle>CEX رسل من محقظة </InnerSubtititle>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
@@ -460,7 +467,7 @@ const GetStartedSection = () => {
                 }}>
                 <img src={DEX} alt="dex" />
                 </Icon>
-                <InnerSubtititle>Send from DEX exchange</InnerSubtititle>
+                <InnerSubtititle>DEX رسل من محقظة </InnerSubtititle>
                 </IconColumn>
             </IconHolder>
         </ColumnRight>

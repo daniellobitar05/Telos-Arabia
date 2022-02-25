@@ -8,8 +8,8 @@ import SOLID from "../SVG/solidity.svg";
 
 const Section = styled.div`
     width: 100%;
-    height: 100vh;
-    background: ${props => props.theme.body};
+    height: 120vh;
+    background: linear-gradient(180deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(27,59,213,1) 100%);
     @media screen and (max-width: 660px){
        
         height: 140vh;
@@ -20,13 +20,13 @@ const Section = styled.div`
 const Title = styled(motion.div)`
     height: 30vh;
     color: white;
-    font-size: 52px;
+    font-size: 80px;
     display: flex;
     padding-top: 80px;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: ${props => props.theme.body};
+    
     justify-content: center;
     @media screen and (max-width: 660px){
         font-size: 24px;
@@ -39,7 +39,7 @@ const Title = styled(motion.div)`
 const EmptyColumn = styled.div`
     width: 10%;
     height: 70vh;
-    background: ${props => props.theme.body};
+    
     float: left;
     @media screen and (max-width: 660px){
         display: none;
@@ -49,7 +49,7 @@ const EmptyColumn = styled.div`
 const ColumnLeft = styled.div`
     width: 40%;
     height: 70vh;
-    background: ${props => props.theme.body};
+    
     float: left;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ const ColumnLeft = styled.div`
 const ColumnRight = styled.div`
     width: 40%;
     height: 70vh;
-    background: ${props => props.theme.body};
+    
     float: left;
     display: flex;
     flex-direction: column;
@@ -100,10 +100,11 @@ const BigTitle = styled(motion.div)`
 `;
 
 const Description = styled(motion.div)`
-    font-size: 14px;
+    font-size: 24px;
     color: ${props => props.theme.text};
-    padding: 0 100px;
+    padding: 0 50px;
     text-align: center;
+    line-height: 15px;
     @media screen and (max-width: 660px){
         padding: 0 40px;
     }
@@ -172,19 +173,19 @@ const Protocol = () => {
 
     return(
         <Section ref={ref}>
-            <Title animate={animationThree}>Supporting the two leading Smart Contract protocols</Title>
+            <Title animate={animationThree}>دعم بروتوكولي العقد الذكي الرائدين</Title>
             <EmptyColumn></EmptyColumn>
             <ColumnLeft>
-                <ColumnTitle animate={animationTwo}>TELOS NATIVE</ColumnTitle>
+                <ColumnTitle animate={animationTwo}>تيلوس ناتيف</ColumnTitle>
                 <Image src={CPLUS} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                <BigTitle animate={animationTwo}><span>Native</span> C++</BigTitle>
-                <Description animate={animationTwo}>Telos natively runs EOSIO C++ smart contract technology. The leading decentralized stack for high throughput decentralized applications.</Description>
+                <BigTitle animate={animationTwo}>C++<span>ناتيف</span> </BigTitle>
+                <Description animate={animationTwo}><p>EOSIO C++ تدير تيلوس في الأصل تقنية العقد الذكي</p><p>المكدس اللامركزي الرائد للتطبيقات اللامركزية عالية</p><p>الإنتاجية</p></Description>
             </ColumnLeft>
             <ColumnRight>
-                <ColumnTitle animate={animationTwo}>TELOS EVM</ColumnTitle>
+                <ColumnTitle animate={animationTwo}>EVM تيلوس </ColumnTitle>
                 <Image src={SOLID} alt=""  animate={animation} whileHover={{scale: 1.1}}/>
-                <BigTitle animate={animationTwo}><span>EVM</span> Solidity</BigTitle>
-                <Description animate={animationTwo}>Telos is the first EVM compatible blockchain built on EOSIO. Deploy and run your Ethereum Apps using Telos EVM for the most performant & secure DeFi available today.</Description>
+                <BigTitle animate={animationTwo}><span>EVM</span> صلابة</BigTitle>
+                <Description animate={animationTwo}><p>مبني على EVM تيلوس هو أول بلوكشين متوافق مع </p><p>قم بنشر وتشغيل تطبيقات ايثيريوم باستخدام .EOSIO</p><p>الأكثر ادا DeFi للحصول على  EVM تيلوس</p><p>ء وأماناًالمتاح اليوم</p></Description>
             </ColumnRight>
             <EmptyColumn></EmptyColumn>
         </Section>

@@ -4,10 +4,15 @@ import $ from "jquery";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import { motion } from "framer-motion";
+import { animateScroll as scroll } from "react-scroll";
 import { animationOne, transition } from "../animations";
 import TelosLogo from "../components/SVG/telos_letter_logo.svg";
 import {Link as LinkR} from "react-router-dom";
 import Header from "../components/NavBar";
+import {IconButton} from "@mui/material";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import News1 from "../components/images/news/news1.jpg";
 import News2 from "../components/images/news/news2.jpg";
 import News3 from "../components/images/news/news3.jpg";
@@ -40,7 +45,7 @@ const Image = styled(LinkR)`
 
 const Section = styled.div`
     width: 100%;
-    height: 3500px;
+    height: 4200px;
     background: #00008b;
     overflow-y: hidden;
     @media screen and (max-width: 768px) {
@@ -93,7 +98,7 @@ const ColumnLeft = styled.div`
     justify-content: space-between;
     width: 33%;
     box-sizing: border-box;
-    height: 3500px;
+    height: 4200px;
     float: left;
 
     @media screen and (max-width: 768px){
@@ -113,7 +118,7 @@ const ColumnMiddle = styled.div`
     position: fixed;
     left: calc(100% / 3);
     bottom: 0;
-    height: 3500px;
+    height: 4200px;
     float: left;
 
     @media screen and (max-width: 768px){
@@ -131,7 +136,7 @@ const ColumnRight = styled.div`
     justify-content: space-between;
     width: 33%;
     box-sizing: border-box;
-    height: 3500px;
+    height: 4200px;
     float: right;
     @media screen and (max-width: 768px){
         height: 2100px;
@@ -162,6 +167,36 @@ const New = styled.div`
     }
 `;
 
+const IconHolder = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.5);
+    padding-bottom: 50px;
+    
+`;
+
+const IconHome = styled(ChevronLeftIcon)`
+    color: white;
+    cursor: pointer;
+`;
+
+const IconUp = styled(KeyboardArrowUpIcon)`
+    color: white;
+    cursor: pointer;
+`;
+
+
+const IconText = styled.div`
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+    }
+`;
+
 
 
 
@@ -171,12 +206,16 @@ const NewsPage = () => {
 
     const [theme, setTheme] = useState("dark");
 
-    const cursor = document.getElementsByClassName('cursor')[0];
+    const scrollUp = () => {
+        scroll.scrollToTop();
+    }
+
+    /* const cursor = document.getElementsByClassName('cursor')[0];
 
 document.onmousemove = (ev) => {
     cursor.style.top = ev.clientY+"px";
     cursor.style.left = ev.clientX+"px";  
-}
+} */
 
 /* document.querySelectorAll('.image').forEach(item => {
     item.addEventListener('mouseover', event => {
@@ -199,7 +238,7 @@ $(window).on('scroll',function(){
 
 
         <ThemeProvider theme={themes[theme]}>
-            <motion.div initial="out" animate="in" exit="out" variants={animationOne} transition={transition}>
+            
                 
                 <Section>
                     
@@ -253,6 +292,10 @@ $(window).on('scroll',function(){
                         <Date>NOV 18TH, 2021</Date>
                         <New>Trading is live on Sushiswap</New>
                         </Container>
+                        <LinkR to="/"><IconHolder>
+                            <IconButton><IconHome /></IconButton>
+                            <IconText>HOME</IconText>
+                        </IconHolder></LinkR>
                     </ColumnLeft>
 
 
@@ -359,9 +402,13 @@ $(window).on('scroll',function(){
                         <Date>SEP 9TH, 2021</Date>
                         <New>Decide Voter Contest</New>
                         </Container>
+                        <IconHolder onClick={scrollUp}>
+                            <IconButton><IconUp /></IconButton>
+                            <IconText>UP</IconText>
+                        </IconHolder>
                     </ColumnRight>
                 </Section>
-            </motion.div>
+            
         </ThemeProvider>
     );
 }

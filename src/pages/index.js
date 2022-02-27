@@ -1,5 +1,6 @@
 import {useState} from "react";
 import styled from "styled-components";
+import {motion} from "framer-motion";
 import Header from "../components/NavBar";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
@@ -10,6 +11,7 @@ import GetStartedSection from "../components/Sections/GetStartedSection";
 import OutpacingSection from "../components/Sections/OutpacingSection";
 import GroundSection from "../components/Sections/GroundSection";
 import Footer from "../components/Sections/Footer";
+import { animationTwo, transitionTwo } from "../animations";
 
 const Home = (props) => {
 
@@ -17,6 +19,7 @@ const Home = (props) => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
+        
         <Header theme={theme} setTheme={setTheme} />
         {/* <TopSection /> */}
         <HeroSection />
@@ -25,6 +28,7 @@ const Home = (props) => {
         <GetStartedSection />
         {/*<OutpacingSection /> */}
         <Footer />
+        
         </ThemeProvider>
     )
 }

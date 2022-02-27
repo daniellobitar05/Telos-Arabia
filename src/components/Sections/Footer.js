@@ -133,6 +133,12 @@ const CircleTransition = {
     ease: 'easeInOut',
 };
 
+const Reducer = styled.div`
+    @media screen and (max-width: 768px){
+        transform: scale(0.6);
+    }
+`;
+
 
 const Footer = () => {
     return(

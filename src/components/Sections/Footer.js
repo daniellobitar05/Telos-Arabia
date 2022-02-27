@@ -19,7 +19,7 @@ const Section = styled(motion.div)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width:768px){
-        height: 130vh;
+        height: 140vh;
     }
     
     
@@ -45,12 +45,33 @@ const Title = styled(motion.div)`
 `;
 
 const Mail = styled.div`
-    height: 20vh;
+    height: 30vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    span{
+        display: flex;
+        width: 85px;
+        height: 85px;
+        background: indigo;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+        @media screen and (max-width: 768px){
+            width: 50px;
+            height: 50px;
+            
+        }
+        
+    }
+`;
+
+const IconMail = styled(EmailIcon)`
+    color: white;
 `;
 
 const IconHolder = styled(motion.div)`
@@ -185,6 +206,7 @@ const Footer = () => {
         <Section>
             <Title>If you have a question or would like more information please contact us by email</Title>
             <Mail>
+                <a href="mailto:hello@telosfoundation.io"><motion.span><IconMail /></motion.span></a>
                 <a href="mailto:hello@telosfoundation.io">hello@telosfoundation.io</a>
             </Mail>
             <IconHolder  variants={ContainerVariants} initial='start' animate='end'>

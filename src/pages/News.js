@@ -78,7 +78,7 @@ const Container = styled.div`
         transform: scale(1.1, 1.1);
     }
     @media screen and (max-width: 768px){
-        width: 33vw;
+        width: 50vw;
     }
 `;
 
@@ -152,9 +152,9 @@ const New = styled.div`
     font-size: 20px;
     color: white;
     padding: 10px 30px;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         font-size: 14px;
-        padding: 0 180px;
+        padding: 0 100px;
     }
 `;
 

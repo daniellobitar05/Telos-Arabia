@@ -26,6 +26,9 @@ import News15 from "../components/images/news/news15.jpg";
 import News16 from "../components/images/news/news16.png";
 import News17 from "../components/images/news/news17.png";
 import News18 from "../components/images/news/news18.png";
+import News19 from "../components/images/news/news19.jpg";
+import News20 from "../components/images/news/news20.jpg";
+import News21 from "../components/images/news/news21.png";
 
 
 const Image = styled(LinkR)`
@@ -37,11 +40,11 @@ const Image = styled(LinkR)`
 
 const Section = styled.div`
     width: 100%;
-    height: 2500px;
+    height: 3500px;
     background: #00008b;
     overflow-y: hidden;
     @media screen and (max-width: 768px) {
-        height: 1600px;
+        height: 2240px;
         
         
     }
@@ -90,11 +93,11 @@ const ColumnLeft = styled.div`
     justify-content: space-between;
     width: 33%;
     box-sizing: border-box;
-    height: 2500px;
+    height: 3500px;
     float: left;
 
     @media screen and (max-width: 768px){
-        height: 1500px;
+        height: 2100px;
         padding: 0;
         width: 33%;
     }
@@ -110,11 +113,11 @@ const ColumnMiddle = styled.div`
     position: fixed;
     left: calc(100% / 3);
     bottom: 0;
-    height: 2500px;
+    height: 3500px;
     float: left;
 
     @media screen and (max-width: 768px){
-        height: 1500px;
+        height: 2100px;
         width: 33%;
         padding: 0;
         left: calc(100% / 3);
@@ -128,10 +131,10 @@ const ColumnRight = styled.div`
     justify-content: space-between;
     width: 33%;
     box-sizing: border-box;
-    height: 2500px;
+    height: 3500px;
     float: right;
     @media screen and (max-width: 768px){
-        height: 1500px;
+        height: 2100px;
         width: 33%;
         padding: 0;
     }
@@ -203,39 +206,52 @@ $(window).on('scroll',function(){
                     <ColumnLeft>
                         <Container>
                         <Wrapper>
-                        <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg" />
-                        
+                        <img src={News1} alt="" />
                         </Wrapper>
                         <Date>JAN 20TH, 2022</Date>
                         <New>The Telos Board Elections in a Nutshell</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
+                            <img src={News2} style={{objectPosition: 'right'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
+                        <Date>JAN 7TH, 2022</Date>
+                        <New>Announcing the new Telos Roadmap</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News3} style={{objectPosition: 'right'}} alt=""/>
+                        </Wrapper>
+                        <Date>JAN 5TH, 2022</Date>
+                        <New>Meet the Telos Foundation Board!</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News4} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper>
+                        <Date>DEC 31ST, 2021</Date>
                         <New>The Telos Board Elections in a Nutshell</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
+                            <img src={News5}  alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>DEC 17TH, 2021</Date>
+                        <New>2021 Board Elections: Kick Off!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
+                            <img src={News6} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>dec 6TH, 2021</Date>
+                        <New>Important Telos Ecosystem Update</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
-                        </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                            <img src={News7} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper> 
+                        <Date>NOV 18TH, 2021</Date>
+                        <New>Trading is live on Sushiswap</New>
                         </Container>
                     </ColumnLeft>
 
@@ -243,80 +259,106 @@ $(window).on('scroll',function(){
                     <ColumnMiddle className="container-2">
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg"/>
+                            <img src={News8} alt=""/>
+                        </Wrapper> 
+                        <Date>NOV 18TH, 2021</Date>
+                        <New>dClimate + Telos + Kanda</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News9} alt=""/>
+                        </Wrapper> 
+                        <Date>NOV 17TH, 2021</Date>
+                        <New>Sushiswap launches on Telos EVM</New>
+                        </Container>
+                        <Container>
+                        <Wrapper >
+                            <img src={News10} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper> 
+                        <Date>NOV 15TH, 2021</Date>
+                        <New>Telos partners with Elastos Essentials</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News11} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper> 
+                        <Date>NOV 12TH, 2021</Date>
+                        <New>Telos & Anyswap</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News12} style={{objectPosition: 'right'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>NOV 11TH, 2021 </Date>
+                        <New>Telos lists on BitFinex!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
-                        </Wrapper> 
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                            <img src={News13} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper>
+                        <Date>NOV 11TH, 2021</Date>
+                        <New>October News Recap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
-                        </Wrapper> 
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
-                        </Container>
-                        <Container>
-                        <Wrapper>
-                            <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
-                        </Wrapper> 
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
-                        </Container>
-                        <Container>
-                        <Wrapper>
-                            <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
-                        </Wrapper> 
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                            <img src={News14} style={{objectPosition: 'center'}} alt=""/>
+                        </Wrapper>
+                        <Date>NOV 11TH, 2021</Date>
+                        <New>Telos raises $8M on strategic deal</New>
                         </Container>
                     </ColumnMiddle>
                             
 
                     <ColumnRight>
-                        <Container>
+                    <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/mknTqRSs/pexels-karolina-grabowska-5980753.jpg"/>
-                        </Wrapper> 
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
-                        </Container>
-                        <Container>
-                        <Wrapper>
-                            <img src="https://i.postimg.cc/4N15zdwq/Crypto-Back.jpg"/>
+                            <img src={News15} style={{objectPosition: 'right'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>NOV 5TH, 2021</Date>
+                        <New>Telos lists on Bitmart!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/V637HVbh/Crypto-Back2.jpg"/>
+                            <img src={News16} style={{objectPosition: 'left'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>NOV 3TH, 2021</Date>
+                        <New>Telos Punks come to the EVM</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/CMBXHjft/drip-back.png"/>
+                            <img src={News17} style={{objectPosition: 'center'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>NOV 1ST, 2021</Date>
+                        <New>Telos EVM is Live</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src="https://i.postimg.cc/6qyHHN3n/wolfgang-hasselmann-Nw-L4-Vm-Nz-Y2g-unsplash.jpg"/>
+                            <img src={News18} style={{objectPosition: 'right'}} alt=""/>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date>OCT 22TH, 2021</Date>
+                        <New>Telos EVM is Sentnl Approved</New>
                         </Container>
-                        
-
+                        <Container>
+                        <Wrapper>
+                            <img src={News19} style={{objectPosition: 'left'}} alt=""/>
+                        </Wrapper>
+                        <Date>OCT 16TH, 2021</Date>
+                        <New>Telos leads its way in sustainability</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News20} style={{objectPosition: 'right'}} alt=""/>
+                        </Wrapper>
+                        <Date>OCT 1ST, 2021</Date>
+                        <New>The EVM Launch Roadmap</New>
+                        </Container>
+                        <Container>
+                        <Wrapper>
+                            <img src={News21} style={{objectPosition: 'center'}} alt=""/>
+                        </Wrapper>
+                        <Date>SEP 9TH, 2021</Date>
+                        <New>Decide Voter Contest</New>
+                        </Container>
                     </ColumnRight>
                 </Section>
             </motion.div>

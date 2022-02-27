@@ -39,6 +39,7 @@ const Section = styled.div`
     width: 100%;
     height: 2500px;
     background: #00008b;
+    overflow-y: hidden;
     @media screen and (max-width: 768px) {
         height: 1600px;
         
@@ -95,7 +96,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         height: 1500px;
         padding: 0;
-        width: 25%;
+        width: 33%;
     }
 `;
 
@@ -114,7 +115,7 @@ const ColumnMiddle = styled.div`
 
     @media screen and (max-width: 768px){
         height: 1500px;
-        width: 25%;
+        width: 33%;
         padding: 0;
         left: calc(100% / 3);
     }
@@ -131,7 +132,7 @@ const ColumnRight = styled.div`
     float: right;
     @media screen and (max-width: 768px){
         height: 1500px;
-        width: 25%;
+        width: 33%;
         padding: 0;
     }
 `;
@@ -157,6 +158,7 @@ const New = styled.div`
         padding: 0 100px;
     }
 `;
+
 
 
 

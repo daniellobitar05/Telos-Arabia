@@ -40,7 +40,7 @@ const Section = styled.div`
     height: 2500px;
     background: #00008b;
     @media screen and (max-width: 768px) {
-        height: 1500px;
+        height: 1600px;
         
         
     }
@@ -78,7 +78,7 @@ const Container = styled.div`
         transform: scale(1.1, 1.1);
     }
     @media screen and (max-width: 768px){
-        width: 350px;
+        width: 33vw;
     }
 `;
 
@@ -116,7 +116,7 @@ const ColumnMiddle = styled.div`
         height: 1500px;
         width: 25%;
         padding: 0;
-        left: calc(100% / 4);
+        left: calc(100% / 3);
     }
 `;
 
@@ -173,14 +173,14 @@ document.onmousemove = (ev) => {
     cursor.style.left = ev.clientX+"px";  
 }
 
-document.querySelectorAll('.image').forEach(item => {
+/* document.querySelectorAll('.image').forEach(item => {
     item.addEventListener('mouseover', event => {
         cursor.classList.add("active")
     })
     item.addEventListener('mouseleave', event => {
         cursor.classList.remove("active")
     })
-})
+}) */
 
 
 $(window).on('scroll',function(){

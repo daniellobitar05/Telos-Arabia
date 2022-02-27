@@ -95,6 +95,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         height: 1500px;
         padding: 0;
+        width: 25%;
     }
 `;
 
@@ -113,8 +114,9 @@ const ColumnMiddle = styled.div`
 
     @media screen and (max-width: 768px){
         height: 1500px;
+        width: 25%;
         padding: 0;
-        left: calc(100% / 4.5);
+        left: calc(100% / 4);
     }
 `;
 
@@ -129,6 +131,7 @@ const ColumnRight = styled.div`
     float: right;
     @media screen and (max-width: 768px){
         height: 1500px;
+        width: 25%;
         padding: 0;
     }
 `;

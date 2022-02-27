@@ -107,6 +107,7 @@ const Description = styled(motion.div)`
     line-height: 15px;
     @media screen and (max-width: 660px){
         padding: 0 40px;
+        font-size: 14px;
     }
 `;
 

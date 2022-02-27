@@ -28,7 +28,7 @@ const HeaderText = styled(motion.div)`
     padding: 80px 50px;
     text-align: center;
     @media screen and (max-width: 660px){
-        font-size: 70px;
+        font-size: 50px;
     }
 `;
 
@@ -47,7 +47,7 @@ const TextContainer = styled.div`
     margin-bottom: 50px;
     @media screen and (max-width: 768px){
         width: 80%;
-        height: 500px;
+        height: 550px;
         top: 45%;
         width: 90%;
     }

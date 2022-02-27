@@ -47,14 +47,13 @@ const TextContainer = styled.div`
     margin-bottom: 50px;
     @media screen and (max-width: 768px){
         width: 80%;
-        height: 550px;
-        top: 45%;
-        width: 90%;
+        height: 600px;
+        
     }
     @media screen and (max-width: 660px){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        top: 80%;
+        
     }
 `;
 
@@ -81,7 +80,7 @@ const Title = styled(motion.h1)`
     color: aqua;
     text-align: center;
     @media screen and (max-width: 660px){
-        font-size: 18px;
+        font-size: 16px;
         
     }
 `;
@@ -92,7 +91,7 @@ const Subtitle = styled(motion.div)`
     text-align: center;
     padding: 0 20px;
     @media screen and (max-width: 660px){
-        font-size: 14px;
+        font-size: 12px;
         padding: 0px;
     }
 `;

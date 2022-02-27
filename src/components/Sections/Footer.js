@@ -18,12 +18,10 @@ const Section = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    span img{
-        width: 100%;
-        height: 100%;
-        transform: rotate(-45deg);
-        cursor: pointer;
+    @media screen and (max-width:768px){
+        height: 70vh;
     }
+    
     
 `;
 
@@ -39,11 +37,12 @@ const Title = styled(motion.div)`
     text-align: center;
     
     justify-content: center;
-    @media screen and (max-width: 660px){
-        font-size: 24px;
+    @media screen and (max-width: 760px){
+        font-size: 18px;
         height: 20vh;
-        padding-top: 20px;
-        height: 20vh;
+        padding: 40px 30px;
+        
+        
     }
 `;
 
@@ -75,35 +74,28 @@ const Copyright = styled.div`
     width: 60%;
     height: 30vh;
     display: flex;
+    @media screen and (max-width:768px){
+        width: 100%;
+    }
 `;
 
 const FooterText = styled.div`
     display: flex;
     font-size: 18px;
     color: white;
+    @media screen and (max-width:768px){
+        font-size: 14px;
+        text-align: center;
+    }
 `;
 
 
 
-const containerStyle = {
-    display: 'flex',
-    width: '80%',
-    height: '40vh',
-    background: 'purple',
-    justifyContent: 'space-around'
-}
 
 
 
-const ballStyle = {
-    display: "block",
-    width: '85px',
-    height: '85px',
-    backgroundColor: 'indigo',
-    borderRadius: '40%',
-    rotate: '45deg'
-   
-}
+
+
 
 const ContainerVariants = {
     start: {
@@ -133,27 +125,56 @@ const CircleTransition = {
     ease: 'easeInOut',
 };
 
-const Reducer = styled.div`
-    @media screen and (max-width: 768px){
-        transform: scale(0.6);
+const IconHolder = styled(motion.div)`
+    display: flex;
+    width: 80%;
+    height: 40vh;
+    background: purple;
+    justify-content: space-around;
+    @media screen and (max-width:768px){
+        height: 20vh;
+    }
+    span{
+        display: flex;
+        width: 85px;
+        height: 85px;
+        background: indigo;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 768px){
+            width: 40px;
+            height: 40px;
+        }
+        
+    }
+    span img{
+        width: 90%;
+        height: 90%;
+        
+        
+        cursor: pointer;
     }
 `;
 
 
 const Footer = () => {
+
+    
+
     return(
         <Section>
             <Title>If you have a question or would like more information please contact us by email</Title>
-            <motion.div style={containerStyle} variants={ContainerVariants} initial='start' animate='end'>
-                <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
-                <a href="https://www.youtube.com/c/TheTelosNetwork" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Youtube} alt="Youtube"/></motion.span></a>
-                <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Telegram} alt="Telegram"/></motion.span></a>
-                <a href="https://github.com/telosnetwork" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Github} alt="Github"/></motion.span></a>
-                <a href="https://www.linkedin.com/company/telos-blockchain-network" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Linkedin} alt="Linkedin"/></motion.span></a>
-                <a href="https://www.instagram.com/hellotelos/" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Instagram} alt="Instagram"/></motion.span></a>
-                <a href="https://twitter.com/HelloTelos?s=20" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Twitter} alt="Twitter"/></motion.span></a>
-                <a href="https://www.facebook.com/groups/telosnetwork/" target="_blank" rel="noreferrer"><motion.span style={ballStyle} variants={CircleVariants}  transition={CircleTransition}><img src={Facebook} alt="Facebook"/></motion.span></a>
-            </motion.div>
+            <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
+                <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
+                <a href="https://www.youtube.com/c/TheTelosNetwork" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Youtube} alt="Youtube"/></motion.span></a>
+                <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Telegram} alt="Telegram"/></motion.span></a>
+                <a href="https://github.com/telosnetwork" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Github} alt="Github"/></motion.span></a>
+                <a href="https://www.linkedin.com/company/telos-blockchain-network" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Linkedin} alt="Linkedin"/></motion.span></a>
+                <a href="https://www.instagram.com/hellotelos/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Instagram} alt="Instagram"/></motion.span></a>
+                <a href="https://twitter.com/HelloTelos?s=20" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Twitter} alt="Twitter"/></motion.span></a>
+                <a href="https://www.facebook.com/groups/telosnetwork/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Facebook} alt="Facebook"/></motion.span></a>
+            </IconHolder>
             <Copyright>
                 <ColumnLeft>
                 <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>

@@ -12,7 +12,7 @@ const Section = styled.div`
     background: black;
     @media screen and (max-width: 660px){
        
-        height: 140vh;
+        height: 160vh;
     }
 
 `;
@@ -74,7 +74,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;
-        height: 60vh;
+        height: 80vh;
     }
 `;
 

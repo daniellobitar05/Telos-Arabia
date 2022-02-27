@@ -46,7 +46,7 @@ const TextContainer = styled.div`
     grid-template-rows: 1fr 1fr;
     margin-bottom: 50px;
     @media screen and (max-width: 768px){
-        width: 80%;
+        width: 90%;
         height: 600px;
         
     }

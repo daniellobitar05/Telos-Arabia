@@ -24,7 +24,7 @@ const Section = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 500vh;
+        height: 470vh;
     }
 `;
 
@@ -46,7 +46,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;
-        height: 250vh;
+        height: 220vh;
     }
 `;
 
@@ -127,13 +127,17 @@ const InnerTitle = styled.div`
     color: ${props => props.theme.text};
     font-weight: bold;
     margin: 40px 0;
+    @media screen and (max-width: 768px){
+        font-size: 26px;
+    }
 `;
 
 const InnerSubtititle = styled.div`
     font-size: 20px;
     
     color: ${props => props.theme.text};
-    line-height: 15px;
+    line-height: 12px;
+    font-size: 16px;
     text-align: center;
     a{
         color: aqua;

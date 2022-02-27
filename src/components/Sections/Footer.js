@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {motion} from "framer-motion";
-
+import EmailIcon from '@mui/icons-material/Email';
 import Telegram from "../SVG/social/telegram.svg"
 import Youtube from "../SVG/social/youtube.svg"
 import Discord from "../SVG/social/discord.svg"
@@ -19,7 +19,7 @@ const Section = styled(motion.div)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width:768px){
-        height: 100vh;
+        height: 130vh;
     }
     
     
@@ -40,9 +40,67 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 760px){
         font-size: 18px;
         height: 20vh;
-        padding: 20px 20px;
+        padding: 0px 20px;
     }
 `;
+
+const Mail = styled.div`
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+`;
+
+const IconHolder = styled(motion.div)`
+    display: flex;
+    width: 80%;
+    height: 50vh;
+    background: purple;
+    justify-content: space-around;
+    @media screen and (max-width:768px){
+        height: 100vw;
+        width: 70vh;
+        transform: rotate(90deg) scale(0.9);
+        align-items: center;
+    }
+    span{
+        display: flex;
+        width: 85px;
+        height: 85px;
+        background: indigo;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 768px){
+            width: 50px;
+            height: 50px;
+            
+        }
+        
+    }
+    span img{
+        width: 90%;
+        height: 90%;
+        cursor: pointer;
+        @media screen and (max-width: 768px){
+            transform: rotate(-90deg);
+        }
+    }
+`;
+
+const Copyright = styled.div`
+    width: 60%;
+    height: 20vh;
+    display: flex;
+    @media screen and (max-width:768px){
+        width: 80%;
+        height: 20vh;
+        padding-top: 50px;
+    }
+`;
+
 
 
 
@@ -69,15 +127,7 @@ const ColumnRight = styled.div`
     justify-content: center;
 `;
 
-const Copyright = styled.div`
-    width: 60%;
-    height: 30vh;
-    display: flex;
-    @media screen and (max-width:768px){
-        width: 80%;
-        height: 20vh;
-    }
-`;
+
 
 const FooterText = styled.div`
     display: flex;
@@ -125,42 +175,6 @@ const CircleTransition = {
     ease: 'easeInOut',
 };
 
-const IconHolder = styled(motion.div)`
-    display: flex;
-    width: 80%;
-    height: 40vh;
-    background: purple;
-    justify-content: space-around;
-    @media screen and (max-width:768px){
-        height: 100vw;
-        width: 60vh;
-        transform: rotate(90deg);
-        align-items: center;
-    }
-    span{
-        display: flex;
-        width: 85px;
-        height: 85px;
-        background: indigo;
-        border-radius: 40px;
-        align-items: center;
-        justify-content: center;
-        @media screen and (max-width: 768px){
-            width: 50px;
-            height: 50px;
-            
-        }
-        
-    }
-    span img{
-        width: 90%;
-        height: 90%;
-        cursor: pointer;
-        @media screen and (max-width: 768px){
-            transform: rotate(-90deg);
-        }
-    }
-`;
 
 
 const Footer = () => {
@@ -170,6 +184,9 @@ const Footer = () => {
     return(
         <Section>
             <Title>If you have a question or would like more information please contact us by email</Title>
+            <Mail>
+                <a href="mailto:hello@telosfoundation.io">hello@telosfoundation.io</a>
+            </Mail>
             <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
                 <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
                 <a href="https://www.youtube.com/c/TheTelosNetwork" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Youtube} alt="Youtube"/></motion.span></a>

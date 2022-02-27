@@ -108,12 +108,12 @@ const ballStyle = {
 const ContainerVariants = {
     start: {
         transition: {
-          staggerChildren: 0.5
+          staggerChildren: 0.25
         }
     },
     end: {
         transition: {
-           staggerChildren: 0.5
+           staggerChildren: 0.25
         }
     }
 };

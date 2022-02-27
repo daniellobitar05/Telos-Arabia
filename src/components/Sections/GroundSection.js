@@ -22,7 +22,7 @@ const Section = styled.div`
     height: 140vh;
 `;
 
-const HeaderText = styled.div`
+const HeaderText = styled(motion.div)`
     font-size: 100px;
     color: ${props => props.theme.text};
     padding: 80px 50px;
@@ -142,7 +142,7 @@ const GroundSection = () => {
 
     return(
         <Section ref={ref}>
-            <HeaderText>ض تهد بلوكتشين</HeaderText>
+            <HeaderText animate={animation}>بلوكتشين تهد الارض</HeaderText>
             <TextContainer>
                 <Column>
                     <Image src={NoFront} alt="" animate={animation} whileHover={{scale: 1.1}}/>

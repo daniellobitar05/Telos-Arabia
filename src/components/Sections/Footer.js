@@ -165,7 +165,7 @@ const Footer = () => {
     return(
         <Section>
             <Title>If you have a question or would like more information please contact us by email</Title>
-            <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
+            {/* <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
                 <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
                 <a href="https://www.youtube.com/c/TheTelosNetwork" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Youtube} alt="Youtube"/></motion.span></a>
                 <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Telegram} alt="Telegram"/></motion.span></a>
@@ -174,7 +174,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/hellotelos/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Instagram} alt="Instagram"/></motion.span></a>
                 <a href="https://twitter.com/HelloTelos?s=20" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Twitter} alt="Twitter"/></motion.span></a>
                 <a href="https://www.facebook.com/groups/telosnetwork/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Facebook} alt="Facebook"/></motion.span></a>
-            </IconHolder>
+            </IconHolder> */}
             <Copyright>
                 <ColumnLeft>
                 <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>

@@ -250,49 +250,49 @@ $(window).on('scroll',function(){
                     <ColumnLeft>
                         <Container>
                         <Wrapper>
-                        <img src={News1} alt="" />
+                        <a href="https://www.telos.net/news/telos-board-elections-summary" target="_blank" rel="noreferrer"><img src={News1} alt="" /></a>
                         </Wrapper>
                         <Date>JAN 20TH, 2022</Date>
                         <New>The Telos Board Elections in a Nutshell</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News2} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><img src={News2} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>JAN 7TH, 2022</Date>
                         <New>Announcing the new Telos Roadmap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News3} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/meet-telos-foundation-board" target="_blank" rel="noreferrer"><img src={News3} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>JAN 5TH, 2022</Date>
                         <New>Meet the Telos Foundation Board!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News4} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-2021-recap" target="_blank" rel="noreferrer"><img src={News4} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
                         <Date>DEC 31ST, 2021</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <New>The Telos 2021 Recap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News5}  alt=""/>
+                        <a href="https://www.telos.net/news/2021-board-elections-kick-off" target="_blank" rel="noreferrer"><img src={News5}  alt=""/></a>
                         </Wrapper>
                         <Date>DEC 17TH, 2021</Date>
                         <New>2021 Board Elections: Kick Off!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News6} alt=""/>
+                        <a href="https://www.telos.net/news/important-telos-ecosystem-update" target="_blank" rel="noreferrer"><img src={News6} alt=""/></a>
                         </Wrapper>
                         <Date>dec 6TH, 2021</Date>
                         <New>Important Telos Ecosystem Update</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News7} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-trading-live-sushiswap" target="_blank" rel="noreferrer"> <img src={News7} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
                         <Date>NOV 18TH, 2021</Date>
                         <New>Trading is live on Sushiswap</New>
@@ -307,49 +307,49 @@ $(window).on('scroll',function(){
                     <ColumnMiddle className="container-2">
                         <Container>
                         <Wrapper>
-                            <img src={News8} alt=""/>
+                        <a href="https://www.telos.net/news/telos-stores-critical-climate-data" target="_blank" rel="noreferrer"><img src={News8} alt=""/></a>
                         </Wrapper> 
                         <Date>NOV 18TH, 2021</Date>
                         <New>dClimate + Telos + Kanda</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News9} alt=""/>
+                        <a href="https://www.telos.net/news/sushiswap-partners-with-telos" target="_blank" rel="noreferrer"> <img src={News9} alt=""/></a>
                         </Wrapper> 
                         <Date>NOV 17TH, 2021</Date>
                         <New>Sushiswap launches on Telos EVM</New>
                         </Container>
                         <Container>
                         <Wrapper >
-                            <img src={News10} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-partners-with-elastos-essentials" target="_blank" rel="noreferrer"><img src={News10} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
                         <Date>NOV 15TH, 2021</Date>
                         <New>Telos partners with Elastos Essentials</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News11} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-anyswap-building-bridges" target="_blank" rel="noreferrer"> <img src={News11} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
                         <Date>NOV 12TH, 2021</Date>
                         <New>Telos & Anyswap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News12} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/tlos-bitfinex-listing-details" target="_blank" rel="noreferrer"><img src={News12} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 11TH, 2021 </Date>
                         <New>Telos lists on BitFinex!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News13} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-foundation-october-report" target="_blank" rel="noreferrer"> <img src={News13} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 11TH, 2021</Date>
                         <New>October News Recap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News14} style={{objectPosition: 'center'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-raises-million-strategic-investment" target="_blank" rel="noreferrer"> <img src={News14} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 11TH, 2021</Date>
                         <New>Telos raises $8M on strategic deal</New>
@@ -360,49 +360,49 @@ $(window).on('scroll',function(){
                     <ColumnRight>
                     <Container>
                         <Wrapper>
-                            <img src={News15} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/bitmart-lists-telos" target="_blank" rel="noreferrer"><img src={News15} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 5TH, 2021</Date>
                         <New>Telos lists on Bitmart!</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News16} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telospunks-come-to-telos-evm" target="_blank" rel="noreferrer"> <img src={News16} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 3TH, 2021</Date>
                         <New>Telos Punks come to the EVM</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News17} style={{objectPosition: 'center'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-evm-mainet-live" target="_blank" rel="noreferrer"><img src={News17} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
                         <Date>NOV 1ST, 2021</Date>
                         <New>Telos EVM is Live</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News18} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-evm-approved-audit-certificate-received" target="_blank" rel="noreferrer"><img src={News18} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>OCT 22TH, 2021</Date>
                         <New>Telos EVM is Sentnl Approved</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News19} style={{objectPosition: 'left'}} alt=""/>
+                        <a href="https://www.telos.net/news/telos-esg-crypto" target="_blank" rel="noreferrer"><img src={News19} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
                         <Date>OCT 16TH, 2021</Date>
                         <New>Telos leads its way in sustainability</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News20} style={{objectPosition: 'right'}} alt=""/>
+                        <a href="https://www.telos.net/news/the-telos-evm-mainnet-launch-has-started-and-roadmap-is-out" target="_blank" rel="noreferrer"><img src={News20} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
                         <Date>OCT 1ST, 2021</Date>
                         <New>The EVM Launch Roadmap</New>
                         </Container>
                         <Container>
                         <Wrapper>
-                            <img src={News21} style={{objectPosition: 'center'}} alt=""/>
+                        <a href="https://www.telos.net/news/decide-voter-contest" target="_blank" rel="noreferrer"> <img src={News21} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
                         <Date>SEP 9TH, 2021</Date>
                         <New>Decide Voter Contest</New>

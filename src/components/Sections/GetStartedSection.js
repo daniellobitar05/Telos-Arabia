@@ -257,7 +257,7 @@ const IconHolder = styled.div`
     
 `;
 
-const Icon = styled(motion.div)`
+const Icon = styled(motion.a)`
     background: indigo;
     display: flex;
     margin: auto auto 30px auto;
@@ -397,21 +397,20 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, 360, 360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}
-                >
-                <img src={CEX} alt="cex" />
+                }} href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer">
+                <img src={DEX} alt="cex" />
                 </Icon>
-                <InnerSubtititle>DEX أرسل من محقظة </InnerSubtititle>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle>DEX أرسل من محقظة </InnerSubtititle></a>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}>
-                <img src={DEX} alt="dex" />
+                }} href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer">
+                <img src={CEX} alt="dex" />
                 </Icon>
-                <InnerSubtititle>CEX رسل من محقظة </InnerSubtititle>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle>CEX رسل من محقظة </InnerSubtititle></a>
                 </IconColumn>
             </IconHolder>
             <HelpTitle >هل تريد المزيد من المساعدة؟</HelpTitle>
@@ -458,20 +457,20 @@ const GetStartedSection = () => {
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, 360, 360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}>
+                }} href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer">
                 <img src={CEX} alt="cex" />
                 </Icon>
-                <InnerSubtititle>CEX رسل من محقظة </InnerSubtititle>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle>CEX رسل من محقظة </InnerSubtititle></a>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
                 borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-                }}>
+                }} href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer">
                 <img src={DEX} alt="dex" />
                 </Icon>
-                <InnerSubtititle>DEX رسل من محقظة </InnerSubtititle>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle>DEX رسل من محقظة </InnerSubtititle></a>
                 </IconColumn>
             </IconHolder>
         </ColumnRight>

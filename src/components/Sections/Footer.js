@@ -19,7 +19,7 @@ const Section = styled(motion.div)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width:768px){
-        height: 120vh;
+        height: 100vh;
     }
     
     
@@ -31,7 +31,7 @@ const Title = styled(motion.div)`
     font-size: 48px;
     padding: 0 100px;
     display: flex;
-    padding-top: 80px;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -40,9 +40,7 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 760px){
         font-size: 18px;
         height: 20vh;
-        padding: 40px 30px;
-        
-        
+        padding: 20px 20px;
     }
 `;
 
@@ -57,6 +55,7 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 `;
 
 const ColumnRight = styled.div`
@@ -75,7 +74,7 @@ const Copyright = styled.div`
     height: 30vh;
     display: flex;
     @media screen and (max-width:768px){
-        width: 100%;
+        width: 80%;
         height: 20vh;
     }
 `;
@@ -133,7 +132,8 @@ const IconHolder = styled(motion.div)`
     background: purple;
     justify-content: space-around;
     @media screen and (max-width:768px){
-        height: 80vh;
+        height: 100vw;
+        width: 60vh;
         transform: rotate(90deg);
         align-items: center;
     }

@@ -19,7 +19,7 @@ const Section = styled(motion.div)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width:768px){
-        height: 70vh;
+        height: 120vh;
     }
     
     
@@ -76,6 +76,7 @@ const Copyright = styled.div`
     display: flex;
     @media screen and (max-width:768px){
         width: 100%;
+        height: 20vh;
     }
 `;
 
@@ -132,7 +133,9 @@ const IconHolder = styled(motion.div)`
     background: purple;
     justify-content: space-around;
     @media screen and (max-width:768px){
-        height: 20vh;
+        height: 80vh;
+        transform: rotate(90deg);
+        align-items: center;
     }
     span{
         display: flex;
@@ -143,17 +146,19 @@ const IconHolder = styled(motion.div)`
         align-items: center;
         justify-content: center;
         @media screen and (max-width: 768px){
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
+            
         }
         
     }
     span img{
         width: 90%;
         height: 90%;
-        
-        
         cursor: pointer;
+        @media screen and (max-width: 768px){
+            transform: rotate(-90deg);
+        }
     }
 `;
 
@@ -165,7 +170,7 @@ const Footer = () => {
     return(
         <Section>
             <Title>If you have a question or would like more information please contact us by email</Title>
-            {/* <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
+            <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
                 <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
                 <a href="https://www.youtube.com/c/TheTelosNetwork" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Youtube} alt="Youtube"/></motion.span></a>
                 <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Telegram} alt="Telegram"/></motion.span></a>
@@ -174,7 +179,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/hellotelos/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Instagram} alt="Instagram"/></motion.span></a>
                 <a href="https://twitter.com/HelloTelos?s=20" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Twitter} alt="Twitter"/></motion.span></a>
                 <a href="https://www.facebook.com/groups/telosnetwork/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Facebook} alt="Facebook"/></motion.span></a>
-            </IconHolder> */}
+            </IconHolder>
             <Copyright>
                 <ColumnLeft>
                 <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>

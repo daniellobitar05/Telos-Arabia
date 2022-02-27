@@ -174,6 +174,11 @@ const IconHolder = styled.div`
     justify-content: center;
     transform: scale(1.5);
     padding-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+        padding-bottom: 0;
+        padding-top: 40px;
+    }
     
 `;
 

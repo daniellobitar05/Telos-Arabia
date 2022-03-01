@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 12.5V19.5" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M13.5 24.5H19.5" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M27.9263 28.1406L37.0734 37.8595" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M35.5 41.5H29.5" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M8.5 12.5C11.2614 12.5 13.5 10.2614 13.5 7.5C13.5 4.73858 11.2614 2.5 8.5 2.5C5.73858 2.5 3.5 4.73858 3.5 7.5C3.5 10.2614 5.73858 12.5 8.5 12.5Z" stroke="#1AD6FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M24.5 12.5C27.2614 12.5 29.5 10.2614 29.5 7.5C29.5 4.73858 27.2614 2.5 24.5 2.5C21.7386 2.5 19.5 4.73858 19.5 7.5C19.5 10.2614 21.7386 12.5 24.5 12.5Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M40.5 12.5C43.2614 12.5 45.5 10.2614 45.5 7.5C45.5 4.73858 43.2614 2.5 40.5 2.5C37.7386 2.5 35.5 4.73858 35.5 7.5C35.5 10.2614 37.7386 12.5 40.5 12.5Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M8.5 29.5C11.2614 29.5 13.5 27.2614 13.5 24.5C13.5 21.7386 11.2614 19.5 8.5 19.5C5.73858 19.5 3.5 21.7386 3.5 24.5C3.5 27.2614 5.73858 29.5 8.5 29.5Z" stroke="#1AD6FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M24.5 29.5C27.2614 29.5 29.5 27.2614 29.5 24.5C29.5 21.7386 27.2614 19.5 24.5 19.5C21.7386 19.5 19.5 21.7386 19.5 24.5C19.5 27.2614 21.7386 29.5 24.5 29.5Z" stroke="#1AD6FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M40.5 29.5C43.2614 29.5 45.5 27.2614 45.5 24.5C45.5 21.7386 43.2614 19.5 40.5 19.5C37.7386 19.5 35.5 21.7386 35.5 24.5C35.5 27.2614 37.7386 29.5 40.5 29.5Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M8.5 46.5C11.2614 46.5 13.5 44.2614 13.5 41.5C13.5 38.7386 11.2614 36.5 8.5 36.5C5.73858 36.5 3.5 38.7386 3.5 41.5C3.5 44.2614 5.73858 46.5 8.5 46.5Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M24.5 46.5C27.2614 46.5 29.5 44.2614 29.5 41.5C29.5 38.7386 27.2614 36.5 24.5 36.5C21.7386 36.5 19.5 38.7386 19.5 41.5C19.5 44.2614 21.7386 46.5 24.5 46.5Z" stroke="#1AD6FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M40.5 46.5C43.2614 46.5 45.5 44.2614 45.5 41.5C45.5 38.7386 43.2614 36.5 40.5 36.5C37.7386 36.5 35.5 38.7386 35.5 41.5C35.5 44.2614 37.7386 46.5 40.5 46.5Z" stroke="#1AD6FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+</svg>

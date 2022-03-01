@@ -129,7 +129,7 @@ const Anim = styled.div`
     background-position: 50% 40%;
     background-color: ${props => props.theme.body};
     @media screen and (max-width: 768px){
-        height: 80vh;
+        height: 90vh;
         background-size: 200px 75px;
     }
     

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/index.js";
 import News from "./pages/News.js";
+import Developers from "./pages/Developers.js";
+import About from "./pages/About.js";
 //import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<Home />}/>
                 <Route exact path="/News" element={<News />}/>
+                <Route exact path="/Developers" element={<Developers />}/>
+                <Route exact path="/About" element={<About />}/>
               </Routes>
             </AnimatePresence>
       </ScrollToTop>

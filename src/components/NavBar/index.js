@@ -491,7 +491,7 @@ const BuyMenu = styled.div`
     z-index: 150;
 `;
 
-const SubMenu = styled.div`
+const SubMenu = styled(motion.div)`
     height: 95%;
     width: 95%;
     display: flex;
@@ -699,10 +699,10 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'build'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem>
-            <DropDownItem  rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem>
-            <DropDownItem  rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem>
-            <DropDownItem  rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem>
+            <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem></a>
+            <LinkR to="/Developers"><DropDownItem  rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem></LinkR>
+            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem></a>
+            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem></a>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -760,7 +760,7 @@ const DropDownMenu = () => {
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
             <LinkR to="/News"> <DropDownItem rightIcon={<NewsIcon/>}>NEWS</DropDownItem></LinkR>
-            <DropDownItem rightIcon={<AboutIcon/>}>ABOUT</DropDownItem>
+            <LinkR to="/About"><DropDownItem rightIcon={<AboutIcon/>}>ABOUT</DropDownItem></LinkR>
             <DropDownItem rightIcon={<JoinIcon/>}>JOIN THE TEAM</DropDownItem>
             <DropDownItem rightIcon={<MeetTeamIcon/>}>MEET THE TEAM</DropDownItem>
             <DropDownItem rightIcon={<MeetBoardIcon/>}>MEET THE BOARD</DropDownItem>
@@ -773,6 +773,22 @@ const DropDownMenu = () => {
           
     )
 }
+
+const MenuVariants = {
+    start: {
+        transition: {
+            staggerChildren: 0.07,
+            delayChildren: 0.2
+        }
+    },
+    end: {
+        transition: {
+            staggerChildren: 0.05,
+            delayChildren: 0.2,
+            staggerDirection: 1
+        }
+    }
+};
 
 
 
@@ -936,7 +952,7 @@ const Header = (props) => {
     return(
         <>
         <Nav scrollNavDown={scrollNavDown}>
-            <Image src={TelosLogo} alt="logo" />
+            <LinkR to="/"><Image src={TelosLogo} alt="logo" /></LinkR>
             <IconButton onClick={changeTheme}><SwitchIcon >
                 {icon}
             </SwitchIcon></IconButton>
@@ -949,14 +965,14 @@ const Header = (props) => {
                 </motion.div> 
                 </NavWrapper>
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave} scrollNavDown={switchAboutLeave}>
-                <AboutMenu>
-                    <SubMenu>
+                <AboutMenu variants={MenuVariants} initial="start" animate="end">
+                    <SubMenu >
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
                         <LinkR to="/News"><MenuText>NEWS</MenuText></LinkR>
                         <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>ABOUT</MenuText>
+                    <LinkR to="/About"> <MenuText>ABOUT</MenuText></LinkR>
                         <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
@@ -1075,19 +1091,19 @@ const Header = (props) => {
                     <BuildMenu>
                         <SubMenu>
                             <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                                <MenuText>ROADMAP</MenuText>
+                            <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><MenuText>ROADMAP</MenuText></a>
                                 <MapIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                                <MenuText>DEVELOPERS</MenuText>
+                            <LinkR to="/Developers"><MenuText>DEVELOPERS</MenuText></LinkR>
                                 <DeveloperBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                                <MenuText>DOCUMENTATION</MenuText>
+                            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><MenuText>DOCUMENTATION</MenuText></a>
                                 <ArticleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                                <MenuText>GRANT PROGRAM</MenuText>
+                            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><MenuText>GRANT PROGRAM</MenuText></a>
                                 <LocalFireDepartmentIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                         </SubMenu>

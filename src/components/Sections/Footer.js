@@ -171,12 +171,12 @@ const FooterText = styled.div`
 const ContainerVariants = {
     start: {
         transition: {
-          staggerChildren: 0.25
+          staggerChildren: 0.4
         }
     },
     end: {
         transition: {
-           staggerChildren: 0.25
+           staggerChildren: 0.4
         }
     }
 };

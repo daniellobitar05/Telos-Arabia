@@ -7,6 +7,7 @@ import {IconButton} from "@mui/material";
 import {useInView} from "react-intersection-observer";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
 import Telos from "../images/telos_logo.png";
 import ADA from "../images/ada_logo.png";
@@ -112,20 +113,63 @@ const Row = styled.div`
     display: inline-flex;
 `;
 
-const pathVariants = {
-    hidden: {
-        opacity: 0,
-        pathLength: 0
-    },
-    visible: {
-        opacity: 1,
-        pathLength: 1,
-        transition: {
-            duration: 5,
-            ease: "easeInOut"
-        }
-    }
-}
+const ArrowDown = styled(KeyboardArrowDownIcon)`
+    color: white;
+`;
+
+const ArrowUp = styled(KeyboardArrowUpIcon)`
+    color: white;
+`;
+
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
+`;
+
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+`;
+
+const ToggleColumn = styled.div`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+`;
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+    
+    
+`;
+
 
 
 
@@ -181,6 +225,10 @@ const ChartSection = () => {
         }
         
     }, [inView])
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
 
     return(
         <Section id="chart">
@@ -297,7 +345,16 @@ const ChartSection = () => {
                 <BigItem>dApp Gov Engine</BigItem>
                 </Row>
             </Column>
-
+            <Empty>
+                <IconColumnLeft to="features" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
+            <EmptyColumn></EmptyColumn>
+                <IconColumnRight to="purpose" smooth={true} duration={1000} spy={true} exact="true">
+                    <IconButton ><ArrowUp /></IconButton>
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
+            </Empty>
         </Section>
     );
 }

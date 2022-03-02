@@ -11,6 +11,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
 import PurposeSection from "../components/Sections/PurposeSection";
 import ChartSection from "../components/Sections/ChartSection";
+import GraphSection from "../components/Sections/GraphSection";
+import FeaturesSection from "../components/Sections/FeaturesSection";
 
 const Section = styled.div`
     width: 100%;
@@ -89,6 +91,8 @@ const About = () => {
         </Section>
         <PurposeSection />
         <ChartSection />
+        <FeaturesSection />
+        <GraphSection />
         </ThemeProvider>
     );
 }

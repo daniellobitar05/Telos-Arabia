@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import {motion} from "framer-motion";
+import { animateScroll as scroll } from "react-scroll";
 import EmailIcon from '@mui/icons-material/Email';
+import {IconButton} from "@mui/material";
 import Telegram from "../SVG/social/telegram.svg"
 import Youtube from "../SVG/social/youtube.svg"
 import Discord from "../SVG/social/discord.svg"
@@ -9,6 +11,7 @@ import Linkedin from "../SVG/social/linkedin.svg"
 import Github from "../SVG/social/github.svg"
 import Twitter from "../SVG/social/twitter.svg"
 import Instagram from "../SVG/social/instagram.svg"
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
 const Section = styled(motion.div)`
     height: 100vh;
@@ -112,7 +115,7 @@ const IconHolder = styled(motion.div)`
 `;
 
 const Copyright = styled.div`
-    width: 60%;
+    width: 100%;
     height: 20vh;
     display: flex;
     @media screen and (max-width:768px){
@@ -126,7 +129,7 @@ const Copyright = styled.div`
 
 
 const ColumnLeft = styled.div`
-    width: 50%;
+    width: 25%;
     height: 100%;
     
     float: left;
@@ -138,14 +141,28 @@ const ColumnLeft = styled.div`
 `;
 
 const ColumnRight = styled.div`
-    width: 50%;
+    width: 25%;
     height: 100%;
     
+    float: left;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const IconColumn = styled.div`
+    width: 25%;
+    height: 100%;
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+`;
+
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
 `;
 
 
@@ -200,10 +217,12 @@ const CircleTransition = {
 
 const Footer = () => {
 
-    
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
 
     return(
-        <Section>
+        <Section id="footer">
             <Title>If you have a question or would like more information please contact us by email</Title>
             <Mail>
                 <a href="mailto:hello@telosfoundation.io"><motion.span><IconMail /></motion.span></a>
@@ -220,6 +239,9 @@ const Footer = () => {
                 <a href="https://www.facebook.com/groups/telosnetwork/" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Facebook} alt="Facebook"/></motion.span></a>
             </IconHolder>
             <Copyright>
+                <IconColumn>
+                
+                </IconColumn>
                 <ColumnLeft>
                 <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>
                 <a href="https://www.telos.net/privacy-policy" target="_blank" rel="noreferrer"><FooterText>Privacy Policy</FooterText></a>
@@ -229,6 +251,9 @@ const Footer = () => {
                     <FooterText>© 2022 Telos</FooterText>
                     <FooterText>Where Purpose Meets People</FooterText>
                 </ColumnRight>
+                <IconColumn>
+                <IconButton onClick={toggleHome}><ArrowHome /></IconButton>
+                </IconColumn>
             </Copyright>
         </Section>
     )

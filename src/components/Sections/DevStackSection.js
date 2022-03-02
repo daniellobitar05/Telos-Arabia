@@ -1,4 +1,5 @@
 import {useState, useRef, useEffect} from "react";
+import { animateScroll as scroll } from "react-scroll";
 import styled from "styled-components";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
@@ -11,7 +12,7 @@ import Icon3 from "../SVG/slider3.svg";
 import Icon5 from "../SVG/slider5.svg";
 import Icon7 from "../SVG/slider7.svg";
 import Icon6 from "../SVG/dev3.svg";
-
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
@@ -176,7 +177,7 @@ const Empty = styled.div`
     
 `;
 
-const IconColumn = styled.div`
+const IconColumnLeft = styled(LinkS)`
     width: 25%;
     height: 100%;
     float: left;
@@ -207,7 +208,36 @@ const ArrowUp = styled(KeyboardArrowUpIcon)`
     color: white;
 `;
 
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+`;
+
+const ToggleColumn = styled.div`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
+`;
+
 const DevStackSection = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
 
     const [width, setWidth] = useState(0);
     const carroussel = useRef();
@@ -240,13 +270,14 @@ const DevStackSection = () => {
             </Carousel>
             </Wrapper>
             <Empty>
-                <IconColumn>
-                <LinkS to="devstack" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
-                </IconColumn>
+                <IconColumnLeft to="toolkit" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumn>
-                    <LinkS to="docssection" smooth={true} duration={1000} spy={true} exact="true"><IconButton ><ArrowUp /></IconButton></LinkS>
-                </IconColumn>
+                <IconColumnRight to="docssection" smooth={true} duration={1000} spy={true} exact="true">
+                    <IconButton ><ArrowUp /></IconButton>
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
             </Empty>
         </Section>
     );

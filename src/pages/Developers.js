@@ -12,6 +12,9 @@ import {IconButton} from "@mui/material";
 import DeveloperSection from "../components/Sections/DeveloperSection";
 import DevDocsSection from "../components/Sections/DevDocsSection";
 import DevStackSection from "../components/Sections/DevStackSection";
+import ToolkitSection from "../components/Sections/ToolkitSection";
+import JoinDevSection from "../components/Sections/JoinDevSection";
+import Footer from "../components/Sections/Footer";
 
 const Section = styled.div`
     width: 100%;
@@ -116,6 +119,9 @@ const Developers = () => {
         <DeveloperSection />
         <DevDocsSection />
         <DevStackSection />
+        <ToolkitSection />
+        <JoinDevSection />
+        <Footer />
         </ThemeProvider>
 
     );

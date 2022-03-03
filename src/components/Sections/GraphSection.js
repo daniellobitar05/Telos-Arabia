@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+import {useInView} from "react-intersection-observer";
 import { animateScroll as scroll } from "react-scroll";
 import styled from "styled-components";
 import {motion, useAnimation} from "framer-motion";
@@ -6,6 +8,13 @@ import {IconButton} from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+
+import Telos from "../images/telos_logo.png";
+import TFD from "../images/TFD.png";
+import EOS from "../images/EOS.png";
+import SCR from "../images/SCR.png";
+import HIVE from "../images/HIVE.png";
+
 
 const Section = styled.div`
     width: 100%;
@@ -19,7 +28,18 @@ const Section = styled.div`
 
 const Title = styled.div`
     width: 60%;
-    height: 10vh;
+    height: 15vh;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+`;
+
+const LeftTitle = styled.div`
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
     font-size: 36px;
@@ -28,14 +48,14 @@ const Title = styled.div`
 const Columns = styled.div`
     width: 100%;
     height: 90vh;
-    background: grey;
+    
 `;
 
 const ColumnLeft = styled.div`
     width: 50%;
     height: 100%;
     float: left;
-    background: green;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,41 +66,128 @@ const ColumnRight = styled.div`
     width: 50%;
     height: 100%;
     float: left;
-    background: blue;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const Empty = styled.div`
-    width: 100%;
-    height: 10vh;
+const GraphWrapper = styled.div`
+    width: 80%;
+    height: 70vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 `;
 
-const IconColumnLeft = styled(LinkS)`
-    width: 25%;
+const PositionRow = styled.div`
+    width: 100%;
+    height: 10%;
+    display: flex;
+`;
+
+const Position = styled.div`
+    height: 100%;
+    width: 9.09%;
+    
+    float: left;
+    display: flex;
+    
+    justify-content: center;
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        
+    }
+`;
+
+const BarRow = styled.div`
+    height: 70%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+`;
+
+const EmptyGraphColumn = styled.div`
+    height: 0;
+    width: 9.09%;
+    float: left;
+    
+`;
+
+const TelosColumn = styled(motion.div)`
+    max-height: 100%;
+    width: 9.09%;
+    float: left;
+    background: purple;
+`;
+
+const TDFColumn = styled(motion.div)`
+    max-height: 62.8%;
+    width: 9.09%;
+    float: left;
+    background: purple; 
+`;
+
+const EOSColumn = styled(motion.div)`
+    max-height: 24.53%;
+    width: 9.09%;
+    float: left;
+    background: purple; 
+`;
+
+const SCRColumn = styled(motion.div)`
+    max-height: 12.8%;
+    width: 9.09%;
+    float: left;
+    background: purple; 
+`;
+
+const HiveColumn = styled(motion.div)`
+    max-height: 7.8%;
+    width: 9.09%;
+    float: left;
+    background: purple; 
+`;
+
+const TitleRow = styled.div`
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    
+`;
+
+const IconRow = styled.div`
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    
+    
+`;
+
+const Text = styled.div`
+    color: white;
+    font-size: 16px;
+    text-align: center;
+`;
+
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
     height: 100%;
     float: left;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-`;
-const IconColumnRight = styled(LinkS)`
-    width: 25%;
-    height: 100%;
-    float: right;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
+    justify-content: flex-end;
 
-const EmptyColumn = styled.div`
-   width: 50%;
-   height: 100%;
-   float: left; 
 `;
 
 const ToggleColumn = styled.div`
@@ -92,6 +199,31 @@ const ToggleColumn = styled.div`
     align-items: center;
     justify-content: flex-start;
 `;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+`;
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+    
+    
+`;
+
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -111,19 +243,124 @@ const GraphSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView();
+
+    function ChangeNumber () {
+        const counters = document.querySelectorAll('.graphcounter');
+        counters.forEach(counter => {
+            counter.innerText = "0";
+
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const c = +counter.innerText;
+
+                const increment = target / 100;
+                
+                if (c < target){
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+                    setTimeout(updateCounter, 2);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+            updateCounter();
+        });
+    }
+
+    useEffect(() => {
+        if(inView){
+            ChangeNumber();
+        }
+    }, [inView])
+
+    const animation = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                height: '100%',
+                transition: {
+                    duration: 2,
+                    delay: 0.5 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                height: 0, 
+            })
+        }
+        
+    }, [inView])
+
     return(
         <Section id="graph">
             
             <Columns>
                 <ColumnLeft>
-                <Title>Telos token utility</Title>
+                <LeftTitle>High growth rate and usage 900,000+ account base Number 1 by Activity Valuation Index Bitcoin and Ethereum scaling ahead</LeftTitle>
+                
                 </ColumnLeft>
                 <ColumnRight>
                 <Title>Telos position in the Crypto Market</Title>
+                <GraphWrapper ref={ref}>
+                    <PositionRow>
+                        <Position></Position>
+                        <Position><Text className="graphcounter" data-target="145178" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>
+                        <Position></Position>
+                        <Position><Text className="graphcounter" data-target="24864" style={{transform: 'translate(0%, 300%)'}}></Text></Position>
+                        <Position></Position>
+                        <Position><Text className="graphcounter" data-target="6579" style={{transform: 'translate(0%, 570%)'}}></Text></Position>
+                        <Position></Position>
+                        <Position><Text className="graphcounter" data-target="2095" style={{transform: 'translate(0%, 660%)'}}></Text></Position>
+                        <Position></Position>
+                        <Position><Text className="graphcounter" data-target="1596" style={{transform: 'translate(0%, 690%)'}}></Text></Position>
+                        <Position></Position>
+                    </PositionRow>
+                    <BarRow>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                        <TelosColumn animate={animation}></TelosColumn>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                        <TDFColumn animate={animation}></TDFColumn>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                        <EOSColumn animate={animation}></EOSColumn>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                        <SCRColumn animate={animation}></SCRColumn>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                        <HiveColumn animate={animation}></HiveColumn>
+                        <EmptyGraphColumn></EmptyGraphColumn>
+                    </BarRow>
+                    <TitleRow>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>TLOS</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>TDF</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>EOS</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>SCR</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>HIVE</Text></Position>
+                        <Position></Position>
+                    </TitleRow>
+                    <IconRow>
+                        <Position></Position>
+                        <Position><img src={Telos} alt="" /></Position>
+                        <Position></Position>
+                        <Position><img src={TFD} alt="" /></Position>
+                        <Position></Position>
+                        <Position><img src={EOS} alt="" /></Position>
+                        <Position></Position>
+                        <Position><img src={SCR} alt="" /></Position>
+                        <Position></Position>
+                        <Position><img src={HIVE} alt="" /></Position>
+                        <Position></Position>
+                    </IconRow>
+                </GraphWrapper>
                 </ColumnRight>
             </Columns>
             <Empty>
-            <IconColumnLeft to="" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="utility" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

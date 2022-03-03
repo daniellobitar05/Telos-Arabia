@@ -13,6 +13,7 @@ import PurposeSection from "../components/Sections/PurposeSection";
 import ChartSection from "../components/Sections/ChartSection";
 import GraphSection from "../components/Sections/GraphSection";
 import FeaturesSection from "../components/Sections/FeaturesSection";
+import UtilitySection from "../components/Sections/UtilitySection";
 
 const Section = styled.div`
     width: 100%;
@@ -93,6 +94,7 @@ const About = () => {
         <ChartSection />
         <FeaturesSection />
         <GraphSection />
+        <UtilitySection />
         </ThemeProvider>
     );
 }

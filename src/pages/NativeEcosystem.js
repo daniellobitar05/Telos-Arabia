@@ -9,7 +9,7 @@ import Header from "../components/NavBar";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
-import {EcosystemData} from "../data/EcosystemData";
+import {NativeEcosystemData} from "../data/NativeEcosystemData";
 
 
 
@@ -95,16 +95,16 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
         } else if (activePlatform === 2){
             const filtered = platforms.filter(el => el.collection === "PAYMENTS"); 
             setFiltered(filtered);
-        } /* else if (activePlatform === 3){
+        } else if (activePlatform === 3){
             const filtered = platforms.filter(el => el.collection === "NFT"); 
             setFiltered(filtered);
         } else if (activePlatform === 4){
             const filtered = platforms.filter(el => el.collection === "COMING SOON"); 
             setFiltered(filtered);
-        } */ else if (activePlatform === 5){
+        } else if (activePlatform === 5){
             const filtered = platforms.filter(el => el.collection === "EXCHANGE"); 
             setFiltered(filtered);
-        } /* else if (activePlatform === 6){
+        } else if (activePlatform === 6){
             const filtered = platforms.filter(el => el.collection === "INFORMATION"); 
             setFiltered(filtered);
         } else if (activePlatform === 7){
@@ -125,7 +125,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
         } else if (activePlatform === 12){
             const filtered = platforms.filter(el => el.collection === "GAMES"); 
             setFiltered(filtered);
-        } */
+        }
         
     }, [activePlatform])
 
@@ -166,9 +166,13 @@ const ImageContainer = styled.div`
     width: 100%;
     background-color: grey;
     border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     img{
-        width: 100%;
-        height: 80%;
+        width: 90%;
+        height: 90%;
         object-fit: contain;
     }
 `;
@@ -277,8 +281,8 @@ const Ecosystem = () => {
 
     const fetchPlatforms = () => {
         
-        setPlatforms(EcosystemData);
-        setFiltered(EcosystemData); 
+        setPlatforms(NativeEcosystemData);
+        setFiltered(NativeEcosystemData); 
     }
 
 

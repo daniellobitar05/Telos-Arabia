@@ -735,7 +735,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <LinkR to="/Ecosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
             <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
             <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
             <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkS>
@@ -747,7 +747,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <LinkR to="/Ecosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
             <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem></a>
             <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
             <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
@@ -1018,7 +1018,7 @@ const Header = (props) => {
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkR to="/Ecosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                    <LinkR to="/NativeEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <SubMenuTitle>
@@ -1038,7 +1038,7 @@ const Header = (props) => {
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkR to="/Ecosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                    <LinkR to="/NativeEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     </SubMenu>

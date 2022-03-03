@@ -12,7 +12,7 @@ import GovDocumentation from "./pages/GovDocumentation.js";
 import Tokenomics from "./pages/Tokenomics.js";
 import ESG from "./pages/ESG.js";
 import EVM from "./pages/EVM.js";
-import Ecosystem from "./pages/Ecosystem.js";
+import NativeEcosystem from "./pages/NativeEcosystem.js";
 //import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
                 <Route exact path="/Tokenomics" element={<Tokenomics />}/>
                 <Route exact path="/ESG" element={<ESG />}/>
                 <Route exact path="/EVM" element={<EVM />}/>
-                <Route exact path="/Ecosystem" element={<Ecosystem />}/>
+                <Route exact path="/NativeEcosystem" element={<NativeEcosystem />}/>
               </Routes>
             </AnimatePresence>
       </ScrollToTop>

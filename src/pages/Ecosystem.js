@@ -73,7 +73,7 @@ const FilterContainer = styled.div`
         /* display: grid;
         grid-template-columns: 1fr 1fr; */
         padding-top: 0px;
-        transform: rotate(90deg) translate(150%, 250%);
+        transform: rotate(90deg) translate(150%, 225%);
         height: 10vh;
         position: absolute;
         

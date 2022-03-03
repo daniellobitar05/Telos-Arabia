@@ -15,7 +15,7 @@ import {EcosystemData} from "../data/EcosystemData";
 
 const Section = styled.div`
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     background: black;
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ const Button = styled.button`
 const FilterContainer = styled.div`
     width: 100%;
     height: 20vh;
-    padding-top: 250px;
+    background: black;
     
     display: flex;
     align-items: center;
@@ -153,14 +153,23 @@ const Wrapper = styled(motion.div)`
     width: 250px;
     border: 1px solid whitesmoke;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
+    
+`;
+
+const ImageContainer = styled.div`
+    height: 50%;
+    width: 100%;
+    background-color: grey;
+    border-radius: 20px 20px 0 0;
     img{
         width: 100%;
-        height: 80%;;
+        height: 80%;
         object-fit: contain;
-        border-radius: 0 0 20px 20px;
-        
-        
     }
 `;
 
@@ -183,6 +192,50 @@ const FilterSection = styled(motion.div)`
     }
 `;
 
+const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    width: 80%;
+    height: 50%;
+    
+`;
+
+const Type = styled.div`
+    height: 20%;
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    
+`;
+
+const Name = styled.div`
+    height: 20%;
+    width: 100%;
+    color: aqua;
+    font-size: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;   
+`;
+
+const Description = styled.div`
+    height: 60%;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    font-size: 14px;
+`;
+
 function Platforms ({el}){
     return(
         
@@ -190,6 +243,7 @@ function Platforms ({el}){
         initial={{opacity: 0}}
         exit={{opacity: 0}}
         layout>
+            <ImageContainer>
             {/* <TextWrapper>
             <Title>{el.title}</Title>
             <Platform>{el.collection}</Platform>
@@ -197,6 +251,12 @@ function Platforms ({el}){
             </TextWrapper>
             <LogoWrapper><img src={el.logo} alt="" key={el.id}/></LogoWrapper> */}
             <img src={el.image} alt="" key={el.title}/>
+            </ImageContainer>
+            <TextContainer>
+                <Type>{el.type}</Type>
+                <Name>{el.name}</Name>
+                <Description>{el.desc}</Description>
+            </TextContainer>
         </Wrapper>
         
     )

@@ -375,7 +375,7 @@ const GetStartedSection = () => {
     }, [copied])
 
   return (
-    <Section>
+    <Section id="getstarted">
         <EmptyColumn />
         <ColumnLeft>
             <ColumnTitle >تيلوس ناتيف</ColumnTitle>

@@ -699,7 +699,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'build'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem></a>
+            <LinkR to="/Roadmap"><DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem></LinkR>
             <LinkR to="/Developers"><DropDownItem  rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem></LinkR>
             <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem></a>
             <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem></a>
@@ -711,12 +711,12 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'learn'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem  rightIcon={<CommIcon />} >COMMUNITY RESOURCES</DropDownItem>
-            <DropDownItem  rightIcon={<BaseIcon/>} >KNOWLEDGE BASE</DropDownItem>
-            <DropDownItem  rightIcon={<GovIcon/>}>GOVERNANCE</DropDownItem>
-            <DropDownItem  rightIcon={<TokenIcon/>}>TLOS TOKENOMICS</DropDownItem>
-            <DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}>ESG BLOCKCHAIN</DropDownItem>
-            <DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}>EVM BLOCKCHAIN</DropDownItem>
+            <LinkR to="/CommResources"><DropDownItem  rightIcon={<CommIcon />} >COMMUNITY RESOURCES</DropDownItem></LinkR>
+            <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<BaseIcon/>} >KNOWLEDGE BASE</DropDownItem></a>
+            <LinkR to="/GovDocumentation"><DropDownItem  rightIcon={<GovIcon/>}>GOVERNANCE</DropDownItem></LinkR>
+            <LinkR to="/Tokenomics"><DropDownItem  rightIcon={<TokenIcon/>}>TLOS TOKENOMICS</DropDownItem></LinkR>
+            <LinkR to="/ESG"><DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}>ESG BLOCKCHAIN</DropDownItem></LinkR>
+            <LinkR to="/EVM"><DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}>EVM BLOCKCHAIN</DropDownItem></LinkR>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -735,9 +735,10 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem>
-            <DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem>
-            <DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem>
+            <LinkR to="/Ecosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
+            <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
+            <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkS>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -746,11 +747,11 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem>
-            <DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem>
-            <DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem>
-            <DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem>
-            <DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem>
+            <LinkR to="/Ecosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem></a>
+            <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
+            <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
+            <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkS>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -967,23 +968,23 @@ const Header = (props) => {
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave} scrollNavDown={switchAboutLeave}>
                 <AboutMenu variants={MenuVariants} initial="start" animate="end">
                     <SubMenu >
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <LinkR to="/News"><MenuText>NEWS</MenuText></LinkR>
                         <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/About"> <MenuText>ABOUT</MenuText></LinkR>
                         <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>JOIN THE TEAM</MenuText>
                         <GroupAddIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>MEET THE TEAM</MenuText>
                         <EmojiPeopleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>MEET THE BOARD</MenuText>
                         <MeetBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
@@ -1004,41 +1005,41 @@ const Header = (props) => {
                         <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>EVM PLATFORM</MenuTitle>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
-                        <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>COMM. RESOURCES</MenuText>
-                        <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                        <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
+                        <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>KNOWLEDGE BASE</MenuText>
-                        <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><MenuText>BRIDGE</MenuText></a>
+                        <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>GOVERNANCE</MenuText>
-                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                        <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkS>
+                        <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>TLOS TOKENOMICS</MenuText>
-                        <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <LinkR to="/Ecosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                        <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <SubMenuTitle>
                         <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>NATIVE PLATFORM</MenuTitle>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
-                        <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>COMM. RESOURCES</MenuText>
-                        <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                        <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
+                        <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>KNOWLEDGE BASE</MenuText>
-                        <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"> <MenuText>BRIDGE</MenuText></a>
+                        <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>GOVERNANCE</MenuText>
-                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkS>
+                        <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuTitle>
-                        <MenuText>TLOS TOKENOMICS</MenuText>
-                        <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <LinkR to="/Ecosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                        <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     </SubMenu>
                 </ExploreMenu>
@@ -1053,28 +1054,28 @@ const Header = (props) => {
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
                     <SubMenu>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>COMM. RESOURCES</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <LinkR to="/CommResources"><MenuText>COMM. RESOURCES</MenuText></LinkR>
                         <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>KNOWLEDGE BASE</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><MenuText>KNOWLEDGE BASE</MenuText></a>
                         <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>GOVERNANCE</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <LinkR to="/GovDocumentation"><MenuText>GOVERNANCE</MenuText></LinkR>
                         <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>TLOS TOKENOMICS</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <LinkR to="/Tokenomics"><MenuText>TLOS TOKENOMICS</MenuText></LinkR>
                         <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>ESG BLOCKCHAIN</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <LinkR to="/ESG"><MenuText>ESG BLOCKCHAIN</MenuText></LinkR>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                        <MenuText>EVM BLOCKCHAIN</MenuText>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <LinkR to="/EVM"><MenuText>EVM BLOCKCHAIN</MenuText></LinkR>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                     </SubMenuIcon></motion.div>
                     </SubMenu>
@@ -1090,19 +1091,19 @@ const Header = (props) => {
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
                         <SubMenu>
-                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
-                            <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><MenuText>ROADMAP</MenuText></a>
+                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                            <LinkR to="/Roadmap"><MenuText>ROADMAP</MenuText></LinkR>
                                 <MapIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <LinkR to="/Developers"><MenuText>DEVELOPERS</MenuText></LinkR>
                                 <DeveloperBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><MenuText>DOCUMENTATION</MenuText></a>
                                 <ArticleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><MenuText>GRANT PROGRAM</MenuText></a>
                                 <LocalFireDepartmentIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
@@ -1119,11 +1120,11 @@ const Header = (props) => {
                 <motion.div animate={animateBuy} onMouseLeave={switchBuyLeave}>
                     <BuyMenu>
                         <SubMenu>
-                            <motion.div whileHover={{scale: 1.15}}><a href="https://trade.kucoin.com/TLOS-USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Kucoin} alt="" /></SubMenuItem></a></motion.div>
-                            <motion.div whileHover={{scale: 1.15}}><a href="https://www.gate.io/es/trade/TLOS_USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Gate} alt="" style={{transform: 'scaleY(1.4)'}}/></SubMenuItem></a></motion.div>
-                            <motion.div whileHover={{scale: 1.15}}><a href="https://pancakeswap.finance/swap?outputCurrency=0xb6c53431608e626ac81a9776ac3e999c5556717c" target="_blank" rel="noreferrer"><SubMenuItem><img src={Pancake} alt="" /></SubMenuItem></a></motion.div>
-                            <motion.div whileHover={{scale: 1.15}}><a href="https://app.uniswap.org/#/swap?use=V2%3FinputCurrency%3DETH&outputCurrency=0x7825e833d495f3d1c28872415a4aee339d26ac88&chain=mainnet" target="_blank" rel="noreferrer"><SubMenuItem><img src={Uniswap} alt="" style={{height: '50px', paddingTop: '10px'}}/></SubMenuItem></a></motion.div>
-                            <motion.div whileHover={{scale: 1.15}}><a href="https://cryptolocally.com/en/crypto-offers/?type=buy&crypto=BTC&location=any&currency=any" target="_blank" rel="noreferrer"><SubMenuItem><img src={Locally} alt="" style={{transform: 'scale(1.4)'}}/></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}} whileTap={{scale: 0.9}}><a href="https://trade.kucoin.com/TLOS-USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Kucoin} alt="" /></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}} whileTap={{scale: 0.9}}><a href="https://www.gate.io/es/trade/TLOS_USDT" target="_blank" rel="noreferrer"><SubMenuItem><img src={Gate} alt="" style={{transform: 'scaleY(1.4)'}}/></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}} whileTap={{scale: 0.9}}><a href="https://pancakeswap.finance/swap?outputCurrency=0xb6c53431608e626ac81a9776ac3e999c5556717c" target="_blank" rel="noreferrer"><SubMenuItem><img src={Pancake} alt="" /></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}} whileTap={{scale: 0.9}}><a href="https://app.uniswap.org/#/swap?use=V2%3FinputCurrency%3DETH&outputCurrency=0x7825e833d495f3d1c28872415a4aee339d26ac88&chain=mainnet" target="_blank" rel="noreferrer"><SubMenuItem><img src={Uniswap} alt="" style={{height: '50px', paddingTop: '10px'}}/></SubMenuItem></a></motion.div>
+                            <motion.div whileHover={{scale: 1.15}} whileTap={{scale: 0.9}}><a href="https://cryptolocally.com/en/crypto-offers/?type=buy&crypto=BTC&location=any&currency=any" target="_blank" rel="noreferrer"><SubMenuItem><img src={Locally} alt="" style={{transform: 'scale(1.4)'}}/></SubMenuItem></a></motion.div>
                         </SubMenu>
                     </BuyMenu>
                 </motion.div>

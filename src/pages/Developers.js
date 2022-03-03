@@ -100,7 +100,7 @@ const Developers = () => {
     return(
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
-        <Section>
+        <Section id="developers">
             <Title>Benefits of the Telos Network</Title>
             <Subtitle>Telos Network provides developers and entrepreneurs the tools to build, deploy and run high-performing next generation applications complete with their own digital economies.</Subtitle>
             <IconHolder>

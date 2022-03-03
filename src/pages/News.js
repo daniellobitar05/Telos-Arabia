@@ -245,7 +245,7 @@ $(window).on('scroll',function(){
         <ThemeProvider theme={themes[theme]}>
             
                 
-                <Section>
+                <Section id="news">
                     
                     <ColumnLeft>
                         <Container>

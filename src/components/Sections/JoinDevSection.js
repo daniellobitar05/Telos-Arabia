@@ -29,7 +29,7 @@ justify-content: center;
 `;
 
 const Title = styled.div`
-    font-size: 62px;
+    font-size: 72px;
     width: 80%;
     color: ${props => props.theme.text};  
     height: 25vh;
@@ -37,12 +37,15 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+
+    }
     
     
 `;
 
 const Subtitle = styled.div`
-    font-size: 18px;
+    font-size: 32px;
     width: 50%;
     color: ${props => props.theme.text};
     text-align: center; 
@@ -51,13 +54,16 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+
+    }
 `;
 
 const JoinButton = styled(Button)`
     &&&{
         z-index: 100;
         background: linear-gradient(90deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(47,230,231,1) 100%);
-        font-size: 18px;
+        font-size: 28px;
         margin: 10px;
         color: white;
         font-weight: bold;
@@ -138,9 +144,9 @@ const JoinDevSection = () => {
     return(
         <Section id="joindev">
             <Subtitle style={{fontSize: '14px'}}>JOIN US</Subtitle>
-            <Title>Join developers building a better future on the Telos Network</Title>
-            <Subtitle>If you are a developer and interested in Blockchain and smart contract development join our Telegram group</Subtitle>
-            <a href="https://t.me/dappstelos" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><JoinButton>Meet developers building on Telos  Network</JoinButton></motion.div></a>
+            <Title>انضم إلى المطورين لبناء مستقبل أفضل على شبكة تيلوس</Title>
+            <Subtitle>إذا كنت مطورًا ومهتمًا بـ بلوكتشيت وتطوير العقود الذكية ، انضم إلى مجموعة تيليغرام الخاصة بنا</Subtitle>
+            <a href="https://t.me/dappstelos" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><JoinButton>قابل المطورين على شبكة تيلوس</JoinButton></motion.div></a>
             <ArrowWrapper>
                 <IconColumnLeft>
                 <LinkS to="footer" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>

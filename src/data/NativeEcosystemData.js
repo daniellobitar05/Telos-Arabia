@@ -48,6 +48,15 @@ import lips from "../components/images/eco/lips.svg";
 import seeds from "../components/images/eco/seeds.svg";
 import discussions from "../components/images/eco/discussions.jpg";
 import challenge from "../components/images/eco/challenge.png";
+import appics from "../components/images/eco/appics.svg";
+import task from "../components/images/eco/task.jpg";
+import newlife from "../components/images/eco/newlife.png";
+import blockbase from "../components/images/eco/blockbase.svg";
+import hypha from "../components/images/eco/hypha.png";
+import chirp from "../components/images/eco/chirp.png";
+import unbiased from "../components/images/eco/unbiased.png";
+import docs from "../components/images/eco/docs.png";
+import domain from "../components/images/eco/domain.jpg";
 
 
 
@@ -57,6 +66,7 @@ export const NativeEcosystemData = [
         id : 1,
         image: Knit,
         type: "WEB",
+        link: "https://knit.finance/",
         collection: "PARTNERS",
         name: "KNIT FINANCE",
         desc: "Cross-chain asset fluidity built on insured custody"
@@ -65,6 +75,7 @@ export const NativeEcosystemData = [
         id : 2,
         image: Lightning,
         type: "WEB",
+        link: "https://lightningprotocol.finance/",
         collection: "PARTNERS",
         name: "Lightning Protocol",
         desc: "Multi-chain Incubator and Launchpad, that creates a single, safe destination for both presale investors and prelaunch projects"
@@ -73,6 +84,7 @@ export const NativeEcosystemData = [
         id : 3,
         image: Hive,
         type: "Blockchain",
+        link: "https://hive.io/",
         collection: "PARTNERS",
         name: "Hive",
         desc: "Innovative and forward-looking decentralized blockchain and ecosystem, designed to scale with widespread adoption of the currency and platforms in mind"
@@ -82,6 +94,7 @@ export const NativeEcosystemData = [
         image: xtorage,
         type: "WEB",
         collection: "NFT",
+        link: "https://app.xtorage.cloud/login",
         name: "Xtorage",
         desc: "Xtorage is an IPFS service powered by dStor and Telos blockchain"
     },
@@ -89,6 +102,7 @@ export const NativeEcosystemData = [
         id : 4,
         image: Coinpay,
         type: "WEB",
+        link: "https://coinpayments.com/",
         collection: "PAYMENTS",
         name:"Crypto Payments Made Easy",
         desc:"Allowing websites utilizing major payment platforms to accept TLOS"
@@ -97,6 +111,7 @@ export const NativeEcosystemData = [
         id : 5,
         image: Gift,
         type: "WEB",
+        link: "https://www.telosgiftcard.com/",
         collection: "PAYMENTS",
         name: "Telos Gift Card",
         desc: "Easy way to gift TLOS to friends and loved ones!"
@@ -105,6 +120,7 @@ export const NativeEcosystemData = [
         id : 6,
         image: Fortis,
         type: "WEB, ANDROID, IOS",
+        link: "https://fortisfinance.io/",
         collection: "PAYMENTS",
         name: "Fortis",
         desc: "Decentralised, open, digital money. Payment system built on Telos."
@@ -114,12 +130,14 @@ export const NativeEcosystemData = [
         image: Areax,
         type: "WEB",
         collection: "NFT",
+        link: "https://areaxnft.com/",
         name: "AreaX NFT",
         desc: "Popular NFT/Collectable Marketplace on Telos"
     },
     {
         id : 10,
         image: simple,
+        link: "https://telos.simplemarket.io/",
         type: "WEB",
         collection: "NFT",
         name: "Simple Market",
@@ -128,18 +146,19 @@ export const NativeEcosystemData = [
     {
         id : 11,
         image: tswaps,
+        link: "https://www.tswaps.com/",
         type: "WEB",
         collection: "EXCHANGE",
-        collection: "DEFI",
+        //collection: "DEFI",
         name: "Telos Swap",
         desc: "Swap Telos based assets simply"
     },
     {
         id : 12,
         image: alcor,
+        link: "https://telos.alcor.exchange/",
         type: "WEB",
-        collection: "EXCHANGE",
-        collection: "DEFI",
+        collection: ["EXCHANGE", "DEFI"],
         name: "Alcor.exchange",
         desc: "The first self-listing DEX. You can trade any EOS.IO tokens for system EOS tokens, atomically, without third parties! Create markets & list your dapp token in one click, trade whatever you want."
     },
@@ -147,14 +166,16 @@ export const NativeEcosystemData = [
         id: 24,
         image: xpell,
         type: "ANDROID, IOS",
+        link: "https://xpell.io/",
         collection: "COMING SOON",
-        collection: "GAMES",
+        //collection: "GAMES",
         name: "Xpell",
         desc: "Xpell is an MMORTS game based on NFTs which is developed on Telos blockchain"
     },
     {
         id : 13,
         image: pancake,
+        link: "https://pancakeswap.finance/",
         type: "WEB",
         collection: "EXCHANGE",
         name: "Pancake Swap",
@@ -163,6 +184,7 @@ export const NativeEcosystemData = [
     {
         id : 14,
         image: mexc,
+        link: "https://www.mexc.com/",
         type: "WEB, ANDROID, IOS",
         collection: "EXCHANGE",
         name: "MEXC Global",
@@ -171,6 +193,7 @@ export const NativeEcosystemData = [
     {
         id : 15,
         image: gate,
+        link: "https://www.gate.io/",
         type: "WEB, ANDROID, IOS",
         collection: "EXCHANGE",
         name: "Gate.io",
@@ -179,6 +202,7 @@ export const NativeEcosystemData = [
     {
         id : 16,
         image: uniswap,
+        link: "https://uniswap.org/",
         type: "WEB",
         collection: "EXCHANGE",
         name: "Uniswap",
@@ -187,6 +211,7 @@ export const NativeEcosystemData = [
     {
         id : 17,
         image: probit,
+        link: "https://www.probit.com/app/exchange/TLOS-USDT",
         type: "WEB",
         collection: "EXCHANGE",
         name: "Probit",
@@ -195,6 +220,7 @@ export const NativeEcosystemData = [
     {
         id : 18,
         image: kucoin,
+        link: "https://www.kucoin.com/",
         type: "WEB, ANDROID, IOS",
         collection: "EXCHANGE",
         name: "Kucoin",
@@ -204,6 +230,7 @@ export const NativeEcosystemData = [
         id : 20,
         image: bitvolo,
         type: "WEB",
+        link: "https://bitvolo.com/",
         collection: "PAYMENTS",
         name: "Bitvolo.com",
         desc: "Bitvolo is a trustless payment gateway, the funds are sent directly from your customer to your wallet. Accept Tlos for your online sales"
@@ -212,6 +239,7 @@ export const NativeEcosystemData = [
         id: 21,
         image: sesa,
         type: "WEB",
+        link: "https://sesacash.com/",
         collection: "PAYMENTS",
         name: "Sesacash",
         desc: "Offering modern financial services to Africa. Enables remittance, fast payments, and e-commerce access"
@@ -221,6 +249,7 @@ export const NativeEcosystemData = [
         image: Squirrel,
         type: "WEB",
         collection: "NFT",
+        link: "https://www.telos.net/ecosystem-apps-filter/partners?tab=native",
         name: "TSquirrels",
         desc: "An NFT collection based on the Telos spirit animal with its own token"
     },
@@ -228,6 +257,7 @@ export const NativeEcosystemData = [
         id : 19,
         image: cryptolocally,
         type: "WEB",
+        link: "https://cryptolocally.com/",
         collection: "EXCHANGE",
         name: "Cryptolocally",
         desc: "Buy or sell Telos locally!"
@@ -235,8 +265,10 @@ export const NativeEcosystemData = [
     {
         id: 22,
         image: unicove,
+        link: "https://unicove.com/",
         type: "WEB",
         collection: "COMING SOON",
+        //collection: "WALLETS",
         name: "Unicove",
         desc: "EARLY ACCESS - The easiest way to manage your EOSIO account"
     },
@@ -244,6 +276,7 @@ export const NativeEcosystemData = [
         id: 23,
         image: tdrive,
         type: "WEB",
+        link: "https://tdrive.io/",
         collection: "COMING SOON",
         name: "tDrive",
         desc: "Simple, easy, on-demand storage that just feels right. Works on dStor."
@@ -252,50 +285,47 @@ export const NativeEcosystemData = [
     {
         id: 25,
         image: scale,
+        link: "https://localscale.org/",
         type: "WEB, ANDROID, IOS",
         collection: "COMING SOON",
-        collection: "SOCIAL",
+        //collection: "SOCIAL",
         name: "Local Scale",
         desc: "Public benefit organization focusing on the development of resilient and sustainable economies"
     },
     {
         id: 26,
         image: bikechain,
+        link: "https://bikechain.app/",
         type: "WEB, ANDROID, IOS",
         collection: "COMING SOON",
-        collection: "SOCIAL",
+        //collection: "SOCIAL",
         name: "Bikechain",
         desc: "The world's first 100% self-governing ride-sharing mobile dApp"
     },
     {
-        id: 27,
-        image: unicove,
-        type: "WEB",
-        collection: "WALLETS",
-        name: "unicove",
-        desc: "EARLY ACCESS - The easiest way to manage your EOSIO account"
-    },
-    {
         id: 28,
         image: havuta,
+        link: "https://havuta.com/",
         type: "WEB, ANDROID, IOS",
         collection: "INFORMATION",
-        collection: "SOCIAL",
+        //collection: "SOCIAL",
         name: "Havuta",
         desc: "Using blockchain to help development actors"
     },
     {
         id: 29,
         image: qudo,
+        link: "https://dashboard.qudo.io/",
         collection: "DEVELOPERS",
         type: "WEB",
-        collection: "GAMES",
+        //collection: "GAMES",
         name: "Qudo",
         desc: "A proof-of-gameplay reward mechanism for users and game developers"
     },
     {
         id: 30,
         image: tipit,
+        link: "https://tipit.io/",
         type: "WEB",
         name: "TipIt bot",
         collection: "DEVELOPERS",
@@ -304,6 +334,7 @@ export const NativeEcosystemData = [
     {
         id: 31,
         image: taikai,
+        link: "https://taikai.network/",
         type: "WEB",
         name: "Taikai",
         collection: "DEVELOPERS",
@@ -312,6 +343,7 @@ export const NativeEcosystemData = [
     {
         id: 32,
         image: dstor,
+        link: "https://dstor.cloud/",
         type: "SERVICE LAYER",
         collection: "DEVELOPERS",
         name: "dStOr",
@@ -320,6 +352,7 @@ export const NativeEcosystemData = [
     {
         id: 33,
         image: bounty,
+        link: "https://telos.bountyblok.io/",
         type: "WEB",
         collection: "DEVELOPERS",
         name: "Bountyblok",
@@ -328,6 +361,7 @@ export const NativeEcosystemData = [
     {
         id: 34,
         image: katalio,
+        link: "https://www.katalyo.com/",
         type: "WEB",
         collection: "DEVELOPERS",
         name: "Katalyo",
@@ -336,6 +370,7 @@ export const NativeEcosystemData = [
     {
         id: 35,
         image: liquid,
+        link: "https://liquidapps.io/",
         type: "WEB",
         collection: "DEVELOPERS",
         name: "DAPP Network",
@@ -344,6 +379,7 @@ export const NativeEcosystemData = [
     {
         id: 36,
         image: anchor,
+        link: "https://greymass.com/anchor/",
         type: "WEB, ANDROID, IOS, WINDOWS, MAC",
         collection: "WALLETS",
         name: "Anchor Wallet",
@@ -352,6 +388,7 @@ export const NativeEcosystemData = [
     {
         id: 37,
         image: ledger,
+        link: "https://www.ledger.com/",
         type: "WEB, HARDWARE, ANDROID, IOS, MAC, WINDOWS",
         name: "Ledger",
         collection: "WALLETS",
@@ -360,6 +397,7 @@ export const NativeEcosystemData = [
     {
         id: 38,
         image: telos_wallet,
+        link: "https://wallet.telos.net/",
         type: "WEB",
         collection: "WALLETS",
         name: "Telos Web Wallet",
@@ -368,6 +406,7 @@ export const NativeEcosystemData = [
     {
         id: 39,
         image: wombat,
+        link: "https://getwombat.io/",
         tpye: "WEB, IOS, ANDROID",
         collection: "WALLETS",
         name: "Wombat",
@@ -376,6 +415,7 @@ export const NativeEcosystemData = [
     {
         id: 40,
         image: math,
+        link: "https://www.mathwallet.org/en/",
         type: "WEB, ANDROID, IOS, CHROME",
         collection: "WALLETS",
         name: "Math Wallet",
@@ -384,6 +424,7 @@ export const NativeEcosystemData = [
     {
         id: 41,
         image: edge,
+        link: "https://edge.app/",
         type: "WEB",
         collection: "WALLETS",
         name: "Edge Wallet",
@@ -392,6 +433,7 @@ export const NativeEcosystemData = [
     {
         id: 42,
         image: tribe,
+        link: "https://tribewallet.io/",
         type: "ANDROID, IOS",
         collection: "WALLETS",
         name: "Tribe Wallet",
@@ -400,6 +442,7 @@ export const NativeEcosystemData = [
     {
         id: 43,
         image: EOS,
+        link: "http://telos.eosauthority.com/",
         type: "WEB",
         collection: "BLOCK EXPLORER",
         name: "EOS Authority",
@@ -408,6 +451,7 @@ export const NativeEcosystemData = [
     {
         id: 44,
         image: tracker,
+        link: "https://telostracker.io/",
         collection: "BLOCK EXPLORER",
         type: "WEB",
         name: "Telos Tracker",
@@ -416,6 +460,7 @@ export const NativeEcosystemData = [
     {
         id: 45,
         image: starter,
+        link: "https://tstarter.io/",
         type: "WEB",
         collection: "DEFI",
         name: "TStarter",
@@ -424,6 +469,7 @@ export const NativeEcosystemData = [
     {
         id: 46,
         image: dv,
+        link: "https://decidevoter.app/",
         type: "ANDROID, IOS",
         collection: "SOCIAL",
         name: "Decide Voter",
@@ -432,6 +478,7 @@ export const NativeEcosystemData = [
     {
         id: 47,
         image: lips,
+        link: "https://lips.social/",
         type: "WEB, ANDROID, IOS",
         collection: "SOCIAL",
         name: "Lips Social",
@@ -440,6 +487,7 @@ export const NativeEcosystemData = [
     {
         id: 48,
         image: seeds,
+        link: "https://www.joinseeds.com/",
         type: "WEB, ANDROID, IOS",
         collection: "SOCIAL",
         name: "SEEDS",
@@ -448,6 +496,7 @@ export const NativeEcosystemData = [
     {
         id: 49,
         image: discussions,
+        link: "https://discussions.app/",
         type: "WEB",
         name: "Discussions.app",
         collection: "SOCIAL",
@@ -456,10 +505,83 @@ export const NativeEcosystemData = [
     {
         id: 50,
         image: challenge,
+        link: "https://www.challengedapp.io/",
         type: "ANDROID, IOS",
         collection: "SOCIAL",
         name: "Challenge DAC",
         desc: "Participate in challenges to earn real blockchain rewards."
+    },
+    {
+        id: 51,
+        image: appics,
+        collection: "SOCIAL",
+        type: "WEB, ANDROID, IOS",
+        name: "APPICS",
+        desc: "Passion Rewarded"
+    },
+    {
+        id: 52,
+        image: task,
+        collection: "SOCIAL",
+        type: "WEB",
+        name: "Telos Task",
+        desc: "Do less, earn more",
+    },
+    {
+        id: 53,
+        image: newlife,
+        collection: "SOCIAL",
+        type: "WEB",
+        name: "Newlife.AI",
+        desc: "Social Network for Aesthetics"
+    },
+    {
+        id: 54,
+        image: blockbase,
+        collection: "SOCIAL",
+        type: "WEB",
+        name: "Block Base",
+        desc: "Block Base secures your data with integrity, immutability, accountability, auditability and availability. By design."
+    },
+    {
+        id: 55,
+        image: hypha,
+        collection: "SOCIAL",
+        type: "WEB, ANDROID, IOS",
+        name: "Hypha DHO",
+        desc: "A framework to build your organization from the ground up in an organic and participative way"
+    },
+    {
+        id: 56,
+        image: chirp,
+        colleciton: "SOCIAL",
+        type: "WEB",
+        name: "Chirp.la",
+        desc: "Earn crypto by chirping"
+    },
+    {
+        id: 57,
+        image: unbiased,
+        collection: "SOCIAL",
+        type: "WEB, ANDROID, IOS",
+        name: "Unbiased",
+        desc: "Fighting fake news and misinformation using blockchain and artificial intelligence."
+    },
+    {
+        id: 58,
+        image: docs,
+        collection: "INFORMATION",
+        type: "WEB",
+        name: "Telos Governance Document Explorer (tbnoa)",
+        desc: "Telos Governance Document Explorer"
+    },
+    {
+        id: 59,
+        image: domain,
+        collection: "INFORMATION",
+        type: "WEB",
+        name: "publicdomain",
+        desc: "Decentralized Keywords on Telos. Decentralized Keywords are to search what crypto is to fiat."
     }
 
 ]

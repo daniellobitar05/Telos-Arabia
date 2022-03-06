@@ -19,38 +19,38 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const cards = [
     {
         icon: Icon7,
-        title: "Telos amend",
-        subtitle: "Open source decentralized document amendment service used for Telos governance"
+        title: "تعديل تيلوس",
+        subtitle: "خدمة تعديل المستندات اللامركزية مفتوحة المصدر المستخدمة لحوكمة تيلوس"
     },
     {
         icon: Icon6,
-        title: "Telos decide",
-        subtitle: "Governance engine enables apps and services to democratize decision verifiably and immutably"
+        title: "قرار تيلوس",
+        subtitle: "يمكّن محرك الحوكمة التطبيقات والخدمات من إضفاء الطابع الديمقراطي على القرار بشكل ثابت يمكن التحقق منه"
     },
     {
         icon: Icon5,
-        title: "Telos dstor",
-        subtitle: "dstor revolutionizes global data storage for web 3.0. Fast. Reliable. Censorship-resistant"
+        title: "dstor تيلوس",
+        subtitle: "أحدثت dstor ثورة في تخزين البيانات العالمية للويب 3.0. بسرعة. موثوق. مقاومة للرقابة"
     },
     {
         icon: Icon3,
-        title: "Telos Blockchain",
-        subtitle: "The best governed DPOS public blockchain built with the leading blockchain protocol technology"
+        title: "تيلوس بلوكتشين",
+        subtitle: "أفضل بلوكتشين العام DPOS المحكوم والذي تم إنشاؤه باستخدام تقنية بروتوكول بلوكتشين الرائدة"
     },
     {
         icon: Icon3,
-        title: "Telos Login",
-        subtitle: "Login is an OAuth provider enabling secure decentralized login/permission system of telos"
+        title: "تسجيل الدخول تيلوس",
+        subtitle: "تسجيل الدخول هو مزود OAuth يتيح نظام تسجيل دخول / إذن لامركزي آمن لـ تيلوس"
     },
     {
         icon: Icon2,
-        title: "Telos Swap",
-        subtitle: "Multiply token trading pairs offering a network Bancor liquidity service for token swaps"
+        title: "مقايضة تيلوس",
+        subtitle: "ضاعف أزواج تداول الرمز المميز التي تقدم خدمة سيولة شبكة بانكور لمقايضات التوكنات"
     },
     {
         icon: Icon1,
-        title: "Telos Works",
-        subtitle: "Works is the networks milestone based initiatives system built using Telos decide"
+        title: "مبادرات تيلوس",
+        subtitle: "الأشغال هو نظام المبادرات المبني على أساس الشبكات والمبني باستخدام شركة تيلوس"
     },
 ]
 
@@ -74,6 +74,10 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 25vh;
+    }
+    
     
     
 `;
@@ -89,12 +93,19 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        width: 90%;
+        height: 20vh;
+    }
 `;
 
 const Carousel = styled(motion.div)`
     cursor: grab;
     height: 60vh;
     overflow: hidden;
+    @media screen and (max-width: 768px){
+        height: 50vh;
+    }
     
     
 `;
@@ -102,6 +113,9 @@ const Carousel = styled(motion.div)`
 const InnerCarousel = styled(motion.div)`
     display: flex;
     height: 60vh;
+    @media screen and (max-width: 768px){
+        height: 50vh;
+    }
     
    
 `;
@@ -151,7 +165,7 @@ const SliderTitle = styled.div`
     color: aqua;
     height: 20%;
     width: 100%;
-    font-size: 24px;
+    font-size: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,11 +176,12 @@ const SliderSubtitle = styled.div`
     color: white;
     height: 50%;
     width: 80%;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    direction: rtl;
 `;
 
 const Empty = styled.div`
@@ -250,8 +265,8 @@ const DevStackSection = () => {
 
     return(
         <Section id="devstack">
-            <Title>Explore the Telos Network developer stack</Title>
-            <Subtitle>The Telos Network is fast becoming the ultimate web 3.0 stack, providing developers and entrepreneurs the tools to succeed in the next generation of the decentralised internet economy</Subtitle>
+            <Title>استكشف مجموعة مطوري شبكة تيلوس</Title>
+            <Subtitle>أصبحت شبكة تيلوس بسرعة أكبر مكدس ويب 3.0 ، مما يوفر للمطورين ورجال الأعمال الأدوات اللازمة للنجاح في الجيل التالي من اقتصاد الإنترنت اللامركزي</Subtitle>
             <Wrapper>
             <Carousel ref={carroussel}>
                 <InnerCarousel drag="x" dragConstraints={{right: 0, left: -width}} whileTap={{cursor: 'grabbing'}}>

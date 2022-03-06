@@ -9,7 +9,7 @@ import Header from "../components/NavBar";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
-import {NativeEcosystemData} from "../data/NativeEcosystemData";
+import {EVMEcosystemData} from "../data/EVMEcosystemData";
 
 
 
@@ -90,60 +90,48 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
             setFiltered(platforms); 
             return;
         } else if (activePlatform === 1){
-            const filtered = platforms.filter(el => el.collection === "PARTNERS"); 
+            const filtered = platforms.filter(el => el.collection === "EVMMEME"); 
             setFiltered(filtered);
         } else if (activePlatform === 2){
-            const filtered = platforms.filter(el => el.collection === "PAYMENTS"); 
+            const filtered = platforms.filter(el => el.collection === "EVMNFT"); 
             setFiltered(filtered);
         } else if (activePlatform === 3){
-            const filtered = platforms.filter(el => el.collection === "NFT"); 
+            const filtered = platforms.filter(el => el.collection === "EVMCOMING SOON"); 
             setFiltered(filtered);
         } else if (activePlatform === 4){
-            const filtered = platforms.filter(el => el.collection === "COMING SOON"); 
+            const filtered = platforms.filter(el => el.collection === "EVMEXCHANGE"); 
             setFiltered(filtered);
         } else if (activePlatform === 5){
-            const filtered = platforms.filter(el => el.collection === "EXCHANGE"); 
+            const filtered = platforms.filter(el => el.collection === "EVMDEVELOPERS"); 
             setFiltered(filtered);
         } else if (activePlatform === 6){
-            const filtered = platforms.filter(el => el.collection === "INFORMATION"); 
+            const filtered = platforms.filter(el => el.collection === "EVMWALLETS"); 
             setFiltered(filtered);
         } else if (activePlatform === 7){
-            const filtered = platforms.filter(el => el.collection === "DEVELOPERS"); 
+            const filtered = platforms.filter(el => el.collection === "EVMBLOCK EXPLORER"); 
             setFiltered(filtered);
         } else if (activePlatform === 8){
-            const filtered = platforms.filter(el => el.collection === "WALLETS"); 
+            const filtered = platforms.filter(el => el.collection === "EVMDEFI"); 
             setFiltered(filtered);
         } else if (activePlatform === 9){
-            const filtered = platforms.filter(el => el.collection === "BLOCK EXPLORER"); 
+            const filtered = platforms.filter(el => el.collection === "EVMTOOLS"); 
             setFiltered(filtered);
-        } else if (activePlatform === 10){
-            const filtered = platforms.filter(el => el.collection === "DEFI"); 
-            setFiltered(filtered);
-        } else if (activePlatform === 11){
-            const filtered = platforms.filter(el => el.collection === "SOCIAL"); 
-            setFiltered(filtered);
-        } else if (activePlatform === 12){
-            const filtered = platforms.filter(el => el.collection === "GAMES"); 
-            setFiltered(filtered);
-        }
+        } 
         
     }, [activePlatform])
 
     return(
        <FilterContainer>
-           <Button onClick={() => setActivePlatform(0)}>NATIVE</Button>
-           <Button onClick={() => setActivePlatform(1)}>PARTNERS</Button>
-           <Button onClick={() => setActivePlatform(2)}>PAYMENTS</Button>
-           <Button onClick={() => setActivePlatform(3)}>NFT</Button>
-           <Button onClick={() => setActivePlatform(4)}>COMING SOON</Button>
-           <Button onClick={() => setActivePlatform(5)}>EXCHANGE</Button>
-           <Button onClick={() => setActivePlatform(6)}>INFORMATION</Button>
-           <Button onClick={() => setActivePlatform(7)}>DEVELOPERS</Button>
-           <Button onClick={() => setActivePlatform(8)}>WALLETS</Button>
-           <Button onClick={() => setActivePlatform(9)}>BLOCK EXPLORER</Button>
-           <Button onClick={() => setActivePlatform(10)}>DEFI</Button>
-           <Button onClick={() => setActivePlatform(11)}>SOCIAL</Button>
-           <Button onClick={() => setActivePlatform(12)}>GAMES</Button>
+           <Button onClick={() => setActivePlatform(0)}>EVM</Button>
+           <Button onClick={() => setActivePlatform(1)}>MEME</Button>
+           <Button onClick={() => setActivePlatform(2)}>NFT</Button>
+           <Button onClick={() => setActivePlatform(3)}>COMING SOON</Button>
+           <Button onClick={() => setActivePlatform(4)}>EXCHANGE</Button>
+           <Button onClick={() => setActivePlatform(5)}>DEVELOPERS</Button>
+           <Button onClick={() => setActivePlatform(6)}>WALLETS</Button>
+           <Button onClick={() => setActivePlatform(7)}>BLOCK EXPLORER</Button>
+           <Button onClick={() => setActivePlatform(8)}>DEFI</Button>
+           <Button onClick={() => setActivePlatform(9)}>TOOLS</Button>
        </FilterContainer> 
     )
 }
@@ -267,7 +255,7 @@ function Platforms ({el}){
 }
 
 
-const Ecosystem = () => {
+const EVMEcosystem = () => {
 
     const [platforms, setPlatforms] = useState([]);
     const [filtered, setFiltered] = useState([]);
@@ -281,8 +269,8 @@ const Ecosystem = () => {
 
     const fetchPlatforms = () => {
         
-        setPlatforms(NativeEcosystemData);
-        setFiltered(NativeEcosystemData); 
+        setPlatforms(EVMEcosystemData);
+        setFiltered(EVMEcosystemData); 
     }
 
 
@@ -308,4 +296,4 @@ const Ecosystem = () => {
     )
 }
 
-export default Ecosystem;
+export default EVMEcosystem;

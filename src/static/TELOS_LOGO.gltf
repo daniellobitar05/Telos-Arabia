@@ -1,0 +1,276 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.6.16",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "BezierCurve",
+            "rotation" : [
+                -0.41496846079826355,
+                0.561836302280426,
+                -0.28370046615600586,
+                0.657004714012146
+            ],
+            "scale" : [
+                1.9132344722747803,
+                2.0117850303649902,
+                1.749883770942688
+            ],
+            "translation" : [
+                -5.636446952819824,
+                4.570615768432617,
+                2.6927428245544434
+            ]
+        },
+        {
+            "name" : "BezierCurve.001",
+            "rotation" : [
+                -0.610697865486145,
+                -0.015194608829915524,
+                -0.7365393042564392,
+                0.29039138555526733
+            ],
+            "scale" : [
+                0.906473696231842,
+                0.906473696231842,
+                0.906473696231842
+            ],
+            "translation" : [
+                -5.334878921508789,
+                3.6349565982818604,
+                -3.436765432357788
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Sphere",
+            "rotation" : [
+                -0.06930601596832275,
+                0.7048603296279907,
+                -0.07690896093845367,
+                -0.7017503976821899
+            ],
+            "scale" : [
+                5.589884281158447,
+                5.589884281158447,
+                5.589884281158447
+            ],
+            "translation" : [
+                -0.050232887268066406,
+                2.4510884284973145,
+                -1.1688628196716309
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Cube",
+            "rotation" : [
+                -0.48925071954727173,
+                0.5006080269813538,
+                -0.5726162195205688,
+                -0.42677417397499084
+            ],
+            "scale" : [
+                0.890055239200592,
+                0.890055239200592,
+                0.890055239200592
+            ],
+            "translation" : [
+                -5.172800540924072,
+                3.669023275375366,
+                -3.436225652694702
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.11134631931781769,
+                    0.011238151229918003,
+                    0.8000000715255737,
+                    1
+                ],
+                "metallicFactor" : 0.800000011920929,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material.002",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ],
+                "metallicFactor" : 0.5,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 559,
+            "max" : [
+                0.9999997019767761,
+                1,
+                0.9999994039535522
+            ],
+            "min" : [
+                -0.9999990463256836,
+                -1,
+                -0.9999987483024597
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 559,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 559,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2880,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 1637,
+            "max" : [
+                4.539913177490234,
+                0.23257583379745483,
+                4.758993625640869
+            ],
+            "min" : [
+                -0.4028666019439697,
+                -1.178653359413147,
+                -0.8318895101547241
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 1637,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 1637,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 2667,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 6708,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6708,
+            "byteOffset" : 6708
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4472,
+            "byteOffset" : 13416
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5760,
+            "byteOffset" : 17888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 19644,
+            "byteOffset" : 23648
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 19644,
+            "byteOffset" : 43292
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13096,
+            "byteOffset" : 62936
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5334,
+            "byteOffset" : 76032
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 81368,
+            "uri" : "TELOS_LOGO.bin"
+        }
+    ]
+}

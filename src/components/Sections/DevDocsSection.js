@@ -14,15 +14,18 @@ import GavelIcon from '@mui/icons-material/Gavel';
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: purple;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 220vh;
+    }
 `;
 
 const Title = styled.div`
-    font-size: 36px;
+    font-size: 52px;
     width: 50%;
     color: ${props => props.theme.text};  
     height: 30vh;
@@ -30,6 +33,10 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        width: 80%;
+        font-size: 48px;
+    }
     
 `;
 
@@ -37,6 +44,13 @@ const Grid = styled.div`
     display: flex;
     height: 50vh;
     width: 100%;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 170vh;
+        
+    }
 `;
 
 const Box = styled.a`
@@ -48,6 +62,11 @@ const Box = styled.a`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 80%;
+        height: 50vh;
+    }
     
 `;
 
@@ -158,6 +177,9 @@ const Card = styled(motion.div)`
     &:hover{
         background: rgb(230,230,250,0.2);
     }
+    @media screen and (max-width: 768px){
+        height: 40vh;
+    }
 `;
 
 const TopCard = styled.div`
@@ -203,6 +225,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -232,31 +255,31 @@ const DevDocsSection = () => {
 
     return(
         <Section id="docssection">
-            <Title>Review the below documentation and reference materials to get started</Title>
+            <Title>راجع الوثائق والمواد المرجعية أدناه للبدء</Title>
             
             <Grid>
              <Box href="https://github.com/telosnetwork" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><GithubIcon /></span></TopCard>
-                        <BottomCard><CardText>Telos Network Github</CardText></BottomCard>
+                        <BottomCard><CardText>Github التابع لشبكة تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href="https://developers.eos.io/welcome/latest/reference/index" target="_blank" rel="noreferrer">
                      <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><APIIcon /></span></TopCard>
-                        <BottomCard><CardText>API References</CardText></BottomCard>
+                        <BottomCard><CardText>API مراجع</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href="https://docs.telos.net/" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><DocIcon /></span></TopCard>
-                        <BottomCard><CardText>Document Repository</CardText></BottomCard>
+                        <BottomCard><CardText>مستودع المستندات</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href="https://docs.telos.net/developers/tutorials" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><GovIcon /></span></TopCard>
-                        <BottomCard><CardText>Evolutionary Governance</CardText></BottomCard>
+                        <BottomCard><CardText>الحكم التطوري</CardText></BottomCard>
                     </Card>
                 </Box>
             </Grid>

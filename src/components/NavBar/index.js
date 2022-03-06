@@ -735,7 +735,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <LinkR to="/EVMEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
             <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
             <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
             <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkS>
@@ -1018,7 +1018,7 @@ const Header = (props) => {
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkR to="/NativeEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                    <LinkR to="/EVMEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <SubMenuTitle>

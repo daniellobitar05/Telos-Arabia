@@ -27,18 +27,24 @@ const Section = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 72px;
-    width: 50%;
+    font-size: 92px;
+    width: 70%;
     color: ${props => props.theme.text};  
-    text-align: right;  
+    text-align: right;
+    @media screen and (max-width: 768px){
+        font-size: 52px;
+    }  
 `;
 
 const Subtitle = styled.div`
-    font-size: 24px;
+    font-size: 42px;
     width: 50%;
     color: ${props => props.theme.text};
     text-align: right; 
     padding: 30px 0;
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+    }
     
 `;
 
@@ -59,7 +65,7 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
 `;
 
 const IconText = styled.div`
-    font-size: 16px;
+    font-size: 20px;
     color: white;
 
 `;
@@ -101,15 +107,15 @@ const Developers = () => {
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
         <Section id="developers">
-            <Title>Benefits of the Telos Network</Title>
-            <Subtitle>Telos Network provides developers and entrepreneurs the tools to build, deploy and run high-performing next generation applications complete with their own digital economies.</Subtitle>
+            <Title>فوائد شبكة تيلوس</Title>
+            <Subtitle>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</Subtitle>
             <IconHolder>
                 <IconColumn>
                 <LinkS to="devresources" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
                 </IconColumn>
                 <TextColumn>
                 <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><IconButton><ArrowLeft /></IconButton></a>
-                <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><IconText>Telos documentation</IconText></a>
+                <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><IconText>وثائقنا Telos</IconText></a>
                 </TextColumn>
                 <IconColumn>
                 

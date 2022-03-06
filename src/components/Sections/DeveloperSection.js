@@ -5,10 +5,10 @@ import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {IconButton} from "@mui/material";
-import Dev1 from "../SVG/dev1.svg";
-import Dev2 from "../SVG/dev2.svg";
-import Dev3 from "../SVG/dev3.svg";
-import Dev4 from "../SVG/dev4.svg";
+import Icon1 from "../SVG/performance.svg";
+import Icon2 from "../SVG/funding.svg";
+import Icon3 from "../SVG/community.svg";
+import Icon4 from "../SVG/ux.svg";
 
 const Section = styled.div`
     width: 100%;
@@ -18,17 +18,100 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 220vh;
+    }
 `;
 
 const Title = styled.div`
-    font-size: 72px;
+    font-size: 82px;
     width: 100%;
     color: ${props => props.theme.text};  
-    height: 20vh;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 40vh;
+    }
+    
+    
+`;
+
+const Grid = styled.div`
+    width: 80%;
+    height: 65vh;
+    
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 180vh;
+    }   
+`;
+
+const Column = styled(motion.div)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 60vh;
+    }
+`;
+
+const IconContainer = styled(motion.div)`
+    height: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     
+    img{
+        width: 30%;
+        border-radius: 50%;
+        border: 1px solid aqua;
+        padding: 10px;
+        @media screen and (max-width: 768px){
+            width: 25%;
+        }
+    }
+`;
+
+const TextContainer = styled.div`
+    width: 80%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 40%;
+    }
+`;
+
+const TopText = styled.div`
+    height: 40%;
+    width: 100%;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+`;
+
+const BottomText = styled.div`
+    height: 60%;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 `;
 
 
@@ -70,7 +153,7 @@ const CircleVariants = {
         y: '0%'
     },
     end: {
-        y: '-50%'
+        y: '-30%'
     }
 };
 
@@ -80,8 +163,27 @@ const CircleTransition = {
     ease: 'easeInOut',
 };
 
+const Trans2 = {
+    duration: 4, 
+    yoyo: Infinity,
+    ease: 'easeInOut',
+    delay: 0.5
+}
+const Trans3 = {
+    duration: 4, 
+    yoyo: Infinity,
+    ease: 'easeInOut',
+    delay: 1.5
+}
+const Trans4 = {
+    duration: 4, 
+    yoyo: Infinity,
+    ease: 'easeInOut',
+    delay: 2.5
+}
+
 const Wrapper = styled.div`
-    width: 50vh;
+    width: 50vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -89,11 +191,11 @@ const Wrapper = styled.div`
     justify-content: center;
 `;
 
-const TextContainer = styled.div`
+/* const TextContainer = styled.div`
     
     width: 80%;
-    height: 10vh;
-`;
+    height: 20vh;
+`; */
 
 const BoxColumn = styled.div`
     width: 25%;
@@ -110,7 +212,7 @@ const BoxTitle = styled.div`
     width: 100%;
     height: 50%;
     color: aqua;
-    font-size: 18px;
+    font-size: 36px;
     text-align: center;
 `;
 
@@ -118,7 +220,7 @@ const BoxSubtitle = styled.div`
     width: 75%;
     height: 50%;
     color: white;
-    font-size: 16px;
+    font-size: 32px;
     text-align: center;
     
 `;
@@ -171,9 +273,47 @@ const DeveloperSection = () => {
 
     return(
         <Section id="devresources">
-            <Title>Developer Resources</Title>
-            <Empty />
-            <IconHolder variants={ContainerVariants} initial='start' animate='end'>
+            <Title>موارد المطور</Title>
+            
+            <Grid>
+                <Column variants={ContainerVariants} initial='start' animate='end'>
+                    <IconContainer variants={CircleVariants}  transition={CircleTransition}>
+                        <img src={Icon1} alt="logo1" />
+                    </IconContainer>
+                    <TextContainer>
+                        <TopText>أداء عالي</TopText>
+                        <BottomText>معاملات سريعة ورسوم منخفضة</BottomText>
+                    </TextContainer>
+                </Column>
+                <Column variants={ContainerVariants} initial='start' animate='end'>
+                    <IconContainer variants={CircleVariants}  transition={Trans2}>
+                        <img src={Icon2} alt="logo1" />
+                    </IconContainer>
+                    <TextContainer>
+                        <TopText>التمويل الأولي متاح</TopText>
+                        <BottomText>تدعم الشبكة المشاريع الواعدة</BottomText>
+                    </TextContainer>
+                </Column>
+                <Column variants={ContainerVariants} initial='start' animate='end'>
+                    <IconContainer variants={CircleVariants}  transition={Trans3}>
+                        <img src={Icon3} alt="logo1" />
+                    </IconContainer>
+                    <TextContainer>
+                        <TopText>محاذاة المجتمع </TopText>
+                        <BottomText>تم إنشاؤه لدعم العمل الذي يحركه الغرض</BottomText>
+                    </TextContainer>
+                </Column>
+                <Column variants={ContainerVariants} initial='start' animate='end'>
+                    <IconContainer variants={CircleVariants}  transition={Trans4}>
+                        <img src={Icon4} alt="logo1" />
+                    </IconContainer>
+                    <TextContainer>
+                        <TopText>تجربة مستخدم حديثة</TopText>
+                        <BottomText>لا يمكن للمستخدمين معرفة أنه مبني على بلوكتشين</BottomText>
+                    </TextContainer>
+                </Column>
+            </Grid>
+            {/* <IconHolder variants={ContainerVariants} initial='start' animate='end'>
                 <Wrapper>
                 <motion.span variants={CircleVariants}  transition={CircleTransition}><img src={Dev1} alt="dev1"/></motion.span>
                 </Wrapper>
@@ -189,23 +329,23 @@ const DeveloperSection = () => {
             </IconHolder>
             <TextContainer>
                 <BoxColumn>
-                    <BoxTitle>High performance</BoxTitle>
-                    <BoxSubtitle>Fast transactions and low fees</BoxSubtitle>
+                    <BoxTitle>أداء عالي</BoxTitle>
+                    <BoxSubtitle>معاملات سريعة ورسوم منخفضة</BoxSubtitle>
                 </BoxColumn>
                 <BoxColumn>
-                <BoxTitle>Seed funding available</BoxTitle>
-                <BoxSubtitle>The network supports promising projects</BoxSubtitle>
+                <BoxTitle>التمويل الأولي متاح</BoxTitle>
+                <BoxSubtitle>تدعم الشبكة المشاريع الواعدة</BoxSubtitle>
                 </BoxColumn>
                 <BoxColumn>
-                <BoxTitle>Aligned community</BoxTitle>
-                <BoxSubtitle>Created to power purpose-driven action</BoxSubtitle>
+                <BoxTitle>المجتمع المنحاز</BoxTitle>
+                <BoxSubtitle>تم إنشاؤه لدعم العمل الذي يحركه الغرض</BoxSubtitle>
                 </BoxColumn>
                 <BoxColumn>
-                <BoxTitle>Modern UX</BoxTitle>
-                <BoxSubtitle>Users can’t tell it’s built on a blockchain</BoxSubtitle>
+                <BoxTitle>تجربة مستخدم حديثة</BoxTitle>
+                <BoxSubtitle>لا يمكن للمستخدمين معرفة أنه مبني على بلوكتشين</BoxSubtitle>
                 </BoxColumn>
             </TextContainer>
-            <Empty />
+            <Empty /> */}
             <Empty>
                 <IconColumn>
                 <LinkS to="docssection" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>

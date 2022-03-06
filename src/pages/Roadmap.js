@@ -14,24 +14,49 @@ import Picture from "../components/images/news/news2.jpg";
 
 const Section = styled.div`
     width: 100%;
-    height: 1490vh;
+    height: 2000vh;
     background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
+    @media screen and (max-width: 768px){
+        height: 2490vh;
+    }
+`; 
 
 const PageTitle = styled.div`
-    font-size: 62px;
+    font-size: 84px;
     width: 80%;
-    height: 45vh;
+    height: 30vh;
     color: ${props => props.theme.text};  
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
-    
     text-align: right;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+
+    }
+    
+`;
+
+const DownTitle = styled.div`
+    font-size: 72px;
+    width: 80%;
+    height: 30vh;
+    color: ${props => props.theme.text};  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 80px 0;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+
+    }
     
 `;
 
@@ -42,31 +67,37 @@ const ImageHolder = styled.div`
     display: flex;
     background-image: url(${Picture});
     background-size: cover;
-    transform: translate(-25%, -10%);
+    
     @media screen and (max-width: 768px){
-        height: 30vh;;
+        width: 90%;
+        height: 30vh;
     }
 `;
 
 const Title = styled.div`
     height: 30vh;
     width: 80%;
-    font-size: 32px;
+    font-size: 48px;
     color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    text-align: right;
     transform: translate(0, 20%);
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
-        height: 20vh;;
+        height: 30vh;
+        transform: translate(0, 0);
     }
 `;
 
 const Bigtitle = styled.div`
     height: 40vh;
     width: 80%;
-    font-size: 48px;
+    font-size: 62px;
     font-weight: bold;
     color: white;
     display: flex;
@@ -76,16 +107,25 @@ const Bigtitle = styled.div`
 `;
 
 const Article = styled.div`
-    width: 80vw;
-    font-size: 22px;
+    width: 70vw;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: right;
     text-align: right;
+    padding: 30px 0;
+    span{
+        margin: 0 10px;
+    }
     a{
         color: aqua;
         text-decoration: none;
+        margin: 0 10px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
     }
 `;
 
@@ -97,63 +137,69 @@ const Roadmap = () => {
         <ThemeProvider theme={themes[theme]}>
             <Header theme={theme} setTheme={setTheme} />
                 <Section id="roadmap">
-                    <PageTitle>Announcing the New Telos Roadmap!</PageTitle>
+                    <PageTitle>الاعلان عن خارطة تيلوس الجديدة</PageTitle>
                     <ImageHolder></ImageHolder>
-                    <Title>The future is looking epic for Telos!</Title>
-                    <Article><p>Welcome to our new Telos Roadmap for the years to come! Some of our readers have been a Telos fan since the mainnet went live three short years ago. Others are just now learning about the incredible real-world use cases and potential for Telos. Wherever you are on your Telos journey, we know you’ll love reading about our new roadmap.</p><p>This roadmap is our guiding vision for the future of Telos. As you read through, remember that there has been a ton of great restructuring behind the scenes. We’re excited for everything the future holds for Telos!</p>
-                    <p>Questions may come to you after you’ve read through our roadmap. Tune into our <a href="https://www.youtube.com/watch?v=mLhbdy6CqYM" target="_blank" rel="noreferrer"> Telos Tuesday AMA with the core team on Jan. 11th 2022.</a>From then on, we’ll bring back technical updates twice a month so that you can stay up to date about all these awesome initiatives.</p>
-                    <p>One last thing before we dive into the roadmap! The Present section is our summary of what we’re working on right now. The Future section is our summary of everything that we’re working towards for the future of the Telos ecosystem. Stay tuned for those weekly updates to find out what we’re tackling next and get the latest on the technical developments of Telos.</p><p>Let’s dive into the new Telos Roadmap! Buckle up, it’s quite a ride.</p></Article>
-                    <Bigtitle>Present</Bigtitle>
-                    <Article>The Telos Core Team's work continues even after a product as incredible as the Telos EVM launches. Check out the products and initiatives that are currently underway within the Telos ecosystem. Many of these are already live for your use, with the team adding new features on a regular basis.</Article>
+                    <Title> المستقبل يبحث عن ملحمة تيلوس</Title>
+                    <Article>مرحبًا بك في خارطة طريق تيلوس الجديدة للسنوات القادمة! كان بعض قرائنا من محبي تيلوس منذ أن تم إطلاق الشبكة الرئيسية قبل ثلاث سنوات قصيرة. يتعلم الآخرون الآن للتو عن حالات الاستخدام المذهلة في العالم الحقيقي وإمكانيات تيلوس. أينما كنت في رحلة تيلوس الخاصة بك ، نعلم أنك ستحب القراءة حول خريطة الطريق الجديدة الخاصة بنا.</Article>
+                    <Article>خارطة الطريق هذه هي رؤيتنا التوجيهية لمستقبل تيلوس. أثناء القراءة ، تذكر أنه كان هناك الكثير من عمليات إعادة الهيكلة الرائعة خلف الكواليس. نحن متحمسون لكل ما يحمله المستقبل لشركة تيلوس!</Article>
+                    <Article><p><t>قد يتم طرح الأسئلة عليك بعد قراءة خارطة الطريق الخاصة بنا. انضم إلى تيلوس تيوزداي مع الفريق الأساسي في</t><a href="https://youtu.be/mLhbdy6CqYM" target="_blank" rel="noreferrer">11 كانون الثاني (يناير) 2022</a>، ومن ذلك الحين فصاعدًا ، سنقوم بإعادة التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة.</p></Article>
+                    <Article>شيء أخير قبل أن نتعمق في خريطة الطريق! المقطع الحالي هو ملخصنا لما نعمل عليه الآن. قسم المستقبل هو ملخصنا لكل شيء نعمل على تحقيقه من أجل مستقبل نظام تيلوس البيئي. ترقبوا هذه التحديثات الأسبوعية لمعرفة ما سنقوم بمعالجته بعد ذلك والحصول على آخر التطورات التقنية في تيلوس</Article>
+                    <Article>دعونا نتعمق في خارطة طريق تيلوس الجديدة! اربط حزام الأمان ، إنها رحلة رائعة</Article>
+                    <Bigtitle>الحاضر</Bigtitle>
+                    <Article style={{direction: 'rtl'}}>يستمر عمل Telos Core Team حتى بعد منتج مذهل مثل إطلاق Telos EVM. تحقق من المنتجات والمبادرات التي يتم تنفيذها حاليًا داخل نظام Telos البيئي. العديد من هذه الميزات موجودة بالفعل لاستخدامك ، مع قيام الفريق بإضافة ميزات جديدة على أساس منتظم.</Article>
                     <Title>Telos EVM</Title>
-                    <Article><p>The launch of the Telos EVM was one of the most monumental milestones for the Telos ecosystem since its mainnet launch. Telos launched a layer one Ethereum Virtual Machine with no front running, flat gas fees, energy efficiency, and extreme speed and power! As applications begin to deploy, development continues to ensure seamless onboarding with feature parity.</p><p> You can read more about the Telos EVM in <a href="https://docs.telos.net/evm/" target="_blank" rel="noreferrer"> our documentation here.</a></p></Article>
-                    <Title>Decide Voter Mobile App</Title>
-                    <Article><p>The Decide Voter mobile app by GoodBlock Technologies enables real world use of the Telos Decide engine. Available on <a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer"> Google Play</a> and the <a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer">Apple Store</a>, This intuitive application makes transparent and efficient decentralized governance accessible to everyone.</p></Article>
+                    <Article style={{direction: 'rtl'}}>كان إطلاق Telos EVM أحد أهم الإنجازات لنظام Telos البيئي منذ إطلاق شبكته الرئيسية. أطلقت Telos جهازًا ظاهريًا من الطبقة الأولى من Ethereum بدون تشغيل أمامي ، ورسوم الغاز المسطحة ، وكفاءة الطاقة ، والسرعة القصوى والقوة! مع بدء نشر التطبيقات ، يستمر التطوير في ضمان الإعداد السلس مع تكافؤ الميزات.</Article>
+                    <Article><p><a href="http://teloscan.io/" target="_blank" rel="noreferrer">في وثائقنا هنا<span>Telos EVM</span></a><t>يمكنك قراءة المزيد عن</t></p></Article>
+                    <Title><t><span>Voter Mobile</span>تحديد تطبيق</t></Title>
+                    <Article style={{direction: 'rtl'}}><p><t>يتيح تطبيق</t><span>Decide Voter</span><t>للجوال من</t><span>GoodBlock Technologies</span><t>استخدام محرك</t><span>Telos Decide</span><t> في العالم الحقيقي. متوفر على</t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer"> Google Play</a><t> و </t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer">Apple Store</a><t> ، هذا التطبيق البديهي يجعل الإدارة اللامركزية الشفافة والفعالة في متناول الجميع</t></p></Article>
                     <Title>dStor</Title>
-                    <Article>dStor is a decentralized data storage service with high levels of resiliency and security that is currently being developed by GoodBlock Technologies. As a pillar of Web 3.0, dStor simplifies the use of decentralized cloud storage by allowing fiat payments and managing data across the network to maximize speed and redundancy without needing customer management, as other decentralized storage platforms do. Thanks to dStor's ability to find high quality storage nodes within a user's geographic region, speed is as fast as centralized platforms. This enables groundbreaking opportunities for the crypto industry including scalable decentralized gaming, secure NFT assets, tamper-proof governance documentation, and more.</Article>
+                    <Article style={{direction: 'rtl'}}>dStor هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة GoodBlock Technologies. كأحد أعمدة الويب 3.0 ، يبسط dStor استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة dStor على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول NFT الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</Article>
                     <Title>Telos Web Wallet 2.0</Title>
-                    <Article><p>The release of the <a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a> introduced an easy to navigate interface for users to manage their Telos-based crypto assets in an intuitive application. Continued development will bring further functionality and ease of use for an all-in-one web wallet solution.</p></Article>
-                    <Title>Teloscan Beta</Title>
-                    <Article><p>Telos' version of the popular Ethereum block explorer was custom built with the Telos EVM in mind.Although development is in the early stages, users and dApps can already begin <a href="http://teloscan.io/" target="_blank" rel="noreferrer">exploring the Telos EVM</a> through an early iteration of this powerful tool.</p></Article>
-                    <Title>Telos Knowledge Base & Support </Title>
-                    <Article><p>Home of the official Telos support, the <a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Knowledge Base</a> is integral to establishing Telos as the blockchain for mass adoption. It's easy to navigate support documentation and the familiar ticketing system removes the intimidation factor that many people associate with crypto and Web 3.0 technology.</p></Article>
-                    <Title>Partnerships & Exchanges</Title>
-                    <Article><p>The key to a thriving ecosystem is about more than just the technology that is offered. This is why the Telos Foundation builds partnerships with prominent industry projects and exchanges around the world.</p></Article>
-                    <Bigtitle>Future</Bigtitle>
-                    <Article>Telos is paving the way to mass adoption of Web 3.0 by developing innovative decentralized solutions with real world applications. The Telos Core Developers and Product Team will determine development priorities on a quarterly basis considering needs, opportunities, and available resources. Here’s what we’ve got in store for Telos in 2022 and beyond!</Article>
-                    <Title>Telos Academy</Title>
-                    <Article>Learn about all things Telos! As the industry heads towards mass adoption, we want to make it as easy as possible to welcome real world projects, users, and investors into the ecosystem. At the Telos Academy users will find educational materials on key aspects of Telos, along with a broader introduction to blockchain technology.</Article>
+                    <Article style={{direction: 'rtl'}}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
+                    <Title > بيتا Teloscan</Title>
+                    <Article style={{direction: 'rtl'}}><p><t>تم تصميم إصدار</t><span>Telos</span><t> من مستكشف كتل</t><span>Ethereum</span><t>الشهير خصيصًا مع وضع</t><span>Telos EVM</span><t>في الاعتبار. على الرغم من أن التطوير لا يزال في مراحله الأولى ، يمكن للمستخدمين و</t><span>dApps</span><t>بالفعل البدء في استكشاف </t><a href="http://teloscan.io/" target="_blank" rel="noreferrer">Telos EVM</a><t> من خلال التكرار المبكر لهذه الأداة القوية</t></p></Article>
+                    <Title>Telos قاعدة المعرفة والدعم  </Title>
+                    <Article style={{direction: 'rtl'}}><p><t>تعد</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Knowledge Base</a><t>، موطن دعم</t><span>Telos</span><t>لرسمي ، جزءًا لا يتجزأ من إنشاء</t><span>blockchain</span><t>للتبني الجماعي. من السهل التنقل في وثائق الدعم ويزيل نظام التذاكر المألوف عامل التخويف الذي يربطه العديد من الأشخاص بتقنية التشفير والويب 3.0</t></p></Article>
+                    <Title>الشراكات والتبادلات</Title>
+                    <Article>يتمثل مفتاح النظام البيئي المزدهر في أكثر من مجرد التكنولوجيا التي يتم تقديمها. هذا هو السبب في أن مؤسسة Telos تبني شراكات مع مشاريع صناعية بارزة والتبادلات في جميع أنحاء العالم</Article>
+                    <Bigtitle>مستقبل</Bigtitle>
+                    <Article style={{direction: 'rtl'}}>تمهد Telos الطريق للتبني الجماعي للويب 3.0 من خلال تطوير حلول لامركزية مبتكرة مع تطبيقات العالم الحقيقي. سيحدد مطورو Telos الأساسيون وفريق المنتج أولويات التطوير على أساس ربع سنوي مع مراعاة الاحتياجات والفرص والموارد المتاحة. هذا ما لدينا في متجر Telos في عام 2022 وما بعده!</Article>
+                    <Title>أكاديمية تيلوس</Title>
+                    <Article style={{direction: 'rtl'}}>تعرف على كل شيء عن Telos! نظرًا لأن الصناعة تتجه نحو التبني الجماعي ، نريد أن نجعل من السهل قدر الإمكان الترحيب بمشاريع العالم الحقيقي والمستخدمين والمستثمرين في النظام البيئي. سيجد المستخدمون في Telos Academy مواد تعليمية حول الجوانب الرئيسية لـ Telos ، إلى جانب مقدمة أوسع لتقنية blockchain.</Article>
                     <Title>Telos EVM 2.0</Title>
-                    <Article>Telos EVM is already miles ahead of current competing Solidity solutions, but development isn't slowing down. The Telos EVM 2.0 will guarantee that Telos continues to offer unmatched power for Ethereum based applications decades down the line.</Article>
-                    <Title>T-Swaps 3.0</Title>
-                    <Article>Continued development of the T-Swaps exchange will ensure that this platform remains a central part of DeFi on Telos. A sleek user interface, zoned liquidity pools, increased liquidity, and other new features are key items on the roadmap for this innovative trading platform.</Article>
-                    <Title>Telos dApp Incentive Program</Title>
-                    <Article>In order to ensure that Telos is home to some of the most innovative and thriving economies in the industry, we're launching a dApp Incentive Program for the Telos network. This initiative will offer financial, technical, and business development support to projects who will play an integral role in the future of the blockchain industry.</Article>
+                    <Article style={{direction: 'rtl'}}>تسبق Telos EVM بالفعل بأميال حلول Solidity المنافسة الحالية ، لكن التطوير لا يتباطأ. سيضمن Telos EVM 2.0 استمرار Telos في تقديم قوة لا مثيل لها للتطبيقات المستندة إلى Ethereum على مدى عقود.</Article>
+                    <Title>T-3.0 مقايضة</Title>
+                    <Article style={{direction: 'rtl'}}>سيضمن التطوير المستمر لبورصة T-Swaps أن تظل هذه المنصة جزءًا أساسيًا من DeFi على Telos. تعد واجهة المستخدم الأنيقة ، وتجمعات السيولة المخصصة للمناطق ، والسيولة المتزايدة ، وغيرها من الميزات الجديدة عناصر أساسية في خريطة الطريق لمنصة التداول المبتكرة هذه.</Article>
+                    <Title> Telos dApp برنامج حوافز</Title>
+                    <Article style={{direction: 'rtl'}}>من أجل ضمان أن Telos هي موطن لبعض الاقتصادات الأكثر ابتكارًا وازدهارًا في الصناعة ، فإننا نطلق برنامج حوافز dApp لشبكة Telos. ستقدم هذه المبادرة الدعم المالي والتقني وتطوير الأعمال للمشاريع التي ستلعب دورًا أساسيًا في مستقبل صناعة blockchain.</Article>
                     <Title>Telos SureProfit</Title>
-                    <Article>This groundbreaking tool is set to revolutionize DeFi, empowering traders to ensure that their trades will be successful before transacting. SureProfit will allow users to check their balances just before finalizing a transaction and cancel any that would result in a net loss for the end user. When paired with near feeless transactions, this powerful tool makes it possible to begin building wealth with as little as a dollar.</Article>
-                    <Title>Satoshi Tokens (SATs)</Title>
-                    <Article>A fractionalized version of Bitcoin that is so intuitive your grandma can use it! Why buy a coffee for 0.00005441 Bitcoin when you can buy it for 5441 SATs? SATs allow for price tags that actually make sense to a lay person. When paired with near feeless transactions at 10,000 TPS and the user-friendly UI of the Telos Web Wallet, real world crypto transactions have never been easier. SATs are bridged to the Bitcoin blockchain and represent wrapped BTC tokens. They can also be converted directly between SAT and BTC without using an exchange or swap contract.</Article>
-                    <Title>T-Bond NFTs UI</Title>
-                    <Article>The T-Bond NFTs technology was one of the most innovative DeFi developments of 2021. The new T-Bonds UI will open up this powerful piece of tooling to real world initiatives with no developer resources. As the world reimagines what our traditional financial systems look like, T-Bond NFTs are set to play a major role in the future of our economies.</Article>
+                    <Article style={{direction: 'rtl'}}>تم إعداد هذه الأداة الرائدة لإحداث ثورة في DeFi ، وتمكين المتداولين من ضمان نجاح تداولاتهم قبل إجراء المعاملات. سيسمح SureProfit للمستخدمين بالتحقق من أرصدتهم قبل إنهاء المعاملة مباشرة وإلغاء أي معاملة قد تؤدي إلى خسارة صافية للمستخدم النهائي. عند إقرانها بمعاملات شبه محسوسة ، تتيح هذه الأداة القوية البدء في تكوين ثروة بأقل من دولار واحد.</Article>
+                    <Title>  (SAT) رموز ساتوشي</Title>
+                    <Article style={{direction: 'rtl'}}>نسخة مجزأة من Bitcoin بديهية للغاية يمكن لجدتك استخدامها! لماذا تشتري قهوة مقابل 0.00005441 بيتكوين بينما يمكنك شرائها مقابل 5441 SAT؟ تسمح SATs بعلامات الأسعار التي تكون منطقية فعلاً للشخص العادي. عند إقرانها بمعاملات شبه محسوسة عند 10000 TPS وواجهة مستخدم سهلة الاستخدام لمحفظة Telos Web Wallet ، لم تكن معاملات التشفير في العالم الحقيقي أسهل من أي وقت مضى. يتم ربط SATs بـ Bitcoin blockchain وتمثل الرموز المميزة لـ BTC المغلفة. يمكن أيضًا تحويلها مباشرة بين SAT و BTC دون استخدام عقد تبادل أو مقايضة.</Article>
+                    <Title> T-Bond NFTs واجهة مستخدم</Title>
+                    <Article style={{direction: 'rtl'}}>كانت تقنية T-Bond NFTs واحدة من أكثر تطورات DeFi ابتكارًا في عام 2021. ستفتح T-Bonds UI الجديدة هذه القطعة القوية من الأدوات لمبادرات العالم الحقيقي بدون موارد للمطورين. نظرًا لأن العالم يعيد تصور الشكل الذي تبدو عليه أنظمتنا المالية التقليدية ، فإن T-Bond NFTs من المقرر أن تلعب دورًا رئيسيًا في مستقبل اقتصاداتنا.</Article>
                     <Title>Teloscan & Telos Block Explorer</Title>
-                    <Article>As Telos EVM development continues, Teloscan will offer applications and users a suite of tools that compete with other leading block explorers. In addition to Teloscan for Telos EVM, an official block explorer for Telos native is also under development. Both of these tools will maximize the utility of various Telos features and ensure a seamless user experience for navigating the history of the Telos ecosystem at scale.</Article>
+                    <Article style={{direction: 'rtl'}}>مع استمرار تطوير Telos EVM ، ستقدم Teloscan التطبيقات والمستخدمين مجموعة من الأدوات التي تتنافس مع مستكشفي الكتل الرائدين الآخرين. بالإضافة إلى Teloscan for Telos EVM ، يجري أيضًا تطوير مستكشف كتل رسمي لـ Telos الأصلي. ستعمل كلتا هاتين الأداتين على تعظيم الاستفادة من ميزات Telos المتنوعة وضمان تجربة مستخدم سلسة للتنقل في تاريخ نظام Telos البيئي على نطاق واسع.</Article>
                     <Title>T-ID</Title>
-                    <Article>An identity solution combining two large needs for identity. The first is the need to determine the uniqueness of an individual account's identity, and second is the ability for a user to have information verified by third-parties without leaking private information. Users will be able to share select information with apps while keeping control of what they share. Certificates issued will be linked to these details. This product will be crucial as the industry evolves and the needs of governance and DeFi become more complex. The Telos Core Developers have partnered with original developers of the Estonian National Identity system, the first and most successful blockchain identity system in the world.</Article>
-                    <Title>Mural NFT Market & Gallery</Title>
-                    <Article>With extremely low minting costs, no front-running, and a low carbon footprint, the Telos EVM is set to be the most artist-friendly platform across the industry. The Mural NFT Market & Gallery is a key piece in facilitating this thriving creative ecosystem. Buy, sell, trade, and display your NFT collections with ease and grow your decentralized artwork portfolio.</Article>
-                    <Title>Telos Private</Title>
-                    <Article>Telos Private will enable completely private “zero knowledge proofs” (ZK) transactions for Telos users. Telos Private will employ a separate side-chain with modified code to allow ZK transactions and bridges to and from Telos. The side-chain will be decentralized and run by the Telos block producers, selected through user voting.</Article>
-                    <Title>Decide Voter+</Title>
-                    <Article>Powerful governance is a pillar of the Telos ecosystem, but only certain governance features are currently available for users with no developer resources. Decide Voter+ solves this by bringing advanced blockchain governance to real world projects. This includes features such as legislation amendments, board election management, and more.</Article>
-                    <Title>Telos Profiles 2.0</Title>
-                    <Article><p><a href="https://app.telos.net/profiles/myProfile/" target="_blank" rel="noreferrer">Telos Profiles</a>, your passport to Web 3.0, is a decentralized user profile service built to facilitate a more engaging ecosystem. It allows users to set a custom avatar and public persona associated with their account. Projects can then utilize this as a network-wide profile solution for familiar in-app experiences. Telos Profiles 2.0 will offer an updated UI and easy to navigate tooling, unlocking the full potential of decentralized user profiling.</p></Article>
-                    <Title>Telos Location</Title>
-                    <Article>Telos Location allows proof-of-location using the Telos blockchain, while incentivizing users to carry out “location mining” for the system. With this product, anyone will be able to verify that they were in a specific location at a specific time. This opens up a world of possibilities for dApps, DAOs, and other decentralized initiatives. Note that Telos Location is a long-term development goal and is not expected to be completed during 2022.</Article>
-                    <PageTitle>We hope you enjoyed the new Telos Roadmap!</PageTitle>
-                    <Article><p>Were you blown away by all the incredible work and groundbreaking projects coming to Telos over the next year? There’s lots to get excited about for NFT aficionados, DeFi wizards, and decentralization enthusiasts.</p><p>Remember that you can tune into our <a href="https://www.youtube.com/watch?v=mLhbdy6CqYM" target="_blank" rel="noreferrer">Telos Tuesday AMA with the core team on Jan. 11th 2022</a> and get answers to all your questions. We pride ourselves on being transparent and friendly with our community - and we hope to see you there!</p><p>From then on, we’ll bring back technical updates twice a month so that you can stay up to date about all these awesome initiatives. Stay tuned for more. And thanks for being one of our Telos founders - here’s to an amazing year!</p></Article>
+                    <Article style={{direction: 'rtl'}}>حل هوية يجمع بين حاجتين كبيرتين للهوية. الأول هو الحاجة إلى تحديد الطابع الفريد لهوية الحساب الفردي ، والثاني هو قدرة المستخدم على التحقق من المعلومات من قبل أطراف ثالثة دون تسريب المعلومات الخاصة. سيتمكن المستخدمون من مشاركة معلومات محددة مع التطبيقات مع الحفاظ على التحكم فيما يشاركونه. سيتم ربط الشهادات الصادرة بهذه التفاصيل. سيكون هذا المنتج حاسمًا مع تطور الصناعة وتصبح احتياجات الحوكمة و DeFi أكثر تعقيدًا. أبرم مطورو Telos Core شراكة مع المطورين الأصليين لنظام الهوية الوطنية الإستونية ، وهو أول وأنجح نظام هوية blockchain في العالم.</Article>
+                    <Title><t>جدارية</t><t>NFT</t><t>سوق ومعرض</t></Title>
+                    <Article style={{direction: 'rtl'}}>مع تكاليف سكك منخفضة للغاية ، وعدم وجود مقدمة ، وبصمة كربونية منخفضة ، تم تعيين Telos EVM ليكون النظام الأساسي الأكثر ملاءمة للفنان في جميع أنحاء الصناعة. يعد سوق ومعرض NFT الجداري جزءًا أساسيًا في تسهيل هذا النظام البيئي الإبداعي المزدهر. قم بشراء وبيع وتداول وعرض مجموعات NFT الخاصة بك بسهولة وتنمية محفظة الأعمال الفنية اللامركزية الخاصة بك.</Article>
+                    <Title>Telos خاص</Title>
+                    <Article style={{direction: 'rtl'}}>ستعمل Telos Private على تمكين معاملات "ZK) الخاصة تمامًا" لإثبات المعرفة الصفرية "لمستخدمي Telos. ستستخدم Telos Private سلسلة جانبية منفصلة برمز معدل للسماح بمعاملات ZK والجسور من وإلى Telos. ستكون السلسلة الجانبية لامركزية ويديرها منتجو كتلة Telos ، ويتم اختيارهم من خلال تصويت المستخدم.</Article>
+                    <Title> + تحديد المصوت</Title>
+                    <Article style={{direction: 'rtl'}}>تعد الحوكمة القوية أحد أعمدة نظام Telos البيئي ، ولكن تتوفر حاليًا ميزات حوكمة معينة فقط للمستخدمين الذين ليس لديهم موارد للمطورين. يحل Decide Voter + هذا من خلال توفير حوكمة blockchain المتقدمة لمشاريع العالم الحقيقي. يتضمن ذلك ميزات مثل تعديلات التشريعات وإدارة انتخابات مجلس الإدارة والمزيد.</Article>
+                    <Title> Telos 2.0 ملفات تعريف </Title>
+                    <Article style={{direction: 'rtl'}}><p><t><a href="https://app.telos.net/profiles/myProfile/" target="_blank" rel="noreferrer"> ملفات تعريف Telos </a>,</t><t>جواز سفرك إلى الويب 3.0 ، عبارة عن خدمة ملف تعريف مستخدم لامركزية تم إنشاؤها لتسهيل نظام بيئي أكثر جاذبية. يسمح للمستخدمين بتعيين صورة رمزية مخصصة وشخصية عامة مرتبطة بحساباتهم. يمكن للمشاريع بعد ذلك الاستفادة من هذا كحل ملف تعريف على مستوى الشبكة للتجارب المألوفة داخل التطبيق. سوف توفر Telos Profiles 2.0 واجهة مستخدم محدثة وأدوات سهلة للتنقل ، مما يفتح الإمكانات الكاملة لتنميط المستخدم اللامركزي.</t></p></Article>
+                    <Title>Telos موقع</Title>
+                    <Article style={{direction: 'rtl'}}>يسمح موقع Telos بإثبات الموقع باستخدام blockchain Telos ، مع تحفيز المستخدمين على إجراء "التنقيب عن الموقع" للنظام. باستخدام هذا المنتج ، سيتمكن أي شخص من التحقق من وجوده في موقع معين في وقت محدد. هذا يفتح عالمًا من الاحتمالات لـ dApps و DAOs والمبادرات اللامركزية الأخرى. لاحظ أن موقع Telos هو هدف إنمائي طويل المدى ولا يُتوقع أن يكتمل خلال عام 2022.</Article>
+                    <DownTitle style={{direction: 'rtl'}}>نأمل أن تكون قد استمتعت بخريطة طريق Telos الجديدة!</DownTitle>
+                    <Article style={{direction: 'rtl'}}>هل أذهلك كل العمل المذهل والمشاريع الرائدة القادمة إلى Telos خلال العام المقبل؟ هناك الكثير من الأشياء التي تجعلك متحمسًا لعشاق NFT ومعالجات DeFi وعشاق اللامركزية.</Article>
+                    <Article style={{direction: 'rtl'}}><p><t>تذكر أنه يمكنك ضبط</t><t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer"><t>Telos Tuesday AMA</t><t>مع الفريق الأساسي في 11 يناير 2022</t></a></t><t>والحصول على إجابات لجميع أسئلتك. نحن نفخر بأنفسنا لكوننا شفافين وودودين مع مجتمعنا - ونأمل أن نراك هناك!</t></p></Article>
+                    <Article style={{direction: 'rtl'}}>من ذلك الحين فصاعدًا ، سنعيد إليك التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة. ترقبوا المزيد. وشكرًا لكونك أحد مؤسسي شركة Telos - نتمنى لك عامًا رائعًا!</Article>
                     <Title></Title>
-                    <Footer />
+                    
                 </Section>
+                <Footer />
         </ThemeProvider>
     )
 }

@@ -10,14 +10,19 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
 
+import Telos from "../components/SVG/telos_logo.svg";
+
 const Section = styled.div`
     width: 100%;
     height: 90vh;
-    background: black;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    img{
+        width: 50%;
+    }
 `;
 
 const Title = styled.div`
@@ -42,6 +47,7 @@ const EVM = () => {
             <Header theme={theme} setTheme={setTheme} />
                 <Section id="evm">
                     <Title>Telos EVM</Title>
+                    <img src={Telos} alt="" />
                 </Section>
         </ThemeProvider>
     )

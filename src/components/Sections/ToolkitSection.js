@@ -21,40 +21,56 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 660px){
-       
+       height: 120vh;
        
     }
 
 `;
 
 const Title = styled.div`
-    font-size: 72px;
+    font-size: 82px;
     width: 100%;
     color: ${props => props.theme.text};  
-    height: 15vh;
+    height: 20vh;
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
-    
+    @media screen and (max-width: 768px){
+        font-size: 52px;
+        height: 15vh;
+    }
     
 `;
 
 const Subtitle = styled.div`
-    font-size: 18px;
-    width: 25%;
+    font-size: 42px;
+    width: 60%;
     color: ${props => props.theme.text};
     text-align: center; 
-    height: 15vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        width: 80%;
+        font-size: 28px;
+        height: 15vh;
+    }
 `;
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 60vh;
+    height: 50vh;
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+    }
     
 `;
 
@@ -65,6 +81,9 @@ const EmptyColumn = styled.div`
     height: 100%;
     
     float: left;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 `;
 
 const Column = styled.div`
@@ -75,12 +94,17 @@ const Column = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 40vh;
+    }
     
 `;
 
 const Box = styled(motion.a)`
-    width: 60%;
-    height: 90%;
+    width: 55%;
+    height: 80%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -100,8 +124,8 @@ const TopCard = styled.div`
     height: 40%;
     span {
         display: flex;
-        height: 75px;
-        width: 75px;
+        height: 50px;
+        width: 50px;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
@@ -133,11 +157,12 @@ const CardSubtitle = styled.div`
     text-align: center;
     height: 60%;
     width: 80%;
+    direction: rtl;
 `;
 
 const UploadIcon = styled(UploadFileIcon)`
     color: white;
-    transform: scale(2);
+    transform: scale(1.5);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
@@ -145,7 +170,7 @@ const UploadIcon = styled(UploadFileIcon)`
 
 const APIIcon = styled(AddLinkIcon)`
     color: white;
-    transform: scale(2);
+    transform: scale(1.5);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
@@ -219,16 +244,16 @@ const ToolkitSection = () => {
 
     return(
         <Section id="toolkit">
-            <Title>Developer toolkit</Title>
-            <Subtitle>Review the below documentation and reference materials to get started</Subtitle>
+            <Title>مجموعة أدوات المطور</Title>
+            <Subtitle>راجع الوثائق والمواد المرجعية أدناه للبدء</Subtitle>
             <Wrapper>
                 <EmptyColumn></EmptyColumn>
                 <Column>
                     <Box whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><APIIcon /></span></TopCard>
                         <BottomCard>
-                            <CardTitle>API References</CardTitle>
-                            <CardSubtitle>Consult our documentation for Telos/EOSIO APIs and SDKs</CardSubtitle>
+                            <CardTitle>API مراجع</CardTitle>
+                            <CardSubtitle>راجع وثائقنا الخاصة بواجهات Telos / EOSIO APIs و SDK</CardSubtitle>
                         </BottomCard>
                     </Box>
                 </Column>
@@ -237,7 +262,7 @@ const ToolkitSection = () => {
                     <TopCard><span><UploadIcon /></span></TopCard>
                     <BottomCard>
                         <CardTitle>Telos Studio IDE</CardTitle>
-                        <CardSubtitle>Deploy contracts without any setup time using Telos Studio IDE</CardSubtitle>
+                        <CardSubtitle>Telos Studio IDE انشر العقود دون أي وقت إعداد باستخدام</CardSubtitle>
                     </BottomCard> 
                  </Box>
                 </Column>

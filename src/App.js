@@ -13,6 +13,7 @@ import Tokenomics from "./pages/Tokenomics.js";
 import ESG from "./pages/ESG.js";
 import EVM from "./pages/EVM.js";
 import NativeEcosystem from "./pages/NativeEcosystem.js";
+import EVMEcosystem from "./pages/EVMEcosystem.js";
 //import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                 <Route exact path="/ESG" element={<ESG />}/>
                 <Route exact path="/EVM" element={<EVM />}/>
                 <Route exact path="/NativeEcosystem" element={<NativeEcosystem />}/>
+                <Route exact path="/EVMEcosystem" element={<EVMEcosystem />}/>
               </Routes>
             </AnimatePresence>
       </ScrollToTop>

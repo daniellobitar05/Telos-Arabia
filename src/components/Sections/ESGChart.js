@@ -9,6 +9,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import telos from "../images/telos_logo.png";
+import eth from "../images/eth_logo.png";
+import btc from "../images/btc.png";
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
@@ -20,23 +24,23 @@ const Section = styled.div`
 `;
 
 const ColumnLeft = styled.div`
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 80%;
     float: left;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 `;
 
 const ColumnRight = styled.div`
     width: 40%;
-    height: 80vh;
-    background: blue;
+    height: 80%;
     display: flex;
     float: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const GraphWrapper = styled.div`
@@ -94,13 +98,7 @@ const Text = styled.div`
 `;
 
 const TelosColumn = styled(motion.div)`
-    max-height: 5%;
-    width: 9.09%;
-    float: left;
-    background: purple;
-`;
-const ETHColumn = styled(motion.div)`
-    max-height: 450%;
+    max-height: 1%;
     width: 9.09%;
     float: left;
     background: purple;
@@ -111,13 +109,63 @@ const BTCColumn = styled(motion.div)`
     float: left;
     background: purple;
 `;
+const ETHColumn = styled(motion.div)`
+    max-height: 46%;
+    width: 9.09%;
+    float: left;
+    background: purple;
+`;
+
+const TitleRow = styled.div`
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    
+`;
+
+const IconRow = styled.div`
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    
+    
+`;
+
+const Subtitle = styled.div`
+    font-size: 18px;
+    width: 80%;
+    color: ${props => props.theme.text};
+    text-align: center; 
+    
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a {
+        color: aqua;
+    }
+    @media screen and (max-width: 768px){
+        width: 90%;
+        height: 20vh;
+    }
+`;
+
+
+
 
 const ESGChart = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
 
     const {ref, inView} = useInView();
 
     function ChangeNumber () {
-        const counters = document.querySelectorAll('.esgchart');
+        const counters = document.querySelectorAll('.esggraph');
         counters.forEach(counter => {
             counter.innerText = "0";
 
@@ -168,29 +216,54 @@ const ESGChart = () => {
         <Section id="esgchart">
             <ColumnLeft>
             <GraphWrapper ref={ref}>
-                <PositionRow>
-                    <Position>
-                    <Position></Position>
-                        <Position><Text className="esgchart" data-target="145178" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>
+               <PositionRow>
+               <Position></Position>
+               <Position></Position>
+                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>
                         <Position></Position>
-                        <Position><Text className="esgchart" data-target="24864" style={{transform: 'translate(0%, 300%)'}}></Text></Position>
+                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(0%, 300%)'}}></Text></Position>
                         <Position></Position>
-                        <Position><Text className="esgchart" data-target="6579" style={{transform: 'translate(0%, 570%)'}}></Text></Position>
+                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-30%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
                         <Position></Position>
-                    </Position>
-                    <BarRow>
-                        <EmptyGraphColumn></EmptyGraphColumn>
-                        <BTCColumn animate={animation}></BTCColumn>
-                        <EmptyGraphColumn></EmptyGraphColumn>
-                        <ETHColumn animate={animation}></ETHColumn>
-                        <EmptyGraphColumn></EmptyGraphColumn>
-                        <TelosColumn animate={animation}></TelosColumn>
-                        <EmptyGraphColumn></EmptyGraphColumn>
-                    </BarRow>
-                </PositionRow>   
+                </PositionRow>  
+                <BarRow>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <BTCColumn animate={animation}></BTCColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <ETHColumn animate={animation}></ETHColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <TelosColumn animate={animation}></TelosColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
+                </BarRow>
+                <TitleRow>
+                        <Position></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>BTC</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>ETH</Text></Position>
+                        <Position></Position>
+                        <Position><Text style={{transform: 'translate(0%, 20%)'}}>TLOS</Text></Position>
+                        <Position></Position>
+                    </TitleRow>
+                    <IconRow>
+                        <Position></Position>
+                        <Position></Position>
+                        <Position><img src={btc} alt="" /></Position>
+                        <Position></Position>
+                        <Position><img src={eth} alt="" style={{transform: 'scale(1.1)'}}/></Position>
+                        <Position></Position>
+                        <Position><img src={telos} alt="" /></Position>
+                        <Position></Position>
+                    </IconRow>  
             </GraphWrapper>
             </ColumnLeft>
-            <ColumnRight></ColumnRight>
+            <ColumnRight>
+                <Subtitle><p>A <a href="" >recent analysis </a>found that Telos’ energy consumption estimates are lower than any major competitor, even Visa! Beyond estimates, the community is currently auditing their energy consumption and CO2 generation based on detailed reports from all network validators.</p></Subtitle>
+                <Subtitle>This will allow users to accurately predict their energy usage and mitigate it through community approved carbon credit purchases and Telos-based initiatives such as SEEDS, LocalScale, and Corcocoin projects. All these efforts ensure Telos provides the gold standard of environmental transparency in the blockchain industry.</Subtitle>
+            </ColumnRight>
         </Section>
     )
 }

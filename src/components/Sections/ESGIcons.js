@@ -4,11 +4,12 @@ import {Link as LinkS} from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import {IconButton} from "@mui/material";
 import Icon1 from "../SVG/performance.svg";
 import Icon2 from "../SVG/funding.svg";
 import Icon3 from "../SVG/community.svg";
-import Icon4 from "../SVG/ux.svg";
+
 
 const Section = styled.div`
     width: 100%;
@@ -40,7 +41,7 @@ const Title = styled.div`
 
 const Grid = styled.div`
     width: 80%;
-    height: 65vh;
+    height: 60vh;
     
     display: flex;
     align-items: center;
@@ -51,7 +52,7 @@ const Grid = styled.div`
 `;
 
 const Column = styled(motion.div)`
-    width: 25%;
+    width: 33.3%;
     height: 100%;
     float: left;
     display: flex;
@@ -74,7 +75,7 @@ const IconContainer = styled(motion.div)`
     justify-content: center;
     
     img{
-        width: 30%;
+        width: 20%;
         border-radius: 50%;
         border: 1px solid aqua;
         padding: 10px;
@@ -156,46 +157,6 @@ const Trans3 = {
     ease: 'easeInOut',
     delay: 1.5
 }
-const Trans4 = {
-    duration: 4, 
-    yoyo: Infinity,
-    ease: 'easeInOut',
-    delay: 2.5
-}
-
-
-
-
-const Empty = styled.div`
-    width: 100%;
-    height: 15vh;
-    display: inline-flex;
-    
-`;
-
-const IconColumn = styled.div`
-    width: 25%;
-    height: 100%
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-`;
-
-const Subtitle = styled.div`
-    font-size: 24px;
-    width: 50%;
-    color: ${props => props.theme.text};
-    text-align: center; 
-    float: left;
-    height: 15vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -205,25 +166,100 @@ const ArrowUp = styled(KeyboardArrowUpIcon)`
     color: white;
 `;
 
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
+`;
 
-const DeveloperSection = () => {
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+`;
+
+const ToggleColumn = styled.div`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+`;
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+    
+    
+`;
+
+
+const TextColumns = styled.div`
+    height: 30vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const TextColumn = styled.div`
+    height: 100%;
+    width: 40%;
+    float: left;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+    color: white;
+`;
+
+const EmptyTextColumn = styled.div`
+    height: 100%;
+    width: 20%;
+    float: left;
+`;
+
+
+const ESGIcons = () => {
 
     const toggleHome = () => {
         scroll.scrollToTop();
     }
 
     return(
-        <Section id="devresources">
-            <Title>موارد المطور</Title>
-            
+        <Section id="esgicons">
             <Grid>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
                     <IconContainer variants={CircleVariants}  transition={CircleTransition}>
                         <img src={Icon1} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>أداء عالي</TopText>
-                        <BottomText>معاملات سريعة ورسوم منخفضة</BottomText>
+                        <TopText>Governance Structure</TopText>
+                        <BottomText>Standards for running an initiative</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -231,8 +267,8 @@ const DeveloperSection = () => {
                         <img src={Icon2} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>التمويل الأولي متاح</TopText>
-                        <BottomText>تدعم الشبكة المشاريع الواعدة</BottomText>
+                        <TopText>Socially Responsible</TopText>
+                        <BottomText>Acting in a way that benefits society</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -240,65 +276,28 @@ const DeveloperSection = () => {
                         <img src={Icon3} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>محاذاة المجتمع </TopText>
-                        <BottomText>تم إنشاؤه لدعم العمل الذي يحركه الغرض</BottomText>
-                    </TextContainer>
-                </Column>
-                <Column variants={ContainerVariants} initial='start' animate='end'>
-                    <IconContainer variants={CircleVariants}  transition={Trans4}>
-                        <img src={Icon4} alt="logo1" />
-                    </IconContainer>
-                    <TextContainer>
-                        <TopText>تجربة مستخدم حديثة</TopText>
-                        <BottomText>لا يمكن للمستخدمين معرفة أنه مبني على بلوكتشين</BottomText>
+                        <TopText>Environmentally Conscious </TopText>
+                        <BottomText>Conserving the world’s natural resources</BottomText>
                     </TextContainer>
                 </Column>
             </Grid>
-            {/* <IconHolder variants={ContainerVariants} initial='start' animate='end'>
-                <Wrapper>
-                <motion.span variants={CircleVariants}  transition={CircleTransition}><img src={Dev1} alt="dev1"/></motion.span>
-                </Wrapper>
-                <Wrapper>
-                <motion.span variants={CircleVariants}  transition={CircleTransition}><img src={Dev2} alt="dev2"/></motion.span>
-                </Wrapper>
-                <Wrapper>
-                <motion.span variants={CircleVariants}  transition={CircleTransition}><img src={Dev3} alt="dev3"/></motion.span>
-                </Wrapper>
-                <Wrapper>
-                <motion.span variants={CircleVariants}  transition={CircleTransition}><img src={Dev4} alt="dev4"/></motion.span>
-                </Wrapper>
-            </IconHolder>
-            <TextContainer>
-                <BoxColumn>
-                    <BoxTitle>أداء عالي</BoxTitle>
-                    <BoxSubtitle>معاملات سريعة ورسوم منخفضة</BoxSubtitle>
-                </BoxColumn>
-                <BoxColumn>
-                <BoxTitle>التمويل الأولي متاح</BoxTitle>
-                <BoxSubtitle>تدعم الشبكة المشاريع الواعدة</BoxSubtitle>
-                </BoxColumn>
-                <BoxColumn>
-                <BoxTitle>المجتمع المنحاز</BoxTitle>
-                <BoxSubtitle>تم إنشاؤه لدعم العمل الذي يحركه الغرض</BoxSubtitle>
-                </BoxColumn>
-                <BoxColumn>
-                <BoxTitle>تجربة مستخدم حديثة</BoxTitle>
-                <BoxSubtitle>لا يمكن للمستخدمين معرفة أنه مبني على بلوكتشين</BoxSubtitle>
-                </BoxColumn>
-            </TextContainer>
-            <Empty /> */}
+            <TextColumns>
+                <TextColumn>An ESG Global Survey found that asset owners allocated 48% of their funds towards ESG in 2017. This number grew to 75% in 2019, and these numbers are projected to grow to 92% by the end of 2021. This proves that there is a ton of value in ESG investments, both from a socially conscious standpoint as well as a financial perspective.</TextColumn>
+                <EmptyTextColumn />
+                <TextColumn>The history of ESG can be traced back to 2004. At that time, former UN Secretary General Kofi Annan invited 50+ CEOs of major financial institutions to develop recommendations on how to integrate ESG elements into capital markets. Everyone involved benefited from the move toward ESG, due to its ability to uncover value in areas where analytical methods fall short.</TextColumn>
+            </TextColumns>
             <Empty>
-                <IconColumn>
-                <LinkS to="docssection" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
-                </IconColumn>
-            <Subtitle></Subtitle>
-                <IconColumn>
-                    <IconButton onClick={toggleHome}><ArrowUp /></IconButton>
-                </IconColumn>
+                <IconColumnLeft to="todo" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
+            <EmptyColumn></EmptyColumn>
+                <IconColumnRight to="videos" smooth={true} duration={1000} spy={true} exact="true">
+                    <IconButton ><ArrowUp /></IconButton>
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
             </Empty>
-            
         </Section>
     );
 }
 
-export default DeveloperSection;
+export default ESGIcons;

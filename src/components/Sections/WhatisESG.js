@@ -1,5 +1,5 @@
+import React from 'react';
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import {motion} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
@@ -7,11 +7,12 @@ import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import YouTube from 'react-youtube';
 
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: purple;
+    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +23,10 @@ const Section = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 52px;
+    font-size: 42px;
     width: 50%;
     color: ${props => props.theme.text};  
-    height: 25vh;
+    height: 15vh;
     display: flex;
     text-align: center;
     align-items: center;
@@ -38,7 +39,7 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
     width: 80vw;
-    font-size: 22px;
+    font-size: 18px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -52,41 +53,158 @@ const VideoWrapper = styled.div`
     width: 90%;
     height: 50vh;
     display: flex;
-    background: red;
 `;
 
 const VideoLeft = styled.div`
     width: 95%;
+    height: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    float: left;
+    background: rgba(0, 0, 0, 0.8);
 `;
 
-/* const YoutubeEmbed = ({ embedId }) => (
-  <div className="video-responsive">
-    <iframe
-      width="853"
-      height="480"
-      src={`https://www.youtube.com/embed/${embedId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded youtube"
-    />
-  </div>
-);
- */
+const VideoTitles = styled.div`
+    width: 85%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+`;
+
+const VideoTitle = styled.h1`
+    color: white;
+    font-size: 20px;
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+    
+    
+`;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+`;
+
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const ArrowDown = styled(KeyboardArrowDownIcon)`
+    color: white;
+`;
+
+const ArrowUp = styled(KeyboardArrowUpIcon)`
+    color: white;
+`;
+
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+`;
+
+const ToggleColumn = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+
 
 
 const WhatisESG = () => {
+
+    class VideoOne extends React.Component {
+        render() {
+          const opts = {
+            height: '312',
+            width: '512',
+            playerVars: {
+              // https://developers.google.com/youtube/player_parameters
+              autoplay: 1,
+            },
+          };
+      
+          return <YouTube videoId="B8z7ZUg7KJk" opts={opts} onReady={this._onReady} />;
+        }
+      
+        _onReady(event) {
+          // access to player in all event handlers via event.target
+          event.target.pauseVideo();
+        }
+      }
+
+      class VideoTwo extends React.Component {
+        render() {
+          const opts = {
+            height: '312',
+            width: '512',
+            playerVars: {
+              // https://developers.google.com/youtube/player_parameters
+              autoplay: 1,
+            },
+          };
+      
+          return <YouTube videoId="urqRAHWlEFM" opts={opts} onReady={this._onReady} />;
+        }
+      
+        _onReady(event) {
+          // access to player in all event handlers via event.target
+          event.target.pauseVideo();
+        }
+      }
+
+      const toggleHome = () => {
+        scroll.scrollToTop();
+    }
+
     return(
-        <Section>
+        <Section id="videos">
             <Title>What is ESG and why does it matter?</Title>
             <Subtitle>The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.</Subtitle>
+            <VideoTitles>
+                <VideoTitle>Benefits of ESG</VideoTitle>
+                <VideoTitle>Intro to ESG Investing</VideoTitle>
+            </VideoTitles>
             <VideoWrapper>
-                <VideoLeft></VideoLeft>
+                <VideoLeft><VideoTwo /></VideoLeft>
+                <VideoLeft><VideoOne /></VideoLeft>
             </VideoWrapper>
+            <Empty>
+                <IconColumnLeft to="esgicons" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
+            <EmptyColumn></EmptyColumn>
+                <IconColumnRight >
+                    
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowUp /></IconButton></ToggleColumn>
+            </Empty>
         </Section>
     )
 }

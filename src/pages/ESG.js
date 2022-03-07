@@ -14,6 +14,8 @@ import ESGIcons from "../components/Sections/ESGIcons";
 import ESGToDo from "../components/Sections/ESGToDo";
 import ESGQuotes from "../components/Sections/ESGQuotes";
 import ESGGovernance from "../components/Sections/ESGGovernance";
+import ESGGreenest from "../components/Sections/ESGGreenest";
+import ESGChart from "../components/Sections/ESGChart";
 
 import Ball1 from "../components/images/telos_ball3.png";
 import Ball2 from "../components/images/telos_ball1.png";
@@ -244,6 +246,8 @@ const ESG = () => {
                 <ESGToDo />
                 <ESGQuotes />
                 <ESGGovernance />
+                <ESGGreenest />
+                <ESGChart />
         </ThemeProvider>
     )
 }

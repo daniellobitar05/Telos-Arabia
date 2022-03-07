@@ -157,7 +157,7 @@ const ESGGovernance = () => {
                 </ColumnRight>
             </Grid>
             <Empty>
-                <IconColumnLeft to="" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="greenest" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

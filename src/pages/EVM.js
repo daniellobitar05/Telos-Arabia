@@ -12,7 +12,11 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import {IconButton} from "@mui/material";
 
 import EVMIcons from "../components/Sections/EVMIcons";
-
+import EVMWhatis from "../components/Sections/EVMWhatis";
+import EVMCards from "../components/Sections/EVMCards";
+import EVMStartNow from "../components/Sections/EVMStartNow";
+import EVMStartNowTwo from "../components/Sections/EVMStartNowTwo";
+ 
 import EVM1 from "../components/images/evm3.png";
 
 const Section = styled.div`
@@ -75,6 +79,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -127,7 +132,7 @@ const ButtonWrapper = styled.div`
     
 `;
 
-const Button = styled(motion.div)`
+const Button = styled(LinkS)`
     border: 1px solid #ba55d3;
     color: lightblue;
     font-size: 18px;
@@ -164,8 +169,12 @@ const EVM = () => {
                     <Title>Telos EVM</Title>
                     <Subtitle>The most powerful and scalable Ethereum Smart Contract platform available today</Subtitle>
                     <ButtonWrapper>
-                    <Button whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}>START NOW</Button>
-                    <Button whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}>LEARN MORE</Button>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                    <Button to="startnow" smooth={true} duration={1000} spy={true} exact="true">START NOW</Button>
+                    </motion.div>
+                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                    <Button >LEARN MORE</Button>
+                    </motion.div>
                     </ButtonWrapper>
                     <Empty>
                         <IconColumnLeft to="evmicons" smooth={true} duration={1000} spy={true} exact="true">
@@ -179,6 +188,10 @@ const EVM = () => {
                     </Empty>
                 </Section>
                 <EVMIcons />
+                <EVMWhatis />
+                <EVMCards />
+                <EVMStartNow />
+                <EVMStartNowTwo />
         </ThemeProvider>
     )
 }

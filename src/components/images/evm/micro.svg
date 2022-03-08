@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2H12" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M2 22H12" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M2 42H12" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M2 62H12" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M7 12H2" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M7 32H2" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M7 52H2" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M44 26L62 53L44 62L26 53L44 26Z" stroke="#1AD6FF" stroke-width="1.5"/>
+<path d="M26.25 53.0651L44 43.8151L62 53.0651" stroke="#1AD6FF" stroke-width="1.5"/>
+<path d="M44 43.8151V26.0651" stroke="#1AD6FF" stroke-width="1.5"/>
+</svg>

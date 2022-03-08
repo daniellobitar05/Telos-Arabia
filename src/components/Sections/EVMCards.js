@@ -60,7 +60,7 @@ const Wrapper = styled(motion.div)`
     height: 70vh;
 `;
 
-const Column = styled(motion.div)`
+const Column = styled(LinkS)`
     width: 95%;
     border: 1px solid indigo;
     max-height: 100vh;
@@ -271,7 +271,7 @@ const EVMCards = () => {
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column>
+             <Column to="evmgraph" smooth={true} duration={1000} spy={true} exact="true">
                 <Top>  
                     <Image><img src={Fast} alt="" className="content"/></Image>
                     <InnerText>SPEED & SCALABILITY</InnerText>
@@ -283,7 +283,7 @@ const EVMCards = () => {
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column>
+             <Column to="micro" smooth={true} duration={1000} spy={true} exact="true">
                 <Top>  
                     <Image><img src={Micro} alt="" className="content"/></Image>
                     <InnerText>MICRO TRANSACTION DEFI</InnerText>
@@ -295,7 +295,7 @@ const EVMCards = () => {
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column>
+             <Column to="nofront" smooth={true} duration={1000} spy={true} exact="true">
                 <Top>  
                     <Image><img src={NoFront} alt="" className="content"/></Image>
                     <InnerText>NO FRONT RUNNING</InnerText>

@@ -16,6 +16,11 @@ import EVMWhatis from "../components/Sections/EVMWhatis";
 import EVMCards from "../components/Sections/EVMCards";
 import EVMStartNow from "../components/Sections/EVMStartNow";
 import EVMStartNowTwo from "../components/Sections/EVMStartNowTwo";
+import EVMGraphSection from "../components/Sections/EVMGraphSection";
+import EVMNoFront from "../components/Sections/EVMNoFront";
+import EVMChartSection from "../components/Sections/EVMChartSection";
+import EVMMicroSection from "../components/Sections/EVMMicroSection";
+import EVMLatest from "../components/Sections/EVMLatest";
  
 import EVM1 from "../components/images/evm3.png";
 
@@ -192,6 +197,11 @@ const EVM = () => {
                 <EVMCards />
                 <EVMStartNow />
                 <EVMStartNowTwo />
+                <EVMGraphSection />
+                <EVMNoFront />
+                <EVMChartSection />
+                <EVMMicroSection />
+                <EVMLatest />
         </ThemeProvider>
     )
 }

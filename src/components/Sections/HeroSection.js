@@ -3,7 +3,7 @@ import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {Canvas, extend, useFrame, useLoader, useThree} from "@react-three/fiber";
 import Circle from "../images/telos_logo.png";
-import LetterLogo from "../SVG/telos_letter_logo.svg";
+import LetterLogo from "../images/evm2.png";
 import {Suspense, useMemo, useCallback, useRef} from "react";
 
 extend ({OrbitControls})
@@ -125,8 +125,8 @@ const Anim = styled.div`
     height: 100vh;
     background-image: url(${LetterLogo});
     background-repeat: no-repeat;
-    background-size: 300px 100px;
-    background-position: 50% 40%;
+    background-size: 300px 300px;
+    background-position: 50% 10%;
     background-color: ${props => props.theme.body};
     @media screen and (max-width: 768px){
         height: 90vh;

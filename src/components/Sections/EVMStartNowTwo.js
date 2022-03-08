@@ -199,7 +199,7 @@ const EVMStartNow = () => {
                 </Column>
             </Grid>
             <Empty>
-                <IconColumnLeft to="" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="evmgraph" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

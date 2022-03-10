@@ -12,6 +12,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 
 import sushi from "../images/evm/sushi.jfif";
 import punks from "../images/evm/punks.jfif";
+import news from "../images/news/news6.jpg";
 
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -169,6 +170,10 @@ const EVMLatest = () => {
             </ButtonWrapper>
             <Grid>
                 <Column>
+                    <ImageHolder><img src={news} alt="" /></ImageHolder>
+                    <TextHolder>Important Telos ecosystem update</TextHolder>
+                </Column>
+                <Column>
                     <ImageHolder><img src={sushi} alt="" /></ImageHolder>
                     <TextHolder>SushiSwap partners with Telos and launches on the Telos EVM</TextHolder>
                 </Column>
@@ -176,13 +181,9 @@ const EVMLatest = () => {
                     <ImageHolder><img src={punks} alt="" /></ImageHolder>
                     <TextHolder>Telos Punks Comes to the EVM</TextHolder>
                 </Column>
-                <Column>
-                    <ImageHolder><img src={punks} alt="" /></ImageHolder>
-                    <TextHolder>Telos Punks Comes to the EVM</TextHolder>
-                </Column>
             </Grid>
             <Empty>
-                <IconColumnLeft to="" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="evmcontact" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

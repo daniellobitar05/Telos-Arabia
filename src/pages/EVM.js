@@ -21,6 +21,8 @@ import EVMNoFront from "../components/Sections/EVMNoFront";
 import EVMChartSection from "../components/Sections/EVMChartSection";
 import EVMMicroSection from "../components/Sections/EVMMicroSection";
 import EVMLatest from "../components/Sections/EVMLatest";
+
+import EVMFooter from "../components/Sections/EVMFooter";
  
 import EVM1 from "../components/images/evm3.png";
 
@@ -178,7 +180,7 @@ const EVM = () => {
                     <Button to="startnow" smooth={true} duration={1000} spy={true} exact="true">START NOW</Button>
                     </motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                    <Button >LEARN MORE</Button>
+                    <Button to="evmwhatis" smooth={true} duration={1000} spy={true} exact="true">LEARN MORE</Button>
                     </motion.div>
                     </ButtonWrapper>
                     <Empty>
@@ -202,6 +204,7 @@ const EVM = () => {
                 <EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
+                <EVMFooter />
         </ThemeProvider>
     )
 }

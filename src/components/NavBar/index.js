@@ -268,8 +268,8 @@ const Nav = styled.div`
     transition: 0.8s all ease;
     z-index: 1000;
     &:hover{
-        background: #4b0082;
-        transition: 0.8s all ease;
+        background: #000060;
+        transition: 0.3s all ease-in-out;
     }
 `;
 
@@ -423,7 +423,8 @@ const AboutMenu = styled.div`
     justify-content: center;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #ba55d3;
+    backdrop-filter: blur(8px);
+    border: 2px solid #000060;
     z-index: 150;
 `;
 
@@ -439,7 +440,8 @@ const ExploreMenu = styled.div`
     justify-content: center;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #ba55d3;
+    backdrop-filter: blur(8px);
+    border: 2px solid #000060;
     z-index: 150;
 `;
 
@@ -455,7 +457,8 @@ const LearnMenu = styled.div`
     justify-content: center;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #ba55d3;
+    backdrop-filter: blur(8px);
+    border: 2px solid #000060;
     z-index: 150;
 `;
 
@@ -471,7 +474,8 @@ const BuildMenu = styled.div`
     justify-content: center;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #ba55d3;
+    backdrop-filter: blur(8px);
+    border: 2px solid #000060;
     z-index: 150;
 `;
 
@@ -487,7 +491,8 @@ const BuyMenu = styled.div`
     justify-content: center;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #ba55d3;
+    backdrop-filter: blur(8px);
+    border: 2px solid #000060;
     z-index: 150;
 `;
 
@@ -498,7 +503,7 @@ const SubMenu = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #4b0082;
+    background: #000060;
     border-radius: 20px;
     z-index: 150;
 `;

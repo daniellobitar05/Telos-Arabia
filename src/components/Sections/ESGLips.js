@@ -5,6 +5,7 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useEffect} from "react";
 import {IconButton} from "@mui/material";
+import YouTube from 'react-youtube';
 import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
@@ -13,6 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import Telos from "../SVG/telos_letter_logo.svg";
 import Seeds from "../images/seeds.png";
+import Lips from "../images/lips_logo.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -81,7 +83,7 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.back8};
+    background: ${props => props.theme.back11};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,16 +151,36 @@ const ColumnRight = styled.div`
     justify-content: space-around;
 `;
 
+const GridTitle = styled.div`
+    width: 100%;
+    height: 10vh;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+`;
 
+const Articles = styled.div`
+    width: 100%;
+    height: 40vh;
+    transform: translate(-10%, 0);
+`;
+
+const Video = styled.div`
+    width: 90%;
+    height: 40vh;
+    
+`;
 
 const Article = styled.div`
     color: white; 
-    width: 80%;
-    font-size: 16px;
+    width: 100%;
+    font-size: 14px;
     display: flex;
-    padding: 20px 0;
-    line-height: 24px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 24px;
 
 `;
 
@@ -172,9 +194,10 @@ const Row = styled.div`
 
 const Text = styled.div`
     color: white;
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    
 `;
 
 const FirstRow = styled.div`
@@ -193,7 +216,7 @@ const FirstRow = styled.div`
 
 const SecondRow = styled.div`
     width: 100%;
-    height: 15%;
+    height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,7 +228,7 @@ const SecondRow = styled.div`
 
 const InnerGrid = styled.div`
     width: 100%;
-    height: 50%;
+    height: 40%;
     display: flex;
 `;
 
@@ -219,8 +242,8 @@ const Column = styled.ol`
 `;
 
 const Item = styled.li`
-    width: 100%;
-    height: 25%;
+    width: 95%;
+    height: 33%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     &::marker{
@@ -253,9 +276,9 @@ const First = styled.div`
 const Second = styled.div`
     height: 100%;
     width: 50%;
-    background-image: url(${Seeds});
+    background-image: url(${Lips});
     background-repeat: no-repeat;
-    background-size: (75px, auto);
+    background-size: (70px, auto);
     background-position: center left;
     
 `;
@@ -277,14 +300,34 @@ const Subtitle = styled.div`
 `;
 
 
-const ESGSeeds = () => {
+const ESGLips = () => {
 
     const toggleHome = () => {
         scroll.scrollToTop();
     }
 
+    class VideoOne extends React.Component {
+        render() {
+          const opts = {
+            height: '280',
+            width: '410',
+            playerVars: {
+              // https://developers.google.com/youtube/player_parameters
+              autoplay: 1,
+            },
+          };
+      
+          return <YouTube videoId="CT-DW7F5nYE" opts={opts} onReady={this._onReady} />;
+        }
+      
+        _onReady(event) {
+          // access to player in all event handlers via event.target
+          event.target.pauseVideo();
+        }
+      }
+
     return(
-        <Section id="seeds">
+        <Section id="lips">
             <Grid>
                 <ColumnLeft>
                 <Swiper
@@ -295,44 +338,45 @@ const ESGSeeds = () => {
                 >
                     <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>A payment platform and financial ecosystem to empower humanity and heal our planet. SEEDS offers tools to help you, your business or your movement regenerate our planet, while encouraging collaboration, cooperation and community building.</SecondRow>
+                        <SecondRow>Lips is a community-designed social media platform and marketplace with a social mission: to improve the mental health and financial well-being of women, non-binary folks, and the LGBTQIA+ community. It serves as a digital space where these groups can express themselves creatively and never worry about being banned or targeted with abuse.</SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>88+ Countries: Co-create the New World</Item>
-                                <Item>5000+ Regenerators & Change Agents</Item>
-                                <Item>450+ Partners & Collaborators</Item>
-                                <Item>Heal our planet with every purchase or sale</Item>
+                                <Item>Over 10,000 new users in the first month</Item>
+                                <Item>Winner LGBTQ+ Inclusion in Tech Award</Item>
+                                <Item>Featured in Mashable, The Daily Beast, Forbes, Huffington Post</Item>
                             </Column>
                             <Column>
-                                <Item>Pay no transaction fees</Item>
-                                <Item>Have a direct voice in governance</Item>
-                                <Item>Earn grants for regenerative initiatives</Item>
+                                <Item>An inclusive app for marginalized voices</Item>
+                                <Item>Supporting historically marginalised communities</Item>
                                 <Item>Earn an income/revenue for participating</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
                             <First></First>
                             <Second></Second>
-                            <Third href="https://joinseeds.earth/" target="_blank" rel="noreferrer">joinseeds.earth</Third>
+                            <Third href="http://lips.social/" target="_blank" rel="noreferrer">lips.social</Third>
                         </BottomRow>
                     </SwiperSlide>
                 </Swiper>
                 <Row>
-                    <Text>SEEDS is an innovative economic system and cryptocurrency that is championing these issues by using the Telos network.</Text>
+                    <Text>The project has already raised over $62,000 in public funding and received features in Mashable, The Daily Beast, HuffPost and Forbes. Lips also won the LGBTQ+ Inclusion in Tech Award from WomenTech Network. Lips is one of the most recognized socially conscious projects in the blockchain space, and one of</Text>
                 </Row>
                 </ColumnLeft>
                 <ColumnRight>
-                    <Article>Thanks to the governance that Telos is built upon, carbon neutral funding does not have to come from a centralized body. Instead, community members can vote to release network funds to chain initiatives who will carry out the rest of the process. If the vote passes, Telos will be the only blockchain to go carbon neutral through fully decentralized and autonomous voting. In the meantime, the nature of DPoS lets the community vote for the ethical validators like TelosGreen, a popular network validator that focuses on sustainability.</Article>
-                    <Article>Consuming less energy or even going carbon neutral isn’t enough when it comes to having a positive environmental impact. Projects must actively find ways to foster environmental regeneration. With all the ESG tools available to developers, Telos has attracted many projects whose sole mission is improving and maintaining our natural resources. This has pushed Telos far ahead of competitors when it comes to environmental impact.</Article>
-                    
+                <GridTitle>Social Case Study: Lips</GridTitle>
+                    <Articles>
+                    <Article>Lips is a recent addition to the Telos ecosystem with a powerful and timely social mission. Lips partnered with Telos after an exhaustive search of blockchain networks that could eliminate the risk of deplatforming.</Article>
+                    <Article>The platform is reshaping the social media landscape in a way that empowers women, non-binary folks, and the LGBTQIA+ community. The creators of this platform set out to create an environment which combats the censorship, harassment and plagiarism that these marginalized communities face on major social media platforms. The platform also gathers data surrounding important social topics which can be integrated into other platforms, creating a more inclusive internet across the board. </Article>
+                    </Articles>  
+                    <Video><VideoOne /></Video> 
                 </ColumnRight>
             </Grid>
             <Empty>
-                <IconColumnLeft to="additional" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="additionaltwo" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="esgchart" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="social" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
@@ -341,4 +385,4 @@ const ESGSeeds = () => {
     )
 }
 
-export default ESGSeeds;
+export default ESGLips;

@@ -14,7 +14,7 @@ import SilverLogo from "../images/plain_silver_logo.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back3};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +27,7 @@ const Title = styled.div`
     text-align: center;
     color: white;
     font-size: 52px;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const Subtitle = styled.div`
@@ -40,6 +41,7 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
@@ -62,6 +64,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -69,6 +72,7 @@ const EmptyColumn = styled.div`
    width: 50%;
    height: 100%;
    float: left; 
+   background: transparent;
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -87,6 +91,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -140,6 +145,8 @@ const BoxRow = styled.div`
     text-align: right;
     font-size: 18px;
     color: white;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    transform: translate(0, 10%);
 
 `;
 
@@ -160,7 +167,7 @@ const ESGToDo = () => {
                 <EmptyBoxColumn />
                 <ColumnLeft>
                     <BoxRow>This became most apparent after the price of Bitcoin fell following concerns around energy consumption. In during a webcast at the Consensus 2021, Shark Tank’s Kevin O’Leary noted that “everybody’s got to wake up and realize there’s demand [for crypto], but it has to be done around ESG concerns.”</BoxRow>
-                    <BoxRow style={{textAlign: 'center', fontSize: '22px', transform: 'translate(-25%, 0)'}}>“Everybody’s got to wake up and realize there’s demand [for crypto], but it has to be done around ESG concerns.”<p><span>Kevin O’Leary</span></p></BoxRow>
+                    <BoxRow style={{textAlign: 'center', fontSize: '22px', transform: 'translate(-25%, 20%)'}}>“Everybody’s got to wake up and realize there’s demand [for crypto], but it has to be done around ESG concerns.”<p><span>Kevin O’Leary</span></p></BoxRow>
                 </ColumnLeft>
             </Grid>
             <Empty>

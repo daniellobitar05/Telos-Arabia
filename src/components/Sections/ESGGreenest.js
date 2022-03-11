@@ -21,7 +21,7 @@ import telos from "../images/telos_logo.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back6};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +47,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -72,6 +73,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -83,6 +85,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -92,11 +95,12 @@ const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
 const Grid = styled.div`
     height: 80vh;
     width: 90%;
-    background: #23297a;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 6px 6px 20px limegreen;
 `;
 
 const GridTitle = styled.div`
@@ -108,6 +112,7 @@ const GridTitle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const GridWrapper = styled.div`
@@ -164,6 +169,7 @@ const RowItem = styled.div`
     justify-content: center;
     color: white;
     font-size: 16px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const IconHolder = styled.div`
@@ -185,6 +191,7 @@ const Name = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const Icon = styled.div`

@@ -14,15 +14,14 @@ import Ball1 from "../images/telos_ball4.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(${Ball1});
+    background: url(${Ball1}), ${props => props.theme.back5};
     background-repeat: no-repeat;
-    background-size: 1200px 1200px;
-    background-position: -300px -300px;
+    background-size: contain;
+   
 `;
 
 const Title = styled.div`
@@ -34,6 +33,7 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const Subtitle = styled.div`
@@ -47,6 +47,7 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
@@ -96,6 +97,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -103,6 +105,7 @@ const EmptyColumn = styled.div`
    width: 50%;
    height: 100%;
    float: left; 
+   background: transparent;
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -121,6 +124,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 

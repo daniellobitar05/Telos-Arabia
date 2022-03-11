@@ -20,7 +20,7 @@ import btc from "../images/btc.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back7};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,17 +52,19 @@ const ColumnRight = styled.div`
     float: left;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 `;
 
 const GraphWrapper = styled.div`
-    width: 80%;
+    width: 90%;
     height: 70vh;
-    
+    border: 1px solid indigo;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background: linear-gradient(145deg, rgba(2,3,29,1) 0%, rgba(74,21,131,1) 35%, rgba(2,3,29,1) 100%);
+    box-shadow: 6px 6px 20px limegreen;
 `;
 
 const PositionRow = styled.div`
@@ -90,6 +92,7 @@ const Position = styled.div`
 const BarRow = styled.div`
     height: 70%;
     width: 100%;
+    margin-left: 40px;
     
     display: flex;
     flex-direction: row;
@@ -100,6 +103,7 @@ const EmptyGraphColumn = styled.div`
     height: 0;
     width: 9.09%;
     float: left;
+    
     
 `;
 
@@ -114,18 +118,23 @@ const TelosColumn = styled(motion.div)`
     width: 9.09%;
     float: left;
     background: purple;
+    
 `;
 const BTCColumn = styled(motion.div)`
     max-height: 100%;
     width: 9.09%;
     float: left;
     background: purple;
+    
 `;
 const ETHColumn = styled(motion.div)`
     max-height: 46%;
     width: 9.09%;
     float: left;
     background: purple;
+    margin-left: 20px;
+    margin-right: 20px;
+    
 `;
 
 const TitleRow = styled.div`
@@ -150,7 +159,7 @@ const Subtitle = styled.div`
     width: 80%;
     color: ${props => props.theme.text};
     text-align: center; 
-    
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, black -3px 3px;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -293,11 +302,13 @@ const ESGChart = () => {
                <PositionRow>
                <Position></Position>
                <Position></Position>
-                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>
+                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(15%, 40%)'}}></Text> </Position>
                         <Position></Position>
-                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(0%, 300%)'}}></Text></Position>
                         <Position></Position>
-                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-30%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
+                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(30%, 400%)'}}></Text></Position>
+                        <Position></Position>
+                        <Position></Position>
+                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-20%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
                         <Position></Position>
                 </PositionRow>  
                 <BarRow>
@@ -305,7 +316,9 @@ const ESGChart = () => {
                     <EmptyGraphColumn></EmptyGraphColumn>
                     <BTCColumn animate={animation}></BTCColumn>
                     <EmptyGraphColumn></EmptyGraphColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
                     <ETHColumn animate={animation}></ETHColumn>
+                    <EmptyGraphColumn></EmptyGraphColumn>
                     <EmptyGraphColumn></EmptyGraphColumn>
                     <TelosColumn animate={animation}></TelosColumn>
                     <EmptyGraphColumn></EmptyGraphColumn>
@@ -317,7 +330,9 @@ const ESGChart = () => {
                         <Position></Position>
                         <Position><Text style={{transform: 'translate(0%, 20%)'}}>BTC</Text></Position>
                         <Position></Position>
+                        <Position></Position>
                         <Position><Text style={{transform: 'translate(0%, 20%)'}}>ETH</Text></Position>
+                        <Position></Position>
                         <Position></Position>
                         <Position><Text style={{transform: 'translate(0%, 20%)'}}>TLOS</Text></Position>
                         <Position></Position>
@@ -327,7 +342,9 @@ const ESGChart = () => {
                         <Position></Position>
                         <Position><img src={btc} alt="" /></Position>
                         <Position></Position>
+                        <Position></Position>
                         <Position><img src={eth} alt="" style={{transform: 'scale(1.1)'}}/></Position>
+                        <Position></Position>
                         <Position></Position>
                         <Position><img src={telos} alt="" /></Position>
                         <Position></Position>

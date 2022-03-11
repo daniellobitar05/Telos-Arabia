@@ -12,7 +12,7 @@ import YouTube from 'react-youtube';
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back1};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +31,7 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 48px;
@@ -46,6 +47,7 @@ const Subtitle = styled.div`
     align-items: center;
     text-align: center;
     height: 15vh;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     
 `;
 
@@ -96,13 +98,15 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
 const EmptyColumn = styled.div`
    width: 50%;
    height: 100%;
-   float: left; 
+   float: left;
+   background: transparent; 
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -121,6 +125,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 

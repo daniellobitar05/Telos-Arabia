@@ -87,7 +87,7 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back9};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,6 +105,7 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         
     }
@@ -121,7 +122,7 @@ const Grid = styled.div`
 
     .swiper-slide {
         
-        background: #23297a;
+        background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
 
         /* Center slide text vertically */
         display: -webkit-box;
@@ -165,6 +166,7 @@ const FirstRow = styled.div`
     font-size: 48px;
     font-weight: bold;
     justify-content: flex-end;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 
 `;
 
@@ -177,6 +179,7 @@ const SecondRow = styled.div`
     text-align: center;
     color: white;
     font-size: 16px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const InnerGrid = styled.div`
@@ -198,6 +201,7 @@ const Item = styled.li`
     width: 100%;
     height: 25%;
     color: white;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     &::marker{
         font-size: 20px;
         background-color: black;

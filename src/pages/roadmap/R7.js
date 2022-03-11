@@ -106,6 +106,7 @@ const Title = styled(motion.div)`
     justify-content: flex-end;
     text-align: right;
     transform: translate(0, 20%);
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
     }
@@ -125,6 +126,8 @@ const Article = styled(motion.div)`
     align-items: right;
     text-align: right;
     padding: 30px 0;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
     span{
         margin: 0 10px;
     }

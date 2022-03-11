@@ -18,7 +18,12 @@ import ESGGreenest from "../components/Sections/ESGGreenest";
 import ESGChart from "../components/Sections/ESGChart";
 import ESGSeeds from "../components/Sections/ESGSeeds";
 import Additional from "../components/Sections/Additional";
+import AdditionalTwo from "../components/Sections/AdditionalTwo";
 import Social from "../components/Sections/Social";
+import ESGLips from "../components/Sections/ESGLips";
+import ESGConclusion from "../components/Sections/ESGConclusion";
+import ESGLatest from "../components/Sections/ESGLatest";
+import Footer from "../components/Sections/Footer";
 
 import Ball1 from "../components/images/telos_ball3.png";
 import Ball2 from "../components/images/telos_ball1.png";
@@ -42,7 +47,7 @@ const Container = styled.div`
     position: relative;
     width: 100%;
     padding: 50px;
-    background: black;
+    background: linear-gradient(180deg, rgba(0,0,139,1) 0%, rgba(0,0,139,1) 100%);
     height: 60vh;
 
     
@@ -92,8 +97,9 @@ const Title = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: black;
+    background: rgba(0,0,139,1);
     text-align: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     
     
 `;
@@ -105,6 +111,7 @@ const Subtitle = styled.div`
     font-size: 24px;
     text-align: center;
     width: 90%;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     /* font-size: 18px;
     width: 80%;
     height: 30vh;
@@ -254,6 +261,11 @@ const ESG = () => {
                 <ESGSeeds />
                 <Additional />
                 <Social />
+                <ESGLips />
+                <AdditionalTwo />
+                <ESGConclusion />
+                <ESGLatest />
+                <Footer />
         </ThemeProvider>
     )
 }

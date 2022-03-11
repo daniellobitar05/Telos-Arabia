@@ -105,6 +105,7 @@ const Title = styled(motion.div)`
     align-items: center;
     justify-content: flex-end;
     text-align: right;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     transform: translate(0, 20%);
     span{
         margin: 0 10px;
@@ -125,6 +126,8 @@ const Article = styled(motion.div)`
     align-items: right;
     text-align: right;
     padding: 30px 0;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
     span{
         margin: 0 10px;
     }
@@ -205,7 +208,7 @@ const R1 = () => {
                 <Title animate={animation}>dStor</Title>
                 <Article style={{direction: 'rtl'}} animate={animationTwo}>dStor هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة GoodBlock Technologies. كأحد أعمدة الويب 3.0 ، يبسط dStor استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة dStor على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول NFT الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</Article>
                 <Title animate={animation}>Telos Web Wallet 2.0</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
+                <Article style={{direction: 'rtl', padding: '5px 0px'}} animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
                
            </Grid>
            <Empty>

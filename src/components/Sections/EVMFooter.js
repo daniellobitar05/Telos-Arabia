@@ -13,9 +13,9 @@ import Twitter from "../SVG/social/twitter.svg"
 import Instagram from "../SVG/social/instagram.svg"
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-const Section = styled(motion.div)`
+const Section = styled(motion.div)` 
     height: 100vh;
-    background: purple;
+    background: linear-gradient(180deg, rgba(25,25,112,1) 0%, rgba(19,19,87,1) 50%, rgba(1,1,5,1) 100%);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -73,15 +73,13 @@ const Mail = styled.div`
     }
 `;
 
-const IconMail = styled(ContactsIcon)`
-    color: white;
-`;
+
 
 const IconHolder = styled(motion.div)`
     display: flex;
     width: 80%;
-    height: 50vh;
-    background: purple;
+    height: 20vh;
+    
     justify-content: space-around;
     @media screen and (max-width:768px){
         height: 100vw;
@@ -125,40 +123,13 @@ const Copyright = styled.div`
     }
 `;
 
-
-
-
-const ColumnLeft = styled.div`
-    width: 25%;
-    height: 100%;
-    
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-`;
-
-const ColumnRight = styled.div`
-    width: 25%;
-    height: 100%;
-    
-    float: left;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
-
 const IconColumn = styled.div`
-    width: 25%;
-    height: 100%;
-    float: left;
+    width: 100%;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -171,12 +142,20 @@ const FooterText = styled.div`
     display: flex;
     font-size: 18px;
     color: white;
+    
     @media screen and (max-width:768px){
         font-size: 14px;
         text-align: center;
     }
 `;
 
+const FooterRow = styled.div`
+    height: 50%;
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+`;
 
 
 
@@ -225,8 +204,8 @@ const Footer = () => {
         <Section id="footer">
             <Title>If you’re interested in getting involved in the Telos EVM, drop us a line below!</Title>
             <Mail>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform"><motion.span><IconMail /></motion.span></a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform">CONTACT US</a>
+                <a href="mailto:hello@telosfoundation.io"><motion.span><ContactsIcon /></motion.span></a>
+                <a href="mailto:hello@telosfoundation.io">CONTACT US</a>
             </Mail>
             <IconHolder  variants={ContainerVariants} initial='start' animate='end'>
                 <a href="https://discord.gg/9hurWxq3Gf" target="_blank" rel="noreferrer"><motion.span  variants={CircleVariants}  transition={CircleTransition}><img src={Discord} alt="Discord"/></motion.span></a>
@@ -240,19 +219,18 @@ const Footer = () => {
             </IconHolder>
             <Copyright>
                 <IconColumn>
-                
-                </IconColumn>
-                <ColumnLeft>
-                <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>
-                <a href="https://www.telos.net/privacy-policy" target="_blank" rel="noreferrer"><FooterText>Privacy Policy</FooterText></a>
-                <a href="https://www.telos.net/legal" target="_blank" rel="noreferrer"><FooterText>Legal</FooterText></a>
-                </ColumnLeft>
-                <ColumnRight>
-                    <FooterText>© 2022 Telos</FooterText>
-                    <FooterText>Where Purpose Meets People</FooterText>
-                </ColumnRight>
-                <IconColumn>
-                <IconButton onClick={toggleHome}><ArrowHome /></IconButton>
+                <FooterRow style={{width: '90%', flexDirection: 'row', justifyContent: 'flex-end'}}>
+                    <IconButton onClick={toggleHome}><ArrowHome /></IconButton>
+                    </FooterRow>
+                    <FooterRow>
+                    <a href="https://www.telos.net/legal" target="_blank" rel="noreferrer"><FooterText>Legal</FooterText></a>
+                    <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"> <FooterText>Telos Technical Roadmap 2022</FooterText></a>
+                    <a href="https://www.telos.net/privacy-policy" target="_blank" rel="noreferrer"><FooterText>Privacy Policy</FooterText></a>
+                    </FooterRow>
+                    <FooterRow style={{justifyContent: 'center', width: '70%'}}>
+                        <FooterText style={{transform: "translate(0, -50%)"}}>© 2022 Telos, Where Purpose Meets People</FooterText> 
+                    </FooterRow>
+                    
                 </IconColumn>
             </Copyright>
         </Section>

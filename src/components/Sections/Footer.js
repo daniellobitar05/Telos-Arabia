@@ -15,7 +15,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 
 const Section = styled(motion.div)`
     height: 100vh;
-    background: #600d9a;
+    background: linear-gradient(180deg, rgba(25,25,112,1) 0%, rgba(19,19,87,1) 50%, rgba(1,1,5,1) 100%);
     width: 100%;
     display: flex;
     flex-direction: column;

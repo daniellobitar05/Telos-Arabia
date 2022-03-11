@@ -3,6 +3,8 @@ import {useEffect} from "react";
 import styled from "styled-components";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
+
+
 import {IconButton} from "@mui/material";
 import {useInView} from "react-intersection-observer";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -13,14 +15,24 @@ import telos from "../images/telos_logo.png";
 import eth from "../images/eth_logo.png";
 import btc from "../images/btc.png";
 
+
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
     background: black;
     display: flex;
-    
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+`;
+
+const Grid = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
 `;
 
 const ColumnLeft = styled.div`
@@ -35,7 +47,7 @@ const ColumnLeft = styled.div`
 
 const ColumnRight = styled.div`
     width: 40%;
-    height: 80%;
+    height: 100%;
     display: flex;
     float: left;
     flex-direction: column;
@@ -153,6 +165,67 @@ const Subtitle = styled.div`
     }
 `;
 
+const ArrowDown = styled(KeyboardArrowDownIcon)`
+    color: white;
+`;
+
+const ArrowUp = styled(KeyboardArrowUpIcon)`
+    color: white;
+`;
+
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
+`;
+
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background: transparent;
+
+`;
+
+const ToggleColumn = styled.div`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+`;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+`;
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+`;
+
+
+
+
 
 
 
@@ -214,6 +287,7 @@ const ESGChart = () => {
 
     return(
         <Section id="esgchart">
+            <Grid>
             <ColumnLeft>
             <GraphWrapper ref={ref}>
                <PositionRow>
@@ -263,7 +337,19 @@ const ESGChart = () => {
             <ColumnRight>
                 <Subtitle><p>A <a href="" >recent analysis </a>found that Telos’ energy consumption estimates are lower than any major competitor, even Visa! Beyond estimates, the community is currently auditing their energy consumption and CO2 generation based on detailed reports from all network validators.</p></Subtitle>
                 <Subtitle>This will allow users to accurately predict their energy usage and mitigate it through community approved carbon credit purchases and Telos-based initiatives such as SEEDS, LocalScale, and Corcocoin projects. All these efforts ensure Telos provides the gold standard of environmental transparency in the blockchain industry.</Subtitle>
+                <Subtitle>Even with these incredibly low energy statistics, the network is doing more. Members of the community and the Telos Foundation are working to make the network fully carbon neutral. This will be tackled in a unique way that no other blockchain can easily accomplish.</Subtitle>
             </ColumnRight>
+            </Grid>
+            <Empty>
+                <IconColumnLeft to="seeds" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
+            <EmptyColumn></EmptyColumn>
+                <IconColumnRight to="greenest" smooth={true} duration={1000} spy={true} exact="true">
+                    <IconButton ><ArrowUp /></IconButton>
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
+            </Empty>
         </Section>
     )
 }

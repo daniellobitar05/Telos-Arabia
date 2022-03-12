@@ -79,7 +79,7 @@ const ColumnRight = styled.div`
         float: none;
         width: 100%;
         height: 30%;
-        transform: scale(0.6) translate(0, 20%);
+        transform: scale(0.6) translate(0, 10%);
     }
 `;
 

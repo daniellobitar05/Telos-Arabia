@@ -72,7 +72,7 @@ const Wrapper = styled(motion.div)`
     }
 `;
 
-const Column = styled(LinkS)`
+const Column = styled.div`
     width: 95%;
     border: 2px solid indigo;
     max-height: 100vh;
@@ -289,37 +289,37 @@ const EVMCards = () => {
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column to="evmgraph" smooth={true} duration={1000} spy={true} exact="true">
+             <Column >
                 <Top>  
                     <Image><img src={Fast} alt="" className="content"/></Image>
                     <InnerText>SPEED & SCALABILITY</InnerText>
                  </Top>
                  <Resize className="expand">
-                    <Text>Telos EVM is the most performant and scalable layer 1 EVM, featuring 10.000 TPS & 0.5s blocktimes <p><span> LEARN MORE</span></p></Text>     
+                    <Text>Telos EVM is the most performant and scalable layer 1 EVM, featuring 10.000 TPS & 0.5s blocktimes <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> LEARN MORE</span></LinkS></p></Text>     
                 </Resize>
              </Column>
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column to="micro" smooth={true} duration={1000} spy={true} exact="true">
+             <Column >
                 <Top>  
                     <Image><img src={Micro} alt="" className="content"/></Image>
                     <InnerText>MICRO TRANSACTION DEFI</InnerText>
                  </Top>
                  <Resize className="expand">
-                    <Text>Thanks to the scalable nature of Telos EVM, users can transact as little as $1 and still see profits <p><span> LEARN MORE</span></p></Text>     
+                    <Text>Thanks to the scalable nature of Telos EVM, users can transact as little as $1 and still see profits <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> LEARN MORE</span></LinkS></p></Text>     
                 </Resize>
              </Column>
              <InnerRow></InnerRow>
              </Wrapper>
              <Wrapper animate={animation}>
-             <Column to="nofront" smooth={true} duration={1000} spy={true} exact="true">
+             <Column >
                 <Top>  
                     <Image><img src={NoFront} alt="" className="content"/></Image>
                     <InnerText>NO FRONT RUNNING</InnerText>
                  </Top>
                  <Resize className="expand">
-                    <Text>Telos EVM offers a sustainable solution to the million of dollars stolen from traders every month on other EVMs. <p><span> LEARN MORE</span></p></Text>     
+                    <Text>Telos EVM offers a sustainable solution to the million of dollars stolen from traders every month on other EVMs. <p><span><LinkS to="nofront" smooth={true} duration={1000} spy={true} exact="true"> LEARN MORE</LinkS></span></p></Text>     
                 </Resize>
              </Column>
              <InnerRow></InnerRow>

@@ -233,7 +233,7 @@ const EVM = () => {
                 </Section>
                 <EVMIcons />
                 <EVMWhatis />
-                {/*<EVMCards />
+                <EVMCards />
                 <EVMStartNow />
                 <EVMStartNowTwo />
                 <EVMGraphSection />
@@ -241,7 +241,7 @@ const EVM = () => {
                 <EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
-                <EVMFooter /> */}
+                <EVMFooter />
         </ThemeProvider>
     )
 }

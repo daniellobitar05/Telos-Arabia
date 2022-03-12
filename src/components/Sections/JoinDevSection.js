@@ -15,20 +15,20 @@ import {Button} from "@mui/material";
 
 
 const Section = styled.div`
-width: 100%;
-height: 100vh;
-background: black;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-@media screen and (max-width: 660px){
-   
-   
-}
+    width: 100%;
+    height: 100vh;
+    background: ${props => props.theme.backdevs};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 660px){
+    
+    
+    }
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 72px;
     width: 80%;
     color: ${props => props.theme.text};  
@@ -37,6 +37,7 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
 
     }
@@ -44,7 +45,7 @@ const Title = styled.div`
     
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     font-size: 32px;
     width: 50%;
     color: ${props => props.theme.text};
@@ -54,6 +55,7 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
 
     }
@@ -97,7 +99,7 @@ const IconColumnLeft = styled(LinkS)`
     height: 100%;
     float: left;
     display: inline-flex;
-    
+    background: transparent;
     align-items: center;
     justify-content: center;
 
@@ -111,7 +113,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-
+    background: transparent;
 `;
 
 const ToggleColumn = styled.div`
@@ -122,6 +124,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const HideColumn = styled.div`
@@ -141,12 +144,53 @@ const JoinDevSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="joindev">
-            <Subtitle style={{fontSize: '14px'}}>JOIN US</Subtitle>
-            <Title>انضم إلى المطورين لبناء مستقبل أفضل على شبكة تيلوس</Title>
-            <Subtitle>إذا كنت مطورًا ومهتمًا بـ بلوكتشيت وتطوير العقود الذكية ، انضم إلى مجموعة تيليغرام الخاصة بنا</Subtitle>
-            <a href="https://t.me/dappstelos" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><JoinButton>قابل المطورين على شبكة تيلوس</JoinButton></motion.div></a>
+        <Section id="joindev" ref={ref}>
+            <Subtitle style={{fontSize: '14px'}} animate={animationTwo}>JOIN US</Subtitle>
+            <Title animate={animation}>انضم إلى المطورين لبناء مستقبل أفضل على شبكة تيلوس</Title>
+            <Subtitle animate={animationTwo}>إذا كنت مطورًا ومهتمًا بـ بلوكتشيت وتطوير العقود الذكية ، انضم إلى مجموعة تيليغرام الخاصة بنا</Subtitle>
+            <a href="https://t.me/dappstelos" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} animate={animationTwo}><JoinButton>قابل المطورين على شبكة تيلوس</JoinButton></motion.div></a>
             <ArrowWrapper>
                 <IconColumnLeft>
                 <LinkS to="footer" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>

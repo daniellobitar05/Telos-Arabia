@@ -34,3 +34,7 @@
   transform: translateX(110%);
   transition: all var(--speed) ease;
 }
+
+.lightbox.active{
+  display: flex;
+}

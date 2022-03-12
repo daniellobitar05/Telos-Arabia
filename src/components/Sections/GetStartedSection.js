@@ -24,7 +24,7 @@ const Section = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 470vh;
+        height: 390vh;
     }
 `;
 
@@ -38,7 +38,24 @@ const ColumnLeft = styled.div`
     height: 100%;
     float: left;
     align-self: center;
-    background: purple;
+    background: ${props => props.theme.back4};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media screen and (max-width: 660px){
+        float: none;
+        width: 100%;
+        height: 170vh;
+    }
+`;
+
+const ColumnRight = styled.div`
+    width: 40%;
+    height: 100%;
+    float: left;
+    align-self: center;
+    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,26 +67,9 @@ const ColumnLeft = styled.div`
     }
 `;
 
-const ColumnRight = styled.div`
-    width: 40%;
-    height: 100%;
-    float: left;
-    align-self: center;
-    background: purple;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    @media screen and (max-width: 660px){
-        float: none;
-        width: 100%;
-        height: 250vh;
-    }
-`;
-
 const EmptyColumn = styled.div`
     width: 10%;
-    background: purple;
+    background: ${props => props.theme.back4};
     height: 100%;
     float: left;
     @media screen and (max-width: 768px){
@@ -287,6 +287,9 @@ const HelpTitle = styled.div`
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 60px;
+    @media screen and (max-width: 768px){
+        margin-top: 100px;
+    }
 `;
 
 const HelpButton = styled(Button)`

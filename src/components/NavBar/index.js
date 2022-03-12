@@ -268,7 +268,7 @@ const Nav = styled.div`
     transition: 0.8s all ease;
     z-index: 1000;
     &:hover{
-        background: #000060;
+        background: #663399;
         transition: 0.3s all ease-in-out;
     }
 `;
@@ -421,10 +421,10 @@ const AboutMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     backdrop-filter: blur(8px);
-    border: 2px solid #000060;
+    border: 2px solid white;
     z-index: 150;
 `;
 
@@ -438,10 +438,10 @@ const ExploreMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     backdrop-filter: blur(8px);
-    border: 2px solid #000060;
+    border: 2px solid white;
     z-index: 150;
 `;
 
@@ -455,10 +455,10 @@ const LearnMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     backdrop-filter: blur(8px);
-    border: 2px solid #000060;
+    border: 2px solid white;
     z-index: 150;
 `;
 
@@ -472,10 +472,10 @@ const BuildMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     backdrop-filter: blur(8px);
-    border: 2px solid #000060;
+    border: 2px solid white;
     z-index: 150;
 `;
 
@@ -489,10 +489,10 @@ const BuyMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     backdrop-filter: blur(8px);
-    border: 2px solid #000060;
+    border: 2px solid white;
     z-index: 150;
 `;
 
@@ -503,9 +503,10 @@ const SubMenu = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #000060;
+    background: #4b0082;
     border-radius: 20px;
     z-index: 150;
+    border: 1px solid white;
 `;
 
 const SubMenuIcon = styled.div`
@@ -547,6 +548,7 @@ const SubMenuItem = styled.div`
     img{
         width: 150px;
     }
+    
 `;
 
 const RoadMapIcon = styled(MapIcon)`
@@ -560,6 +562,8 @@ const RoadMapIcon = styled(MapIcon)`
         }
     }
 `;
+
+
 
 
 
@@ -796,13 +800,24 @@ const MenuVariants = {
     }
 };
 
+const Lightbox = styled.div`
+    width: 100vw;
+    height: 90vh;
+    top: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 500;
+    margin-top: 80px;
+    display: none;
+`;
+
 
 
 const Header = (props) => {
 
     const [scrollNavDown, setScrollNavDown] = useState(false);
 
-    
+    const lightbox = document.getElementById("lightbox");
     
 
     function changeTheme() {  
@@ -829,13 +844,16 @@ const Header = (props) => {
             setActiveExplore("menuOneExplore");
             setActiveBuy("menuOneBuy");
             setActiveBuild("menuOneBuild");
+            lightbox.classList.add("active");
         } else if(activeLearn === "menuTwoLearn"){
             setActiveLearn("menuOneLearn");
+            lightbox.classList.remove("active");
         }
     }
 
     const switchLearnLeave = () => {
         setActiveLearn("menuOneLearn");
+        lightbox.classList.remove("active");
     }
 
     const [activeAbout, setActiveAbout] = useState("menuOneAbout");
@@ -852,13 +870,16 @@ const Header = (props) => {
             setActiveExplore("menuOneExplore");
             setActiveBuy("menuOneBuy");
             setActiveBuild("menuOneBuild");
+            lightbox.classList.add("active");
         } else if(activeAbout === "menuTwoAbout"){
             setActiveAbout("menuOneAbout");
+            lightbox.classList.remove("active");
         }
     }
 
     const switchAboutLeave = () => {
         setActiveAbout("menuOneAbout");
+        lightbox.classList.remove("active");
     }
 
     const [activeExplore, setActiveExplore] = useState("menuOneExplore");
@@ -875,14 +896,17 @@ const Header = (props) => {
             setActiveLearn("menuOneLearn");
             setActiveBuy("menuOneBuy");
             setActiveBuild("menuOneBuild");
+            lightbox.classList.add("active");
         } else if(activeExplore === "menuTwoExplore"){
             setActiveExplore("menuOneExplore");
+            lightbox.classList.remove("active");
             
         }
     }
 
     const switchExploreLeave = () => {
         setActiveExplore("menuOneExplore");
+        lightbox.classList.remove("active");
     }
 
     const [activeBuild, setActiveBuild] = useState("menuOneBuild");
@@ -899,14 +923,17 @@ const Header = (props) => {
             setActiveLearn("menuOneLearn");
             setActiveBuy("menuOneBuy");
             setActiveExplore("menuOneExplore");
+            lightbox.classList.add("active");
         } else if(activeBuild === "menuTwoBuild"){
             setActiveBuild("menuOneBuild");
+            lightbox.classList.remove("active");
             
         }
     }
 
     const switchBuildLeave = () => {
         setActiveBuild("menuOneBuild");
+        lightbox.classList.remove("active");
     }
 
     const [activeBuy, setActiveBuy] = useState("menuOneBuy");
@@ -923,14 +950,17 @@ const Header = (props) => {
             setActiveLearn("menuOneLearn");
             setActiveExplore("menuOneExplore");
             setActiveBuild("menuOneBuild");
+            lightbox.classList.add("active");
         } else if(activeBuy === "menuTwoBuy"){
             setActiveBuy("menuOneBuy");
+            lightbox.classList.remove("active");
             
         }
     }
 
     const switchBuyLeave = () => {
         setActiveBuy("menuOneBuy");
+        lightbox.classList.remove("active");
     }
 
     
@@ -942,6 +972,7 @@ const Header = (props) => {
             setActiveBuild("menuOneBuild");
             setActiveLearn("menuOneLearn");
             setActiveExplore("menuOneExplore");
+            lightbox.classList.remove("active");
             
         } 
         else {
@@ -973,23 +1004,23 @@ const Header = (props) => {
                 <motion.div animate={animateAbout} onMouseLeave={switchAboutLeave} scrollNavDown={switchAboutLeave}>
                 <AboutMenu variants={MenuVariants} initial="start" animate="end">
                     <SubMenu >
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <LinkR to="/News"><MenuText>NEWS</MenuText></LinkR>
                         <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/About"> <MenuText>ABOUT</MenuText></LinkR>
                         <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>JOIN THE TEAM</MenuText>
                         <GroupAddIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>MEET THE TEAM</MenuText>
                         <EmojiPeopleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                         <MenuText>MEET THE BOARD</MenuText>
                         <MeetBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
@@ -1010,19 +1041,19 @@ const Header = (props) => {
                         <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>EVM PLATFORM</MenuTitle>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                        <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                         <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
                         <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                     <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><MenuText>BRIDGE</MenuText></a>
                         <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                         <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkS>
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                     <LinkR to="/EVMEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
@@ -1030,7 +1061,7 @@ const Header = (props) => {
                         <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>NATIVE PLATFORM</MenuTitle>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                        <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                         <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
                         <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
@@ -1038,11 +1069,11 @@ const Header = (props) => {
                     <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"> <MenuText>BRIDGE</MenuText></a>
                         <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                     <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkS>
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
                     <LinkR to="/NativeEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
@@ -1059,27 +1090,27 @@ const Header = (props) => {
                 <motion.div animate={animateLearn} onMouseLeave={switchLearnLeave}>
                 <LearnMenu>
                     <SubMenu>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/CommResources"><MenuText>COMM. RESOURCES</MenuText></LinkR>
                         <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><MenuText>KNOWLEDGE BASE</MenuText></a>
                         <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/GovDocumentation"><MenuText>GOVERNANCE</MenuText></LinkR>
                         <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/Tokenomics"><MenuText>TLOS TOKENOMICS</MenuText></LinkR>
                         <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/ESG"><MenuText>ESG BLOCKCHAIN</MenuText></LinkR>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>
                     </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                     <LinkR to="/EVM"><MenuText>EVM BLOCKCHAIN</MenuText></LinkR>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                     </SubMenuIcon></motion.div>
@@ -1096,19 +1127,19 @@ const Header = (props) => {
                 <motion.div animate={animateBuild} onMouseLeave={switchBuildLeave}>
                     <BuildMenu>
                         <SubMenu>
-                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <LinkR to="/Roadmap"><MenuText>ROADMAP</MenuText></LinkR>
                                 <MapIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <LinkR to="/Developers"><MenuText>DEVELOPERS</MenuText></LinkR>
                                 <DeveloperBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><MenuText>DOCUMENTATION</MenuText></a>
                                 <ArticleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
-                            <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuIcon>
+                            <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
                             <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><MenuText>GRANT PROGRAM</MenuText></a>
                                 <LocalFireDepartmentIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
@@ -1139,7 +1170,7 @@ const Header = (props) => {
                 <DropDownMenu />
             </NavItem>
         </Nav>
-        
+        <Lightbox className="lightbox" id="lightbox"/>
         </>
     )
 }

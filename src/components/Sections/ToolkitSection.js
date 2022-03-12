@@ -15,7 +15,7 @@ import AddLinkIcon from '@mui/icons-material/AddLink';
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back5};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@ const Section = styled.div`
 
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 82px;
     width: 100%;
     color: ${props => props.theme.text};  
@@ -37,6 +37,7 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 52px;
         height: 15vh;
@@ -44,7 +45,7 @@ const Title = styled.div`
     
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     font-size: 42px;
     width: 60%;
     color: ${props => props.theme.text};
@@ -54,6 +55,7 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 28px;
@@ -61,7 +63,7 @@ const Subtitle = styled.div`
     }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
     width: 100%;
     height: 50vh;
     @media screen and (max-width: 768px){
@@ -104,7 +106,7 @@ const Column = styled.div`
 
 const Box = styled(motion.a)`
     width: 55%;
-    height: 80%;
+    height: 90%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -146,18 +148,20 @@ const BottomCard = styled.div`
 
 const CardTitle = styled.div`
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     text-align: center;
     height: 40%;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const CardSubtitle = styled.div`
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     text-align: center;
     height: 60%;
-    width: 80%;
+    width: 100%;
     direction: rtl;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const UploadIcon = styled(UploadFileIcon)`
@@ -199,6 +203,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -217,6 +222,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -228,6 +234,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -242,14 +249,55 @@ const ToolkitSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="toolkit">
-            <Title>مجموعة أدوات المطور</Title>
-            <Subtitle>راجع الوثائق والمواد المرجعية أدناه للبدء</Subtitle>
-            <Wrapper>
+        <Section id="toolkit" ref={ref}>
+            <Title animate={animation}>مجموعة أدوات المطور</Title>
+            <Subtitle animate={animationTwo}>راجع الوثائق والمواد المرجعية أدناه للبدء</Subtitle>
+            <Wrapper animate={animationTwo}>
                 <EmptyColumn></EmptyColumn>
                 <Column>
-                    <Box whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                    <Box whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://developers.eos.io/welcome/latest/reference/index" target="_blank" rel="noreferrer">
                         <TopCard><span><APIIcon /></span></TopCard>
                         <BottomCard>
                             <CardTitle>API مراجع</CardTitle>

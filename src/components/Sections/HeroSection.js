@@ -123,14 +123,12 @@ function AnimationCanvas(){
 const Anim = styled.div`
     width: 100%;
     height: 100vh;
-    background-image: url(${LetterLogo});
+    background: url(${LetterLogo}), ${props => props.theme.back1};
     background-repeat: no-repeat;
-    background-size: 300px 300px;
     background-position: 50% 10%;
-    background-color: ${props => props.theme.body};
     @media screen and (max-width: 768px){
         height: 90vh;
-        background-size: 200px 75px;
+        
     }
     
 `;

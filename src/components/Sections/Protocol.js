@@ -9,8 +9,8 @@ import SOLID from "../SVG/solidity.svg";
 const Section = styled.div`
     width: 100%;
     height: 120vh;
-    background: black;
-    @media screen and (max-width: 660px){
+    background: ${props => props.theme.back3};
+    @media screen and (max-width: 768px){
        
         height: 160vh;
     }
@@ -26,13 +26,12 @@ const Title = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     justify-content: center;
-    @media screen and (max-width: 660px){
-        font-size: 24px;
-        height: 20vh;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+        height: 40vh;
         padding-top: 20px;
-        height: 20vh;
     }
 `;
 
@@ -41,7 +40,7 @@ const EmptyColumn = styled.div`
     height: 70vh;
     
     float: left;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         display: none;
     }
 `;
@@ -55,10 +54,10 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 60vh;
+        height: 50vh;
     }
 `;
 
@@ -71,17 +70,23 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 80vh;
+        height: 70vh;
     }
 `;
 
 const ColumnTitle = styled(motion.div)`
-    font-size: 18px;
+    font-size: 48px;
     padding-bottom: 40px;
     color: ${props => props.theme.text};
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+        
+    }
     
 `;
 
@@ -94,8 +99,10 @@ const BigTitle = styled(motion.div)`
     font-size: 24px;
     color: ${props => props.theme.text};
     padding-bottom: 30px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     span{
         font-weight: bold;
+        
     }
 `;
 
@@ -104,10 +111,12 @@ const Description = styled(motion.div)`
     color: ${props => props.theme.text};
     padding: 0 50px;
     text-align: center;
-    line-height: 15px;
-    @media screen and (max-width: 660px){
+    line-height: 30px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    @media screen and (max-width: 768px){
         padding: 0 40px;
-        font-size: 14px;
+        font-size: 22px;
     }
 `;
 
@@ -169,7 +178,7 @@ const Protocol = () => {
                 opacity: 0, scale: 0.2,
             })
         }
-        console.log("use effect hook, inView = " + inView);
+        /* console.log("use effect hook, inView = " + inView); */
     }, [inView])
 
     return(
@@ -178,15 +187,18 @@ const Protocol = () => {
             <EmptyColumn></EmptyColumn>
             <ColumnLeft>
                 <ColumnTitle animate={animationTwo}>تيلوس ناتيف</ColumnTitle>
-                <Image src={CPLUS} alt="" animate={animation} whileHover={{scale: 1.1}}/>
+                <Image src={CPLUS} alt="" animate={animation} />
                 <BigTitle animate={animationTwo}>C++<span>ناتيف</span> </BigTitle>
-                <Description animate={animationTwo}><p>EOSIO C++ تدير تيلوس في الأصل تقنية العقد الذكي</p><p>المكدس اللامركزي الرائد للتطبيقات اللامركزية عالية</p><p>الإنتاجية</p></Description>
+                <Description animate={animationTwo}>تدير تيلوس في الأصل تقنية العقد الذكي ++ C EOSIO المكدس اللامركزي الرائد للتطبيقات اللامركزية عالية الإنتاجية</Description>
             </ColumnLeft>
             <ColumnRight>
                 <ColumnTitle animate={animationTwo}>EVM تيلوس </ColumnTitle>
-                <Image src={SOLID} alt=""  animate={animation} whileHover={{scale: 1.1}}/>
+                <Image src={SOLID} alt=""  animate={animation} />
                 <BigTitle animate={animationTwo}><span>EVM</span> صلابة</BigTitle>
-                <Description animate={animationTwo}><p>مبني على EVM تيلوس هو أول بلوكشين متوافق مع </p><p>قم بنشر وتشغيل تطبيقات ايثيريوم باستخدام .EOSIO</p><p>الأكثر ادا DeFi للحصول على  EVM تيلوس</p><p>ء وأماناًالمتاح اليوم</p></Description>
+                 <Description animate={animationTwo}>تيلوس هو أول بلوكشين متوافق مع EVM مبني على
+EOSIO .قم بنشر وتشغيل تطبيقات ايثيريوم باستخدام
+ًء وأماناً تيلوس EVM للحصول على DeFi الأكثر ادا
+المتاح اليوم</Description>
             </ColumnRight>
             <EmptyColumn></EmptyColumn>
         </Section>

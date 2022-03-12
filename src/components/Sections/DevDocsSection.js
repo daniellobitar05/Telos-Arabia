@@ -1,5 +1,7 @@
+import {useEffect} from "react";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
@@ -14,7 +16,7 @@ import GavelIcon from '@mui/icons-material/Gavel';
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: purple;
+    background: ${props => props.theme.back3};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +26,7 @@ const Section = styled.div`
     }
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 52px;
     width: 50%;
     color: ${props => props.theme.text};  
@@ -33,6 +35,7 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 48px;
@@ -40,7 +43,7 @@ const Title = styled.div`
     
 `;
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
     display: flex;
     height: 50vh;
     width: 100%;
@@ -70,29 +73,7 @@ const Box = styled.a`
     
 `;
 
-const Icon = styled.div`
-    width: 100%;
-    height: 40%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-`;
 
-const Text = styled.div`
-    width: 60%;
-    height: 60%;
-    color: white;
-    font-size: 26px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    
-`;
 
 const GithubIcon = styled(GitHubIcon)`
     color: white;
@@ -142,6 +123,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -215,6 +197,7 @@ const CardText = styled.div`
     color: white;
     font-size: 28px;
     text-align: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -225,6 +208,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
     background: transparent;
 
 `;
@@ -237,6 +221,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -253,11 +238,52 @@ const DevDocsSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="docssection">
-            <Title>راجع الوثائق والمواد المرجعية أدناه للبدء</Title>
+        <Section id="docssection" ref={ref}>
+            <Title animate={animation}>راجع الوثائق والمواد المرجعية أدناه للبدء</Title>
             
-            <Grid>
+            <Grid animate={animationTwo}>
              <Box href="https://github.com/telosnetwork" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><GithubIcon /></span></TopCard>

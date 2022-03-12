@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
-import { wrap } from "popmotion";
+import {useInView} from "react-intersection-observer";
 
 import Icon1 from "../SVG/slider1.svg";
 import Icon2 from "../SVG/slider2.svg";
@@ -57,7 +57,7 @@ const cards = [
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +65,7 @@ const Section = styled.div`
     
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 52px;
     width: 100%;
     color: ${props => props.theme.text};  
@@ -74,6 +74,7 @@ const Title = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         height: 25vh;
     }
@@ -82,9 +83,9 @@ const Title = styled.div`
     
 `;
 
-const Subtitle = styled.div`
-    font-size: 18px;
-    width: 50%;
+const Subtitle = styled(motion.div)`
+    font-size: 24px;
+    width: 70%;
     color: ${props => props.theme.text};
     text-align: center; 
     float: left;
@@ -93,6 +94,7 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
@@ -170,6 +172,7 @@ const SliderTitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const SliderSubtitle = styled.div`
@@ -182,6 +185,7 @@ const SliderSubtitle = styled.div`
     align-items: center;
     justify-content: center;
     direction: rtl;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const Empty = styled.div`
@@ -200,6 +204,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 
@@ -231,6 +236,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -242,6 +248,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -254,6 +261,47 @@ const DevStackSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     const [width, setWidth] = useState(0);
     const carroussel = useRef();
     
@@ -264,9 +312,9 @@ const DevStackSection = () => {
     }, [])
 
     return(
-        <Section id="devstack">
-            <Title>استكشف مجموعة مطوري شبكة تيلوس</Title>
-            <Subtitle>أصبحت شبكة تيلوس بسرعة أكبر مكدس ويب 3.0 ، مما يوفر للمطورين ورجال الأعمال الأدوات اللازمة للنجاح في الجيل التالي من اقتصاد الإنترنت اللامركزي</Subtitle>
+        <Section id="devstack" ref={ref}>
+            <Title animate={animation}>استكشف مجموعة مطوري شبكة تيلوس</Title>
+            <Subtitle animate={animationTwo}>أصبحت شبكة تيلوس بسرعة أكبر مكدس ويب 3.0 ، مما يوفر للمطورين ورجال الأعمال الأدوات اللازمة للنجاح في الجيل التالي من اقتصاد الإنترنت اللامركزي</Subtitle>
             <Wrapper>
             <Carousel ref={carroussel}>
                 <InnerCarousel drag="x" dragConstraints={{right: 0, left: -width}} whileTap={{cursor: 'grabbing'}}>

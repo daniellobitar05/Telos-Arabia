@@ -1,8 +1,8 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import styled from "styled-components"
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
-
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import Header from "../components/NavBar";
@@ -19,29 +19,31 @@ import Footer from "../components/Sections/Footer";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back1};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 92px;
     width: 70%;
     color: ${props => props.theme.text};  
     text-align: right;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 52px;
     }  
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     font-size: 42px;
     width: 50%;
     color: ${props => props.theme.text};
     text-align: right; 
     padding: 30px 0;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         font-size: 28px;
     }
@@ -80,11 +82,11 @@ const IconColumn = styled.div`
     float: left;
 `;
 
-const TextColumn = styled.div`
+const TextColumn = styled(motion.div)`
     width: 50%;
     height: 100%;
     display: inline-flex;
-    
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     align-items: center;
     justify-content: center;
     float: left;
@@ -101,19 +103,60 @@ const Developers = () => {
 
     const [theme, setTheme] = useState("dark");
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     
 
     return(
         <ThemeProvider theme={themes[theme]}>
         <Header theme={theme} setTheme={setTheme} />
-        <Section id="developers">
-            <Title>فوائد شبكة تيلوس</Title>
-            <Subtitle>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</Subtitle>
+        <Section id="developers" ref={ref}>
+            <Title animate={animation}>فوائد شبكة تيلوس</Title>
+            <Subtitle animate={animationTwo}>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</Subtitle>
             <IconHolder>
                 <IconColumn>
                 <LinkS to="devresources" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
                 </IconColumn>
-                <TextColumn>
+                <TextColumn animate={animation}>
                 <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><IconButton><ArrowLeft /></IconButton></a>
                 <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><IconText>وثائقنا Telos</IconText></a>
                 </TextColumn>

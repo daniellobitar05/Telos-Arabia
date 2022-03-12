@@ -187,6 +187,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -198,6 +199,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -208,6 +210,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`

@@ -24,14 +24,16 @@ import Speed4 from "../SVG/speed4.svg";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back7};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 60%;
     height: 40%;
     display: flex;
@@ -40,9 +42,13 @@ const Title = styled.div`
     text-align: center;
     color: white;
     font-size: 72px;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+    }
 `;
 
-const LeftTitle = styled.div`
+const LeftTitle = styled(motion.div)`
     height: 60%;
     width: 80%;
     display: flex;
@@ -52,19 +58,26 @@ const LeftTitle = styled.div`
     text-align: center;
     color: white;
     font-size: 28px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
-const Row = styled.div`
+const Row = styled(motion.div)`
     display: inline-flex;
     height: 20%;
     width: 80%;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 25%;
+    }
 `;
 
 const Icon = styled.div`
     height: 100%;
     width: 30%;
+    @media screen and (max-width: 768px){
+        transform: scale(0.8);
+    }
     
 `;
 
@@ -72,6 +85,12 @@ const IconText = styled.div`
     height: 100%;
     width: 70%;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+    }
 
 `;
 
@@ -80,18 +99,22 @@ const Columns = styled.div`
     height: 90vh;
 `;
 
-const ColumnLeft = styled.div`
+const ColumnLeft = styled(motion.div)`
     width: 50%;
     height: 100%;
     float: left;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 45vh;
+    }
 `;
 
-const ColumnRight = styled.div`
+const ColumnRight = styled(motion.div)`
     width: 50%;
     height: 100%;
     float: left;
@@ -102,6 +125,12 @@ const ColumnRight = styled.div`
     background-image: url(${EVM1});
     background-repeat: no-repeat;
     background-size: cover;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 45vh;
+        padding-left: 30px;
+    }
 `;
 
 const GraphWrapper = styled.div`
@@ -143,6 +172,7 @@ const BarRow = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    
 `;
 
 const EmptyGraphColumn = styled.div`
@@ -213,6 +243,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -224,6 +255,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -234,6 +266,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -269,7 +302,9 @@ const EVMGraphSection = () => {
         scroll.scrollToTop();
     }
 
-    const {ref, inView} = useInView();
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
     function ChangeNumber () {
         const counters = document.querySelectorAll('.graphcounter');
@@ -319,13 +354,68 @@ const EVMGraphSection = () => {
         
     }, [inView])
 
+    const animationThree = useAnimation();
+    const animationTwo = useAnimation();
+    const animationFour = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationFour.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationFour.start({
+                x: '-100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="evmgraph">
+        <Section id="evmgraph" ref={ref}>
             
-            <Columns>
+            <Columns >
                 <ColumnLeft>
-                <Title>Speed & Scalability</Title>
-                <LeftTitle>
+                <Title animate={animationFour}>Speed & Scalability</Title>
+                <LeftTitle animate={animationTwo}>
                     <Row>
                         <Icon><img src={Speed1} alt="" /></Icon>
                         <IconText>0.5 Second Block Times</IconText>
@@ -345,8 +435,8 @@ const EVMGraphSection = () => {
                 </LeftTitle>
                 
                 </ColumnLeft>
-                <ColumnRight>
-                <GraphWrapper ref={ref}>
+                <ColumnRight animate={animationThree}>
+                <GraphWrapper >
                     <PositionRow>
                         <Position></Position>
                         <Position><Text className="graphcounter" data-target="10000" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>

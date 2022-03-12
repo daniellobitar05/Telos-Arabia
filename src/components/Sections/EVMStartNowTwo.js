@@ -1,5 +1,7 @@
-import styled, {keyframes} from "styled-components";
-import {motion} from "framer-motion";
+import {useEffect} from "react";
+import styled from "styled-components";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import {Link as LinkR} from "react-router-dom";
 import {IconButton} from "@mui/material";
@@ -38,6 +40,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -49,6 +52,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -59,6 +63,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -76,7 +81,7 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back6};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,6 +94,9 @@ const Grid = styled.div`
     width: 90%;
     height: 90vh;
     display: flex;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
     
 `;
 
@@ -99,6 +107,11 @@ const Column = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 45vh;
+    }
 `;
 
 const Box = styled.div`
@@ -139,7 +152,7 @@ const WalletImage = styled.div`
     } 
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
     width: 100%;
     height: 60%;
     display: flex;
@@ -148,6 +161,10 @@ const Text = styled.div`
     align-items: center;
     color: white;
     font-size: 32px;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        justify-content: center;
+    }
 `;
 
 const Subtitle = styled(motion.a)`
@@ -159,6 +176,11 @@ const Subtitle = styled(motion.a)`
     flex-direction: column;
     justify-content: flex-end;
     font-size: 18px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        justify-content: center;
+        text-align: center;
+    }
 `;
 
 const Pulse = {
@@ -180,21 +202,62 @@ const EVMStartNow = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView]) 
+
     return(
-        <Section id="startnowtwo">
+        <Section id="startnowtwo" ref={ref}>
             <Grid>
                 <Column>
                     <Box>
                         <Image><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={Ball2} alt="" /></Image>
-                        <Text>DEFI DEMO</Text>
-                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer">Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
+                        <Text animate={animation}>DEFI DEMO</Text>
+                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}>Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
                     </Box>
                 </Column>
                 <Column>
                     <Box>
                     <WalletImage><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={EVM2} alt="" /></WalletImage>
-                        <Text>PARTNERSHIP</Text>
-                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer">If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
+                        <Text animate={animation}>PARTNERSHIP</Text>
+                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}>If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
                     </Box>
                 </Column>
             </Grid>

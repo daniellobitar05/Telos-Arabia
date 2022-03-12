@@ -49,6 +49,7 @@ const Title = styled(motion.div)`
     text-align: right;
     @media screen and (max-width: 768px){
         font-size: 48px;
+        height: 20vh;
     }
     
 `;
@@ -65,6 +66,7 @@ const Subtitle = styled(motion.div)`
     text-align: right;
     @media screen and (max-width: 768px){
         font-size: 28px;
+        
     }
 `;
 
@@ -129,7 +131,7 @@ const ButtonWrapper = styled(motion.div)`
     @media screen and (max-width: 768px){
         display: flex;
         flex-direction: column;
-        transform: translate(0, 20%);
+        margin-top: 40px;
     }
 `;
 
@@ -233,10 +235,10 @@ const EVM = () => {
                 <EVMWhatis />
                 <EVMCards />
                 <EVMStartNow />
-                {/* <EVMStartNowTwo />
+                <EVMStartNowTwo />
                 <EVMGraphSection />
                 <EVMNoFront />
-                <EVMChartSection />
+                {/*<EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
                 <EVMFooter /> */}

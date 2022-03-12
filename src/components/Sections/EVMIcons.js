@@ -97,7 +97,7 @@ const Title = styled(motion.h1)`
     text-align: center;
     @media screen and (max-width: 768px){
         font-size: 18px;
-        width: 70%;
+        width: 90%;
     }
 `;
 
@@ -121,6 +121,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -132,6 +133,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -142,6 +144,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`

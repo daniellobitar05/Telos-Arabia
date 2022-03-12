@@ -233,12 +233,12 @@ const EVM = () => {
                 </Section>
                 <EVMIcons />
                 <EVMWhatis />
-                <EVMCards />
+                {/*<EVMCards />
                 <EVMStartNow />
                 <EVMStartNowTwo />
                 <EVMGraphSection />
-                <EVMNoFront />
-                {/*<EVMChartSection />
+                 <EVMNoFront />
+                <EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
                 <EVMFooter /> */}

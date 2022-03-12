@@ -62,7 +62,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 60%;
+        height: 70%;
     }
 `;
 
@@ -78,8 +78,8 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 40%;
-        transform: scale(0.6);
+        height: 30%;
+        transform: scale(0.6) translate(0, 20%);
     }
 `;
 

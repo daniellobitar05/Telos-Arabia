@@ -14,23 +14,29 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back3};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 50%;
     height: 20vh;
     text-align: center;
     color: white;
     font-size: 62px;
     display: flex;
-    
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        font-size: 32px;
+        width: 90%;
+        height: 10vh;
+    }
 `;
 
 const Grid = styled.div`
@@ -39,6 +45,10 @@ const Grid = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 80vh;
+    }
 `;
 
 const ColumnLeft = styled.div`
@@ -47,8 +57,13 @@ const ColumnLeft = styled.div`
     float: left;
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
+    
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 60%;
+    }
 `;
 
 const ColumnRight = styled.div`
@@ -59,18 +74,28 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 40%;
+        transform: scale(0.7);
+    }
 `;
 
-const BoxTitle = styled.div`
+const BoxTitle = styled(motion.div)`
     width: 90%;
     height: 10vh;
     color: white;
     font-size: 24px;
     text-align: right;
-
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+    }
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     width: 90%;
     height: 30vh;
     color: white;
@@ -79,6 +104,10 @@ const Subtitle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+    }
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -101,6 +130,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -112,6 +142,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -122,6 +153,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -139,6 +171,71 @@ const Empty = styled.div`
 `;
 
 const EVMWhatis = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+      }
+
+
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+    const animationThree = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, scale: 1,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, scale: 0.5
+            })
+        }
+        
+    }, [inView])
+
 
     class VideoOne extends React.Component {
         render() {
@@ -158,23 +255,23 @@ const EVMWhatis = () => {
           // access to player in all event handlers via event.target
           event.target.pauseVideo();
         }
-      }
-
-      const toggleHome = () => {
-        scroll.scrollToTop();
     }
 
+      
+
     return(
-        <Section id="evmwhatis">
-            <Title>What is Telos EVM</Title>
+        <Section id="evmwhatis" ref={ref}>
+            <Title animate={animation}>What is Telos EVM</Title>
             <Grid>
                 <ColumnLeft>
-                    <BoxTitle>A Layer-1 Ethereum Virtual Machine, Built to Power Web 3.0</BoxTitle>
-                    <Subtitle>Telos EVM is a scalable solution for Solidity based applications, built with the intent of revolutionizing the DeFi landscape. Unlike other scalable EVMs, Telos EVM is not just a fork of the original Go Ethereum code. It’s an entirely new EVM redesigned from the ground up to take full advantage of the power that Telos technology has to offer.</Subtitle>
-                    <Subtitle>This new approach allows the Telos EVM to avoid the scaling issues that many major EVM alternatives run into. Despite its unique design, Telos EVM offers feature parity with Ethereum, this makes it a powerful solution for developers and users looking for an Ethereum Virtual Machine that can keep up with the demands of mass adoption.</Subtitle>
+                    <BoxTitle animate={animationTwo}>A Layer-1 Ethereum Virtual Machine, Built to Power Web 3.0</BoxTitle>
+                    <Subtitle animate={animationTwo}>Telos EVM is a scalable solution for Solidity based applications, built with the intent of revolutionizing the DeFi landscape. Unlike other scalable EVMs, Telos EVM is not just a fork of the original Go Ethereum code. It’s an entirely new EVM redesigned from the ground up to take full advantage of the power that Telos technology has to offer.</Subtitle>
+                    <Subtitle animate={animationTwo}>This new approach allows the Telos EVM to avoid the scaling issues that many major EVM alternatives run into. Despite its unique design, Telos EVM offers feature parity with Ethereum, this makes it a powerful solution for developers and users looking for an Ethereum Virtual Machine that can keep up with the demands of mass adoption.</Subtitle>
                 </ColumnLeft>
                 <ColumnRight>
+                    <motion.div animate={animationThree}>
                     <VideoOne />
+                    </motion.div>
                 </ColumnRight>
             </Grid>
             <Empty>

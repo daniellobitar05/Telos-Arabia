@@ -25,15 +25,31 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: black;
+    background: ${props => props.theme.back2};
     height: 100vh;
+`;
+
+const RowEmpty = styled.div`
+    width: 100%;
+    height: 5vh;
+    
+    
+`;
+
+const RowEmptySmart = styled.div`
+    width: 100%;
+    height: 5vh;
+    @media screen and (min-width: 768px){
+        display: none; 
+    }
+    
 `;
 
 
 
 const TextContainer = styled.div`
     width: 80%;
-    height: 80vh;
+    height: 85vh;
     border: 1px solid ${props => props.theme.text};
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -46,14 +62,11 @@ const TextContainer = styled.div`
     
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 600px;
-        
-    }
-    @media screen and (max-width: 660px){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         
     }
+    
 `;
 
 const Column = styled.div`
@@ -62,14 +75,17 @@ const Column = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0 10px;
+    @media screen and (max-width: 768px){
+        padding: 0;
+    }
     
 `;
 
 const Image = styled(motion.img)`
     width: 35%;
 
-    @media screen and (max-width: 660px){
-        width: 30%;
+    @media screen and (max-width: 768px){
+        width: 40%;
     }
 
 `;
@@ -79,9 +95,9 @@ const Title = styled(motion.h1)`
     width: 80%;
     color: aqua;
     text-align: center;
-    @media screen and (max-width: 660px){
-        font-size: 16px;
-        
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+        width: 70%;
     }
 `;
 
@@ -139,7 +155,9 @@ const Empty = styled.div`
     height: 15vh;
     display: inline-flex;
     
-    
+    @media screen and (max-width: 768px){
+        height: 5vh;
+    }
 `;
 
 
@@ -189,7 +207,7 @@ const EVMIcons = () => {
 
     return(
         <Section ref={ref} id="evmicons">
-            
+            <RowEmpty></RowEmpty>
             <TextContainer>
                 <Column>
                     <Image src={NoFront} alt="" animate={animation} whileHover={{scale: 1.1}}/>
@@ -234,6 +252,7 @@ const EVMIcons = () => {
                         
                         </Column>
             </TextContainer>
+            <RowEmptySmart />
             <Empty>
                 <IconColumnLeft to="evmwhatis" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>

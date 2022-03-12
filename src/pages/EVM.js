@@ -1,14 +1,13 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import styled from "styled-components"
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import Header from "../components/NavBar";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import {IconButton} from "@mui/material";
 
 import EVMIcons from "../components/Sections/EVMIcons";
@@ -29,31 +28,32 @@ import EVM1 from "../components/images/evm3.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    background-image: url(${EVM1});
+    overflow-x: hidden;
+    background: url(${EVM1}), ${props => props.theme.back1};
     background-repeat: no-repeat;
     background-size: contain;
 `;
 
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 72px;
     width: 80%;
     height: 25vh;
     color: ${props => props.theme.text};  
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
     text-align: right;
+    @media screen and (max-width: 768px){
+        font-size: 48px;
+    }
     
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     font-size: 48px;
     width: 60%;
     height: 30vh;
@@ -61,13 +61,11 @@ const Subtitle = styled.div`
     display: flex;
     flex-direction: column;
     transform: translate(20%, 0);
-    
     justify-content: center;
     text-align: right;
-    
-    
-    
-    
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+    }
 `;
 
 const Empty = styled.div`
@@ -100,10 +98,6 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
 `;
 
-const ArrowUp = styled(KeyboardArrowUpIcon)`
-    color: white;
-`;
-
 const IconColumnRight = styled(LinkS)`
     width: 12.5%;
     height: 100%;
@@ -125,18 +119,18 @@ const ToggleColumn = styled.div`
     justify-content: flex-start;
 `;
 
-const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
-    color: white;
-`;
-
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled(motion.div)`
     height: 20vh; 
     width: 80%;
     display: inline-flex;
     align-items: center;
-    
     justify-content: flex-end;
     
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        transform: translate(0, 20%);
+    }
 `;
 
 const Button = styled(LinkS)`
@@ -158,24 +152,65 @@ const Button = styled(LinkS)`
         background: linear-gradient(90deg, rgba(195,93,232,1) 0%, rgba(69,43,161,1) 63%, rgba(4,22,134,1) 100%);
     }
 
+    @media screen and (max-width: 768px){
+        margin: 10px 0;
+    }
 `;
 
 
 
 const EVM = () => {
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
-    
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])    
 
     const [theme, setTheme] = useState("dark");
 
     return(
         <ThemeProvider theme={themes[theme]}>
             <Header theme={theme} setTheme={setTheme} />
-                <Section id="evm">
-                    <Title>Telos EVM</Title>
-                    <Subtitle>The most powerful and scalable Ethereum Smart Contract platform available today</Subtitle>
-                    <ButtonWrapper>
+                <Section id="evm" ref={ref}>
+                    <Title animate={animation}>Telos EVM</Title>
+                    <Subtitle animate={animationTwo}>The most powerful and scalable Ethereum Smart Contract platform available today</Subtitle>
+                    <ButtonWrapper animate={animation}>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                     <Button to="startnow" smooth={true} duration={1000} spy={true} exact="true">START NOW</Button>
                     </motion.div>
@@ -198,13 +233,13 @@ const EVM = () => {
                 <EVMWhatis />
                 <EVMCards />
                 <EVMStartNow />
-                <EVMStartNowTwo />
+                {/* <EVMStartNowTwo />
                 <EVMGraphSection />
                 <EVMNoFront />
                 <EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
-                <EVMFooter />
+                <EVMFooter /> */}
         </ThemeProvider>
     )
 }

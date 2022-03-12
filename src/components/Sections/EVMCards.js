@@ -17,16 +17,20 @@ import Friendly from "../images/evm/friendly.svg";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px){
+        height: 220vh;
+
+    }
 `;
 
 const Title = styled.div`
     width: 100%;
     height: 20vh;
-    background: black;
+    background: transparent;
 `;
 
 
@@ -35,7 +39,10 @@ const Grid = styled.div`
     height: 70vh;
     width: 90vw;
     z-index: 20;
-    
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 200vh;
+    }
    
 `;
 
@@ -58,17 +65,23 @@ const Wrapper = styled(motion.div)`
     width: 25%;
     float: left;
     height: 70vh;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 50vh;
+    }
 `;
 
 const Column = styled(LinkS)`
     width: 95%;
-    border: 1px solid indigo;
+    border: 2px solid indigo;
     max-height: 100vh;
     height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     cursor: pointer;
+    
     &:hover{
         .expand{
             height: 30vh;
@@ -163,8 +176,11 @@ const InnerText = styled.h2`
 const InnerRow = styled.div`
     width: 100%;
     height: 20vh;
-    background: black;
+    background: rgba(51,6,138,1);
     z-index: 20;
+    @media screen and (max-width: 768px){
+        margin-bottom: 30px;
+    }
 `;
 
 

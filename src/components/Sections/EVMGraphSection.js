@@ -48,7 +48,7 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 32px;
-        height: 15%;
+        height: 25%;
     }
 `;
 
@@ -64,14 +64,14 @@ const LeftTitle = styled(motion.div)`
     font-size: 28px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        height: 85%;
+        height: 75%;
     }
 `;
 
 const Row = styled(motion.div)`
     display: inline-flex;
     height: 25%;
-    width: 80%;
+    width: 90%;
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
@@ -82,6 +82,9 @@ const Row = styled(motion.div)`
 const Icon = styled.div`
     height: 100%;
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
         transform: scale(0.8);
     }
@@ -117,7 +120,7 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 50vh;
+        height: 45vh;
     }
 `;
 
@@ -135,7 +138,7 @@ const ColumnRight = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 45vh;
+        height: 50vh;
         padding-left: 30px;
     }
 `;

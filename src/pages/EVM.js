@@ -237,11 +237,11 @@ const EVM = () => {
                 <EVMStartNow />
                 <EVMStartNowTwo />
                 <EVMGraphSection />
-                 <EVMNoFront />
+                {/*  <EVMNoFront />
                 <EVMChartSection />
                 <EVMMicroSection />
                 <EVMLatest />
-                <EVMFooter />
+                <EVMFooter /> */}
         </ThemeProvider>
     )
 }

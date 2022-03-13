@@ -9,11 +9,16 @@ import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 
 import Ball3 from "../images/telos_ball3.png";
 import EVM3 from "../images/evm3.png";
 
+const ArrowLeft = styled(KeyboardArrowLeftIcon)`
+    color: white;
+    transform: translate(-50%, 0);
+`;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -69,7 +74,7 @@ const EmptyColumn = styled.div`
 
 const Empty = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     display: inline-flex;
 `;
 
@@ -122,7 +127,7 @@ const Box = styled.div`
 
 const Image = styled.div`
     width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,11 +141,12 @@ const Image = styled.div`
 
 const WalletImage = styled.div`
    width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
     img{
         width: 90%;
         height: 90%;
@@ -168,10 +174,11 @@ const Subtitle = styled(motion.a)`
     height: 40%;
     color: white;
     text-align: right;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    
     justify-content: flex-end;
     font-size: 18px;
+    padding: 5px 0px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         justify-content: center;
@@ -191,6 +198,7 @@ const Pulse = {
         }
     }
 }
+
 
 const EVMStartNowTwo = () => {
 
@@ -246,14 +254,16 @@ const EVMStartNowTwo = () => {
                     <Box>
                         <Image><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={EVM3} alt="" /></Image>
                         <Text animate={animation}>DEVELOPER CHAT</Text>
-                        <Subtitle href="https://t.me/TelosEVMDevs" target="_blank" rel="noreferrer" animate={animationTwo}>Join a community of dedicated developers, passionate about building on the Telos EVM.</Subtitle>
+                        <Subtitle  animate={animationTwo}>Join a community of dedicated developers, passionate about building on the Telos EVM.</Subtitle>
+                        <Subtitle href="https://t.me/TelosEVMDevs" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
                     </Box>
                 </Column>
                 <Column>
                     <Box>
                     <WalletImage><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={Ball3} alt="" /></WalletImage>
                         <Text animate={animation}>TELOS WEB WALLET</Text>
-                        <Subtitle href="https://wallet.telos.net/" target="_blank" rel="noreferrer" animate={animationTwo}>Bridge your Tlos seamlessly and for free between Native Telos and EVM.</Subtitle>
+                        <Subtitle animate={animationTwo}>Bridge your Tlos seamlessly and for free between Native Telos and EVM.</Subtitle>
+                        <Subtitle href="https://wallet.telos.net/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
                     </Box>
                 </Column>
             </Grid>

@@ -9,6 +9,7 @@ import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 import Ball1 from "../images/telos_ball1.png";
 import Ball2 from "../images/telos_ball2.png";
@@ -19,6 +20,11 @@ import EVM2 from "../images/evm2.png";
 import EVM3 from "../images/evm3.png";
 import EVM4 from "../images/evm4.png";
 import Back1 from "../images/back1.jpeg";
+
+const ArrowLeft = styled(KeyboardArrowLeftIcon)`
+    color: white;
+    transform: translate(-50%, 0);
+`;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -74,7 +80,7 @@ const EmptyColumn = styled.div`
 
 const Empty = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     display: inline-flex;
 `;
 
@@ -126,7 +132,7 @@ const Box = styled.div`
 
 const Image = styled.div`
     width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +146,7 @@ const Image = styled.div`
 
 const WalletImage = styled.div`
    width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,7 +179,7 @@ const Subtitle = styled(motion.a)`
     color: white;
     text-align: right;
     display: flex;
-    flex-direction: column;
+    padding: 5px 0;
     justify-content: flex-end;
     font-size: 18px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -250,14 +256,17 @@ const EVMStartNow = () => {
                     <Box>
                         <Image><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={Ball2} alt="" /></Image>
                         <Text animate={animation}>DEFI DEMO</Text>
-                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}>Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
+                        <Subtitle  animate={animationTwo}>Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
+                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
                     </Box>
                 </Column>
                 <Column>
                     <Box>
                     <WalletImage><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={EVM2} alt="" /></WalletImage>
                         <Text animate={animation}>PARTNERSHIP</Text>
-                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}>If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
+                        <Subtitle  animate={animationTwo}>If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
+                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
+
                     </Box>
                 </Column>
             </Grid>

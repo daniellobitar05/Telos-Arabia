@@ -135,7 +135,7 @@ const ColumnRight = styled(motion.div)`
 
 const GraphWrapper = styled.div`
     width: 80%;
-    height: 70vh;
+    height: 45vh;
     
     display: flex;
     flex-direction: column;
@@ -277,8 +277,9 @@ const EmptyColumn = styled.div`
 
 const Empty = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     display: inline-flex;
+    
     
     
 `;

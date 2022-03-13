@@ -166,6 +166,7 @@ const Text = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         justify-content: center;
+        font-size: 24px;
     }
 `;
 
@@ -183,6 +184,7 @@ const Subtitle = styled(motion.a)`
     @media screen and (max-width: 768px){
         justify-content: center;
         text-align: center;
+        font-size: 16px;
     }
 `;
 

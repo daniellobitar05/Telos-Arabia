@@ -97,6 +97,7 @@ const Grid = styled.div`
     display: flex;
     @media screen and (max-width: 768px){
         flex-direction: column;
+        height: 95vh;
     }
     
 `;
@@ -111,7 +112,7 @@ const Column = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 45vh;
+        height: 50%;
     }
 `;
 
@@ -125,7 +126,7 @@ const Box = styled.div`
 `;
 
 
-const Image = styled.div`
+const Image = styled(motion.div)`
     width: 100%;
     height: 60%;
     display: flex;
@@ -139,7 +140,7 @@ const Image = styled.div`
     }
 `;
 
-const WalletImage = styled.div`
+const WalletImage = styled(motion.div)`
    width: 100%;
     height: 60%;
     display: flex;
@@ -254,7 +255,7 @@ const EVMStartNowTwo = () => {
             <Grid>
                 <Column>
                     <Box>
-                        <Image><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={EVM3} alt="" /></Image>
+                        <Image animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={EVM3} alt="" /></Image>
                         <Text animate={animation}>DEVELOPER CHAT</Text>
                         <Subtitle  animate={animationTwo}>Join a community of dedicated developers, passionate about building on the Telos EVM.</Subtitle>
                         <Subtitle href="https://t.me/TelosEVMDevs" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
@@ -262,7 +263,7 @@ const EVMStartNowTwo = () => {
                 </Column>
                 <Column>
                     <Box>
-                    <WalletImage><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={Ball3} alt="" /></WalletImage>
+                    <WalletImage animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={Ball3} alt="" /></WalletImage>
                         <Text animate={animation}>TELOS WEB WALLET</Text>
                         <Subtitle animate={animationTwo}>Bridge your Tlos seamlessly and for free between Native Telos and EVM.</Subtitle>
                         <Subtitle href="https://wallet.telos.net/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>

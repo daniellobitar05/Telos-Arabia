@@ -66,7 +66,7 @@ const EmptyColumn = styled.div`
 
 const Empty = styled.div`
     width: 100%;
-    height: 10vh;
+    height: 5vh;
     display: inline-flex;
     
     
@@ -89,6 +89,12 @@ const Wrapper = styled.div`
     display: flex;
     width: 100%;
     height: 90vh;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
+    }
 `;
 
 const ColumnLeft = styled(motion.div)`
@@ -97,12 +103,30 @@ const ColumnLeft = styled(motion.div)`
     float: left;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 30%;
+        align-items: center;
+        justify-content: center;
+        img{
+            transform: scale(0.5);
+        }
+        
+    }
 `;
 
 const ColumnRight = styled.div`
     width: 50%;
     height: 100%;
     float: left;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 90%;
+        height: 70%;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const Title = styled(motion.div)`
@@ -114,6 +138,11 @@ const Title = styled(motion.div)`
     display: flex;
     align-items: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+        height: 20%;
+        text-align: center;
+    }
 `;
 
 const Subtitle = styled(motion.div)`
@@ -124,6 +153,12 @@ const Subtitle = styled(motion.div)`
     display: flex;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        height: 40%;
+        text-align: center;
+        width: 100%;
+    }
     //transform: translate(-10%, 0);
     
 `;
@@ -137,6 +172,10 @@ const ColumnTitle = styled.div`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -159,12 +198,11 @@ const EVMChartSection = () => {
 
     const animationThree = useAnimation();
     const animationTwo = useAnimation();
-    const animationFour = useAnimation();
 
     useEffect(() => {
         if(inView){
             animationThree.start({
-                x: 1,
+                opacity: 1, scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -172,24 +210,7 @@ const EVMChartSection = () => {
         }
         if(!inView){
             animationThree.start({
-                x: '100vw',
-            })
-        }
-        
-    }, [inView])
-
-    useEffect(() => {
-        if(inView){
-            animationFour.start({
-                x: 1,
-                transition: {
-                    duration: 1, 
-                }
-            });
-        }
-        if(!inView){
-            animationFour.start({
-                x: '-100vw',
+                opacity: 0, scale: 0.5
             })
         }
         
@@ -215,7 +236,7 @@ const EVMChartSection = () => {
     return(
         <Section id="evmchart" ref={ref}>
             <Wrapper>
-                <ColumnLeft animate={animationFour}>
+                <ColumnLeft animate={animationThree}>
                     <ColumnTitle >Cumulative Extracted MEV</ColumnTitle>
                     <ImageWrapper>
                     <img src={Graph} alt="" />

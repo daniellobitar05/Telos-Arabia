@@ -55,7 +55,11 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 55vh;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
 `;
@@ -86,8 +90,13 @@ const Subtitle = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         font-size: 14px;
-        height: 50%;
+        height: 45%;
         width: 80%;
+        transform: translate(0, 0);
+        align-items: center;
+        justify-content: center;
+        
+        
     }
     
 `;
@@ -148,8 +157,9 @@ const Empty = styled.div`
     width: 100%;
     height: 10vh;
     display: inline-flex;
-    
-    
+    @media screen and (max-width: 768px){
+        height: 5vh;
+    }
 `;
 
 
@@ -170,7 +180,7 @@ const EVMNoFront = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                x: 1,
+                opacity: 1, scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -178,7 +188,7 @@ const EVMNoFront = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                opacity: 0, scale: 0.5
             })
         }
         
@@ -206,7 +216,7 @@ const EVMNoFront = () => {
             <Wrapper>
             <ColumnLeft>
                
-                <motion.img src={NoFront} alt=""  whileHover={{cursor: 'grab'}} drag dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50,}} whileTap={{cursor: 'grabbing'}}/>
+                <motion.img animate={animation} src={NoFront} alt=""  whileHover={{cursor: 'grab'}} drag dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50,}} whileTap={{cursor: 'grabbing'}}/>
                 
             </ColumnLeft>
             <ColumnRight>

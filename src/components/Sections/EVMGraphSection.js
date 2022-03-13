@@ -70,7 +70,7 @@ const LeftTitle = styled(motion.div)`
 
 const Row = styled(motion.div)`
     display: inline-flex;
-    height: 25%;
+    height: 20%;
     width: 90%;
     align-items: center;
     justify-content: center;
@@ -145,11 +145,14 @@ const ColumnRight = styled(motion.div)`
 
 const GraphWrapper = styled.div`
     width: 80%;
-    height: 45vh;
+    height: 80vh;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px){
+        height: 45vh;
+    }
     
 `;
 
@@ -367,7 +370,7 @@ const EVMGraphSection = () => {
 
     const animationThree = useAnimation();
     const animationTwo = useAnimation();
-    const animationFour = useAnimation();
+    
 
     useEffect(() => {
         if(inView){

@@ -102,6 +102,7 @@ const Grid = styled.div`
     display: flex;
     @media screen and (max-width: 768px){
         flex-direction: column;
+        height: 95vh;
     }
     
 `;
@@ -116,7 +117,7 @@ const Column = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 45vh;
+        height: 50%;
     }
 `;
 
@@ -130,7 +131,7 @@ const Box = styled.div`
 `;
 
 
-const Image = styled.div`
+const Image = styled(motion.div)`
     width: 100%;
     height: 60%;
     display: flex;
@@ -144,7 +145,7 @@ const Image = styled.div`
     }
 `;
 
-const WalletImage = styled.div`
+const WalletImage = styled(motion.div)`
    width: 100%;
     height: 60%;
     display: flex;
@@ -256,7 +257,7 @@ const EVMStartNow = () => {
             <Grid>
                 <Column>
                     <Box>
-                        <Image><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={Ball2} alt="" /></Image>
+                        <Image animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={Ball2} alt="" /></Image>
                         <Text animate={animation}>DEFI DEMO</Text>
                         <Subtitle  animate={animationTwo}>Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
                         <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
@@ -264,7 +265,7 @@ const EVMStartNow = () => {
                 </Column>
                 <Column>
                     <Box>
-                    <WalletImage><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={EVM2} alt="" /></WalletImage>
+                    <WalletImage animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={EVM2} alt="" /></WalletImage>
                         <Text animate={animation}>PARTNERSHIP</Text>
                         <Subtitle  animate={animationTwo}>If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
                         <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>

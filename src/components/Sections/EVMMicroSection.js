@@ -31,6 +31,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -42,6 +43,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -52,6 +54,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -64,14 +67,16 @@ const Empty = styled.div`
     width: 100%;
     height: 10vh;
     display: inline-flex;
-    
+    @media screen and (max-width: 768px){
+        height: 5vh;
+    }
     
 `;
 
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back10};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,44 +87,81 @@ const Wrapper = styled.div`
     display: flex;
     height: 90vh;
     width: 100%;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const ColumnLeft = styled.div`
     width: 50%;
     height: 100%;
     float: left;
-    
-`;
-
-const ColumnRight = styled.div`
-    width:50%;
-    height: 100%;
-    float: left;
-    img{
-        transform: scale(1.5) translate(40%, 40%);
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 60%;
     }
 `;
 
-const Title = styled.div`
-    width: 80%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: white;
-    font-size: 62px;
-    padding: 10px 30px;
-    text-align: right;
+const ColumnRight = styled(motion.div)`
+    width:50%;
+    height: 100%;
+    float: left;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        transform: scale(1.5) translate(40%, 40%);
+        @media screen and (max-width: 768px){
+            transform: translate(0, 0);
+        }
+    }
 `;
 
-const Subtitle = styled.div`
+const Title = styled(motion.div)`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+    font-size: 62px;
+    transform: translate(15%, 0);
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        transform: translate(0, 0);
+        font-size: 42px;
+        width: 90%;
+        height: 30%;
+    }
+
+`;
+
+const Subtitle = styled(motion.div)`
     width: 80%;
-    height: 60%;
+    height: 50%;
     color: white;
     font-size: 24px;
     display: flex;
     padding: 10px 30px;
     transform: translate(15%, 0);
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    text-align: right;
+     @media screen and (max-width: 768px){
+        transform: translate(0, 0);
+        font-size: 18px;
+        width: 80%;
+        height: 20%;
+    }
 `;
 
 
@@ -130,14 +172,55 @@ const EVMMicroSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                opacity: 1, scale: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                opacity: 0, scale: 0.5
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="micro">
+        <Section id="micro" ref={ref}>
             <Wrapper>
                 <ColumnLeft>
-                    <Title>Global Micro Transaction DeFi</Title>
-                    <Subtitle>The low transaction costs and fixed gas fees of Telos EVM will revolutionize the landscape of the DeFi industry. The scalable nature means that users from around the world will be able to transact amounts as little as $1 and still see profit. A practice that’s impossible on other EVMs due to their fluctuating gas fees and high transaction costs.</Subtitle>
+                    <Title animate={animation}>Global Micro Transaction DeFi</Title>
+                    <Subtitle animate={animationTwo}>The low transaction costs and fixed gas fees of Telos EVM will revolutionize the landscape of the DeFi industry. The scalable nature means that users from around the world will be able to transact amounts as little as $1 and still see profit. A practice that’s impossible on other EVMs due to their fluctuating gas fees and high transaction costs.</Subtitle>
                 </ColumnLeft>
-                <ColumnRight>
+                <ColumnRight animate={animation}>
                     <img src={Image} alt="" />
                 </ColumnRight>
             </Wrapper>

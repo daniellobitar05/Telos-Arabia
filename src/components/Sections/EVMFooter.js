@@ -201,7 +201,7 @@ const Footer = () => {
     }
 
     return(
-        <Section id="footer">
+        <Section id="evmfooter">
             <Title>If you’re interested in getting involved in the Telos EVM, drop us a line below!</Title>
             <Mail>
                 <a href="mailto:hello@telosfoundation.io"><motion.span><ContactsIcon /></motion.span></a>

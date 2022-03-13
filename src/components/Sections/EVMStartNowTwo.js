@@ -163,7 +163,7 @@ const Text = styled(motion.div)`
     height: 60%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     color: white;
     font-size: 32px;
@@ -177,10 +177,10 @@ const Subtitle = styled(motion.a)`
     width: 80%;
     height: 40%;
     color: white;
-    text-align: right;
+    text-align: center;
     display: flex;
     padding: 5px 0;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 18px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
@@ -218,7 +218,7 @@ const EVMStartNow = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                x: 1,
+                opacity: 1, scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -226,7 +226,7 @@ const EVMStartNow = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                opacity: 0, scale: 0.5
             })
         }
         

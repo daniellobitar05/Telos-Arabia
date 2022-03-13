@@ -173,7 +173,7 @@ const EVM = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                x: 1,
+                opacity: 1, scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -181,7 +181,7 @@ const EVM = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                opacity: 0, scale: 0.5
             })
         }
         

@@ -261,7 +261,7 @@ const EVMWhatis = () => {
 
     return(
         <Section id="evmwhatis" ref={ref}>
-            <Title animate={animation}>What is Telos EVM</Title>
+            <Title animate={animationThree}>What is Telos EVM</Title>
             <Grid>
                 <ColumnLeft>
                     <BoxTitle animate={animationTwo}>A Layer-1 Ethereum Virtual Machine, Built to Power Web 3.0</BoxTitle>

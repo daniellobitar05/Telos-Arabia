@@ -361,7 +361,7 @@ const EVMGraphSection = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                x: 1,
+                opacity: 1, scale: 1,
                 transition: {
                     duration: 1, 
                 }
@@ -369,24 +369,7 @@ const EVMGraphSection = () => {
         }
         if(!inView){
             animationThree.start({
-                x: '100vw',
-            })
-        }
-        
-    }, [inView])
-
-    useEffect(() => {
-        if(inView){
-            animationFour.start({
-                x: 1,
-                transition: {
-                    duration: 1, 
-                }
-            });
-        }
-        if(!inView){
-            animationFour.start({
-                x: '-100vw',
+                opacity: 0, scale: 0.5
             })
         }
         
@@ -414,7 +397,7 @@ const EVMGraphSection = () => {
             
             <Columns >
                 <ColumnLeft>
-                <Title animate={animationFour}>Speed & Scalability</Title>
+                <Title animate={animationThree}>Speed & Scalability</Title>
                 <LeftTitle animate={animationTwo}>
                     <Row>
                         <Icon><img src={Speed1} alt="" /></Icon>

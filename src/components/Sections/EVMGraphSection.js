@@ -30,11 +30,14 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    @media screen and (max-width: 768px){
+       
+    }
     
 `;
 
 const Title = styled(motion.div)`
-    width: 60%;
+    width: 80%;
     height: 40%;
     display: flex;
     flex-direction: column;
@@ -44,12 +47,13 @@ const Title = styled(motion.div)`
     font-size: 72px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 42px;
+        font-size: 32px;
+        height: 15%;
     }
 `;
 
 const LeftTitle = styled(motion.div)`
-    height: 60%;
+    height: 80%;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -59,11 +63,14 @@ const LeftTitle = styled(motion.div)`
     color: white;
     font-size: 28px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        height: 85%;
+    }
 `;
 
 const Row = styled(motion.div)`
     display: inline-flex;
-    height: 20%;
+    height: 25%;
     width: 80%;
     align-items: center;
     justify-content: center;
@@ -96,7 +103,7 @@ const IconText = styled.div`
 
 const Columns = styled.div`
     width: 100%;
-    height: 90vh;
+    height: 95vh;
 `;
 
 const ColumnLeft = styled(motion.div)`
@@ -110,7 +117,7 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 45vh;
+        height: 50vh;
     }
 `;
 

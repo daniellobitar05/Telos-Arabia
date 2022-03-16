@@ -103,8 +103,9 @@ const Empty = styled.div`
     width: 100%;
     height: 15vh;
     display: inline-flex;
-    
-    
+    @media screen and (max-width: 768px){
+        height: 5vh;
+    }
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -223,6 +224,10 @@ const ButtonDiv = styled(LinkR)`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        margin-top: 50px;
+        height: 30vh;
+    }
 `;
 
 const GoButton = styled(Button)`
@@ -238,6 +243,8 @@ const GoButton = styled(Button)`
     margin-bottom: 20px;
     @media screen and (max-width: 768px){
         font-size: 16px;
+        margin: 0;
+        padding: 8px 15px;
     }
     }
 `;

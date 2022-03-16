@@ -31,7 +31,7 @@ const Title = styled(motion.div)`
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 52px;
+        font-size: 42px;
     }  
 `;
 
@@ -43,7 +43,7 @@ const Subtitle = styled(motion.div)`
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        font-size: 28px;
+        font-size: 18px;
     }
     
 `;
@@ -67,6 +67,9 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
 const IconText = styled.div`
     font-size: 20px;
     color: white;
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+    }
 
 `;
 
@@ -88,6 +91,9 @@ const TextColumn = styled(motion.div)`
     align-items: center;
     justify-content: center;
     float: left;
+    @media screen and (max-width: 768px){
+        width: 80%;
+    }
 `;
 
 

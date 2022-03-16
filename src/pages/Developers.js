@@ -5,7 +5,7 @@ import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
@@ -148,7 +148,7 @@ const Developers = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-        <Header theme={theme} setTheme={setTheme} />
+        <HeaderNoHome theme={theme} setTheme={setTheme} />
         <Section id="developers" ref={ref}>
             <Title animate={animation}>فوائد شبكة تيلوس</Title>
             <Subtitle animate={animationTwo}>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</Subtitle>

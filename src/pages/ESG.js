@@ -5,7 +5,7 @@ import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
@@ -50,8 +50,13 @@ const Container = styled.div`
     background: linear-gradient(180deg, rgba(0,0,139,1) 0%, rgba(0,0,139,1) 100%);
     height: 60vh;
 
-    
-
+    @media screen and (max-width: 768px){
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: 80vh;
+    }
 `;
 
 const ImageLeft = styled.div`
@@ -61,6 +66,11 @@ const ImageLeft = styled.div`
     border-radius: 50%;
     margin: 20px;
     shape-outside: circle();
+    @media screen and (max-width: 768px){
+        margin: 0;
+        height: 125px;
+        width: 125px;
+    }
     img{
         
         width: 100%;
@@ -78,6 +88,12 @@ const ImageRight = styled.div`
     border-radius: 50%;
     shape-outside: circle();
     margin: 20px;
+    @media screen and (max-width: 768px){
+       height: 100px;
+       width: 100px;
+       
+        
+    }
 
     img{
         
@@ -100,7 +116,10 @@ const Title = styled.div`
     background: rgba(0,0,139,1);
     text-align: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-    
+    @media screen and (max-width: 768px){
+        height: 15vh;
+        font-size: 32px;
+    }
     
 `;
 
@@ -112,14 +131,12 @@ const Subtitle = styled.div`
     text-align: center;
     width: 90%;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    /* font-size: 18px;
-    width: 80%;
-    height: 30vh;
-    color: ${props => props.theme.text};
-    text-align: right; 
-    
-    display: flex;
-    align-items: center; */
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        display: flex;
+        
+        
+    }
     
 `;
 
@@ -224,7 +241,7 @@ const ESG = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-            <Header theme={theme} setTheme={setTheme} />
+            <HeaderNoHome theme={theme} setTheme={setTheme} />
             <Title>Telos is the ESG Blockchain</Title>
             <Container>
                 <ImageLeft><img src={Ball2} alt="" /></ImageLeft>
@@ -255,7 +272,7 @@ const ESG = () => {
                    
                 </Section> */}
                 <WhatisESG />
-                <ESGIcons />
+                {/* <ESGIcons />
                 <ESGToDo /> 
                 <ESGQuotes />
                 <ESGGovernance />
@@ -268,7 +285,7 @@ const ESG = () => {
                 <AdditionalTwo />
                 <ESGConclusion />
                 <ESGLatest />
-                <Footer />
+                <Footer /> */}
         </ThemeProvider>
     )
 }

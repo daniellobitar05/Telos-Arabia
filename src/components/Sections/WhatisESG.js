@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
@@ -18,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 180vh;
     }
 `;
 
@@ -34,7 +35,8 @@ const Title = styled.div`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         width: 80%;
-        font-size: 48px;
+        font-size: 32px;
+        height: 30vh;
     }
 `;
 
@@ -48,6 +50,10 @@ const Subtitle = styled.div`
     text-align: center;
     height: 15vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        height: 40vh;
+        justify-content: center;
+    }
     
 `;
 
@@ -55,6 +61,12 @@ const VideoWrapper = styled.div`
     width: 90%;
     height: 50vh;
     display: flex;
+    @media screen and (max-width: 768px){
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+    }
 `;
 
 const VideoLeft = styled.div`
@@ -65,7 +77,14 @@ const VideoLeft = styled.div`
     align-items: center;
     justify-content: center;
     float: left;
-    background: rgba(0, 0, 0, 0.8);
+
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 90%;
+        height: 60%;
+        transform: scale(0.6);
+    }
+    
 `;
 
 const VideoTitles = styled.div`
@@ -80,6 +99,15 @@ const VideoTitles = styled.div`
 const VideoTitle = styled.h1`
     color: white;
     font-size: 20px;
+`;
+
+const VideoTitleESG = styled.h1`
+    color: white;
+    font-size: 20px;
+
+    @media screen and (max-width: 768px){
+        transform: translate(-70%, 670%);
+    }
 `;
 
 const Empty = styled.div`
@@ -184,9 +212,50 @@ const WhatisESG = () => {
         }
       }
 
-      const toggleHome = () => {
+    const toggleHome = () => {
         scroll.scrollToTop();
     }
+
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
 
     return(
         <Section id="videos">
@@ -194,7 +263,7 @@ const WhatisESG = () => {
             <Subtitle>The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.</Subtitle>
             <VideoTitles>
                 <VideoTitle>Benefits of ESG</VideoTitle>
-                <VideoTitle>Intro to ESG Investing</VideoTitle>
+                <VideoTitleESG >Intro to ESG Investing</VideoTitleESG>
             </VideoTitles>
             <VideoWrapper>
                 <VideoLeft><VideoTwo /></VideoLeft>

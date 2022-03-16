@@ -3,15 +3,20 @@ import styled from "styled-components";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
+import {Link as LinkR} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ApiIcon from '@mui/icons-material/Api';
 import ArticleIcon from '@mui/icons-material/Article';
-import GavelIcon from '@mui/icons-material/Gavel';
+import {Button} from "@mui/material";
+
+import PDF from "../../data/Telos-Whitepaper.pdf";
+import PDF2 from "../../data/styleguide.pdf";
 
 const Section = styled.div`
     width: 100%;
@@ -86,7 +91,7 @@ const DocIcon = styled(ArticleIcon)`
     border: 1px solid aqua;
 `;
 
-const GovIcon = styled(GavelIcon)`
+const AgreeIcon = styled(ThumbUpOffAltIcon)`
     color: white;
     transform: scale(2.5);
     border-radius: 50px;
@@ -144,6 +149,7 @@ const Card = styled(motion.div)`
     align-items: center;
     justify-content: center;
     border: 1px solid purple;
+    z-index: 100;
     &:hover{
         background: rgb(230,230,250,0.2);
     }
@@ -197,7 +203,6 @@ const IconColumnRight = styled(LinkS)`
     align-items: center;
     justify-content: flex-end;
     background: transparent;
-    background: transparent;
 
 `;
 
@@ -212,8 +217,29 @@ const ToggleColumn = styled.div`
     background: transparent;
 `;
 
-const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+const ButtonDiv = styled(LinkR)`
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const GoButton = styled(Button)`
+    &&&{
+        background: linear-gradient(90deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(47,230,231,1) 100%);
+    font-size: 18px;
+    margin: 10px;
     color: white;
+    font-weight: bold;
+    border: 1px solid aqua;
+    border-radius: 15px;
+    padding: 6px 20px;
+    margin-bottom: 20px;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+    }
+    }
 `;
 
 
@@ -268,45 +294,50 @@ const CommDocs = () => {
     }, [inView])
 
     return(
-        <Section id="docssection" ref={ref}>
+        <Section id="commdocs" ref={ref}>
             
             
             <Grid animate={animationTwo}>
-             <Box href="https://github.com/telosnetwork" target="_blank" rel="noreferrer">
+             <Box href="https://drive.google.com/file/d/12d9CXH3gpF7Gftp7mhc6bXbwJjdRYNDD/view" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><GithubIcon /></span></TopCard>
-                        <BottomCard><CardText>Github التابع لشبكة تيلوس</CardText></BottomCard>
+                        <BottomCard><CardText>Telos Network Brand Assets</CardText></BottomCard>
                     </Card>
                 </Box>
-                <Box href="https://developers.eos.io/welcome/latest/reference/index" target="_blank" rel="noreferrer">
+                <Box href={PDF2} target="_blank" rel="noreferrer">
                      <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><APIIcon /></span></TopCard>
-                        <BottomCard><CardText>API مراجع</CardText></BottomCard>
+                        <BottomCard><CardText>Telos Network Brand Guidelines</CardText></BottomCard>
                     </Card>
                 </Box>
-                <Box href="https://docs.telos.net/" target="_blank" rel="noreferrer">
+                <Box href="#" target="_blank" rel="noreferrer">
+                    <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                        <TopCard><span><AgreeIcon /></span></TopCard>
+                        <BottomCard><CardText>Telos Network Operating Agreement</CardText></BottomCard>
+                    </Card>
+                </Box>
+                <Box href={PDF} target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><DocIcon /></span></TopCard>
-                        <BottomCard><CardText>مستودع المستندات</CardText></BottomCard>
-                    </Card>
-                </Box>
-                <Box href="https://docs.telos.net/developers/tutorials" target="_blank" rel="noreferrer">
-                    <Card whileHover={{scale: 1.1, y: '10%'}} whileTap={{scale: 0.9}}>
-                        <TopCard><span><GovIcon /></span></TopCard>
                         <BottomCard><CardText>Telos Network Whitepaper</CardText></BottomCard>
                     </Card>
                 </Box>
+                
             </Grid>
-            
+            <ButtonDiv to="/About">
+                <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                <GoButton>Guide To Telos</GoButton>
+                </motion.div>
+            </ButtonDiv>
             <Empty>
-                <IconColumnLeft to="devstack" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="footer" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <Subtitle></Subtitle>
-            <IconColumnRight to="devresources" smooth={true} duration={1000} spy={true} exact="true">
-                    <IconButton ><ArrowUp /></IconButton>
+            <IconColumnRight to="commresources" smooth={true} duration={1000} spy={true} exact="true">
+                    
                 </IconColumnRight>
-                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowUp /></IconButton></ToggleColumn>
             </Empty>
         </Section>
     );

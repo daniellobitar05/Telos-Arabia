@@ -6,7 +6,7 @@ import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
 
@@ -208,7 +208,7 @@ const EVM = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-            <Header theme={theme} setTheme={setTheme} />
+            <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="evm" ref={ref}>
                     <Title animate={animation}>Telos EVM</Title>
                     <Subtitle animate={animationTwo}>The most powerful and scalable Ethereum Smart Contract platform available today</Subtitle>

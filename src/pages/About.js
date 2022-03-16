@@ -5,7 +5,7 @@ import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
@@ -82,7 +82,7 @@ const About = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-        <Header theme={theme} setTheme={setTheme} />
+        <HeaderNoHome theme={theme} setTheme={setTheme} />
         <Section id="abouthero">
             <Title>A high-level introduction to the Telos blockchain</Title>
             <Subtitle>Telos is a third-generation blockchain platform for building fast, scalable distributed applications with feeless transactions. Since launching its mainnet in December 2018, the Telos network has been developed to power the economies of the future and provide human-scale solutions to global challenges. With these goals in mind, it includes innovative governance features that empower organizations to shift influence and decision-making to a more collaborative and transparent model.</Subtitle>

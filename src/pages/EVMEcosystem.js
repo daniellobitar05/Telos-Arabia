@@ -5,7 +5,7 @@ import {Link as LinkS} from "react-scroll";
 import {AnimatePresence} from 'framer-motion';
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
@@ -278,7 +278,7 @@ const EVMEcosystem = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-            <Header theme={theme} setTheme={setTheme} />
+            <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="ecosystem">
                     <Title>Explore the Telos Project Ecosystem</Title>
                 </Section>

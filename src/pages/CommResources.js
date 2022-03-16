@@ -6,12 +6,13 @@ import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
 
 import CommDocs from "../components/Sections/CommDocs";
+import Footer from "../components/Sections/Footer";
 
 const Section = styled.div` 
     width: 100%;
@@ -112,7 +113,7 @@ const CommResources = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                x: '-100vw',
             })
         }
         
@@ -137,13 +138,13 @@ const CommResources = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-            <Header theme={theme} setTheme={setTheme} />
+            <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="commresources" ref={ref}>
                     <Title animate={animation}>Community Resources</Title>
                     <Subtitle animate={animationTwo}>Telos is home to a growing ecosystem of diverse community contributors, passionate about seeing the Telos ecosystem. Governance is a strong part of the Telos economy, putting the direction of network operations in the hands of token holders. Find some useful community resources below and get involved!</Subtitle>
                     <IconHolder>
                         <IconColumn>
-                        <LinkS to="devresources" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
+                        <LinkS to="commdocs" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
                         </IconColumn>
                         <TextColumn animate={animation}>
                         <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><IconButton><ArrowLeft /></IconButton></a>
@@ -155,6 +156,7 @@ const CommResources = () => {
                     </IconHolder>
                 </Section>
                 <CommDocs />
+                <Footer />
         </ThemeProvider>
     )
 }

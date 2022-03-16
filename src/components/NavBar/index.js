@@ -630,7 +630,7 @@ const DropDown = styled.div`
     width: 300px;
     padding-right: 10px;
     border-radius: 20px;
-    background: purple;
+    background: #663399;
     overflow: hidden;
     top: 100px;
     z-index: 9999;
@@ -1165,7 +1165,7 @@ const Header = (props) => {
                     </BuyMenu>
                 </motion.div>
             </NavMenu>
-            <StyledButton whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>ابدأ الآن</StyledButton>
+            <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><StyledButton whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>ابدأ الآن</StyledButton></LinkS>
             <NavItem icon={<IconButton style={{marginRight: '20px'}}><Burguer /></IconButton>}>
                 <DropDownMenu />
             </NavItem>

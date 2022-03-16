@@ -5,7 +5,7 @@ import {Link as LinkS} from "react-scroll";
 
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
-import Header from "../components/NavBar";
+import HeaderNoHome from "../components/NavBar/NavBarNoHome";
 import Highlights from "../components/Sections/Highlights";
 import SupplySection from "../components/Sections/SupplySection";
 import DepthLookSection from "../components/Sections/DepthLookSection";
@@ -83,7 +83,7 @@ const Tokenomics = () => {
 
     return(
         <ThemeProvider theme={themes[theme]}>
-            <Header theme={theme} setTheme={setTheme} />
+            <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="tokenomics" >
                     <Grid>
                     <ColumnLeft>
@@ -91,7 +91,8 @@ const Tokenomics = () => {
                         <Subtitle>Understanding the value of TLOS</Subtitle>
                         <LinkS to="highlights" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
                     </ColumnLeft>
-                    <ColumnRight></ColumnRight>
+                    <ColumnRight>
+                    </ColumnRight>
                     </Grid>
                 </Section>
                 <Highlights />

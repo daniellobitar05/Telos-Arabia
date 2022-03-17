@@ -26,7 +26,7 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
 `;
 
 const Title = styled(motion.div)`
@@ -39,9 +39,11 @@ const Title = styled(motion.div)`
     justify-content: flex-end;
     text-align: right;
     @media screen and (max-width: 768px) {
-        font-size: 28px;
+        font-size: 24px;
         height: 20vh;
-        justify-content: center;
+        
+        
+        
     }
     
 `;
@@ -57,7 +59,7 @@ const Subtitle = styled(motion.div)`
     align-items: center;
     @media screen and (max-width: 768px) {
         font-size: 16px;
-        height: 60vh;
+        height: 50vh;
         flex-direction: column;
         justify-content: center;
     }
@@ -158,9 +160,9 @@ const About = () => {
         <ChartSection />
         <FeaturesSection />
         <GraphSection />
-        <UtilitySection />
+        {/* <UtilitySection />
         <UtilisedSection />
-        <ConclusionSection />
+        <ConclusionSection /> */}
         </ThemeProvider>
     );
 }

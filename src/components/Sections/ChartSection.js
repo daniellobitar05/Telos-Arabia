@@ -24,7 +24,7 @@ const Section = styled.div`
     justify-content: center;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 50%;
     height: 30vh;
     text-align: center;
@@ -40,7 +40,7 @@ const Title = styled.div`
     }
 `;
 
-const Column = styled.div`
+const Column = styled(motion.div)`
     width: 70%;
     height: 60vh;
     display: flex;
@@ -262,14 +262,51 @@ const ChartSection = () => {
         
     }, [inView])
 
+    const animationThree = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0, scale: 1,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px', scale: 0.6
+            })
+        }
+        
+    }, [inView])
+
     const toggleHome = () => {
         scroll.scrollToTop();
     }
 
     return(
-        <Section id="chart">
-            <Title>2 + years outpacing the market with tech, innovation and adoption</Title>
-            <Column ref={ref}> 
+        <Section id="chart" ref={ref}>
+            <Title animate={animationThree}>2 + years outpacing the market with tech, innovation and adoption</Title>
+            <Column animate={animationTwo}> 
                 <TopRow>
                     <SmallItem>
                         <IconWrapper>

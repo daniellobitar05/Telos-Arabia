@@ -1,6 +1,8 @@
 import { animateScroll as scroll } from "react-scroll";
 import styled from "styled-components";
 import Slider from "react-slick";
+import {useEffect} from "react";
+import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
@@ -30,32 +32,47 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 50%;
     height: 10vh;
     text-align: center;
     color: white;
     font-size: 36px;
+    @media screen and (max-width: 768px){
+      width: 80%;
+      font-size: 32px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     width: 80%;
     height: 20vh;
     text-align: center;
     color: white;
     font-size: 18px;
+    @media screen and (max-width: 768px){
+      height: 30vh;
+      font-size: 16px;
+      width: 90%;
+    }
 `;
 
-const SliderWrapper = styled.div`
+const SliderWrapper = styled(motion.div)`
     height: 25vh;
     width: 80vw;
+    @media screen and (max-width: 768px){
+      height: 20vh;
+    }
     
 `;
 
@@ -80,6 +97,10 @@ const Item = styled.div`
     height: 50%;
     color: white; 
     font-size: 16px;
+    @media screen and (max-width: 768px){
+      font-size: 14px;
+    }
+
 `;
 
 const Logo = styled.div`
@@ -94,7 +115,7 @@ const Logo = styled.div`
     }
 `;
 
-const SliderTitle = styled.div`
+const SliderTitle = styled(motion.div)`
     color: aqua;
     display: flex;
     flex-direction: column;
@@ -102,6 +123,9 @@ const SliderTitle = styled.div`
     justify-content: center; 
     width: 100%;
     height: 10vh;
+    @media screen and (max-width: 768px){
+      height: 5vh;
+    }
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -124,7 +148,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-
+    background: transparent;
 `;
 
 const ToggleColumn = styled.div`
@@ -145,6 +169,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -176,10 +201,51 @@ const FeaturesSection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+      threshold: 0.2
+  });
+
+  const animation = useAnimation();
+  const animationTwo = useAnimation();
+
+  useEffect(() => {
+      if(inView){
+          animation.start({
+              x: 0,
+              transition: {
+                  duration: 1, 
+              }
+          });
+      }
+      if(!inView){
+          animation.start({
+              x: '-100vw'
+          })
+      }
+      
+  }, [inView])
+
+  useEffect(() => {
+      if(inView){
+          animationTwo.start({
+              opacity: 1, y: 0,
+              transition: {
+                  duration: 1, delay: 0.5,
+              }
+          });
+      }
+      if(!inView){
+          animationTwo.start({
+              opacity: 0, y: '40px',
+          })
+      }
+      
+  }, [inView])
+
     const settings = {
         dots: true,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: false,
       autoplaySpeed: 2000,
@@ -187,11 +253,11 @@ const FeaturesSection = () => {
       };
 
     return(
-        <Section id="features">
-            <Title>Telos Features</Title>
-            <Subtitle>The Telos ecosystem is growing at an exponential rate and has quickly amassed a slew of innovative features that give it a competitive edge over other platforms. It can be used as a full stack alternative or as a scaling solution depending on a projects needs.Some of the many Telos advantages include...</Subtitle>
-            <SliderTitle>FOR DEVELOPERS</SliderTitle>
-            <SliderWrapper>
+        <Section id="features" ref={ref}>
+            <Title animate={animation}>Telos Features</Title>
+            <Subtitle animate={animationTwo}>The Telos ecosystem is growing at an exponential rate and has quickly amassed a slew of innovative features that give it a competitive edge over other platforms. It can be used as a full stack alternative or as a scaling solution depending on a projects needs.Some of the many Telos advantages include...</Subtitle>
+            <SliderTitle animate={animation}>FOR DEVELOPERS</SliderTitle>
+            <SliderWrapper animate={animationTwo}>
                
             <Slider {...settings}>
           <Feature>
@@ -220,8 +286,8 @@ const FeaturesSection = () => {
           </Feature>
         </Slider>
             </SliderWrapper>
-            <SliderTitle>FOR TOKENHOLDERS</SliderTitle>
-            <SliderWrapper>
+            <SliderTitle animate={animation}>FOR TOKENHOLDERS</SliderTitle>
+            <SliderWrapper animate={animationTwo}>
                
             <Slider {...settings}>
           <Feature>

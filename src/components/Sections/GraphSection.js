@@ -19,35 +19,50 @@ import HIVE from "../images/HIVE.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back5};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 60%;
     height: 15vh;
     text-align: center;
     color: white;
     font-size: 36px;
+    
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+        height: 10vh;
+    }
 `;
 
-const LeftTitle = styled.div`
+const LeftTitle = styled(motion.div)`
     height: 100%;
     width: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     font-size: 36px;
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+    }
 `;
 
 const Columns = styled.div`
     width: 100%;
     height: 90vh;
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     
 `;
 
@@ -55,31 +70,39 @@ const ColumnLeft = styled.div`
     width: 50%;
     height: 100%;
     float: left;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 30vh;
+    }
 `;
 
 const ColumnRight = styled.div`
     width: 50%;
     height: 100%;
     float: left;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 60vh;
+    }
 `;
 
-const GraphWrapper = styled.div`
+const GraphWrapper = styled(motion.div)`
     width: 80%;
-    height: 70vh;
-    
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     
 `;
 
@@ -87,6 +110,7 @@ const PositionRow = styled.div`
     width: 100%;
     height: 10%;
     display: flex;
+    
 `;
 
 const Position = styled.div`
@@ -101,6 +125,10 @@ const Position = styled.div`
         width: 40px;
         height: 40px;
         border-radius: 50%;
+
+        @media screen and (max-width: 768px){
+            transform: scale(0.7) translate(0, -25%);
+        }
         
     }
 `;
@@ -177,6 +205,9 @@ const Text = styled.div`
     color: white;
     font-size: 16px;
     text-align: center;
+    @media screen and (max-width: 768px){
+        font-size: 12px;
+    }
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -296,17 +327,54 @@ const GraphSection = () => {
         
     }, [inView])
 
+    const animationThree = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0, scale: 1,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px', scale: 0.6
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="graph">
+        <Section id="graph" ref={ref}>
             
             <Columns>
                 <ColumnLeft>
-                <LeftTitle>High growth rate and usage 900,000+ account base Number 1 by Activity Valuation Index Bitcoin and Ethereum scaling ahead</LeftTitle>
+                <LeftTitle animate={animationThree}>High growth rate and usage 900,000+ account base Number 1 by Activity Valuation Index Bitcoin and Ethereum scaling ahead</LeftTitle>
                 
                 </ColumnLeft>
                 <ColumnRight>
-                <Title>Telos position in the Crypto Market</Title>
-                <GraphWrapper ref={ref}>
+                <Title animate={animationTwo}>Telos position in the Crypto Market</Title>
+                <GraphWrapper animate={animationTwo}>
                     <PositionRow>
                         <Position></Position>
                         <Position><Text className="graphcounter" data-target="145178" style={{transform: 'translate(0%, 40%)'}}></Text> </Position>

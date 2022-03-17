@@ -57,9 +57,9 @@ const Subtitle = styled(motion.div)`
     align-items: center;
     @media screen and (max-width: 768px) {
         font-size: 16px;
-        height: 50vh;
+        height: 60vh;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
     }
     
 `;
@@ -69,6 +69,7 @@ const Empty = styled.div`
     height: 15vh;
     @media screen and (max-width: 768px) {
         height: 10vh;
+        background: transparent;
     }
     
 `;
@@ -84,10 +85,15 @@ const IconColumn = styled.div`
     flex-direction: column; 
     align-items: center;
     justify-content: center;
+    background: transparent;
+    @media screen and (max-width: 768px) {
+        height: 10vh;
+    }
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
+    background: transparent;
 `;
 
 

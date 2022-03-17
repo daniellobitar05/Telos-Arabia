@@ -17,7 +17,7 @@ import ETH from "../images/eth_logo.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back3};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,19 +26,31 @@ const Section = styled.div`
 
 const Title = styled.div`
     width: 50%;
-    height: 20vh;
+    height: 30vh;
     text-align: center;
     color: white;
-    font-size: 36px;
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 20vh;
+        font-size: 24px;
+        width: 80%;
+    }
 `;
 
 const Column = styled.div`
     width: 70%;
-    height: 70vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    padding: 20px;
+    @media screen and (max-width: 768px){
+        height: 55vh;
+    }
 
 `;
 
@@ -46,6 +58,9 @@ const TopRow = styled.div`
     height: 20vh;
     width: 100%;
     display: inline-flex;
+    @media screen and (max-width: 768px){
+        height: 15vh;
+    }
 `;
 
 const BigItem = styled.div`
@@ -56,6 +71,11 @@ const BigItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        font-size: 12px;
+        text-align: right;
+
+    }
     
 `;
 
@@ -78,6 +98,9 @@ const Text = styled.div`
     color: white;
     font-size: 18px;
     font-weight: bold;
+    @media screen and (max-width: 768px){
+        transform: scale(0.6);
+    }
 `;
 
 const Icon = styled.div`
@@ -87,6 +110,9 @@ const Icon = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        transform: scale(0.5);
+    }
     img{
         width: 60px;
         height: 60px;
@@ -104,11 +130,18 @@ const SmallItem = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    svg{
+        transform: scale(0.8);
+        @media screen and (max-width: 768px){
+            transform: scale(0.6);
+        }
+    }
     
 `;
 
 const Row = styled.div`
-    height: 10vh;
+    height: 8vh;
     width: 100%;
     display: inline-flex;
 `;
@@ -133,6 +166,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -144,6 +178,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -154,6 +189,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`

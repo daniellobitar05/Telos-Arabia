@@ -144,6 +144,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 `;
 const IconColumnRight = styled.div`
     width: 25%;
@@ -153,6 +154,7 @@ const IconColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`

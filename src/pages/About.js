@@ -150,7 +150,7 @@ const About = () => {
             <Subtitle animate={animationTwo}>Telos is a third-generation blockchain platform for building fast, scalable distributed applications with feeless transactions. Since launching its mainnet in December 2018, the Telos network has been developed to power the economies of the future and provide human-scale solutions to global challenges. With these goals in mind, it includes innovative governance features that empower organizations to shift influence and decision-making to a more collaborative and transparent model.</Subtitle>
             <Empty>
                 <IconColumn>
-                <LinkS to="purpose" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                <LinkS to="purpose" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
                 </IconColumn>
             </Empty>
         </Section>

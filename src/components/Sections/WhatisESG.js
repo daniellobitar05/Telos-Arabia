@@ -23,7 +23,7 @@ const Section = styled.div`
     }
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 42px;
     width: 50%;
     color: ${props => props.theme.text};  
@@ -40,7 +40,7 @@ const Title = styled.div`
     }
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     width: 80vw;
     font-size: 18px;
     color: whitesmoke;
@@ -69,7 +69,7 @@ const VideoWrapper = styled.div`
     }
 `;
 
-const VideoLeft = styled.div`
+const VideoLeft = styled(motion.div)`
     width: 95%;
     height: 100%;
     height: auto;
@@ -87,7 +87,7 @@ const VideoLeft = styled.div`
     
 `;
 
-const VideoTitles = styled.div`
+const VideoTitles = styled(motion.div)`
     width: 85%;
     height: 10vh;
     display: flex;
@@ -222,6 +222,7 @@ const WhatisESG = () => {
 
     const animation = useAnimation();
     const animationTwo = useAnimation();
+    const animationThree = useAnimation();
 
     useEffect(() => {
         if(inView){
@@ -257,17 +258,19 @@ const WhatisESG = () => {
         
     }, [inView])
 
+
+
     return(
-        <Section id="videos">
-            <Title>What is ESG and why does it matter?</Title>
-            <Subtitle>The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.</Subtitle>
-            <VideoTitles>
+        <Section id="videos" ref={ref}>
+            <Title animate={animation}>What is ESG and why does it matter?</Title>
+            <Subtitle animate={animationTwo}>The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.</Subtitle>
+            <VideoTitles animate={animation}>
                 <VideoTitle>Benefits of ESG</VideoTitle>
                 <VideoTitleESG >Intro to ESG Investing</VideoTitleESG>
-            </VideoTitles>
+            </VideoTitles >
             <VideoWrapper>
-                <VideoLeft><VideoTwo /></VideoLeft>
-                <VideoLeft><VideoOne /></VideoLeft>
+                <VideoLeft ><VideoTwo /></VideoLeft>
+                <VideoLeft ><VideoOne /></VideoLeft>
             </VideoWrapper>
             <Empty>
                 <IconColumnLeft to="esgicons" smooth={true} duration={1000} spy={true} exact="true">

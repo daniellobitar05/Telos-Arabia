@@ -212,7 +212,9 @@ const Empty = styled.div`
 const ChartSection = () => {
 
 
-    const {ref, inView} = useInView();
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
     function ChangeNumber () {
         const counters = document.querySelectorAll('.counter');
@@ -293,7 +295,7 @@ const ChartSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px', scale: 0.6
+                opacity: 0, y: '100px', scale: 0.6
             })
         }
         

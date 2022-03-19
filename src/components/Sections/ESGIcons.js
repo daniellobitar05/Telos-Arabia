@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {useEffect} from "react";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -20,25 +22,11 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 210vh;
     }
 `;
 
-const Title = styled.div`
-    font-size: 82px;
-    width: 100%;
-    color: ${props => props.theme.text};  
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-    @media screen and (max-width: 768px){
-        height: 40vh;
-    }
-    
-    
-`;
+
 
 const Grid = styled.div`
     width: 80%;
@@ -64,7 +52,7 @@ const Column = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 60vh;
+        height: 40vh;
     }
 `;
 
@@ -99,16 +87,20 @@ const TextContainer = styled.div`
     }
 `;
 
-const TopText = styled.div`
+const TopText = styled(motion.div)`
     height: 40%;
     width: 100%;
     color: white;
     font-size: 36px;
     text-align: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+    }
 `;
 
-const BottomText = styled.div`
+const BottomText = styled(motion.div)`
     height: 60%;
     color: white;
     font-size: 24px;
@@ -117,6 +109,10 @@ const BottomText = styled.div`
     align-items: center;
     padding: 0 20px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+        transform: translate(0, 50%);
+    }
 `;
 
 
@@ -229,9 +225,13 @@ const TextColumns = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 90vh;
+    }
 `;
 
-const TextColumn = styled.div`
+const TextColumn = styled(motion.div)`
     height: 100%;
     width: 40%;
     float: left;
@@ -243,12 +243,20 @@ const TextColumn = styled.div`
     justify-content: center;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 50%;
+    }
 `;
 
 const EmptyTextColumn = styled.div`
     height: 100%;
     width: 20%;
     float: left;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 `;
 
 
@@ -258,16 +266,75 @@ const ESGIcons = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+    const animationThree = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: '20px',
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '70px',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, y: '-20px',
+                transition: {
+                    duration: 1.5, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="esgicons">
+        <Section id="esgicons" ref={ref}>
             <Grid>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
                     <IconContainer variants={CircleVariants}  transition={CircleTransition}>
                         <img src={Icon1} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>Governance Structure</TopText>
-                        <BottomText>Standards for running an initiative</BottomText>
+                        <TopText animate={animation}>Governance Structure</TopText>
+                        <BottomText animate={animationTwo}>Standards for running an initiative</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -275,8 +342,8 @@ const ESGIcons = () => {
                         <img src={Icon2} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>Socially Responsible</TopText>
-                        <BottomText>Acting in a way that benefits society</BottomText>
+                        <TopText animate={animation}>Socially Responsible</TopText>
+                        <BottomText animate={animationTwo}>Acting in a way that benefits society</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -284,15 +351,15 @@ const ESGIcons = () => {
                         <img src={Icon3} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText>Environmentally Conscious </TopText>
-                        <BottomText>Conserving the world’s natural resources</BottomText>
+                        <TopText animate={animation}>Environmentally Conscious </TopText>
+                        <BottomText animate={animationTwo}>Conserving the world’s natural resources</BottomText>
                     </TextContainer>
                 </Column>
             </Grid>
             <TextColumns>
-                <TextColumn>An ESG Global Survey found that asset owners allocated 48% of their funds towards ESG in 2017. This number grew to 75% in 2019, and these numbers are projected to grow to 92% by the end of 2021. This proves that there is a ton of value in ESG investments, both from a socially conscious standpoint as well as a financial perspective.</TextColumn>
+                <TextColumn animate={animationThree}>An ESG Global Survey found that asset owners allocated 48% of their funds towards ESG in 2017. This number grew to 75% in 2019, and these numbers are projected to grow to 92% by the end of 2021. This proves that there is a ton of value in ESG investments, both from a socially conscious standpoint as well as a financial perspective.</TextColumn>
                 <EmptyTextColumn />
-                <TextColumn>The history of ESG can be traced back to 2004. At that time, former UN Secretary General Kofi Annan invited 50+ CEOs of major financial institutions to develop recommendations on how to integrate ESG elements into capital markets. Everyone involved benefited from the move toward ESG, due to its ability to uncover value in areas where analytical methods fall short.</TextColumn>
+                <TextColumn animate={animationThree}>The history of ESG can be traced back to 2004. At that time, former UN Secretary General Kofi Annan invited 50+ CEOs of major financial institutions to develop recommendations on how to integrate ESG elements into capital markets. Everyone involved benefited from the move toward ESG, due to its ability to uncover value in areas where analytical methods fall short.</TextColumn>
             </TextColumns>
             <Empty>
                 <IconColumnLeft to="todo" smooth={true} duration={1000} spy={true} exact="true">

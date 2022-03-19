@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion , useAnimation} from "framer-motion";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import {useInView} from "react-intersection-observer";
 import { IconButton } from '@mui/material';
 import Wombat from "../images/wombat_logo.png";
 import Anchor from "../images/anchor_logo.png";
@@ -15,42 +16,22 @@ import Tick from "../SVG/tick.svg"
 
 const Section = styled.div`
     width: 100%;
-    height: 260vh;
+    height: 270vh;
     
     display: flex;
     
-    overflow-x: hidden;
+    overflow: hidden;
     @media screen and (max-width: 660px){
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 390vh;
+        height: 490vh;
     }
 `;
 
-const MainTitle = styled.div`
-    color: ${props => props.theme.text};
-    font-size: 52px;
-`;
+
 
 const ColumnLeft = styled.div`
-    width: 40%;
-    height: 100%;
-    float: left;
-    align-self: center;
-    background: ${props => props.theme.back4};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    @media screen and (max-width: 660px){
-        float: none;
-        width: 100%;
-        height: 170vh;
-    }
-`;
-
-const ColumnRight = styled.div`
     width: 40%;
     height: 100%;
     float: left;
@@ -67,6 +48,23 @@ const ColumnRight = styled.div`
     }
 `;
 
+const ColumnRight = styled.div`
+    width: 40%;
+    height: 100%;
+    float: left;
+    align-self: center;
+    background: ${props => props.theme.back4};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media screen and (max-width: 660px){
+        float: none;
+        width: 100%;
+        height: 270vh;
+    }
+`;
+
 const EmptyColumn = styled.div`
     width: 10%;
     background: ${props => props.theme.back4};
@@ -78,7 +76,7 @@ const EmptyColumn = styled.div`
     
 `;
 
-const ColumnTitle = styled.div`
+const ColumnTitle = styled(motion.div)`
     font-size: 48px;
     padding: 40px 0;
     color: ${props => props.theme.text};
@@ -90,7 +88,7 @@ const ColumnTitle = styled.div`
 
 `;
 
-const Box = styled.div`
+const Box = styled(motion.div)`
     height: 200px;
     width: 70%;
     display: inline-flex;
@@ -112,8 +110,8 @@ const Box = styled.div`
     }
 `;
 
-const BigTitle = styled.div`
-    font-size: 24px;
+const BigTitle = styled(motion.div)`
+    font-size: 28px;
     color: ${props => props.theme.text};
     padding-bottom: 30px;
     font-weight: bold;
@@ -122,25 +120,35 @@ const BigTitle = styled.div`
     }
 `;
 
-const InnerTitle = styled.div`
+const InnerTitle = styled(motion.div)`
     font-size: 32px;
     color: ${props => props.theme.text};
     font-weight: bold;
-    margin: 40px 0;
+    margin: 50px 0;
     @media screen and (max-width: 768px){
         font-size: 26px;
+        margin: 20px 0;
     }
 `;
 
-const InnerSubtititle = styled.div`
-    font-size: 20px;
-    
+const InnerSubtititle = styled(motion.div)`
+    font-size: 28px;
+    width: 80%;
     color: ${props => props.theme.text};
-    line-height: 12px;
-    font-size: 16px;
+    direction: rtl;
     text-align: center;
+    line-height: 40px;
+    @media screen and (max-width: 768px){
+        font-size: 22px;
+        line-height: 30px;
+    }
+    
     a{
         color: aqua;
+        margin: 0 5px;
+    }
+    span{
+        margin: 0 5px;
     }
 `;
 
@@ -173,11 +181,10 @@ const BoxTitle = styled.div`
     color: white;
 `;
 
-const TitledBox = styled.div`
+const TitledBox = styled(motion.div)`
     margin-top: 20px;
     height: 240px;
     width: 70%;
-    background: red;
     display: grid;
     align-items: center;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -237,7 +244,7 @@ const Hidden = styled.div`
     }
 `;
 
-const SingleIcon = styled.a`
+const SingleIcon = styled(motion.a)`
     display: flex;
     height: 200px;
     width: 35%;
@@ -248,12 +255,15 @@ const SingleIcon = styled.a`
     
 `;
 
-const IconHolder = styled.div`
+const IconHolder = styled(motion.div)`
     display: inline-flex;
     justify-content: space-evenly;
     height: 200px;
     width: 90%;
-    
+    margin-top: 50px;
+    @media screen and (max-width: 768px){
+        margin-top: 20px;
+    }
     
 `;
 
@@ -282,13 +292,14 @@ const IconColumn = styled.div`
 `;
 
 const HelpTitle = styled.div`
-    margin-top: 240px;
+    margin-top: 200px;
     color: white;
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 60px;
     @media screen and (max-width: 768px){
         margin-top: 100px;
+        margin-bottom: 30px;
     }
 `;
 
@@ -316,28 +327,6 @@ const Image = styled(motion.img)`
     position: absolute;
     z-index: 5;
 `;
-
-const imageOneVariants = {
-    hidden: {
-        opacity: 0.5, x: 0
-    }, 
-    visible: {
-        opacity: 1, x: '-50px', transition: {
-            duration: 1, type: 'tween'
-        }
-    }
-}
-
-const ImageHolder = styled.div`
-    ${Image}:nth-child(1){
-        z-index: 1;
-        transform: translate(-250%, -100%);
-    }
-    ${Image}:nth-child(2){
-        transform: translate(-250%, -75%);
-    }
-`;
-
 
 
 
@@ -377,13 +366,55 @@ const GetStartedSection = () => {
         }, 1500)
     }, [copied])
 
+
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '40px',
+            })
+        }
+        
+    }, [inView])
+
   return (
-    <Section id="getstarted">
+    <Section id="getstarted" ref={ref}>
         <EmptyColumn />
         <ColumnLeft>
-            <ColumnTitle >تيلوس ناتيف</ColumnTitle>
-            <BigTitle>اختر موقعا </BigTitle>
-            <Box>
+            <ColumnTitle animate={animation}>تيلوس ناتيف</ColumnTitle>
+            <BigTitle animate={animationTwo}>اختر موقعا </BigTitle>
+            <Box animate={animation}>
                 <MiniColumn><img src={Wombat} alt="" /><BoxTitle>Wombat</BoxTitle></MiniColumn>
                 <MiniColumn>
                     <img src={Anchor} alt="" />
@@ -391,10 +422,10 @@ const GetStartedSection = () => {
                     <BoxTitle>RECOMMENDED</BoxTitle>
                 </MiniColumn>
             </Box>
-            <InnerSubtititle >ستحتاج إلى إنشاء حساب  Anchor لاستخدام <p> يمكنك استيراد الحساب باستخدام<span></span>.مجاني أول</p><p> المفتاح الخاص<span></span>»استيراد<span></span>» مفتاحه الخاص في حساب الإعداد</p></InnerSubtititle>
-            <InnerTitle > إلى حسابك TLOS أرسل </InnerTitle>
-            <InnerSubtititle > <p>اتبع أدلتنا لإرسال تيلوس إلى حساب تيلوس الأصلي</p><p> الأصلي الجديد الخاص بك</p></InnerSubtititle>
-            <IconHolder>
+            <InnerSubtititle animate={animationTwo}><p><t>لاستخدام</t><span>Anchor</span><a href="https://www.telos.net/signup" target="_blank" rel="noreferrer"> ستحتاج إلى إنشاء حساب مجاني أولاً</a><t>. </t><t>يمكنك استيراد الحساب باستخدام مفتاحه الخاص في حساب الإعداد </t><span>»</span><t>ستيراد</t><span>»</span><t>المفتاح الخاص</t></p></InnerSubtititle>
+            <InnerTitle animate={animationTwo}> إلى حسابك TLOS أرسل </InnerTitle>
+            <InnerSubtititle  animate={animationTwo}> قم باستيراد RPC التالي إلى Metamask أو أي محفظة RPC مخصصة لإنشاء حساب</InnerSubtititle>
+            <IconHolder animate={animationTwo}>
                 <IconColumn>
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
@@ -403,7 +434,7 @@ const GetStartedSection = () => {
                 }} href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer">
                 <img src={DEX} alt="cex" />
                 </Icon>
-                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle>DEX أرسل من محقظة </InnerSubtititle></a>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} animate={animationTwo}>أرسل من محقظة<span>DEX</span></InnerSubtititle></a>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
@@ -413,38 +444,38 @@ const GetStartedSection = () => {
                 }} href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer">
                 <img src={CEX} alt="dex" />
                 </Icon>
-                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle>CEX رسل من محقظة </InnerSubtititle></a>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} animate={animationTwo}>رسل من محقظة<span>CEX</span></InnerSubtititle></a>
                 </IconColumn>
-            </IconHolder>
+            </IconHolder >
             <HelpTitle >هل تريد المزيد من المساعدة؟</HelpTitle>
             <a href="https://help.telos.net/" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>قم بزيارة مركز المساعدة الخاص بنا</HelpButton></motion.div></a>
             <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}}><HelpButton>Telegram اتصل بنا على </HelpButton></motion.div></a>
         </ColumnLeft>
         <ColumnRight>
-            <ColumnTitle >EVM تيلوس </ColumnTitle>
-            <BigTitle>MetaMask قم بتثبيت </BigTitle>
-            <Box>
+            <ColumnTitle animate={animation}>EVM تيلوس </ColumnTitle>
+            <BigTitle animate={animationTwo}>MetaMask قم بتثبيت </BigTitle>
+            <Box animate={animation}>
                 <motion.img src={Meta} alt="" drag dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50,}} whileTap={{cursor: 'grabbing'}} style={{width: '150px', height: '150px', cursor: 'grab'}}/> 
             </Box>
-            <InnerTitle>RPC EVM قم باستيراد تيلوس  </InnerTitle>
-            <InnerSubtititle >Metamask التالي إلى  RPC قم باستيراد <p>مخصصة لإنشاء حساب RPC أو أي محفظة</p></InnerSubtititle>
+            <InnerTitle animate={animationTwo}>RPC EVM قم باستيراد تيلوس  </InnerTitle>
+            <InnerSubtititle animate={animationTwo}><t>قم باستيراد</t><span>RPC</span><t>التالي إلى</t><span>METAMASK</span><t>و أي محفظة </t><span>RPC</span><t>مخصصة لإنشاء حساب</t></InnerSubtititle>
             <Hidden>
             {copied && <><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="12" fill="green"/>
                             <motion.path d="M5.40002 12L9.90002 16.5L19.2 7.20001" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg><span>Copied!!!</span></>}
             </Hidden>
-            <TitledBox>
+            <TitledBox animate={animationTwo}>
                 <BoxLine><IconButton onClick={CopyAddress}><CopyIcon /></IconButton><p >https://mainnet.telos.net/evm</p><span> URL: RPC</span></BoxLine>
                 <BoxLine><IconButton onClick={CopyChain}><CopyIcon /></IconButton><p >Telos EVM Mainnet</p><span>Chain name:</span></BoxLine>
                 <BoxLine><IconButton onClick={CopyChainID}><CopyIcon /></IconButton><p>40</p><span>Chain ID:</span></BoxLine>
                 <BoxLine><IconButton onClick={CopySymbol}><CopyIcon /></IconButton><p >TLOS</p><span>Symbol:</span></BoxLine>
                 <BoxLine><IconButton onClick={CopyExplorer}><CopyIcon /></IconButton><p >https://teloscan.io</p><span>Block Explorer URL:</span></BoxLine>
             </TitledBox>
-            <InnerSubtititle >(البحث عن تيلوس)  <a href="https://chainlist.org/" target="_blank" rel="noreferrer">Chainlist</a> يمكنك أي ًضا استخدام قائمة</InnerSubtititle>
-            <InnerTitle style={{padding: '30px'}}>رسل تيلوس إلى حسابك</InnerTitle>
-            <InnerSubtititle >EVM اتبع أدلتنا لإرسال تيلوس إلى حساب تيلوس <p>الجديد الخاص بك</p></InnerSubtititle>
-            <SingleIcon href="https://help.telos.net/en_US/evm/how-to-deposit-tlos-on-the-telos-evm" target= "blank" rel="noreferrer">
+            <InnerSubtititle animate={animationTwo}><p><t>يمكنك أي ًضا استخدام قائمة</t><a href="https://chainlist.org/" target="_blank" rel="noreferrer">CHAINLIST</a><t>(البحث عن تيلوس)</t></p></InnerSubtititle>
+            <InnerTitle style={{padding: '30px'}} animate={animationTwo}>رسل تيلوس إلى حسابك</InnerTitle>
+            <InnerSubtititle animate={animationTwo}><t>اتبع أدلتنا لإرسال تيلوس إلى حساب تيلوس</t><span>EVM</span><t> الجديد الخاص بك </t></InnerSubtititle>
+            <SingleIcon animate={animationTwo} href="https://help.telos.net/en_US/evm/how-to-deposit-tlos-on-the-telos-evm" target= "blank" rel="noreferrer">
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
                 rotate: [0, 0, -360, -360, 0],
@@ -453,8 +484,8 @@ const GetStartedSection = () => {
                     <img src={Native} alt="logo" />
                 </Icon>
             </SingleIcon>
-            <InnerSubtititle>أرسل من تيلوس ناتيف </InnerSubtititle>
-            <IconHolder>
+            <InnerSubtititle animate={animationTwo}>أرسل من تيلوس ناتيف </InnerSubtititle>
+            <IconHolder animate={animationTwo}>
                 <IconColumn>
                 <Icon whileHover={{
                 scale: [1, 2, 2, 1, 1],
@@ -463,7 +494,7 @@ const GetStartedSection = () => {
                 }} href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer">
                 <img src={CEX} alt="cex" />
                 </Icon>
-                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle>CEX رسل من محقظة </InnerSubtititle></a>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}}>رسل من محقظة<span>CEX</span></InnerSubtititle></a>
                 </IconColumn>
                 <IconColumn>
                 <Icon whileHover={{
@@ -473,7 +504,7 @@ const GetStartedSection = () => {
                 }} href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer">
                 <img src={DEX} alt="dex" />
                 </Icon>
-                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle>DEX رسل من محقظة </InnerSubtititle></a>
+                <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}}>رسل من محقظة<span>DEX</span></InnerSubtititle></a>
                 </IconColumn>
             </IconHolder>
         </ColumnRight>

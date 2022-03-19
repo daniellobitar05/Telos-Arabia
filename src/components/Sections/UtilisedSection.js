@@ -17,14 +17,14 @@ import Telos from "../images/telos_logo.png";
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: black;
+    background: ${props => props.theme.back7};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
-const HeaderText = styled.div`
+const HeaderText = styled(motion.div)`
     width: 80%;
     height: 40vh;
     text-align: center;
@@ -35,13 +35,14 @@ const HeaderText = styled.div`
     justify-content: center;
 `;
 
-const Column = styled.div`
+const Column = styled(motion.div)`
     width: 80%;
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
 `;
 
 const Row = styled.div`
@@ -101,6 +102,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -112,6 +114,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -122,6 +125,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -144,7 +148,9 @@ const Empty = styled.div`
 
 const UtilisedSection = () => {
 
-    const {ref, inView} = useInView();
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
     function ChangeNumber () {
         const counters = document.querySelectorAll('.utilcounter');
@@ -178,10 +184,49 @@ const UtilisedSection = () => {
         scroll.scrollToTop();
     }
 
+    
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="utilised">
-            <HeaderText>Telos is the 2nd most utilised blockchain in the world - blocktivity.info</HeaderText>
-            <Column ref={ref}>
+        <Section id="utilised" ref={ref}>
+            <HeaderText animate={animation}>Telos is the 2nd most utilised blockchain in the world - blocktivity.info</HeaderText>
+            <Column animate={animationTwo}>
                 <Row>
                     <SmallItem></SmallItem>
                     <SmallItem>NAME</SmallItem>

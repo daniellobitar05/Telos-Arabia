@@ -294,7 +294,7 @@ const CommDocs = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         
@@ -332,7 +332,7 @@ const CommDocs = () => {
                 
             </Grid>
             <ButtonDiv to="/About">
-                <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
+                <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} animate={animationTwo}>
                 <GoButton>Guide To Telos</GoButton>
                 </motion.div>
             </ButtonDiv>

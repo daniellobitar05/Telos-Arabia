@@ -57,6 +57,17 @@ import chirp from "../components/images/eco/chirp.png";
 import unbiased from "../components/images/eco/unbiased.png";
 import docs from "../components/images/eco/docs.png";
 import domain from "../components/images/eco/domain.jpg";
+import dw from "../components/images/dw_logo.jpg";
+import blox from "../components/images/blox.png";
+import heart from "../components/images/heart.png";
+import acorn from "../components/images/acorn_logo.jpg";
+import daily from "../components/images/daily.png";
+import koin from "../components/images/koin.jpg";
+import zepta from "../components/images/zepta.png";
+import dmail from "../components/images/dmail.png";
+import qubicles from "../components/images/qubicles.png";
+import kolo from "../components/images/kolo.svg";
+import farm from "../components/images/farm.png";
 
 
 
@@ -82,12 +93,12 @@ export const NativeEcosystemData = [
     },
     {
         id : 3,
-        image: Hive,
-        type: "Blockchain",
-        link: "https://hive.io/",
+        image: dw,
+        type: "WEB",
+        link: "https://telos.destinyworld.net/",
         collection: "PARTNERS",
-        name: "Hive",
-        desc: "Innovative and forward-looking decentralized blockchain and ecosystem, designed to scale with widespread adoption of the currency and platforms in mind"
+        name: "Destiny World",
+        desc: "Destiny World is based upon a simple idea of connecting people and technology at multiple levels, combining trends and reusing what is already developed"
     },
     {
         id : 9,
@@ -149,6 +160,7 @@ export const NativeEcosystemData = [
         link: "https://www.tswaps.com/",
         type: "WEB",
         collection: "EXCHANGE",
+        collection2: "DEFI",
         //collection: "DEFI",
         name: "Telos Swap",
         desc: "Swap Telos based assets simply"
@@ -158,7 +170,8 @@ export const NativeEcosystemData = [
         image: alcor,
         link: "https://telos.alcor.exchange/",
         type: "WEB",
-        collection: ["EXCHANGE", "DEFI"],
+        collection: "EXCHANGE",
+        collection2: "DEFI",
         name: "Alcor.exchange",
         desc: "The first self-listing DEX. You can trade any EOS.IO tokens for system EOS tokens, atomically, without third parties! Create markets & list your dapp token in one click, trade whatever you want."
     },
@@ -167,8 +180,8 @@ export const NativeEcosystemData = [
         image: xpell,
         type: "ANDROID, IOS",
         link: "https://xpell.io/",
-        collection: "COMING SOON",
-        //collection: "GAMES",
+        collection: "COMINGSOON",
+        collection2: "GAMES",
         name: "Xpell",
         desc: "Xpell is an MMORTS game based on NFTs which is developed on Telos blockchain"
     },
@@ -267,7 +280,8 @@ export const NativeEcosystemData = [
         image: unicove,
         link: "https://unicove.com/",
         type: "WEB",
-        collection: "COMING SOON",
+        collection: "COMINGSOON",
+        collection2: "WALLETS",
         //collection: "WALLETS",
         name: "Unicove",
         desc: "EARLY ACCESS - The easiest way to manage your EOSIO account"
@@ -277,7 +291,8 @@ export const NativeEcosystemData = [
         image: tdrive,
         type: "WEB",
         link: "https://tdrive.io/",
-        collection: "COMING SOON",
+        collection: "COMINGSOON",
+        collection2: "DEVELOPERS",
         name: "tDrive",
         desc: "Simple, easy, on-demand storage that just feels right. Works on dStor."
     },
@@ -287,8 +302,8 @@ export const NativeEcosystemData = [
         image: scale,
         link: "https://localscale.org/",
         type: "WEB, ANDROID, IOS",
-        collection: "COMING SOON",
-        //collection: "SOCIAL",
+        collection: "COMINGSOON",
+        collection2: "SOCIAL",
         name: "Local Scale",
         desc: "Public benefit organization focusing on the development of resilient and sustainable economies"
     },
@@ -297,8 +312,8 @@ export const NativeEcosystemData = [
         image: bikechain,
         link: "https://bikechain.app/",
         type: "WEB, ANDROID, IOS",
-        collection: "COMING SOON",
-        //collection: "SOCIAL",
+        collection: "COMINGSOON",
+        collection2: "SOCIAL",
         name: "Bikechain",
         desc: "The world's first 100% self-governing ride-sharing mobile dApp"
     },
@@ -308,7 +323,7 @@ export const NativeEcosystemData = [
         link: "https://havuta.com/",
         type: "WEB, ANDROID, IOS",
         collection: "INFORMATION",
-        //collection: "SOCIAL",
+        collection2: "SOCIAL",
         name: "Havuta",
         desc: "Using blockchain to help development actors"
     },
@@ -318,7 +333,7 @@ export const NativeEcosystemData = [
         link: "https://dashboard.qudo.io/",
         collection: "DEVELOPERS",
         type: "WEB",
-        //collection: "GAMES",
+        collection2: "GAMES",
         name: "Qudo",
         desc: "A proof-of-gameplay reward mechanism for users and game developers"
     },
@@ -444,7 +459,7 @@ export const NativeEcosystemData = [
         image: EOS,
         link: "http://telos.eosauthority.com/",
         type: "WEB",
-        collection: "BLOCK EXPLORER",
+        collection: "BLOCKEXPLORER",
         name: "EOS Authority",
         desc: "Search TLOS transactions, blocks, accounts, tokens, rex, prices with alerts."
     },
@@ -452,7 +467,7 @@ export const NativeEcosystemData = [
         id: 44,
         image: tracker,
         link: "https://telostracker.io/",
-        collection: "BLOCK EXPLORER",
+        collection: "BLOCKEXPLORER",
         type: "WEB",
         name: "Telos Tracker",
         desc: "Block Explorer"
@@ -554,7 +569,7 @@ export const NativeEcosystemData = [
     {
         id: 56,
         image: chirp,
-        colleciton: "SOCIAL",
+        collection: "SOCIAL",
         type: "WEB",
         name: "Chirp.la",
         desc: "Earn crypto by chirping"
@@ -582,6 +597,105 @@ export const NativeEcosystemData = [
         type: "WEB",
         name: "publicdomain",
         desc: "Decentralized Keywords on Telos. Decentralized Keywords are to search what crypto is to fiat."
-    }
+    }, 
+    {
+        id : 60,
+        image: Hive,
+        type: "Blockchain",
+        link: "https://hive.io/",
+        collection: "PARTNERS",
+        name: "Hive",
+        desc: "Innovative and forward-looking decentralized blockchain and ecosystem, designed to scale with widespread adoption of the currency and platforms in mind"
+    },
+    {
+        id : 61,
+        image: blox,
+        type: "ANDROID, IOS",
+        link: "https://bloxthegame.com/",
+        collection: "GAMES",
+        name: "Blox",
+        desc: "BLOX is a Tower Defense game where you defend your computer against the worst enemies on the Blockchain and get rewarded for your in-game efforts with a cryptocurrency, QUDO"
+    },
+    {
+        id : 62,
+        image: heart,
+        type: "WEB",
+        link: "https://farm.heart-church.org/",
+        collection: "GAMES",
+        name: "Heart Farms",
+        desc: "Heart Farms is a blockchain game and virtual lands management system playable via web, utilizing the incredible technology of the Telos Blockchain"
+    },
+    {
+        id : 63,
+        image: acorn,
+        type: "WEB",
+        link: "https://www.acorns.fun/",
+        collection: "GAMES",
+        name: "Acorn",
+        desc: "ACORNs are a free daily digital currency like a UBI! Learn crypto and become 1GSS(Gold Star Squirrel!)"
+    },
+    {
+        id : 64,
+        image: daily,
+        type: "WEB",
+        link: "https://dailytelos.net/",
+        collection: "GAMES",
+        name: "Daily Telos",
+        desc: "Daily Telos is your very own digital diary, built upon the Telos blockchain. Ensuring your legacy is enshrined in the public record, for eternity."
+    },
+    {
+        id : 65,
+        image: koin,
+        type: "WEB, ANDROID, IOS",
+        link: "https://koinonos.io/",
+        collection: "GAMES",
+        name: "Koinonos.io",
+        desc: "Share your promotions and offers with the world"
+    },
+    {
+        id : 66,
+        image: zepta,
+        type: "WEB, ANDROID, IOS",
+        link: "https://zeptagram.com/",
+        collection: "SOCIAL",
+        name: "Zeptagram",
+        desc: "An intellectual property rights trading platform that aligns incentives in the music industry."
+    },
+    {
+        id : 67,
+        image: dmail,
+        type: "WEB",
+        link: "https://telos.dmail.co/",
+        collection: "SOCIAL",
+        name: "Zeptagram",
+        desc: "Decentralized email built for the new internet. Secure your identity, control your data, send messages privately."
+    },
+    {
+        id : 68,
+        image: qubicles,
+        type: "WEB",
+        link: "https://qubicles.io/",
+        collection: "SOCIAL",
+        name: "Qubicles",
+        desc: "New generation call center management."
+    },
+    {
+        id : 69,
+        image: kolo,
+        type: "WEB",
+        link: "https://telos.kolobok.io/",
+        collection: "GAMES",
+        name: "Kolobok",
+        desc: "Breadable, tradeable Kolobloks."
+    },
+    {
+        id : 70,
+        image: farm,
+        type: "WEB",
+        link: "https://farm.game/",
+        collection: "GAMES",
+        name: "Farm Game",
+        desc: "Farm. Game. Earn money by playing your favorite games!"
+    },
 
 ]

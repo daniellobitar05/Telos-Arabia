@@ -18,6 +18,7 @@ import FeaturesSection from "../components/Sections/FeaturesSection";
 import UtilitySection from "../components/Sections/UtilitySection";
 import UtilisedSection from "../components/Sections/UtilisedSection";
 import ConclusionSection from "../components/Sections/ConclusionSection";
+import Footer from "../components/Sections/Footer";
 
 const Section = styled.div`
     width: 100%;
@@ -38,11 +39,10 @@ const Title = styled(motion.div)`
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px) {
         font-size: 24px;
         height: 20vh;
-        
-        
         
     }
     
@@ -54,7 +54,7 @@ const Subtitle = styled(motion.div)`
     height: 30vh;
     color: ${props => props.theme.text};
     text-align: right; 
-    
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     display: flex;
     align-items: center;
     @media screen and (max-width: 768px) {
@@ -138,7 +138,7 @@ const About = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         
@@ -160,9 +160,10 @@ const About = () => {
         <ChartSection />
         <FeaturesSection />
         <GraphSection />
-        {/* <UtilitySection />
+        <UtilitySection />
         <UtilisedSection />
-        <ConclusionSection /> */}
+        <ConclusionSection />
+        <Footer />
         </ThemeProvider>
     );
 }

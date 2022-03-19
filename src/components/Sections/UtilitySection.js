@@ -14,15 +14,18 @@ import Telos from "../images/telos_logo.png";
 
 const Section = styled.div`
     width: 100%;
-    height: 380vh;
-    background: black;
+    height: 350vh;
+    background: ${props => props.theme.back6};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 600vh;
+    }
 `;
 
-const PageTitle = styled.div`
+const PageTitle = styled(motion.div)`
     font-size: 36px;
     width: 80%;
     height: 15vh;
@@ -35,7 +38,7 @@ const PageTitle = styled.div`
     
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     width: 80vw;
     font-size: 16px;
     color: whitesmoke;
@@ -44,6 +47,9 @@ const Subtitle = styled.div`
     align-items: right;
     text-align: right;
     padding-bottom: 30px;
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
     a{
         color: aqua;
         text-decoration: none;
@@ -58,7 +64,7 @@ const ColumnWrapper = styled.div`
     align-items: center;
 `;
 
-const TableColumn = styled.div`
+const TableColumn = styled(motion.div)`
     width: 70%;
     height: 100%;
     float: left;
@@ -66,7 +72,7 @@ const TableColumn = styled.div`
     
 `;
 
-const ButtonColumn = styled.div`
+const ButtonColumn = styled(motion.div)`
     width: 30%;
     height: 100%;
     float: left; 
@@ -133,7 +139,8 @@ const Title = styled.div`
     justify-content: flex-end;
     transform: translate(0, 20%);
     @media screen and (max-width: 768px){
-        height: 20vh;;
+        height: 20vh;
+        font-size: 24px;
     }
 `;
 
@@ -145,6 +152,9 @@ const Article = styled.div`
     flex-direction: column;
     align-items: right;
     text-align: right;
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
     a{
         color: aqua;
         text-decoration: none;
@@ -182,6 +192,7 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    background: transparent;
 
 `;
 
@@ -193,6 +204,7 @@ const ToggleColumn = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    background: transparent;
 `;
 
 const IconColumnLeft = styled(LinkS)`
@@ -203,6 +215,7 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: transparent;
 
 `;
 const EmptyColumn = styled.div`
@@ -237,15 +250,56 @@ const UtilitySection = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="utility">
-            <PageTitle>TLOS token utility</PageTitle>
-            <Subtitle>The telos based economy has boomed over the last 2 years, there are over 100 projects building on the network and already over 900,000 user accounts, this is driving higher utility demand for the native token in a number of ways, an effect that should only increase in the future. Get a quick introduction to TLOS tokenomics below or learn more about TLOS Tokenomics here.</Subtitle>
+        <Section id="utility" ref={ref}>
+            <PageTitle animate={animation}>TLOS token utility</PageTitle>
+            <Subtitle animate={animationTwo}>The telos based economy has boomed over the last 2 years, there are over 100 projects building on the network and already over 900,000 user accounts, this is driving higher utility demand for the native token in a number of ways, an effect that should only increase in the future. Get a quick introduction to TLOS tokenomics below or learn more about TLOS Tokenomics here.</Subtitle>
             <ColumnWrapper>
-            <ButtonColumn>
+            <ButtonColumn animate={animation}>
             <Button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} to="/Tokenomics">Learn More</Button>
             </ButtonColumn>
-            <TableColumn>
+            <TableColumn animate={animationTwo}>
                 <Row>
                     <ItemLeft >CPU</ItemLeft>
                     <ItemRight>STAKING</ItemRight>

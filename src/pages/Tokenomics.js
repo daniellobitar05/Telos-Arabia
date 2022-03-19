@@ -1,8 +1,8 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import styled, {keyframes} from "styled-components"
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
-
+import {useInView} from "react-intersection-observer";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import HeaderNoHome from "../components/NavBar/NavBarNoHome";
@@ -20,7 +20,7 @@ import {IconButton} from "@mui/material";
 const Section = styled.div`
     width: 100%;
     height: 90vh;
-    background: black;
+    background: ${props => props.theme.back1};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,22 +51,24 @@ const ColumnRight = styled.div`
     float: left;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     display: flex;
     align-items: center;
     color: white;
     font-size: 62px;
     width: 80%;
     height: 20%;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
-const Subtitle = styled.div`
+const Subtitle = styled(motion.div)`
     display: flex;
     align-items: center;
     color: white;
     font-size: 32px;
     width: 80%;
     height: 40%;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -78,18 +80,57 @@ const Tokenomics = () => {
 
     const [theme, setTheme] = useState("dark");
 
-    
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
     
 
     return(
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
-                <Section id="tokenomics" >
+                <Section id="tokenomics" ref={ref}>
                     <Grid>
                     <ColumnLeft>
-                        <Title>TLOS Tokenomics</Title>
-                        <Subtitle>Understanding the value of TLOS</Subtitle>
-                        <LinkS to="highlights" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                        <Title animate={animation}>TLOS Tokenomics</Title>
+                        <Subtitle animate={animationTwo}>Understanding the value of TLOS</Subtitle>
+                        <LinkS to="highlights" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
                     </ColumnLeft>
                     <ColumnRight>
                     </ColumnRight>

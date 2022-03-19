@@ -21,6 +21,10 @@ const Section = styled.div`
     background: url(${Ball1}), ${props => props.theme.back5};
     background-repeat: no-repeat;
     background-size: contain;
+    @media screen and (max-width: 768px){
+        
+        height: 150vh;
+    }
    
 `;
 
@@ -50,7 +54,9 @@ const Subtitle = styled.div`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 20vh;
+        height: 30vh;
+        float: none;
+
     }
 `;
 
@@ -58,17 +64,22 @@ const Grid = styled.div`
     display: flex;
     width: 90%;
     height: 70vh;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
 `;
 
 const ColumnRight = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
     width: 70%;
     height: 100%;
     text-align: right;
+    @media screen and (max-width: 768px){
+        width: 90%;
+        
+    }
 `;
 
 const ColumnLeft = styled.div`
@@ -79,6 +90,10 @@ const ColumnLeft = styled.div`
     width: 30%;
     height: 100%;
     text-align: right;
+    @media screen and (max-width: 768px){
+        width: 90%;
+        
+    }
 `;
 
 const Empty = styled.div`

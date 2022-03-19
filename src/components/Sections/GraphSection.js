@@ -277,7 +277,9 @@ const GraphSection = () => {
         scroll.scrollToTop();
     }
 
-    const {ref, inView} = useInView();
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
     function ChangeNumber () {
         const counters = document.querySelectorAll('.graphcounter');

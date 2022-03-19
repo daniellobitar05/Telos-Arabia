@@ -15,8 +15,8 @@ import {EVMEcosystemData} from "../data/EVMEcosystemData";
 
 const Section = styled.div`
     width: 100%;
-    height: 50vh;
-    background: black;
+    height: 20vh;
+    background: linear-gradient(90deg, rgba(18,12,128,1) 0%, rgba(142,8,194,1) 80%, rgba(166,36,217,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,18 +29,18 @@ const Section = styled.div`
 const Title = styled.div`
     font-size: 62px;
     width: 80%;
-    height: 45vh;
+    height: 10vh;
     color: ${props => props.theme.text};  
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const Button = styled.button`
     
-    border: none;
+    font-size: 18px;
     background: transparent;
     color: white;
     border-radius: 1rem;
@@ -63,8 +63,8 @@ const Button = styled.button`
 
 const FilterContainer = styled.div`
     width: 100%;
-    height: 20vh;
-    background: black;
+    height: 10vh;
+    background: linear-gradient(90deg, rgba(18,12,128,1) 0%, rgba(142,8,194,1) 80%, rgba(166,36,217,1) 100%);
     
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
             const filtered = platforms.filter(el => el.collection === "EVMNFT"); 
             setFiltered(filtered);
         } else if (activePlatform === 3){
-            const filtered = platforms.filter(el => el.collection === "EVMCOMING SOON"); 
+            const filtered = platforms.filter(el => el.collection === "EVMCOMINGSOON" || el.collection2 === "EVMCOMINGSOON"); 
             setFiltered(filtered);
         } else if (activePlatform === 4){
             const filtered = platforms.filter(el => el.collection === "EVMEXCHANGE"); 
@@ -108,13 +108,13 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
             const filtered = platforms.filter(el => el.collection === "EVMWALLETS"); 
             setFiltered(filtered);
         } else if (activePlatform === 7){
-            const filtered = platforms.filter(el => el.collection === "EVMBLOCK EXPLORER"); 
+            const filtered = platforms.filter(el => el.collection === "EVMBLOCKEXPLORER" || el.collection2 === "EVMBLOCKEXPLORER"); 
             setFiltered(filtered);
         } else if (activePlatform === 8){
-            const filtered = platforms.filter(el => el.collection === "EVMDEFI"); 
+            const filtered = platforms.filter(el => el.collection === "EVMDEFI" || el.collection2 === "EVMDEFI"); 
             setFiltered(filtered);
         } else if (activePlatform === 9){
-            const filtered = platforms.filter(el => el.collection === "EVMTOOLS"); 
+            const filtered = platforms.filter(el => el.collection === "EVMTOOLS" || el.collection2 === "EVMTOOLS"); 
             setFiltered(filtered);
         } 
         
@@ -152,7 +152,7 @@ const Wrapper = styled(motion.a)`
 const ImageContainer = styled.a`
     height: 50%;
     width: 100%;
-    background-color: grey;
+    background-color: indigo;
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
@@ -168,7 +168,7 @@ const ImageContainer = styled.a`
 const FilterSection = styled(motion.div)`
     width: 100%;
     height: auto;
-    background: ${props => props.theme.body};
+    background: linear-gradient(135deg, rgba(18,12,128,1) 0%, rgba(142,8,194,1) 58%, rgba(166,36,217,1) 100%);
     
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

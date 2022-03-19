@@ -15,8 +15,8 @@ import {NativeEcosystemData} from "../data/NativeEcosystemData";
 
 const Section = styled.div`
     width: 100%;
-    height: 50vh;
-    background: black;
+    height: 20vh;
+    background: linear-gradient(145deg, #00008b 0%, rgba(88,9,121,1) 90%, rgba(68,6,94,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,11 +26,21 @@ const Section = styled.div`
     }
 `;
 
+const TopWrapper = styled.div`
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
 const Title = styled.div`
     font-size: 62px;
     width: 80%;
-    height: 45vh;
+    height: 10vh;
     color: ${props => props.theme.text};  
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -39,7 +49,7 @@ const Title = styled.div`
 `;
 
 const Button = styled.button`
-    
+    font-size: 18px;
     border: none;
     background: transparent;
     color: white;
@@ -63,8 +73,8 @@ const Button = styled.button`
 
 const FilterContainer = styled.div`
     width: 100%;
-    height: 20vh;
-    background: black;
+    height: 10vh;
+    background: linear-gradient(145deg, #00008b 0%, rgba(88,9,121,1) 90%, rgba(68,6,94,1) 100%);
     
     display: flex;
     align-items: center;
@@ -99,7 +109,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
             const filtered = platforms.filter(el => el.collection === "NFT"); 
             setFiltered(filtered);
         } else if (activePlatform === 4){
-            const filtered = platforms.filter(el => el.collection === "COMING SOON"); 
+            const filtered = platforms.filter(el => el.collection === "COMINGSOON"); 
             setFiltered(filtered);
         } else if (activePlatform === 5){
             const filtered = platforms.filter(el => el.collection === "EXCHANGE"); 
@@ -108,22 +118,22 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
             const filtered = platforms.filter(el => el.collection === "INFORMATION"); 
             setFiltered(filtered);
         } else if (activePlatform === 7){
-            const filtered = platforms.filter(el => el.collection === "DEVELOPERS"); 
+            const filtered = platforms.filter(el => el.collection === "DEVELOPERS" || el.collection2 === "DEVELOPERS"); 
             setFiltered(filtered);
         } else if (activePlatform === 8){
-            const filtered = platforms.filter(el => el.collection === "WALLETS"); 
+            const filtered = platforms.filter(el => el.collection === "WALLETS" || el.collection2 === "WALLETS"); 
             setFiltered(filtered);
         } else if (activePlatform === 9){
-            const filtered = platforms.filter(el => el.collection === "BLOCK EXPLORER"); 
+            const filtered = platforms.filter(el => el.collection === "BLOCKEXPLORER"); 
             setFiltered(filtered);
         } else if (activePlatform === 10){
-            const filtered = platforms.filter(el => el.collection === "DEFI"); 
+            const filtered = platforms.filter(el => el.collection === "DEFI" || el.collection2 === "DEFI"); 
             setFiltered(filtered);
         } else if (activePlatform === 11){
-            const filtered = platforms.filter(el => el.collection === "SOCIAL"); 
+            const filtered = platforms.filter(el => el.collection === "SOCIAL" || el.collection2 === "SOCIAL"); 
             setFiltered(filtered);
         } else if (activePlatform === 12){
-            const filtered = platforms.filter(el => el.collection === "GAMES"); 
+            const filtered = platforms.filter(el => el.collection === "GAMES" || el.collection2 === "GAMES"); 
             setFiltered(filtered);
         }
         
@@ -164,7 +174,7 @@ const Wrapper = styled(motion.a)`
 const ImageContainer = styled.a`
     height: 50%;
     width: 100%;
-    background-color: grey;
+    background-color: #8a2be2;
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
@@ -180,7 +190,7 @@ const ImageContainer = styled.a`
 const FilterSection = styled(motion.div)`
     width: 100%;
     height: auto;
-    background: ${props => props.theme.body};
+    background: linear-gradient(135deg, #00008b 0%, rgba(88,9,121,1) 65%, rgba(68,6,94,1) 100%);
     
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

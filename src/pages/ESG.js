@@ -272,11 +272,11 @@ const ESG = () => {
                    
                 </Section> */}
                 <WhatisESG />
-                {/* <ESGIcons />
+                <ESGIcons />
                 <ESGToDo /> 
                 <ESGQuotes />
                 <ESGGovernance />
-                <ESGGreenest />
+                {/* <ESGGreenest />
                 <ESGChart />
                 <ESGSeeds />
                 <Additional />

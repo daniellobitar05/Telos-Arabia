@@ -32,6 +32,10 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 32px;
         width: 90%;
@@ -87,9 +91,13 @@ const BoxTitle = styled(motion.div)`
     width: 90%;
     height: 10vh;
     color: white;
-    font-size: 24px;
+    font-size: 32px;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 18px;
     }
@@ -99,12 +107,16 @@ const Subtitle = styled(motion.div)`
     width: 90%;
     height: 30vh;
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 14px;
     }
@@ -261,12 +273,12 @@ const EVMWhatis = () => {
 
     return(
         <Section id="evmwhatis" ref={ref}>
-            <Title animate={animationThree}>What is Telos EVM</Title>
+            <Title animate={animationThree}><t>ما هو </t><span>Telos EVM</span></Title>
             <Grid>
                 <ColumnLeft>
-                    <BoxTitle animate={animationTwo}>A Layer-1 Ethereum Virtual Machine, Built to Power Web 3.0</BoxTitle>
-                    <Subtitle animate={animationTwo}>Telos EVM is a scalable solution for Solidity based applications, built with the intent of revolutionizing the DeFi landscape. Unlike other scalable EVMs, Telos EVM is not just a fork of the original Go Ethereum code. It’s an entirely new EVM redesigned from the ground up to take full advantage of the power that Telos technology has to offer.</Subtitle>
-                    <Subtitle animate={animationTwo}>This new approach allows the Telos EVM to avoid the scaling issues that many major EVM alternatives run into. Despite its unique design, Telos EVM offers feature parity with Ethereum, this makes it a powerful solution for developers and users looking for an Ethereum Virtual Machine that can keep up with the demands of mass adoption.</Subtitle>
+                    <BoxTitle animate={animationTwo}><t>آلة افتراضية من الطبقة الأولى من</t><span>Ethereum</span><t>، تم إنشاؤها لدعم الويب 3.0</t></BoxTitle>
+                    <Subtitle animate={animationTwo}><p><t>تيلوس</t><span>EVM</span><t>هو حل قابل للتطوير للتطبيقات القائمة على</t><span>Solidity</span><t>، تم إنشاؤه بهدف إحداث ثورة في مشهد</t><span>DeFi.</span><t>على عكس أجهزة</t><span>EVM</span><t>الأخرى القابلة للتطوير ، فإن تيلوس</t><span>EVM</span><t>ليست مجرد تفرع من كود</t><span>Go Ethereum</span><t>الأصلي. إنه جهاز</t><span>EVM</span><t>جديد تمامًا أعيد تصميمه من الألف إلى الياء للاستفادة الكاملة من القوة التي توفرها تقنية تيلوس.</t></p></Subtitle>
+                    <Subtitle animate={animationTwo}><p><t>يسمح هذا النهج الجديد لـ تيلوس</t><span>EVM</span><t>بتجنب مشكلات القياس التي تواجهها العديد من بدائل</t><span>EVM</span><t>الرئيسية. على الرغم من تصميمها الفريد ، تقدم تيلوس</t><span>EVM</span><t>ميزة التكافؤ مع</t><span>Ethereum</span><t>، مما يجعلها حلاً قويًا للمطورين والمستخدمين الذين يبحثون عن جهاز</t><span>Ethereum Virtual Machine</span><t>يمكنه مواكبة متطلبات التبني الجماعي.</t></p></Subtitle>
                 </ColumnLeft>
                 <ColumnRight>
                     <motion.div animate={animationThree}>

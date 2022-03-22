@@ -163,8 +163,12 @@ const Text = styled(motion.div)`
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 32px;
+    font-size: 56px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         justify-content: center;
         font-size: 24px;
@@ -179,9 +183,13 @@ const Subtitle = styled(motion.a)`
     display: inline-flex;
     
     justify-content: center;
-    font-size: 18px;
-    padding: 5px 0px;
+    font-size: 26px;
+    
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         justify-content: center;
         text-align: center;
@@ -256,17 +264,17 @@ const EVMStartNowTwo = () => {
                 <Column>
                     <Box>
                         <Image animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={EVM3} alt="" /></Image>
-                        <Text animate={animation}>DEVELOPER CHAT</Text>
-                        <Subtitle  animate={animationTwo}>Join a community of dedicated developers, passionate about building on the Telos EVM.</Subtitle>
-                        <Subtitle href="https://t.me/TelosEVMDevs" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
+                        <Text animate={animation}>محادثة المطور</Text>
+                        <Subtitle  animate={animationTwo}><p><t>انضم إلى مجتمع من المطورين المتفانين ، المتحمسين للبناء على تيلوس </t><span>EVM</span></p></Subtitle>
+                        <Subtitle href="https://t.me/TelosEVMDevs" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />تعلم أكثر</Subtitle>
                     </Box>
                 </Column>
                 <Column>
                     <Box>
                     <WalletImage animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={Ball3} alt="" /></WalletImage>
-                        <Text animate={animation}>TELOS WEB WALLET</Text>
-                        <Subtitle animate={animationTwo}>Bridge your Tlos seamlessly and for free between Native Telos and EVM.</Subtitle>
-                        <Subtitle href="https://wallet.telos.net/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
+                        <Text animate={animation}>محفظة  تيلوس</Text>
+                        <Subtitle animate={animationTwo}><p><t>قم بتوصيل تيلوس الخاص بك بسلاسة وبشكل مجاني بين</t><span>Native</span><t>تيلوس و </t><span>EVM</span></p></Subtitle>
+                        <Subtitle href="https://wallet.telos.net/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />تعلم أكثر</Subtitle>
                     </Box>
                 </Column>
             </Grid>

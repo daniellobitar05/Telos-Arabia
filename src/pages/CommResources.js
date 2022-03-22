@@ -14,6 +14,8 @@ import {IconButton} from "@mui/material";
 import CommDocs from "../components/Sections/CommDocs";
 import Footer from "../components/Sections/Footer";
 
+import Image from "../components/SVG/resource.svg";
+
 const Section = styled.div` 
     width: 100%;
     height: 90vh;
@@ -25,10 +27,11 @@ const Section = styled.div`
 `;
 
 const Title = styled(motion.div)`
-    font-size: 72px;
-    width: 80%;
+    font-size: 86px;
+    width: 70%;
     color: ${props => props.theme.text};  
     text-align: right;
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
@@ -36,12 +39,14 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 24px;
+    font-size: 36px;
     width: 60%;
     color: ${props => props.theme.text};
     text-align: right; 
-    padding: 30px 0;
+    padding: 60px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    
     @media screen and (max-width: 768px){
         font-size: 18px;
     }
@@ -65,8 +70,9 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
 `;
 
 const IconText = styled.div`
-    font-size: 20px;
+    font-size: 24px;
     color: white;
+    direction: rtl;
     @media screen and (max-width: 768px){
         font-size: 14px;
     }
@@ -146,15 +152,15 @@ const CommResources = () => {
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="commresources" ref={ref}>
-                    <Title animate={animation}>Community Resources</Title>
-                    <Subtitle animate={animationTwo}>Telos is home to a growing ecosystem of diverse community contributors, passionate about seeing the Telos ecosystem. Governance is a strong part of the Telos economy, putting the direction of network operations in the hands of token holders. Find some useful community resources below and get involved!</Subtitle>
+                    <Title animate={animation}>موارد المجتمع</Title>
+                    <Subtitle animate={animationTwo}>تيلوس هي موطن لنظام بيئي متنامي من المساهمين المجتمعيين المتنوعين ، المتحمسين لرؤية نظام تيلوس البيئي. تعد الحوكمة جزءًا قويًا من اقتصاد تيلوس ، حيث تضع اتجاه عمليات الشبكة في أيدي حاملي الرموز. اعثر على بعض موارد المجتمع المفيدة أدناه وشارك!</Subtitle>
                     <IconHolder>
                         <IconColumn>
                         <LinkS to="commdocs" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
                         </IconColumn>
                         <TextColumn animate={animation}>
                         <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><IconButton><ArrowLeft /></IconButton></a>
-                        <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><IconText>Join the Telos Community Telegram</IconText></a>
+                        <a href="https://t.me/HelloTelos" target="_blank" rel="noreferrer"><IconText>انضم إلى غروب التلغرام الخاص بنا</IconText></a>
                         </TextColumn>
                         <IconColumn>
                         

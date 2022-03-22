@@ -28,12 +28,13 @@ const Section = styled.div`
 
 
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
     width: 80%;
-    height: 60vh;
-    
+    height: 50vh;
+    margin: 5vh 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
         flex-direction: column;
         height: 180vh;
@@ -41,14 +42,16 @@ const Grid = styled.div`
 `;
 
 const Column = styled(motion.div)`
-    width: 33.3%;
+    width: 22.5%;
     height: 100%;
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 50px;
+    background: #6c3082;
+    border-radius: 20px;
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
@@ -64,7 +67,7 @@ const IconContainer = styled(motion.div)`
     justify-content: center;
     
     img{
-        width: 20%;
+        width: 25%;
         border-radius: 50%;
         border: 1px solid aqua;
         padding: 10px;
@@ -93,6 +96,7 @@ const TopText = styled(motion.div)`
     color: white;
     font-size: 36px;
     text-align: center;
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -108,6 +112,7 @@ const BottomText = styled(motion.div)`
     display: flex;
     align-items: center;
     padding: 0 20px;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         font-size: 18px;
@@ -219,7 +224,7 @@ const Empty = styled.div`
 `;
 
 
-const TextColumns = styled.div`
+const TextColumns = styled(motion.div)`
     height: 30vh;
     width: 80%;
     display: flex;
@@ -233,16 +238,20 @@ const TextColumns = styled.div`
 
 const TextColumn = styled(motion.div)`
     height: 100%;
-    width: 40%;
+    width: 45%;
     float: left;
-    font-size: 16px;
+    font-size: 26px;
     display: flex;
     flex-direction: column;
-    text-align: right;
     align-items: center;
-    justify-content: center;
+    
+    
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
@@ -252,7 +261,7 @@ const TextColumn = styled(motion.div)`
 
 const EmptyTextColumn = styled.div`
     height: 100%;
-    width: 20%;
+    width: 10%;
     float: left;
     @media screen and (max-width: 768px){
         display: none;
@@ -311,7 +320,7 @@ const ESGIcons = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                opacity: 1, y: '-20px',
+                opacity: 1, y: 0, scale: 1,
                 transition: {
                     duration: 1.5, delay: 0.5,
                 }
@@ -319,7 +328,7 @@ const ESGIcons = () => {
         }
         if(!inView){
             animationThree.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px', scale: 0.4
             })
         }
         
@@ -327,14 +336,14 @@ const ESGIcons = () => {
 
     return(
         <Section id="esgicons" ref={ref}>
-            <Grid>
-                <Column variants={ContainerVariants} initial='start' animate='end'>
+            <Grid animate={animationThree}>
+                <Column variants={ContainerVariants} initial='start' animate='end' >
                     <IconContainer variants={CircleVariants}  transition={CircleTransition}>
                         <img src={Icon1} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText animate={animation}>Governance Structure</TopText>
-                        <BottomText animate={animationTwo}>Standards for running an initiative</BottomText>
+                        <TopText >هيكل الحوكمة</TopText>
+                        <BottomText >معايير إدارة المبادرة</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -342,8 +351,8 @@ const ESGIcons = () => {
                         <img src={Icon2} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText animate={animation}>Socially Responsible</TopText>
-                        <BottomText animate={animationTwo}>Acting in a way that benefits society</BottomText>
+                        <TopText >مسؤول إجتماعيا</TopText>
+                        <BottomText >التصرف بطريقة تفيد المجتمع</BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
@@ -351,15 +360,15 @@ const ESGIcons = () => {
                         <img src={Icon3} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
-                        <TopText animate={animation}>Environmentally Conscious </TopText>
-                        <BottomText animate={animationTwo}>Conserving the world’s natural resources</BottomText>
+                        <TopText >واع بيئيا</TopText>
+                        <BottomText >الحفاظ على الموارد الطبيعية في العالم</BottomText>
                     </TextContainer>
                 </Column>
             </Grid>
             <TextColumns>
-                <TextColumn animate={animationThree}>An ESG Global Survey found that asset owners allocated 48% of their funds towards ESG in 2017. This number grew to 75% in 2019, and these numbers are projected to grow to 92% by the end of 2021. This proves that there is a ton of value in ESG investments, both from a socially conscious standpoint as well as a financial perspective.</TextColumn>
+                <TextColumn animate={animationTwo}><p><t>وجدت دراسة</t><span>ESG Global</span><t>أن مالكي الأصول خصصوا 48٪ من أموالهم نحو</t><span>ESG</span><t>في عام 2017. وقد ارتفع هذا الرقم إلى 75٪ في عام 2019 ، ومن المتوقع أن ترتفع هذه الأرقام إلى 92٪ بحلول نهاية عام 2021. وهذا يثبت أن هناك طن من القيمة في استثمارات</t><span>ESG</span><t>سواء من منظور واع اجتماعيًا وكذلك من منظور مالي</t></p></TextColumn>
                 <EmptyTextColumn />
-                <TextColumn animate={animationThree}>The history of ESG can be traced back to 2004. At that time, former UN Secretary General Kofi Annan invited 50+ CEOs of major financial institutions to develop recommendations on how to integrate ESG elements into capital markets. Everyone involved benefited from the move toward ESG, due to its ability to uncover value in areas where analytical methods fall short.</TextColumn>
+                <TextColumn animate={animationTwo}><p><t>يمكن إرجاع تاريخ</t><span>ESG</span><t>إلى عام 2004. في ذلك الوقت ، دعا الأمين العام السابق للأمم المتحدة كوفي عنان أكثر من 50 مديرًا تنفيذيًا للمؤسسات المالية الكبرى لوضع توصيات حول كيفية دمج عناصر</t><span>ESG</span><t>في أسواق رأس المال. استفاد جميع المعنيين من التحرك نحو</t><span>ESG</span><t>نظرًا لقدرته على الكشف عن القيمة في المجالات التي تقصر فيها الأساليب التحليلية</t></p></TextColumn>
             </TextColumns>
             <Empty>
                 <IconColumnLeft to="todo" smooth={true} duration={1000} spy={true} exact="true">

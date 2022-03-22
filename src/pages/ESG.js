@@ -1,8 +1,8 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import styled from "styled-components"
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
-
+import {useInView} from "react-intersection-observer";
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
 import HeaderNoHome from "../components/NavBar/NavBarNoHome";
@@ -105,17 +105,20 @@ const ImageRight = styled.div`
 
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     font-size: 62px;
     width: 100%;
     height: 20vh;
     color: ${props => props.theme.text};  
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     background: rgba(0,0,139,1);
-    text-align: center;
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    span{
+        margin: 0 20px;
+    }
     @media screen and (max-width: 768px){
         height: 15vh;
         font-size: 32px;
@@ -125,12 +128,16 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
     color: white; 
-    line-height: 1.2em;
+    line-height: 1.4em;
     text-align: justify;
-    font-size: 24px;
+    font-size: 34px;
     text-align: center;
     width: 90%;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    span{
+        margin: 0 20px;
+    }
     @media screen and (max-width: 768px){
         font-size: 16px;
         display: flex;
@@ -239,14 +246,55 @@ const ESG = () => {
 
     const [theme, setTheme] = useState("dark");
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
-            <Title>Telos is the ESG Blockchain</Title>
+            <Title><t>تيلوس هي</t><span>ESG</span><t>بلوكشين</t></Title>
             <Container>
                 <ImageLeft><img src={Ball2} alt="" /></ImageLeft>
                 <ImageRight><img src={Ball1 } alt="" /></ImageRight>
-                <Subtitle>🌎 Environmental, ✌️ Social & 🏢 Governance (ESG) investments & business practices are becoming increasingly important criteria when weighing the potential risks of an initiative. Many institutions have been calling for ESG solutions in the cryptocurrency sector but no network has delivered…until Telos. Telos is extremely fast, virtually fee-less and more powerful than major competitors. However, it takes more than that to be #RealWorldReady. Telos is making a conscious effort to become the leading ESG Blockchain, positioning itself for mass adoption by real world users around the world.   </Subtitle>
+                <Subtitle><t>أصبحت الاستثمارات البيئية والاجتماعية والحوكمة</t><span>(ESG)</span><t>وممارسات الأعمال معايير مهمة بشكل متزايد عند تقييم المخاطر المحتملة لمبادرة ما. دعت العديد من المؤسسات إلى حلول</t><span>ESG</span><t>في قطاع العملات المشفرة ولكن لم يتم تسليم أي شبكة ... حتى تيلوس. تيلوس سريع للغاية ، عمليًا بدون رسوم وأقوى من المنافسين الرئيسيين. ومع ذلك ، يتطلب الأمر أكثر من ذلك لتكون</t><span>#RealWorldReady,</span><t> تبذل تيلوس جهدًا واعيًا لتصبح شركة</t><span>ESG</span><t>بلوكشين الرائدة ، وتضع نفسها في متناول المستخدمين العالميين الحقيقيين حول العالم</t>.</Subtitle>
                 <Empty>
                 <IconColumnLeft to="videos" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
@@ -276,7 +324,7 @@ const ESG = () => {
                 <ESGToDo /> 
                 <ESGQuotes />
                 <ESGGovernance />
-                {/* <ESGGreenest />
+                <ESGGreenest />
                 <ESGChart />
                 <ESGSeeds />
                 <Additional />
@@ -285,7 +333,7 @@ const ESG = () => {
                 <AdditionalTwo />
                 <ESGConclusion />
                 <ESGLatest />
-                <Footer /> */}
+                <Footer />
         </ThemeProvider>
     )
 }

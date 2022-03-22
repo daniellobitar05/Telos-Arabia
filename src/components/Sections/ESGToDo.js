@@ -31,6 +31,10 @@ const Title = styled(motion.div)`
     color: white;
     font-size: 52px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 15px;
+    }
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 24px;
@@ -42,7 +46,7 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 18px;
+    font-size: 24px;
     width: 70%;
     color: ${props => props.theme.text};
     text-align: center; 
@@ -53,6 +57,7 @@ const Subtitle = styled(motion.div)`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
     @media screen and (max-width: 768px){
         width: 90%;
         height: 40vh;
@@ -163,17 +168,21 @@ const ColumnLeft = styled(motion.div)`
 `;
 
 const BoxRow = styled.div`
-    width: 80%;
+    width: 100%;
     height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: right;
-    font-size: 18px;
+    font-size: 26px;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     transform: translate(0, -10%);
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 16px;
     }
@@ -188,9 +197,10 @@ const BoxRowBottom = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 22px;
+    font-size: 26px;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
     transform: translate(-25%, 20%);
     @media screen and (max-width: 768px){
         font-size: 16px;
@@ -218,7 +228,7 @@ const ESGToDo = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                x: 0,
+                x: 0, y: '50px',
                 transition: {
                     duration: 1, 
                 }
@@ -226,7 +236,7 @@ const ESGToDo = () => {
         }
         if(!inView){
             animation.start({
-                x: '-100vw'
+                x: '-100vw', y: '50px'
             })
         }
         
@@ -268,14 +278,14 @@ const ESGToDo = () => {
 
     return(
         <Section id="todo" ref={ref}>
-            <Title animate={animation}>So, what does ESG have to do with crypto & blockchain?</Title>
-            <Subtitle animate={animationTwo}>One of the biggest growing pains for the blockchain sector has been society’s negative view towards the technology. There are many common misconceptions around the effects that this technology has on the world, and for good reason. With the potential to radically alter how our economies, businesses and relationships operate, there is a level of risk that comes with mass adoption, as with any major technological advancement.</Subtitle>
+            <Title animate={animation}><t>إذن ، ما علاقة</t><span>ESG</span><t>بالتشفير و بلوكشين؟</t></Title>
+            <Subtitle animate={animationTwo}>كانت واحدة من أكبر الآلام المتنامية لقطاع بلوكشين هي نظرة المجتمع السلبية تجاه التكنولوجيا. هناك العديد من المفاهيم الخاطئة الشائعة حول تأثيرات هذه التكنولوجيا على العالم ، وذلك لسبب وجيه. مع إمكانية التغيير الجذري لكيفية عمل اقتصاداتنا وأعمالنا وعلاقاتنا ، هناك مستوى من المخاطر يأتي مع التبني الشامل ، كما هو الحال مع أي تقدم تكنولوجي كبير.</Subtitle>
             <Grid>
                 <ColumnLeft><motion.img animate={animationThree} src={SilverLogo} alt="" /></ColumnLeft>
                 <EmptyBoxColumn />
                 <ColumnLeft animate={animationTwo}>
-                    <BoxRow>This became most apparent after the price of Bitcoin fell following concerns around energy consumption. In during a webcast at the Consensus 2021, Shark Tank’s Kevin O’Leary noted that “everybody’s got to wake up and realize there’s demand [for crypto], but it has to be done around ESG concerns.”</BoxRow>
-                    <BoxRowBottom>“Everybody’s got to wake up and realize there’s demand [for crypto], but it has to be done around ESG concerns.”<p><span>Kevin O’Leary</span></p></BoxRowBottom>
+                    <BoxRow><p><t>أصبح هذا أكثر وضوحًا بعد انخفاض سعر البيتكوين بعد مخاوف بشأن استهلاك الطاقة. خلال البث الشبكي في توافق الآراء 2021 ، أشار كيفن أوليري من</t><span>Shark Tank</span><t>إلى أنه "على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على التشفير] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG.</span></p></BoxRow>
+                    <BoxRowBottom><t>"على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على العملات المشفرة] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG".</span><p>كيفن أوليري</p></BoxRowBottom>
                 </ColumnLeft>
             </Grid>
             <Empty>

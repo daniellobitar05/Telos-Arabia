@@ -47,6 +47,7 @@ const Title = styled(motion.div)`
     flex-direction: column;
     justify-content: center;
     text-align: right;
+    
     @media screen and (max-width: 768px){
         font-size: 48px;
         height: 20vh;
@@ -64,6 +65,10 @@ const Subtitle = styled(motion.div)`
     transform: translate(20%, 0);
     justify-content: center;
     text-align: right;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 28px;
         
@@ -138,7 +143,7 @@ const ButtonWrapper = styled(motion.div)`
 const Button = styled(LinkS)`
     border: 1px solid #ba55d3;
     color: lightblue;
-    font-size: 18px;
+    font-size: 24px;
     padding: 10px 15px;
     margin: 0 0 0 50px;
     display: flex;
@@ -210,14 +215,14 @@ const EVM = () => {
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="evm" ref={ref}>
-                    <Title animate={animation}>Telos EVM</Title>
-                    <Subtitle animate={animationTwo}>The most powerful and scalable Ethereum Smart Contract platform available today</Subtitle>
+                    <Title animate={animation}>EVM تيلوس</Title>
+                    <Subtitle animate={animationTwo}><t>أقوى منصة</t><span>Ethereum Smart Contract</span><t>وأكثرها قابلية للتطوير والمتاحة اليوم</t></Subtitle>
                     <ButtonWrapper animate={animation}>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                    <Button to="startnow" smooth={true} duration={1000} spy={true} exact="true">START NOW</Button>
+                    <Button to="startnow" smooth={true} duration={1000} spy={true} exact="true">ابدأ الان</Button>
                     </motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                    <Button to="evmwhatis" smooth={true} duration={1000} spy={true} exact="true">LEARN MORE</Button>
+                    <Button to="evmwhatis" smooth={true} duration={1000} spy={true} exact="true">تعلم أكثر</Button>
                     </motion.div>
                     </ButtonWrapper>
                     <Empty>

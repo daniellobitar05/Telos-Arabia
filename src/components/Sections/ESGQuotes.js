@@ -23,7 +23,7 @@ const Section = styled.div`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 18px;
+    font-size: 26px;
     width: 70%;
     color: ${props => props.theme.text};
     text-align: center; 
@@ -33,8 +33,11 @@ const Subtitle = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translate(15%, 0);
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
@@ -45,7 +48,7 @@ const Subtitle = styled(motion.div)`
 `;
 
 const SubtitleLeft = styled(motion.div)`
-    font-size: 18px;
+    font-size: 26px;
     width: 70%;
     color: ${props => props.theme.text};
     text-align: center; 
@@ -55,8 +58,11 @@ const SubtitleLeft = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translate(-15%, 0);
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
@@ -162,11 +168,11 @@ const ESGQuotes = () => {
 
     return(
         <Section id="quotes" ref={ref}>
-            <Subtitle animate={animationTwo}>O’Leary noted that any large institution has ESG compliance committees that “have covenants around how assets are made, whether carbon is burned, whether human rights are involved.”</Subtitle>
-            <SubtitleLeft animate={animationTwo}>Unfortunately, this problem will never be fully solved in the traditional blockchains, such as the Bitcoin network. This is because ESG was never a consideration in the design. However, Blockchain 3.0 has presented a unique opportunity for massive industry change and the solution to these problems is closer than many people realize.</SubtitleLeft>
-            <Subtitle animate={animationTwo}>Telos launched as a grassroots network in 2018, with no ICO or venture capital funding. So, Telos founders were never concerned with developing a traditional “sales pitch” for investors or users. Instead, the network sought to solve several major issues that hindered other blockchains. Although not identified at the time, many of these problems were ESG related.</Subtitle>
-            <SubtitleLeft animate={animationTwo}>The Telos network has worked to become the most accessible, equitable and efficient blockchain on the market. During this process, the network has naturally grown to become the world’s leading example of what it means to be an ESG blockchain. Whether you look at it through the lens of environmental impact, social responsibility or governance capabilities, Telos comes out on top every time.</SubtitleLeft>
-            <Subtitle animate={animationTwo}>Over the years, these characteristics have attracted over 100 projects, integrating the Telos network in a way that continues the mission of ESG initiatives. There are far too many to fit into one article, but we’ll be highlighting some relevant examples below. We encourage our community to check out the rest.</Subtitle>
+            <Subtitle animate={animationTwo}><p><t>أشار أو ليري إلى أن أي مؤسسة كبيرة لديها لجان امتثال</t><span>ESG</span><t>"لديها عهود حول كيفية تكوين الأصول ، وما إذا كان يتم حرق الكربون ، وما إذا كانت حقوق الإنسان متورطة."</t></p></Subtitle>
+            <SubtitleLeft animate={animationTwo}><p><t>لسوء الحظ ، لن يتم حل هذه المشكلة بالكامل في سلاسل الكتل التقليدية ، مثل شبكة البيتكوين. هذا لأن</t><span>ESG</span><t>لم يكن أبدًا اعتبارًا في التصميم. ومع ذلك ، فقد قدمت بلوكشين 3.0 فرصة فريدة لإحداث تغيير هائل في الصناعة ، والحل لهذه المشكلات أقرب مما يدركه الكثير من الناس</t></p></SubtitleLeft>
+            <Subtitle animate={animationTwo}><p><t>تم إطلاق تيلوس كشبكة شعبية في عام 2018 ، بدون تمويل</t><span>ICO</span><t>أو رأس مال استثماري. لذلك ، لم يكن مؤسسو شركة تيلوس مهتمين أبدًا بتطوير "عرض ترويجي" تقليدي للمبيعات للمستثمرين أو المستخدمين. بدلاً من ذلك ، سعت الشبكة إلى حل العديد من المشكلات الرئيسية التي أعاقت سلاسل الكتل الأخرى. على الرغم من عدم تحديدها في ذلك الوقت ، إلا أن العديد من هذه المشكلات كانت مرتبطة بالحوكمة البيئية والاجتماعية والمؤسسية</t></p></Subtitle>
+            <SubtitleLeft animate={animationTwo}><p><t>عملت شبكة تيلوس على أن تصبح أكثر بلوكتشين وصولاً وإنصافًا وفعالية في السوق. خلال هذه العملية ، نمت الشبكة بشكل طبيعي لتصبح المثال الرائد في العالم لما يعنيه أن تكون سلسلة من سلاسل الكتل</t><span>ESG.</span><t>سواء نظرت إليها من منظور التأثير البيئي أو المسؤولية الاجتماعية أو قدرات الحوكمة ، فإن شركة تيلوس تأتي في المقدمة في كل مرة</t></p></SubtitleLeft>
+            <Subtitle animate={animationTwo}><p>على مر السنين ، جذبت هذه الخصائص أكثر من 100 مشروع ، ودمجت شبكة تيلوس بطريقة تواصل مهمة مبادرات ESG. هناك عدد كبير جدًا بحيث لا يمكن تضمينه في مقالة واحدة ، لكننا سنبرز بعض الأمثلة ذات الصلة أدناه. نحن نشجع مجتمعنا للتحقق من الباقي.</p></Subtitle>
             <Empty>
                 <IconColumnLeft to="governance" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>

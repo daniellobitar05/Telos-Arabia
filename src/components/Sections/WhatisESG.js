@@ -32,6 +32,10 @@ const Title = styled(motion.div)`
     text-align: center;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    span{
+        margin: 0 15px;
+    }
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         width: 80%;
@@ -42,14 +46,17 @@ const Title = styled(motion.div)`
 
 const Subtitle = styled(motion.div)`
     width: 80vw;
-    font-size: 18px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 15vh;
+    height: 20vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 15px;
+    }
     @media screen and (max-width: 768px){
         height: 40vh;
         justify-content: center;
@@ -59,7 +66,7 @@ const Subtitle = styled(motion.div)`
 
 const VideoWrapper = styled.div`
     width: 90%;
-    height: 50vh;
+    height: 45vh;
     display: flex;
     @media screen and (max-width: 768px){
         flex-direction: column; 
@@ -98,13 +105,21 @@ const VideoTitles = styled(motion.div)`
 
 const VideoTitle = styled.h1`
     color: white;
-    font-size: 20px;
+    font-size: 22px;
+    direction: rtl;
+    transform: translate(180%, 0);
+    span{
+        margin: 0 15px;
+    }
 `;
 
 const VideoTitleESG = styled.h1`
     color: white;
-    font-size: 20px;
-
+    font-size: 22px;
+    direction: rtl;
+    span{
+        margin: 0 15px;
+    }
     @media screen and (max-width: 768px){
         transform: translate(-70%, 670%);
     }
@@ -258,19 +273,36 @@ const WhatisESG = () => {
         
     }, [inView])
 
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, scale: 1,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, scale: 0.4
+            })
+        }
+        
+    }, [inView])
+
 
 
     return(
         <Section id="videos" ref={ref}>
-            <Title animate={animation}>What is ESG and why does it matter?</Title>
-            <Subtitle animate={animationTwo}>The acronym ESG stands for Environmental, Social and Governance. It’s a criterion which is popular in the world of business and investing. ESG is used to identify risks that may be missed through traditional forms of analysis.</Subtitle>
+            <Title animate={animation}><t>ما هو</t><span>ESG</span><t>ولماذا هو مهم؟</t></Title>
+            <Subtitle animate={animationTwo}><p><t>اختصار</t><span>ESG</span><t>لتقف على البيئة والاجتماعية والحوكمة. إنه معيار شائع في عالم الأعمال والاستثمار. يتم استخدام</t><span>ESG</span><t>تحديد المخاطر التي قد لا يتم تفويتها من خلال الأشكال التقليدية للتحليل</t>.</p></Subtitle>
             <VideoTitles animate={animation}>
-                <VideoTitle>Benefits of ESG</VideoTitle>
-                <VideoTitleESG >Intro to ESG Investing</VideoTitleESG>
+                <VideoTitle>ESG فوائد </VideoTitle>
+                <VideoTitleESG ><t>مقدمة عن</t><span>ESG Investing</span></VideoTitleESG>
             </VideoTitles >
             <VideoWrapper>
-                <VideoLeft ><VideoTwo /></VideoLeft>
-                <VideoLeft ><VideoOne /></VideoLeft>
+                <VideoLeft animate={animationThree}><VideoTwo /></VideoLeft>
+                <VideoLeft animate={animationThree}><VideoOne /></VideoLeft>
             </VideoWrapper>
             <Empty>
                 <IconColumnLeft to="esgicons" smooth={true} duration={1000} spy={true} exact="true">

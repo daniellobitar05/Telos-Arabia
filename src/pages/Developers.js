@@ -121,7 +121,7 @@ const Developers = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                x: '-100vw',
             })
         }
         
@@ -138,7 +138,7 @@ const Developers = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         

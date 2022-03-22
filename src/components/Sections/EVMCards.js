@@ -152,24 +152,30 @@ const Resize = styled.div`
 `;
 
 const Text = styled.h1`
-    font-size: 18px;
+    font-size: 24px;
     color: white;
     display: none;
     z-index: -1;
     padding: 10px;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
     p {
         line-height: 10px;
     }
-    span{
-        padding: 0;
-    }
+    
 `;
 
 const InnerText = styled.h2`
-    font-size: 12px;
+    font-size: 18px;
     color: aqua;
     height: 30%;
     transform: scale(1.6) translate(0, 25%);
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
     
 `;
 
@@ -280,10 +286,10 @@ const EVMCards = () => {
              <Column >
                 <Top className="box">  
                     <Image><img src={Friendly} alt="" className="content"/></Image>
-                    <InnerText>ESG COMPLIANCE</InnerText>
+                    <InnerText>ESG الامتثال</InnerText>
                  </Top>
                  <Resize className="expand">
-                 <LinkR to="/ESG"><Text>Telos is the leading blockchain solution for environmental, social and governance concerns. <p><span> LEARN MORE</span></p></Text></LinkR> 
+                 <LinkR to="/ESG"><Text>تيلوس هو حل بلوكشين الرائد للمخاوف البيئية والاجتماعية والحوكمة. <p><span> تعلم أكثر</span></p></Text></LinkR> 
                 </Resize>
              </Column>
              <InnerRow></InnerRow>
@@ -292,10 +298,10 @@ const EVMCards = () => {
              <Column >
                 <Top>  
                     <Image><img src={Fast} alt="" className="content"/></Image>
-                    <InnerText>SPEED & SCALABILITY</InnerText>
+                    <InnerText>السرعة والقدرة على التوسع</InnerText>
                  </Top>
                  <Resize className="expand">
-                    <Text>Telos EVM is the most performant and scalable layer 1 EVM, featuring 10.000 TPS & 0.5s blocktimes <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> LEARN MORE</span></LinkS></p></Text>     
+                    <Text><t>تيلوس</t><span>EVM</span><t>هو الأكثر أداءً وقابلية للتطوير من الطبقة</t><span> EVM</span><t>، ويضم 10.000 </t><span>TPS</span><t>و 0.5 s بلوك تايمز</t> <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> تعلم أكثر</span></LinkS></p></Text>     
                 </Resize>
              </Column>
              <InnerRow></InnerRow>
@@ -304,10 +310,10 @@ const EVMCards = () => {
              <Column >
                 <Top>  
                     <Image><img src={Micro} alt="" className="content"/></Image>
-                    <InnerText>MICRO TRANSACTION DEFI</InnerText>
+                    <InnerText><t>معاملات</t><span>MICRO DEFI</span></InnerText>
                  </Top>
                  <Resize className="expand">
-                    <Text>Thanks to the scalable nature of Telos EVM, users can transact as little as $1 and still see profits <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> LEARN MORE</span></LinkS></p></Text>     
+                    <Text><t>بفضل الطبيعة القابلة للتطوير لـ تيلوس</t><span>EVM</span><t>، يمكن للمستخدمين التعامل بأقل من دولار واحد ولا يزال بإمكانهم رؤية الأرباح</t> <p><LinkS to="evmgraph" smooth={true} duration={1000} spy={true} exact="true"><span> تعلم أكثر</span></LinkS></p></Text>     
                 </Resize>
              </Column>
              <InnerRow></InnerRow>
@@ -316,7 +322,7 @@ const EVMCards = () => {
              <Column >
                 <Top>  
                     <Image><img src={NoFront} alt="" className="content"/></Image>
-                    <InnerText>NO FRONT RUNNING</InnerText>
+                    <InnerText>ممنوع التشغيل الأمامي</InnerText>
                  </Top>
                  <Resize className="expand">
                     <Text>Telos EVM offers a sustainable solution to the million of dollars stolen from traders every month on other EVMs. <p><span><LinkS to="nofront" smooth={true} duration={1000} spy={true} exact="true"> LEARN MORE</LinkS></span></p></Text>     

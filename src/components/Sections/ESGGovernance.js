@@ -28,20 +28,20 @@ const Section = styled.div`
    
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
     width: 60%;
     height: 20vh;
     text-align: center;
     color: white;
-    font-size: 52px;
+    font-size: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
-const Subtitle = styled.div`
-    font-size: 18px;
+const Subtitle = styled(motion.div)`
+    font-size: 24px;
     width: 100%;
     color: ${props => props.theme.text};
     text-align: center; 
@@ -52,6 +52,10 @@ const Subtitle = styled.div`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         width: 90%;
         height: 30vh;
@@ -163,16 +167,57 @@ const ESGGovernance = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw',
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="governance">
-            <Title>Governance</Title>
+        <Section id="governance" ref={ref}>
+            <Title animate={animation}>الحاكمية</Title>
             <Grid>
                 <ColumnLeft> </ColumnLeft>
                 <ColumnRight>
-                    <Subtitle>When Douglas Horn wrote The Telos Whitepaper in 2018, governance was the primary issue that Telos sought to solve. This is because the Telos blockchain operates on a protocol known as Delegated Proof of Stake (DPoS). Without getting into the technical weeds, DPoS gives community members the power to vote for validators that they believe have a vested interest in the network.</Subtitle>
-                    <Subtitle>Strong governance is integral for this protocol to succeed, and Telos has proven this with flying colors. Beyond voting on validators, this governance model can be found in every other area of the network’s operations, from funding proposals through Telos Works to protocol and governance amendments via Telos Amend. You can even see this in committee elections and community polls.</Subtitle>
-                    <Subtitle>This is thanks to Telos Decide, a powerful governance engine that exceeds the capabilities of all other major blockchains. Community members have used Telos Decide to vote on changes in legislature, grant funds to community initiatives, modify network economics and much more.</Subtitle>
-                    <Subtitle>The equitable nature of the tool ensures that all changes represent stakeholder sentiment in a truly democratic yet decentralized fashion. This tool is available to any developers who want to utilize it in their own projects, making honest governance easier to implement than ever before.</Subtitle>
+                    <Subtitle animate={animationTwo}><p><t>عندما كتب دوغلاس هورن المستند التقني لتيلوس في عام 2018 ، كانت الحوكمة هي القضية الأساسية التي سعت تيلوس إلى حلها. هذا لأن تيلوس بلوكشين يعمل على بروتوكول يعرف باسم إثبات الحصة المفوض</t><span>(DPoS).</span><t>بدون الخوض في الاعشاب التقنية ، يمنح</t><span>DPoS</span><t>أعضاء المجتمع القدرة على التصويت لصالح المدققين الذين يعتقدون أن لديهم مصلحة راسخة في الشبكة</t></p></Subtitle>
+                    <Subtitle animate={animationTwo}><p>تعتبر الحوكمة القوية جزءًا لا يتجزأ من نجاح هذا البروتوكول ، وقد أثبتت شركة تيلوس ذلك بأسلوب متقدم. بالإضافة إلى التصويت على المدققين ، يمكن العثور على نموذج الحوكمة هذا في كل منطقة أخرى من عمليات الشبكة ، بدءًا من مقترحات التمويل من خلال عمل تيلوس إلى تعديلات البروتوكول والحوكمة عبر تيلوس أماند. يمكنك حتى رؤية هذا في انتخابات اللجان واستطلاعات الرأي المجتمعية.</p></Subtitle>
+                    <Subtitle animate={animationTwo}><p><t>هذا بفضل</t><span>Telos Decide</span><t>محرك حوكمة قوي يتجاوز قدرات جميع سلاسل الكتل الرئيسية الأخرى. استخدم أعضاء المجتمع</t><span> Telos Decide</span><t>للتصويت على التغييرات في الهيئة التشريعية ومنح الأموال للمبادرات المجتمعية وتعديل اقتصاديات الشبكة وغير ذلك الكثير.</t></p></Subtitle>
+                    <Subtitle animate={animationTwo}><p>تضمن الطبيعة العادلة للأداة أن جميع التغييرات تمثل مشاعر أصحاب المصلحة بطريقة ديمقراطية حقًا ولكن لا مركزية. هذه الأداة متاحة لأي مطورين يرغبون في استخدامها في مشاريعهم الخاصة ، مما يجعل تطبيق الحكم الصادق أسهل من أي وقت مضى.</p></Subtitle>
                 </ColumnRight>
             </Grid>
             <Empty>

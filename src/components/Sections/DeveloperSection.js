@@ -235,7 +235,7 @@ const DeveloperSection = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw',
+                x: '-100vw',
             })
         }
         
@@ -252,7 +252,7 @@ const DeveloperSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         

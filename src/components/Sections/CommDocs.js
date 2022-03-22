@@ -190,9 +190,11 @@ const BottomCard = styled.div`
 
 const CardText = styled.div`
     color: white;
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    width: 70%;
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -233,14 +235,15 @@ const ButtonDiv = styled(LinkR)`
 const GoButton = styled(Button)`
     &&&{
         background: linear-gradient(90deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(47,230,231,1) 100%);
-    font-size: 18px;
+    font-size: 24px;
     margin: 10px;
     color: white;
     font-weight: bold;
     border: 1px solid aqua;
-    border-radius: 15px;
+    border-radius: 25px;
     padding: 6px 20px;
     margin-bottom: 20px;
+    direction: rtl;
     @media screen and (max-width: 768px){
         font-size: 16px;
         margin: 0;
@@ -308,32 +311,32 @@ const CommDocs = () => {
              <Box href="https://drive.google.com/file/d/12d9CXH3gpF7Gftp7mhc6bXbwJjdRYNDD/view" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><GithubIcon /></span></TopCard>
-                        <BottomCard><CardText>Telos Network Brand Assets</CardText></BottomCard>
+                        <BottomCard><CardText>أصول العلامة التجارية لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href={PDF2} target="_blank" rel="noreferrer">
                      <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><APIIcon /></span></TopCard>
-                        <BottomCard><CardText>Telos Network Brand Guidelines</CardText></BottomCard>
+                        <BottomCard><CardText>ارشادات العلامة التجارية لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href="#" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><AgreeIcon /></span></TopCard>
-                        <BottomCard><CardText>Telos Network Operating Agreement</CardText></BottomCard>
+                        <BottomCard><CardText>اتفاقية تشغيل شبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href={PDF} target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                         <TopCard><span><DocIcon /></span></TopCard>
-                        <BottomCard><CardText>Telos Network Whitepaper</CardText></BottomCard>
+                        <BottomCard><CardText>المستند التقني لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 
             </Grid>
             <ButtonDiv to="/About">
                 <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} animate={animationTwo}>
-                <GoButton>Guide To Telos</GoButton>
+                <GoButton>دليل الى تيلوس</GoButton>
                 </motion.div>
             </ButtonDiv>
             <Empty>

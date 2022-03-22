@@ -91,10 +91,14 @@ const Image = styled(motion.img)`
 `;
 
 const Title = styled(motion.h1)`
-    font-size: 30px;
+    font-size: 36px;
     width: 80%;
     color: aqua;
     text-align: center;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 18px;
         width: 90%;
@@ -215,43 +219,33 @@ const EVMIcons = () => {
                 <Column>
                     <Image src={NoFront} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                     <Title animate={animation}>
-                       No front running
+                    لا الجري الأمامي
                     </Title>
                     
                 </Column>
                 <Column>
                         <Image src={NoGas} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                        <Title animate={animation}>
-                        ESG Compliance
-                        </Title>
+                        <Title animate={animation}><t>الامتثال</t><span>ESG</span></Title>
                         
                         </Column>
                         <Column>
                         <Image src={Micro} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                        <Title animate={animation}>
-                        Micro Transaction DeFi
-                        </Title>
+                        <Title animate={animation}><t>عملية مايكرو </t><span>DeFi</span></Title>
                        
                         </Column>
                         <Column>
                         <Image src={Friendly} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                        <Title animate={animation}>
-                        Environmentally Friendly
-                        </Title>
+                        <Title animate={animation}>صديق للبيئة</Title>
                        
                         </Column>
                         <Column>
                         <Image src={Fixed} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                        <Title animate={animation}>
-                        Fixed Gas Fee
-                        </Title>
+                        <Title animate={animation}>رسوم تحويل ثابتة</Title>
                         
                         </Column>
                         <Column>
                         <Image src={Fast} alt="" animate={animation} whileHover={{scale: 1.1}}/>
-                        <Title animate={animation}>
-                        Scalable & Affordable
-                        </Title>
+                        <Title animate={animation}>قابلة للتطوير وبأسعار معقولة</Title>
                         
                         </Column>
             </TextContainer>

@@ -12,14 +12,14 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 
 const Section = styled.div`
     width: 100%;
-    height: 2050vh;
-    background: black;
+    height: 100vh;
+    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-const PageTitle = styled.div`
+const PageTitle = styled(motion.div)`
     font-size: 84px;
     width: 80%;
     height: 30vh;
@@ -29,6 +29,7 @@ const PageTitle = styled.div`
     align-items: center;
     justify-content: flex-end;
     text-align: right;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
 
@@ -36,17 +37,18 @@ const PageTitle = styled.div`
     
 `;
 
-const Title = styled.div`
-    height: 30vh;
+const Title = styled(motion.div)`
+    height: 10vh;
     width: 80%;
-    font-size: 48px;
+    font-size: 62px;
     color: white;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     text-align: right;
-    transform: translate(0, 20%);
+    direction: rtl;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
     }
@@ -56,29 +58,18 @@ const Title = styled.div`
     }
 `;
 
-const Bigtitle = styled.div`
-    height: 40vh;
-    width: 80%;
-    font-size: 62px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-`;
-
-const Article = styled.div`
+const Article = styled(motion.div)`
     width: 70vw;
-    font-size: 32px;
+    font-size: 30px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 30px 0;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
     span{
-        margin: 0 10px;
+        margin: 0 8px;
     }
     a{
         color: aqua;
@@ -91,19 +82,130 @@ const Article = styled.div`
     }
 `;
 
+const ArrowDown = styled(KeyboardArrowDownIcon)`
+    color: white;
+`;
+
+const IconColumnRight = styled(LinkS)`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background: transparent;
+
+`;
+
+const ToggleColumn = styled.div`
+    width: 12.5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+`;
+
+const IconColumnLeft = styled(LinkS)`
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+`;
+const EmptyColumn = styled.div`
+   width: 50%;
+   height: 100%;
+   float: left; 
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: inline-flex;
+`;
+
+const ArrowUp = styled(KeyboardArrowUpIcon)`
+    color: white;
+`;
+
+const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
+    color: white;
+`;
+
 
 
 const DepthLookSection = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop();
+    }
+
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animation = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw'
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="depthlook">
-            <PageTitle>In Depth Look at Tokenomics</PageTitle>
-            <Title>Genesis</Title>
-            <Article>The TLOS token was created in 2018 when the network genesis snapshot was taken. The genesis snapshot derived from the EOS network, with accounts capped at 40,000 TLOS. This was done to curb the potential of “whale investors” and keep ownership fairly distributed.</Article>
-            <Article>330,753,222 TLOS total were created in this initial snapshot. 12 million of these initial tokens were distributed to the Telos Founders Rewards Pool and Telos Foundation. This allowed the network to launch in a grassroots fashion, without any ICO or Venture Capital funding. This is a rarity in many modern blockchains, but a necessity for DPoS networks to be truly decentralized.</Article>
-            <Article>nitially the network paid Block Producers through inflation of supply. However, this was halted in the summer of 2019, when the Telos Economic Development Plan 1.0 (TEDP1)  was passed.</Article>
-            <Title>TLOS Reserves</Title>
-            <Article>With TEDP1 the community decided to halt TLOS supply inflation, capping the total supply at 355,208,370.6674 TLOS. Instead of creating new tokens, the community agreed to pay for network operations through the Exchange Token Reserve Fund (exrsrv.tf). These tokens were created for exchanges to retrieve on behalf of their customers, but never claimed.</Article>
-            <Article>Eventually, when funds are exhausted from the Exchange Token Reserve Fund, the network will be funded by the TLOSrecovery account. These are funds created for possible account holders that were also never claimed.</Article>
+        <Section id="depthlook" ref={ref}>
+            <PageTitle animate={animation}>في نظرة متعمقة في اقتصاد العملة</PageTitle>
+            <Title animate={animation}>منشأ</Title>
+            <Article animate={animationTwo}><p><t>تم إنشاء رمز تيلوس المميز في عام 2018 عندما تم التقاط لقطة تكوين الشبكة. لقطة</t><span>Genesis</span><t>المستمدة من شبكة</t><span>EOS ,</span><t>ذات الحسابات المحددة بـ</t><span>40000 TLOS. </span><t>تم القيام بذلك للحد من إمكانات "مستثمري الحيتان" والحفاظ على توزيع الملكية بشكل عادل.</t></p></Article>
+            <Article animate={animationTwo}><p><t>تم إنشاء إجمالي</t><span>330،753،222 TLOS</span><t>في هذه اللقطة الأولية. تم توزيع 12 مليون من هذه الرموز المميزة الأولية على تيلوس</t><span>Founders Rewards Pool</span><t>و شركة تيلوس. سمح ذلك للشبكة بالإطلاق بطريقة شعبية ، دون أي تمويل أولي للعملة أو رأس المال الاستثماري. يعد هذا أمرًا نادرًا في العديد من سلاسل الكتل الحديثة ، ولكنه ضرورة لأن تكون شبكات</t><span>DPoS</span><t>لا مركزية حقًا.</t></p></Article>
+            <Empty>
+                <IconColumnLeft to="depthlooktwo" smooth={true} duration={1000} spy={true} exact="true">
+                <IconButton><ArrowDown /></IconButton>
+                </IconColumnLeft>
+            <EmptyColumn></EmptyColumn>
+                <IconColumnRight to="supply" smooth={true} duration={1000} spy={true} exact="true">
+                    <IconButton ><ArrowUp /></IconButton>
+                </IconColumnRight>
+                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
+            </Empty>
+            {/* 
             <Article>There is enough funding in these reserves to last until 2024 at the current payout rate. However, the funds are expected to last much longer through tokenomic amendments which can be enacted by the community.</Article>
             <Article>Because the network is funded by reserves, the circulating supply increases overtime but the amount of TLOS in existence does not. Once all reserves are exhausted, the community may decide to introduce inflation of supply at a low rate that is beneficial to everyone. Alternatively, the network may be funded by charging for certain premium services. All of this is in the hands of the stakeholders, in a truly decentralized way.</Article>
             <Title>Funded Bodies</Title>
@@ -150,7 +252,7 @@ const DepthLookSection = () => {
             <Title>Conclusion: Holding TLOS is Like Holding the Future of Telos</Title>
             <Article>As previously explained, all network initiatives are funded with the TLOS token, including the Telos Foundation, Block Producers (Validators), REX, Telos Core Devs, Economic Development Fund and Worker Proposal System. Because of this, TLOS is the funding vehicle that powers every aspect of Telos.</Article>
             <Article>When you pair this with governance, you have a token that is extremely unique. Holding TLOS allows you to take part in democratic decisions surrounding how the remaining resources are utilized.</Article>
-            <Article>With this in mind, the true utility of TLOS is that it empowers the network to continue evolving, as it sustains itself in a way that mutually benefits all network users and token holders.</Article>
+            <Article>With this in mind, the true utility of TLOS is that it empowers the network to continue evolving, as it sustains itself in a way that mutually benefits all network users and token holders.</Article> */}
         </Section>
     )
 }

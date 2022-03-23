@@ -17,7 +17,7 @@ import EVM3 from "../images/evm3.png";
 
 const ArrowLeft = styled(KeyboardArrowLeftIcon)`
     color: white;
-    transform: translate(-50%, 0);
+    transform: translate(-450%, 0);
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`

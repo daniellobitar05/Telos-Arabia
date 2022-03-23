@@ -95,6 +95,10 @@ const Title = styled(motion.div)`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         height: 10vh;
         font-size: 32px;
@@ -175,8 +179,13 @@ const TextHolder = styled.div`
     color: white;
     width: 100%;
     height: 30%;
-    font-size: 24px;
+    font-size: 28px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    text-align: center;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         height: 20%;
         font-size: 14px;
@@ -232,22 +241,22 @@ const EVMLatest = () => {
 
     return(
         <Section id="evmlatest" ref={ref}>
-            <Title animate={animation}>Latest on Telos EVM</Title>
+            <Title animate={animation}><p><t>الأحدث على تيلوس</t><span>EVM</span></p></Title>
             <ButtonWrapper>
-            <LinkR to="/News"><Button animate={animation} whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>SHOW ALL NEWS</Button></LinkR>
+            <LinkR to="/News"><Button animate={animation} whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>عرض كل الأخبار</Button></LinkR>
             </ButtonWrapper>
             <Grid animate={animationTwo}>
                 <Column  whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/important-telos-ecosystem-update" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={news} alt="" /></ImageHolder>
-                    <TextHolder>Important Telos ecosystem update</TextHolder>
+                    <TextHolder>تحديث مهم لنظام تيلوس البيئي</TextHolder>
                 </Column>
                 <Column  whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/sushiswap-partners-with-telos" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={sushi} alt="" /></ImageHolder>
-                    <TextHolder style={{transform: 'translate(0, 50%)'}}>SushiSwap partners with Telos and launches on the Telos EVM</TextHolder>
+                    <TextHolder style={{transform: 'translate(0, 50%)'}}><p><t>تتعاون</t><span>SushiSwap</span><t>مع تيلوس ويتم إطلاقها على تيلوس</t><span>EVM</span></p></TextHolder>
                 </Column>
                 <Column  whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/telospunks-come-to-telos-evm" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={punks} alt="" /></ImageHolder>
-                    <TextHolder>Telos Punks Comes to the EVM</TextHolder>
+                    <TextHolder><p><t>تيلوس بانكس يأتي إلى</t><span>EVM</span></p></TextHolder>
                 </Column>
             </Grid>
             <Empty>

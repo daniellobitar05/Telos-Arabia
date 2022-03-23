@@ -46,6 +46,10 @@ const Title = styled(motion.div)`
     color: white;
     font-size: 72px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 32px;
         height: 25%;
@@ -93,11 +97,15 @@ const Icon = styled.div`
 
 const IconText = styled.div`
     height: 100%;
-    width: 70%;
-    font-size: 20px;
+    width: 90%;
+    font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 16px;
     }
@@ -411,23 +419,23 @@ const EVMGraphSection = () => {
             
             <Columns >
                 <ColumnLeft>
-                <Title animate={animationThree}>Speed & Scalability</Title>
+                <Title animate={animationThree}>السرعة وقابلية التوسع</Title>
                 <LeftTitle animate={animationTwo}>
                     <Row>
                         <Icon><img src={Speed1} alt="" /></Icon>
-                        <IconText>0.5 Second Block Times</IconText>
+                        <IconText><p><span>0.5</span><t>ثانية بلوك تايمز</t></p></IconText>
                     </Row>
                     <Row>
                         <Icon><img src={Speed2} alt="" /></Icon>
-                        <IconText>As little as 1/1000th the cost of Ethereum</IconText>
+                        <IconText><p><t>أقل من</t><span>1/1000</span><t>من تكلفة</t><span>Ethereum</span></p></IconText>
                     </Row>
                     <Row>
                         <Icon><img src={Speed3} alt="" /></Icon>
-                        <IconText>Over 100x the capacity of Ethereum</IconText>
+                        <IconText><p><t>أكثر من</t><span>100</span><t>ضعف قدرة</t><span>Ethereum</span></p></IconText>
                     </Row>
                     <Row>
                         <Icon><img src={Speed4} alt="" /></Icon>
-                        <IconText>Up to 10,000 Transactions/Second</IconText>
+                        <IconText><p><t>بحد أقصى</t><span>10،000</span><t>معاملة / ثانية</t></p></IconText>
                     </Row>
                 </LeftTitle>
                 

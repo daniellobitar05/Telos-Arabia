@@ -130,7 +130,7 @@ const ColumnRight = styled.div`
 `;
 
 const Title = styled(motion.div)`
-    width: 100%;
+    width: 80%;
     height: 30%;
     text-align: right;
     color: white;
@@ -138,6 +138,10 @@ const Title = styled(motion.div)`
     display: flex;
     align-items: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 28px;
         height: 20%;
@@ -149,10 +153,14 @@ const Subtitle = styled(motion.div)`
     width: 90%;
     height: 35%;
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     display: flex;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 16px;
         height: 40%;
@@ -172,6 +180,10 @@ const ColumnTitle = styled.div`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         font-size: 16px;
         
@@ -237,15 +249,15 @@ const EVMChartSection = () => {
         <Section id="evmchart" ref={ref}>
             <Wrapper>
                 <ColumnLeft animate={animationThree}>
-                    <ColumnTitle >Cumulative Extracted MEV</ColumnTitle>
+                    <ColumnTitle ><p><t>المستخرج التراكمي</t><span>MEV</span></p></ColumnTitle>
                     <ImageWrapper>
                     <img src={Graph} alt="" />
                     </ImageWrapper>
                 </ColumnLeft>
                 <ColumnRight>
-                    <Title animate={animationThree}>How Telos EVM Outruns Front-Running</Title>
-                    <Subtitle animate={animationTwo}>Telos is a third generation blockchain that is extremely fast, creating two new blocks every second. This leaves little time for bots to scan the mempool for valuable trades. Furthermore, a fixed-rate gas fee on Telos EVM transactions means that no one can jump ahead of another person by offering a higher fee.</Subtitle>
-                    <Subtitle animate={animationTwo}>Most important of all, Telos is a blockchain that’s governed by its community, with clear rules of what its validators are allowed to do and the penalties for breaking these rules. On Telos, all block producers must process transactions on a first-in, first-out basis, as they receive them. They cannot reorder transactions for profits. Together, these factors provide strong protection from any front-running on Telos EVM.</Subtitle>
+                    <Title animate={animationThree}><p><t>كيف تتفوق تيلوس</t><span>EVM</span><t>على التشغيل الأمامي</t></p></Title>
+                    <Subtitle animate={animationTwo}><p><t>تيلوس هو الجيل الثالث من بلوكشين وهو سريع للغاية ، حيث يتم إنشاء كتلتين جديدتين كل ثانية. هذا يترك القليل من الوقت للروبوتات لمسح ميم بول بحثًا عن صفقات قيمة. علاوة على ذلك ، فإن رسوم الغاز الثابتة على معاملات تيلوس</t><span>EVM</span><t>تعني أنه لا يمكن لأحد القفز قبل شخص آخر من خلال تقديم رسوم أعلى.</t></p></Subtitle>
+                    <Subtitle animate={animationTwo}><p><t>الأهم من ذلك كله ، أن تيلوس عبارة عن بلوكشين يحكمها مجتمعها ، مع قواعد واضحة لما يُسمح للمدققين بفعله والعقوبات المفروضة على انتهاك هذه القواعد. في تيلوس ، يجب على جميع منتجي الكتل معالجة المعاملات على أساس الوارد أولاً يصرف أولاً عند استلامهم لها. لا يمكنهم إعادة ترتيب المعاملات للأرباح. توفر هذه العوامل معًا حماية قوية من أي تشغيل أمامي على تيلوس</t><span>EVM.</span></p></Subtitle>
                 </ColumnRight>
             </Wrapper>
             <Empty>

@@ -23,7 +23,7 @@ import Back1 from "../images/back1.jpeg";
 
 const ArrowLeft = styled(KeyboardArrowLeftIcon)`
     color: white;
-    transform: translate(-50%, 0);
+    transform: translate(-450%, 0);
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -183,8 +183,12 @@ const Subtitle = styled(motion.a)`
     display: flex;
     padding: 5px 0;
     justify-content: center;
-    font-size: 18px;
+    font-size: 26px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
     @media screen and (max-width: 768px){
         justify-content: center;
         text-align: center;
@@ -259,16 +263,16 @@ const EVMStartNow = () => {
                     <Box>
                         <Image animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}}  src={Ball2} alt="" /></Image>
                         <Text animate={animation}>DEFI DEMO</Text>
-                        <Subtitle  animate={animationTwo}>Experience the fsastest , most performant EVM with the demo AMM running on the telos EVM testnet.</Subtitle>
-                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
+                        <Subtitle  animate={animationTwo}><p><t>جرب أسرع</t><span>EVM</span><t> وأكثرها أداءً مع العرض التوضيحي</t><span>AMM</span><t>لذي يعمل على شبكة اختبار تيلوس</t><span>EVM</span></p></Subtitle>
+                        <Subtitle href="https://demo.telos.finance/" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />تعلم أكثر</Subtitle>
                     </Box>
                 </Column>
                 <Column>
                     <Box>
                     <WalletImage animate={animation}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: 10, scale: 0.85}} transition={{duration: 0.3, type: 'tween'}} src={EVM2} alt="" /></WalletImage>
-                        <Text animate={animation}>PARTNERSHIP</Text>
-                        <Subtitle  animate={animationTwo}>If you are a project, developer or investor, interested in joining the Telos ecosystem, would love to hear from you!</Subtitle>
-                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />LEARN MORE</Subtitle>
+                        <Text animate={animation} style={{fontSize: '56px'}}>شراكة</Text>
+                        <Subtitle  animate={animationTwo}><p>إذا كنت مشروعًا أو مطورًا أو مستثمرًا ، مهتمًا بالانضمام إلى نظام تيلوس البيئي ، فأنت تحب أن تسمع منك!</p></Subtitle>
+                        <Subtitle href="https://docs.google.com/forms/d/e/1FAIpQLScdeQFQpeJw_12zHwqdFkG8jMtHrw39kWlx4DEkJ3id586fog/viewform" target="_blank" rel="noreferrer" animate={animationTwo}><ArrowLeft />تعلم أكثر</Subtitle>
 
                     </Box>
                 </Column>

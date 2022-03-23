@@ -150,12 +150,16 @@ const Subtitle = styled(motion.div)`
     width: 80%;
     height: 50%;
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     display: flex;
     padding: 10px 30px;
-    transform: translate(15%, 0);
+    
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     text-align: right;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
      @media screen and (max-width: 768px){
         transform: translate(0, 0);
         font-size: 18px;
@@ -199,7 +203,7 @@ const EVMMicroSection = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0, x: '100px',
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -207,7 +211,7 @@ const EVMMicroSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px', x: '100px'
             })
         }
         
@@ -218,7 +222,7 @@ const EVMMicroSection = () => {
             <Wrapper>
                 <ColumnLeft>
                     <Title animate={animation}>Global Micro Transaction DeFi</Title>
-                    <Subtitle animate={animationTwo}>The low transaction costs and fixed gas fees of Telos EVM will revolutionize the landscape of the DeFi industry. The scalable nature means that users from around the world will be able to transact amounts as little as $1 and still see profit. A practice that’s impossible on other EVMs due to their fluctuating gas fees and high transaction costs.</Subtitle>
+                    <Subtitle animate={animationTwo}><p><t>ستحدث تكاليف المعاملات المنخفضة ورسوم الغاز الثابتة لشركة تيلوس</t><span>EVM</span><t>ثورة في مشهد صناعة </t><span>DeFi.</span><t>تعني الطبيعة القابلة للتطوير أن المستخدمين من جميع أنحاء العالم سيكونون قادرين على التعامل بمبالغ صغيرة تصل إلى دولار واحد وسيظلون يرون الأرباح. ممارسة مستحيلة على أجهزة</t><span>EVM</span><t>الأخرى نظرًا لرسوم الغاز المتقلبة وتكاليف المعاملات المرتفعة.</t></p></Subtitle>
                 </ColumnLeft>
                 <ColumnRight animate={animation}>
                     <img src={Image} alt="" />

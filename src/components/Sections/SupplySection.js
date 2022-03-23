@@ -170,16 +170,24 @@ const Title = styled(motion.div)`
     width: 100%;
     height: 20%;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
 `;
 
 const Subtitle = styled(motion.div)`
     display: flex;
     align-items: center;
     color: white;
-    font-size: 18px;
+    font-size: 28px;
     width: 80%;
     height: 30%;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
 `;
 
 const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
@@ -226,7 +234,7 @@ const SupplySection = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                x: 0,
+                x: '-10vw',
                 transition: {
                     duration: 1, 
                 }
@@ -243,7 +251,7 @@ const SupplySection = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0, x: '-2vw',
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -251,7 +259,7 @@ const SupplySection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '100px',
+                opacity: 0, y: '100px', x: '-2vw',
             })
         }
         
@@ -278,9 +286,9 @@ const SupplySection = () => {
         <Section id="supply" ref={ref}>
             <Grid>
                 <ColumnLeft>
-                    <Title animate={animationThree}>TLOS Total Supply</Title>
-                    <Subtitle animate={animationTwo}>TLOS has a current total supply of TLOS at 355 million. This means there are far less tokens available (supply) when compared to other blockchains.</Subtitle>
-                    <Subtitle animate={animationTwo}>The current rate of inflation to total supply is 0%, which could rise to 1% in the future to account for payments to block producers. Currently, block producers and other important entities are paid by the network's reserve funds, as voted on by token holders.</Subtitle>
+                    <Title animate={animationThree}>إجمالي عرض تيلوس</Title>
+                    <Subtitle animate={animationTwo}><p>يبلغ إجمالي العرض الحالي لـ 355 مليون تيلوس. هذا يعني أن هناك عددًا أقل بكثير من الرموز المتاحة (التوريد) عند مقارنتها بسلسلة الكتل الأخرى.</p></Subtitle>
+                    <Subtitle animate={animationTwo}><p>معدل التضخم الحالي لإجمالي العرض هو 0٪ ، والذي قد يرتفع إلى 1٪ في المستقبل لحساب المدفوعات لمنع المنتجين. حاليًا ، يتم الدفع لمنتجي الكتل والكيانات المهمة الأخرى من خلال الصناديق الاحتياطية للشبكة ، وفقًا لتصويت حاملي الرموز.</p></Subtitle>
                 </ColumnLeft>
                 <ColumnRight animate={animationFour}>
                 <TopRow><Item>Circulating: 243M +</Item></TopRow>

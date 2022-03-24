@@ -25,8 +25,8 @@ import ESGConclusion from "../components/Sections/ESGConclusion";
 import ESGLatest from "../components/Sections/ESGLatest";
 import Footer from "../components/Sections/Footer";
 
-import Ball1 from "../components/images/telos_ball3.png";
-import Ball2 from "../components/images/telos_ball1.png";
+import Ball1 from "../components/images/rou7.png";
+import Ball2 from "../components/images/rou6.png";
 
 
 const Section = styled.div`
@@ -73,9 +73,10 @@ const ImageLeft = styled.div`
     }
     img{
         
-        width: 100%;
-        height: 100%;
+        width: 150%;
+        height: 150%;
         object-fit: cover;
+        transform: translate(-25%, -15%);
     }
 
 
@@ -97,9 +98,10 @@ const ImageRight = styled.div`
 
     img{
         
-        width: 100%;
-        height: 100%;
+        width: 125%;
+        height: 125%;
         object-fit: cover;
+        transform: translate(-15%, -5%);
     }
 
 

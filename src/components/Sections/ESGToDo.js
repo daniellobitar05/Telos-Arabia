@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import SilverLogo from "../images/plain_silver_logo.png";
+import SilverLogo from "../images/pyr6.png";
 
 const Section = styled.div`
     width: 100%;
@@ -158,8 +158,8 @@ const ColumnLeft = styled(motion.div)`
         height: 50%;
     }
     img{
-        width: 600px;
-        transform: translate(5%, 0);
+        width: 550px;
+        
         @media screen and (max-width: 768px){
         width: 300px;
         transform: translate(0, 0);
@@ -178,7 +178,7 @@ const BoxRow = styled.div`
     font-size: 26px;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    transform: translate(0, -10%);
+    transform: translate(-30%, -10%);
     direction: rtl;
     span{
         margin: 0 10px;
@@ -201,7 +201,7 @@ const BoxRowBottom = styled.div`
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
-    transform: translate(-25%, 20%);
+    transform: translate(-50%, 20%);
     @media screen and (max-width: 768px){
         font-size: 16px;
         transform: translate(0%, 20%);
@@ -245,7 +245,7 @@ const ESGToDo = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0, x: '80px',
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -253,7 +253,7 @@ const ESGToDo = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px', x: '80px'
             })
         }
         

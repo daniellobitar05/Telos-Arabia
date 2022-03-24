@@ -10,14 +10,19 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import Back from "../images/pyr8.png";
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.back8};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: url(${Back}), ${props => props.theme.back8};
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 `;
 
 const Title = styled(motion.div)`

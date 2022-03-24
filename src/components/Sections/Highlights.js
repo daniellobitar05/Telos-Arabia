@@ -10,6 +10,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import Back from "../images/pyr4.png";
+
 import TickBack from "../SVG/telos_logo.svg"; 
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -90,6 +92,7 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 `;
 
 const ColumnRight = styled(motion.div)`
@@ -237,7 +240,7 @@ const Highlights = () => {
         <Section id="highlights" ref={ref}> 
             <Grid >
                 <ColumnLeft>
-                    
+                    <img src={Back} alt="back" />
                 </ColumnLeft>
                 <ColumnRight variants={ContainerVariants} initial='start' animate='end'>
                     <Item>

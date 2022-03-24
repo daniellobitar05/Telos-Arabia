@@ -209,7 +209,7 @@ const Tokenomics = () => {
             <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="tokenomics" ref={ref}>
                     <SpinningText text="رموز تيلوس الرمزية : فهم قيمة تيلوس">
-                       <motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: [0, 360, 0], scale: 1.05, cursor: 'pointer'}} whileTap={{scale:0.7}} transition={{duration: 1, type: 'spring', stiffness: 300}} src={Ball} alt="ball" /> 
+                       <LinkS to="highlights" smooth={true} duration={500} spy={true} exact="true"><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: [0, 360, 0], scale: 1.05, cursor: 'pointer'}} whileTap={{scale:0.9}} transition={{duration: 1, type: 'spring', stiffness: 300}} src={Ball} alt="ball" /></LinkS>
                     </SpinningText>
                     {/* <Grid>
                     <ColumnLeft>
@@ -220,7 +220,7 @@ const Tokenomics = () => {
                     <ColumnRight>
                     </ColumnRight>
                     </Grid> */}
-                </Section>
+                </Section> 
                 <Highlights />
                 <SupplySection />
                 <DepthLookSection />

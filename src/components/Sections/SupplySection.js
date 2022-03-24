@@ -10,7 +10,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import TickBack from "../SVG/telos_logo.svg"; 
+
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;

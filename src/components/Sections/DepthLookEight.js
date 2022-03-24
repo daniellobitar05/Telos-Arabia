@@ -10,6 +10,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import BSC from "../SVG/logos/BSC.svg";
+import ETH from "../SVG/logos/eth.svg";
+import Telos from "../SVG/telos_letter_logo.svg";
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
@@ -18,6 +22,7 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 `;
 
 const Title = styled(motion.div)`
@@ -32,12 +37,42 @@ const Title = styled(motion.div)`
     text-align: right;
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    background-image: url(${BSC}), url(${ETH});
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    background-position: 85% 50%, 17% 50%;
     span{
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+    }
+`;
+
+const ArticleUp = styled(motion.div)`
+    width: 70vw;
+    font-size: 30px;
+    height: 30vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    
+    span{
+        margin: 0 8px;
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
     }
 `;
 
@@ -175,7 +210,7 @@ const DepthLookEight = () => {
     return(
         <Section id="depthlookeight" ref={ref}>
             <Title animate={animation}>TLOS BEP-20 و TLOS ERC-20</Title>
-            <Article animate={animationTwo}><p><t>من الممكن استخدام تيلوس خارج الشبكة الرئيسية الأصلية لـ تيلوس ، من خلال إصدارات</t><span>ERC-20</span><t>و</t><span>BEP-20</span><t>من تيلوس. يتوفر</t><span>ERC-20</span><t>تيلوس على شبكة</t><span>Ethereum mainnet</span><t>و</t><span>BEP-20 TLOS</span><t>متاح على</t><span>Binance Smart Chain</span><t>(BSC).</t></p></Article>
+            <ArticleUp animate={animationTwo}><p><t>من الممكن استخدام تيلوس خارج الشبكة الرئيسية الأصلية لـ تيلوس ، من خلال إصدارات</t><span>ERC-20</span><t>و</t><span>BEP-20</span><t>من تيلوس. يتوفر</t><span>ERC-20</span><t>تيلوس على شبكة</t><span>Ethereum mainnet</span><t>و</t><span>BEP-20 TLOS</span><t>متاح على</t><span>Binance Smart Chain</span><t>(BSC).</t></p></ArticleUp>
             <Article animate={animationTwo}><p><t>صبح هذا ممكنًا من خلال الجسور التي تم فتحها بين تيلوس وهذه الشبكات الأخرى في عام 2021 ، عبر</t><span>pTokens.</span><t>هذه إصدارات مغلفة من تيلوس والتي يمكن نقلها داخل وخارج شبكة تيلوس الرئيسية الأصلية في أي وقت. لا يؤدي القيام بذلك إلى إنشاء رموز إضافية ، ومن المهم ملاحظة أن أي تيلوس موجود على</t><span>Ethereum</span><t>أو BSC مدرج في إجمالي التوريد البالغ 355 مليون تيلوس.</t></p></Article>
 
 

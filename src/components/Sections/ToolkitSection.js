@@ -96,6 +96,7 @@ const Column = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
@@ -112,6 +113,7 @@ const Box = styled(motion.a)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid purple;
     &:hover{
         background: rgb(230,230,250,0.2);
     }
@@ -142,7 +144,7 @@ const BottomCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     height: 60%; 
 `;
 

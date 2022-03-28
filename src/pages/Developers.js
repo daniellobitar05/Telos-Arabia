@@ -166,7 +166,7 @@ const Developers = () => {
             </IconHolder>
         </Section>
         <DeveloperSection />
-        <DevDocsSection />
+        <DevDocsSection /> 
         <DevStackSection />
         <ToolkitSection />
         <JoinDevSection />

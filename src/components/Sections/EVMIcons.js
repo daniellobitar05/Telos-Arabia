@@ -247,7 +247,7 @@ const EVMIcons = () => {
                         <Image src={Fast} alt="" animate={animation} whileHover={{scale: 1.1}}/>
                         <Title animate={animation}>قابلة للتطوير وبأسعار معقولة</Title>
                         
-                        </Column>
+                        </Column> 
             </TextContainer>
             <RowEmptySmart />
             <Empty>

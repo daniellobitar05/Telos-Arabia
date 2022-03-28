@@ -156,6 +156,7 @@ const Card = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid purple;
     &:hover{
         background: rgb(230,230,250,0.2);
     }

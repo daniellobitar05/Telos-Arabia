@@ -12,7 +12,8 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {IconButton} from "@mui/material";
 import Footer from "../components/Sections/Footer";
-import Picture from "../components/images/news/news2.jpg";
+import Picture from "../components/images/roadmap.jpeg";
+
 
 import R1 from "./roadmap/R1";
 import R2 from "./roadmap/R2";
@@ -36,6 +37,8 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    
     @media screen and (max-width: 768px){
         height: 100vh;
     }

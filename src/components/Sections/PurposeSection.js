@@ -9,6 +9,12 @@ import {IconButton} from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+import Qudo from "../images/eco/qudo.svg";
+import zepta from "../images/zepta.png";
+import dstor from "../images/eco/dstor.svg";
+import appics from "../images/eco/appics.svg";
+import sesa from "../images/eco/sesa2.png";
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
@@ -26,7 +32,7 @@ const HeaderText = styled(motion.div)`
     width: 100%;
     height: 15vh;
     text-align: center;
-    font-size: 16px;
+    font-size: 24px;
     color: white;
     display: flex;
     align-items: center;
@@ -39,10 +45,11 @@ const HeaderText = styled(motion.div)`
 
 const Title = styled(motion.div)`
     width: 80%;
-    height: 20vh;
+    height: 10vh;
     text-align: center;
     color: white;
     font-size: 48px;
+    direction: rtl;
     @media screen and (max-width: 768px){
         font-size: 26px;
         height: 15vh;
@@ -52,7 +59,7 @@ const Title = styled(motion.div)`
 
 const Wrapper = styled.div`
     width: 90%;
-    height: 55vh;
+    height: 65vh;
     @media screen and (max-width: 768px){
         
         height: 120vh;
@@ -84,47 +91,90 @@ const ColumnRight = styled.div`
     float: left;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
         height: 50%;
-        justify-content: center;
-        align-items: center;
+        
     }
     
 `;
 
 const BoxTitle = styled(motion.div)`
-    height: 30%;
+    height: 20%;
     width: 100%;
     color: aqua;
-    font-size: 24px;
+    font-size: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    direction: rtl;
     @media screen and (max-width: 768px){
         font-size: 16px;
     }
     
 `;
 
+
 const Subtitle = styled(motion.div)`
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
     text-align: center;
-    font-size: 16px;
+    font-size: 22px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    line-height: 35px;
+    span{
+        margin: 0 5px;
+    }
+    a{
+        text-decoration: none;
+        color: aqua;
+    }
     @media screen and (max-width: 768px){
         font-size: 14px;
         width: 90%;
         text-align: center;
         
+    }
+`;
+
+const IconHolder = styled.div`
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const IconRow = styled(motion.div)`
+    width: 100%;
+    height: 40%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+`;
+
+const Icon = styled.div`
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        transform: scale(0.7);
     }
 `;
 
@@ -177,6 +227,7 @@ const PurposeSection = () => {
 
     const animation = useAnimation();
     const animationTwo = useAnimation();
+    const animationThree = useAnimation();
 
     useEffect(() => {
         if(inView){
@@ -212,18 +263,46 @@ const PurposeSection = () => {
         
     }, [inView])
 
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, y: '20px',
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
         <Section id="purpose" ref={ref}>
-            <HeaderText animate={animation}>OUR PURPOSE</HeaderText>
-            <Title animate={animation}>Power the economy of the future, ignite the highest potential of humans</Title>
+            <HeaderText animate={animation}>غرضنا</HeaderText>
+            <Title animate={animation}>قم بتشغيل اقتصاد المستقبل ، وإشعال أعلى إمكانات البشر</Title>
             <Wrapper>
                 <ColumnLeft>
-                <BoxTitle animate={animationTwo} style={{height: '20%'}}>A growing base</BoxTitle>
-                <Subtitle animate={animationTwo} style={{height: '80%'}}>Telos is home to more than 30 core developers, over 50 validator teams, dozens of innovative products, complemented by 100s of active community contributors. The broader Telos community includes more than 900,000 user accounts on the network, over 6,000 followers on our Telegram groups and other social channels, and over 150 companies from over 180 countries, Developers are working to build over 100 distributed applications on Telos as of early 2021, including the music rights-trading platform Zeptagram, gaming platform QUDO, Social media platform Appics, decentralized storage solution dStor and the payments system Sesacash. A full list of dApps on Telos is available here.</Subtitle>
+                <BoxTitle animate={animationTwo} ><p><t>قاعدة متنامية</t></p></BoxTitle>
+                <Subtitle animate={animationTwo} ><p><t>تيلوس هي موطن لأكثر من 30 مطورًا أساسيًا ، وأكثر من 50 فريقًا للتحقق من الصحة ، وعشرات من المنتجات المبتكرة ، يكملها 100 من المساهمين النشطين في المجتمع. يضم مجتمع تيلوس الأوسع أكثر من 900000 حساب مستخدم على الشبكة ، وأكثر من 6000 متابع على مجموعات تيليغرام والقنوات الاجتماعية الأخرى ، وأكثر من 150 شركة من أكثر من 180 دولة ، يعمل المطورون على بناء أكثر من 100 تطبيق موزع على تيلوس اعتبارًا من أوائل عام 2021 ، بما في ذلك منصة تداول حقوق الموسيقى</t><span><a href="https://zeptagram.com/" target="_blank" rel="noreferrer">Zeptagram</a></span><t>، ومنصة الألعاب</t><span><a href="https://qudo.io/" target="_blank" rel="noreferrer">QUDO</a></span><t>، ومنصة الوسائط الاجتماعية</t><span><a href="https://appics.com/" target="_blank" rel="noreferrer">Appics</a></span><t>، وحل التخزين اللامركزي</t><span>dStor</span><t>ونظام المدفوعات</t><span><a href="https://sesacash.com/" target="_blank" rel="noreferrer">Sesacash</a>.</span><t>قائمة كاملة من</t><span>dApps</span><t>على تيلوس متاحة هنا</t></p></Subtitle>
                 </ColumnLeft>
                 <ColumnRight>
-                <BoxTitle animate={animationTwo}>A truly decentralized network operated by visionaries, technologists, builders, trail blazers and active stakeholders</BoxTitle>
-                <Subtitle animate={animationTwo}>The Telos ecosystem has been paving the way to Web 3.0 ever since the mainnet went live in 2018. Launching with no ICO or VC funding has allowed the network to grow in a truly decentralized fashion. Telos’ strong governance structure, complimented by a suite of powerful Telos Decide tools, empowers token holders. Telos is an open network, where everyone has an equal opportunity to contribute and impact to the direction of the chain.</Subtitle>
+                <BoxTitle animate={animationThree}>شبكة لا مركزية حقًا يديرها أصحاب الرؤى والتقنيون والبناؤون والسائقون وأصحاب المصلحة النشطون</BoxTitle>
+                <Subtitle animate={animationThree}><p><t>يمهد نظام تيلوس البيئي الطريق إلى ويب 3.0 منذ بدء تشغيل الشبكة الرئيسية في عام 2018. وقد سمح الإطلاق بدون تمويل</t><span>ICO</span><t>أو</t><span>VC</span><t>للشبكة بالنمو بطريقة لا مركزية حقًا. تعمل بنية الحوكمة القوية لشركة تيلوس ، التي تكملها مجموعة من أدوات تيلوس</t><span>Decide</span><t>القوية ، على تمكين حاملي الرموز المميزة. تيلوس هي شبكة مفتوحة ، حيث يتمتع كل فرد بفرصة متساوية للمساهمة والتأثير في اتجاه السلسلة.</t></p></Subtitle>
+                <IconHolder>
+                    <IconRow animate={animationTwo}>
+                        <Icon><img src={Qudo} alt="icon1" /></Icon>
+                        <Icon><img src={zepta} alt="zepta" style={{transform: 'scale(0.3)'}}/></Icon>
+                        <Icon><img src={dstor} alt="dstor" /></Icon>
+                    </IconRow>
+                    <IconRow animate={animationTwo}>
+                        <Icon><img src={appics} alt="appics" style={{transform: 'scale(0.5)'}}/></Icon>
+                        <Icon><img src={sesa} alt="sesa" /></Icon>
+                    </IconRow>
+                </IconHolder>
                 </ColumnRight>
             </Wrapper>
             <Empty>

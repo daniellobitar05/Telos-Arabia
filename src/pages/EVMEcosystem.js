@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import styled from "styled-components"
 import {motion} from "framer-motion";
-import {Link as LinkS} from "react-scroll";
+import {Link as LinkR} from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
@@ -47,7 +47,8 @@ const Button = styled.button`
     border: 2px solid aqua;
     margin: 3px;
     cursor: pointer;
-
+    display: flex;
+    align-items: center;
     &:active{
         background: rgb(65, 98, 168);
         color: white;
@@ -132,6 +133,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
            <Button onClick={() => setActivePlatform(7)}>BLOCK EXPLORER</Button>
            <Button onClick={() => setActivePlatform(8)}>DEFI</Button>
            <Button onClick={() => setActivePlatform(9)}>TOOLS</Button>
+           <LinkR to="/NativeEcosystem"><Button><KeyboardArrowLeftIcon />NATIVE</Button></LinkR>
        </FilterContainer> 
     )
 }

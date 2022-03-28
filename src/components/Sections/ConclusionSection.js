@@ -24,11 +24,15 @@ const Section = styled.div`
 const Article = styled(motion.div)`
     width: 80vw;
     font-size: 20px;
+    height: 12vh;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
     a{
         color: aqua;
         text-decoration: none;
@@ -41,9 +45,13 @@ const Title = styled(motion.div)`
     font-size: 32px;
     color: white;
     display: flex;
-    flex-direction: row;
+    
     align-items: center;
-    justify-content: flex-end;
+    text-align: right;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
     @media screen and (max-width: 768px){
         height: 20vh;;
     }
@@ -174,13 +182,13 @@ const ConclusionSection = () => {
     return(
         <Section id="conclusion" ref={ref}>
             <Wrapper>
-            <Article animate={animationTwo}>One of the consequences of such speed and scalability on telos has been rapid adoption and usage, resulting in telos being the 2nd most utilized blockchain in the world throughout most of 2019 and 2020.</Article>
-            <Title animate={animation}>#1 Low impact energy usage compared to traditional POW models</Title>
-            <Article animate={animationTwo}>The EOSIO software, that the Telos Network is based on, is roughly 17,000 times more energy efficient than networks such as Ethereum. Proof-of-work models are time-intensive and require excessive amounts of computing power to solve complex puzzles. This allows these computers to “mine” the coins on the network that pays them. In POW the node operators are competing against one another to be the first to solve a complex puzzle with their reward being the newly minted token.</Article>
-            <Article animate={animationTwo}>In contrast, the Telos Blockchain Network just requires the coordination of validators using the same software to verify transactions. The Telos token holders elect the node operators, with the top 50 dividing the rewards. The tokens are sold on participating exchanges, allowing anyone to own the TLOS tokens and stake them for resources. This system makes the mining process virtual. Since no real-world resources are being exploited and energy is not being wasted on massive server farms needed to solve the complex puzzles, this method is infinitely more environmentally friendly.</Article>
-            <Title animate={animation}>Conclusion</Title>
-            <Article animate={animationTwo}>There is a shift happening in the leadership paradigm of the internet. Users and developers want a more collaborative decision-making model that empowers everyone, rather than just a select few.</Article>
-            <Article animate={animationTwo}>Telos is designed to help bring about this change and allow humanity to flourish by building the economy of the future.  Over time, the vibrant Telos community is building its network as a place for purpose-driven startups, individual developers, and more. Join us!</Article>
+            <Article animate={animationTwo}>كانت إحدى عواقب هذه السرعة وقابلية التوسع على تيلوس هي الاعتماد والاستخدام السريع ، مما أدى إلى احتلال تيلوس المرتبة الثانية في سلسلة بلوكشين الأكثر استخدامًا في العالم خلال معظم عامي 2019 و 2020.</Article>
+            <Title animate={animation}># 1 استهلاك منخفض للطاقة مقارنة بنماذج أسرى الحرب التقليدية</Title>
+            <Article animate={animationTwo}><p><t>برنامج</t><span>EOSIO</span><t>، الذي تعتمد عليه شبكة تيلوس ، أكثر كفاءة في استخدام الطاقة بحوالي 17000 مرة من شبكات مثل اثيريوم. نماذج إثبات العمل تستغرق وقتًا طويلاً وتتطلب قدرًا كبيرًا من القوة الحاسوبية لحل الألغاز المعقدة. يسمح هذا لأجهزة الكمبيوتر هذه "بتعدين" العملات المعدنية على الشبكة التي تدفع لها. في</t><span>POW</span><t>، يتنافس مشغلو العقد ضد بعضهم البعض ليكونوا أول من يحل لغزًا معقدًا مع كون مكافأتهم هي الرمز المميز الجديد.</t></p></Article>
+            <Article animate={animationTwo}><p>في المقابل ، تتطلب شبكة تيلوس فقط تنسيق المدققين الذين يستخدمون نفس البرنامج للتحقق من المعاملات. يختار حاملو الرمز المميز تيلوس مشغلي العقد ، حيث يقسم الخمسون الأوائل المكافآت. تُباع الرموز المميزة في البورصات المشاركة ، مما يسمح لأي شخص بامتلاك رموز تيلوس ومكافأتها للحصول على الموارد. هذا النظام يجعل عملية التعدين افتراضية. نظرًا لأنه لا يتم استغلال أي موارد في العالم الحقيقي ولا يتم إهدار الطاقة في مزارع الخوادم الضخمة اللازمة لحل الألغاز المعقدة ، فإن هذه الطريقة صديقة للبيئة بشكل لا نهائي.</p></Article>
+            <Title animate={animation}>خاتمة</Title>
+            <Article animate={animationTwo}><p>هناك تحول يحدث في نموذج القيادة للإنترنت. يرغب المستخدمون والمطورون في نموذج صنع قرار أكثر تعاونًا يمكّن الجميع ، بدلاً من مجرد قلة مختارة.</p></Article>
+            <Article animate={animationTwo}><p>تم تصميم تيلوس للمساعدة في إحداث هذا التغيير والسماح للبشرية بالازدهار من خلال بناء اقتصاد المستقبل. بمرور الوقت ، يقوم مجتمع تيلوس النابض بالحياة ببناء شبكته كمكان للشركات الناشئة الموجهة لغرض معين والمطورين الفرديين والمزيد. انضم إلينا!</p></Article>
             </Wrapper>
             <Empty>
                 <IconColumnLeft to="footer" smooth={true} duration={1000} spy={true} exact="true">

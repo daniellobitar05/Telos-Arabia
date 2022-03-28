@@ -61,7 +61,12 @@ const Column = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 10px; 
+    border: 1px solid purple;
+    border-radius: 20px;
+    &:hover{
+        background: rgb(230,230,250,0.2);
+    }
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;

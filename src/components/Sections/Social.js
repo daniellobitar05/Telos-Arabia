@@ -12,7 +12,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import Ball1 from "../images/telos_ball1.png";
+import Ball1 from "../images/rou12.png";
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;

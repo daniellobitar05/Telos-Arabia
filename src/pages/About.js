@@ -16,9 +16,13 @@ import ChartSection from "../components/Sections/ChartSection";
 import GraphSection from "../components/Sections/GraphSection";
 import FeaturesSection from "../components/Sections/FeaturesSection";
 import UtilitySection from "../components/Sections/UtilitySection";
+import UtilitySectionTwo from "../components/Sections/UtilitySectionTwo";
+import UtilitySectionThree from "../components/Sections/UtilitySectionThree";
 import UtilisedSection from "../components/Sections/UtilisedSection";
 import ConclusionSection from "../components/Sections/ConclusionSection";
 import Footer from "../components/Sections/Footer";
+
+import Back from "../components/images/rou8.png";
 
 const Section = styled.div`
     width: 100%;
@@ -31,15 +35,17 @@ const Section = styled.div`
 `;
 
 const Title = styled(motion.div)`
-    font-size: 62px;
+    font-size: 72px;
     width: 80%;
-    height: 45vh;
+    height: 25vh;
     color: ${props => props.theme.text};  
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    z-index: 10;
     @media screen and (max-width: 768px) {
         font-size: 24px;
         height: 20vh;
@@ -48,15 +54,27 @@ const Title = styled(motion.div)`
     
 `;
 
+const Image = styled.div`
+    width: 100%;
+    height: 10vh;
+    img{
+        transform: translate(0, -30%);
+        z-index: 0;
+    }
+`;
+
 const Subtitle = styled(motion.div)`
-    font-size: 18px;
+    font-size: 32px;
     width: 80%;
-    height: 30vh;
+    height: 40vh;
     color: ${props => props.theme.text};
     text-align: right; 
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     display: flex;
     align-items: center;
+    direction: rtl;
+    z-index: 10;
+    
     @media screen and (max-width: 768px) {
         font-size: 16px;
         height: 50vh;
@@ -148,8 +166,9 @@ const About = () => {
         <ThemeProvider theme={themes[theme]}>
         <HeaderNoHome theme={theme} setTheme={setTheme} />
         <Section id="abouthero" ref={ref}>
-            <Title animate={animation}>A high-level introduction to the Telos blockchain</Title>
-            <Subtitle animate={animationTwo}>Telos is a third-generation blockchain platform for building fast, scalable distributed applications with feeless transactions. Since launching its mainnet in December 2018, the Telos network has been developed to power the economies of the future and provide human-scale solutions to global challenges. With these goals in mind, it includes innovative governance features that empower organizations to shift influence and decision-making to a more collaborative and transparent model.</Subtitle>
+            <Title animate={animation}>مقدمة رفيعة المستوى إلى تيلوس بلوكشين</Title>
+            <Image><img src={Back} alt="" /></Image>
+            <Subtitle animate={animationTwo}>تيلوس هي عبارة عن منصة بلوكشين من الجيل الثالث لبناء تطبيقات موزعة سريعة وقابلة للتطوير مع معاملات بدون إحساس. منذ إطلاق شبكتها الرئيسية في ديسمبر 2018 ، تم تطوير شبكة تيلوس لتزويد اقتصادات المستقبل بالطاقة وتوفير حلول بشرية للتحديات العالمية. مع وضع هذه الأهداف في الاعتبار ، فإنه يتضمن ميزات حوكمة مبتكرة تمكن المنظمات من تحويل التأثير وصنع القرار إلى نموذج أكثر تعاونًا وشفافية.</Subtitle>
             <Empty>
                 <IconColumn>
                 <LinkS to="purpose" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
@@ -161,6 +180,8 @@ const About = () => {
         <FeaturesSection />
         <GraphSection />
         <UtilitySection />
+        <UtilitySectionTwo />
+        <UtilitySectionThree />
         <UtilisedSection />
         <ConclusionSection />
         <Footer />

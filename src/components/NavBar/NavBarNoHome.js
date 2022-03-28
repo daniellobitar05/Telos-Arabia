@@ -415,7 +415,7 @@ const NavMenu = styled.div`
 const AboutMenu = styled.div`
     position: absolute;
     width: 300px;
-    height: 400px;
+    height: 300px;
     top: -100vh;
     transform: translate(-100%, 0);
     display: flex;
@@ -519,10 +519,14 @@ const SubMenuIcon = styled.div`
 `;
 
 const MenuText = styled.div`
-    font-size: 20px;
+    font-size: 28px;
     color: white;
     padding: 0 10px;
     cursor: pointer;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
 `;
 
 const SubMenuTitle = styled.div`
@@ -530,12 +534,20 @@ const SubMenuTitle = styled.div`
     height: 50px;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
 `;
 
 const MenuTitle = styled.div`
-    font-size: 20px;
+    font-size: 28px;
     color: white;
     padding: 0 10px;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
 `;
 
 
@@ -681,11 +693,11 @@ const DropDownMenu = () => {
         <DropDown>
         <CSSTransition in={activeMenu === 'main'} unmountOnExit timeout={500} classNames="menu-primary">
             <Menu>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuyIcon />} goToMenu="buy">BUY</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuildIcon/>}goToMenu="build">BUILD</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<LearnIcon/>} goToMenu='learn'>LEARN</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuyIcon />} goToMenu="buy">اشتري</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuildIcon/>}goToMenu="build">ابني</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<LearnIcon/>} goToMenu='learn'>تعلم</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>} goToMenu='evm-native'>EXPLORE</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<AboutIcon/>} goToMenu="about">ABOUT</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<AboutIcon/>} goToMenu="about">حول تيلوس</DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -709,10 +721,10 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'build'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <LinkR to="/Roadmap"><DropDownItem  rightIcon={<RoadMapIcon />} >ROADMAP</DropDownItem></LinkR>
-            <LinkR to="/Developers"><DropDownItem  rightIcon={<DevIcon/>} >DEVELOPERS</DropDownItem></LinkR>
-            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<DocsIcon/>}>DOCUMENTATION</DropDownItem></a>
-            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<GrantIcon/>}>GRANT PROGRAM</DropDownItem></a>
+            <LinkR to="/Roadmap"><DropDownItem  rightIcon={<RoadMapIcon />} >خارطة طريق</DropDownItem></LinkR>
+            <LinkR to="/Developers"><DropDownItem  rightIcon={<DevIcon/>} >المطورين</DropDownItem></LinkR>
+            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<DocsIcon/>}>وثائق</DropDownItem></a>
+            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<GrantIcon/>}>برنامج المنح</DropDownItem></a>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -721,12 +733,11 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'learn'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <LinkR to="/CommResources"><DropDownItem  rightIcon={<CommIcon />} >COMMUNITY RESOURCES</DropDownItem></LinkR>
-            <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<BaseIcon/>} >KNOWLEDGE BASE</DropDownItem></a>
-            <LinkR to="/GovDocumentation"><DropDownItem  rightIcon={<GovIcon/>}>GOVERNANCE</DropDownItem></LinkR>
-            <LinkR to="/Tokenomics"><DropDownItem  rightIcon={<TokenIcon/>}>TLOS TOKENOMICS</DropDownItem></LinkR>
-            <LinkR to="/ESG"><DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}>ESG BLOCKCHAIN</DropDownItem></LinkR>
-            <LinkR to="/EVM"><DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}>EVM BLOCKCHAIN</DropDownItem></LinkR>
+            <LinkR to="/CommResources"><DropDownItem  rightIcon={<CommIcon />} >موارد المجتمع</DropDownItem></LinkR>
+            <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<BaseIcon/>} >قاعدة المعرفة</DropDownItem></a>
+            <LinkR to="/Tokenomics"><DropDownItem  rightIcon={<TokenIcon/>}>اقتصاد تيلوس</DropDownItem></LinkR>
+            <LinkR to="/ESG"><DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}><t>بلوكشين</t><span>ESG</span></DropDownItem></LinkR>
+            <LinkR to="/EVM"><DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}><t>بلوكشين</t><span>EVM</span></DropDownItem></LinkR>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -735,8 +746,8 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm-native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="evm">EVM PLATFORM</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={TelosRoundLogo} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="native">NATIVE PLATFORM</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="evm"><t>منصة</t><span>EVM</span></DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={TelosRoundLogo} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="native"><t>منصة</t><span>Native</span></DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -745,10 +756,10 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <LinkR to="/EVMEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
-            <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
-            <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
-            <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkRS>
+            <LinkR to="/EVMEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>النظام البيئي</DropDownItem></LinkR>
+            <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>ألمنصة</DropDownItem></a>
+            <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>تحاويل خارجية</DropDownItem></a>
+            <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>البدء</DropDownItem></LinkRS>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -757,11 +768,11 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
-            <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>ECOSYSTEM</DropDownItem></LinkR>
+            <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>النظام البيئي</DropDownItem></LinkR>
             <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem></a>
-            <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>BLOCK EXPLORER</DropDownItem></a>
-            <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>BRIDGE</DropDownItem></a>
-            <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>GET STARTED</DropDownItem></LinkRS>
+            <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>ألمنصة</DropDownItem></a>
+            <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>تحاويل خارجية</DropDownItem></a>
+            <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>البدء</DropDownItem></LinkRS>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -770,11 +781,9 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'about'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <LinkR to="/News"> <DropDownItem rightIcon={<NewsIcon/>}>NEWS</DropDownItem></LinkR>
-            <LinkR to="/About"><DropDownItem rightIcon={<AboutIcon/>}>ABOUT</DropDownItem></LinkR>
-            <DropDownItem rightIcon={<JoinIcon/>}>JOIN THE TEAM</DropDownItem>
-            <DropDownItem rightIcon={<MeetTeamIcon/>}>MEET THE TEAM</DropDownItem>
-            <DropDownItem rightIcon={<MeetBoardIcon/>}>MEET THE BOARD</DropDownItem>
+            <LinkR to="/News"> <DropDownItem rightIcon={<NewsIcon/>}>ألأخبار</DropDownItem></LinkR>
+            <LinkR to="/About"><DropDownItem rightIcon={<AboutIcon/>}>حول تيلوس</DropDownItem></LinkR>
+            <DropDownItem rightIcon={<MeetTeamIcon/>}>مالكي المنصة</DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -1006,24 +1015,16 @@ const HeaderNoHome = (props) => {
                 <AboutMenu variants={MenuVariants} initial="start" animate="end">
                     <SubMenu >
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                        <LinkR to="/News"><MenuText>NEWS</MenuText></LinkR>
+                        <LinkR to="/News"><MenuText>ألأخبار</MenuText></LinkR>
                         <NewspaperIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/About"> <MenuText>ABOUT</MenuText></LinkR>
+                    <LinkR to="/About"> <MenuText>حول تيلوس</MenuText></LinkR>
                         <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                        <MenuText>JOIN THE TEAM</MenuText>
-                        <GroupAddIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
-                    </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                        <MenuText>MEET THE TEAM</MenuText>
+                        <MenuText>مالكي المنصة</MenuText>
                         <EmojiPeopleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
-                    </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                        <MenuText>MEET THE BOARD</MenuText>
-                        <MeetBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     </SubMenu>
                 </AboutMenu>
@@ -1039,43 +1040,43 @@ const HeaderNoHome = (props) => {
                 <ExploreMenu>
                     <SubMenu>
                         <SubMenuTitle>
-                        <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>EVM PLATFORM</MenuTitle>
+                        <MenuTitle style={{color: 'aqua'}}><t>منصة</t><span>EVM</span></MenuTitle>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
                         <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                        <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
+                        <a href="https://www.teloscan.io/" target="_blank" rel="noreferrer"><MenuText>ألمنصة</MenuText></a>
                         <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><MenuText>BRIDGE</MenuText></a>
+                    <a href="https://app.multichain.org/#/router" target="_blank" rel="noreferrer"><MenuText>تحاويل خارجية</MenuText></a>
                         <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                        <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkRS>
+                        <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>البدء</MenuText></LinkRS>
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkR to="/EVMEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                    <LinkR to="/EVMEcosystem"><MenuText>النظام البيئي</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <SubMenuTitle>
-                        <MenuTitle style={{borderBottom: '0.5px solid aqua', color: 'aqua'}}>NATIVE PLATFORM</MenuTitle>
+                        <MenuTitle style={{color: 'aqua'}}><t>منصة</t><span>Native</span></MenuTitle>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                         </SubMenuTitle>
                         <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                        <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><MenuText>BLOCK EXPLORER</MenuText></a>
+                        <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><MenuText>ألمنصة</MenuText></a>
                         <EVMExplorer sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"> <MenuText>BRIDGE</MenuText></a>
+                    <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"> <MenuText>تحاويل خارجية</MenuText></a>
                         <EVMBridge sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>GET STARTED</MenuText></LinkRS>
+                    <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><MenuText>البدء</MenuText></LinkRS>
                         <GetStarted sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuTitle>
-                    <LinkR to="/NativeEcosystem"><MenuText>ECOSYSTEM</MenuText></LinkR>
+                    <LinkR to="/NativeEcosystem"><MenuText>النظام البيئي</MenuText></LinkR>
                         <EcoIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuTitle></motion.div>
                     </SubMenu>
@@ -1092,27 +1093,23 @@ const HeaderNoHome = (props) => {
                 <LearnMenu>
                     <SubMenu>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/CommResources"><MenuText>COMM. RESOURCES</MenuText></LinkR>
+                    <LinkR to="/CommResources"><MenuText>موارد المجتمع</MenuText></LinkR>
                         <SourceIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><MenuText>KNOWLEDGE BASE</MenuText></a>
+                    <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><MenuText>قاعدة المعرفة</MenuText></a>
                         <ContactSupportIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/GovDocumentation"><MenuText>GOVERNANCE</MenuText></LinkR>
-                        <GroupWorkIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
-                    </SubMenuIcon></motion.div>
-                    <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/Tokenomics"><MenuText>TLOS TOKENOMICS</MenuText></LinkR>
+                    <LinkR to="/Tokenomics"><MenuText>اقتصاد تيلوس</MenuText></LinkR>
                         <MonetizationOnIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/ESG"><MenuText>ESG BLOCKCHAIN</MenuText></LinkR>
+                    <LinkR to="/ESG"><MenuText><t>بلوكشين</t><span>ESG</span></MenuText></LinkR>
                         <Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                    <LinkR to="/EVM"><MenuText>EVM BLOCKCHAIN</MenuText></LinkR>
+                    <LinkR to="/EVM"><MenuText><t>بلوكشين</t><span>EVM</span></MenuText></LinkR>
                         <Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>
                     </SubMenuIcon></motion.div>
                     </SubMenu>
@@ -1129,19 +1126,19 @@ const HeaderNoHome = (props) => {
                     <BuildMenu>
                         <SubMenu>
                             <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                            <LinkR to="/Roadmap"><MenuText>ROADMAP</MenuText></LinkR>
+                            <LinkR to="/Roadmap"><MenuText>خارطة طريق</MenuText></LinkR>
                                 <MapIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                            <LinkR to="/Developers"><MenuText>DEVELOPERS</MenuText></LinkR>
+                            <LinkR to="/Developers"><MenuText>المطورين</MenuText></LinkR>
                                 <DeveloperBoardIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><MenuText>DOCUMENTATION</MenuText></a>
+                            <a href="https://docs.telos.net/" target="_blank" rel="noreferrer"><MenuText>وثائق</MenuText></a>
                                 <ArticleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                             <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><MenuText>GRANT PROGRAM</MenuText></a>
+                            <a href="https://ignite.telos.net/" target="_blank" rel="noreferrer"><MenuText>برنامج المنح</MenuText></a>
                                 <LocalFireDepartmentIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                             </SubMenuIcon></motion.div>
                         </SubMenu>

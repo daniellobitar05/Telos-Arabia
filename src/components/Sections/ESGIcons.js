@@ -43,15 +43,19 @@ const Grid = styled(motion.div)`
 
 const Column = styled(motion.div)`
     width: 22.5%;
-    height: 100%;
+    height: 100%; 
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px 50px;
-    background: #6c3082;
+    
     border-radius: 20px;
+    border: 1px solid purple;
+    &:hover{
+        background: rgb(230,230,250,0.2);
+    }
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;

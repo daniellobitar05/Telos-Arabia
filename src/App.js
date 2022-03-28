@@ -8,12 +8,12 @@ import Developers from "./pages/Developers.js";
 import About from "./pages/About.js";
 import Roadmap from "./pages/Roadmap.js";
 import CommResources from "./pages/CommResources.js";
-import GovDocumentation from "./pages/GovDocumentation.js";
 import Tokenomics from "./pages/Tokenomics.js";
 import ESG from "./pages/ESG.js";
 import EVM from "./pages/EVM.js";
 import NativeEcosystem from "./pages/NativeEcosystem.js";
 import EVMEcosystem from "./pages/EVMEcosystem.js";
+import CommManager from "./pages/CommManager.js";
 //import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -40,12 +40,12 @@ function App() {
                 <Route exact path="/About" element={<About />}/>
                 <Route exact path="/Roadmap" element={<Roadmap />}/>
                 <Route exact path="/CommResources" element={<CommResources />}/>
-                <Route exact path="/GovDocumentation" element={<GovDocumentation />}/>
                 <Route exact path="/Tokenomics" element={<Tokenomics />}/>
                 <Route exact path="/ESG" element={<ESG />}/>
                 <Route exact path="/EVM" element={<EVM />}/>
                 <Route exact path="/NativeEcosystem" element={<NativeEcosystem />}/>
                 <Route exact path="/EVMEcosystem" element={<EVMEcosystem />}/>
+                <Route exact path="/CommManager" element={<CommManager />}/>
               </Routes>
             </AnimatePresence>
       </ScrollToTop>

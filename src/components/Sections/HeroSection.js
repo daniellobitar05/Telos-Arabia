@@ -3,8 +3,9 @@ import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {Canvas, extend, useFrame, useLoader, useThree} from "@react-three/fiber";
 import Circle from "../images/telos_logo.png";
-import LetterLogo from "../images/pyr3.png";
+import LetterLogo from "../images/pyr4.png";
 import {Suspense, useMemo, useCallback, useRef} from "react";
+import ARABIC from "../images/telosArabic.png";
 
 
 extend ({OrbitControls})
@@ -124,10 +125,10 @@ function AnimationCanvas(){
 const Anim = styled.div`
     width: 100%;
     height: 100vh;
-    background: url(${LetterLogo}), ${props => props.theme.back1};
+    background: url(${LetterLogo}), url(${ARABIC}), ${props => props.theme.back1};
     background-repeat: no-repeat;
-    background-position: 50% 0%;
-    background-size: contain;
+    background-position: 50% 0%, 50% 10%;
+    background-size: contain, 650px auto;
     @media screen and (max-width: 768px){
         height: 90vh;
         

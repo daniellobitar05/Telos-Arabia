@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import {useEffect} from "react";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
+import {Link as LinkR} from "react-router-dom";
 import {Link as LinkS} from "react-scroll";
 import {IconButton} from "@mui/material";
 import "slick-carousel/slick/slick.css";
@@ -44,7 +45,9 @@ const Title = styled(motion.div)`
     height: 10vh;
     text-align: center;
     color: white;
-    font-size: 36px;
+    font-size: 42px;
+    display: grid;
+    place-items: center;
     @media screen and (max-width: 768px){
       width: 80%;
       font-size: 32px;
@@ -55,11 +58,14 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    width: 80%;
+    width: 65%;
     height: 20vh;
     text-align: center;
     color: white;
-    font-size: 18px;
+    font-size: 26px;
+    display: grid;
+    place-items: center;
+    direction: rtl;
     @media screen and (max-width: 768px){
       height: 30vh;
       font-size: 16px;
@@ -96,7 +102,11 @@ const Item = styled.div`
     width: 100%;
     height: 50%;
     color: white; 
-    font-size: 16px;
+    font-size: 22px;
+    direction: rtl;
+    span{
+      margin: 0 8px;
+    }
     @media screen and (max-width: 768px){
       font-size: 14px;
     }
@@ -123,6 +133,7 @@ const SliderTitle = styled(motion.div)`
     justify-content: center; 
     width: 100%;
     height: 10vh;
+    font-size: 32px;
     @media screen and (max-width: 768px){
       height: 5vh;
     }
@@ -254,85 +265,85 @@ const FeaturesSection = () => {
 
     return(
         <Section id="features" ref={ref}>
-            <Title animate={animation}>Telos Features</Title>
-            <Subtitle animate={animationTwo}>The Telos ecosystem is growing at an exponential rate and has quickly amassed a slew of innovative features that give it a competitive edge over other platforms. It can be used as a full stack alternative or as a scaling solution depending on a projects needs.Some of the many Telos advantages include...</Subtitle>
-            <SliderTitle animate={animation}>FOR DEVELOPERS</SliderTitle>
+            <Title animate={animation}>ميزات تيلوس</Title>
+            <Subtitle animate={animationTwo}>ينمو نظام تيلوس البيئي بمعدل أسي وقد جمع بسرعة عددًا كبيرًا من الميزات المبتكرة التي تمنحه ميزة تنافسية على الأنظمة الأساسية الأخرى. يمكن استخدامه كبديل مكدس كامل أو كحل للتوسيع حسب احتياجات المشروع. تشمل بعض مزايا تيلوس العديدة ...</Subtitle>
+            <SliderTitle animate={animation}>للمطورين</SliderTitle>
             <SliderWrapper animate={animationTwo}>
                
             <Slider {...settings}>
           <Feature>
-              <Logo><img src={EVM} alt="" /></Logo>
-            <Item>Telos Ethereum Virtual Machine (EVM)</Item>
+              <LinkR to="/EVM"><Logo><img src={EVM} alt="" /></Logo></LinkR>
+              <LinkR to="/EVM"><Item><p><t>آلة ايثيريوم تيلوس الافتراضية</t><span>(EVM)</span></p></Item></LinkR>
           </Feature>
           <Feature>
-          <Logo><img src={ESG} alt="" /></Logo>
-            <Item>Leading ESG Compliance (Environmental, Social, Governance)</Item>
+          <LinkR to="/ESG"><Logo><img src={ESG} alt="" /></Logo></LinkR>
+          <LinkR to="/ESG"><Item><p><t>قيادة الامتثال</t><span>ESG</span><t>(الحوكمة البيئية والاجتماعية)</t></p></Item></LinkR>
           </Feature>
           <Feature>
-          <Logo><img src={TelosWallet} alt="" /></Logo>
-            <Item>Telos Web Wallet</Item>
+          <a href="https://wallet.telos.net/" target="_blank" rel="noreferrer"><Logo><img src={TelosWallet} alt="" /></Logo></a>
+            <a href="https://wallet.telos.net/" target="_blank" rel="noreferrer"> <Item><p>محفظة تيلوس</p></Item></a>
           </Feature>
           <Feature>
               <Logo><img src={Tools} alt="" /></Logo>
-            <Item>A suite of innovative & competitive tools</Item>
+            <Item>مجموعة من الأدوات المبتكرة والتنافسية</Item>
           </Feature>
           <Feature>
           <Logo><img src={Governance} alt="" /></Logo>
-            <Item>Equitable governance & arbitration</Item>
+            <Item>الحكم والتحكيم العادل</Item>
           </Feature>
           <Feature>
-          <Logo><img src={Omnidex} alt="" /></Logo>
-            <Item>100+ Applications & Integrations</Item>
+          <LinkR to="/NativeEcosystem"><Logo><img src={Omnidex} alt="" /></Logo></LinkR>
+          <LinkR to="/NativeEcosystem"><Item>أكثر من 100 تطبيق وتكامل</Item></LinkR>
           </Feature>
         </Slider>
             </SliderWrapper>
-            <SliderTitle animate={animation}>FOR TOKENHOLDERS</SliderTitle>
+            <SliderTitle animate={animation}>لأصحاب الرموز</SliderTitle>
             <SliderWrapper animate={animationTwo}>
                
             <Slider {...settings}>
           <Feature>
-              <Logo><img src={Strong} alt="" /></Logo>
-            <Item>Strong tokenomics</Item>
+          <LinkR to="/Tokenomics"><Logo><img src={Strong} alt="" /></Logo></LinkR>
+              <LinkR to="/Tokenomics"><Item>الرموز القوية</Item></LinkR>
           </Feature>
           <Feature>
-          <Logo><img src={Stake} alt="" /></Logo>
-            <Item>REX rewards APR 15% for staking</Item>
+          <a href="https://staker.one/" target="_blank" rel="noreferrer"><Logo><img src={Stake} alt="" /></Logo></a>
+          <a href="https://staker.one/" target="_blank" rel="noreferrer"><Item><p><t>يكافئ ريكس</t><span>APR</span><t>بنسبة 15٪ على عمليات التجميد</t></p></Item></a>
           </Feature>
           <Feature>
-          <Logo><img src={TelosWallet} alt="" /></Logo>
-            <Item>Network Grants via Worker Proposal System</Item>
+          <a href="https://docs.telos.net/developers/telos_contracts/telos-works" target="_blank" rel="noreferrer"><Logo><img src={TelosWallet} alt="" /></Logo></a>
+          <a href="https://docs.telos.net/developers/telos_contracts/telos-works" target="_blank" rel="noreferrer"><Item>منح الشبكة عبر نظام اقتراح العمال</Item></a>
           </Feature>
           <Feature>
           <Logo><img src={FeeLess} alt="" /></Logo>
-            <Item>Fee-less transactions</Item>
+            <Item>معاملات بدون رسوم</Item>
           </Feature>
           <Feature>
           <Logo><img src={FastTrans} alt="" /></Logo>
-            <Item>10,000 Transactions Per Second, Pre-Sharding</Item>
+            <Item>10000 معاملة في الثانية ، ما قبل التجزئة</Item>
           </Feature>
           <Feature>
           <Logo><img src={Greentech} alt="" /></Logo>
-            <Item>Environmentally friendly</Item>
+            <Item>صديق للبيئة</Item>
           </Feature>
           <Feature>
               <Logo><img src={NoFront} alt="" /></Logo>
-            <Item>No front-running</Item>
+            <Item>لا الجري الأمامي</Item>
           </Feature>
           <Feature>
           <Logo><img src={LowCost} alt="" /></Logo>
-            <Item>Low-cost dApp deployment.</Item>
+            <Item><p><t>نشر</t><span>dApp</span><t>منخفض السعر</t></p></Item>
           </Feature>
           <Feature>
           <Logo><img src={Analisis} alt="" /></Logo>
-            <Item>Proper economic decentralization</Item>
+            <Item>اللامركزية الاقتصادية السليمة</Item>
           </Feature>
           <Feature>
           <Logo><img src={Test} alt="" /></Logo>
-            <Item>Public testnet operated by BPs</Item>
+            <Item><p><t>يتم تشغيل شبكة الاختبار المناسبة بواسطة</t><span>BP’s</span></p></Item>
           </Feature>
           <Feature>
           <Logo><img src={Solidity} alt="" /></Logo>
-            <Item>Support for both Solidity EVM & EOSIO C++</Item>
+            <Item><p><t>دعم كل من</t><span>Solidity EVM</span><t>و</t><span>Eosio C ++</span></p></Item>
           </Feature>
         </Slider>
             </SliderWrapper>

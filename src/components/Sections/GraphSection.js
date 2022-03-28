@@ -14,6 +14,7 @@ import TFD from "../images/TFD.png";
 import EOS from "../images/EOS.png";
 import SCR from "../images/SCR.png";
 import HIVE from "../images/HIVE.png";
+import Back from "../images/pyr13.png";
 
 
 const Section = styled.div`
@@ -31,8 +32,9 @@ const Title = styled(motion.div)`
     height: 15vh;
     text-align: center;
     color: white;
-    font-size: 36px;
-    
+    font-size: 42px;
+    display: grid;
+    place-items: center;
     @media screen and (max-width: 768px){
         font-size: 18px;
         height: 10vh;
@@ -40,21 +42,34 @@ const Title = styled(motion.div)`
 `;
 
 const LeftTitle = styled(motion.div)`
-    height: 100%;
-    width: 80%;
+    height: 60%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    font-size: 36px;
+    font-size: 48px;
+    direction: rtl;
+    z-index: 100;
     @media screen and (max-width: 768px){
         font-size: 18px;
     }
 `;
 
-const Columns = styled.div`
+const ImageWrapper = styled.div`
+    width: 100%;
+    height: 40%;
+    img{
+        width: 100%;
+        z-index: 0;
+        transform: translate(20%, -40%);
+    }
+
+`;
+
+const Columns = styled.div`v
     width: 100%;
     height: 90vh;
     @media screen and (max-width: 768px){
@@ -74,6 +89,7 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
@@ -98,7 +114,7 @@ const ColumnRight = styled.div`
 
 const GraphWrapper = styled(motion.div)`
     width: 80%;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -335,7 +351,7 @@ const GraphSection = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                x: 0,
+                x: 0, y: '150px',
                 transition: {
                     duration: 1, 
                 }
@@ -343,7 +359,7 @@ const GraphSection = () => {
         }
         if(!inView){
             animationThree.start({
-                x: '-100vw'
+                x: '-100vw', y: '150px',
             })
         }
         
@@ -352,7 +368,7 @@ const GraphSection = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0, scale: 1,
+                opacity: 1, y: 0, scale: 1, x: '-5vw',
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -360,7 +376,7 @@ const GraphSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px', scale: 0.6
+                opacity: 0, y: '100px', scale: 0.6, x: '-5vw',
             })
         }
         
@@ -371,11 +387,11 @@ const GraphSection = () => {
             
             <Columns>
                 <ColumnLeft>
-                <LeftTitle animate={animationThree}>High growth rate and usage 900,000+ account base Number 1 by Activity Valuation Index Bitcoin and Ethereum scaling ahead</LeftTitle>
-                
+                <LeftTitle animate={animationThree}>معدل نمو مرتفع واستخدام 900000+ قاعدة حساب رقم 1 من خلال مؤشر تقييم النشاط بيتكوين و ايثيريوم يتوسعان في المستقبل</LeftTitle>
+                <ImageWrapper><img src={Back} alt="image" /></ImageWrapper>
                 </ColumnLeft>
                 <ColumnRight>
-                <Title animate={animationTwo}>Telos position in the Crypto Market</Title>
+                <Title animate={animationTwo}>موقع تيلوس في سوق التشفير</Title>
                 <GraphWrapper animate={animationTwo}>
                     <PositionRow>
                         <Position></Position>

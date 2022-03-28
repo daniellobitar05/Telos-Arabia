@@ -14,19 +14,19 @@ import Telos from "../images/telos_logo.png";
 
 const Section = styled.div`
     width: 100%;
-    height: 350vh;
+    height: 100vh;
     background: ${props => props.theme.back6};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 600vh;
+        
     }
 `;
 
 const PageTitle = styled(motion.div)`
-    font-size: 36px;
+    font-size: 52px;
     width: 80%;
     height: 15vh;
     color: ${props => props.theme.text};  
@@ -40,13 +40,14 @@ const PageTitle = styled(motion.div)`
 
 const Subtitle = styled(motion.div)`
     width: 80vw;
-    font-size: 16px;
+    font-size: 28px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: right;
     text-align: right;
     padding-bottom: 30px;
+    direction: rtl;
     @media screen and (max-width: 768px) {
         font-size: 14px;
     }
@@ -58,22 +59,26 @@ const Subtitle = styled(motion.div)`
 
 const ColumnWrapper = styled.div`
     height: 60vh;
-    width: 70%;
+    width: 80%;
     display: flex;
-    
+    justify-content: space-evenly;
     align-items: center;
 `;
 
 const TableColumn = styled(motion.div)`
-    width: 70%;
+    width: 40%;
     height: 100%;
     float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     
 `;
 
 const ButtonColumn = styled(motion.div)`
-    width: 30%;
+    width: 10%;
     height: 100%;
     float: left; 
     
@@ -84,8 +89,8 @@ const ButtonColumn = styled(motion.div)`
 `; 
 
 const Row = styled.div`
-    width: 70%;
-    height: 5.84%;
+    width: 100%;
+    height: 11.68%;
     
 `;
 
@@ -98,10 +103,15 @@ const ItemLeft = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 24px;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
 `;
 
 const ItemRight = styled.div`
-    width: 30%;
+    width: 29%;
     height: 100%;
     float: left;
     display: flex;
@@ -109,12 +119,15 @@ const ItemRight = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 24px;
+    direction: rtl;
+    
 `;
 
 const Button = styled(motion(LinkR))`
     z-index: 100;
     background: linear-gradient(90deg, rgba(146,16,205,1) 0%, rgba(100,42,217,1) 50%, rgba(47,230,231,1) 100%);
-    font-size: 22px;
+    font-size: 20px;
     margin: 10px;
     color: white;
     font-weight: bold;
@@ -129,15 +142,18 @@ const Button = styled(motion(LinkR))`
 `;
 
 const Title = styled.div`
-    height: 20vh;
+    height: 10vh;
     width: 80%;
     font-size: 32px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    transform: translate(0, 20%);
+    text-align: right;
+    
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
     @media screen and (max-width: 768px){
         height: 20vh;
         font-size: 24px;
@@ -146,12 +162,17 @@ const Title = styled.div`
 
 const Article = styled.div`
     width: 80vw;
-    font-size: 22px;
+    font-size: 26px;
+    height: 20vh;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: right;
     text-align: right;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
     @media screen and (max-width: 768px) {
         font-size: 16px;
     }
@@ -164,24 +185,28 @@ const Article = styled.div`
 const List = styled.ul`
     list-style-type: circle;
     list-style-position: outside;
-    margin: 40px 0;
+    
     display: flex;
     flex-direction: column;
 `;
 
 const ListItem = styled.li`
-    height: 50px;
+    height: 40px;
     color: white;
     font-size: 20px;
+    direction: rtl;
+    text-align: right;
 `;
 
 const InnerTitle = styled.div`
     width: 50%;
-    height: 10vh;
+    height: 5vh;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bold;
+    direction: rtl;
+
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -293,103 +318,77 @@ const UtilitySection = () => {
 
     return(
         <Section id="utility" ref={ref}>
-            <PageTitle animate={animation}>TLOS token utility</PageTitle>
-            <Subtitle animate={animationTwo}>The telos based economy has boomed over the last 2 years, there are over 100 projects building on the network and already over 900,000 user accounts, this is driving higher utility demand for the native token in a number of ways, an effect that should only increase in the future. Get a quick introduction to TLOS tokenomics below or learn more about TLOS Tokenomics here.</Subtitle>
+            <PageTitle animate={animation}>أداة تيلوس المميزة</PageTitle>
+            <Subtitle animate={animationTwo}>ازدهر الاقتصاد القائم على تيلوس على مدار العامين الماضيين ، وهناك أكثر من 100 مشروع مبني على الشبكة وأكثر من 900000 حساب مستخدم بالفعل ، مما يؤدي إلى زيادة الطلب على المرافق على الرمز الأصلي بعدة طرق ، وهو تأثير يجب أن يزداد فقط فى المستقبل. احصل على مقدمة سريعة عن الرموز المميزة لـ تيلوس أدناه أو تعرف على المزيد حول رموز تيلوس هنا.</Subtitle>
             <ColumnWrapper>
-            <ButtonColumn animate={animation}>
-            <Button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} to="/Tokenomics">Learn More</Button>
-            </ButtonColumn>
             <TableColumn animate={animationTwo}>
                 <Row>
-                    <ItemLeft >CPU</ItemLeft>
-                    <ItemRight>STAKING</ItemRight>
+                    <ItemLeft style={{borderTop: '1px solid white'}}>وحدة المعالجة المركزية</ItemLeft>
+                    <ItemRight style={{borderTop: '1px solid white', borderLeft: '1px solid white'}}>التجميد</ItemRight>
                 </Row>
                 <Row>
-                    <ItemLeft>Bandwidth</ItemLeft>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>عرض النطاق</ItemLeft>
                     <ItemRight></ItemRight>
                 </Row>
                 <Row>
-                    <ItemLeft>Staker Rewards</ItemLeft>
-                    <ItemRight></ItemRight>
-                </Row>
-                <Row></Row>
-                <Row>
-                    <ItemLeft>RAM - Contract Storage</ItemLeft>
-                    <ItemRight>PAY FEE'S</ItemRight>
-                </Row>
-                <Row>
-                    <ItemLeft>Premium Name Space Bids</ItemLeft>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>مكافآت ستاكر</ItemLeft>
                     <ItemRight></ItemRight>
                 </Row>
                 <Row></Row>
                 <Row>
-                    <ItemLeft>Producer Voting</ItemLeft>
-                    <ItemRight>GOVERNANCE</ItemRight>
+                    <ItemLeft style={{borderTop: '1px solid white'}}>وحدة المعالجة المركزية</ItemLeft>
+                    <ItemRight style={{borderTop: '1px solid white', borderLeft: '1px solid white'}}>عملة</ItemRight>
                 </Row>
                 <Row>
-                    <ItemLeft>Work System Voting</ItemLeft>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>طريقة الدفع الناشئة</ItemLeft>
                     <ItemRight></ItemRight>
                 </Row>
                 <Row>
-                    <ItemLeft>Network Admendment Voting</ItemLeft>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>المكافآت</ItemLeft>
                     <ItemRight></ItemRight>
                 </Row>
-                <Row></Row>
-                <Row>
-                    <ItemLeft>Exchange / AMM Swap Pool Liqudity</ItemLeft>
-                    <ItemRight>LIQUIDITY</ItemRight>
-                </Row>
-                <Row></Row>
-                <Row>
-                    <ItemLeft>CPU</ItemLeft>
-                    <ItemRight>CURRENCY</ItemRight>
-                </Row>
-                <Row>
-                    <ItemLeft>Emerging form of paymentStaker</ItemLeft>
-                    <ItemRight></ItemRight>
-                </Row>
-                <Row>
-                    <ItemLeft>Rewards</ItemLeft>
-                    <ItemRight></ItemRight>
-                </Row>
+                
+               
                 </TableColumn>
+               {/*  <ButtonColumn animate={animation}>
+            <Button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} to="/Tokenomics">Learn More</Button>
+            </ButtonColumn> */}
+            <TableColumn animate={animationTwo}>
+                <Row>
+                    <ItemLeft style={{borderTop: '1px solid white'}}>تصويت المنتج</ItemLeft>
+                    <ItemRight style={{borderTop: '1px solid white', borderLeft: '1px solid white'}}>الحكم</ItemRight>
+                </Row>
+                 <Row>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>تصويت نظام العمل</ItemLeft>
+                    <ItemRight></ItemRight>
+                </Row>
+                <Row>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>التصويت على قبول الشبكة</ItemLeft>
+                    <ItemRight></ItemRight>
+                </Row>
+                <Row></Row>
+                <Row>
+                    <ItemLeft style={{borderTop: '1px solid white'}}>ذاكرة الوصول العشوائي - عقد التخزين</ItemLeft>
+                    <ItemRight style={{borderTop: '1px solid white', borderLeft: '1px solid white'}}>دفع رسوم</ItemRight>
+                </Row>
+                <Row>
+                    <ItemLeft style={{borderRight: '1px solid white'}}>مزايدات مساحة الاسم المميز</ItemLeft>
+                    <ItemRight></ItemRight>
+                </Row>
+                <Row></Row>
+                <Row>
+                    <ItemLeft style={{borderTop: '1px solid white'}}><p><t>مجمع مبادلة الصرف /</t><span>AMM</span></p></ItemLeft>
+                    <ItemRight style={{borderTop: '1px solid white', borderLeft: '1px solid white'}}>السيولة</ItemRight>
+                </Row>
+                <Row></Row>
+            </TableColumn>
             </ColumnWrapper>
             <Empty>
-                <IconColumnLeft to="dpos" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="utilitytwo" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
                 <IconColumnRight to="graph" smooth={true} duration={1000} spy={true} exact="true">
-                    <IconButton ><ArrowUp /></IconButton>
-                </IconColumnRight>
-                <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
-            </Empty>
-            
-            <Title id="dpos">Advantages of Telos DPoS</Title>
-            <Article>To the extent that performance is always a priority for developers, the Delegated Proof of Stake consensus method utilized by Telos is worth particular attention here. DPoS carries some big pluses for developers, including:</Article>
-            <Title># 1 Transactional Speed and Validator Accountability</Title>
-            <Article>Telos has 21 “active” validators that are voted in by Telos token holders and are charged with maintaining the network. Other validators are called “stand-by” validators and are paid to serve as a back-up to the top 21. Any of the standby validators can be voted into the top 21 at any time by Telos token holders with elections taking place roughly every 2.5 minutes. Conversely, the top 21 can be voted out of the top 21 at any time as well. Telos has standby validators automatically rotated into the top 21 periodically to give their operation a chance to produce blocks and prove their readiness.</Article>
-            <List>
-                <ListItem>Telos has 0.5 second block times (24x faster than Ethereum)</ListItem>
-                <ListItem>The Telos blockchain automatically rotates in standby validators to test their readiness</ListItem>
-                <ListItem>Telos validator elections take place roughly every two and a half minutes.</ListItem>
-            </List>
-            <InnerTitle>The additional validator accountability on the telos blockchain measures include:</InnerTitle>
-            <List>
-                <ListItem>Automatic kicks from the schedule for failing to produce blocks handled by smart-contract.</ListItem>
-                <ListItem>The Telos blockchain automatically rotates in standby validators to test their readiness</ListItem>
-            </List>
-            <Title>#2 No transaction fees incentivizes user adoption</Title>
-            <Article>On proof-of-work (PoW) chains, such as Ethereum, users must pay a transaction or “gas” fee for every action on the network. So, for example, if a user was to ‘like’ or ‘share’ a post on a dApp which was built on a POW network, a ‘gas fee’ would charge for that single action on the blockchain to the user. With the internet offering free access to many resources, this gas fee hinders widespread adoption. This is because users are used to using centralized applications which usually do not charge users for doing basic tasks or transactions.<p>
-            The Telos Blockchain Network solves this problem for dApp developers by allowing applications to stake resources (in this case, TLOS) for their users. Thus, an application can purchase or rent the amount of TLOS that their users need and remove the burden of transactional fees from their particular application. This allows for a free and frictionless experience for the application users. If application developers do not want to stake resources for their users, users can stake resources themselves. This allows them to use applications without a per-use cost. No transaction fees – coupled with fast transaction speeds – mean that users will not even know they are using an application built on top of a blockchain.</p></Article>
-            <Title>#3  Unparalleled Speed and Scalability</Title>
-            <Article>Delegated proof of stake allows Telos superior scalability when compared to traditional proof-of-work networks. Currently, the Telos blockchain can process over 10,000 transactions per second, and that capacity grows with code updates, sidechains, and other growth mechanisms. This kind of transactional speed puts Telos on par with centralized entities such as Visa and Mastercard and their ability to process thousands of transactions.</Article>
-            <Empty>
-                <IconColumnLeft to="utilised" smooth={true} duration={1000} spy={true} exact="true">
-                <IconButton><ArrowDown /></IconButton>
-                </IconColumnLeft>
-            <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="utility" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

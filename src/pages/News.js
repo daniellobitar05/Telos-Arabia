@@ -13,26 +13,26 @@ import {IconButton} from "@mui/material";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import News1 from "../components/images/news/news1.jpg";
-import News2 from "../components/images/news/news2.jpg";
-import News3 from "../components/images/news/news3.jpg";
+import News1 from "../components/images/news/news1.png";
+import News2 from "../components/images/news/news2.png";
+import News3 from "../components/images/news/news3.png";
 import News4 from "../components/images/news/news4.png";
-import News5 from "../components/images/news/news5.jpg";
-import News6 from "../components/images/news/news6.jpg";
-import News7 from "../components/images/news/news7.jpg";
-import News8 from "../components/images/news/news8.jpg";
-import News9 from "../components/images/news/news9.jpg";
-import News10 from "../components/images/news/news10.jpg";
+import News5 from "../components/images/news/news5.png";
+import News6 from "../components/images/news/news6.png";
+import News7 from "../components/images/news/news7.png";
+import News8 from "../components/images/news/news8.png";
+import News9 from "../components/images/news/news7.png";
+import News10 from "../components/images/news/news10.png";
 import News11 from "../components/images/news/news11.png";
-import News12 from "../components/images/news/news12.jpg";
+import News12 from "../components/images/news/news12.png";
 import News13 from "../components/images/news/news13.png";
-import News14 from "../components/images/news/news14.jpg";
-import News15 from "../components/images/news/news15.jpg";
+import News14 from "../components/images/news/news14.png";
+import News15 from "../components/images/news/news15.png";
 import News16 from "../components/images/news/news16.png";
 import News17 from "../components/images/news/news17.png";
 import News18 from "../components/images/news/news18.png";
-import News19 from "../components/images/news/news19.jpg";
-import News20 from "../components/images/news/news20.jpg";
+import News19 from "../components/images/news/news19.png";
+import News20 from "../components/images/news/news20.png";
 import News21 from "../components/images/news/news21.png";
 
 
@@ -105,6 +105,7 @@ const ColumnLeft = styled.div`
         height: 2100px;
         padding: 0;
         width: 33%;
+        overflow-x: hidden;
     }
 `;
 
@@ -126,6 +127,7 @@ const ColumnMiddle = styled.div`
         width: 33%;
         padding: 0;
         left: calc(100% / 3);
+        overflow-x: hidden;
     }
 `;
 
@@ -142,12 +144,17 @@ const ColumnRight = styled.div`
         height: 2100px;
         width: 33%;
         padding: 0;
+        overflow-x: hidden;
     }
 `;
 
 const Date = styled.div`
-    font-size: 14px;
+    font-size: 18px;
     color: white;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
     @media screen and (max-width: 660px){
         font-size: 10px;
         
@@ -158,12 +165,16 @@ const Date = styled.div`
 const New = styled.div`
     display: flex;
     text-align: center;
-    font-size: 20px;
+    font-size: 32px;
     color: white;
-    padding: 10px 30px;
+    padding: 0 40px;
+    direction: rtl;
+    span{
+        margin: 0 5px;
+    }
     @media screen and (max-width: 768px){
         font-size: 14px;
-        padding: 0 100px;
+        padding: 0 50px;
     }
 `;
 
@@ -252,50 +263,50 @@ $(window).on('scroll',function(){
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-board-elections-summary" target="_blank" rel="noreferrer"><img src={News1} alt="" /></a>
                         </Wrapper>
-                        <Date>JAN 20TH, 2022</Date>
-                        <New>The Telos Board Elections in a Nutshell</New>
+                        <Date><span>20</span><t>يناير</t><span>2022</span></Date>
+                        <New><p>انتخابات مجلس تيلوس باختصار</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-roadmap-2022-beyond" target="_blank" rel="noreferrer"><img src={News2} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>JAN 7TH, 2022</Date>
-                        <New>Announcing the new Telos Roadmap</New>
+                        <Date><span>7</span><t>يناير</t><span>2022</span></Date>
+                        <New><p>الإعلان عن خارطة طريق تيلوس الجديدة</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/meet-telos-foundation-board" target="_blank" rel="noreferrer"><img src={News3} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>JAN 5TH, 2022</Date>
-                        <New>Meet the Telos Foundation Board!</New>
+                        <Date><span>5</span><t>يناير</t><span>2022</span></Date>
+                        <New><p>قابل مجلس مؤسسة تيلوس!</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-2021-recap" target="_blank" rel="noreferrer"><img src={News4} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
-                        <Date>DEC 31ST, 2021</Date>
-                        <New>The Telos 2021 Recap</New>
+                        <Date><span>31</span><t>ديسمبر</t><span>2021</span></Date>
+                        <New><p><t>ملخص</t><span>The Telos 2021</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/2021-board-elections-kick-off" target="_blank" rel="noreferrer"><img src={News5}  alt=""/></a>
                         </Wrapper>
-                        <Date>DEC 17TH, 2021</Date>
-                        <New>2021 Board Elections: Kick Off!</New>
+                        <Date><span>17</span><t>ديسمبر</t><span>2021</span></Date>
+                        <New><p>انتخابات مجلس الإدارة 2021: الانطلاق!</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/important-telos-ecosystem-update" target="_blank" rel="noreferrer"><img src={News6} alt=""/></a>
                         </Wrapper>
-                        <Date>dec 6TH, 2021</Date>
-                        <New>Important Telos Ecosystem Update</New>
+                        <Date><span>6</span><t>ديسمبر</t><span>2021</span></Date>
+                        <New><p>تحديث هام للنظام البيئي تيلوس</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-trading-live-sushiswap" target="_blank" rel="noreferrer"> <img src={News7} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
-                        <Date>NOV 18TH, 2021</Date>
-                        <New>Trading is live on Sushiswap</New>
+                        <Date><span>18</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p>التداول متوفر على سوشي سواب</p></New>
                         </Container>
                         <LinkR to="/"><IconHolder>
                             <IconButton><IconHome /></IconButton>
@@ -309,50 +320,50 @@ $(window).on('scroll',function(){
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-stores-critical-climate-data" target="_blank" rel="noreferrer"><img src={News8} alt=""/></a>
                         </Wrapper> 
-                        <Date>NOV 18TH, 2021</Date>
-                        <New>dClimate + Telos + Kanda</New>
+                        <Date><span>18</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p><t>تيلوس</t><span>+</span><t>كاندا</t><span>+</span><span>dClimate</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/sushiswap-partners-with-telos" target="_blank" rel="noreferrer"> <img src={News9} alt=""/></a>
                         </Wrapper> 
-                        <Date>NOV 17TH, 2021</Date>
-                        <New>Sushiswap launches on Telos EVM</New>
+                        <Date><span>17</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p><t>تم إطلاق سوشي سواب على تيلوس</t><span>EVM</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper >
                         <a href="https://www.telos.net/news/telos-partners-with-elastos-essentials" target="_blank" rel="noreferrer"><img src={News10} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
-                        <Date>NOV 15TH, 2021</Date>
-                        <New>Telos partners with Elastos Essentials</New>
+                        <Date><span>15</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p><t>شراكة تيلوس مع</t><span>Elastos Essentials</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-anyswap-building-bridges" target="_blank" rel="noreferrer"> <img src={News11} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper> 
-                        <Date>NOV 12TH, 2021</Date>
-                        <New>Telos & Anyswap</New>
+                        <Date><span>12</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p>تيلوس و انيسواب</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/tlos-bitfinex-listing-details" target="_blank" rel="noreferrer"><img src={News12} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 11TH, 2021 </Date>
-                        <New>Telos lists on BitFinex!</New>
+                        <Date><span>11</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p>ادراج تيلوس على منصة بيتفاينكس</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-foundation-october-report" target="_blank" rel="noreferrer"> <img src={News13} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 11TH, 2021</Date>
-                        <New>October News Recap</New>
+                        <Date><span>11</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p>ملخص أخبار أكتوبر</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-raises-million-strategic-investment" target="_blank" rel="noreferrer"> <img src={News14} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 11TH, 2021</Date>
-                        <New>Telos raises $8M on strategic deal</New>
+                        <Date><span>11</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New>تجمع شركة تيلوس 8 ملايين دولار في صفقة استراتيجية</New>
                         </Container>
                     </ColumnMiddle>
                             
@@ -362,50 +373,50 @@ $(window).on('scroll',function(){
                         <Wrapper>
                         <a href="https://www.telos.net/news/bitmart-lists-telos" target="_blank" rel="noreferrer"><img src={News15} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 5TH, 2021</Date>
-                        <New>Telos lists on Bitmart!</New>
+                        <Date><span>5</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p>ادراج تيلوس على منصة بيتمارت</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telospunks-come-to-telos-evm" target="_blank" rel="noreferrer"> <img src={News16} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 3TH, 2021</Date>
-                        <New>Telos Punks come to the EVM</New>
+                        <Date><span>3</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p><t>مجيئ تيلوس بانكس  إلى</t><span>EVM</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-evm-mainet-live" target="_blank" rel="noreferrer"><img src={News17} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
-                        <Date>NOV 1ST, 2021</Date>
-                        <New>Telos EVM is Live</New>
+                        <Date><span>1</span><t>نوفمبر</t><span>2021</span></Date>
+                        <New><p><t>افتتاح تيلوس</t><span>EVM</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-evm-approved-audit-certificate-received" target="_blank" rel="noreferrer"><img src={News18} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>OCT 22TH, 2021</Date>
-                        <New>Telos EVM is Sentnl Approved</New>
+                        <Date><span>22</span><t>أكتوبر</t><span>2021</span></Date>
+                        <New><p><t>تيلوس</t><span>EVM</span><t>معتمد من قبل</t><span>Sentnl</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/telos-esg-crypto" target="_blank" rel="noreferrer"><img src={News19} style={{objectPosition: 'left'}} alt=""/></a>
                         </Wrapper>
-                        <Date>OCT 16TH, 2021</Date>
-                        <New>Telos leads its way in sustainability</New>
+                        <Date><span>16</span><t>أكتوبر</t><span>2021</span></Date>
+                        <New><p>تقود تيلوس طريقها في الاستدامة</p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/the-telos-evm-mainnet-launch-has-started-and-roadmap-is-out" target="_blank" rel="noreferrer"><img src={News20} style={{objectPosition: 'right'}} alt=""/></a>
                         </Wrapper>
-                        <Date>OCT 1ST, 2021</Date>
-                        <New>The EVM Launch Roadmap</New>
+                        <Date><span>1</span><t>أكتوبر</t><span>2021</span></Date>
+                        <New><p><t>خارطة طريق إطلاق</t><span>EVM</span></p></New>
                         </Container>
                         <Container>
                         <Wrapper>
                         <a href="https://www.telos.net/news/decide-voter-contest" target="_blank" rel="noreferrer"> <img src={News21} style={{objectPosition: 'center'}} alt=""/></a>
                         </Wrapper>
-                        <Date>SEP 9TH, 2021</Date>
-                        <New>Decide Voter Contest</New>
+                        <Date><span>9</span><t>سبتمبر</t><span>2021</span></Date>
+                        <New><p><t>تحديد مسابقة الناخبين على</t><span>Decide Voter</span></p></New>
                         </Container>
                         <IconHolder onClick={scrollUp}>
                             <IconButton><IconUp /></IconButton>

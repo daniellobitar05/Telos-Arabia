@@ -10,9 +10,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import Recap from "../images/news/news13.png";
+import Recap from "../images/news/recap.png";
 import Nutshell from "../images/news/news1.jpg";
-import Board from "../images/news/news3.jpg";
+import Board from "../images/news/board.jpg";
 
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`

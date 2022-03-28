@@ -12,6 +12,7 @@ import Comm from "../SVG/comm.svg";
 import CPLUS from "../SVG/cplusplus.svg";
 import SOLID from "../SVG/solidity.svg";
 
+
 const Section = styled.div`
     display: flex;
     flex-direction: column;

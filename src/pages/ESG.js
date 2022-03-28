@@ -25,23 +25,10 @@ import ESGConclusion from "../components/Sections/ESGConclusion";
 import ESGLatest from "../components/Sections/ESGLatest";
 import Footer from "../components/Sections/Footer";
 
-import Ball1 from "../components/images/rou7.png";
+import Ball1 from "../components/images/rou11.png";
 import Ball2 from "../components/images/rou6.png";
 
 
-const Section = styled.div`
-    width: 100%;
-    height: 90vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* background-image: url(${Ball1});
-    background-size: 900px 900px;
-    background-repeat: no-repeat;
-    background-position: -200px -100px; */
-`;
 
 const Container = styled.div`
     position: relative;
@@ -101,7 +88,7 @@ const ImageRight = styled.div`
         width: 125%;
         height: 125%;
         object-fit: cover;
-        transform: translate(-15%, -5%);
+        transform: translate(-10%, -10%);
     }
 
 
@@ -132,7 +119,7 @@ const Subtitle = styled.div`
     color: white; 
     line-height: 1.4em;
     text-align: justify;
-    font-size: 34px;
+    font-size: 28px;
     text-align: center;
     width: 90%;
     direction: rtl;

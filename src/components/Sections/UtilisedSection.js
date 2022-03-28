@@ -33,6 +33,14 @@ const HeaderText = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: rtl;
+    span{
+        margin: 0 10px;
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+    }
 `;
 
 const Column = styled(motion.div)`
@@ -49,6 +57,32 @@ const Row = styled.div`
     height: 10vh;
     width: 100%;
     display: inline-flex;
+`;
+
+const TopSmallItem = styled.div`
+    width: 9.09%;
+    height: 100%;
+    color: white;
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img{
+        width: 30px;
+    }
+`;
+
+const TopBigItem = styled.div`
+    width: 18.08%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
 `;
 
 const SmallItem = styled.div`
@@ -225,17 +259,17 @@ const UtilisedSection = () => {
 
     return(
         <Section id="utilised" ref={ref}>
-            <HeaderText animate={animation}>Telos is the 2nd most utilised blockchain in the world - blocktivity.info</HeaderText>
+            <HeaderText animate={animation}><p><t>تيلوس هي ثاني أكثر بلوكشين استخدامًا في العالم -</t><a href="https://blocktivity.info/" target="_blank" rel="noreferrer"><span>blocktivity.info</span></a></p></HeaderText>
             <Column animate={animationTwo}>
                 <Row>
                     <SmallItem></SmallItem>
-                    <SmallItem>NAME</SmallItem>
-                    <BigItem>ACTIVITY</BigItem>
-                    <BigItem>AVERAGE</BigItem>
-                    <BigItem>RECORD</BigItem>
-                    <SmallItem>MARKET CAP</SmallItem>
-                    <SmallItem>AVI</SmallItem>
-                    <SmallItem>CUI</SmallItem>
+                    <TopSmallItem>اسم</TopSmallItem>
+                    <TopBigItem>نشاط</TopBigItem>
+                    <TopBigItem>معدل</TopBigItem>
+                    <TopBigItem>سجل</TopBigItem>
+                    <TopSmallItem>قيمة السوقية</TopSmallItem>
+                    <TopSmallItem style={{transform: 'scale(0.8)'}}>AVI</TopSmallItem>
+                    <TopSmallItem style={{transform: 'scale(0.8)'}}>CUI</TopSmallItem>
                 </Row>
                 <Row>
                     <SmallItem><img src={EOS} alt="" /></SmallItem>
@@ -245,7 +279,7 @@ const UtilisedSection = () => {
                     <BigItem><Text className="utilcounter" data-target="74567958"> </Text></BigItem>
                     <SmallItem><span>$</span><Text className="utilcounter" data-target="2.8"> </Text><span>B</span></SmallItem>
                     <SmallItem><Text className="utilcounter" data-target="6541"> </Text></SmallItem>
-                    <SmallItem>MEDIUM</SmallItem>
+                    <TopSmallItem>متوسط</TopSmallItem>
                 </Row>
                 <Row>
                     <SmallItem><img src={Telos} alt="" /></SmallItem>
@@ -255,7 +289,7 @@ const UtilisedSection = () => {
                     <BigItem><Text className="utilcounter" data-target="32217207"> </Text></BigItem>
                     <SmallItem><span>$</span><Text className="utilcounter" data-target="0.014"> </Text><span>B</span></SmallItem>
                     <SmallItem><Text className="utilcounter" data-target="77843"> </Text></SmallItem>
-                    <SmallItem>MEDIUM</SmallItem>
+                    <TopSmallItem>متوسط</TopSmallItem>
                 </Row>
             </Column>
             <Empty>
@@ -263,7 +297,7 @@ const UtilisedSection = () => {
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="dpos" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="utilitythree" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

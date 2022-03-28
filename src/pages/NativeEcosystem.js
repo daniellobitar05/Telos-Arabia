@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import styled from "styled-components"
 import {motion} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
+import {Link as LinkR} from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 import { ThemeProvider } from "styled-components";
 import { themes } from "../components/Themes";
@@ -49,10 +50,12 @@ const Title = styled.div`
 `;
 
 const Button = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     border: none;
     background: transparent;
     color: white;
+    display: flex;
+    align-items: center;
     border-radius: 1rem;
     border: 2px solid aqua;
     margin: 3px;
@@ -154,6 +157,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
            <Button onClick={() => setActivePlatform(10)}>DEFI</Button>
            <Button onClick={() => setActivePlatform(11)}>SOCIAL</Button>
            <Button onClick={() => setActivePlatform(12)}>GAMES</Button>
+           <LinkR to="/EVMEcosystem"><Button><KeyboardArrowLeftIcon />EVM</Button></LinkR>
        </FilterContainer> 
     )
 }

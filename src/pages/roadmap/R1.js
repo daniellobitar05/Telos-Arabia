@@ -131,14 +131,19 @@ const Article = styled(motion.div)`
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
     span{
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+            font-size: 18px;
+            margin: 0 5px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0 15px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;

@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 150vh;
+        height: 190vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 180vh;
     }
 `;
 
@@ -103,15 +103,12 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    direction: rtl;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     transform: translate(0, 20%);
-    span{
-        margin: 0 10px;
-    }
+    
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
@@ -128,16 +125,26 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 30px 0;
+    padding: 20px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        margin: 0 5px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
         margin: 0 10px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -147,17 +154,8 @@ const Article = styled(motion.div)`
     }
 `;
 
-const Bigtitle = styled(motion.div)`
-    height: 10vh;
-    width: 80%;
-    font-size: 62px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-`;
+
+
 
 const R1 = () => {
 
@@ -211,9 +209,9 @@ const R1 = () => {
             
            <Grid>
                 <Title animate={animation}>dStor</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>dStor هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة GoodBlock Technologies. كأحد أعمدة الويب 3.0 ، يبسط dStor استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة dStor على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول NFT الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</Article>
+                <Article animate={animationTwo}><p><span>dStor</span> هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة <span>GoodBlock Technologies.</span> كأحد أعمدة الويب 3.0 ، يبسط <span>dStor</span> استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة <span>dStor</span> على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول <span>NFT</span> الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</p></Article>
                 <Title animate={animation}>Telos Web Wallet 2.0</Title>
-                <Article style={{direction: 'rtl', padding: '5px 0px'}} animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
+                <Article  animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
                
            </Grid>
            <Empty>

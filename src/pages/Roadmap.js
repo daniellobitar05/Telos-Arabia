@@ -46,6 +46,7 @@ const Section = styled.div`
 
 const PageTitle = styled(motion.div)`
     font-size: 84px;
+    line-height: 50px;
     width: 80%;
     height: 20vh;
     color: ${props => props.theme.text};  
@@ -57,6 +58,8 @@ const PageTitle = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
+        flex-direction: column;
+        justify-content: flex-start;
 
     }
     
@@ -182,7 +185,7 @@ const Roadmap = () => {
     return(
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
-                {/* <Section id="roadmap" ref={ref}>
+                <Section id="roadmap" ref={ref}>
                     <PageTitle animate={animation}>الاعلان عن خارطة تيلوس الجديدة</PageTitle>
                     <ImageHolder animate={animationTwo}></ImageHolder>
                     <Empty>
@@ -193,12 +196,12 @@ const Roadmap = () => {
                         <IconColumnRight ></IconColumnRight>
                         <ToggleColumn></ToggleColumn>
                     </Empty>
-                </Section> */}
+                </Section>
                 <R1 />
-                {/* <R2 />
+                <R2 />
                 <R3 />
                 <R4 />
-                <R5 />
+                {/* <R5 />
                 <R6 />
                 <R7 />
                 <R8 />

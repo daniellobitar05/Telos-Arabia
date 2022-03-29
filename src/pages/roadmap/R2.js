@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 130vh;
+        height: 180vh;
     }
 `;
 
@@ -91,29 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 120vh;
-    }
-`;
-
-
-
-const Title = styled(motion.div)`
-    height: 20vh;
-    width: 80%;
-    font-size: 48px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: right;
-    transform: translate(0, 20%);
-    span{
-        margin: 0 10px;
-    }
-    @media screen and (max-width: 768px){
-        height: 30vh;
-        transform: translate(0, 0);
+        height: 170vh;
     }
 `;
 
@@ -128,18 +106,20 @@ const Article = styled(motion.div)`
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        margin: 0 5px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
+        padding: 0;
     }
 `;
 
@@ -210,7 +190,7 @@ const R1 = () => {
                 <Article animate={animationTwo}>شيء أخير قبل أن نتعمق في خريطة الطريق! المقطع الحالي هو ملخصنا لما نعمل عليه الآن. قسم المستقبل هو ملخصنا لكل شيء نعمل على تحقيقه من أجل مستقبل نظام تيلوس البيئي. ترقبوا هذه التحديثات الأسبوعية لمعرفة ما سنقوم بمعالجته بعد ذلك والحصول على آخر التطورات التقنية في تيلوس</Article>
                 <Article animate={animationTwo}>دعونا نتعمق في خارطة طريق تيلوس الجديدة! اربط حزام الأمان ، إنها رحلة رائعة</Article>
                 <Bigtitle animate={animation}>الحاضر</Bigtitle>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>يستمر عمل Telos Core Team حتى بعد منتج مذهل مثل إطلاق Telos EVM. تحقق من المنتجات والمبادرات التي يتم تنفيذها حاليًا داخل نظام Telos البيئي. العديد من هذه الميزات موجودة بالفعل لاستخدامك ، مع قيام الفريق بإضافة ميزات جديدة على أساس منتظم.</Article>
+                <Article animate={animationTwo}><p>يستمر عمل <span>Telos Core Team</span> حتى بعد منتج مذهل مثل إطلاق <span>Telos EVM.</span> تحقق من المنتجات والمبادرات التي يتم تنفيذها حاليًا داخل نظام <span>Telos</span> البيئي. العديد من هذه الميزات موجودة بالفعل لاستخدامك ، مع قيام الفريق بإضافة ميزات جديدة على أساس منتظم.</p></Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r3" smooth={true} duration={1000} spy={true} exact="true">

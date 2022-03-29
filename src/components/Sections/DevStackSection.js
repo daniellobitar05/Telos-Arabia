@@ -63,7 +63,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 130vh;
+        height: 140vh;
     }
     
 `;
@@ -77,6 +77,7 @@ const Title = styled(motion.div)`
     text-align: center;
     align-items: center;
     justify-content: center;
+    line-height: 50px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         height: 35vh;
@@ -94,6 +95,7 @@ const Subtitle = styled(motion.div)`
     text-align: center; 
     float: left;
     height: 15vh;
+    line-height: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +103,7 @@ const Subtitle = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 25vh;
+        height: 35vh;
     }
 `;
 

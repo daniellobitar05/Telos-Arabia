@@ -21,7 +21,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 660px){
-       height: 160vh;
+       height: 170vh;
        
     }
 
@@ -41,7 +41,7 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 48px;
-        height: 35vh;
+        height: 30vh;
     }
     
 `;
@@ -60,7 +60,7 @@ const Subtitle = styled(motion.div)`
     @media screen and (max-width: 768px){
         width: 70%;
         font-size: 28px;
-        height: 25vh;
+        height: 20vh;
     }
 `;
 
@@ -72,7 +72,7 @@ const Wrapper = styled(motion.div)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 120vh;
     }
     
 `;
@@ -91,7 +91,7 @@ const EmptyColumn = styled.div`
 
 const Column = styled.div`
     width: 30%;
-    height: 100%;
+    height: 50vh;
     float: left;
     display: flex;
     flex-direction: column;
@@ -102,13 +102,14 @@ const Column = styled.div`
         float: none;
         width: 100%;
         height: 50vh;
+        margin: 20px 0;
     }
     
 `;
 
 const Box = styled(motion.a)`
     width: 55%;
-    height: 90%;
+    height: 50vh;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

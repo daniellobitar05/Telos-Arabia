@@ -23,7 +23,6 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 `;
 
 const Title = styled(motion.div)`
@@ -33,8 +32,12 @@ const Title = styled(motion.div)`
     color: ${props => props.theme.text};  
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
         font-size: 52px;
+        height: 30vh;
     }  
 `;
 
@@ -43,10 +46,11 @@ const Subtitle = styled(motion.div)`
     width: 70%;
     color: ${props => props.theme.text};
     text-align: right; 
-    padding: 30px 0;
+    padding: 10px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         font-size: 28px;
+        height: 30vh;
     }
     
 `;

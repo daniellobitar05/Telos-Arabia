@@ -21,7 +21,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 280vh;
     }
 `;
 
@@ -35,7 +35,7 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        height: 40vh;
+        height: 30vh;
         font-size: 52px;
     }
     
@@ -50,13 +50,13 @@ const Grid = styled(motion.div)`
     align-items: center;
     @media screen and (max-width: 768px){
         flex-direction: column;
-        height: 180vh;
+        height: 240vh;
     }   
 `;
 
 const Column = styled(motion.div)`
     width: 25%;
-    height: 100%;
+    height: 50vh;
     float: left;
     display: flex;
     flex-direction: column;
@@ -300,7 +300,7 @@ const DeveloperSection = () => {
                     </IconContainer>
                     <TextContainer>
                         <TopText>التمويل الأولي متاح</TopText>
-                        <BottomText>تدعم الشبكة المشاريع الواعدة</BottomText>
+                        <BottomText><t>تدعم الشبكة المشاريع الواعدة</t></BottomText>
                     </TextContainer>
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>

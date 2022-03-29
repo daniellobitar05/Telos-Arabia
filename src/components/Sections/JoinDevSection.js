@@ -29,16 +29,17 @@ const Section = styled.div`
 
 const Title = styled(motion.div)`
     font-size: 72px;
-    width: 80%;
+    width: 90%;
     color: ${props => props.theme.text};  
     height: 25vh;
+    line-height: 50px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 48px;
+        font-size: 42px;
         line-height: 50px;
         height: 20vh;
     }
@@ -52,6 +53,7 @@ const Subtitle = styled(motion.div)`
     color: ${props => props.theme.text};
     text-align: center; 
     height: 25vh;
+    line-height: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 110vh;
+        height: 160vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 150vh;
     }
 `;
 
@@ -130,14 +130,15 @@ const Article = styled(motion.div)`
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 5px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -148,7 +149,7 @@ const Article = styled(motion.div)`
 `;
 
 const Bigtitle = styled(motion.div)`
-    height: 20vh;
+    height: 30vh;
     width: 80%;
     font-size: 62px;
     font-weight: bold;
@@ -212,9 +213,9 @@ const R1 = () => {
             
            <Grid>
                 <Bigtitle animate={animation}>مستقبل</Bigtitle>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>تمهد Telos الطريق للتبني الجماعي للويب 3.0 من خلال تطوير حلول لامركزية مبتكرة مع تطبيقات العالم الحقيقي. سيحدد مطورو Telos الأساسيون وفريق المنتج أولويات التطوير على أساس ربع سنوي مع مراعاة الاحتياجات والفرص والموارد المتاحة. هذا ما لدينا في متجر Telos في عام 2022 وما بعده!</Article>
+                <Article  animate={animationTwo}><p>تمهد <span>Telos</span> الطريق للتبني الجماعي للويب 3.0 من خلال تطوير حلول لامركزية مبتكرة مع تطبيقات العالم الحقيقي. سيحدد مطورو <span>Telos</span> الأساسيون وفريق المنتج أولويات التطوير على أساس ربع سنوي مع مراعاة الاحتياجات والفرص والموارد المتاحة. هذا ما لدينا في متجر <span>Telos</span> في عام 2022 وما بعده!</p></Article>
                 <Title animate={animation}>أكاديمية تيلوس</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>تعرف على كل شيء عن Telos! نظرًا لأن الصناعة تتجه نحو التبني الجماعي ، نريد أن نجعل من السهل قدر الإمكان الترحيب بمشاريع العالم الحقيقي والمستخدمين والمستثمرين في النظام البيئي. سيجد المستخدمون في Telos Academy مواد تعليمية حول الجوانب الرئيسية لـ Telos ، إلى جانب مقدمة أوسع لتقنية blockchain.</Article>
+                <Article  animate={animationTwo}><p>تعرف على كل شيء عن <span>Telos!</span> نظرًا لأن الصناعة تتجه نحو التبني الجماعي ، نريد أن نجعل من السهل قدر الإمكان الترحيب بمشاريع العالم الحقيقي والمستخدمين والمستثمرين في النظام البيئي. سيجد المستخدمون في <span>Telos Academy</span> مواد تعليمية حول الجوانب الرئيسية لـ <span>Telos</span> ، إلى جانب مقدمة أوسع لتقنية <span>blockchain.</span></p></Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r7" smooth={true} duration={1000} spy={true} exact="true">

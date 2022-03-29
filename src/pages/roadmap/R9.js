@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 150vh;
+        height: 190vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 180vh;
     }
 `;
 
@@ -99,21 +99,23 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 20vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
+    direction: rtl;
     transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 24px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -126,18 +128,19 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -147,17 +150,7 @@ const Article = styled(motion.div)`
     }
 `;
 
-const Bigtitle = styled(motion.div)`
-    height: 20vh;
-    width: 80%;
-    font-size: 62px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-`;
+
 
 const R1 = () => {
 
@@ -210,10 +203,10 @@ const R1 = () => {
         <Section id="r9" ref={ref}>
             
            <Grid>
-                <Title animate={animation}>  (SAT) رموز ساتوشي</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>نسخة مجزأة من Bitcoin بديهية للغاية يمكن لجدتك استخدامها! لماذا تشتري قهوة مقابل 0.00005441 بيتكوين بينما يمكنك شرائها مقابل 5441 SAT؟ تسمح SATs بعلامات الأسعار التي تكون منطقية فعلاً للشخص العادي. عند إقرانها بمعاملات شبه محسوسة عند 10000 TPS وواجهة مستخدم سهلة الاستخدام لمحفظة Telos Web Wallet ، لم تكن معاملات التشفير في العالم الحقيقي أسهل من أي وقت مضى. يتم ربط SATs بـ Bitcoin blockchain وتمثل الرموز المميزة لـ BTC المغلفة. يمكن أيضًا تحويلها مباشرة بين SAT و BTC دون استخدام عقد تبادل أو مقايضة.</Article>
-                <Title animate={animation}> T-Bond NFTs واجهة مستخدم</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>كانت تقنية T-Bond NFTs واحدة من أكثر تطورات DeFi ابتكارًا في عام 2021. ستفتح T-Bonds UI الجديدة هذه القطعة القوية من الأدوات لمبادرات العالم الحقيقي بدون موارد للمطورين. نظرًا لأن العالم يعيد تصور الشكل الذي تبدو عليه أنظمتنا المالية التقليدية ، فإن T-Bond NFTs من المقرر أن تلعب دورًا رئيسيًا في مستقبل اقتصاداتنا.</Article>
+                <Title animate={animation}><p><t>رموز ساتوشي</t><span>(SAT)</span></p></Title>
+                <Article  animate={animationTwo}><p><t>نسخة مجزأة من</t><span>Bitcoin</span><t>بديهية للغاية يمكن لجدتك استخدامها! لماذا تشتري قهوة مقابل <span>0.00005441</span> بيتكوين بينما يمكنك شرائها مقابل</t><span>SAT 5441?</span><t>تسمح</t><span>SATs</span><t>بعلامات الأسعار التي تكون منطقية فعلاً للشخص العادي. عند إقرانها بمعاملات شبه محسوسة عند</t><span>TPS 10000</span><t>وواجهة مستخدم سهلة الاستخدام لمحفظة</t><span>Telos Web Wallet,</span><t>لم تكن معاملات التشفير في العالم الحقيقي أسهل من أي وقت مضى. يتم ربط</t><span>SATs</span><t>بـ</t><span>Bitcoin blockchain</span><t>وتمثل الرموز المميزة لـ</t><span>BTC</span><t>المغلفة. يمكن أيضًا تحويلها مباشرة بين</t><span>SAT</span><t>و</t><span>BTC</span><t>دون استخدام عقد تبادل أو مقايضة.</t></p></Article>
+                <Title animate={animation}><p><t>واجهة مستخدم</t><span>T-Bond NFTs</span></p></Title>
+                <Article  animate={animationTwo}><p><t>كانت تقنية</t><span>T-Bond NFTs</span><t>واحدة من أكثر تطورات</t><span>DeFi</span><t>بتكارًا في عام 2021. ستفتح</t><span>T-Bonds UI</span><t>الجديدة هذه القطعة القوية من الأدوات لمبادرات العالم الحقيقي بدون موارد للمطورين. نظرًا لأن العالم يعيد تصور الشكل الذي تبدو عليه أنظمتنا المالية التقليدية ، فإن</t><span>T-Bond NFTs</span><t>من المقرر أن تلعب دورًا رئيسيًا في مستقبل اقتصاداتنا.</t></p></Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r10" smooth={true} duration={1000} spy={true} exact="true">

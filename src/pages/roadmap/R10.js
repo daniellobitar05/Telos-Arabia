@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 150vh;
+        height: 210vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 200vh;
     }
 `;
 
@@ -103,17 +103,19 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
+    direction: rtl;
     transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -121,23 +123,24 @@ const Title = styled(motion.div)`
 
 
 const Article = styled(motion.div)`
-    width: 70vw;
+    width: 85%;
     font-size: 24px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -199,10 +202,10 @@ const R1 = () => {
         <Section id="r10" ref={ref}>
             
            <Grid>
-                <Title animate={animation}>Teloscan & Telos Block Explorer</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>مع استمرار تطوير Telos EVM ، ستقدم Teloscan التطبيقات والمستخدمين مجموعة من الأدوات التي تتنافس مع مستكشفي الكتل الرائدين الآخرين. بالإضافة إلى Teloscan for Telos EVM ، يجري أيضًا تطوير مستكشف كتل رسمي لـ Telos الأصلي. ستعمل كلتا هاتين الأداتين على تعظيم الاستفادة من ميزات Telos المتنوعة وضمان تجربة مستخدم سلسة للتنقل في تاريخ نظام Telos البيئي على نطاق واسع.</Article>
-                <Title animate={animation}>T-ID</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>حل هوية يجمع بين حاجتين كبيرتين للهوية. الأول هو الحاجة إلى تحديد الطابع الفريد لهوية الحساب الفردي ، والثاني هو قدرة المستخدم على التحقق من المعلومات من قبل أطراف ثالثة دون تسريب المعلومات الخاصة. سيتمكن المستخدمون من مشاركة معلومات محددة مع التطبيقات مع الحفاظ على التحكم فيما يشاركونه. سيتم ربط الشهادات الصادرة بهذه التفاصيل. سيكون هذا المنتج حاسمًا مع تطور الصناعة وتصبح احتياجات الحوكمة و DeFi أكثر تعقيدًا. أبرم مطورو Telos Core شراكة مع المطورين الأصليين لنظام الهوية الوطنية الإستونية ، وهو أول وأنجح نظام هوية blockchain في العالم.</Article>
+                <Title animate={animation}><span>Teloscan & Telos Block Explorer</span></Title>
+                <Article  animate={animationTwo}><p><t>مع استمرار تطوير</t><span>Telos EVM,</span><t>ستقدم</t><span>Teloscan</span><t>لتطبيقات والمستخدمين مجموعة من الأدوات التي تتنافس مع مستكشفي الكتل الرائدين الآخرين. بالإضافة إلى</t><span>Teloscan for Telos EVM,</span><t>يجري أيضًا تطوير مستكشف كتل رسمي لـ</t><span>Telos</span><t>لأصلي. ستعمل كلتا هاتين الأداتين على تعظيم الاستفادة من ميزات</t><span>Telos</span><t>المتنوعة وضمان تجربة مستخدم سلسة للتنقل في تاريخ نظام</t><span>Telos</span><t>البيئي على نطاق واسع.</t></p></Article>
+                <Title animate={animation}><span>T-ID</span></Title>
+                <Article  animate={animationTwo}><p><t>حل هوية يجمع بين حاجتين كبيرتين للهوية. الأول هو الحاجة إلى تحديد الطابع الفريد لهوية الحساب الفردي ، والثاني هو قدرة المستخدم على التحقق من المعلومات من قبل أطراف ثالثة دون تسريب المعلومات الخاصة. سيتمكن المستخدمون من مشاركة معلومات محددة مع التطبيقات مع الحفاظ على التحكم فيما يشاركونه. سيتم ربط الشهادات الصادرة بهذه التفاصيل. سيكون هذا المنتج حاسمًا مع تطور الصناعة وتصبح احتياجات الحوكمة و</t><span>DeFi</span><t>أكثر تعقيدًا. أبرم مطورو </t><span>Telos Core</span><t>شراكة مع المطورين الأصليين لنظام الهوية الوطنية الإستونية ، وهو أول وأنجح نظام هوية</t><span>blockchain</span><t>في العالم.</t></p></Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r11" smooth={true} duration={1000} spy={true} exact="true">

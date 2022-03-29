@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 120vh;
+        height: 170vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 110vh;
+        height: 160vh;
     }
 `;
 
@@ -99,7 +99,7 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 20vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
@@ -111,9 +111,12 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -126,18 +129,19 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
     padding: 30px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -200,13 +204,13 @@ const R1 = () => {
         <Section id="r11" ref={ref}>
             
            <Grid>
-                <Title animate={animation}><t>جدارية</t><t>NFT</t><t>سوق ومعرض</t></Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>مع تكاليف سكك منخفضة للغاية ، وعدم وجود مقدمة ، وبصمة كربونية منخفضة ، تم تعيين Telos EVM ليكون النظام الأساسي الأكثر ملاءمة للفنان في جميع أنحاء الصناعة. يعد سوق ومعرض NFT الجداري جزءًا أساسيًا في تسهيل هذا النظام البيئي الإبداعي المزدهر. قم بشراء وبيع وتداول وعرض مجموعات NFT الخاصة بك بسهولة وتنمية محفظة الأعمال الفنية اللامركزية الخاصة بك.</Article>
-                <Title animate={animation}>Telos خاص</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>ستعمل Telos Private على تمكين معاملات "ZK) الخاصة تمامًا" لإثبات المعرفة الصفرية "لمستخدمي Telos. ستستخدم Telos Private سلسلة جانبية منفصلة برمز معدل للسماح بمعاملات ZK والجسور من وإلى Telos. ستكون السلسلة الجانبية لامركزية ويديرها منتجو كتلة Telos ، ويتم اختيارهم من خلال تصويت المستخدم.</Article> 
+                <Title animate={animation}><p><t>سوق ومعرض</t><span>NFT</span><t>جدارية</t></p></Title>
+                <Article  animate={animationTwo}><p><t>مع تكاليف سكك منخفضة للغاية ، وعدم وجود مقدمة ، وبصمة كربونية منخفضة ، تم تعيين</t><span>Telos EVM</span><t>ليكون النظام الأساسي الأكثر ملاءمة للفنان في جميع أنحاء الصناعة. يعد سوق ومعرض</t><span>NFT</span><t>الجداري جزءًا أساسيًا في تسهيل هذا النظام البيئي الإبداعي المزدهر. قم بشراء وبيع وتداول وعرض مجموعات</t><span>NFT</span><t>الخاصة بك بسهولة وتنمية محفظة الأعمال الفنية اللامركزية الخاصة بك.</t></p></Article>
+                <Title animate={animation}><p><t>خاص</t><span>Telos</span></p></Title>
+                <Article  animate={animationTwo}><p><t>ستعمل</t><span>Telos Private</span><t>على تمكين معاملات </t><t>"الخاصة تمامًا"</t><span>(ZK)</span><t>لإثبات المعرفة الصفرية "لمستخدمي</t><span>Telos.</span><t>ستستخدم</t><span>Telos Private</span><t>سلسلة جانبية منفصلة برمز معدل للسماح بمعاملات</t><span>ZK</span><t>والجسور من وإلى</t><span>Telos.</span><t>ستكون السلسلة الجانبية لامركزية ويديرها منتجو كتلة</t><span>Telos,</span><t>ويتم اختيارهم من خلال تصويت المستخدم.</t></p></Article> 
            </Grid>
            <Empty>
-                <IconColumnLeft to="r12" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="r14" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

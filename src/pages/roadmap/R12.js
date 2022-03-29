@@ -122,7 +122,7 @@ const Title = styled(motion.div)`
 
 
 const Article = styled(motion.div)`
-    width: 70vw;
+    width: 85vw;
     font-size: 24px;
     color: whitesmoke;
     display: flex;
@@ -130,15 +130,16 @@ const Article = styled(motion.div)`
     align-items: right;
     text-align: right;
     padding: 30px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -152,14 +153,14 @@ const Article = styled(motion.div)`
 const DownTitle = styled.div`
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    text-align: right; 
+    direction: rtl;
     font-size: 62px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 42px;
-        transform: translate(-10%, 0);
+        font-size: 38px;
+        width: 80%;
     }
 `;
 
@@ -214,16 +215,16 @@ const R1 = () => {
         <Section id="r12" ref={ref}>
             
            <Grid>
-                <Title animate={animation}>Telos موقع</Title>
-                    <Article style={{direction: 'rtl'}} animate={animationTwo} >يسمح موقع Telos بإثبات الموقع باستخدام blockchain Telos ، مع تحفيز المستخدمين على إجراء "التنقيب عن الموقع" للنظام. باستخدام هذا المنتج ، سيتمكن أي شخص من التحقق من وجوده في موقع معين في وقت محدد. هذا يفتح عالمًا من الاحتمالات لـ dApps و DAOs والمبادرات اللامركزية الأخرى. لاحظ أن موقع Telos هو هدف إنمائي طويل المدى ولا يُتوقع أن يكتمل خلال عام 2022.</Article>
-                    <DownTitle style={{direction: 'rtl'}} animate={animationTwo}>نأمل أن تكون قد استمتعت بخريطة طريق Telos الجديدة!</DownTitle>
+                <Title animate={animation}><p><t>موقع</t><span>Telos</span></p></Title>
+                    <Article  animate={animationTwo} ><p><t>يسمح موقع</t><span>Telos</span><t>بإثبات الموقع باستخدام</t><span>Telos blockchain,</span><t>مع تحفيز المستخدمين على إجراء "التنقيب عن الموقع" للنظام. باستخدام هذا المنتج ، سيتمكن أي شخص من التحقق من وجوده في موقع معين في وقت محدد. هذا يفتح عالمًا من الاحتمالات لـ</t><span>dApps</span><t>و</t><span>DAOs</span><t>والمبادرات اللامركزية الأخرى. لاحظ أن موقع</t><span>هو هدف إنمائي طويل المدى ولا يُتوقع أن يكتمل خلال عام 2022.</span></p></Article>
+                    <DownTitle  animate={animationTwo}>نأمل أن تكون قد استمتعت بخريطة طريق Telos الجديدة!</DownTitle>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r13" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="r11" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="r14" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

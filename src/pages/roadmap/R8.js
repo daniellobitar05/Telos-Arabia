@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 110vh;
+        height: 150vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 140vh;
     }
 `;
 
@@ -99,21 +99,23 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 20vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
+    direction: rtl;
     transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -126,18 +128,19 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
     padding: 30px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -198,10 +201,10 @@ const R1 = () => {
         <Section id="r8" ref={ref}>
             
            <Grid>
-                <Title animate={animation}> Telos dApp برنامج حوافز</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>من أجل ضمان أن Telos هي موطن لبعض الاقتصادات الأكثر ابتكارًا وازدهارًا في الصناعة ، فإننا نطلق برنامج حوافز dApp لشبكة Telos. ستقدم هذه المبادرة الدعم المالي والتقني وتطوير الأعمال للمشاريع التي ستلعب دورًا أساسيًا في مستقبل صناعة blockchain.</Article>
-                <Title animate={animation}>Telos SureProfit</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>تم إعداد هذه الأداة الرائدة لإحداث ثورة في DeFi ، وتمكين المتداولين من ضمان نجاح تداولاتهم قبل إجراء المعاملات. سيسمح SureProfit للمستخدمين بالتحقق من أرصدتهم قبل إنهاء المعاملة مباشرة وإلغاء أي معاملة قد تؤدي إلى خسارة صافية للمستخدم النهائي. عند إقرانها بمعاملات شبه محسوسة ، تتيح هذه الأداة القوية البدء في تكوين ثروة بأقل من دولار واحد.</Article>
+                <Title animate={animation}><p><t>برنامج حوافز</t><span>Telos dApp</span></p></Title>
+                <Article  animate={animationTwo}><p>من أجل ضمان أن <span>Telos</span> هي موطن لبعض الاقتصادات الأكثر ابتكارًا وازدهارًا في الصناعة ، فإننا نطلق برنامج حوافز <span>dApp</span> لشبكة <span>Telos.</span> ستقدم هذه المبادرة الدعم المالي والتقني وتطوير الأعمال للمشاريع التي ستلعب دورًا أساسيًا في مستقبل صناعة <span>blockchain.</span></p></Article>
+                <Title animate={animation}><span>Telos SureProfit</span></Title>
+                <Article  animate={animationTwo}><p>تم إعداد هذه الأداة الرائدة لإحداث ثورة في <span>Defi</span> ، وتمكين المتداولين من ضمان نجاح تداولاتهم قبل إجراء المعاملات. سيسمح <span>SureProfit</span> للمستخدمين بالتحقق من أرصدتهم قبل إنهاء المعاملة مباشرة وإلغاء أي معاملة قد تؤدي إلى خسارة صافية للمستخدم النهائي. عند إقرانها بمعاملات شبه محسوسة ، تتيح هذه الأداة القوية البدء في تكوين ثروة بأقل من دولار واحد.</p></Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r9" smooth={true} duration={1000} spy={true} exact="true">

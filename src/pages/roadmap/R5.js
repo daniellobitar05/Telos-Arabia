@@ -111,7 +111,7 @@ const Title = styled(motion.div)`
     span{
         margin: 0 10px;
         @media screen and (max-width: 768px){ 
-            font-size: 32px;
+            font-size: 26px;
         }
     }
     @media screen and (max-width: 768px){
@@ -138,7 +138,7 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         font-size: 20px;
         @media screen and (max-width: 768px){
-        font-size: 18px;
+        font-size: 20px;
         margin: 0 8px;
         }
     }
@@ -213,7 +213,7 @@ const R1 = () => {
            <Grid>
                 <Title animate={animation}><p><span>Teloscan</span><t>بيتا</t></p></Title>
                 <Article  animate={animationTwo}><p><t>تم تصميم إصدار</t><span>Telos</span><t>من مستكشف كتل</t><span>Ethereum</span><t>الشهير خصيصًا مع وضع </t><span>Telos EVM</span><t>في الاعتبار. على الرغم من أن التطوير لا يزال في مراحله الأولى ، يمكن للمستخدمين و</t><span>dApps</span><t>بالفعل البدء في استكشاف</t><span>Telos EVM</span><t>من خلال التكرار المبكر لهذه الأداة القوية.</t></p></Article>
-                <Title animate={animation}>Telos قاعدة المعرفة والدعم  </Title>
+                <Title animate={animation}><p><span>Telos</span> قاعدة المعرفة والدعم</p></Title>
                 <Article  animate={animationTwo}><p><t>تعد</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Knowledge Base</a><t>، موطن دعم</t><span>Telos</span><t>لرسمي ، جزءًا لا يتجزأ من إنشاء</t><span>blockchain</span><t>للتبني الجماعي. من السهل التنقل في وثائق الدعم ويزيل نظام التذاكر المألوف عامل التخويف الذي يربطه العديد من الأشخاص بتقنية التشفير والويب 3.0</t></p></Article>
                 <Title animate={animation}>الشراكات والتبادلات</Title>
                 <Article animate={animationTwo}>يتمثل مفتاح النظام البيئي المزدهر في أكثر من مجرد التكنولوجيا التي يتم تقديمها. هذا هو السبب في أن مؤسسة Telos تبني شراكات مع مشاريع صناعية بارزة والتبادلات في جميع أنحاء العالم</Article>

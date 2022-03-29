@@ -28,6 +28,7 @@ import R10 from "./roadmap/R10";
 import R11 from "./roadmap/R11";
 import R12 from "./roadmap/R12";
 import R13 from "./roadmap/R13";
+import R14 from "./roadmap/R14";
 
 const Section = styled.div`
     width: 100%;
@@ -202,15 +203,16 @@ const Roadmap = () => {
                 <R3 />
                 <R4 />
                 <R5 />
-                {/* <R6 />
+                <R6 />
                 <R7 />
                 <R8 />
                 <R9 />
                 <R10 />
                 <R11 />
+                <R14 />
                 <R12 />
                  <R13 />
-                <Footer /> */}
+                <Footer />
         </ThemeProvider>
     )
 }

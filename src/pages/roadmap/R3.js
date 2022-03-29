@@ -99,21 +99,19 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 15vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
-    
     align-items: center;
-    
     text-align: right;
     transform: translate(0, 20%);
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
-        @media screen and (max-width: 768px){
-            font-size: 32px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
         }
     }
     @media screen and (max-width: 768px){
@@ -140,8 +138,8 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         font-size: 20px;
         @media screen and (max-width: 768px){
-        font-size: 18px;
-        margin: 0 5px;
+        font-size: 20px;
+        margin: 0 8px;
         }
     }
     a{
@@ -245,7 +243,7 @@ const R1 = () => {
         <Section id="r3" ref={ref}>
             
            <Grid>
-                <Title animate={animation}>Telos EVM</Title>
+                <Title animate={animation}><span>Telos EVM</span></Title>
                 <ArticleTop  animate={animationTwo}><p><t>كان إطلاق</t><span>Telos EVM</span><t>أحد أهم الإنجازات لنظام</t><span>Telos</span><t>البيئي منذ إطلاق شبكته الرئيسية. أطلقت</t><span>Telos</span><t>جهازًا ظاهريًا من الطبقة الأولى من</t><span>Ethereum</span><t>بدون تشغيل أمامي ، ورسوم الغاز المسطحة ، وكفاءة الطاقة ، والسرعة القصوى والقوة! مع بدء نشر التطبيقات ، يستمر التطوير في ضمان الإعداد السلس مع تكافؤ الميزات.</t></p><p><t>يمكنك قراءة المزيد عن</t><span>Telos EVM</span><a href="http://teloscan.io/" target="_blank" rel="noreferrer">في وثائقنا هنا.</a></p></ArticleTop>
                 <Title animate={animation}><p><t>تحديد تطبيق</t><span>Voter Mobile</span></p></Title>
                 <Article  animate={animationTwo}><p><t>يتيح تطبيق</t><span>Decide Voter</span><t>للجوال من</t><span>GoodBlock Technologies</span><t>استخدام محرك</t><span>Telos Decide</span><t> في العالم الحقيقي. متوفر على</t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer"> Google Play</a><t> و </t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer">Apple Store</a><t> ، هذا التطبيق البديهي يجعل الإدارة اللامركزية الشفافة والفعالة في متناول الجميع</t></p></Article>

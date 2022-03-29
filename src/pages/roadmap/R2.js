@@ -112,8 +112,8 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         font-size: 20px;
         @media screen and (max-width: 768px){
-        font-size: 18px;
-        margin: 0 5px;
+        font-size: 20px;
+        margin: 0 8px;
         }
     }
     @media screen and (max-width: 768px){

@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 110vh;
+        height: 150vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 140vh;
     }
 `;
 
@@ -103,17 +103,19 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    direction: rtl;
     text-align: right;
     transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -129,15 +131,16 @@ const Article = styled(motion.div)`
     align-items: right;
     text-align: right;
     padding: 30px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     span{
-        margin: 0 10px;
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 5px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -200,10 +203,10 @@ const R1 = () => {
         <Section id="r7" ref={ref}>
             
            <Grid>
-                <Title animate={animation}>Telos EVM 2.0</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>تسبق Telos EVM بالفعل بأميال حلول Solidity المنافسة الحالية ، لكن التطوير لا يتباطأ. سيضمن Telos EVM 2.0 استمرار Telos في تقديم قوة لا مثيل لها للتطبيقات المستندة إلى Ethereum على مدى عقود.</Article>
-                <Title animate={animation}>T-3.0 مقايضة</Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>سيضمن التطوير المستمر لبورصة T-Swaps أن تظل هذه المنصة جزءًا أساسيًا من DeFi على Telos. تعد واجهة المستخدم الأنيقة ، وتجمعات السيولة المخصصة للمناطق ، والسيولة المتزايدة ، وغيرها من الميزات الجديدة عناصر أساسية في خريطة الطريق لمنصة التداول المبتكرة هذه.</Article> 
+                <Title animate={animation}><span>Telos EVM 2.0</span></Title>
+                <Article  animate={animationTwo}><p>تسبق <span>Telos EVM</span> بالفعل بأميال حلول <span>Solidity</span> المنافسة الحالية ، لكن التطوير لا يتباطأ. سيضمن <span>Telos EVM 2.0</span> استمرار <span>Telos</span> في تقديم قوة لا مثيل لها للتطبيقات المستندة إلى <span>Ethereum</span> على مدى عقود.</p></Article>
+                <Title animate={animation}><t>مقايضة</t><span>T-3.0</span></Title>
+                <Article  animate={animationTwo}><p>سيضمن التطوير المستمر لبورصة <span>T-Swaps</span> أن تظل هذه المنصة جزءًا أساسيًا من <span>Defi</span> على <span>Telos.</span> تعد واجهة المستخدم الأنيقة ، وتجمعات السيولة المخصصة للمناطق ، والسيولة المتزايدة ، وغيرها من الميزات الجديدة عناصر أساسية في خريطة الطريق لمنصة التداول المبتكرة هذه.</p></Article> 
            </Grid>
            <Empty>
                 <IconColumnLeft to="r8" smooth={true} duration={1000} spy={true} exact="true">

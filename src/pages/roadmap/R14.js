@@ -1,8 +1,9 @@
 import {useEffect} from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
+import {Link as LinkR} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -73,13 +74,13 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.back5};
+    background: ${props => props.theme.back13};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 180vh;
     }
 `;
 
@@ -91,7 +92,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 170vh;
     }
 `;
 
@@ -104,18 +105,15 @@ const Title = styled(motion.div)`
     color: white;
     display: flex;
     align-items: center;
-    direction: rtl;
     text-align: right;
-    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
     transform: translate(0, 20%);
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
-        @media screen and (max-width: 768px){ 
-            font-size: 26px;
-        }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 15vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -130,25 +128,16 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 20px 0;
+    padding: 30px 0;
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 30px;
-    direction: rtl;
     span{
         margin: 0 8px;
         font-size: 20px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
-        }
-    }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0 10px;
-        font-size: 20px;
-        @media screen and (max-width: 768px){
-        font-size: 18px;
         }
     }
     @media screen and (max-width: 768px){
@@ -160,9 +149,21 @@ const Article = styled(motion.div)`
 `;
 
 
+const DownTitle = styled.div`
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: right; 
+    direction: rtl;
+    font-size: 62px;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+        transform: translate(-10%, 0);
+    }
+`;
 
-
-const R1 = () => {
+const R14 = () => {
 
     const toggleHome = () => {
         scroll.scrollToTop();
@@ -210,21 +211,20 @@ const R1 = () => {
     }, [inView])
 
     return(
-        <Section id="r4" ref={ref}>
+        <Section id="r14" ref={ref}>
             
            <Grid>
-                <Title animate={animation}><span>dStor</span></Title>
-                <Article animate={animationTwo}><p><span>dStor</span> هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة <span>GoodBlock Technologies.</span> كأحد أعمدة الويب 3.0 ، يبسط <span>dStor</span> استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة <span>dStor</span> على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول <span>NFT</span> الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</p></Article>
-                <Title animate={animation}><span>Telos Web Wallet 2.0</span></Title>
-                <Article  animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
-               
+                <Title animate={animation}><p><t>تحديد المصوت</t><span>+</span></p></Title>
+                <Article  animate={animationTwo} ><p><t>تعد الحوكمة القوية أحد أعمدة نظام</t><span>Telos</span><t>البيئي ، ولكن تتوفر حاليًا ميزات حوكمة معينة فقط للمستخدمين الذين ليس لديهم موارد للمطورين. يحل</t><span>Decide Voter +</span><t>هذا من خلال توفير حوكمة </t><span>blockchain</span><t>المتقدمة لمشاريع العالم الحقيقي. يتضمن ذلك ميزات مثل تعديلات التشريعات وإدارة انتخابات مجلس الإدارة والمزيد.</t></p></Article>
+                <Title animate={animation}><p><t>ملفات تعريف</t><span>Telos 2.0</span></p></Title>
+                <Article  animate={animationTwo} ><p><t>ملفات تعريف</t><span>Telos,</span><t>جواز سفرك إلى الويب 3.0 ، عبارة عن خدمة ملف تعريف مستخدم لامركزية تم إنشاؤها لتسهيل نظام بيئي أكثر جاذبية. يسمح للمستخدمين بتعيين صورة رمزية مخصصة وشخصية عامة مرتبطة بحساباتهم. يمكن للمشاريع بعد ذلك الاستفادة من هذا كحل ملف تعريف على مستوى الشبكة للتجارب المألوفة داخل التطبيق. سوف توفر</t><span>Telos Profiles 2.0</span><t>واجهة مستخدم محدثة وأدوات سهلة للتنقل ، مما يفتح الإمكانات الكاملة لتنميط المستخدم اللامركزي.</t></p></Article>   
            </Grid>
            <Empty>
-                <IconColumnLeft to="r5" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="r12" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="r3" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="r11" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
@@ -233,4 +233,4 @@ const R1 = () => {
     )
 }
 
-export default R1;
+export default R14;

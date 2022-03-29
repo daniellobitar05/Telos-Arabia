@@ -42,7 +42,7 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 42px;
+    font-size: 32px;
     width: 70%;
     color: ${props => props.theme.text};
     text-align: right; 
@@ -135,7 +135,7 @@ const Developers = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: '-20px',
                 transition: {
                     duration: 1, delay: 0.5,
                 }

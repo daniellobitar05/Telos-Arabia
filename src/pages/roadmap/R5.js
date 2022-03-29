@@ -7,7 +7,7 @@ import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp'; 
 
 
 
@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 110vh;
+        height: 190vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 180vh;
     }
 `;
 
@@ -103,17 +103,19 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
     transform: translate(0, 20%);
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 32px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -121,7 +123,7 @@ const Title = styled(motion.div)`
 
 
 const Article = styled(motion.div)`
-    width: 70vw;
+    width: 80vw;
     font-size: 24px;
     color: whitesmoke;
     display: flex;
@@ -130,14 +132,24 @@ const Article = styled(motion.div)`
     text-align: right;
     padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 30px;
+    direction: rtl;
     span{
-        margin: 0 10px;
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
         margin: 0 10px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        }
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -147,17 +159,6 @@ const Article = styled(motion.div)`
     }
 `;
 
-const Bigtitle = styled(motion.div)`
-    height: 10vh;
-    width: 80%;
-    font-size: 62px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-`;
 
 const R1 = () => {
 
@@ -210,8 +211,10 @@ const R1 = () => {
         <Section id="r5" ref={ref}>
             
            <Grid>
+                <Title animate={animation}><p><span>Teloscan</span><t>بيتا</t></p></Title>
+                <Article  animate={animationTwo}><p><t>تم تصميم إصدار</t><span>Telos</span><t>من مستكشف كتل</t><span>Ethereum</span><t>الشهير خصيصًا مع وضع </t><span>Telos EVM</span><t>في الاعتبار. على الرغم من أن التطوير لا يزال في مراحله الأولى ، يمكن للمستخدمين و</t><span>dApps</span><t>بالفعل البدء في استكشاف</t><span>Telos EVM</span><t>من خلال التكرار المبكر لهذه الأداة القوية.</t></p></Article>
                 <Title animate={animation}>Telos قاعدة المعرفة والدعم  </Title>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}><p><t>تعد</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Knowledge Base</a><t>، موطن دعم</t><span>Telos</span><t>لرسمي ، جزءًا لا يتجزأ من إنشاء</t><span>blockchain</span><t>للتبني الجماعي. من السهل التنقل في وثائق الدعم ويزيل نظام التذاكر المألوف عامل التخويف الذي يربطه العديد من الأشخاص بتقنية التشفير والويب 3.0</t></p></Article>
+                <Article  animate={animationTwo}><p><t>تعد</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Knowledge Base</a><t>، موطن دعم</t><span>Telos</span><t>لرسمي ، جزءًا لا يتجزأ من إنشاء</t><span>blockchain</span><t>للتبني الجماعي. من السهل التنقل في وثائق الدعم ويزيل نظام التذاكر المألوف عامل التخويف الذي يربطه العديد من الأشخاص بتقنية التشفير والويب 3.0</t></p></Article>
                 <Title animate={animation}>الشراكات والتبادلات</Title>
                 <Article animate={animationTwo}>يتمثل مفتاح النظام البيئي المزدهر في أكثر من مجرد التكنولوجيا التي يتم تقديمها. هذا هو السبب في أن مؤسسة Telos تبني شراكات مع مشاريع صناعية بارزة والتبادلات في جميع أنحاء العالم</Article>
            </Grid>

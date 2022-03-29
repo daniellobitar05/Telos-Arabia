@@ -106,6 +106,7 @@ const Title = styled(motion.div)`
     display: flex;
     flex-direction: row;
     align-items: center;
+    line-height: 50px;
     justify-content: flex-end;
     text-align: right;
     transform: translate(0, 20%);

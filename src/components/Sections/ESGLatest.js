@@ -71,6 +71,9 @@ const Empty = styled.div`
     width: 100%;
     height: 10vh;
     display: inline-flex;
+    @media screen and (max-width: 768px){
+        height: 5vh;
+    }
 `;
 
 
@@ -92,6 +95,14 @@ const Title = styled(motion.div)`
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
+    @media screen and (max-width: 768px){
+        height: 10vh;
+        font-size: 32px;
+    }
 `;
 
 const ButtonWrapper = styled(motion.div)`
@@ -130,6 +141,10 @@ const Grid = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 75vh;
+    }
 `;
 
 const Column = styled(motion.a)`
@@ -140,27 +155,38 @@ const Column = styled(motion.a)`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        width: 50%;
+        height: 33%;
+    }
 `;
 
 const ImageHolder = styled.div`
     width: 100%;
     height: 50%;
-    background: orange;
+    @media screen and (max-width: 768px){
+        height: 60%;
+    }
     img{
         width: 100%;
     }
 `;
 
-const TextHolder = styled.div`
+const TextHolder = styled.div` 
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     width: 100%;
     height: 50%;
-    font-size: 24px;
+    font-size: 28px;
     transform: translate(0, -10%);
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    @media screen and (max-width: 768px){
+        height: 20%;
+        font-size: 16px;
+    }
 `;
 
 const ESGLatest = () => {
@@ -187,7 +213,7 @@ const ESGLatest = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw', opacity: 0, 
+                x: '-100vw', opacity: 0, 
             })
         }
         
@@ -204,7 +230,7 @@ const ESGLatest = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         
@@ -213,22 +239,22 @@ const ESGLatest = () => {
 
     return(
         <Section id="esglatest" ref={ref}>
-            <Title animate={animation}>Latest ESG News</Title>
+            <Title animate={animation}><t>آخر أخبار</t><span>ESG</span></Title>
             <ButtonWrapper animate={animationTwo}>
-            <LinkR to="/News"><Button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} transition={{duration: 0.2, type: "tween"}}>SHOW ALL NEWS</Button></LinkR>
+            <LinkR to="/News"><Button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} transition={{duration: 0.2, type: "tween"}}>عرض كل الأخبار</Button></LinkR>
             </ButtonWrapper>
             <Grid animate={animationTwo}>
                 <Column  whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/meet-telos-foundation-board" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={Board} alt="" /></ImageHolder>
-                    <TextHolder>Meet the Telos foundation board</TextHolder>
+                    <TextHolder>تعرف على مجلس مؤسسة تيلوس</TextHolder>
                 </Column>
                 <Column whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/telos-board-elections-summary" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={Nutshell} alt="" /></ImageHolder>
-                    <TextHolder>The Telos elections in a nutshell</TextHolder>
+                    <TextHolder>انتخابات تيلوس باختصار</TextHolder>
                 </Column>
                 <Column  whileHover={{transform: 'translate(0%, 5%)'}} transition={{duration: 0.8, type:"tween", ease: 'easeOut'}} href="https://www.telos.net/news/telos-monthly-recap-february-2022" target="_blank" rel="noreferrer">
                     <ImageHolder><img src={Recap} alt="" /></ImageHolder>
-                    <TextHolder>Telos Monthly Recap - February 2022</TextHolder>
+                    <TextHolder>ملخص تيلوس الشهري - فبراير 2022</TextHolder>
                 </Column>
             </Grid>
             <Empty>

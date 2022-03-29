@@ -34,7 +34,7 @@ const Title = styled(motion.div)`
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 42px;
+        font-size: 52px;
     }  
 `;
 
@@ -48,7 +48,8 @@ const Subtitle = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     
     @media screen and (max-width: 768px){
-        font-size: 18px;
+        font-size: 28px;
+        width: 80%;
     }
     
 `;
@@ -74,7 +75,7 @@ const IconText = styled.div`
     color: white;
     direction: rtl;
     @media screen and (max-width: 768px){
-        font-size: 14px;
+        font-size: 18px;
     }
 
 `;

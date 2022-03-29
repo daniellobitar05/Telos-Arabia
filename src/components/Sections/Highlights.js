@@ -73,6 +73,9 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px){
+        height: 120vh;     
+    }
 `;
 
 const Grid = styled.div`
@@ -82,6 +85,10 @@ const Grid = styled.div`
     
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 110vh;
+    }
 `;
 
 const ColumnLeft = styled.div`
@@ -92,6 +99,17 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 45vh;        
+    }
+
+    img{
+        @media screen and (max-width: 768px){
+            width: 300px;
+        }
+    }
     
 `;
 
@@ -103,13 +121,18 @@ const ColumnRight = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 65vh;        
+    }
+    
 `;
 
 const Item = styled.div`
     width: 95%;
     height: 40px;
     display: inline-flex;
-    
     align-items: center;
     justify-content: flex-end;
 `;
@@ -126,6 +149,11 @@ const Icon = styled.div`
     svg{
         transform: scale(0.7);
     }
+    @media screen and (max-width: 768px){
+        margin: 0 3px;    
+    }
+    
+    
 `;
 
 const Text = styled(motion.div)`
@@ -135,6 +163,9 @@ const Text = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 18px;   
     }
 `;
 

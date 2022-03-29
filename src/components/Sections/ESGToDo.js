@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import SilverLogo from "../images/pyr6.png";
+import Image from "../images/pyr6.png";
 
 const Section = styled.div`
     width: 100%;
@@ -20,7 +20,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 140vh;
     }
 `;
 
@@ -35,10 +35,13 @@ const Title = styled(motion.div)`
     span{
         margin: 0 15px;
     }
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
         width: 80%;
-        font-size: 24px;
-        height: 30vh;
+        font-size: 28px;
+        height: 20vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -58,10 +61,11 @@ const Subtitle = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    z-index: 100;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 40vh;
-        font-size: 16px;
+        height: 30vh;
+        font-size: 24px;
     }
 `;
 
@@ -134,62 +138,62 @@ const Grid = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 80vh;
     }
-`;
-
-const EmptyBoxColumn = styled.div`
-    width: 10%;
-    height: 100%;
-    float: left;
 `;
 
 const ColumnLeft = styled(motion.div)`
-    width: 45%;
+    width: 33%;
     height: 100%;
-    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        float: none;
         width: 100%;
-        height: 50%;
+        height: 30%;
     }
     img{
         width: 550px;
-        
+        z-index: 0;
         @media screen and (max-width: 768px){
-        width: 300px;
-        transform: translate(0, 0);
-    }
+            width: 300px;
+            transform: translate(0, 0);
+        }
     }
 `;
 
-const BoxRow = styled.div`
-    width: 100%;
-    height: 50%;
+const ColumnRight = styled(motion.div)`
+    width: 67%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: right;
-    font-size: 26px;
-    color: white;
-    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    transform: translate(-30%, -10%);
-    direction: rtl;
-    span{
-        margin: 0 10px;
-    }
     @media screen and (max-width: 768px){
-        font-size: 16px;
+        width: 100%;
+        height: 70%;
     }
-
 `;
 
-const BoxRowBottom = styled.div`
+const TopText = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    text-align: center;
+    span{
+        margin: 0 8px;
+    }
+    h1{
+        color: white;
+        font-size: 24px;
+        z-index: 100;
+    }
+`;
+
+const BottomText = styled.div`
     width: 80%;
     height: 50%;
     display: flex;
@@ -197,18 +201,39 @@ const BoxRowBottom = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 26px;
-    color: white;
-    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    
+`;
+
+const Quote = styled.div`
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     direction: rtl;
-    transform: translate(-50%, 20%);
-    @media screen and (max-width: 768px){
-        font-size: 16px;
-        transform: translate(0%, 20%);
+    span{
+        margin: 0 8px;
+    }
+    h1{
+        color: white;
+        font-size: 28px;
+        transform: translate(0, 20%);
+    }
+`;
+
+const Teller = styled.div`
+    width: 60%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+        color: white;
+        font-size: 24px;
+        transform: translate(0, 100%);
     }
 
 `;
-
 
 
 const ESGToDo = () => {
@@ -228,7 +253,7 @@ const ESGToDo = () => {
     useEffect(() => {
         if(inView){
             animation.start({
-                x: 0, y: '50px',
+                x: 0, y: 0,
                 transition: {
                     duration: 1, 
                 }
@@ -236,7 +261,7 @@ const ESGToDo = () => {
         }
         if(!inView){
             animation.start({
-                x: '-100vw', y: '50px'
+                x: '-100vw', y: 0
             })
         }
         
@@ -245,7 +270,7 @@ const ESGToDo = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0, x: '80px',
+                opacity: 1, y: 0, x: 0,
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -253,7 +278,7 @@ const ESGToDo = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '100px', x: '80px'
+                opacity: 0, y: '100px', x: 0
             })
         }
         
@@ -278,15 +303,17 @@ const ESGToDo = () => {
 
     return(
         <Section id="todo" ref={ref}>
-            <Title animate={animation}><t>إذن ، ما علاقة</t><span>ESG</span><t>بالتشفير و بلوكشين؟</t></Title>
+            <Title animate={animation}><p><t>إذن ، ما علاقة</t><span>ESG</span><t>بالتشفير و بلوكشين؟</t></p></Title>
             <Subtitle animate={animationTwo}>كانت واحدة من أكبر الآلام المتنامية لقطاع بلوكشين هي نظرة المجتمع السلبية تجاه التكنولوجيا. هناك العديد من المفاهيم الخاطئة الشائعة حول تأثيرات هذه التكنولوجيا على العالم ، وذلك لسبب وجيه. مع إمكانية التغيير الجذري لكيفية عمل اقتصاداتنا وأعمالنا وعلاقاتنا ، هناك مستوى من المخاطر يأتي مع التبني الشامل ، كما هو الحال مع أي تقدم تكنولوجي كبير.</Subtitle>
             <Grid>
-                <ColumnLeft><motion.img animate={animationThree} src={SilverLogo} alt="" /></ColumnLeft>
-                <EmptyBoxColumn />
-                <ColumnLeft animate={animationTwo}>
-                    <BoxRow><p><t>أصبح هذا أكثر وضوحًا بعد انخفاض سعر البيتكوين بعد مخاوف بشأن استهلاك الطاقة. خلال البث الشبكي في توافق الآراء 2021 ، أشار كيفن أوليري من</t><span>Shark Tank</span><t>إلى أنه "على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على التشفير] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG.</span></p></BoxRow>
-                    <BoxRowBottom><t>"على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على العملات المشفرة] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG".</span><p>كيفن أوليري</p></BoxRowBottom>
-                </ColumnLeft>
+               <ColumnLeft><img src={Image} alt="image" /></ColumnLeft> 
+               <ColumnRight animate={animationTwo}>
+                    <TopText><h1><t>صبح هذا أكثر وضوحًا بعد انخفاض سعر البيتكوين بعد مخاوف بشأن استهلاك الطاقة. خلال البث الشبكي في توافق الآراء 2021 ، أشار كيفن أوليري من</t><span>Shark Tank</span><t>إلى أنه "على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على التشفير] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG".</span></h1></TopText>
+                    <BottomText>
+                        <Quote><h1><t>"على الجميع أن يستيقظ ويدرك أن هناك طلبًا [على العملات المشفرة] ، ولكن يجب أن يتم ذلك حول مخاوف</t><span>ESG".</span></h1></Quote>
+                        <Teller><h1>كيفن أوليري</h1></Teller>
+                    </BottomText>
+               </ColumnRight>
             </Grid>
             <Empty>
                 <IconColumnLeft to="quotes" smooth={true} duration={1000} spy={true} exact="true">

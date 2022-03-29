@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {useEffect} from "react";
 import {IconButton} from "@mui/material";
 import {useInView} from "react-intersection-observer";
@@ -97,8 +97,8 @@ const Section = styled.div`
     }
 `;
 
-const Title = styled.div`
-    font-size: 62px;
+const Title = styled(motion.div)`
+    font-size: 72px;
     width: 100%;
     color: ${props => props.theme.text};  
     height: 20vh;
@@ -111,13 +111,18 @@ const Title = styled.div`
     }
 `;
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
     width: 80%;
     height: 70vh;
-
+    @media screen and (max-width: 768px){
+        width: 98%;
+    }
     .swiper {
         width: 75%;
         height: 100%;
+        @media screen and (max-width: 768px){
+            width: 98%;
+        }
     }
 
     .swiper-slide {
@@ -167,7 +172,9 @@ const FirstRow = styled.div`
     font-weight: bold;
     justify-content: flex-end;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-
+    @media screen and (max-width: 768px){
+        font-size: 36px;
+    }
 `;
 
 const SecondRow = styled.div`
@@ -178,14 +185,27 @@ const SecondRow = styled.div`
     justify-content: center;
     text-align: center;
     color: white;
-    font-size: 16px;
+    font-size: 22px;
+    line-height: 28px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
+    @media screen and (max-width: 768px){
+       font-size: 18px; 
+       line-height: 24px;
+       height: 30%;
+    }
 `;
 
 const InnerGrid = styled.div`
     width: 90%;
     height: 40%;
     display: flex;
+    @media screen and (max-width: 768px){
+        width: 98%;
+    }
 `;
 
 const Column = styled.ol`
@@ -202,9 +222,19 @@ const Item = styled.li`
     height: 25%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    text-align: right;
+    direction: rtl;
+    transform: translate(-15%, 0);
+    font-size: 20px;
+    span{
+        margin: 0 8px;
+    }
     &::marker{
         font-size: 20px;
         background-color: black;
+    }
+    @media screen and (max-width: 768px){
+        transform: translate(-25%, 25%);
     }
 `;
 
@@ -246,6 +276,9 @@ const SecondCorco = styled.div`
     background-repeat: no-repeat;
     background-size: (75px, auto);
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: scale(0.6) translate(-30%, 0);
+    }
     
 `;
 
@@ -256,7 +289,9 @@ const SecondKanda = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
-    
+    @media screen and (max-width: 768px){
+        transform: scale(0.8) translate(-30%, 0);
+    }
 `;
 
 const SecondNew = styled.div`
@@ -276,6 +311,9 @@ const SecondTaikai = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: translate(-20%, 0);
+    }
     
 `;
 
@@ -286,6 +324,9 @@ const SecondPeer = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: translate(-10%, 0);
+    }
     
 `;
 
@@ -299,7 +340,7 @@ const SecondStarter = styled.div`
     
 `;
 
-const Third = styled.a`
+const Third = styled.a` 
     height: 100%;
     width: 25%;
     color: white;
@@ -308,18 +349,63 @@ const Third = styled.a`
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    @media screen and (max-width: 768px){
+        font-size: 20px;
+        transform: translate(-20%, 0);
+    }
 `;
 
 const Additional = () => {
 
     const toggleHome = () => {
         scroll.scrollToTop();
-    }    
+    }   
+
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+    
+    const animationThree = useAnimation();
+    const animation = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                scale: 1, opacity: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                scale: 0.5, opacity: 0
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                x: 0, 
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animation.start({
+                x: '-100vw',
+            })
+        }
+        
+    }, [inView])
 
     return(
-        <Section id="additional">
-            <Title>Additional Environmental Examples</Title>
-                <Grid>
+        <Section id="additional" ref={ref}>
+            <Title animate={animation}>أمثلة بيئية إضافية</Title>
+                <Grid animate={animationThree}>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -333,19 +419,19 @@ const Additional = () => {
                     >
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>LocalScale is a public benefit organization focusing on the development of resilient and sustainable local economies through the use of technology, science and regenerative activities. It offers an inclusive, free-to-access organization and a platform that will promote the creation and use of local products, providing local economic alternatives to traditional financial systems, fostering local entrepreneurship and local communities, while advocating for social equality and social justice.</SecondRow>
+                        <SecondRow><p>لوكال سكال هي منظمة ذات منفعة عامة تركز على تطوير اقتصادات محلية مرنة ومستدامة من خلال استخدام التكنولوجيا والعلوم والأنشطة التجديدية. إنه يوفر منظمة شاملة ومجانية الوصول ومنصة من شأنها تعزيز إنشاء واستخدام المنتجات المحلية ، وتوفير بدائل اقتصادية محلية للأنظمة المالية التقليدية ، وتعزيز ريادة الأعمال المحلية والمجتمعات المحلية ، مع الدعوة إلى المساواة الاجتماعية والعدالة الاجتماعية.</p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>Facilitate cooperation</Item>
-                                <Item>Connect the global actors of change</Item>
-                                <Item>Empower local communities</Item>
-                                <Item>120 Partners & 22 Collaborations</Item>
+                                <Item>تسهيل التعاون</Item>
+                                <Item>ربط الجهات الفاعلة العالمية للتغيير</Item>
+                                <Item>تمكين المجتمعات المحلية</Item>
+                                <Item>120 شريكا و 22 تعاونا</Item>
                             </Column>
                             <Column>
-                                <Item>Zero Cost Payment System</Item>
-                                <Item>On a Zero Environmental Impact Blockchain</Item>
-                                <Item>Community owned platform</Item>
-                                <Item>Regenerative & Local Action</Item>
+                                <Item>نظام الدفع بدون تكلفة</Item>
+                                <Item>على بلوكشين ذات الأثر البيئي الصفري</Item>
+                                <Item>منصة مملوكة للمجتمع</Item>
+                                <Item>التجديد والعمل المحلي</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -356,15 +442,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>An ecological currency providing a positive solution to global warming. Users can purchase TREE tokens and in exchange a farmer plants a tree. Each tree is carefully selected, mindful of the location and ecosystem. A photo and GPS location are uploaded to the CORCO system. Token holders own their specific tree for 60 years, during which they collect CORCOCOIN rewards, representative of the Co2 that the tree captures.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p><t>عملة بيئية توفر حلاً إيجابيًا للاحتباس الحراري. يمكن للمستخدمين شراء رموز</t><span>TREE</span><t>وفي المقابل يقوم المزارع بزراعة شجرة. يتم اختيار كل شجرة بعناية ، مع مراعاة الموقع والنظام البيئي. يتم تحميل صورة وموقع</t><span>GPS</span><t>إلى نظام كوركو. يمتلك حاملو الرموز شجرتهم الخاصة لمدة 60 عامًا ، حيث يجمعون خلالها مكافآت كوركو كوين ، ممثلين لـ</t><span>Co2</span><t>التي تلتقطها الشجرة.</t></p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
-                                <Item>Connecting economics to natural resources</Item>
-                                <Item>An NFT/Currency for Carbon offsetting</Item>
+                                <Item>ربط الاقتصاد بالموارد الطبيعية</Item>
+                                <Item><t>عملة لموازنة الكربون</t><span>/ NFT</span></Item>
                             </Column>
                             <Column>
-                                <Item>Each CORCOCOIN is worth 1kg of Co2</Item>
-                                <Item>Utilize the token for savings from the Corcovado shop</Item>
+                                <Item><t>كل كوركوكوين يساوي 1 كجم من</t><span>Co2</span></Item>
+                                <Item>استخدم الرمز المميز لتحقيق وفورات من متجر كوركوفادو</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -375,17 +461,17 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>Empowering African communities to collect weather data. The mission of Kanda Weather Balloons is to build an entirely community-owned balloon network, in hopes of empowering African university students to become local climate change leaders. This project offers a viable solution to the lack of real-time and historical climate data in West Africa.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p>تمكين المجتمعات الأفريقية من جمع بيانات الطقس. تتمثل مهمةكاندا وازر بالون في بناء شبكة بالون مملوكة بالكامل للمجتمع ، على أمل تمكين طلاب الجامعات الأفارقة ليصبحوا قادة محليين في مجال تغير المناخ. يقدم هذا المشروع حلاً قابلاً للتطبيق لنقص البيانات المناخية في الوقت الحقيقي والتاريخية في غرب إفريقيا.</p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
-                                <Item>Community Owned</Item>
-                                <Item>Tokenised Rewards</Item>
-                                <Item>Tokenised For the Vulnerable</Item>
+                                <Item>مملوكة للمجتمع</Item>
+                                <Item>المكافآت الرمزية</Item>
+                                <Item>تم ترميزه للضعفاء</Item>
                             </Column>
                             <Column>
-                                <Item>Real-Time Data</Item>
-                                <Item>Open Source</Item>
-                                <Item>Blockchain-Powered</Item>
+                                <Item>معلومات الوقت الحقيقي</Item>
+                                <Item>المصدر المفتوح</Item>
+                                <Item>تعمل بتقنية بلوكشين</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -396,15 +482,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>Newlife is a cultural research and social creativity platform for design studios, artists, retailers, galleries, magazines and brands at the forefront of culture in over 107 countries to research, coolhunt and hire emerging talents.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p>نيو لايف هي عبارة عن منصة بحث ثقافي وإبداع اجتماعي لاستوديوهات التصميم والفنانين وتجار التجزئة والمعارض والمجلات والعلامات التجارية في طليعة الثقافة في أكثر من 107 دولة للبحث عن المواهب الناشئة والبحث عنها وتوظيفها.</p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
                                 
                             </Column>
                             <Column>
-                                <Item>Accelerating creative networking</Item>
-                                <Item>Ownership by Users</Item>
-                                <Item>Find and hire talents</Item>
+                                <Item>تسريع التواصل الإبداعي</Item>
+                                <Item>ملكية المستخدمين</Item>
+                                <Item>البحث عن المواهب وتوظيفها</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -415,15 +501,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>TAIKAI is an end-to-end platform that manages open innovation challenges for organizations or corporate businesses. The challenges are solved by their community of innovators and the best projects are selected through a transparent and auditable voting system.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p>تايكاي هي منصة شاملة تدير تحديات الابتكار المفتوحة للمؤسسات أو الشركات التجارية. يتم حل التحديات من قبل مجتمع المبتكرين ويتم اختيار أفضل المشاريع من خلال نظام تصويت شفاف وقابل للتدقيق.</p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
-                                <Item>Modular</Item>
-                                <Item>Configurable</Item>
+                                <Item>معياري</Item>
+                                <Item>شكلي</Item>
                             </Column>
                             <Column>
-                                <Item>Network Agnostic</Item>
-                                <Item>Secure</Item>
+                                <Item>محايد للشبكة</Item>
+                                <Item>يؤمن</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -434,15 +520,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>Peeranha is a decentralized question and answer website that rewards users with crypto tokens (PEER) for their valuable contributions. Unlike other question and answer websites where an organization owns the website and all the data generated from users, Peeranha is owned by the community and rewards are distributed to community members in exchange for their work in growing the ecosystem.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p><t>بيرنها هو موقع إلكتروني للأسئلة والأجوبة لا مركزي يكافئ المستخدمين برموز التشفير</t><span>(PEER)</span><t>لمساهماتهم القيمة. على عكس مواقع الأسئلة والأجوبة الأخرى حيث تمتلك منظمة موقع الويب وجميع البيانات الناتجة عن المستخدمين ، فإن بيرنها مملوكة للمجتمع ويتم توزيع المكافآت على أعضاء المجتمع مقابل عملهم في تنمية النظام البيئي.</t></p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
                                 
                             </Column>
                             <Column>
-                                <Item>Decentralized</Item>
-                                <Item>Ownership by Users</Item>
-                                <Item>Rewards contribution</Item>
+                                <Item>لامركزية</Item>
+                                <Item>ملكية المستخدمين</Item>
+                                <Item>مساهمة المكافآت</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -453,17 +539,17 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}>T-Starter combines cross-chain bridges and a fixed-pool swap platform to allow projects to raise funds more cost effectively than is possible on other blockchains. Other popular fundraising platforms face high gas fees, which make small value transactions unaffordable and exclude many users from participating in swap pools. T-Swaps utilizes the Telos network to solve this problem, resulting in wider participation and a far more cost effective token sale.</SecondRow>
+                        <SecondRow style={{height: '30%'}}><p><t>تجمع</t><span>T-Starter</span><t>بين الجسور عبر السلاسل ومنصة المبادلة الثابتة للسماح للمشاريع بجمع الأموال بشكل أكثر فعالية من حيث التكلفة مما هو ممكن في سلاسل الكتل الأخرى. تواجه منصات جمع الأموال الشائعة الأخرى رسومًا عالية للغاز ، مما يجعل المعاملات الصغيرة غير ميسورة التكلفة وتستبعد العديد من المستخدمين من المشاركة في مجموعات المقايضة. تستخدم T-Swaps شبكة تيلوس لحل هذه المشكلة ، مما يؤدي إلى مشاركة أوسع وبيع رمز أكثر فعالية من حيث التكلفة.</t></p></SecondRow>
                         <InnerGrid style={{height: '35%'}}>
                             <Column>
-                                <Item>Fixed & Dynamic Swap Pools</Item>
-                                <Item>Full KYC Integration</Item>
-                                <Item>Permission-less Listing</Item>
+                                <Item>مجمعات المبادلة الثابتة والديناميكية</Item>
+                                <Item><t>تكامل</t><span>KYC</span><t>الكامل</t></Item>
+                                <Item>قائمة بدون إذن</Item>
                             </Column>
                             <Column>
-                                <Item>Cross-chain Swaps</Item>
-                                <Item>Anti-scam Features</Item>
-                                <Item>Governance Model</Item>
+                                <Item>المقايضات عبر السلاسل</Item>
+                                <Item>ميزات مكافحة الاحتيال</Item>
+                                <Item>نموذج الحكم</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>

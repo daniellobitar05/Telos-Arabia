@@ -25,6 +25,9 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 130vh;
+    }
 `;
 
 const Grid = styled.div`
@@ -33,29 +36,45 @@ const Grid = styled.div`
     justify-content: center;
     width: 100%;
     height: 90vh;
+    @media screen and (max-width: 768px){
+        flex-direction: column; 
+        height: 140vh;
+    }
 `;
 
 const ColumnLeft = styled.div`
     width: 40%;
-    height: 80%;
+    height: 75vh;
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none; 
+        width: 100%;
+        height: 50vh;
+    }
 `;
 
 const ColumnRight = styled.div`
     width: 40%;
-    height: 100%;
+    height: 90vh;
     display: flex;
     float: left;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        float: none; 
+        width: 100%;
+        height: 70vh;
+        justify-content: center;
+    }
+    
 `;
 
-const GraphWrapper = styled.div`
+const GraphWrapper = styled(motion.div)`
     width: 90%;
     height: 70vh;
     border: 1px solid indigo;
@@ -65,6 +84,7 @@ const GraphWrapper = styled.div`
     align-items: center;
     background: linear-gradient(145deg, rgba(2,3,29,1) 0%, rgba(74,21,131,1) 35%, rgba(2,3,29,1) 100%);
     box-shadow: 6px 6px 20px limegreen;
+    
 `;
 
 const PositionRow = styled.div`
@@ -118,6 +138,9 @@ const TelosColumn = styled(motion.div)`
     width: 9.09%;
     float: left;
     background: purple;
+    @media screen and (max-width: 768px){
+        transform: translate(-30%, 0);
+    }
     
 `;
 const BTCColumn = styled(motion.div)`
@@ -125,6 +148,9 @@ const BTCColumn = styled(motion.div)`
     width: 9.09%;
     float: left;
     background: purple;
+    @media screen and (max-width: 768px){
+        transform: translate(-20%, 0);
+    }
     
 `;
 const ETHColumn = styled(motion.div)`
@@ -134,6 +160,9 @@ const ETHColumn = styled(motion.div)`
     background: purple;
     margin-left: 20px;
     margin-right: 20px;
+    @media screen and (max-width: 768px){
+        transform: translate(-20%, 0);
+    }
     
 `;
 
@@ -154,9 +183,9 @@ const IconRow = styled.div`
     
 `;
 
-const Subtitle = styled.div`
-    font-size: 18px;
-    width: 80%;
+const Subtitle = styled(motion.div)`
+    font-size: 22px;
+    width: 90%;
     color: ${props => props.theme.text};
     text-align: center; 
     text-shadow: black -1px 2px, #4b0082 -2px 2px, black -3px 3px;
@@ -165,13 +194,19 @@ const Subtitle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    a {
-        color: aqua;
-    }
+    direction: rtl;
     @media screen and (max-width: 768px){
         width: 90%;
         height: 20vh;
     }
+    span{
+        margin: 0 8px;
+    }
+    a {
+        color: aqua;
+        margin: 0 8px;
+    }
+   
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -244,7 +279,9 @@ const ESGChart = () => {
         scroll.scrollToTop();
     }
 
-    const {ref, inView} = useInView();
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
 
     function ChangeNumber () {
         const counters = document.querySelectorAll('.esggraph');
@@ -294,21 +331,58 @@ const ESGChart = () => {
         
     }, [inView])
 
+    const animationThree = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                scale: 1, opacity: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                scale: 0.5, opacity: 0
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: 0,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px',
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="esgchart">
+        <Section id="esgchart" ref={ref}>
             <Grid>
             <ColumnLeft>
-            <GraphWrapper ref={ref}>
+            <GraphWrapper animate={animationThree}>
                <PositionRow>
                <Position></Position>
                <Position></Position>
-                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(15%, 40%)'}}></Text> </Position>
+                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(25%, 40%)'}}></Text> </Position>
                         <Position></Position>
                         <Position></Position>
-                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(30%, 400%)'}}></Text></Position>
+                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(40%, 400%)'}}></Text></Position>
                         <Position></Position>
                         <Position></Position>
-                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-20%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
+                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-10%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
                         <Position></Position>
                 </PositionRow>  
                 <BarRow>
@@ -352,9 +426,9 @@ const ESGChart = () => {
             </GraphWrapper>
             </ColumnLeft>
             <ColumnRight>
-                <Subtitle><p>A <a href="" >recent analysis </a>found that Telos’ energy consumption estimates are lower than any major competitor, even Visa! Beyond estimates, the community is currently auditing their energy consumption and CO2 generation based on detailed reports from all network validators.</p></Subtitle>
-                <Subtitle>This will allow users to accurately predict their energy usage and mitigate it through community approved carbon credit purchases and Telos-based initiatives such as SEEDS, LocalScale, and Corcocoin projects. All these efforts ensure Telos provides the gold standard of environmental transparency in the blockchain industry.</Subtitle>
-                <Subtitle>Even with these incredibly low energy statistics, the network is doing more. Members of the community and the Telos Foundation are working to make the network fully carbon neutral. This will be tackled in a unique way that no other blockchain can easily accomplish.</Subtitle>
+                <Subtitle animate={animationTwo}><p><a href="https://assets.website-files.com/60abb689ce5c94972a5f808a/6108322addd49b1c328100c2_Telos-Energy-Consumption-and-Competitor-Comparison-June-30-2021.pdf" target="_blank" rel="noreferrer">وجد تحليل حديث</a><t>أن تقديرات استهلاك الطاقة لشركة تيلوس أقل من أي منافس رئيسي ، حتى فيزا! بعيدًا عن التقديرات ، يقوم المجتمع حاليًا بمراجعة استهلاك الطاقة وتوليد ثاني أكسيد الكربون بناءً على تقارير مفصلة من جميع مدققي الشبكة.</t></p></Subtitle>
+                <Subtitle animate={animationTwo}><p>سيسمح هذا للمستخدمين بالتنبؤ بدقة باستخدامهم للطاقة والتخفيف من حدته من خلال مشتريات ائتمان الكربون المعتمدة من المجتمع والمبادرات القائمة على تيلوس مثل مشاريع سيدس و لوكال سكال و كوركو كوين. تضمن كل هذه الجهود أن شركة تيلوس توفر المعيار الذهبي للشفافية البيئية في صناعة بلوكشين.</p></Subtitle>
+                <Subtitle animate={animationTwo}><p>حتى مع هذه الإحصائيات منخفضة الطاقة بشكل لا يصدق ، فإن الشبكة تفعل المزيد. يعمل أعضاء المجتمع ومؤسسة تيلوس على جعل الشبكة محايدة تمامًا للكربون. سيتم التعامل مع ذلك بطريقة فريدة لا يمكن لأي بلوكشين آخر تحقيقها بسهولة.</p></Subtitle>
             </ColumnRight>
             </Grid>
             <Empty>

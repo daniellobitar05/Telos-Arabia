@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {useEffect} from "react";
 import {useInView} from "react-intersection-observer";
 import {Link as LinkS} from "react-scroll";
@@ -27,7 +27,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        
     }
 `;
 
@@ -92,7 +92,7 @@ const ArrowHome = styled(KeyboardDoubleArrowUpIcon)`
     color: white;
 `;
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
     height: 80vh;
     width: 90%;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
@@ -101,6 +101,9 @@ const Grid = styled.div`
     align-items: center;
     justify-content: center;
     box-shadow: 6px 6px 20px limegreen;
+    @media screen and (max-width: 768px){
+        display: none; 
+    }
 `;
 
 const GridTitle = styled.div`
@@ -109,10 +112,13 @@ const GridTitle = styled.div`
     height: 20vh;
     color: white; 
     font-size: 42px;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    text-align: right;
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    span {
+        margin: 0 8px;
+    }
 `;
 
 const GridWrapper = styled.div`
@@ -162,13 +168,24 @@ const Row = styled.div`
 `;
 
 const RowItem = styled.div`
-    width: 25%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+`;
+
+const RowItemText = styled.div`
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
 `;
 
@@ -247,11 +264,30 @@ const ESGGreenest = () => {
         scroll.scrollToTop();
     }
 
+    const animationThree = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                scale: 1, opacity: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                scale: 0.5, opacity: 0
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="greenest">
+        <Section id="greenest" ref={ref}>
             <Empty></Empty>
-            <Grid ref={ref}>
-            <GridTitle>Telos is the #GreenestBlockchain</GridTitle> 
+            <Grid animate={animationThree}>
+            <GridTitle><p><t>تيلوس هي</t><span>#GreenestBlockchain</span></p></GridTitle> 
             <GridWrapper>
                 <LeftColumn>
                     <FirstRow>
@@ -332,13 +368,13 @@ const ESGGreenest = () => {
                 <SmallColumn>
                     <FirstRow></FirstRow>
                     <Row>
-                        <RowItem>TWh/year</RowItem>
+                        <RowItemText>تيراواط ساعة / سنة</RowItemText>
                     </Row>
                     <Row>
-                        <RowItem>KWh/day</RowItem>
+                        <RowItemText>كيلوواط ساعة / يوم</RowItemText>
                     </Row>
                     <Row>
-                        <RowItem>KWh/transaction</RowItem>
+                        <RowItemText>كيلوواط ساعة / معاملة</RowItemText>
                     </Row>
                 </SmallColumn>
             </GridWrapper>

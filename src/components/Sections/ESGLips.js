@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {useEffect} from "react";
 import {IconButton} from "@mui/material";
 import YouTube from 'react-youtube';
@@ -89,16 +89,19 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+        height: 200vh;
     }
 `;
 
 const Grid = styled.div`
     width: 100%;
     height: 90vh;
+    @media screen and (max-width: 768px){
+        height: 190vh;
+    }
 `;
 
-const ColumnLeft = styled.div`
+const ColumnLeft = styled(motion.div)`
     width: 60%;
     height: 100%;
     float: left;
@@ -106,10 +109,18 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100vw;
+        height: 50%;
+    }
     .swiper {
         width: 75%;
         height: 75%;
-        
+        @media screen and (max-width: 768px){
+        width: 98%;
+        height: 70%;
+        }
         
     }
 
@@ -149,6 +160,12 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100vw;
+        height: 50%;
+        justify-content: center;
+    }
 `;
 
 const GridTitle = styled.div`
@@ -166,11 +183,17 @@ const Articles = styled.div`
     width: 100%;
     height: 40vh;
     transform: translate(-10%, 0);
+    @media screen and (max-width: 768px){
+        transform: translate(0, 0);
+    }
 `;
 
 const Video = styled.div`
     width: 90%;
     height: 40vh;
+    @media screen and (max-width: 768px){
+        transform: translate(-5%, 20%) scale(0.9);
+    }
     
 `;
 
@@ -181,12 +204,16 @@ const Article = styled.div`
     display: flex;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 24px;
+    @media screen and (max-width: 768px){
+        text-align: center;
+        width: 95%;
+    }
 
 `;
 
 const Row = styled.div`
     width: 90%;
-    height: 20%;
+    height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,6 +224,10 @@ const Text = styled.div`
     font-size: 18px;
     text-align: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
     
 `;
 
@@ -222,8 +253,12 @@ const SecondRow = styled.div`
     justify-content: center;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
 `;
 
 const InnerGrid = styled.div`
@@ -237,18 +272,33 @@ const Column = styled.ol`
     height: 100%;
     float: left;
     list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
     
     
 `;
 
 const Item = styled.li`
-    width: 95%;
-    height: 33%;
+    width: 85%;
+    height: 30%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    text-align: right;
+    
+    span{
+        margin: 0 8px;
+    }
     &::marker{
         font-size: 20px;
         background-color: black;
+    }
+    @media screen and (max-width: 768px){
+        transform: translate(-20%, 0);
+        width: 95%;
     }
 `;
 
@@ -280,6 +330,10 @@ const Second = styled.div`
     background-repeat: no-repeat;
     background-size: (70px, auto);
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: scale(0.7) translate(-20%, 0);
+        
+    }
     
 `;
 
@@ -306,6 +360,30 @@ const ESGLips = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animationThree = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                opacity: 1, scale: 1,
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                opacity: 0, scale: 0.5
+            })
+        }
+        
+    }, [inView])
+
+
     class VideoOne extends React.Component {
         render() {
           const opts = {
@@ -327,9 +405,9 @@ const ESGLips = () => {
       }
 
     return(
-        <Section id="lips">
+        <Section id="lips" ref={ref}>
             <Grid>
-                <ColumnLeft>
+                <ColumnLeft animate={animationThree}>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}
@@ -338,17 +416,17 @@ const ESGLips = () => {
                 >
                     <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>Lips is a community-designed social media platform and marketplace with a social mission: to improve the mental health and financial well-being of women, non-binary folks, and the LGBTQIA+ community. It serves as a digital space where these groups can express themselves creatively and never worry about being banned or targeted with abuse.</SecondRow>
+                        <SecondRow><p><t>ليبس هي عبارة عن منصة وسائط اجتماعية وسوق مصمم من قبل المجتمع مع مهمة اجتماعية: تحسين الصحة العقلية والرفاهية المالية للنساء ، والأشخاص غير الثنائيين ، ومجتمع</t><span>LGBTQIA+,</span><t>إنه بمثابة مساحة رقمية حيث يمكن لهذه المجموعات التعبير عن نفسها بشكل إبداعي ولا تقلق أبدًا بشأن الحظر أو الاستهداف بالإساءة.</t></p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>Over 10,000 new users in the first month</Item>
-                                <Item>Winner LGBTQ+ Inclusion in Tech Award</Item>
-                                <Item>Featured in Mashable, The Daily Beast, Forbes, Huffington Post</Item>
+                                <Item>أكثر من 10000 مستخدم جديد في الشهر الأول</Item>
+                                <Item><t>الفائز بجائزة دمج</t><span>LGBTQ+</span><t>في التكنولوجيا</t></Item>
+                                <Item>ظهرت في ماشابل ، ديلي بيست ، فوربس ، هافينغتون بوست</Item>
                             </Column>
                             <Column>
-                                <Item>An inclusive app for marginalized voices</Item>
-                                <Item>Supporting historically marginalised communities</Item>
-                                <Item>Earn an income/revenue for participating</Item>
+                                <Item>تطبيق شامل للأصوات المهمشة</Item>
+                                <Item>دعم المجتمعات المهمشة تاريخياً</Item>
+                                <Item>كسب الدخل / الإيرادات للمشاركة</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -359,11 +437,11 @@ const ESGLips = () => {
                     </SwiperSlide>
                 </Swiper>
                 <Row>
-                    <Text>The project has already raised over $62,000 in public funding and received features in Mashable, The Daily Beast, HuffPost and Forbes. Lips also won the LGBTQ+ Inclusion in Tech Award from WomenTech Network. Lips is one of the most recognized socially conscious projects in the blockchain space, and one of</Text>
+                    <Text><p><t>لقد جمع المشروع بالفعل أكثر من 62000 دولار من التمويل العام وتلقى ميزات في ماشابل و</t><span>The Daily Beast</span><t>و</t><span>HuffPost</span><t>و</t><span>Forbes,</span><t>فازت ليبس أيضًا بجائزة</t><span>LGBTQ + Inclusion in Tech</span><t>من</t><span>WomenTech Network. Lips</span><t>هي واحدة من أكثر مشاريع الوعي الاجتماعي شهرة في مجال بلوكشين ، وواحدة من</t></p></Text>
                 </Row>
                 </ColumnLeft>
                 <ColumnRight>
-                <GridTitle>Social Case Study: Lips</GridTitle>
+                    <GridTitle>Social Case Study: Lips</GridTitle>
                     <Articles>
                     <Article>Lips is a recent addition to the Telos ecosystem with a powerful and timely social mission. Lips partnered with Telos after an exhaustive search of blockchain networks that could eliminate the risk of deplatforming.</Article>
                     <Article>The platform is reshaping the social media landscape in a way that empowers women, non-binary folks, and the LGBTQIA+ community. The creators of this platform set out to create an environment which combats the censorship, harassment and plagiarism that these marginalized communities face on major social media platforms. The platform also gathers data surrounding important social topics which can be integrated into other platforms, creating a more inclusive internet across the board. </Article>

@@ -113,10 +113,15 @@ const Title = styled(motion.div)`
 const Grid = styled(motion.div)`
     width: 80%;
     height: 70vh;
-    
+    @media screen and (max-width: 768px){
+        width: 98%;
+    }
     .swiper {
         width: 75%;
         height: 100%;
+        @media screen and (max-width: 768px){
+            width: 98%;
+        }
     }
 
     .swiper-slide {
@@ -167,7 +172,9 @@ const FirstRow = styled.div`
     justify-content: flex-end;
     transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-
+    @media screen and (max-width: 768px){
+        font-size: 36px;
+    }
 `;
 
 const SecondRow = styled.div`
@@ -178,14 +185,26 @@ const SecondRow = styled.div`
     justify-content: center;
     text-align: center;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+    }
+    @media screen and (max-width: 768px){
+       font-size: 18px; 
+       line-height: 24px;
+       height: 30%;
+    }
 `;
 
 const InnerGrid = styled.div`
     width: 90%;
     height: 30%;
     display: flex;
+    @media screen and (max-width: 768px){
+        width: 98%;
+    }
 `;
 
 const Column = styled.ol`
@@ -202,9 +221,19 @@ const Item = styled.li`
     height: 25%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    text-align: right;
+    font-size: 18px;
+    transform: translate(-20%, 0);
+    span{
+        margin: 0 8px;
+    }
     &::marker{
         font-size: 20px;
         background-color: black;
+    }
+    @media screen and (max-width: 768px){
+        transform: translate(-25%, 25%);
     }
 `;
 
@@ -236,6 +265,9 @@ const Second = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: scale(0.8) translate(-30%, 0);
+    }
     
 `;
 
@@ -252,6 +284,9 @@ const Third = styled.a`
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    @media screen and (max-width: 768px){
+        transform: scale(0.9) translate(-20%, 0);
+    }
 `;
 
 const AdditionalTwo = () => {
@@ -278,7 +313,7 @@ const AdditionalTwo = () => {
         }
         if(!inView){
             animation.start({
-                x: '100vw', opacity: 0, 
+                x: '-100vw', opacity: 0, 
             })
         }
         
@@ -287,7 +322,7 @@ const AdditionalTwo = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0,
+                opacity: 1, scale: 1, 
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -295,7 +330,7 @@ const AdditionalTwo = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, scale: 0.5
             })
         }
         
@@ -303,8 +338,8 @@ const AdditionalTwo = () => {
 
     return(
         <Section id="additionaltwo" ref={ref}>
-            <Title animate={animation}>Additional Environmental Examples</Title>
-                <Grid>
+            <Title animate={animation}>أمثلة بيئية إضافية</Title>
+                <Grid animate={animationTwo}>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -318,22 +353,22 @@ const AdditionalTwo = () => {
                     >
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>A transparent and trustworthy data platform, building solutions to fight ethical challenges in the AI and BigData Industry, with the help of Blockchain technology. Offering a Global Workforce to collect and structure data from conflict-affected regions and communities. Through its solutions, Unbiased aims to contribute towards innovation and the betterment of societies.</SecondRow>
+                        <SecondRow><p><t>منصة بيانات شفافة وجديرة بالثقة ، تبني حلولاً لمكافحة التحديات الأخلاقية في الذكاء الاصطناعي وصناعة البيانات الضخمة ، بمساعدة تقنية بلوكشين. تقديم قوة عاملة عالمية لجمع وتنظيم البيانات من المناطق والمجتمعات المتأثرة بالصراع. تهدف</t><span>Unbiased</span><t>من خلال حلولها إلى المساهمة في الابتكار وتحسين المجتمعات.</t></p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>Worker Satisfaction</Item>
-                                <Item>Spam Free Accounts</Item>
-                                <Item>Global Workforce</Item>
+                                <Item>شرح البيانات</Item>
+                                <Item>جمع البيانات</Item>
+                                <Item>سوق البيانات</Item>
                             </Column>
                             <Column>
-                                <Item>Transparency</Item>
-                                <Item>Quality Assurance</Item>
-                                <Item>Unbiased Data</Item>
+                                <Item>الشفافية</Item>
+                                <Item>ضمان الجودة</Item>
+                                <Item>بيانات غير متحيزة</Item>
                             </Column>
                             <Column>
-                                <Item>Data Annotation</Item>
-                                <Item>Data Collection</Item>
-                                <Item>Data Marketplace</Item>
+                                <Item>رضا العاملين</Item>
+                                <Item>حسابات خالية من البريد العشوائي</Item>
+                                <Item>القوى العاملة العالمية</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -344,16 +379,16 @@ const AdditionalTwo = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>HeartChurch is the first blockchain church, created to impact the world. The project is made up of a team of professionals, with Christian values and a mission to satisfy physical and spiritual needs, through knowledge, solidarity and love. The organization provides opportunities for those in politically mismanaged countries, helping individuals from these areas grow both on blockchain platforms and in their local communities. Their pioneering project, "Pan del cielo", served more than 3,000 people in Venezuela.</SecondRow>
+                        <SecondRow><p><span>HeartChurch</span><t>هي أول كنيسة بلوكشين تم إنشاؤها للتأثير على العالم. يتكون</t><t>المشروع من فريق من المهنيين ذوي القيم المسيحية ورسالة لتلبية الاحتياجات الجسدية والروحية من خلال المعرفة والتضامن والمحبة. توفر المنظمة فرصًا لأولئك الموجودين في البلدان الخاضعة للإدارة السيئة سياسيًا ، مما يساعد الأفراد من هذه المناطق على النمو على منصات بلوكشين وفي مجتمعاتهم المحلية. خدم</t><t>مشروعهم الرائد</t><span>"Pan del cielo"</span><t>أكثر من 3000 شخص في فنزويلا</t></p></SecondRow>
                         <InnerGrid>
                             <Column style={{width: '10%'}}>
                                
                             </Column>
                             <Column style={{width: '80%'}}>
-                                <Item>Provide spiritual & moral guidance within the blockchain</Item>
-                                <Item>Fight for freedom in life, against oppression & slavery</Item>
-                                <Item>Guarantee basic human rights for all humanity</Item>
-                                <Item>Grow supportive faith communities & effective Christian leaders</Item>
+                                <Item>تقديم التوجيه الروحي والأخلاقي داخل بلوكشين</Item>
+                                <Item>حارب من أجل الحرية في الحياة ، ضد الظلم والرق</Item>
+                                <Item>ضمان حقوق الإنسان الأساسية للبشرية جمعاء</Item>
+                                <Item>تنمية المجتمعات الدينية الداعمة والقادة المسيحيين الفعالين</Item>
                             </Column>
                             <Column style={{width: '10%'}}>
                                 
@@ -367,17 +402,17 @@ const AdditionalTwo = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>A whole new atmosphere of freedom. Free to say, to do, to transact and to build together. Built with intensity, built with tenacity and built with freedom and liberty for a better future. Discussions provides you with the tools to build a community around the world to fulfil your collective vision. It is a community building engine that helps you turn your vision into the future.</SecondRow>
+                        <SecondRow><p>جو جديد تمامًا من الحرية. الحرية في القول ، والقيام ، والتعامل ، والبناء معًا. صُمم بكثافة ، وبُني بمثابرة ، وبُني بالحرية والحرية من أجل مستقبل أفضل. تزودك المناقشات بالأدوات اللازمة لبناء مجتمع حول العالم لتحقيق رؤيتك الجماعية. إنه محرك بناء مجتمع يساعدك على تحويل رؤيتك إلى المستقبل.</p></SecondRow>
                         <InnerGrid>
                             <Column style={{width: '50%'}}>
-                                <Item>Leverage your current social platforms</Item>
-                                <Item>Native Token (ATMOS)</Item>
-                                <Item>Upcoming NFT Support</Item>
+                                <Item>الاستفادة من المنصات الاجتماعية الحالية الخاصة بك</Item>
+                                <Item><t>رمز أصلي</t><span>(ATMOS)</span></Item>
+                                <Item><t>دعم</t><span>NFT</span><t>القادم</t></Item>
                             </Column>
                             <Column style={{width: '50%'}}>
-                                <Item>Content ranking and reward system</Item>
-                                <Item>Promoting free and fair speech</Item>
-                                <Item>Unique decentralized advertisement module</Item>
+                                <Item>ترتيب المحتوى ونظام المكافآت</Item>
+                                <Item>تعزيز حرية الكلام والنزاهة</Item>
+                                <Item>وحدة إعلان لا مركزية فريدة من نوعها</Item>
                             </Column>
                             
                         </InnerGrid>
@@ -389,16 +424,16 @@ const AdditionalTwo = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>Decentralized storage is a foundational element of Web3.0 that does not yet have a suitable solution. dStor finally solves this problem. dStor is the only scalable implementation of decentralized storage currently available, built with an economic model that benefits both users and node operators.</SecondRow>
+                        <SecondRow><p><t>التخزين اللامركزي هو عنصر أساسي في</t><span>Web3.0</span><t>لا يحتوي على حل مناسب حتى الآن.</t><span>dStor</span><t>أخيرًا يحل هذه المشكلة.</t><span>dStor</span><t>هو التطبيق الوحيد القابل للتطوير للتخزين اللامركزي المتاح حاليًا ، والذي تم إنشاؤه باستخدام نموذج اقتصادي يفيد المستخدمين ومشغلي العقد.</t></p></SecondRow>
                         <InnerGrid>
                             <Column style={{width: '20%'}}>
                                
                             </Column>
                             <Column style={{width: '60%'}}>
-                                <Item>Resiliency: Access data from anywhere</Item>
-                                <Item>Speed: Deliver data quickly</Item>
-                                <Item>Security: Tamper-proof your files</Item>
-                                <Item>Cost Savings: Maximize revenue</Item>
+                                <Item>المرونة: الوصول إلى البيانات من أي مكان</Item>
+                                <Item>السرعة: تسليم البيانات بسرعة</Item>
+                                <Item>الأمان: احمِ ملفاتك من العبث</Item>
+                                <Item>التوفير في التكلفة: تعظيم الإيرادات</Item>
                             </Column>
                             <Column style={{width: '20%'}}>
                                 
@@ -412,17 +447,17 @@ const AdditionalTwo = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>The internet has deep-rooted problems that grow daily: distrust, plagiarism, and fake news. WordProof wants to create a new standard for a more reliable and trustworthy internet, with the help of blockchain technology. The WordProof Timestamp Ecosystem empowers internet users and content creators with the tools to build a safer and more trustworthy internet.</SecondRow>
+                        <SecondRow><p><t>يعاني الإنترنت من مشاكل عميقة الجذور تنمو يوميًا: عدم الثقة ، والانتحال ، والأخبار المزيفة. يريد</t><span>WordProof</span><t>إنشاء معيار جديد لإنترنت أكثر موثوقية وجديرة بالثقة ، بمساعدة تقنية بلوكشين. يتيح نظام</t><span>WordProof Timestamp Ecosystem</span><t>لمستخدمي الإنترنت ومنشئي المحتوى الأدوات اللازمة لبناء إنترنت أكثر أمانًا وموثوقية.</t></p></SecondRow>
                         <InnerGrid>
                             <Column style={{width: '50%'}}>
-                                <Item>Copyright Protection</Item>
-                                <Item>Time Machine</Item>
-                                <Item>Wordpress Plugin</Item>
+                                <Item>حماية حقوق النشر</Item>
+                                <Item>آلة الزمن</Item>
+                                <Item>وورد البرنامج المساعد</Item>
                             </Column>
                             <Column style={{width: '50%'}}>
-                                <Item>Enable Verifiable Trust</Item>
-                                <Item>Protect Your Content</Item>
-                                <Item>Prepare for Next-Generation SEO</Item>
+                                <Item>تمكين الثقة القابلة للتحقق</Item>
+                                <Item>حماية المحتوى الخاص بك</Item>
+                                <Item>استعد للجيل القادم من تحسين محركات البحث</Item>
                             </Column>
                             
                         </InnerGrid>

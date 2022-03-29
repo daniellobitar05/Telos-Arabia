@@ -37,7 +37,7 @@ const Grid = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         flex-direction: column;
-        height: 180vh;
+        height: 150vh;
     }   
 `;
 
@@ -59,7 +59,7 @@ const Column = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 40vh;
+        height: 30vh;
     }
 `;
 
@@ -76,7 +76,7 @@ const IconContainer = styled(motion.div)`
         border: 1px solid aqua;
         padding: 10px;
         @media screen and (max-width: 768px){
-            width: 25%;
+            width: 20%;
         }
     }
 `;
@@ -90,7 +90,7 @@ const TextContainer = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 40%;
+        height: 30%;
     }
 `;
 
@@ -242,9 +242,9 @@ const TextColumns = styled(motion.div)`
 
 const TextColumn = styled(motion.div)`
     height: 100%;
-    width: 45%;
+    width: 50%;
     float: left;
-    font-size: 26px;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -307,7 +307,7 @@ const ESGIcons = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: '20px',
+                opacity: 1, y: '-20px',
                 transition: {
                     duration: 1, delay: 0.5,
                 }

@@ -35,6 +35,7 @@ const Section = styled.div`
     background: ${props => props.theme.back1};
     display: grid;
     place-items: center;
+    
 `;
 
 /* const Grid = styled.div`
@@ -97,6 +98,16 @@ const Wrapper = styled.div`
     font-size: 42px;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+       width: 80vw;
+        
+    }
+`;
+
+const Reducer = styled.div`
+    @media screen and (max-width: 768px){
+        transform: scale(0.8);
+    }
 `;
 
 const spin = keyframes`
@@ -134,6 +145,8 @@ const Text = styled.div`
        top: 0;
        left: 50%;
        transform-origin: 0 250px;
+       
+       
     }
 `;
 
@@ -208,9 +221,11 @@ const Tokenomics = () => {
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
                 <Section id="tokenomics" ref={ref}>
+                    <Reducer>
                     <SpinningText text="رموز تيلوس الرمزية : فهم قيمة تيلوس">
                        <LinkS to="highlights" smooth={true} duration={500} spy={true} exact="true"><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: [0, 360, 0], scale: 1.05, cursor: 'pointer'}} whileTap={{scale:0.9}} transition={{duration: 1, type: 'spring', stiffness: 300}} src={Ball} alt="ball" /></LinkS>
                     </SpinningText>
+                    </Reducer>
                     {/* <Grid>
                     <ColumnLeft>
                         <Title animate={animation}>رموز تيلوس الرمزية</Title>
@@ -222,7 +237,7 @@ const Tokenomics = () => {
                     </Grid> */}
                 </Section> 
                 <Highlights />
-                <SupplySection />
+                {/* <SupplySection />
                 <DepthLookSection />
                 <DepthLookTwo />
                 <DepthLookThree />
@@ -236,7 +251,7 @@ const Tokenomics = () => {
                 <DepthLookEleven />
                 <DepthLookTwelve />
                 <DepthLookThirteen />
-                <Footer />
+                <Footer /> */}
         </ThemeProvider>
     )
 }

@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {useEffect} from "react";
 import {IconButton} from "@mui/material";
 import {useInView} from "react-intersection-observer";
@@ -87,16 +86,19 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+        height: 160vh;
     }
 `;
 
 const Grid = styled.div`
     width: 100%;
     height: 90vh;
+    @media screen and (max-width: 768px){
+        height: 150vh;
+    }
 `;
 
-const ColumnLeft = styled.div`
+const ColumnLeft = styled(motion.div)`
     width: 60%;
     height: 100%;
     float: left;
@@ -104,10 +106,18 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 65vh;
+    }
     .swiper {
         width: 75%;
         height: 75%;
-        
+        @media screen and (max-width: 768px){
+            width: 95%;
+            height: 95%;
+        }
         
     }
 
@@ -147,18 +157,31 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 75vh;
+        justify-content: center;
+    }
 `;
 
 
 
-const Article = styled.div`
+const Article = styled(motion.div)`
     color: white; 
     width: 80%;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
-    padding: 20px 0;
-    line-height: 24px;
+    padding: 10px 0;
+    line-height: 30px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    @media screen and (max-width: 768px){
+        line-height: 25px;
+    }
+    span {
+        margin: 0 8px;
+    }
 
 `;
 
@@ -172,9 +195,16 @@ const Row = styled.div`
 
 const Text = styled.div`
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 38px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    margin: 0 8px;
+    width: 80%;
+    text-align: center;
+    @media screen and (max-width: 768px){
+        line-height: 25px;
+    }
 `;
 
 const FirstRow = styled.div`
@@ -188,19 +218,30 @@ const FirstRow = styled.div`
     font-weight: bold;
     justify-content: flex-end;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 34px;
+    }
 
 `;
 
 const SecondRow = styled.div`
-    width: 100%;
+    width: 90%;
     height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span {
+        margin: 0 8px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+        transform: translate(0%, 10%);
+    }
 `;
 
 const InnerGrid = styled.div`
@@ -214,18 +255,32 @@ const Column = styled.ol`
     height: 100%;
     float: left;
     list-style-type: circle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     
 `;
 
 const Item = styled.li`
-    width: 100%;
-    height: 25%;
+    width: 90%;
+    height: 20%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    text-align: right;
+    transform: translate(-10%, 0);
+    span {
+        margin: 0 8px;
+    }
     &::marker{
         font-size: 20px;
         background-color: black;
+    }
+    @media screen and (max-width: 768px){
+        width: 95%;
+        transform: translate(-20%, 0);
     }
 `;
 
@@ -245,6 +300,10 @@ const First = styled.div`
     transform: scale(0.8);
     border-right: 1px solid whitesmoke;
     border-length: 50%;
+    @media screen and (max-width: 768px){
+        width: 25%;
+
+    }
     
     
     
@@ -257,6 +316,10 @@ const Second = styled.div`
     background-repeat: no-repeat;
     background-size: (75px, auto);
     background-position: center left;
+    @media screen and (max-width: 768px){
+        width: 30%;
+
+    }
     
 `;
 
@@ -269,6 +332,11 @@ const Third = styled.a`
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    @media screen and (max-width: 768px){
+        width: 40%;
+        transform: translate(-10%, 0);
+
+    }
 `;
 
 
@@ -283,10 +351,51 @@ const ESGSeeds = () => {
         scroll.scrollToTop();
     }
 
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    });
+
+    const animationThree = useAnimation();
+    const animationTwo = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animationThree.start({
+                scale: 1, opacity: 1,
+                transition: {
+                    duration: 1, 
+                }
+            });
+        }
+        if(!inView){
+            animationThree.start({
+                scale: 0.5, opacity: 0
+            })
+        }
+        
+    }, [inView])
+
+    useEffect(() => {
+        if(inView){
+            animationTwo.start({
+                opacity: 1, y: '30px', 
+                transition: {
+                    duration: 1, delay: 0.5,
+                }
+            });
+        }
+        if(!inView){
+            animationTwo.start({
+                opacity: 0, y: '100px', 
+            })
+        }
+        
+    }, [inView])
+
     return(
-        <Section id="seeds">
+        <Section id="seeds" ref={ref}>
             <Grid>
-                <ColumnLeft>
+                <ColumnLeft animate={animationThree}>
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={30}
@@ -295,19 +404,19 @@ const ESGSeeds = () => {
                 >
                     <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow>A payment platform and financial ecosystem to empower humanity and heal our planet. SEEDS offers tools to help you, your business or your movement regenerate our planet, while encouraging collaboration, cooperation and community building.</SecondRow>
+                        <SecondRow><p>منصة دفع ونظام بيئي مالي لتمكين البشرية وشفاء كوكبنا. يقدم سيدس أدوات لمساعدتك أو عملك أو حركتك على تجديد كوكبنا ، مع تشجيع التعاون والتعاون وبناء المجتمع</p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>88+ Countries: Co-create the New World</Item>
-                                <Item>5000+ Regenerators & Change Agents</Item>
-                                <Item>450+ Partners & Collaborators</Item>
-                                <Item>Heal our planet with every purchase or sale</Item>
+                                <Item>أكثر من 88 دولة: شارك في إنشاء عالم جديد</Item>
+                                <Item>5000+ مُجدد ووكلاء تغيير</Item>
+                                <Item>450+ شركاء ومتعاونين</Item>
+                                <Item>عالج كوكبنا مع كل عملية شراء أو بيع</Item>
                             </Column>
                             <Column>
-                                <Item>Pay no transaction fees</Item>
-                                <Item>Have a direct voice in governance</Item>
-                                <Item>Earn grants for regenerative initiatives</Item>
-                                <Item>Earn an income/revenue for participating</Item>
+                                <Item>لا تدفع رسوم المعاملات</Item>
+                                <Item>أن يكون لها صوت مباشر في الحكم</Item>
+                                <Item>كسب المنح للمبادرات التجديدية</Item>
+                                <Item>كسب الدخل / الإيرادات للمشاركة</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -318,12 +427,12 @@ const ESGSeeds = () => {
                     </SwiperSlide>
                 </Swiper>
                 <Row>
-                    <Text>SEEDS is an innovative economic system and cryptocurrency that is championing these issues by using the Telos network.</Text>
+                    <Text><p>سيدس هو نظام اقتصادي مبتكر وعملة مشفرة تدعم هذه القضايا باستخدام شبكة تيلوس.</p></Text>
                 </Row>
                 </ColumnLeft>
                 <ColumnRight>
-                    <Article>Thanks to the governance that Telos is built upon, carbon neutral funding does not have to come from a centralized body. Instead, community members can vote to release network funds to chain initiatives who will carry out the rest of the process. If the vote passes, Telos will be the only blockchain to go carbon neutral through fully decentralized and autonomous voting. In the meantime, the nature of DPoS lets the community vote for the ethical validators like TelosGreen, a popular network validator that focuses on sustainability.</Article>
-                    <Article>Consuming less energy or even going carbon neutral isn’t enough when it comes to having a positive environmental impact. Projects must actively find ways to foster environmental regeneration. With all the ESG tools available to developers, Telos has attracted many projects whose sole mission is improving and maintaining our natural resources. This has pushed Telos far ahead of competitors when it comes to environmental impact.</Article>
+                    <Article animate={animationTwo}><p><t>بفضل الحوكمة التي بنيت عليها شركة تيلوس ، لا يجب أن يأتي التمويل المحايد الكربوني من هيئة مركزية. بدلاً من ذلك ، يمكن لأعضاء المجتمع التصويت للإفراج عن أموال الشبكة لتسلسل المبادرات التي ستنفذ بقية العملية. إذا مر التصويت ، ستكون تيلوس هي بلوكشين الوحيد الذي أصبح محايدًا للكربون من خلال التصويت المستقل اللامركزي والمستقل تمامًا. في غضون ذلك ، تتيح طبيعة</t><span>DPoS</span><t>للمجتمع التصويت لصالح المدققين الأخلاقيين مثل</t><span>TelosGreen</span><t>، وهو مدقق شبكة شهير يركز على الاستدامة.</t></p></Article>
+                    <Article animate={animationTwo}><p><t>إن استهلاك طاقة أقل أو حتى التحول إلى محايد كربوني لا يكفي عندما يتعلق الأمر بالتأثير البيئي الإيجابي. يجب أن تجد المشاريع بنشاط طرقًا لتعزيز التجديد البيئي. مع توفر جميع أدوات</t><span>ESG</span><t>للمطورين ، اجتذبت تيلوس العديد من المشاريع التي تتمثل مهمتها الوحيدة في تحسين مواردنا الطبيعية والحفاظ عليها. دفع هذا شركة تيلوس إلى مرتبة متقدمة جدًا على المنافسين عندما يتعلق الأمر بالتأثيرات البيئية.</t></p></Article>
                     
                 </ColumnRight>
             </Grid>

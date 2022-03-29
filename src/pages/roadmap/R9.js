@@ -1,9 +1,8 @@
 import {useEffect} from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
-import {Link as LinkR} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -80,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        //height: 140vh;
+        height: 150vh;
     }
 `;
 
@@ -91,6 +90,9 @@ const Grid = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    @media screen and (max-width: 768px){
+        height: 140vh;
+    }
 `;
 
 
@@ -111,8 +113,9 @@ const Title = styled(motion.div)`
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 15vh;
         transform: translate(0, 0);
+        font-size: 32px;
     }
 `;
 
@@ -139,6 +142,8 @@ const Article = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
+        line-height: 30px;
+        padding: 0;
     }
 `;
 

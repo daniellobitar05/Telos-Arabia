@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
-import {useEffect} from "react";
-import {useInView} from "react-intersection-observer";
-import {motion, useAnimation} from "framer-motion";
-import {Link as LinkS} from "react-scroll";
-import {IconButton} from "@mui/material";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { Link as LinkS } from "react-scroll";
+import { IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
@@ -40,7 +40,7 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 52px;
-        height: 15vh;
+        height: 10vh;
     }
     
 `;
@@ -57,9 +57,9 @@ const Subtitle = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        width: 80%;
+        width: 90%;
         font-size: 28px;
-        height: 15vh;
+        height: 10vh;
     }
 `;
 
@@ -71,7 +71,7 @@ const Wrapper = styled(motion.div)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 70vh;
+        height: 80vh;
     }
     
 `;
@@ -100,7 +100,7 @@ const Column = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 40vh;
+        height: 50vh;
     }
     
 `;
@@ -154,6 +154,9 @@ const CardTitle = styled.div`
     text-align: center;
     height: 40%;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+    }
 `;
 
 const CardSubtitle = styled.div`
@@ -164,6 +167,9 @@ const CardSubtitle = styled.div`
     width: 100%;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 20px;
+    }
 `;
 
 const UploadIcon = styled(UploadFileIcon)`
@@ -251,7 +257,7 @@ const ToolkitSection = () => {
         scroll.scrollToTop();
     }
 
-    const {ref, inView} = useInView({
+    const { ref, inView } = useInView({
         threshold: 0.2
     });
 
@@ -259,24 +265,24 @@ const ToolkitSection = () => {
     const animationTwo = useAnimation();
 
     useEffect(() => {
-        if(inView){
+        if (inView) {
             animation.start({
                 x: 1,
                 transition: {
-                    duration: 1, 
+                    duration: 1,
                 }
             });
         }
-        if(!inView){
+        if (!inView) {
             animation.start({
                 x: '-100vw',
             })
         }
-        
+
     }, [inView])
 
     useEffect(() => {
-        if(inView){
+        if (inView) {
             animationTwo.start({
                 opacity: 1, y: 0,
                 transition: {
@@ -284,22 +290,22 @@ const ToolkitSection = () => {
                 }
             });
         }
-        if(!inView){
+        if (!inView) {
             animationTwo.start({
                 opacity: 0, y: '100px',
             })
         }
-        
+
     }, [inView])
 
-    return(
+    return (
         <Section id="toolkit" ref={ref}>
             <Title animate={animation}>مجموعة أدوات المطور</Title>
             <Subtitle animate={animationTwo}>راجع الوثائق والمواد المرجعية أدناه للبدء</Subtitle>
             <Wrapper animate={animationTwo}>
                 <EmptyColumn></EmptyColumn>
                 <Column>
-                    <Box whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://developers.eos.io/welcome/latest/reference/index" target="_blank" rel="noreferrer">
+                    <Box whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} href="https://developers.eos.io/welcome/latest/reference/index" target="_blank" rel="noreferrer">
                         <TopCard><span><APIIcon /></span></TopCard>
                         <BottomCard>
                             <CardTitle>API مراجع</CardTitle>
@@ -308,23 +314,23 @@ const ToolkitSection = () => {
                     </Box>
                 </Column>
                 <Column>
-                 <Box whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://studio.telos.net/" target="_blank" rel="noreferrer">
-                    <TopCard><span><UploadIcon /></span></TopCard>
-                    <BottomCard>
-                        <CardTitle>Telos Studio IDE</CardTitle>
-                        <CardSubtitle>Telos Studio IDE انشر العقود دون أي وقت إعداد باستخدام</CardSubtitle>
-                    </BottomCard> 
-                 </Box>
+                    <Box whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} href="https://studio.telos.net/" target="_blank" rel="noreferrer">
+                        <TopCard><span><UploadIcon /></span></TopCard>
+                        <BottomCard>
+                            <CardTitle>Telos Studio IDE</CardTitle>
+                            <CardSubtitle>Telos Studio IDE انشر العقود دون أي وقت إعداد باستخدام</CardSubtitle>
+                        </BottomCard>
+                    </Box>
                 </Column>
                 <EmptyColumn></EmptyColumn>
             </Wrapper>
             <ArrowWrapper>
                 <IconColumnLeft>
-                <LinkS to="joindev" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                    <LinkS to="joindev" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
                 </IconColumnLeft>
                 <HideColumn></HideColumn>
                 <IconColumnRight to="devstack" smooth={true} duration={1000} spy={true} exact="true">
-                <IconButton><ArrowUp /></IconButton>
+                    <IconButton><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>
             </ArrowWrapper>

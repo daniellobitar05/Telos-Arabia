@@ -80,7 +80,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        //height: 140vh;
+        height: 140vh;
     }
 `;
 
@@ -91,6 +91,9 @@ const Grid = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    @media screen and (max-width: 768px){
+        height: 110vh;
+    }
 `;
 
 
@@ -139,6 +142,7 @@ const Article = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
+        padding: 10px 0;
     }
 `;
 

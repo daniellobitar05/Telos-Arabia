@@ -783,7 +783,7 @@ const DropDownMenu = () => {
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
             <LinkR to="/News"> <DropDownItem rightIcon={<NewsIcon/>}>ألأخبار</DropDownItem></LinkR>
             <LinkR to="/About"><DropDownItem rightIcon={<AboutIcon/>}>حول تيلوس</DropDownItem></LinkR>
-            <DropDownItem rightIcon={<MeetTeamIcon/>}>مالكي المنصة</DropDownItem>
+            <LinkR to="/CommManager"><DropDownItem rightIcon={<MeetTeamIcon/>}>مالكي المنصة</DropDownItem></LinkR>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -1023,7 +1023,7 @@ const HeaderNoHome = (props) => {
                         <HelpCenterIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     <motion.div whileHover={{scale: 1.1, fontWeight: 'bold'}} whileTap={{scale: 0.9}}><SubMenuIcon>
-                        <MenuText>مالكي المنصة</MenuText>
+                    <LinkR to="/CommManager"><MenuText>مالكي المنصة</MenuText></LinkR>
                         <EmojiPeopleIcon sx={{transform: 'scale(1.2)', color: '#ba55d3'}}/>
                     </SubMenuIcon></motion.div>
                     </SubMenu>

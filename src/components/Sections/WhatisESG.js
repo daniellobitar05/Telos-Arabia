@@ -19,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 140vh;
     }
 `;
 
@@ -40,7 +40,7 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 32px;
-        height: 30vh;
+        height: 20vh;
     }
 `;
 
@@ -58,21 +58,24 @@ const Subtitle = styled(motion.div)`
         margin: 0 15px;
     }
     @media screen and (max-width: 768px){
-        height: 40vh;
+        height: 20vh;
         justify-content: center;
+        font-size: 24px;
+        width: 90%;
     }
     
 `;
 
 const VideoWrapper = styled.div`
     width: 90%;
-    height: 45vh;
+    height: 55vh;
     display: flex;
     @media screen and (max-width: 768px){
         flex-direction: column; 
         align-items: center;
         justify-content: center;
         height: 90vh;
+        transform: scale(0.8);
     }
 `;
 
@@ -81,33 +84,46 @@ const VideoLeft = styled(motion.div)`
     height: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     float: left;
 
     @media screen and (max-width: 768px){
         float: none;
-        width: 90%;
-        height: 60%;
-        transform: scale(0.6);
+        width: 70%;
+        height: 50%;
+        margin: 70px 0;
     }
     
 `;
 
-const VideoTitles = styled(motion.div)`
-    width: 85%;
-    height: 10vh;
+const VideoRight = styled(motion.div)`
+    width: 95%;
+    height: 100%;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    float: left;
 
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 70%;
+        height: 50%;
+        
+    }
+    
 `;
 
 const VideoTitle = styled.h1`
     color: white;
     font-size: 22px;
     direction: rtl;
-    transform: translate(180%, 0);
+    height: 10vh;
+    
+    
     span{
         margin: 0 15px;
     }
@@ -117,11 +133,12 @@ const VideoTitleESG = styled.h1`
     color: white;
     font-size: 22px;
     direction: rtl;
+    height: 10vh;
     span{
         margin: 0 15px;
     }
     @media screen and (max-width: 768px){
-        transform: translate(-70%, 670%);
+        
     }
 `;
 
@@ -296,13 +313,19 @@ const WhatisESG = () => {
         <Section id="videos" ref={ref}>
             <Title animate={animation}><t>ما هو</t><span>ESG</span><t>ولماذا هو مهم؟</t></Title>
             <Subtitle animate={animationTwo}><p><t>اختصار</t><span>ESG</span><t>لتقف على البيئة والاجتماعية والحوكمة. إنه معيار شائع في عالم الأعمال والاستثمار. يتم استخدام</t><span>ESG</span><t>تحديد المخاطر التي قد لا يتم تفويتها من خلال الأشكال التقليدية للتحليل</t>.</p></Subtitle>
-            <VideoTitles animate={animation}>
-                <VideoTitle>ESG فوائد </VideoTitle>
-                <VideoTitleESG ><t>مقدمة عن</t><span>ESG Investing</span></VideoTitleESG>
-            </VideoTitles >
+            
+                
+                
+            
             <VideoWrapper>
-                <VideoLeft animate={animationThree}><VideoTwo /></VideoLeft>
-                <VideoLeft animate={animationThree}><VideoOne /></VideoLeft>
+                <VideoLeft animate={animationThree}>
+                <VideoTitle>ESG فوائد </VideoTitle>
+                    <VideoTwo />
+                </VideoLeft>
+                <VideoRight animate={animationThree}>
+                <VideoTitleESG ><t>مقدمة عن</t><span>ESG Investing</span></VideoTitleESG>
+                    <VideoOne />
+                </VideoRight>
             </VideoWrapper>
             <Empty>
                 <IconColumnLeft to="esgicons" smooth={true} duration={1000} spy={true} exact="true">

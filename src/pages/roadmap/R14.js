@@ -149,19 +149,6 @@ const Article = styled(motion.div)`
 `;
 
 
-const DownTitle = styled.div`
-    color: white;
-    display: flex;
-    align-items: center;
-    text-align: right; 
-    direction: rtl;
-    font-size: 62px;
-    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-    @media screen and (max-width: 768px){
-        font-size: 42px;
-        transform: translate(-10%, 0);
-    }
-`;
 
 const R14 = () => {
 

@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 210vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 200vh;
     }
 `;
 

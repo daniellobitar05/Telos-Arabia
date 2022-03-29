@@ -23,8 +23,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 660px){
-    
-    
+        height: 100vh;
     }
 `;
 
@@ -39,7 +38,8 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 52px;
+        font-size: 48px;
+        line-height: 50px;
         height: 20vh;
     }
     
@@ -60,6 +60,25 @@ const Subtitle = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 28px;
         width: 80%;
+        height: 45vh;
+    }
+`;
+
+const Pagetitle = styled(motion.div)`
+    font-size: 32px;
+    width: 50%;
+    color: ${props => props.theme.text};
+    text-align: center; 
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+        width: 80%;
+        height: 25vh;
     }
 `;
 
@@ -101,7 +120,6 @@ const IconColumnLeft = styled(LinkS)`
     height: 100%;
     float: left;
     display: inline-flex;
-    background: transparent;
     align-items: center;
     justify-content: center;
 
@@ -115,7 +133,6 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    background: transparent;
 `;
 
 const ToggleColumn = styled.div`
@@ -189,16 +206,16 @@ const JoinDevSection = () => {
 
     return(
         <Section id="joindev" ref={ref}>
-            <Subtitle style={{fontSize: '14px'}} animate={animationTwo}>JOIN US</Subtitle>
+            <Pagetitle style={{fontSize: '14px'}} animate={animationTwo}>JOIN US</Pagetitle>
             <Title animate={animation}>انضم إلى المطورين لبناء مستقبل أفضل على شبكة تيلوس</Title>
             <Subtitle animate={animationTwo}>إذا كنت مطورًا ومهتمًا بـ بلوكتشيت وتطوير العقود الذكية ، انضم إلى مجموعة تيليغرام الخاصة بنا</Subtitle>
             <a href="https://t.me/dappstelos" target="_blank" rel="noreferrer"> <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} animate={animationTwo}><JoinButton>قابل المطورين على شبكة تيلوس</JoinButton></motion.div></a>
             <ArrowWrapper>
                 <IconColumnLeft>
-                <LinkS to="footer" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                <LinkS to="footer" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
                 </IconColumnLeft>
                 <HideColumn></HideColumn>
-                <IconColumnRight to="toolkit" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="toolkit" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}>
                 <IconButton><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

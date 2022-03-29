@@ -29,6 +29,7 @@ const Section = styled.div`
 const Title = styled(motion.div)`
     font-size: 92px;
     width: 70%;
+    line-height: 50px;
     color: ${props => props.theme.text};  
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
@@ -39,7 +40,7 @@ const Title = styled(motion.div)`
 
 const Subtitle = styled(motion.div)`
     font-size: 42px;
-    width: 50%;
+    width: 70%;
     color: ${props => props.theme.text};
     text-align: right; 
     padding: 30px 0;

@@ -21,7 +21,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 660px){
-       height: 120vh;
+       height: 160vh;
        
     }
 
@@ -29,7 +29,8 @@ const Section = styled.div`
 
 const Title = styled(motion.div)`
     font-size: 82px;
-    width: 100%;
+    width: 80%;
+    line-height: 50px;
     color: ${props => props.theme.text};  
     height: 20vh;
     display: flex;
@@ -39,8 +40,8 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        font-size: 52px;
-        height: 10vh;
+        font-size: 48px;
+        height: 35vh;
     }
     
 `;
@@ -57,9 +58,9 @@ const Subtitle = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        width: 90%;
+        width: 70%;
         font-size: 28px;
-        height: 10vh;
+        height: 25vh;
     }
 `;
 
@@ -71,7 +72,7 @@ const Wrapper = styled(motion.div)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 80vh;
+        height: 100vh;
     }
     
 `;
@@ -114,6 +115,7 @@ const Box = styled(motion.a)`
     align-items: center;
     justify-content: center;
     border: 1px solid purple;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     &:hover{
         background: rgb(230,230,250,0.2);
     }
@@ -167,6 +169,10 @@ const CardSubtitle = styled.div`
     width: 100%;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    span{
+        margin: 0 8px;
+        font-size: 18px;
+    }
     @media screen and (max-width: 768px){
         font-size: 20px;
     }
@@ -211,7 +217,6 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: transparent;
 
 `;
 
@@ -230,7 +235,6 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    background: transparent;
 
 `;
 
@@ -309,7 +313,7 @@ const ToolkitSection = () => {
                         <TopCard><span><APIIcon /></span></TopCard>
                         <BottomCard>
                             <CardTitle>API مراجع</CardTitle>
-                            <CardSubtitle>راجع وثائقنا الخاصة بواجهات Telos / EOSIO APIs و SDK</CardSubtitle>
+                            <CardSubtitle><t>راجع وثائقنا الخاصة بواجهات</t><span>Telos / EOSIO APIs</span><t>و</t><span>SDK</span></CardSubtitle>
                         </BottomCard>
                     </Box>
                 </Column>
@@ -318,7 +322,7 @@ const ToolkitSection = () => {
                         <TopCard><span><UploadIcon /></span></TopCard>
                         <BottomCard>
                             <CardTitle>Telos Studio IDE</CardTitle>
-                            <CardSubtitle>Telos Studio IDE انشر العقود دون أي وقت إعداد باستخدام</CardSubtitle>
+                            <CardSubtitle><span>Telos Studio IDE</span> انشر العقود دون أي وقت إعداد باستخدام</CardSubtitle>
                         </BottomCard>
                     </Box>
                 </Column>
@@ -326,10 +330,10 @@ const ToolkitSection = () => {
             </Wrapper>
             <ArrowWrapper>
                 <IconColumnLeft>
-                    <LinkS to="joindev" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                    <LinkS to="joindev" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
                 </IconColumnLeft>
                 <HideColumn></HideColumn>
-                <IconColumnRight to="devstack" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="devstack" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}>
                     <IconButton><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

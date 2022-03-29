@@ -62,6 +62,9 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 130vh;
+    }
     
 `;
 
@@ -76,7 +79,8 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        height: 25vh;
+        height: 35vh;
+        font-size: 48px;
     }
     
     
@@ -97,7 +101,7 @@ const Subtitle = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 20vh;
+        height: 25vh;
     }
 `;
 
@@ -106,7 +110,7 @@ const Carousel = styled(motion.div)`
     height: 60vh;
     overflow: hidden;
     @media screen and (max-width: 768px){
-        height: 50vh;
+        height: 60vh;
     }
     
     
@@ -116,7 +120,7 @@ const InnerCarousel = styled(motion.div)`
     display: flex;
     height: 60vh;
     @media screen and (max-width: 768px){
-        height: 50vh;
+        height: 60vh;
     }
     
    
@@ -135,8 +139,8 @@ const CardContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background: rgb(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -192,6 +196,9 @@ const Empty = styled.div`
     width: 100%;
     height: 15vh;
     display: inline-flex;
+    @media screen and (max-width: 768px){
+        height: 10vh;
+    }
     
     
 `;
@@ -204,7 +211,6 @@ const IconColumnLeft = styled(LinkS)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: transparent;
 
 `;
 
@@ -217,7 +223,6 @@ const EmptyColumn = styled.div`
 const Wrapper = styled.div`
     margin: 0 20%;
     width: 100%;
-    
 `;
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -236,7 +241,6 @@ const IconColumnRight = styled(LinkS)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    background: transparent;
 
 `;
 
@@ -333,11 +337,11 @@ const DevStackSection = () => {
             </Carousel>
             </Wrapper>
             <Empty>
-                <IconColumnLeft to="toolkit" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="toolkit" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}>
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>
-                <IconColumnRight to="docssection" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnRight to="docssection" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}>
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>
                 <ToggleColumn><IconButton onClick={toggleHome}><ArrowHome /></IconButton></ToggleColumn>

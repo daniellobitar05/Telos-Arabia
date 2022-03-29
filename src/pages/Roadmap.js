@@ -182,7 +182,7 @@ const Roadmap = () => {
     return(
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
-                <Section id="roadmap" ref={ref}>
+                {/* <Section id="roadmap" ref={ref}>
                     <PageTitle animate={animation}>الاعلان عن خارطة تيلوس الجديدة</PageTitle>
                     <ImageHolder animate={animationTwo}></ImageHolder>
                     <Empty>
@@ -193,7 +193,7 @@ const Roadmap = () => {
                         <IconColumnRight ></IconColumnRight>
                         <ToggleColumn></ToggleColumn>
                     </Empty>
-                </Section>
+                </Section> */}
                 <R1 />
                 {/* <R2 />
                 <R3 />

@@ -43,14 +43,15 @@ const Title = styled(motion.div)`
 
 const Subtitle = styled(motion.div)`
     font-size: 32px;
-    width: 70%;
+    width: 80%;
     color: ${props => props.theme.text};
     text-align: right; 
     padding: 10px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        font-size: 28px;
+        font-size: 24px;
         height: 30vh;
+        line-height: 30px;
     }
     
 `;
@@ -155,8 +156,8 @@ const Developers = () => {
         <ThemeProvider theme={themes[theme]}>
         <HeaderNoHome theme={theme} setTheme={setTheme} />
         <Section id="developers" ref={ref}>
-            <Title animate={animation}>فوائد شبكة تيلوس</Title>
-            <Subtitle animate={animationTwo}>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</Subtitle>
+            <Title animate={animation}><p>فوائد شبكة تيلوس</p></Title>
+            <Subtitle animate={animationTwo}><p>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</p></Subtitle>
             <IconHolder>
                 <IconColumn>
                 <LinkS to="devresources" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 

@@ -22,8 +22,7 @@ const Section = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     @media screen and (max-width: 768px){
-        
-        height: 130vh;
+        height: 210vh;
     }
    
 `;
@@ -55,11 +54,16 @@ const TopSubtitle = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 10px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 16px;
+        }
     }
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 30vh;
+        height: 50vh;
         font-size: 20px;
+        line-height: 30px;
     }
 `;
 
@@ -78,11 +82,16 @@ const BottomSubtitle = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 10px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 16px;
+        }
     }
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 30vh;
+        height: 40vh;
         font-size: 20px;
+        line-height: 30px;
     }
 `;
 
@@ -94,7 +103,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 180vh;
     }
 `;
 

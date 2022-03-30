@@ -142,7 +142,7 @@ const Lifter = styled.div`
 
 const ArrowLifter = styled.div`
     @media screen and (max-width: 768px){
-        transform: translate(0, -275%);
+        transform: translate(0, -285%);
     }
 `;
 
@@ -213,8 +213,8 @@ const ESG = () => {
                 <ESGIcons />
                 <ESGToDo /> 
                 <ESGQuotes />
-                {/* <ESGGovernance />
-                <ESGGreenest />
+                <ESGGovernance />
+                {/* <ESGGreenest />
                 <ESGChart />
                 <ESGSeeds />
                 <Additional />

@@ -199,6 +199,7 @@ const TopText = styled.div`
         font-size: 24px;
         z-index: 100;
         font-weight: 400;
+        line-height: 30px;
     }
 `;
 
@@ -229,7 +230,7 @@ const Quote = styled.div`
         font-size: 28px;
         transform: translate(0, 20%);
         font-weight: 400;
-        line-height: 30px;
+        
     }
 `;
 

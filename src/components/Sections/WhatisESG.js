@@ -81,13 +81,12 @@ const VideoWrapper = styled.div`
     width: 90%;
     height: 55vh;
     display: flex;
-    background: red;
     @media screen and (max-width: 768px){
         flex-direction: column; 
         align-items: center;
         justify-content: center;
         height: 90vh;
-        transform: scale(0.6) translate(0, -10%);
+        transform: scale(0.6) translate(0, -5%);
     }
 `;
 

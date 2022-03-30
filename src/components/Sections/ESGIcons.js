@@ -268,6 +268,7 @@ const TextColumn = styled(motion.div)`
         float: none;
         width: 100%;
         height: 50%;
+        line-height: 30px;
     }
 `;
 

@@ -106,7 +106,7 @@ const Wrapper = styled.div`
 
 const Reducer = styled.div`
     @media screen and (max-width: 768px){
-        transform: scale(0.8);
+        transform: scale(0.6);
     }
 `;
 
@@ -236,7 +236,7 @@ const Tokenomics = () => {
                     </ColumnRight>
                     </Grid> */}
                 </Section> 
-                <Highlights />
+                {/* <Highlights /> */}
                 {/* <SupplySection />
                 <DepthLookSection />
                 <DepthLookTwo />

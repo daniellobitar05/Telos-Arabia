@@ -28,6 +28,7 @@ const Section = styled.div`
 const Title = styled(motion.div)`
     font-size: 86px;
     width: 70%;
+    line-height: 50px;
     color: ${props => props.theme.text};  
     text-align: right;
     direction: rtl;

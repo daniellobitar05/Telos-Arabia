@@ -96,6 +96,7 @@ const TopArticle = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 35vh;
+        line-height: 30px;
     }
 `;
 
@@ -123,6 +124,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 60vh;
+        line-height: 30px;
     }
 `;
 

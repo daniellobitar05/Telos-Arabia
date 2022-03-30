@@ -247,11 +247,11 @@ const Tokenomics = () => {
                 <DepthLookSeven />
                 <DepthLookEight />
                 <DepthLookNine />
-                {/*<DepthLookTen />
+                <DepthLookTen />
                 <DepthLookEleven />
                 <DepthLookTwelve />
                 <DepthLookThirteen />
-                <Footer /> */}
+                <Footer />
         </ThemeProvider>
     )
 }

@@ -51,6 +51,7 @@ const Title = styled(motion.div)`
         transform: translate(0, 0);
         font-size: 32px;
         width: 90%;
+        line-height: 35px;
     }
 `;
 
@@ -84,6 +85,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 40vh;
+        line-height: 30px;
     }
 `;
 

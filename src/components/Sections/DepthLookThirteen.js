@@ -56,6 +56,7 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: right;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -79,6 +80,40 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 50vh;
+    }
+`;
+
+const BottomArticle = styled(motion.div)`
+    width: 70vw;
+    font-size: 32px;
+    height: 25vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        margin: 0;
+        font-size: 20px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        padding: 0;
+        width: 90%;
+        height: 30vh;
     }
 `;
 
@@ -193,7 +228,7 @@ const DepthLookThirteen = () => {
             <Title animate={animation}>التفاعل مع التطبيقات الأخرى المبنية على تيلوس</Title>
             <Article animate={animationTwo}><p><t>يحافظ تيلوس على فائدة إضافية بطرق لا حصر لها تعمل على تشغيل الخدمات الأخرى المبنية على الشبكة. تستخدم العديد من التطبيقات تيلوس كطريقة أساسية للدفع ، والتي يتم تعزيزها من خلال إضافة أدوات تيلوس</t><span>DeFi</span><t>الأخرى مثل</t><span>T-Bonds</span><t>أو</t><span>T-Swaps</span><t>أو</t><span>T-Starter.</span></p></Article>
             <Article animate={animationTwo}><p><span>dStor</span><t>هو مثال آخر للتطبيق الذي يضيف فائدة إلى رمز تيلوس المميز ، خارج حالات الاستخدام الأولية المقصودة.</t><span>dStor</span><t>هو حل تخزين لامركزي ثوري تم إنشاؤه بواسطة</t><span>GoodBlock,</span><t>على الرغم من أن نظام التخزين هو شبكته المنفصلة ، يتم الدفع لمشغلي العقد برمز تيلوس المميز وتحدث هذه المعاملات المالية على شبكة تيلوس.</t></p></Article>
-            <Article animate={animationTwo}><p>هذه ليست سوى عدد قليل من حالات الاستخدام الإضافية العديدة لـ تيلوس ، التي تم إنشاؤها بواسطة مبادرات إضافية داخل نظام تيلوس البيئي.</p></Article>
+            <BottomArticle animate={animationTwo}><p>هذه ليست سوى عدد قليل من حالات الاستخدام الإضافية العديدة لـ تيلوس ، التي تم إنشاؤها بواسطة مبادرات إضافية داخل نظام تيلوس البيئي.</p></BottomArticle>
 
             <Empty>
                 <IconColumnLeft to="depthlookfourteen" smooth={true} duration={1000} spy={true} exact="true">

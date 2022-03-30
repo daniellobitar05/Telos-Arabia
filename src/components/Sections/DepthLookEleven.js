@@ -24,7 +24,7 @@ const Section = styled.div`
     background-size: contain;
     background-position: left center; 
     @media screen and (max-width: 768px){
-        height: 170vh;
+        height: 180vh;
     }
 `;
 
@@ -61,6 +61,7 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: right;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -73,17 +74,12 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         }
     }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0;
-        font-size: 20px;
-    }
     @media screen and (max-width: 768px){
         font-size: 24px;
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 

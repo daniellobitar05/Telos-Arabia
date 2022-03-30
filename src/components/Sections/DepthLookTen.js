@@ -1,9 +1,8 @@
 import {useEffect} from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {Link as LinkS} from "react-scroll";
-import {Link as LinkR} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -34,6 +33,7 @@ const Article = styled(motion.div)`
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    font-weight: 300;
     span{
         margin: 0 8px;
         font-size: 20px;
@@ -42,17 +42,12 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         }
     }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0;
-        font-size: 20px;
-    }
     @media screen and (max-width: 768px){
         font-size: 24px;
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 

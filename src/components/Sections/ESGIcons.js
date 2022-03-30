@@ -22,7 +22,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 240vh;
     }
 `;
 
@@ -236,7 +236,7 @@ const TextColumns = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         flex-direction: column;
-        height: 100vh;
+        height: 120vh;
     }
 `;
 
@@ -255,6 +255,7 @@ const TextColumn = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 10px;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         float: none;

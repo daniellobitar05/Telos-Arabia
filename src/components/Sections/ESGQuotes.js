@@ -18,7 +18,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 185vh;
+        height: 260vh;
     }
 `;
 
@@ -35,6 +35,7 @@ const Subtitle = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    line-height: 30px;
     span{
         margin: 0 10px;
     }
@@ -42,8 +43,9 @@ const Subtitle = styled(motion.div)`
         width: 90%;
         height: 20vh;
         font-size: 20px;
-        height: 35vh;
+        height: 50vh;
         transform: translate(0, 0);
+        line-height: 30px;
     }
 `;
 
@@ -60,14 +62,15 @@ const SubtitleLeft = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    line-height: 30px;
     span{
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 20vh;
+        height: 50vh;
         font-size: 20px;
-        height: 35vh;
+        height: 50vh;
         transform: translate(0, 0);
     }
 `;

@@ -20,7 +20,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 200vh;
     }
 `;
 
@@ -62,9 +62,10 @@ const Subtitle = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     z-index: 100;
+    line-height: 30px;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 40vh;
+        height: 50vh;
         font-size: 24px;
     }
     span{

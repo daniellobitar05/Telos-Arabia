@@ -92,6 +92,7 @@ const Text = styled(motion.div)`
     height: 100%;
     text-align: center;
     direction: rtl;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     span{
         margin: 0 8px;
         font-size: 20px;

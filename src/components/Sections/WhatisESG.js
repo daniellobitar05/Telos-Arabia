@@ -40,7 +40,7 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 32px;
-        height: 30vh;
+        height: 40vh;
     }
 `;
 
@@ -58,7 +58,7 @@ const Subtitle = styled(motion.div)`
         margin: 0 15px;
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 40vh;
         justify-content: center;
         font-size: 24px;
         width: 90%;
@@ -275,7 +275,7 @@ const WhatisESG = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         

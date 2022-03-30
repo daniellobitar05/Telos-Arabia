@@ -19,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 170vh;
     }
 `;
 

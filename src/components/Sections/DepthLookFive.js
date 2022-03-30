@@ -24,7 +24,7 @@ const Section = styled.div`
     background-size: contain;
     background-position: center center;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 170vh;
     }
 `;
 
@@ -64,6 +64,7 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
+    justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{
@@ -84,10 +85,45 @@ const Article = styled(motion.div)`
         font-size: 24px;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 40vh;
         line-height: 30px;
     }
 `;
+
+const BigArticle = styled(motion.div)`
+    width: 70vw;
+    font-size: 30px;
+    height: 30vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        margin: 0;
+        font-size: 20px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        padding: 0;
+        width: 90%;
+        height: 60vh;
+        line-height: 30px;
+    }
+`;
+
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -200,7 +236,7 @@ const DepthLookFive = () => {
             <Title animate={animation}><p><t>صندوق التنمية الاقتصادية</t><span>150,000  - (econdevfunds)  </span><t>تيلوس / شهر</t></p></Title>
             <Article animate={animationTwo}><p><t>يتم استخدام صندوق التنمية الاقتصادية لدفع النفقات التي يحددها منتجو الكتلة لتكون مفيدة للشبكة. يتم اتخاذ قرارات إعداد الموازنة من خلال تصويت الأغلبية المتعددة لشركات</t><span>BP</span><t>لنشطة ، بشرط ألا يتجاوز المبلغ الإجمالي للأموال التي يتم صرفها</t><span>5،260،000</span><t>تيلوس شهريًا.</t></p></Article>
             <Title animate={animation}><p><t>مؤسسة تيلوس</t><span>(tf) - 700000</span><t>تيلوس / شهر</t></p></Title>
-            <Article animate={animationTwo}><p><t>مؤسسة تيلوس هي منظمة غير سياسية مهمتها المساعدة في تعزيز وتحسين شبكة تيلوس. ينص التفويض الأولي على أنه سيتم تنفيذ ذلك من خلال الترويج للشبكة من خلال المنح والإدارة ، ونفقات الاكتتاب التي تزيد من وظائف شبكة تيلوس والحفاظ على السعر الإرشادي المنشور لـ تيلوس</t><span>Network RAM.</span><t>تعتبر أي قرارات تتخذها مؤسسة تيلوس حيادية لعمليات الشبكة وأنظمة الحوكمة.</t></p></Article>
+            <BigArticle animate={animationTwo}><p><t>مؤسسة تيلوس هي منظمة غير سياسية مهمتها المساعدة في تعزيز وتحسين شبكة تيلوس. ينص التفويض الأولي على أنه سيتم تنفيذ ذلك من خلال الترويج للشبكة من خلال المنح والإدارة ، ونفقات الاكتتاب التي تزيد من وظائف شبكة تيلوس والحفاظ على السعر الإرشادي المنشور لـ تيلوس</t><span>Network RAM.</span><t>تعتبر أي قرارات تتخذها مؤسسة تيلوس حيادية لعمليات الشبكة وأنظمة الحوكمة.</t></p></BigArticle>
             <Empty>
                 <IconColumnLeft to="depthlooksix" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>

@@ -9,8 +9,9 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import {IconButton} from "@mui/material";
 import Icon1 from "../SVG/performance.svg";
-import Icon2 from "../SVG/funding.svg";
-import Icon3 from "../SVG/community.svg";
+import Comm from "../SVG/comm.svg";
+import Eco from "../SVG/eco.svg";
+import Struc from "../SVG/struc.svg";
 
 
 const Section = styled.div`
@@ -64,19 +65,23 @@ const Column = styled(motion.div)`
 `;
 
 const IconContainer = styled(motion.div)`
-    height: 40%;
-    width: 100%;
+    height: 80px;
+    width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    border: 1px solid aqua;
+    
     
     img{
-        width: 25%;
-        border-radius: 50%;
-        border: 1px solid aqua;
-        padding: 10px;
+        width: 65%;
+        
+        display: block;
+        object-fit: contain;
+        
         @media screen and (max-width: 768px){
-            width: 20%;
+            
         }
     }
 `;
@@ -344,7 +349,7 @@ const ESGIcons = () => {
             <Grid animate={animationThree}>
                 <Column variants={ContainerVariants} initial='start' animate='end' >
                     <IconContainer variants={CircleVariants}  transition={CircleTransition}>
-                        <img src={Icon1} alt="logo1" />
+                        <img src={Struc} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
                         <TopText >هيكل الحوكمة</TopText>
@@ -353,7 +358,7 @@ const ESGIcons = () => {
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
                     <IconContainer variants={CircleVariants}  transition={Trans2}>
-                        <img src={Icon2} alt="logo1" />
+                        <img src={Comm} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
                         <TopText >مسؤول إجتماعيا</TopText>
@@ -362,7 +367,7 @@ const ESGIcons = () => {
                 </Column>
                 <Column variants={ContainerVariants} initial='start' animate='end'>
                     <IconContainer variants={CircleVariants}  transition={Trans3}>
-                        <img src={Icon3} alt="logo1" />
+                        <img src={Eco} alt="logo1" />
                     </IconContainer>
                     <TextContainer>
                         <TopText >واع بيئيا</TopText>
@@ -371,9 +376,9 @@ const ESGIcons = () => {
                 </Column>
             </Grid>
             <TextColumns>
-                <TextColumn animate={animationTwo}><p><t>وجدت دراسة</t><span>ESG Global</span><t>أن مالكي الأصول خصصوا 48٪ من أموالهم نحو</t><span>ESG</span><t>في عام 2017. وقد ارتفع هذا الرقم إلى 75٪ في عام 2019 ، ومن المتوقع أن ترتفع هذه الأرقام إلى 92٪ بحلول نهاية عام 2021. وهذا يثبت أن هناك طن من القيمة في استثمارات</t><span>ESG</span><t>سواء من منظور واع اجتماعيًا وكذلك من منظور مالي</t></p></TextColumn>
+                <TextColumn animate={animationTwo}><p><t>وجدت دراسة</t><span>ESG Global</span><t>أن مالكي الأصول خصصوا </t><span>48%</span><t>من أموالهم نحو</t><span>ESG</span><t>في عام</t><span>2017.</span><t>وقد ارتفع هذا الرقم إلى</t><span>75%</span><t>في عام</t><span>2019,</span><t>ومن المتوقع أن ترتفع هذه الأرقام إلى</t><span>92%</span><t>بحلول نهاية عام</t><span>2021,</span><t>وهذا يثبت أن هناك طن من القيمة في استثمارات</t><span>ESG,</span><t>سواء من منظور واع اجتماعيًا وكذلك من منظور مالي.</t></p></TextColumn>
                 <EmptyTextColumn />
-                <TextColumn animate={animationTwo}><p><t>يمكن إرجاع تاريخ</t><span>ESG</span><t>إلى عام 2004. في ذلك الوقت ، دعا الأمين العام السابق للأمم المتحدة كوفي عنان أكثر من 50 مديرًا تنفيذيًا للمؤسسات المالية الكبرى لوضع توصيات حول كيفية دمج عناصر</t><span>ESG</span><t>في أسواق رأس المال. استفاد جميع المعنيين من التحرك نحو</t><span>ESG</span><t>نظرًا لقدرته على الكشف عن القيمة في المجالات التي تقصر فيها الأساليب التحليلية</t></p></TextColumn>
+                <TextColumn animate={animationTwo}><p><t>يمكن إرجاع تاريخ</t><span>ESG</span><t>إلى عام</t><span>2004,</span><t>في ذلك الوقت ، دعا الأمين العام السابق للأمم المتحدة كوفي عنان أكثر من</t><span>50</span><t>مديرًا تنفيذيًا للمؤسسات المالية الكبرى لوضع توصيات حول كيفية دمج عناصر</t><span>ESG</span><t>في أسواق رأس المال. استفاد جميع المعنيين من التحرك نحو</t><span>ESG,</span><t>نظرًا لقدرته على الكشف عن القيمة في المجالات التي تقصر فيها الأساليب التحليلية.</t></p></TextColumn>
             </TextColumns>
             <Empty>
                 <IconColumnLeft to="todo" smooth={true} duration={1000} spy={true} exact="true">

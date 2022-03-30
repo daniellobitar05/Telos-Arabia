@@ -40,7 +40,7 @@ const Section = styled.div`
 const Title = styled(motion.div)`
     font-size: 62px;
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     display: flex;
     color: ${props => props.theme.text};
     align-items: center;
@@ -61,7 +61,7 @@ const Title = styled(motion.div)`
 const Container = styled.div`
    position: relative;
    width: 100%;
-   height: 80vh;
+   height: 70vh;
    transform: translate(0, 5%);
    @media screen and (max-width: 768px){
         display: flex;
@@ -102,7 +102,7 @@ const Text = styled(motion.div)`
     }
     h1{
         color: white;
-        font-size: 24px;
+        font-size: 27px;
         font-weight: 400;
         @media screen and (max-width: 768px){
             font-size: 20px;
@@ -133,7 +133,17 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
     }
 `;
 
+const Lifter = styled.div`
+    @media screen and (max-width: 768px){
+        transform: translate(0, -35%);
+    }
+`;
 
+const ArrowLifter = styled.div`
+    @media screen and (max-width: 768px){
+        transform: translate(0, -275%);
+    }
+`;
 
 
 const ESG = () => {
@@ -189,8 +199,12 @@ const ESG = () => {
             <Container>
                 <ImageLeft><img src={Ball2} alt="ball1" /></ImageLeft>
                 <ImageRight><img src={Ball1} alt="ball2" /></ImageRight>
+                <Lifter>
                 <Text animate={animationTwo}><p><h1><t>أصبحت الاستثمارات البيئية والاجتماعية والحوكمة</t><span>(ESG)</span><t>وممارسات الأعمال معايير مهمة بشكل متزايد عند تقييم المخاطر المحتملة لمبادرة ما. دعت العديد من المؤسسات إلى حلول</t><span>ESG</span><t>في قطاع العملات المشفرة ولكن لم يتم تسليم أي شبكة ... حتى تيلوس. تيلوس سريع للغاية ، عمليًا بدون رسوم وأقوى من المنافسين الرئيسيين. ومع ذلك ، يتطلب الأمر أكثر من ذلك لتكون</t><span>#RealWorldReady.</span><t>تبذل تيلوس جهدًا واعيًا لتصبح شركة</t><span>ESG</span><t>بلوكشين الرائدة ، وتضع نفسها في متناول المستخدمين العالميين الحقيقيين حول العالم.</t></h1></p></Text>
-                <LinkS to="videos" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
+                </Lifter>
+                <ArrowLifter>
+                <LinkS to="videos" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
+                </ArrowLifter>
             </Container>
             </Section>
                

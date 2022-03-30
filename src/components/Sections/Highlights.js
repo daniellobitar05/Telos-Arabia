@@ -393,7 +393,7 @@ const Highlights = () => {
                 </ColumnRight>
             </Grid>
             <Empty>
-                <IconColumnLeft to="supply" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="supply" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}>
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

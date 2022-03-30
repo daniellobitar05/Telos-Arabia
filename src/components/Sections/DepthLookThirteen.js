@@ -221,7 +221,7 @@ const DepthLookThirteen = () => {
             <BottomArticle animate={animationTwo}><p>هذه ليست سوى عدد قليل من حالات الاستخدام الإضافية العديدة لـ تيلوس ، التي تم إنشاؤها بواسطة مبادرات إضافية داخل نظام تيلوس البيئي.</p></BottomArticle>
 
             <Empty>
-                <IconColumnLeft to="depthlookfourteen" smooth={true} duration={1000} spy={true} exact="true">
+                <IconColumnLeft to="footer" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
             <EmptyColumn></EmptyColumn>

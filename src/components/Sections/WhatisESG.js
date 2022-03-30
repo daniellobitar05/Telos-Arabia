@@ -51,14 +51,19 @@ const Subtitle = styled(motion.div)`
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
     height: 20vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{
         margin: 0 15px;
+        font-size: 28px;
+        @media screen and (max-width: 768px){
+            font-size: 20px;
+        }
     }
     @media screen and (max-width: 768px){
-        height: 40vh;
+        height: 30vh;
         justify-content: center;
         font-size: 24px;
         width: 90%;

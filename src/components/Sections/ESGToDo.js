@@ -20,7 +20,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 190vh;
     }
 `;
 
@@ -41,7 +41,7 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 28px;
-        height: 20vh;
+        height: 30vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -64,8 +64,12 @@ const Subtitle = styled(motion.div)`
     z-index: 100;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 30vh;
+        height: 40vh;
         font-size: 24px;
+    }
+    span{
+        margin: 0 8px;
+        font-size: 20px;
     }
 `;
 
@@ -138,7 +142,7 @@ const Grid = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 80vh;
+        height: 110vh;
     }
 `;
 
@@ -151,7 +155,7 @@ const ColumnLeft = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         width: 100%;
-        height: 30%;
+        height: 25vh;
     }
     img{
         width: 550px;
@@ -171,7 +175,7 @@ const ColumnRight = styled(motion.div)`
     align-items: center;
     @media screen and (max-width: 768px){
         width: 100%;
-        height: 70%;
+        height: 75vh;
     }
 `;
 
@@ -185,11 +189,13 @@ const TopText = styled.div`
     text-align: center;
     span{
         margin: 0 8px;
+        font-size: 20px;
     }
     h1{
         color: white;
         font-size: 24px;
         z-index: 100;
+        font-weight: 400;
     }
 `;
 
@@ -213,11 +219,13 @@ const Quote = styled.div`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 24px;
     }
     h1{
         color: white;
         font-size: 28px;
         transform: translate(0, 20%);
+        font-weight: 400;
     }
 `;
 
@@ -231,6 +239,7 @@ const Teller = styled.div`
         color: white;
         font-size: 24px;
         transform: translate(0, 100%);
+        font-weight: 400;
     }
 
 `;

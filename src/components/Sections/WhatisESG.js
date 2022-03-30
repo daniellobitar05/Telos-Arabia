@@ -19,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 160vh;
     }
 `;
 
@@ -34,13 +34,13 @@ const Title = styled(motion.div)`
     justify-content: center;
     direction: rtl;
     span{
-        margin: 0 15px;
+        margin: 0 10px;
     }
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         width: 80%;
         font-size: 32px;
-        height: 20vh;
+        height: 30vh;
     }
 `;
 
@@ -58,7 +58,7 @@ const Subtitle = styled(motion.div)`
         margin: 0 15px;
     }
     @media screen and (max-width: 768px){
-        height: 20vh;
+        height: 30vh;
         justify-content: center;
         font-size: 24px;
         width: 90%;
@@ -75,7 +75,7 @@ const VideoWrapper = styled.div`
         align-items: center;
         justify-content: center;
         height: 90vh;
-        transform: scale(0.8);
+        transform: scale(0.6);
     }
 `;
 
@@ -112,35 +112,26 @@ const VideoRight = styled(motion.div)`
         float: none;
         width: 70%;
         height: 50%;
-        
+        margin: 20px 0;
     }
     
 `;
 
-const VideoTitle = styled.h1`
+const VideoTitle = styled.div`
     color: white;
-    font-size: 22px;
+    font-size: 26px;
     direction: rtl;
     height: 10vh;
-    
-    
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     span{
-        margin: 0 15px;
+        margin: 0 10px;
     }
 `;
 
-const VideoTitleESG = styled.h1`
-    color: white;
-    font-size: 22px;
-    direction: rtl;
-    height: 10vh;
-    span{
-        margin: 0 15px;
-    }
-    @media screen and (max-width: 768px){
-        
-    }
-`;
+
 
 const Empty = styled.div`
     width: 100%;
@@ -311,7 +302,7 @@ const WhatisESG = () => {
 
     return(
         <Section id="videos" ref={ref}>
-            <Title animate={animation}><t>ما هو</t><span>ESG</span><t>ولماذا هو مهم؟</t></Title>
+            <Title animate={animation}><p><t>ما هو</t><span>ESG</span><t>ولماذا هو مهم؟</t></p></Title>
             <Subtitle animate={animationTwo}><p><t>اختصار</t><span>ESG</span><t>لتقف على البيئة والاجتماعية والحوكمة. إنه معيار شائع في عالم الأعمال والاستثمار. يتم استخدام</t><span>ESG</span><t>تحديد المخاطر التي قد لا يتم تفويتها من خلال الأشكال التقليدية للتحليل</t>.</p></Subtitle>
             
                 
@@ -319,11 +310,11 @@ const WhatisESG = () => {
             
             <VideoWrapper>
                 <VideoLeft animate={animationThree}>
-                <VideoTitle>ESG فوائد </VideoTitle>
+                <VideoTitle><p><t>فوائد</t><span>ESG</span></p></VideoTitle>
                     <VideoTwo />
                 </VideoLeft>
                 <VideoRight animate={animationThree}>
-                <VideoTitleESG ><t>مقدمة عن</t><span>ESG Investing</span></VideoTitleESG>
+                <VideoTitle ><p><t>مقدمة عن</t><span>ESG Investing</span></p></VideoTitle>
                     <VideoOne />
                 </VideoRight>
             </VideoWrapper>

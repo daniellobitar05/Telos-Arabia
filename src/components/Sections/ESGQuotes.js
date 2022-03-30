@@ -18,7 +18,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 130vh;
+        height: 185vh;
     }
 `;
 
@@ -42,7 +42,7 @@ const Subtitle = styled(motion.div)`
         width: 90%;
         height: 20vh;
         font-size: 20px;
-        height: 25vh;
+        height: 35vh;
         transform: translate(0, 0);
     }
 `;
@@ -67,7 +67,7 @@ const SubtitleLeft = styled(motion.div)`
         width: 90%;
         height: 20vh;
         font-size: 20px;
-        height: 30vh;
+        height: 35vh;
         transform: translate(0, 0);
     }
 `;

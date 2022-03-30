@@ -22,7 +22,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 220vh;
     }
 `;
 
@@ -50,7 +50,7 @@ const Column = styled(motion.div)`
     align-items: center;
     justify-content: center;
     margin: 10px 50px;
-    
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     border-radius: 20px;
     border: 1px solid purple;
     &:hover{
@@ -236,7 +236,7 @@ const TextColumns = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         flex-direction: column;
-        height: 90vh;
+        height: 100vh;
     }
 `;
 

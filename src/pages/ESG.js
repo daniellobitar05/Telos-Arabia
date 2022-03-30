@@ -192,7 +192,7 @@ const ESG = () => {
                 <ESGIcons />
                 <ESGToDo /> 
                 <ESGQuotes />
-                <ESGGovernance />
+                {/* <ESGGovernance />
                 <ESGGreenest />
                 <ESGChart />
                 <ESGSeeds />
@@ -202,7 +202,7 @@ const ESG = () => {
                 <AdditionalTwo />
                 <ESGConclusion />
                 <ESGLatest />
-                <Footer />
+                <Footer /> */}
         </ThemeProvider>
     )
 }

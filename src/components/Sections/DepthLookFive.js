@@ -24,7 +24,7 @@ const Section = styled.div`
     background-size: contain;
     background-position: center center;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 190vh;
     }
 `;
 

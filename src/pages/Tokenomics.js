@@ -122,10 +122,10 @@ const negativespin = keyframes`
 
 const Pulse = {
     start: {
-        scale: 0.95
+        scale: 0.9, x:'-15px',
     },
     end: {
-        scale: 1,
+        scale: 1, x:'-15px',
         transition: {
             duration: 3, 
             yoyo: "Infinity"

@@ -19,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 170vh;
+        height: 200vh;
     }
 `;
 
@@ -91,6 +91,7 @@ const BigArticle = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
+    line-height: 30px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{

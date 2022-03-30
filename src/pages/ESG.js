@@ -88,16 +88,21 @@ const ImageLeft = styled.div`
     }
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
     height: 100%;
     text-align: center;
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+            font-size: 16px;
+        }
     }
     h1{
         color: white;
-        font-size: 25px;
+        font-size: 24px;
+        font-weight: 400;
         @media screen and (max-width: 768px){
             font-size: 20px;
             padding: 0 10px;
@@ -178,12 +183,12 @@ const ESG = () => {
     return(
         <ThemeProvider theme={themes[theme]}>
             <HeaderNoHome theme={theme} setTheme={setTheme} />
-            <Section>
-            <Title><t>تيلوس هي</t><span>ESG</span><t>بلوكشين</t></Title>
+            <Section ref={ref}>
+            <Title animate={animation}><t>تيلوس هي</t><span>ESG</span><t>بلوكشين</t></Title>
             <Container>
                 <ImageLeft><img src={Ball2} alt="ball1" /></ImageLeft>
                 <ImageRight><img src={Ball1} alt="ball2" /></ImageRight>
-                <Text><p><h1><t>أصبحت الاستثمارات البيئية والاجتماعية والحوكمة</t><span>(ESG)</span><t>وممارسات الأعمال معايير مهمة بشكل متزايد عند تقييم المخاطر المحتملة لمبادرة ما. دعت العديد من المؤسسات إلى حلول</t><span>ESG</span><t>في قطاع العملات المشفرة ولكن لم يتم تسليم أي شبكة ... حتى تيلوس. تيلوس سريع للغاية ، عمليًا بدون رسوم وأقوى من المنافسين الرئيسيين. ومع ذلك ، يتطلب الأمر أكثر من ذلك لتكون</t><span>#RealWorldReady.</span><t>تبذل تيلوس جهدًا واعيًا لتصبح شركة</t><span>ESG</span><t>بلوكشين الرائدة ، وتضع نفسها في متناول المستخدمين العالميين الحقيقيين حول العالم.</t></h1></p></Text>
+                <Text animate={animationTwo}><p><h1><t>أصبحت الاستثمارات البيئية والاجتماعية والحوكمة</t><span>(ESG)</span><t>وممارسات الأعمال معايير مهمة بشكل متزايد عند تقييم المخاطر المحتملة لمبادرة ما. دعت العديد من المؤسسات إلى حلول</t><span>ESG</span><t>في قطاع العملات المشفرة ولكن لم يتم تسليم أي شبكة ... حتى تيلوس. تيلوس سريع للغاية ، عمليًا بدون رسوم وأقوى من المنافسين الرئيسيين. ومع ذلك ، يتطلب الأمر أكثر من ذلك لتكون</t><span>#RealWorldReady.</span><t>تبذل تيلوس جهدًا واعيًا لتصبح شركة</t><span>ESG</span><t>بلوكشين الرائدة ، وتضع نفسها في متناول المستخدمين العالميين الحقيقيين حول العالم.</t></h1></p></Text>
                 <LinkS to="videos" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS>
             </Container>
             </Section>

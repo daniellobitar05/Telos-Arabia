@@ -42,7 +42,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 42px;
     }
@@ -78,7 +78,41 @@ const Article = styled(motion.div)`
         width: 80%;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 40vh;
+    }
+`;
+
+const BigArticle = styled(motion.div)`
+    width: 70vw;
+    font-size: 30px;
+    height: 25vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        margin: 0;
+        font-size: 20px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 60vh;
     }
 `;
 
@@ -192,7 +226,7 @@ const DepthLookTwo = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                opacity: 1, y: '30px',
+                opacity: 1, y: '50px',
                 transition: {
                     duration: 1, 
                 }
@@ -210,7 +244,7 @@ const DepthLookTwo = () => {
         <Section id="depthlooktwo" ref={ref}>
             <Article animate={animationThree}><p><t>ي البداية دفعت الشبكة لمنتجي الكتل من خلال تضخم العرض. ومع ذلك ، توقف هذا في صيف عام 2019 ، عندما تم تمرير خطة تيلوس للتنمية الاقتصادية</t><span> 1.0 (TEDP1).</span></p></Article>
             <Title animate={animation}>احتياطيات تيلوس</Title>
-            <Article animate={animationTwo}><p><t>مع</t><span>TEDP1</span><t> قرر المجتمع وقف تضخم العرض تيلوس ، ووضع حد لإجمالي العرض عند 355،208،370.6674 تيلوس. بدلاً من إنشاء رموز جديدة ، وافق المجتمع على الدفع مقابل عمليات الشبكة من خلال صندوق احتياطي رمز</t><span>Exchange Token Reserve Fund (exrsrv.tf).</span><t>تم إنشاء هذه الرموز المميزة للتبادلات لاستردادها نيابة عن عملائها ، ولكن لم تتم المطالبة بها مطلقًا.</t></p></Article>
+            <BigArticle animate={animationTwo}><p><t>مع</t><span>TEDP1</span><t> قرر المجتمع وقف تضخم العرض تيلوس ، ووضع حد لإجمالي العرض عند 355،208،370.6674 تيلوس. بدلاً من إنشاء رموز جديدة ، وافق المجتمع على الدفع مقابل عمليات الشبكة من خلال صندوق احتياطي رمز</t><span>Exchange Token Reserve Fund (exrsrv.tf).</span><t>تم إنشاء هذه الرموز المميزة للتبادلات لاستردادها نيابة عن عملائها ، ولكن لم تتم المطالبة بها مطلقًا.</t></p></BigArticle>
             <Article animate={animationTwo}><p><t>في النهاية ، عندما يتم استنفاد الأموال من صندوق احتياطي رمز</t><span>Exchange ,</span><t>سيتم تمويل الشبكة بواسطة حساب</t><span>TLOSrecovery.</span><t>هذه أموال تم إنشاؤها لأصحاب الحسابات المحتملين والتي لم تتم المطالبة بها أيضًا.</t></p></Article>
             <Empty>
                 <IconColumnLeft to="depthlookthree" smooth={true} duration={1000} spy={true} exact="true">

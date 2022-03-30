@@ -135,6 +135,9 @@ const Item = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 768px){
+        height: 60px;   
+    }
 `;
 
 const Icon = styled.div`
@@ -163,9 +166,11 @@ const Text = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+
     }
     @media screen and (max-width: 768px){
-        font-size: 18px;   
+        font-size: 18px; 
+        width: 80%;  
     }
 `;
 

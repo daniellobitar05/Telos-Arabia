@@ -241,9 +241,9 @@ const Tokenomics = () => {
                   <DepthLookSection />
                 <DepthLookTwo />
                 <DepthLookThree />
-                {/*<DepthLookFour /> 
+                <DepthLookFour /> 
                 <DepthLookFive />
-                <DepthLookSix />
+                {/*<DepthLookSix />
                 <DepthLookSeven />
                 <DepthLookEight />
                 <DepthLookNine />

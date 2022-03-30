@@ -24,13 +24,13 @@ const Section = styled.div`
     background-size: contain;
     background-position: center center;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 170vh;
     }
 `;
 
 const Title = styled(motion.div)`
     height: 15vh;
-    width: 90%;
+    width: 70%;
     font-size: 46px;
     color: white;
     display: inline-flex;
@@ -44,7 +44,7 @@ const Title = styled(motion.div)`
     span{
         margin: 0 10px;
         @media screen and (max-width: 768px){ 
-            font-size: 24px;
+            font-size: 22px;
         }
     }
     @media screen and (max-width: 768px){
@@ -85,6 +85,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 
@@ -197,7 +198,7 @@ const DepthLookFive = () => {
     return(
         <Section id="depthlookfive" ref={ref}>
             <Title animate={animation}><p><t>صندوق التنمية الاقتصادية</t><span>150,000  - (econdevfunds)  </span><t>تيلوس / شهر</t></p></Title>
-            <Article animate={animationTwo}><p><t>يتم استخدام صندوق التنمية الاقتصادية لدفع النفقات التي يحددها منتجو الكتلة لتكون مفيدة للشبكة. يتم اتخاذ قرارات إعداد الموازنة من خلال تصويت الأغلبية المتعددة لشركات</t><span>BP</span><t>النشطة ، بشرط ألا يتجاوز المبلغ الإجمالي للأموال التي يتم صرفها 5،260،000 تيلوس شهريًا.</t></p></Article>
+            <Article animate={animationTwo}><p><t>يتم استخدام صندوق التنمية الاقتصادية لدفع النفقات التي يحددها منتجو الكتلة لتكون مفيدة للشبكة. يتم اتخاذ قرارات إعداد الموازنة من خلال تصويت الأغلبية المتعددة لشركات</t><span>BP</span><t>لنشطة ، بشرط ألا يتجاوز المبلغ الإجمالي للأموال التي يتم صرفها</t><span>5،260،000</span><t>تيلوس شهريًا.</t></p></Article>
             <Title animate={animation}><p><t>مؤسسة تيلوس</t><span>(tf) - 700000</span><t>تيلوس / شهر</t></p></Title>
             <Article animate={animationTwo}><p><t>مؤسسة تيلوس هي منظمة غير سياسية مهمتها المساعدة في تعزيز وتحسين شبكة تيلوس. ينص التفويض الأولي على أنه سيتم تنفيذ ذلك من خلال الترويج للشبكة من خلال المنح والإدارة ، ونفقات الاكتتاب التي تزيد من وظائف شبكة تيلوس والحفاظ على السعر الإرشادي المنشور لـ تيلوس</t><span>Network RAM.</span><t>تعتبر أي قرارات تتخذها مؤسسة تيلوس حيادية لعمليات الشبكة وأنظمة الحوكمة.</t></p></Article>
             <Empty>

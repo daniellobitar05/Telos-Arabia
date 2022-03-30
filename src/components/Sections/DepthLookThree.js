@@ -84,7 +84,42 @@ const Article = styled(motion.div)`
         width: 80%;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 40vh;
+        line-height: 30px;
+    }
+`;
+
+const BigArticle = styled(motion.div)`
+    width: 70vw;
+    font-size: 30px;
+    height: 25vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        margin: 0;
+        font-size: 20px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 60vh;
         line-height: 30px;
     }
 `;
@@ -216,7 +251,7 @@ const DepthLookThree = () => {
     return(
         <Section id="depthlookthree" ref={ref}>
             <Article animate={animationThree}><p>يوجد تمويل كافٍ في هذه الاحتياطيات لتستمر حتى عام 2024 بمعدل الدفع الحالي. ومع ذلك ، من المتوقع أن تستمر الأموال لفترة أطول من خلال التعديلات الرمزية التي يمكن أن يسنها المجتمع.</p></Article>
-            <Article animate={animationThree}><p>نظرًا لأن الشبكة ممولة من الاحتياطيات ، فإن العرض المتداول يزيد من العمل الإضافي ولكن كمية تيلوس الموجودة لا تزيد. بمجرد استنفاد جميع الاحتياطيات ، قد يقرر المجتمع إدخال تضخم في العرض بمعدل منخفض يعود بالنفع على الجميع. بدلاً من ذلك ، قد يتم تمويل الشبكة عن طريق فرض رسوم على بعض الخدمات المتميزة. كل هذا في أيدي أصحاب المصلحة ، بطريقة لا مركزية حقًا.</p></Article>
+            <BigArticle animate={animationThree}><p>نظرًا لأن الشبكة ممولة من الاحتياطيات ، فإن العرض المتداول يزيد من العمل الإضافي ولكن كمية تيلوس الموجودة لا تزيد. بمجرد استنفاد جميع الاحتياطيات ، قد يقرر المجتمع إدخال تضخم في العرض بمعدل منخفض يعود بالنفع على الجميع. بدلاً من ذلك ، قد يتم تمويل الشبكة عن طريق فرض رسوم على بعض الخدمات المتميزة. كل هذا في أيدي أصحاب المصلحة ، بطريقة لا مركزية حقًا.</p></BigArticle>
             <Title animate={animation}>لهيئات الممولة</Title>
             <Article animate={animationThree}><p>توفر تيلوس التمويل للعديد من الحسابات على أساس منتظم ، وفقًا لما يقرره أصحاب المصلحة. هذه الحسابات وأغراضها هي كما يلي:</p></Article>
             <Empty>

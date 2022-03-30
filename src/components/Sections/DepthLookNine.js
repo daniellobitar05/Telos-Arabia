@@ -24,7 +24,7 @@ const Section = styled.div`
     background-size: contain;
     background-position: center center;
     @media screen and (max-width: 768px){
-        height: 140vh;
+        height: 150vh;
     }
     
 `;
@@ -41,7 +41,7 @@ const Bigtitle = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
-        height: 20vh;
+        height: 30vh;
     }
     
 `;
@@ -65,10 +65,37 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 20vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
         width: 90%;
+    }
+`;
+
+const TopArticle = styled(motion.div)`
+    width: 70vw;
+    font-size: 30px;
+    height: 30vh;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        padding: 0;
+        width: 90%;
+        height: 35vh;
     }
 `;
 
@@ -91,17 +118,11 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         }
     }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0;
-        font-size: 20px;
-    }
     @media screen and (max-width: 768px){
         font-size: 24px;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 60vh;
     }
 `;
 
@@ -214,7 +235,7 @@ const DepthLookNine = () => {
     return(
         <Section id="depthlooknine" ref={ref}>
             <Bigtitle animate={animation}>الأداة المساعدة تيلوس</Bigtitle>
-            <Article animate={animationTwo}><p>تيلوس ، رمز الشبكة الأصلي مفيد في عدد كبير من الطرق ، بما في ذلك الحوكمة ، وملكية واستخدام موارد شبكة تيلوس ، والمكافآت ، وكوسيلة للدفع مقابل التطبيقات والخدمات المستندة إلى تيلوس والمزيد.</p></Article>
+            <TopArticle animate={animationTwo}><p>تيلوس ، رمز الشبكة الأصلي مفيد في عدد كبير من الطرق ، بما في ذلك الحوكمة ، وملكية واستخدام موارد شبكة تيلوس ، والمكافآت ، وكوسيلة للدفع مقابل التطبيقات والخدمات المستندة إلى تيلوس والمزيد.</p></TopArticle>
             <Title animate={animation}>ملكية موارد شبكة تيلوس</Title>
             <Article animate={animationTwo}><p>يمثل تيلوس في جوهره ملكية موارد الشبكة. يمكن للمطورين والمستخدمين مشاركة تيلوس في الشبكة للوصول إلى الموارد اللازمة لمعالجة المعاملات. يتم تحديد عدد الموارد المستلمة من خلال النسبة المئوية لحصص حساب تيلوس. هذا متعلق بكمية تيلوس الموجودة. على سبيل المثال ، إذا كان المستخدم يمتلك 1٪ من إمداد تيلوس وتحصيله ، فيمكنه الوصول إلى 1٪ من موارد الشبكة.</p></Article>
 

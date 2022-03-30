@@ -43,7 +43,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 40vh;
         transform: translate(0, 0);
         font-size: 32px;
         width: 90%;
@@ -58,6 +58,7 @@ const Article = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: right;
+    justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
@@ -80,6 +81,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 
@@ -212,7 +214,7 @@ const DepthLookSix = () => {
             <Article animate={animationThree}><p><t>يتم تحديد قرارات الميزانية لمؤسسة تيلوس عبر</t><span>multisig</span><t>بواسطة أعضاء مجلس إدارة مؤسسة تيلوس. يتم التصويت على أعضاء مجلس الإدارة من قبل حاملي تيلوس كممثلين للمجتمع من خلال انتخابات منتظمة.</t></p></Article>
             <Title animate={animation}><p><t>تيلوس</t><span>350.000 - (eosio.saving) Works</span><t> تيلوس / شهر</t></p></Title>
             <Article animate={animationTwo}><p><t>تعمل تيلوس</t><span>Works ,</span><t>المعروفة أيضًا باسم نظام اقتراح العمال</t><span>(WPS) ,</span><t>على تمكين مستخدمي تيلوس من توجيه ودفع تكاليف تطوير شبكة تيلوس وتعزيزها ونموها. يمكن لأي شخص تقديم طلب للحصول على تمويل من أجل القيام بمهمة معينة ويمكن لأي شخص التصويت.</t></p></Article>
-            <Article animate={animationTwo}><p>قد يطلب أي عرض أي مبلغ من تيلوس ، ولكن يلزم إيداع 5٪ من الأموال المطلوبة. يمكن استرداد الإيداع إذا وصل الاقتراح إلى حد معين من تصويت المستخدم.</p></Article>
+            <Article animate={animationTwo}><p><t>قد يطلب أي عرض أي مبلغ من تيلوس ، ولكن يلزم إيداع</t><span>%5</span><t>من الأموال المطلوبة. يمكن استرداد الإيداع إذا وصل الاقتراح إلى حد معين من تصويت المستخدم.</t></p></Article>
             <Empty>
                 <IconColumnLeft to="depthlookseven" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>

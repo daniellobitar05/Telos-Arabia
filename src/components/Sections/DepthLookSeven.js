@@ -64,6 +64,7 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
+    justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{
@@ -85,6 +86,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 

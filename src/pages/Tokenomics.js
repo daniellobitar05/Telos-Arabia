@@ -243,11 +243,11 @@ const Tokenomics = () => {
                 <DepthLookThree />
                 <DepthLookFour /> 
                 <DepthLookFive />
-                {/*<DepthLookSix />
+                <DepthLookSix />
                 <DepthLookSeven />
                 <DepthLookEight />
                 <DepthLookNine />
-                <DepthLookTen />
+                {/*<DepthLookTen />
                 <DepthLookEleven />
                 <DepthLookTwelve />
                 <DepthLookThirteen />

@@ -51,7 +51,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 40vh;
         transform: translate(0, 0);
         font-size: 34px;
         width: 70%;
@@ -65,6 +65,7 @@ const ArticleUp = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: right;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -88,7 +89,8 @@ const ArticleUp = styled(motion.div)`
         font-size: 24px;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 40vh;
+        line-height: 30px;
     }
 `;
 
@@ -121,7 +123,8 @@ const Article = styled(motion.div)`
         font-size: 24px;
         padding: 0;
         width: 90%;
-        height: 50vh;
+        height: 60vh;
+        line-height: 30px;
     }
 `;
 
@@ -234,8 +237,8 @@ const DepthLookEight = () => {
     return(
         <Section id="depthlookeight" ref={ref}>
             <Title animate={animation}>TLOS BEP-20 و TLOS ERC-20</Title>
-            <ArticleUp animate={animationTwo}><p><t>من الممكن استخدام تيلوس خارج الشبكة الرئيسية الأصلية لـ تيلوس ، من خلال إصدارات</t><span>ERC-20</span><t>و</t><span>BEP-20</span><t>من تيلوس. يتوفر</t><span>ERC-20</span><t>تيلوس على شبكة</t><span>Ethereum mainnet</span><t>و</t><span>BEP-20 TLOS</span><t>متاح على</t><span>Binance Smart Chain</span><t>(BSC).</t></p></ArticleUp>
-            <Article animate={animationTwo}><p><t>صبح هذا ممكنًا من خلال الجسور التي تم فتحها بين تيلوس وهذه الشبكات الأخرى في عام 2021 ، عبر</t><span>pTokens.</span><t>هذه إصدارات مغلفة من تيلوس والتي يمكن نقلها داخل وخارج شبكة تيلوس الرئيسية الأصلية في أي وقت. لا يؤدي القيام بذلك إلى إنشاء رموز إضافية ، ومن المهم ملاحظة أن أي تيلوس موجود على</t><span>Ethereum</span><t>أو BSC مدرج في إجمالي التوريد البالغ 355 مليون تيلوس.</t></p></Article>
+            <ArticleUp animate={animationTwo}><p><t>من الممكن استخدام تيلوس خارج الشبكة الرئيسية الأصلية لـ تيلوس ، من خلال إصدارات</t><span>ERC-20</span><t>و</t><span>BEP-20</span><t>من تيلوس. يتوفر</t><span>ERC-20</span><t>تيلوس على شبكة</t><span>Ethereum mainnet</span><t>و</t><span>BEP20 TLOS</span><t>متاح على</t><span>Binance Smart Chain (BSC).</span></p></ArticleUp>
+            <Article animate={animationTwo}><p><t>أصبح هذا ممكنًا من خلال الجسور التي تم فتحها بين تيلوس وهذه الشبكات الأخرى في عام</t><span>2021,</span><t>عبر</t><span>pTokens.</span><t>هذه إصدارات مغلفة من تيلوس والتي يمكن نقلها داخل وخارج شبكة تيلوس الرئيسية الأصلية في أي وقت. لا يؤدي القيام بذلك إلى إنشاء رموز إضافية ، ومن المهم ملاحظة أن أي تيلوس موجود على</t><span>Ethereum</span><t>أو</t><span>BSC</span><t>مدرج في إجمالي التوريد البالغ</t><span>355</span><t>مليون تيلوس.</t></p></Article>
 
 
             <Empty>

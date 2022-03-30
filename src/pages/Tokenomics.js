@@ -106,7 +106,7 @@ const Wrapper = styled.div`
 
 const Reducer = styled.div`
     @media screen and (max-width: 768px){
-        transform: scale(0.6);
+        transform: scale(0.5);
     }
 `;
 

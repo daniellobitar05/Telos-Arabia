@@ -49,8 +49,7 @@ const Title = styled(motion.div)`
 
 const RowEmpty = styled.div`
     width: 100%;
-    height: 20vh;
-    background: red;
+    height: 10vh;
     @media screen and (min-width: 768px) {
         display: none;
     }

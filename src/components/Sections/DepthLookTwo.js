@@ -17,9 +17,8 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 170vh;
     }
 `;
 
@@ -55,7 +54,8 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
@@ -227,7 +227,7 @@ const DepthLookTwo = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                opacity: 1, y: '50px',
+                opacity: 1, y: 0,
                 transition: {
                     duration: 1, 
                 }

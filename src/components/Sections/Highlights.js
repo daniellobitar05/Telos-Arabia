@@ -165,8 +165,11 @@ const Text = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{
-        margin: 0 8px;
-
+        margin: 0 4px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 16px; 
+    }
     }
     @media screen and (max-width: 768px){
         font-size: 18px; 

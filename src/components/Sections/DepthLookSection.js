@@ -74,6 +74,7 @@ const Article = styled(motion.div)`
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    font-weight: 400;
     span{
         margin: 0 8px;
         font-size: 20px;

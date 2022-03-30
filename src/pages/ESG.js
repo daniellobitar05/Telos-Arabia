@@ -107,6 +107,7 @@ const Text = styled(motion.div)`
         @media screen and (max-width: 768px){
             font-size: 20px;
             padding: 0 10px;
+            line-height: 25px;
             
         }
     }

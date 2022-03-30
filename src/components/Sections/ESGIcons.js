@@ -110,6 +110,7 @@ const TopText = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
+        line-height: 30px;
     }
 `;
 
@@ -126,6 +127,7 @@ const BottomText = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 18px;
         transform: translate(0, 50%);
+        line-height: 30px;
     }
 `;
 

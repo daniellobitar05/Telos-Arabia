@@ -45,6 +45,7 @@ const Title = styled(motion.div)`
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
 `;
 
@@ -67,6 +68,7 @@ const Subtitle = styled(motion.div)`
         width: 90%;
         height: 50vh;
         font-size: 24px;
+        line-height: 30px;
     }
     span{
         margin: 0 8px;
@@ -227,6 +229,7 @@ const Quote = styled.div`
         font-size: 28px;
         transform: translate(0, 20%);
         font-weight: 400;
+        line-height: 30px;
     }
 `;
 

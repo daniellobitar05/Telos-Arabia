@@ -35,12 +35,15 @@ const Title = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){
+            font-size: 28px;
+        }
     }
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        width: 80%;
+        width: 90%;
         font-size: 32px;
-        height: 40vh;
+        height: 20vh;
     }
 `;
 
@@ -55,6 +58,8 @@ const Subtitle = styled(motion.div)`
     height: 20vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    
+    
     span{
         margin: 0 15px;
         font-size: 28px;
@@ -67,6 +72,7 @@ const Subtitle = styled(motion.div)`
         justify-content: center;
         font-size: 24px;
         width: 90%;
+        line-height: 30px;
     }
     
 `;
@@ -75,12 +81,13 @@ const VideoWrapper = styled.div`
     width: 90%;
     height: 55vh;
     display: flex;
+    background: red;
     @media screen and (max-width: 768px){
         flex-direction: column; 
         align-items: center;
         justify-content: center;
         height: 90vh;
-        transform: scale(0.6);
+        transform: scale(0.6) translate(0, -10%);
     }
 `;
 

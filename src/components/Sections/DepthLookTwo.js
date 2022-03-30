@@ -18,7 +18,7 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     @media screen and (max-width: 768px){
-        height: 170vh;
+        height: 190vh;
     }
 `;
 
@@ -44,6 +44,15 @@ const Title = styled(motion.div)`
         height: 20vh;
         transform: translate(0, 0);
         font-size: 42px;
+    }
+`;
+
+const RowEmpty = styled.div`
+    width: 100%;
+    height: 20vh;
+    background: red;
+    @media screen and (min-width: 768px) {
+        display: none;
     }
 `;
 
@@ -243,6 +252,7 @@ const DepthLookTwo = () => {
 
     return(
         <Section id="depthlooktwo" ref={ref}>
+            <RowEmpty></RowEmpty>
             <Article animate={animationThree}><p><t>ي البداية دفعت الشبكة لمنتجي الكتل من خلال تضخم العرض. ومع ذلك ، توقف هذا في صيف عام 2019 ، عندما تم تمرير خطة تيلوس للتنمية الاقتصادية</t><span> 1.0 (TEDP1).</span></p></Article>
             <Title animate={animation}>احتياطيات تيلوس</Title>
             <BigArticle animate={animationTwo}><p><t>مع</t><span>TEDP1</span><t> قرر المجتمع وقف تضخم العرض تيلوس ، ووضع حد لإجمالي العرض عند 355،208،370.6674 تيلوس. بدلاً من إنشاء رموز جديدة ، وافق المجتمع على الدفع مقابل عمليات الشبكة من خلال صندوق احتياطي رمز</t><span>Exchange Token Reserve Fund (exrsrv.tf).</span><t>تم إنشاء هذه الرموز المميزة للتبادلات لاستردادها نيابة عن عملائها ، ولكن لم تتم المطالبة بها مطلقًا.</t></p></BigArticle>

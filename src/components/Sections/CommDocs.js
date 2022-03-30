@@ -9,10 +9,12 @@ import { animateScroll as scroll } from "react-scroll";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import ApiIcon from '@mui/icons-material/Api';
-import ArticleIcon from '@mui/icons-material/Article';
+import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
+import StyleIcon from '@mui/icons-material/Style';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+
+
 import {Button} from "@mui/material";
 
 import PDF from "../../data/Telos-Whitepaper.pdf";
@@ -27,10 +29,9 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 230vh;
     }
 `;
-
 
 
 const Grid = styled(motion.div)`
@@ -43,7 +44,7 @@ const Grid = styled(motion.div)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 170vh;
+        height: 180vh;
         
     }
 `;
@@ -52,7 +53,6 @@ const Box = styled.a`
     width: 25%;
     height: 70%;
     float: left;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,33 +67,33 @@ const Box = styled.a`
 
 
 
-const GithubIcon = styled(GitHubIcon)`
+const AssetsIcon = styled(BrandingWatermarkIcon)`
     color: white;
-    transform: scale(2.5);
+    transform: scale(2);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
 `;
 
-const APIIcon = styled(ApiIcon)`
+const StylesIcon = styled(StyleIcon)`
     color: white;
-    transform: scale(2.5);
+    transform: scale(2);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
 `;
 
-const DocIcon = styled(ArticleIcon)`
+const WhiteIcon = styled(HistoryEduIcon)`
     color: white;
-    transform: scale(2.5);
+    transform: scale(2);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
 `;
 
-const AgreeIcon = styled(ThumbUpOffAltIcon)`
+const AgreeIcon = styled(HandshakeIcon)`
     color: white;
-    transform: scale(2.5);
+    transform: scale(2);
     border-radius: 50px;
     padding: 10px;
     border: 1px solid aqua;
@@ -151,6 +151,7 @@ const Card = styled(motion.div)`
     justify-content: center;
     border: 1px solid purple;
     z-index: 100;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     &:hover{
         background: rgb(230,230,250,0.2);
     }
@@ -195,6 +196,9 @@ const CardText = styled.div`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     width: 70%;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+    }
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -310,13 +314,13 @@ const CommDocs = () => {
             <Grid animate={animationTwo}>
              <Box href="https://drive.google.com/file/d/12d9CXH3gpF7Gftp7mhc6bXbwJjdRYNDD/view" target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                        <TopCard><span><GithubIcon /></span></TopCard>
+                        <TopCard><span><AssetsIcon /></span></TopCard>
                         <BottomCard><CardText>أصول العلامة التجارية لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
                 <Box href={PDF2} target="_blank" rel="noreferrer">
                      <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                        <TopCard><span><APIIcon /></span></TopCard>
+                        <TopCard><span><StylesIcon /></span></TopCard>
                         <BottomCard><CardText>ارشادات العلامة التجارية لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>
@@ -328,7 +332,7 @@ const CommDocs = () => {
                 </Box>
                 <Box href={PDF} target="_blank" rel="noreferrer">
                     <Card whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-                        <TopCard><span><DocIcon /></span></TopCard>
+                        <TopCard><span><WhiteIcon /></span></TopCard>
                         <BottomCard><CardText>المستند التقني لشبكة  تيلوس</CardText></BottomCard>
                     </Card>
                 </Box>

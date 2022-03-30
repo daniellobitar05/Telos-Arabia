@@ -85,6 +85,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 

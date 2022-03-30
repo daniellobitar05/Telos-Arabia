@@ -17,7 +17,10 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    @media screen and (max-width: 768px){
+        height: 160vh;
+    }
 `;
 
 const Article = styled(motion.div)`
@@ -33,15 +36,23 @@ const Article = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
-        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 50vh;
     }
 `;
 

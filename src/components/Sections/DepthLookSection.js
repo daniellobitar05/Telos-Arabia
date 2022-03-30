@@ -21,6 +21,9 @@ const Section = styled.div`
     background: url(${Back}), ${props => props.theme.back4};
     background-repeat: no-repeat;
     background-size: contain;
+    @media screen and (max-width: 768px){
+        height: 160vh;
+    }
 `;
 
 const PageTitle = styled(motion.div)`
@@ -29,14 +32,12 @@ const PageTitle = styled(motion.div)`
     height: 30vh;
     color: ${props => props.theme.text};  
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
-
+        text-align: center;
     }
     
 `;
@@ -59,6 +60,7 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+        font-size: 72px;
     }
 `;
 
@@ -74,6 +76,7 @@ const Article = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
     }
     a{
         color: aqua;

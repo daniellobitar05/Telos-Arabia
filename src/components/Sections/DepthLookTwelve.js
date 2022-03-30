@@ -22,7 +22,10 @@ const Section = styled.div`
     background: url(${Back}), rgba(12,14,130,1);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right center;
+    background-position: right center; 
+    @media screen and (max-width: 768px){
+        height: 120vh;
+    }
 `;
 
 const Title = styled(motion.div)`
@@ -39,10 +42,15 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 24px;
+        }
     }
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+        font-size: 32px;
+        width: 90%;
     }
 `;
 
@@ -59,15 +67,23 @@ const Article = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
-        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 40vh;
     }
 `;
 

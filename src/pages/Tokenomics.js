@@ -236,8 +236,8 @@ const Tokenomics = () => {
                     </ColumnRight>
                     </Grid> */}
                 </Section> 
-                {/* <Highlights /> */}
-                {/* <SupplySection />
+                <Highlights />
+                <SupplySection />
                 <DepthLookSection />
                 <DepthLookTwo />
                 <DepthLookThree />
@@ -251,7 +251,7 @@ const Tokenomics = () => {
                 <DepthLookEleven />
                 <DepthLookTwelve />
                 <DepthLookThirteen />
-                <Footer /> */}
+                <Footer />
         </ThemeProvider>
     )
 }

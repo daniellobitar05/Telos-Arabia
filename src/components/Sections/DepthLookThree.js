@@ -23,6 +23,9 @@ const Section = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right center;
+    @media screen and (max-width: 768px){
+        height: 140vh;
+    }
     
 `;
 
@@ -40,10 +43,14 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 26px;
+        }
     }
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+        font-size: 42px;
     }
 `;
 
@@ -60,15 +67,24 @@ const Article = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 50vh;
     }
 `;
 
@@ -199,7 +215,7 @@ const DepthLookThree = () => {
     return(
         <Section id="depthlookthree" ref={ref}>
             <Article animate={animationThree}><p>يوجد تمويل كافٍ في هذه الاحتياطيات لتستمر حتى عام 2024 بمعدل الدفع الحالي. ومع ذلك ، من المتوقع أن تستمر الأموال لفترة أطول من خلال التعديلات الرمزية التي يمكن أن يسنها المجتمع.</p></Article>
-            <Article><p>نظرًا لأن الشبكة ممولة من الاحتياطيات ، فإن العرض المتداول يزيد من العمل الإضافي ولكن كمية تيلوس الموجودة لا تزيد. بمجرد استنفاد جميع الاحتياطيات ، قد يقرر المجتمع إدخال تضخم في العرض بمعدل منخفض يعود بالنفع على الجميع. بدلاً من ذلك ، قد يتم تمويل الشبكة عن طريق فرض رسوم على بعض الخدمات المتميزة. كل هذا في أيدي أصحاب المصلحة ، بطريقة لا مركزية حقًا.</p></Article>
+            <Article animate={animationThree}><p>نظرًا لأن الشبكة ممولة من الاحتياطيات ، فإن العرض المتداول يزيد من العمل الإضافي ولكن كمية تيلوس الموجودة لا تزيد. بمجرد استنفاد جميع الاحتياطيات ، قد يقرر المجتمع إدخال تضخم في العرض بمعدل منخفض يعود بالنفع على الجميع. بدلاً من ذلك ، قد يتم تمويل الشبكة عن طريق فرض رسوم على بعض الخدمات المتميزة. كل هذا في أيدي أصحاب المصلحة ، بطريقة لا مركزية حقًا.</p></Article>
             <Title animate={animation}>لهيئات الممولة</Title>
             <Article animate={animationThree}><p>توفر تيلوس التمويل للعديد من الحسابات على أساس منتظم ، وفقًا لما يقرره أصحاب المصلحة. هذه الحسابات وأغراضها هي كما يلي:</p></Article>
             <Empty>

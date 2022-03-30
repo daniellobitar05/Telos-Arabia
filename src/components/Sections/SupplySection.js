@@ -74,14 +74,21 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px){
+        height: 170vh;
+    }
 `;
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90%;
+    height: 90vh;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 160vh;
+    }
 `;
 
 const ColumnLeft = styled.div`
@@ -92,9 +99,14 @@ const ColumnLeft = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
 `;
 
-const ColumnRight = styled(motion.div)`
+const ColumnRight = styled.div`
     width: 45%;
     height: 80%;
     float: left;
@@ -102,6 +114,12 @@ const ColumnRight = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        width: 100%;
+        height: 50%;
+        float: none;
+        transform: scale(0.5)  translate(10%, -10%);
+    }
 `;
 
 const TopRow = styled.div`
@@ -171,6 +189,10 @@ const Title = styled(motion.div)`
     height: 20%;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     direction: rtl;
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+        line-height: 50px;
+    }
     span{
         margin: 0 8px;
     }
@@ -185,6 +207,10 @@ const Subtitle = styled(motion.div)`
     height: 30%;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        line-height: 30px;
+    }
     span{
         margin: 0 8px;
     }
@@ -270,7 +296,7 @@ const SupplySection = () => {
             animationFour.start({
                 scale: 1, y: 0, opacity: 1,
                 transition: {
-                    duration: 1, delay: 1
+                    duration: 1, 
                 }
             });
         }
@@ -284,13 +310,13 @@ const SupplySection = () => {
 
     return(
         <Section id="supply" ref={ref}>
-            <Grid>
+            <Grid  animate={animationFour}>
                 <ColumnLeft>
                     <Title animate={animationThree}>إجمالي عرض تيلوس</Title>
                     <Subtitle animate={animationTwo}><p>يبلغ إجمالي العرض الحالي لـ 355 مليون تيلوس. هذا يعني أن هناك عددًا أقل بكثير من الرموز المتاحة (التوريد) عند مقارنتها بسلسلة الكتل الأخرى.</p></Subtitle>
                     <Subtitle animate={animationTwo}><p>معدل التضخم الحالي لإجمالي العرض هو 0٪ ، والذي قد يرتفع إلى 1٪ في المستقبل لحساب المدفوعات لمنع المنتجين. حاليًا ، يتم الدفع لمنتجي الكتل والكيانات المهمة الأخرى من خلال الصناديق الاحتياطية للشبكة ، وفقًا لتصويت حاملي الرموز.</p></Subtitle>
                 </ColumnLeft>
-                <ColumnRight animate={animationFour}>
+                <ColumnRight>
                 <TopRow><Item>Circulating: 243M +</Item></TopRow>
                 <motion.svg  width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M54.1954 88.09C27.9127 120.237 10.4203 158.653 3.4276 199.583C-3.56507 240.514 0.181337 282.558 14.3007 321.608C28.42 360.657 52.4291 395.375 83.9815 422.368C115.534 449.362 153.55 467.707 194.314 475.612C235.078 483.516 277.196 480.709 316.551 467.464C355.905 454.22 391.15 430.991 418.841 400.049C446.532 369.107 465.721 331.51 474.533 290.932C483.345 250.354 481.479 208.185 469.116 168.544L421.053 183.534C430.822 214.859 432.297 248.182 425.334 280.248C418.371 312.313 403.207 342.024 381.325 366.475C359.443 390.926 331.591 409.282 300.492 419.748C269.393 430.214 236.111 432.432 203.898 426.186C171.685 419.94 141.644 405.443 116.71 384.112C91.7769 362.781 72.8043 335.346 61.6469 304.488C50.4895 273.631 47.529 240.406 53.0547 208.062C58.5805 175.718 72.4035 145.36 93.1727 119.957L54.1954 88.09Z" fill="#615FE8"/>

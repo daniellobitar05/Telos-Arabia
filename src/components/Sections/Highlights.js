@@ -74,7 +74,7 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     @media screen and (max-width: 768px){
-        height: 120vh;     
+        height: 125vh;     
     }
 `;
 
@@ -102,7 +102,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 45vh;        
+        height: 25vh;        
     }
 
     img{
@@ -124,7 +124,7 @@ const ColumnRight = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 65vh;        
+        height: 85vh;        
     }
     
 `;

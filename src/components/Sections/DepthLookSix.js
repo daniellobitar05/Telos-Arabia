@@ -17,7 +17,10 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    @media screen and (max-width: 768px){
+        height: 140vh;
+    }
 `;
 
 const Title = styled(motion.div)`
@@ -31,13 +34,19 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-align: right;
     direction: rtl;
+    line-height: 30px;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 24px;
+        }
     }
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+        font-size: 32px;
+        width: 90%;
     }
 `;
 
@@ -53,16 +62,24 @@ const Article = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     span{
+        margin: 0 5px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
         margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
-        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 50vh;
     }
 `;
 

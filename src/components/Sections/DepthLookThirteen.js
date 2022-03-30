@@ -17,7 +17,10 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    @media screen and (max-width: 768px){
+        height: 160vh;
+    }
 `;
 
 const Title = styled(motion.div)`
@@ -34,10 +37,15 @@ const Title = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
+        @media screen and (max-width: 768px){ 
+            font-size: 24px;
+        }
     }
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 0);
+        font-size: 32px;
+        width: 90%;
     }
 `;
 
@@ -54,15 +62,23 @@ const Article = styled(motion.div)`
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
     }
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0;
+        font-size: 20px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
-        width: 80%;
+        padding: 0;
+        width: 90%;
+        height: 50vh;
     }
 `;
 
@@ -174,10 +190,10 @@ const DepthLookThirteen = () => {
 
     return(
         <Section id="depthlookthirteen" ref={ref}>
-            <Title>التفاعل مع التطبيقات الأخرى المبنية على تيلوس</Title>
-            <Article><p><t>يحافظ تيلوس على فائدة إضافية بطرق لا حصر لها تعمل على تشغيل الخدمات الأخرى المبنية على الشبكة. تستخدم العديد من التطبيقات تيلوس كطريقة أساسية للدفع ، والتي يتم تعزيزها من خلال إضافة أدوات تيلوس</t><span>DeFi</span><t>الأخرى مثل</t><span>T-Bonds</span><t>أو</t><span>T-Swaps</span><t>أو</t><span>T-Starter.</span></p></Article>
-            <Article>dStor is another example of an application that adds utility to the TLOS token, outside of its initial intended use cases. dStor is a revolutionary, decentralized storage solution, created by GoodBlock. Even though the storage system is its own separate network, node operators are paid with the TLOS token and these financial transactions happen on the Telos network.</Article>
-            <Article><p>هذه ليست سوى عدد قليل من حالات الاستخدام الإضافية العديدة لـ تيلوس ، التي تم إنشاؤها بواسطة مبادرات إضافية داخل نظام تيلوس البيئي.</p></Article>
+            <Title animate={animation}>التفاعل مع التطبيقات الأخرى المبنية على تيلوس</Title>
+            <Article animate={animationTwo}><p><t>يحافظ تيلوس على فائدة إضافية بطرق لا حصر لها تعمل على تشغيل الخدمات الأخرى المبنية على الشبكة. تستخدم العديد من التطبيقات تيلوس كطريقة أساسية للدفع ، والتي يتم تعزيزها من خلال إضافة أدوات تيلوس</t><span>DeFi</span><t>الأخرى مثل</t><span>T-Bonds</span><t>أو</t><span>T-Swaps</span><t>أو</t><span>T-Starter.</span></p></Article>
+            <Article animate={animationTwo}><p><span>dStor</span><t>هو مثال آخر للتطبيق الذي يضيف فائدة إلى رمز تيلوس المميز ، خارج حالات الاستخدام الأولية المقصودة.</t><span>dStor</span><t>هو حل تخزين لامركزي ثوري تم إنشاؤه بواسطة</t><span>GoodBlock,</span><t>على الرغم من أن نظام التخزين هو شبكته المنفصلة ، يتم الدفع لمشغلي العقد برمز تيلوس المميز وتحدث هذه المعاملات المالية على شبكة تيلوس.</t></p></Article>
+            <Article animate={animationTwo}><p>هذه ليست سوى عدد قليل من حالات الاستخدام الإضافية العديدة لـ تيلوس ، التي تم إنشاؤها بواسطة مبادرات إضافية داخل نظام تيلوس البيئي.</p></Article>
 
             <Empty>
                 <IconColumnLeft to="depthlookfourteen" smooth={true} duration={1000} spy={true} exact="true">

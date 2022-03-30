@@ -19,7 +19,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center; 
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 170vh;
     }
 `;
 
@@ -69,17 +69,12 @@ const Article = styled(motion.div)`
         margin: 0 8px;
         }
     }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0;
-        font-size: 20px;
-    }
     @media screen and (max-width: 768px){
         font-size: 24px;
         padding: 0;
         width: 90%;
         height: 50vh;
+        line-height: 30px;
     }
 `;
 
@@ -103,17 +98,12 @@ const BottomArticle = styled(motion.div)`
         margin: 0 8px;
         }
     }
-    a{
-        color: aqua;
-        text-decoration: none;
-        margin: 0;
-        font-size: 20px;
-    }
     @media screen and (max-width: 768px){
         font-size: 24px;
         padding: 0;
         width: 90%;
         height: 30vh;
+        line-height: 30px;
     }
 `;
 

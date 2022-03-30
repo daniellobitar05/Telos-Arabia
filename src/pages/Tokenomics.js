@@ -223,7 +223,7 @@ const Tokenomics = () => {
                 <Section id="tokenomics" ref={ref}>
                     <Reducer>
                     <SpinningText text="رموز تيلوس الرمزية : فهم قيمة تيلوس">
-                       <LinkS to="highlights" smooth={true} duration={500} spy={true} exact="true"><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: [0, 360, 0], scale: 1.05, cursor: 'pointer'}} whileTap={{scale:0.9}} transition={{duration: 1, type: 'spring', stiffness: 300}} src={Ball} alt="ball" /></LinkS>
+                       <LinkS to="highlights" smooth={true} duration={500} spy={true} exact="true" style={{background: 'transparent'}}><motion.img variants={Pulse} initial="start" animate="end" whileHover={{rotate: [0, 360, 0], scale: 1.05, cursor: 'pointer'}} whileTap={{scale:0.9}} transition={{duration: 1, type: 'spring', stiffness: 300}} src={Ball} alt="ball" /></LinkS>
                     </SpinningText>
                     </Reducer>
                     {/* <Grid>

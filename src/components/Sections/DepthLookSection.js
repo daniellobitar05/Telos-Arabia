@@ -22,7 +22,7 @@ const Section = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 180vh;
     }
 `;
 
@@ -34,6 +34,7 @@ const PageTitle = styled(motion.div)`
     display: flex;
     align-items: center;
     text-align: right;
+    justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
@@ -201,7 +202,7 @@ const DepthLookSection = () => {
         <Section id="depthlook" ref={ref}>
             <PageTitle animate={animation}>في نظرة متعمقة في اقتصاد العملة</PageTitle>
             <Title animate={animation}>منشأ</Title>
-            <Article animate={animationTwo}><p><t>تم إنشاء رمز تيلوس المميز في عام 2018 عندما تم التقاط لقطة تكوين الشبكة. لقطة</t><span>Genesis</span><t>المستمدة من شبكة</t><span>EOS ,</span><t>ذات الحسابات المحددة بـ</t><span>40000 TLOS. </span><t>تم القيام بذلك للحد من إمكانات "مستثمري الحيتان" والحفاظ على توزيع الملكية بشكل عادل.</t></p></Article>
+            <Article animate={animationTwo}><p><t>تم إنشاء رمز تيلوس المميز في عام</t><span>2018</span><t>عندما تم التقاط لقطة تكوين الشبكة. لقطة</t><span>Genesis</span><t>المستمدة من شبكة</t><span>EOS,</span><t>ذات الحسابات المحددة بـ</t><span>TLOS 40000.</span><t>تم القيام بذلك للحد من إمكانات "مستثمري الحيتان" والحفاظ على توزيع الملكية بشكل عادل.</t></p></Article>
             <Article animate={animationTwo}><p><t>تم إنشاء إجمالي</t><span>330،753،222 TLOS</span><t>في هذه اللقطة الأولية. تم توزيع 12 مليون من هذه الرموز المميزة الأولية على تيلوس</t><span>Founders Rewards Pool</span><t>و شركة تيلوس. سمح ذلك للشبكة بالإطلاق بطريقة شعبية ، دون أي تمويل أولي للعملة أو رأس المال الاستثماري. يعد هذا أمرًا نادرًا في العديد من سلاسل الكتل الحديثة ، ولكنه ضرورة لأن تكون شبكات</t><span>DPoS</span><t>لا مركزية حقًا.</t></p></Article>
             <Empty>
                 <IconColumnLeft to="depthlooktwo" smooth={true} duration={1000} spy={true} exact="true">

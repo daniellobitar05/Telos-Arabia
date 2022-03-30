@@ -18,7 +18,7 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 180vh;
     }
 `;
 
@@ -63,6 +63,7 @@ const Article = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -87,6 +88,7 @@ const Article = styled(motion.div)`
         padding: 0;
         width: 90%;
         height: 40vh;
+        line-height: 30px;
     }
 `;
 
@@ -254,7 +256,7 @@ const DepthLookTwo = () => {
             <RowEmpty></RowEmpty>
             <Article animate={animationThree}><p><t>ي البداية دفعت الشبكة لمنتجي الكتل من خلال تضخم العرض. ومع ذلك ، توقف هذا في صيف عام 2019 ، عندما تم تمرير خطة تيلوس للتنمية الاقتصادية</t><span> 1.0 (TEDP1).</span></p></Article>
             <Title animate={animation}>احتياطيات تيلوس</Title>
-            <BigArticle animate={animationTwo}><p><t>مع</t><span>TEDP1</span><t> قرر المجتمع وقف تضخم العرض تيلوس ، ووضع حد لإجمالي العرض عند 355،208،370.6674 تيلوس. بدلاً من إنشاء رموز جديدة ، وافق المجتمع على الدفع مقابل عمليات الشبكة من خلال صندوق احتياطي رمز</t><span>Exchange Token Reserve Fund (exrsrv.tf).</span><t>تم إنشاء هذه الرموز المميزة للتبادلات لاستردادها نيابة عن عملائها ، ولكن لم تتم المطالبة بها مطلقًا.</t></p></BigArticle>
+            <BigArticle animate={animationTwo}><p><t>مع</t><span>TEDP1,</span><t>المجتمع وقف تضخم العرض تيلوس ، ووضع حد لإجمالي العرض عند</t><span>355،208،370.6674</span><t>تيلوس. بدلاً من إنشاء رموز جديدة ، وافق المجتمع على الدفع مقابل عمليات الشبكة من خلال صندوق احتياطي رمز</t><span>Exchange Token Reserve Fund (exrsrv.tf).</span><t>تم إنشاء هذه الرموز المميزة للتبادلات لاستردادها نيابة عن عملائها ، ولكن لم تتم المطالبة بها مطلقًا.</t></p></BigArticle>
             <Article animate={animationTwo}><p><t>في النهاية ، عندما يتم استنفاد الأموال من صندوق احتياطي رمز</t><span>Exchange ,</span><t>سيتم تمويل الشبكة بواسطة حساب</t><span>TLOSrecovery.</span><t>هذه أموال تم إنشاؤها لأصحاب الحسابات المحتملين والتي لم تتم المطالبة بها أيضًا.</t></p></Article>
             <Empty>
                 <IconColumnLeft to="depthlookthree" smooth={true} duration={1000} spy={true} exact="true">

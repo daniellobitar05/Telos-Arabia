@@ -316,6 +316,7 @@ const Item = styled.li`
         width: 100%;
         transform: translate(-20%, 0);
         font-size: 16px;
+        line-height: 25px;
     }
 `;
 

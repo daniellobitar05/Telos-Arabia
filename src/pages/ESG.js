@@ -218,8 +218,8 @@ const ESG = () => {
                 <ESGChart />
                 <ESGSeeds />
                 <Additional />
-                {/* <Social />
-                <ESGLips />
+                <Social />
+                {/* <ESGLips />
                 <AdditionalTwo />
                 <ESGConclusion />
                 <ESGLatest />

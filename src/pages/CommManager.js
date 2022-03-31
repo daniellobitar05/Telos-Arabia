@@ -32,6 +32,7 @@ const Title = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         height: 30vh;
         transform: translate(0, 15%);
@@ -115,12 +116,13 @@ const Name = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     h1{
         color: white;
         font-size: 46px;
         @media screen and (max-width: 768px){
             font-size: 42px;
-            transform: translate(0, -30%);
+            transform: translate(0, -20%);
         }
     }
 `;
@@ -131,6 +133,7 @@ const Description = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     h1{
         color: white;
         font-size: 26px;
@@ -180,7 +183,7 @@ const Expander = styled(IconButton)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        transform: scale(1.50);
+        transform: scale(1.25);
     }
 
 `;

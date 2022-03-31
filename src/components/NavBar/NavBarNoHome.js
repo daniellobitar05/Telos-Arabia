@@ -508,6 +508,7 @@ const SubMenu = styled(motion.div)`
     border-radius: 20px;
     z-index: 150;
     border: 1px solid white;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
 `;
 
 const SubMenuIcon = styled.div`
@@ -615,6 +616,7 @@ const MenuMenuItem = styled.a`
     display: flex;
     border-radius: 8px;
     align-items: center;
+    font-size: 24px;
     justify-content: right;
     transition: background var(--speed);
     &:hover{
@@ -640,12 +642,13 @@ const IconMiddle = styled.span`
 `;
 const DropDown = styled.div`
     position: absolute;
-    width: 300px;
+    width: 80vw;
     padding-right: 10px;
     border-radius: 20px;
     background: #663399;
     overflow: hidden;
     top: 100px;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     z-index: 9999;
     @media screen and (min-width: 1100px){
         
@@ -656,7 +659,7 @@ const DropDown = styled.div`
     }
 
     @media screen and (max-width: 660px){
-        right: 20px;
+        right: 10vw;
     }
 `;
 
@@ -696,7 +699,7 @@ const DropDownMenu = () => {
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuyIcon />} goToMenu="buy">اشتري</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuildIcon/>}goToMenu="build">ابني</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<LearnIcon/>} goToMenu='learn'>تعلم</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>} goToMenu='evm-native'>EXPLORE</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>} goToMenu='evm-native'>استكشف</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<AboutIcon/>} goToMenu="about">حول تيلوس</DropDownItem>
             </Menu>
             </CSSTransition>

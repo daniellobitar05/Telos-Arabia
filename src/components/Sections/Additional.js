@@ -91,9 +91,8 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     @media screen and (max-width: 768px){
-        
+       height: 130vh; 
     }
 `;
 
@@ -107,7 +106,7 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        
+        font-size: 62px;
     }
 `;
 
@@ -116,12 +115,14 @@ const Grid = styled(motion.div)`
     height: 70vh;
     @media screen and (max-width: 768px){
         width: 98%;
+        height: 100vh;
     }
     .swiper {
         width: 75%;
         height: 100%;
         @media screen and (max-width: 768px){
             width: 98%;
+            height: 100vh;
         }
     }
 
@@ -179,7 +180,7 @@ const FirstRow = styled.div`
 
 const SecondRow = styled.div`
     width: 90%;
-    height: 25%;
+    height: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,19 +190,22 @@ const SecondRow = styled.div`
     line-height: 28px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    line-height: 25px;
     span{
-        margin: 0 8px;
+        margin: 0 5px;
+        font-size: 18px;
     }
     @media screen and (max-width: 768px){
        font-size: 18px; 
        line-height: 24px;
        height: 30%;
+       width: 95%;
     }
 `;
 
 const InnerGrid = styled.div`
     width: 90%;
-    height: 40%;
+    height: 30%;
     display: flex;
     @media screen and (max-width: 768px){
         width: 98%;
@@ -213,8 +217,10 @@ const Column = styled.ol`
     height: 100%;
     float: left;
     list-style-type: circle;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Item = styled.li`
@@ -228,6 +234,7 @@ const Item = styled.li`
     font-size: 20px;
     span{
         margin: 0 8px;
+        font-size: 16px;
     }
     &::marker{
         font-size: 20px;
@@ -266,6 +273,9 @@ const Second = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
+    @media screen and (max-width: 768px){
+        transform: scale(0.7);
+    }
     
 `;
 
@@ -350,7 +360,7 @@ const Third = styled.a`
     justify-content: center;
     text-decoration: none;
     @media screen and (max-width: 768px){
-        font-size: 20px;
+        font-size: 16px;
         transform: translate(-20%, 0);
     }
 `;
@@ -425,7 +435,7 @@ const Additional = () => {
                                 <Item>تسهيل التعاون</Item>
                                 <Item>ربط الجهات الفاعلة العالمية للتغيير</Item>
                                 <Item>تمكين المجتمعات المحلية</Item>
-                                <Item>120 شريكا و 22 تعاونا</Item>
+                                <Item><span>120</span><t>شريكا و</t><span>22</span><t>تعاونا</t></Item>
                             </Column>
                             <Column>
                                 <Item>نظام الدفع بدون تكلفة</Item>
@@ -442,15 +452,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p><t>عملة بيئية توفر حلاً إيجابيًا للاحتباس الحراري. يمكن للمستخدمين شراء رموز</t><span>TREE</span><t>وفي المقابل يقوم المزارع بزراعة شجرة. يتم اختيار كل شجرة بعناية ، مع مراعاة الموقع والنظام البيئي. يتم تحميل صورة وموقع</t><span>GPS</span><t>إلى نظام كوركو. يمتلك حاملو الرموز شجرتهم الخاصة لمدة 60 عامًا ، حيث يجمعون خلالها مكافآت كوركو كوين ، ممثلين لـ</t><span>Co2</span><t>التي تلتقطها الشجرة.</t></p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p><t>عملة بيئية توفر حلاً إيجابيًا للاحتباس الحراري. يمكن للمستخدمين شراء رموز</t><span>TREE</span><t>وفي المقابل يقوم المزارع بزراعة شجرة. يتم اختيار كل شجرة بعناية ، مع مراعاة الموقع والنظام البيئي. يتم تحميل صورة وموقع</t><span>GPS</span><t>إلى نظام كوركو. يمتلك حاملو الرموز شجرتهم الخاصة لمدة 60 عامًا ، حيث يجمعون خلالها مكافآت كوركو كوين ، ممثلين لـ</t><span>Co2</span><t>التي تلتقطها الشجرة.</t></p></SecondRow>
+                        <InnerGrid >
                             <Column>
-                                <Item>ربط الاقتصاد بالموارد الطبيعية</Item>
-                                <Item><t>عملة لموازنة الكربون</t><span>/ NFT</span></Item>
+                                <Item style={{height: '50%'}}>ربط الاقتصاد بالموارد الطبيعية</Item>
+                                <Item  style={{height: '50%'}}><t>عملة لموازنة الكربون</t><span>/ NFT</span></Item>
                             </Column>
                             <Column>
-                                <Item><t>كل كوركوكوين يساوي 1 كجم من</t><span>Co2</span></Item>
-                                <Item>استخدم الرمز المميز لتحقيق وفورات من متجر كوركوفادو</Item>
+                                <Item  style={{height: '50%'}}><t>كل كوركوكوين يساوي 1 كجم من</t><span>Co2</span></Item>
+                                <Item  style={{height: '50%'}}>استخدم الرمز المميز لتحقيق وفورات من متجر كوركوفادو</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -461,8 +471,8 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p>تمكين المجتمعات الأفريقية من جمع بيانات الطقس. تتمثل مهمةكاندا وازر بالون في بناء شبكة بالون مملوكة بالكامل للمجتمع ، على أمل تمكين طلاب الجامعات الأفارقة ليصبحوا قادة محليين في مجال تغير المناخ. يقدم هذا المشروع حلاً قابلاً للتطبيق لنقص البيانات المناخية في الوقت الحقيقي والتاريخية في غرب إفريقيا.</p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p>تمكين المجتمعات الأفريقية من جمع بيانات الطقس. تتمثل مهمةكاندا وازر بالون في بناء شبكة بالون مملوكة بالكامل للمجتمع ، على أمل تمكين طلاب الجامعات الأفارقة ليصبحوا قادة محليين في مجال تغير المناخ. يقدم هذا المشروع حلاً قابلاً للتطبيق لنقص البيانات المناخية في الوقت الحقيقي والتاريخية في غرب إفريقيا.</p></SecondRow>
+                        <InnerGrid >
                             <Column>
                                 <Item>مملوكة للمجتمع</Item>
                                 <Item>المكافآت الرمزية</Item>
@@ -482,15 +492,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p>نيو لايف هي عبارة عن منصة بحث ثقافي وإبداع اجتماعي لاستوديوهات التصميم والفنانين وتجار التجزئة والمعارض والمجلات والعلامات التجارية في طليعة الثقافة في أكثر من 107 دولة للبحث عن المواهب الناشئة والبحث عنها وتوظيفها.</p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p>نيو لايف هي عبارة عن منصة بحث ثقافي وإبداع اجتماعي لاستوديوهات التصميم والفنانين وتجار التجزئة والمعارض والمجلات والعلامات التجارية في طليعة الثقافة في أكثر من 107 دولة للبحث عن المواهب الناشئة والبحث عنها وتوظيفها.</p></SecondRow>
+                        <InnerGrid >
                             <Column>
                                 
                             </Column>
                             <Column>
-                                <Item>تسريع التواصل الإبداعي</Item>
-                                <Item>ملكية المستخدمين</Item>
-                                <Item>البحث عن المواهب وتوظيفها</Item>
+                                <Item style={{height: '33%', width: '150%', transform: 'translate(-50%, 0)'}}>تسريع التواصل الإبداعي</Item>
+                                <Item style={{height: '33%', width: '150%', transform: 'translate(-50%, 0)'}}>ملكية المستخدمين</Item>
+                                <Item style={{height: '33%', width: '150%', transform: 'translate(-50%, 0)'}}>البحث عن المواهب وتوظيفها</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -501,15 +511,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p>تايكاي هي منصة شاملة تدير تحديات الابتكار المفتوحة للمؤسسات أو الشركات التجارية. يتم حل التحديات من قبل مجتمع المبتكرين ويتم اختيار أفضل المشاريع من خلال نظام تصويت شفاف وقابل للتدقيق.</p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p>تايكاي هي منصة شاملة تدير تحديات الابتكار المفتوحة للمؤسسات أو الشركات التجارية. يتم حل التحديات من قبل مجتمع المبتكرين ويتم اختيار أفضل المشاريع من خلال نظام تصويت شفاف وقابل للتدقيق.</p></SecondRow>
+                        <InnerGrid >
                             <Column>
-                                <Item>معياري</Item>
-                                <Item>شكلي</Item>
+                                <Item style={{height: '50%', transform: 'translate(-50%, 0)'}}>معياري</Item>
+                                <Item style={{height: '50%', transform: 'translate(-50%, 0)'}}>شكلي</Item>
                             </Column>
                             <Column>
-                                <Item>محايد للشبكة</Item>
-                                <Item>يؤمن</Item>
+                                <Item style={{height: '50%', transform: 'translate(-50%, 0)'}}>محايد للشبكة</Item>
+                                <Item style={{height: '50%', transform: 'translate(-50%, 0)'}}>يؤمن</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -520,15 +530,15 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p><t>بيرنها هو موقع إلكتروني للأسئلة والأجوبة لا مركزي يكافئ المستخدمين برموز التشفير</t><span>(PEER)</span><t>لمساهماتهم القيمة. على عكس مواقع الأسئلة والأجوبة الأخرى حيث تمتلك منظمة موقع الويب وجميع البيانات الناتجة عن المستخدمين ، فإن بيرنها مملوكة للمجتمع ويتم توزيع المكافآت على أعضاء المجتمع مقابل عملهم في تنمية النظام البيئي.</t></p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p><t>بيرنها هو موقع إلكتروني للأسئلة والأجوبة لا مركزي يكافئ المستخدمين برموز التشفير</t><span>(PEER)</span><t>لمساهماتهم القيمة. على عكس مواقع الأسئلة والأجوبة الأخرى حيث تمتلك منظمة موقع الويب وجميع البيانات الناتجة عن المستخدمين ، فإن بيرنها مملوكة للمجتمع ويتم توزيع المكافآت على أعضاء المجتمع مقابل عملهم في تنمية النظام البيئي.</t></p></SecondRow>
+                        <InnerGrid >
                             <Column>
                                 
                             </Column>
                             <Column>
-                                <Item>لامركزية</Item>
-                                <Item>ملكية المستخدمين</Item>
-                                <Item>مساهمة المكافآت</Item>
+                                <Item style={{height: '33%', transform: 'translate(-50%, 0)'}}>لامركزية</Item>
+                                <Item style={{height: '33%', transform: 'translate(-50%, 0)'}}>ملكية المستخدمين</Item>
+                                <Item style={{height: '33%', transform: 'translate(-50%, 0)'}}>مساهمة المكافآت</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>
@@ -539,17 +549,17 @@ const Additional = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                         <FirstRow>#BuiltOnTelos</FirstRow>
-                        <SecondRow style={{height: '30%'}}><p><t>تجمع</t><span>T-Starter</span><t>بين الجسور عبر السلاسل ومنصة المبادلة الثابتة للسماح للمشاريع بجمع الأموال بشكل أكثر فعالية من حيث التكلفة مما هو ممكن في سلاسل الكتل الأخرى. تواجه منصات جمع الأموال الشائعة الأخرى رسومًا عالية للغاز ، مما يجعل المعاملات الصغيرة غير ميسورة التكلفة وتستبعد العديد من المستخدمين من المشاركة في مجموعات المقايضة. تستخدم T-Swaps شبكة تيلوس لحل هذه المشكلة ، مما يؤدي إلى مشاركة أوسع وبيع رمز أكثر فعالية من حيث التكلفة.</t></p></SecondRow>
-                        <InnerGrid style={{height: '35%'}}>
+                        <SecondRow ><p><t>تجمع</t><span>T-Starter</span><t>بين الجسور عبر السلاسل ومنصة المبادلة الثابتة للسماح للمشاريع بجمع الأموال بشكل أكثر فعالية من حيث التكلفة مما هو ممكن في سلاسل الكتل الأخرى. تواجه منصات جمع الأموال الشائعة الأخرى رسومًا عالية للغاز ، مما يجعل المعاملات الصغيرة غير ميسورة التكلفة وتستبعد العديد من المستخدمين من المشاركة في مجموعات المقايضة. تستخدم T-Swaps شبكة تيلوس لحل هذه المشكلة ، مما يؤدي إلى مشاركة أوسع وبيع رمز أكثر فعالية من حيث التكلفة.</t></p></SecondRow>
+                        <InnerGrid >
                             <Column>
-                                <Item>مجمعات المبادلة الثابتة والديناميكية</Item>
-                                <Item><t>تكامل</t><span>KYC</span><t>الكامل</t></Item>
-                                <Item>قائمة بدون إذن</Item>
+                                <Item style={{height: '33%'}}>مجمعات المبادلة الثابتة والديناميكية</Item>
+                                <Item style={{height: '33%'}}><t>تكامل</t><span>KYC</span><t>الكامل</t></Item>
+                                <Item style={{height: '33%'}}>قائمة بدون إذن</Item>
                             </Column>
                             <Column>
-                                <Item>المقايضات عبر السلاسل</Item>
-                                <Item>ميزات مكافحة الاحتيال</Item>
-                                <Item>نموذج الحكم</Item>
+                                <Item style={{height: '33%'}}>المقايضات عبر السلاسل</Item>
+                                <Item style={{height: '33%'}}>ميزات مكافحة الاحتيال</Item>
+                                <Item style={{height: '33%'}}>نموذج الحكم</Item>
                             </Column>
                         </InnerGrid>
                         <BottomRow>

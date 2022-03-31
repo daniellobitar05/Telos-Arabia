@@ -86,7 +86,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 230vh;
     }
 `;
 
@@ -98,7 +98,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 220vh;
     }
 `;
 
@@ -113,7 +113,7 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 80vh;
+        height: 90vh;
         justify-content: center;
     }
     .swiper {
@@ -184,7 +184,28 @@ const Article = styled(motion.div)`
     height: 20vh;
     @media screen and (max-width: 768px){
         line-height: 30px;
-        height: 60vh;
+        height: 50vh;
+    }
+    span {
+        margin: 0 8px;
+
+    }
+
+`;
+
+const BigArticle = styled(motion.div)`
+    color: white; 
+    width: 80%;
+    font-size: 20px;
+    display: flex;
+    padding: 20px 0;
+    line-height: 30px;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    height: 20vh;
+    @media screen and (max-width: 768px){
+        line-height: 30px;
+        height: 70vh;
     }
     span {
         margin: 0 8px;
@@ -250,7 +271,7 @@ const SecondRow = styled.div`
     }
     @media screen and (max-width: 768px){
         font-size: 18px;
-        transform: translate(0%, 10%);
+        line-height: 20px;
     }
 `;
 
@@ -275,22 +296,26 @@ const Column = styled.ol`
 
 const Item = styled.li`
     width: 90%;
-    height: 20%;
+    height: 25%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     text-align: right;
     transform: translate(-10%, 0);
     span {
-        margin: 0 8px;
+        margin: 0 5px;
+        @media screen and (max-width: 768px){
+            font-size: 14px;
+        }
     }
     &::marker{
-        font-size: 20px;
+        font-size: 15px;
         background-color: black;
     }
     @media screen and (max-width: 768px){
-        width: 95%;
+        width: 100%;
         transform: translate(-20%, 0);
+        font-size: 16px;
     }
 `;
 
@@ -344,7 +369,7 @@ const Third = styled.a`
     text-decoration: none;
     @media screen and (max-width: 768px){
         width: 40%;
-        transform: translate(-10%, 0);
+        transform: scale(0.8);
 
     }
 `;
@@ -417,9 +442,9 @@ const ESGSeeds = () => {
                         <SecondRow><p>منصة دفع ونظام بيئي مالي لتمكين البشرية وشفاء كوكبنا. يقدم سيدس أدوات لمساعدتك أو عملك أو حركتك على تجديد كوكبنا ، مع تشجيع التعاون والتعاون وبناء المجتمع</p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>أكثر من 88 دولة: شارك في إنشاء عالم جديد</Item>
-                                <Item>5000+ مُجدد ووكلاء تغيير</Item>
-                                <Item>450+ شركاء ومتعاونين</Item>
+                                <Item><t>أكثر من</t><span>88</span><t>دولة: شارك في إنشاء عالم جديد</t></Item>
+                                <Item><span>5000+</span><t>ُجدد ووكلاء تغيير</t></Item>
+                                <Item><span>450+</span><t>شركاء ومتعاونين</t></Item>
                                 <Item>عالج كوكبنا مع كل عملية شراء أو بيع</Item>
                             </Column>
                             <Column>
@@ -441,7 +466,7 @@ const ESGSeeds = () => {
                 </Row>
                 </ColumnLeft>
                 <ColumnRight>
-                    <Article animate={animationTwo}><p><t>بفضل الحوكمة التي بنيت عليها شركة تيلوس ، لا يجب أن يأتي التمويل المحايد الكربوني من هيئة مركزية. بدلاً من ذلك ، يمكن لأعضاء المجتمع التصويت للإفراج عن أموال الشبكة لتسلسل المبادرات التي ستنفذ بقية العملية. إذا مر التصويت ، ستكون تيلوس هي بلوكشين الوحيد الذي أصبح محايدًا للكربون من خلال التصويت المستقل اللامركزي والمستقل تمامًا. في غضون ذلك ، تتيح طبيعة</t><span>DPoS</span><t>للمجتمع التصويت لصالح المدققين الأخلاقيين مثل</t><span>TelosGreen</span><t>، وهو مدقق شبكة شهير يركز على الاستدامة.</t></p></Article>
+                    <BigArticle animate={animationTwo}><p><t>بفضل الحوكمة التي بنيت عليها شركة تيلوس ، لا يجب أن يأتي التمويل المحايد الكربوني من هيئة مركزية. بدلاً من ذلك ، يمكن لأعضاء المجتمع التصويت للإفراج عن أموال الشبكة لتسلسل المبادرات التي ستنفذ بقية العملية. إذا مر التصويت ، ستكون تيلوس هي بلوكشين الوحيد الذي أصبح محايدًا للكربون من خلال التصويت المستقل اللامركزي والمستقل تمامًا. في غضون ذلك ، تتيح طبيعة</t><span>DPoS</span><t>للمجتمع التصويت لصالح المدققين الأخلاقيين مثل</t><span>TelosGreen</span><t>، وهو مدقق شبكة شهير يركز على الاستدامة.</t></p></BigArticle>
                     <Article animate={animationTwo}><p><t>إن استهلاك طاقة أقل أو حتى التحول إلى محايد كربوني لا يكفي عندما يتعلق الأمر بالتأثير البيئي الإيجابي. يجب أن تجد المشاريع بنشاط طرقًا لتعزيز التجديد البيئي. مع توفر جميع أدوات</t><span>ESG</span><t>للمطورين ، اجتذبت تيلوس العديد من المشاريع التي تتمثل مهمتها الوحيدة في تحسين مواردنا الطبيعية والحفاظ عليها. دفع هذا شركة تيلوس إلى مرتبة متقدمة جدًا على المنافسين عندما يتعلق الأمر بالتأثيرات البيئية.</t></p></Article>
                     
                 </ColumnRight>

@@ -37,8 +37,10 @@ const Title = styled.div`
         transform: translate(0, 15%);
     }
     h1{
-        font-size: 62px;
+        font-size: 52px;
         color: white;
+        line-height: 50px;
+        width: 95%;
     }
 `;
 
@@ -118,6 +120,7 @@ const Name = styled.div`
         font-size: 46px;
         @media screen and (max-width: 768px){
             font-size: 42px;
+            transform: translate(0, -30%);
         }
     }
 `;
@@ -135,6 +138,7 @@ const Description = styled.div`
         text-align: center;
         @media screen and (max-width: 768px){
             font-size: 24px;
+            line-height: 30px;
         }
     }
 `;

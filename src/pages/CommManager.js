@@ -137,7 +137,7 @@ const Description = styled.div`
         width: 80%;
         text-align: center;
         @media screen and (max-width: 768px){
-            font-size: 24px;
+            font-size: 22px;
             line-height: 30px;
         }
     }

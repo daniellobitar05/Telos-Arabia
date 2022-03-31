@@ -26,7 +26,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 130vh;
+        height: 180vh;
     }
 `;
 
@@ -38,7 +38,7 @@ const Grid = styled.div`
     height: 90vh;
     @media screen and (max-width: 768px){
         flex-direction: column; 
-        height: 140vh;
+        height: 170vh;
     }
 `;
 
@@ -53,7 +53,7 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         float: none; 
         width: 100%;
-        height: 50vh;
+        height: 70vh;
     }
 `;
 
@@ -68,7 +68,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none; 
         width: 100%;
-        height: 70vh;
+        height: 100vh;
         justify-content: center;
     }
     
@@ -76,7 +76,7 @@ const ColumnRight = styled.div`
 
 const GraphWrapper = styled(motion.div)`
     width: 90%;
-    height: 70vh;
+    height: 50vh;
     border: 1px solid indigo;
     padding: 10px;
     display: flex;
@@ -106,6 +106,44 @@ const Position = styled.div`
         height: 40px;
         border-radius: 50%;
         
+    }
+`;
+
+const PositionBTC = styled.div`
+    height: 100%;
+    width: 9.09%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    transform: translate(15%, 20%);
+    @media screen and (max-width: 768px){
+        transform: translate(30%, 20%);
+    }
+`;
+
+const PositionETH = styled.div`
+    height: 100%;
+    width: 9.09%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    transform: translate(15%, 400%);
+    @media screen and (max-width: 768px){
+        transform: translate(80%, 400%);
+    }
+`;
+
+const PositionTelos = styled.div`
+    height: 100%;
+    width: 9.09%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    transform: translate(-20%, 460%);
+    font-size: 14px;
+    @media screen and (max-width: 768px){
+        transform: translate(0%, 460%);
+        font-size: 10px;
     }
 `;
 
@@ -197,10 +235,12 @@ const Subtitle = styled(motion.div)`
     direction: rtl;
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 20vh;
+        height: 35vh;
+        line-height: 30px;
     }
     span{
         margin: 0 8px;
+        font-size: 18px;
     }
     a {
         color: aqua;
@@ -376,13 +416,13 @@ const ESGChart = () => {
                <PositionRow>
                <Position></Position>
                <Position></Position>
-                        <Position><Text className="esggraph" data-target="126" style={{transform: 'translate(25%, 40%)'}}></Text> </Position>
+                        <PositionBTC><Text className="esggraph" data-target="126" ></Text> </PositionBTC>
                         <Position></Position>
                         <Position></Position>
-                        <Position><Text className="esggraph" data-target="49" style={{transform: 'translate(40%, 400%)'}}></Text></Position>
+                        <PositionETH><Text className="esggraph" data-target="49"></Text></PositionETH>
                         <Position></Position>
                         <Position></Position>
-                        <Position style={{width: '100px'}}><Text style={{transform: 'translate(-10%, 570%)', fontSize: '14px'}}>Telos uses less than 0.0004 TWH Annually</Text></Position>
+                        <PositionTelos style={{width: '100px'}}><Text>Telos uses less than 0.0004 TWH Annually</Text></PositionTelos>
                         <Position></Position>
                 </PositionRow>  
                 <BarRow>

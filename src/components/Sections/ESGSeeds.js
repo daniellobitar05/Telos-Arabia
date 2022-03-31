@@ -86,15 +86,19 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 220vh;
     }
 `;
 
 const Grid = styled.div`
     width: 100%;
     height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
-        height: 150vh;
+        height: 210vh;
     }
 `;
 
@@ -109,7 +113,8 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 65vh;
+        height: 80vh;
+        justify-content: center;
     }
     .swiper {
         width: 75%;
@@ -160,7 +165,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 75vh;
+        height: 120vh;
         justify-content: center;
     }
 `;
@@ -172,15 +177,18 @@ const Article = styled(motion.div)`
     width: 80%;
     font-size: 20px;
     display: flex;
-    padding: 10px 0;
+    padding: 20px 0;
     line-height: 30px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    height: 20vh;
     @media screen and (max-width: 768px){
-        line-height: 25px;
+        line-height: 30px;
+        height: 60vh;
     }
     span {
         margin: 0 8px;
+
     }
 
 `;
@@ -203,7 +211,9 @@ const Text = styled.div`
     width: 80%;
     text-align: center;
     @media screen and (max-width: 768px){
-        line-height: 25px;
+        line-height: 30px;
+        width: 90%;
+        transform: translate(0, 10%);
     }
 `;
 

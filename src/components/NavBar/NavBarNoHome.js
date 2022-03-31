@@ -618,6 +618,11 @@ const MenuMenuItem = styled.a`
     align-items: center;
     font-size: 24px;
     justify-content: right;
+    strong{
+        margin-right: 10px;
+        font-weight: 500;
+        font-size: 22px;
+    }
     transition: background var(--speed);
     &:hover{
         background-color: #dda0dd;
@@ -649,7 +654,9 @@ const DropDown = styled.div`
     overflow: hidden;
     top: 100px;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     z-index: 9999;
+    
     @media screen and (min-width: 1100px){
         
     }
@@ -659,7 +666,7 @@ const DropDown = styled.div`
     }
 
     @media screen and (max-width: 660px){
-        right: 10vw;
+        right: 7.5vw;
     }
 `;
 
@@ -739,8 +746,8 @@ const DropDownMenu = () => {
             <LinkR to="/CommResources"><DropDownItem  rightIcon={<CommIcon />} >موارد المجتمع</DropDownItem></LinkR>
             <a href="https://help.telos.net/" target="_blank" rel="noreferrer"><DropDownItem  rightIcon={<BaseIcon/>} >قاعدة المعرفة</DropDownItem></a>
             <LinkR to="/Tokenomics"><DropDownItem  rightIcon={<TokenIcon/>}>اقتصاد تيلوس</DropDownItem></LinkR>
-            <LinkR to="/ESG"><DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}><t>بلوكشين</t><span>ESG</span></DropDownItem></LinkR>
-            <LinkR to="/EVM"><DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}><t>بلوكشين</t><span>EVM</span></DropDownItem></LinkR>
+            <LinkR to="/ESG"><DropDownItem  rightIcon={<Image src={ESG} alt="" style={{height: '23px', width: '23px', paddingRight: '3px'}}/>}><strong>ESG</strong><t>بلوكشين</t></DropDownItem></LinkR>
+            <LinkR to="/EVM"><DropDownItem  rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>}><strong>EVM</strong><t>بلوكشين</t></DropDownItem></LinkR>
             </Menu>
             </CSSTransition>
         </DropDown>
@@ -749,8 +756,8 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm-native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="evm"><t>منصة</t><span>EVM</span></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={TelosRoundLogo} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="native"><t>منصة</t><span>Native</span></DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="evm"><strong>EVM  </strong><t>منصة</t></DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={TelosRoundLogo} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="native"><strong>Native  </strong><t>  منصة</t></DropDownItem>
             </Menu>
             </CSSTransition>
         </DropDown>

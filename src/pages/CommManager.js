@@ -19,8 +19,10 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: ${props => props.theme.back1};
+    @media screen and (max-width: 768px){
+        height: 190vh;
+    }
 `;
 
 const Title = styled.div`
@@ -29,7 +31,11 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    text-align: center;
+    @media screen and (max-width: 768px){
+        height: 30vh;
+        transform: translate(0, 15%);
+    }
     h1{
         font-size: 62px;
         color: white;
@@ -42,6 +48,12 @@ const Grid = styled.div`
     justify-content: space-between;
     width: 80%;
     height: 60vh;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        justify-content: center;
+        height: 160vh;
+        width: 90%;
+    }
 `;
 
 const Column = styled.div`
@@ -53,11 +65,17 @@ const Column = styled.div`
     justify-content: center;
     border: 1px solid white;
     border-radius: 10px;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    @media screen and (max-width: 768px){
+        width: 95%;
+        height: 60vh;
+        margin: 50px 0;
+    }
 `;
 
 const ImageRow = styled.div`
     width: 100%;
-    height: 20vh;
+    height: 22.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,6 +83,9 @@ const ImageRow = styled.div`
     background-repeat: no-repeat;
     background-size: 350px auto;
     background-position: center;
+    @media screen and (max-width: 768px){
+        background-size: 250px auto;
+    }
 `;
 
 const ImageHolder = styled.div`
@@ -73,23 +94,31 @@ const ImageHolder = styled.div`
     border-radius: 50%;
     background: black;
     transform: translate(65%, 20%);
+    @media screen and (max-width: 768px){
+        width: 60px;
+        height: 60px;
+    }
     img{
         width: 100%;
         display: block;
         object-fit: cover;
         border-radius: 50%;
+        
     }
 `;
 
 const Name = styled.div`
     width: 100%;
-    height: 15vh;
+    height: 12.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
     h1{
         color: white;
         font-size: 46px;
+        @media screen and (max-width: 768px){
+            font-size: 42px;
+        }
     }
 `;
 
@@ -104,6 +133,9 @@ const Description = styled.div`
         font-size: 26px;
         width: 80%;
         text-align: center;
+        @media screen and (max-width: 768px){
+            font-size: 24px;
+        }
     }
 `;
 
@@ -115,9 +147,9 @@ const IconHolder = styled.div`
     justify-content: space-around;
 `;
 
-const BoxIcon = styled.div`
+const BoxIcon = styled(motion.a)`
     width: 75px;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +170,16 @@ const Linked = styled(LinkedInIcon)`
     color: white;
 `;
 
+const Expander = styled(IconButton)`
+    transform: scale(1.30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        transform: scale(1.50);
+    }
 
+`;
 
 const CommManager = () => {
 
@@ -157,21 +198,21 @@ const CommManager = () => {
                     <Name><h1>دانييلو ألبيطار</h1></Name>
                     <Description><h1>مدير تيلوس العرب ومترجم المنصة, من لبنان , دارس الاقتصاد في الجامعة أللبنانية</h1></Description>
                     <IconHolder>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Twitter /></IconButton></BoxIcon></motion.div>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Mail /></IconButton></BoxIcon></motion.div>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Linked /></IconButton></BoxIcon></motion.div>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://twitter.com/DanielloBitar" target="_blank" rel="noreferrer"><Expander><Twitter /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><Expander><Mail /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} ><Expander><Linked /></Expander></BoxIcon>
                     </IconHolder>
                     </Column>
                     <Column>
                     <ImageRow>
                         <ImageHolder><img src={Avatar} alt="avatar" /></ImageHolder>
                     </ImageRow>
-                    <Name><h1>Victor Ramirez</h1></Name>
-                    <Description><h1>Website creator, 5 years exp. frontend development, studied Physics at University of Barcelona</h1></Description>
+                    <Name><h1>فيكتور راميريز</h1></Name>
+                    <Description><h1>مصمم مواقع ، خبرة 5 سنوات. تطوير الواجهة الأمامية ، درس الفيزياء في جامعة برشلونة</h1></Description>
                     <IconHolder>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Twitter /></IconButton></BoxIcon></motion.div>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Mail /></IconButton></BoxIcon></motion.div>
-                        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><BoxIcon><IconButton style={{transform: 'scale(1.5)'}}><Linked /></IconButton></BoxIcon></motion.div>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://twitter.com/VictorR65153076" target="_blank" rel="noreferrer"><Expander><Twitter /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="mailto:bodegaflamenca666@gmail.com" target="_blank" rel="noreferrer"><Expander><Mail /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><Expander><Linked /></Expander></BoxIcon>
                     </IconHolder>
                     </Column>
                 </Grid>

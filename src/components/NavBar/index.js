@@ -503,7 +503,7 @@ const SubMenu = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #4b0082;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     border-radius: 20px;
     z-index: 150;
     border: 1px solid white;
@@ -614,7 +614,7 @@ const MenuMenuItem = styled.a`
     display: flex;
     border-radius: 8px;
     align-items: center;
-    justify-content: right;
+    font-size: 24px;
     transition: background var(--speed);
     &:hover{
         background-color: #dda0dd;
@@ -642,7 +642,7 @@ const DropDown = styled.div`
     width: 300px;
     padding-right: 10px;
     border-radius: 20px;
-    background: #663399;
+    background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     overflow: hidden;
     top: 100px;
     z-index: 9999;
@@ -695,7 +695,7 @@ const DropDownMenu = () => {
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuyIcon />} goToMenu="buy">اشتري</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<BuildIcon/>}goToMenu="build">ابني</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<LearnIcon/>} goToMenu='learn'>تعلم</DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>} goToMenu='evm-native'>EXPLORE</DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<ExpIcon/>} goToMenu='evm-native'>استكشف</DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<AboutIcon/>} goToMenu="about">حول تيلوس</DropDownItem>
             </Menu>
             </CSSTransition>
@@ -768,7 +768,7 @@ const DropDownMenu = () => {
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
             <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>النظام البيئي</DropDownItem></LinkR>
-            <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem></a>
+            <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>محفظة تيلوس</DropDownItem></a>
             <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>ألمنصة</DropDownItem></a>
             <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>تحاويل خارجية</DropDownItem></a>
             <LinkS to="getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>البدء</DropDownItem></LinkS>

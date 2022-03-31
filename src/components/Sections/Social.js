@@ -126,7 +126,7 @@ const Subtitle = styled(motion.div)`
     }
     @media screen and (max-width: 768px){
         width: 95%;
-        height: 50vh;
+        height: 55vh;
         font-size: 22px;
         line-height: 30px;
     }

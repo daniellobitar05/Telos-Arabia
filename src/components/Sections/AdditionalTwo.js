@@ -92,7 +92,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+       height: 130vh; 
     }
 `;
 
@@ -106,7 +106,8 @@ const Title = styled(motion.div)`
     justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
-        
+        font-size: 52px;
+        line-height: 40px;
     }
 `;
 
@@ -115,12 +116,14 @@ const Grid = styled(motion.div)`
     height: 70vh;
     @media screen and (max-width: 768px){
         width: 98%;
+        height: 100vh;
     }
     .swiper {
         width: 75%;
         height: 100%;
         @media screen and (max-width: 768px){
             width: 98%;
+            height: 100vh;
         }
     }
 
@@ -170,7 +173,6 @@ const FirstRow = styled.div`
     font-size: 48px;
     font-weight: bold;
     justify-content: flex-end;
-    transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 36px;

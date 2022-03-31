@@ -89,7 +89,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 220vh;
     }
 `;
 
@@ -97,7 +97,7 @@ const Grid = styled.div`
     width: 100%;
     height: 90vh;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 210vh;
     }
 `;
 
@@ -119,7 +119,7 @@ const ColumnLeft = styled(motion.div)`
         height: 75%;
         @media screen and (max-width: 768px){
         width: 98%;
-        height: 70%;
+        height: 75%;
         }
         
     }
@@ -185,7 +185,7 @@ const Articles = styled.div`
     transform: translate(-10%, 0);
     @media screen and (max-width: 768px){
         transform: translate(0, 0);
-    }
+    } 
 `;
 
 const Video = styled.div`
@@ -217,6 +217,9 @@ const Row = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 25%;
+    }
 `;
 
 const Text = styled.div`
@@ -242,6 +245,9 @@ const FirstRow = styled.div`
     font-weight: bold;
     justify-content: flex-end;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 34px;
+    }
 
 `;
 
@@ -283,14 +289,18 @@ const Column = styled.ol`
 
 const Item = styled.li`
     width: 85%;
-    height: 30%;
+    height: 33%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     text-align: right;
-    
+    font-size: 24px;
     span{
         margin: 0 8px;
+        font-size: 20px;
+        @media screen and (max-width: 768px){
+        font-size: 14px;
+        }
     }
     &::marker{
         font-size: 20px;
@@ -299,6 +309,8 @@ const Item = styled.li`
     @media screen and (max-width: 768px){
         transform: translate(-20%, 0);
         width: 95%;
+        font-size: 16px;
+        line-height: 25px;
     }
 `;
 
@@ -419,7 +431,7 @@ const ESGLips = () => {
                         <SecondRow><p><t>ليبس هي عبارة عن منصة وسائط اجتماعية وسوق مصمم من قبل المجتمع مع مهمة اجتماعية: تحسين الصحة العقلية والرفاهية المالية للنساء ، والأشخاص غير الثنائيين ، ومجتمع</t><span>LGBTQIA+,</span><t>إنه بمثابة مساحة رقمية حيث يمكن لهذه المجموعات التعبير عن نفسها بشكل إبداعي ولا تقلق أبدًا بشأن الحظر أو الاستهداف بالإساءة.</t></p></SecondRow>
                         <InnerGrid>
                             <Column>
-                                <Item>أكثر من 10000 مستخدم جديد في الشهر الأول</Item>
+                                <Item><t>أكثر من</t><span>10000</span><t>مستخدم جديد في الشهر الأول</t></Item>
                                 <Item><t>الفائز بجائزة دمج</t><span>LGBTQ+</span><t>في التكنولوجيا</t></Item>
                                 <Item>ظهرت في ماشابل ، ديلي بيست ، فوربس ، هافينغتون بوست</Item>
                             </Column>

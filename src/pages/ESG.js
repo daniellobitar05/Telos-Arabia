@@ -219,11 +219,11 @@ const ESG = () => {
                 <ESGSeeds />
                 <Additional />
                 <Social />
-                {/* <ESGLips />
+                <ESGLips />
                 <AdditionalTwo />
                 <ESGConclusion />
                 <ESGLatest />
-                <Footer /> */}
+                <Footer /> 
         </ThemeProvider>
     )
 }

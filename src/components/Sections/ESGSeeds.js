@@ -277,7 +277,7 @@ const SecondRow = styled.div`
 
 const InnerGrid = styled.div`
     width: 100%;
-    height: 50%;
+    height: 55%;
     display: flex;
 `;
 
@@ -322,7 +322,7 @@ const Item = styled.li`
 
 const BottomRow = styled.div`
     width: 100%;
-    height: 20%;
+    height: 15%;
     display: inline-flex;
 `;
 

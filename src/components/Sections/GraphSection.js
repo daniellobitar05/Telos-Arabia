@@ -124,6 +124,9 @@ const GraphWrapper = styled(motion.div)`
     align-items: center;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     z-index: 100;
+    @media screen and (max-width: 768px){
+        height: 50vh;
+    }
 `;
 
 const PositionRow = styled.div`

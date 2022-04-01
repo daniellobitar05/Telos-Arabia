@@ -22,7 +22,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+        height: 160vh; 
     }
 `;
 
@@ -71,7 +71,7 @@ const ArticleUp = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 22px;
     height: 20vh;
     color: whitesmoke;
     display: flex;
@@ -82,9 +82,12 @@ const Article = styled(motion.div)`
     z-index: 10;
     span{
         margin: 0 8px;
+        font-size: 18px;
     }
     @media screen and (max-width: 768px) {
-        font-size: 16px;
+        font-size: 20px;
+        line-height: 30px;
+        height: 50vh;
     }
     a{
         color: aqua;
@@ -99,6 +102,11 @@ const List = styled.ul`
     display: flex;
     flex-direction: column;
     transform: translate(25%, 0);
+    height: 17.5vh;
+    @media screen and (max-width: 768px) {
+        height: 22.5vh;
+        transform: translate(10%, -10%);
+    }
 `;
 
 const ListBottom = styled.ul`
@@ -108,10 +116,31 @@ const ListBottom = styled.ul`
     display: flex;
     flex-direction: column;
     z-index: 100;
+    height: 17.5vh;
+    @media screen and (max-width: 768px) {
+        height: 17.5vh;
+        transform: translate(0%, 0);
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 const ListItem = styled.li`
-    height: 40px;
+    height: 33%;
+    color: white;
+    font-size: 20px;
+    direction: rtl;
+    text-align: right;
+    z-index: 100;
+    @media screen and (max-width: 768px) {
+        height: 60px;
+        transform: translate(0%, 0);
+        width: 80%;
+    }
+`;
+
+const ListItemBottom = styled.li`
+    height: 33%;
     color: white;
     font-size: 20px;
     direction: rtl;
@@ -127,6 +156,11 @@ const InnerTitle = styled.div`
     font-size: 28px;
     font-weight: bold;
     direction: rtl;
+    @media screen and (max-width: 768px) {
+        height: 15vh;
+        transform: translate(-10%, 0);
+        
+    }
 `;
 
 const IconColumnRight = styled(LinkS)`
@@ -282,7 +316,7 @@ const UtilitySectionTwo = () => {
                 <IconColumnLeft to="utilitythree" smooth={true} duration={1000} spy={true} exact="true">
                 <IconButton><ArrowDown /></IconButton>
                 </IconColumnLeft>
-            <EmptyColumn><motion.img src={Back} alt="" animate={animationThree}/></EmptyColumn>
+            <EmptyColumn></EmptyColumn>
                 <IconColumnRight to="utility" smooth={true} duration={1000} spy={true} exact="true">
                     <IconButton ><ArrowUp /></IconButton>
                 </IconColumnRight>

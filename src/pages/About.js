@@ -187,9 +187,9 @@ const About = () => {
         <GraphSection />
         <UtilitySection />
         <UtilitySectionTwo />
-        {/* <UtilitySectionThree />
+        <UtilitySectionThree />
         <UtilisedSection />
-        <ConclusionSection />
+        {/* <ConclusionSection />
         <Footer /> */}
         </ThemeProvider>
     );

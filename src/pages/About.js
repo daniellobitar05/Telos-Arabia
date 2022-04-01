@@ -78,9 +78,7 @@ const Subtitle = styled(motion.div)`
     align-items: center;
     direction: rtl;
     z-index: 10;
-    t{
-        transform: translate(0, 15%);
-    }
+    
     @media screen and (max-width: 768px) {
         font-size: 24px;
         height: 50vh;

@@ -24,7 +24,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 240vh;
     }
 `;
 
@@ -39,7 +39,7 @@ const HeaderText = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         font-size: 24px;
-        height: 5vh;
+        height: 15vh;
     }
 `;
 
@@ -66,7 +66,7 @@ const Wrapper = styled.div`
     height: 65vh;
     @media screen and (max-width: 768px){
         
-        height: 170vh;
+        height: 180vh;
     }
 `;
 
@@ -80,7 +80,7 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 95vh;
+        height: 105vh;
         justify-content: center;
         align-items: center;
         
@@ -168,9 +168,10 @@ const Subtitle = styled.div`
         margin: 0 5px;
     }
     @media screen and (max-width: 768px){
-        font-size: 18px;
+        font-size: 22px;
         width: 95%;
         text-align: center;
+        line-height: 30px;
         
     }
 `;

@@ -186,8 +186,8 @@ const About = () => {
         <FeaturesSection />
         <GraphSection />
         <UtilitySection />
-        {/* <UtilitySectionTwo />
-        <UtilitySectionThree />
+        <UtilitySectionTwo />
+        {/* <UtilitySectionThree />
         <UtilisedSection />
         <ConclusionSection />
         <Footer /> */}

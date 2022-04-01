@@ -24,7 +24,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 200vh;
     }
 `;
 
@@ -66,11 +66,11 @@ const Wrapper = styled.div`
     height: 65vh;
     @media screen and (max-width: 768px){
         
-        height: 160vh;
+        height: 170vh;
     }
 `;
 
-const ColumnLeft = styled.div`
+const ColumnLeft = styled(motion.div)`
     width: 50%;
     height: 65vh;
     float: left;
@@ -89,7 +89,7 @@ const ColumnLeft = styled.div`
     
 `;
 
-const ColumnRight = styled.div`
+const ColumnRight = styled(motion.div)`
     width: 50%;
     height: 65vh;
     float: left;
@@ -100,13 +100,13 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 65vh;
+        height: 75vh;
         
     }
     
 `;
 
-const BoxTitle = styled(motion.div)`
+const BoxTitle = styled.div`
     height: 20%;
     width: 100%;
     color: aqua;
@@ -118,13 +118,13 @@ const BoxTitle = styled(motion.div)`
     text-align: center;
     direction: rtl;
     @media screen and (max-width: 768px){
-        font-size: 16px;
+        font-size: 24px;
         height: 10%;
     }
     
 `;
 
-const BoxTitleRight = styled(motion.div)`
+const BoxTitleRight = styled.div`
     height: 15vh;
     width: 100%;
     color: aqua;
@@ -137,14 +137,15 @@ const BoxTitleRight = styled(motion.div)`
     direction: rtl;
     line-height: 35px;
     @media screen and (max-width: 768px){
-        font-size: 16px;
-        height: 10%;
+        font-size: 24px;
+        height: 10vh;
+        
     }
     
 `;
 
 
-const Subtitle = styled(motion.div)`
+const Subtitle = styled.div`
     width: 90%;
     height: 80%;
     text-align: center;
@@ -174,7 +175,7 @@ const Subtitle = styled(motion.div)`
     }
 `;
 
-const SubtitleRight = styled(motion.div)`
+const SubtitleRight = styled.div`
     width: 90%;
     height: 30vh;
     text-align: center;
@@ -197,10 +198,10 @@ const SubtitleRight = styled(motion.div)`
         margin: 0 5px;
     }
     @media screen and (max-width: 768px){
-        font-size: 18px;
+        font-size: 22px;
         width: 95%;
         text-align: center;
-        
+        height: 45vh;
     }
 `;
 
@@ -211,6 +212,9 @@ const IconHolder = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+       
+    }
 `;
 
 const IconRow = styled(motion.div)`
@@ -284,7 +288,6 @@ const PurposeSection = () => {
 
     const animation = useAnimation();
     const animationTwo = useAnimation();
-    const animationThree = useAnimation();
 
     useEffect(() => {
         if(inView){
@@ -320,42 +323,27 @@ const PurposeSection = () => {
         
     }, [inView])
 
-    useEffect(() => {
-        if(inView){
-            animationThree.start({
-                opacity: 1, y: 0,
-                transition: {
-                    duration: 1, delay: 0.5,
-                }
-            });
-        }
-        if(!inView){
-            animationThree.start({
-                opacity: 0, y: '100px',
-            })
-        }
-        
-    }, [inView])
+    
 
     return(
         <Section id="purpose" ref={ref}>
             <HeaderText animate={animation}>غرضنا</HeaderText>
             <Title animate={animation}>قم بتشغيل اقتصاد المستقبل ، وإشعال أعلى إمكانات البشر</Title>
             <Wrapper>
-                <ColumnLeft>
-                <BoxTitle animate={animationTwo} ><p><t>قاعدة متنامية</t></p></BoxTitle>
-                <Subtitle animate={animationTwo} ><p><t>تيلوس هي موطن لأكثر من</t><span>30</span><t>مطورًا أساسيًا ، وأكثر من</t><span>50</span><t>فريقًا للتحقق من الصحة ، وعشرات من المنتجات المبتكرة ، يكملها</t><span>100</span><t>من المساهمين النشطين في المجتمع. يضم مجتمع تيلوس الأوسع أكثر من</t><span>900000</span><t>حساب مستخدم على الشبكة ، وأكثر من</t><span>6000</span><t>متابع على مجموعات تيليغرام والقنوات الاجتماعية الأخرى ، وأكثر من</t><span>150</span><t>شركة من أكثر من</t><span>180</span><t>دولة ، يعمل المطورون على بناء أكثر من</t><span>100</span><t>تطبيق موزع على تيلوس اعتبارًا من أوائل عام</t><span>2021,</span><t>بما في ذلك منصة تداول حقوق الموسيقى</t><span><a href="https://zeptagram.com/" target="_blank" rel="noreferrer">Zeptagram,</a></span><t>ومنصة الألعاب</t><span><a href="https://qudo.io/" target="_blank" rel="noreferrer">QUDO,</a></span><t>ومنصة الوسائط الاجتماعية</t><span><a href="https://appics.com/" target="_blank" rel="noreferrer">Appics,</a></span><t>وحل التخزين اللامركزي</t><span>dStor</span><t>ونظام المدفوعات</t><span><a href="https://sesacash.com/" target="_blank" rel="noreferrer">Sesacash,</a></span><t>قائمة كاملة من</t><span>dApps</span><t>على تيلوس متاحة هنا.</t></p></Subtitle>
+                <ColumnLeft animate={animationTwo}>
+                <BoxTitle  ><p><t>قاعدة متنامية</t></p></BoxTitle>
+                <Subtitle  ><p><t>تيلوس هي موطن لأكثر من</t><span>30</span><t>مطورًا أساسيًا ، وأكثر من</t><span>50</span><t>فريقًا للتحقق من الصحة ، وعشرات من المنتجات المبتكرة ، يكملها</t><span>100</span><t>من المساهمين النشطين في المجتمع. يضم مجتمع تيلوس الأوسع أكثر من</t><span>900000</span><t>حساب مستخدم على الشبكة ، وأكثر من</t><span>6000</span><t>متابع على مجموعات تيليغرام والقنوات الاجتماعية الأخرى ، وأكثر من</t><span>150</span><t>شركة من أكثر من</t><span>180</span><t>دولة ، يعمل المطورون على بناء أكثر من</t><span>100</span><t>تطبيق موزع على تيلوس اعتبارًا من أوائل عام</t><span>2021,</span><t>بما في ذلك منصة تداول حقوق الموسيقى</t><span><a href="https://zeptagram.com/" target="_blank" rel="noreferrer">Zeptagram,</a></span><t>ومنصة الألعاب</t><span><a href="https://qudo.io/" target="_blank" rel="noreferrer">QUDO,</a></span><t>ومنصة الوسائط الاجتماعية</t><span><a href="https://appics.com/" target="_blank" rel="noreferrer">Appics,</a></span><t>وحل التخزين اللامركزي</t><span>dStor</span><t>ونظام المدفوعات</t><span><a href="https://sesacash.com/" target="_blank" rel="noreferrer">Sesacash,</a></span><t>قائمة كاملة من</t><span>dApps</span><t>على تيلوس متاحة هنا.</t></p></Subtitle>
                 </ColumnLeft>
-                <ColumnRight>
-                <BoxTitleRight animate={animationThree}><p><t>شبكة لا مركزية حقًا يديرها أصحاب الرؤى والتقنيون والبناؤون والسائقون وأصحاب المصلحة النشطون</t></p></BoxTitleRight>
-                <SubtitleRight animate={animationThree}><p><t>يمهد نظام تيلوس البيئي الطريق إلى ويب</t><span>3.0</span><t>منذ بدء تشغيل الشبكة الرئيسية في عام</t><span>2018.</span><t>وقد سمح الإطلاق بدون تمويل</t><span>ICO</span><t>أو</t><span>VC</span><t>للشبكة بالنمو بطريقة لا مركزية حقًا. تعمل بنية الحوكمة القوية لشركة تيلوس ، التي تكملها مجموعة من أدوات تيلوس</t><span>Decide</span><t>القوية ، على تمكين حاملي الرموز المميزة. تيلوس هي شبكة مفتوحة ، حيث يتمتع كل فرد بفرصة متساوية للمساهمة والتأثير في اتجاه السلسلة.</t></p></SubtitleRight>
+                <ColumnRight animate={animationTwo}>
+                <BoxTitleRight ><p><t>شبكة لا مركزية حقًا يديرها أصحاب الرؤى والتقنيون والبناؤون والسائقون وأصحاب المصلحة النشطون</t></p></BoxTitleRight>
+                <SubtitleRight ><p><t>يمهد نظام تيلوس البيئي الطريق إلى ويب</t><span>3.0</span><t>منذ بدء تشغيل الشبكة الرئيسية في عام</t><span>2018.</span><t>وقد سمح الإطلاق بدون تمويل</t><span>ICO</span><t>أو</t><span>VC</span><t>للشبكة بالنمو بطريقة لا مركزية حقًا. تعمل بنية الحوكمة القوية لشركة تيلوس ، التي تكملها مجموعة من أدوات تيلوس</t><span>Decide</span><t>القوية ، على تمكين حاملي الرموز المميزة. تيلوس هي شبكة مفتوحة ، حيث يتمتع كل فرد بفرصة متساوية للمساهمة والتأثير في اتجاه السلسلة.</t></p></SubtitleRight>
                 <IconHolder>
-                    <IconRow animate={animationTwo}>
+                    <IconRow >
                         <Icon><img src={Qudo} alt="icon1" /></Icon>
                         <Icon><img src={zepta} alt="zepta" style={{transform: 'scale(0.3)'}}/></Icon>
                         <Icon><img src={dstor} alt="dstor" /></Icon>
                     </IconRow>
-                    <IconRow animate={animationTwo}>
+                    <IconRow >
                         <Icon><img src={appics} alt="appics" style={{transform: 'scale(0.5)'}}/></Icon>
                         <Icon><img src={sesa} alt="sesa" /></Icon>
                     </IconRow>

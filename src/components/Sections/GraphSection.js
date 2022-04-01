@@ -25,52 +25,10 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
-
-const Title = styled(motion.div)`
-    width: 60%;
-    height: 15vh;
-    text-align: center;
-    color: white;
-    font-size: 42px;
-    display: grid;
-    place-items: center;
     @media screen and (max-width: 768px){
-        font-size: 18px;
-        height: 10vh;
+        
+        height: 135vh;
     }
-`;
-
-const LeftTitle = styled(motion.div)`
-    height: 60%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 48px;
-    direction: rtl;
-    z-index: 100;
-    @media screen and (max-width: 768px){
-        font-size: 24px;
-        width: 80%;
-    }
-`;
-
-const ImageWrapper = styled.div`
-    width: 100%;
-    height: 40%;
-    img{
-        width: 100%;
-        z-index: 0;
-        transform: translate(20%, -40%);
-        @media screen and (max-width: 768px){
-            transform: translate(0%, -30%);
-        }
-    }
-
 `;
 
 const Columns = styled.div`
@@ -81,29 +39,14 @@ const Columns = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: 125vh;
     }
     
 `;
 
 const ColumnLeft = styled.div`
     width: 50%;
-    height: 100%;
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    @media screen and (max-width: 768px){
-        float: none;
-        width: 100%;
-        height: 30vh;
-    }
-`;
-
-const ColumnRight = styled.div`
-    width: 50%;
-    height: 100%;
+    height: 90vh;
     float: left;
     display: flex;
     flex-direction: column;
@@ -113,6 +56,76 @@ const ColumnRight = styled.div`
         float: none;
         width: 100%;
         height: 60vh;
+    }
+`;
+
+const LeftTitle = styled(motion.div)`
+    height: 54vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    direction: rtl;
+    z-index: 100;
+    @media screen and (max-width: 768px){
+        font-size: 28px;
+        height: 40vh;
+    }
+`;
+
+const ImageWrapper = styled.div`
+    width: 100%;
+    height: 36vh;
+    @media screen and (max-width: 768px){
+            height: 20vh; 
+        }
+    img{
+        width: 80%;
+        z-index: 0;
+        transform: translate(20%, -40%);
+        @media screen and (max-width: 768px){
+            transform: translate(10%, -40%);
+        }
+    }
+
+`;
+
+
+
+
+
+const ColumnRight = styled.div`
+    width: 50%;
+    height: 90vh;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        float: none;
+        width: 100%;
+        height: 65vh;
+    }
+`;
+
+const Title = styled(motion.div)`
+    width: 80%;
+    height: 15vh;
+    text-align: center;
+    color: white;
+    font-size: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        font-size: 32px;
+        
     }
 `;
 
@@ -358,7 +371,7 @@ const GraphSection = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                x: 0, y: '150px',
+                x: 0,
                 transition: {
                     duration: 1, 
                 }
@@ -366,7 +379,7 @@ const GraphSection = () => {
         }
         if(!inView){
             animationThree.start({
-                x: '-100vw', y: '150px',
+                x: '-100vw',
             })
         }
         
@@ -394,7 +407,7 @@ const GraphSection = () => {
             
             <Columns>
                 <ColumnLeft>
-                <LeftTitle animate={animationThree}>معدل نمو مرتفع واستخدام 900000+ قاعدة حساب رقم 1 من خلال مؤشر تقييم النشاط بيتكوين و ايثيريوم يتوسعان في المستقبل</LeftTitle>
+                <LeftTitle animate={animationThree}><t>معدل نمو مرتفع واستخدام 900000+ قاعدة حساب رقم 1 من خلال مؤشر تقييم النشاط بيتكوين و ايثيريوم يتوسعان في المستقبل</t></LeftTitle>
                 <ImageWrapper><img src={Back} alt="image" /></ImageWrapper>
                 </ColumnLeft>
                 <ColumnRight>

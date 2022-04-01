@@ -47,8 +47,9 @@ const Title = styled(motion.div)`
     direction: rtl;
     z-index: 10;
     @media screen and (max-width: 768px) {
-        font-size: 24px;
+        font-size: 42px;
         height: 20vh;
+        line-height: 50px;
         
     }
     
@@ -60,6 +61,9 @@ const Image = styled.div`
     img{
         transform: translate(0, -30%);
         z-index: 0;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
     }
 `;
 
@@ -74,10 +78,13 @@ const Subtitle = styled(motion.div)`
     align-items: center;
     direction: rtl;
     z-index: 10;
-    
+    t{
+        transform: translate(0, 15%);
+    }
     @media screen and (max-width: 768px) {
-        font-size: 16px;
+        font-size: 24px;
         height: 50vh;
+        line-height: 30px;
         flex-direction: column;
         justify-content: center;
     }
@@ -168,7 +175,7 @@ const About = () => {
         <Section id="abouthero" ref={ref}>
             <Title animate={animation}>مقدمة رفيعة المستوى إلى تيلوس بلوكشين</Title>
             <Image><img src={Back} alt="" /></Image>
-            <Subtitle animate={animationTwo}>تيلوس هي عبارة عن منصة بلوكشين من الجيل الثالث لبناء تطبيقات موزعة سريعة وقابلة للتطوير مع معاملات بدون إحساس. منذ إطلاق شبكتها الرئيسية في ديسمبر 2018 ، تم تطوير شبكة تيلوس لتزويد اقتصادات المستقبل بالطاقة وتوفير حلول بشرية للتحديات العالمية. مع وضع هذه الأهداف في الاعتبار ، فإنه يتضمن ميزات حوكمة مبتكرة تمكن المنظمات من تحويل التأثير وصنع القرار إلى نموذج أكثر تعاونًا وشفافية.</Subtitle>
+            <Subtitle animate={animationTwo}><t>تيلوس هي عبارة عن منصة بلوكشين من الجيل الثالث لبناء تطبيقات موزعة سريعة وقابلة للتطوير مع معاملات بدون إحساس. منذ إطلاق شبكتها الرئيسية في ديسمبر 2018 ، تم تطوير شبكة تيلوس لتزويد اقتصادات المستقبل بالطاقة وتوفير حلول بشرية للتحديات العالمية. مع وضع هذه الأهداف في الاعتبار ، فإنه يتضمن ميزات حوكمة مبتكرة تمكن المنظمات من تحويل التأثير وصنع القرار إلى نموذج أكثر تعاونًا وشفافية.</t></Subtitle>
             <Empty>
                 <IconColumn>
                 <LinkS to="purpose" smooth={true} duration={1000} spy={true} exact="true" style={{background: 'transparent'}}><IconButton><ArrowDown /></IconButton></LinkS>
@@ -176,7 +183,7 @@ const About = () => {
             </Empty>
         </Section>
         <PurposeSection />
-        <ChartSection />
+        {/* <ChartSection />
         <FeaturesSection />
         <GraphSection />
         <UtilitySection />
@@ -184,7 +191,7 @@ const About = () => {
         <UtilitySectionThree />
         <UtilisedSection />
         <ConclusionSection />
-        <Footer />
+        <Footer /> */}
         </ThemeProvider>
     );
 }

@@ -18,7 +18,6 @@ const Section = styled.div`
     background: ${props => props.theme.back8};
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 `;
 
 const Wrapper = styled.div`
@@ -40,8 +39,8 @@ const ColumnLeft = styled.div`
     img{
         width: 700px;
         height: auto;
-        transform: translate(10%, 20%);
-        border-radius: 20px;
+        padding-top: 50px;
+        padding-left: 60px;
         @media screen and (max-width: 768px){
             width: 300px;
         }
@@ -83,11 +82,19 @@ const Subtitle = styled(motion.div)`
     width: 100%;
     height: 35%;
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     display: flex;
     text-align: right;
     transform: translate(-10%, 0);
+    direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    span{
+        margin: 0 8px;
+        font-size: 18px;
+    }
+    p{
+        transform: translate(-20%, 0);
+    }
     @media screen and (max-width: 768px){
         font-size: 14px;
         height: 45%;
@@ -205,7 +212,7 @@ const EVMNoFront = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         
@@ -220,9 +227,9 @@ const EVMNoFront = () => {
                 
             </ColumnLeft>
             <ColumnRight>
-                <Title animate={animation}>What is Front-Running</Title>
-                <Subtitle animate={animationTwo}>Front-running is an industry-wide problem, in which millions of dollars in profits are being syphoned from unsuspecting traders. It started with bots offering high gas fees to jump the line, in front of high value transactions. Today, miners are performing the front-running, by inserting their own transactions ahead of others, while paying only the minimum gas fees. This is called MEV for miner extracted value or maximum extractable value.</Subtitle>
-                <Subtitle animate={animationTwo} style={{transform: 'translate(-20%, 0)'}}>Now, the industry has reached a point where a system of bribes are proposed to miners to take up transactions directly. With only a handful of mining pools controlling the majority of block creation on other networks, it is not possible to avoid this system of bribe-or-be-robbed that will come to all Ethereum-based chains. Very few people talk about this massive industry problem, as no one has come up with a sustainable solution - until Telos EVM.</Subtitle>
+                <Title animate={animation}><p><t>ما هو الجري الأمامي</t></p></Title>
+                <Subtitle animate={animationTwo}><p><t>هافوتا</t><span>LLC</span><t>هي شركة مقرها سويسرا ، مكرسة لخدمة احتياجات التقاط البيانات الرقمية لقطاع التنمية. أنها توفر حلول بيانات قوية للمؤسسات التي يحركها التأثير. تعد هافوتا منصة واحدة لجميع احتياجات تصميم البحث وجمع البيانات وإدارة البيانات. نظرًا لكونه رمزًا معترفًا به عالميًا للتأثير المثبت والمحقق ، فإن هدفهم هو مساعدة المستخدمين على دخول مؤسستهم إلى العصر التالي من جمع بيانات التأثير وتحليلها.</t></p></Subtitle>
+                <Subtitle animate={animationTwo}><p><t>الآن ، وصلت الصناعة إلى نقطة حيث يُقترح نظام الرشاوى على عمال المناجم لإجراء المعاملات مباشرة. مع وجود عدد قليل فقط من مجمعات التعدين التي تتحكم في غالبية إنشاء الكتل على الشبكات الأخرى ، لا يمكن تجنب نظام الرشوة أو السرقة الذي سيأتي إلى جميع السلاسل المستندة إلى اثيريوم. قلة قليلة من الناس يتحدثون عن هذه المشكلة الصناعية الضخمة ، حيث لم يتوصل أحد إلى حل مستدام - حتى تيلوس</t><span>EVM.</span></p></Subtitle>
             </ColumnRight>
             </Wrapper>
             <Empty>

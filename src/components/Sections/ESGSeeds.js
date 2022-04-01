@@ -94,11 +94,12 @@ const Grid = styled.div`
     width: 100%;
     height: 90vh;
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
         height: 220vh;
+        flex-direction: column;
     }
 `;
 
@@ -162,6 +163,9 @@ const ColumnRight = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    p {
+        transform: translate(-20%, -50%);
+    }
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
@@ -224,7 +228,7 @@ const Row = styled.div`
 
 const Text = styled.div`
     color: white;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 38px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
@@ -302,8 +306,10 @@ const Item = styled.li`
     direction: rtl;
     text-align: right;
     transform: translate(-10%, 0);
+    font-size: 20px;
     span {
         margin: 0 5px;
+        font-size: 16px;
         @media screen and (max-width: 768px){
             font-size: 14px;
         }

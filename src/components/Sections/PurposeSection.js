@@ -24,7 +24,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 190vh;
     }
 `;
 
@@ -38,7 +38,7 @@ const HeaderText = styled(motion.div)`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        font-size: 12px;
+        font-size: 24px;
         height: 5vh;
     }
 `;
@@ -50,10 +50,14 @@ const Title = styled(motion.div)`
     color: white;
     font-size: 48px;
     direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px){
-        font-size: 26px;
+        font-size: 38px;
+        line-height: 45px;
+        width: 90%;
         height: 15vh;
-        margin-bottom: 30px;
     }
 `;
 
@@ -62,13 +66,13 @@ const Wrapper = styled.div`
     height: 65vh;
     @media screen and (max-width: 768px){
         
-        height: 120vh;
+        height: 160vh;
     }
 `;
 
 const ColumnLeft = styled.div`
     width: 50%;
-    height: 100%;
+    height: 65vh;
     float: left;
     display: flex;
     flex-direction: column;
@@ -76,10 +80,10 @@ const ColumnLeft = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 50%;
+        height: 95vh;
         justify-content: center;
         align-items: center;
-        margin: 10px 0;
+        
     }
     
     
@@ -87,7 +91,7 @@ const ColumnLeft = styled.div`
 
 const ColumnRight = styled.div`
     width: 50%;
-    height: 100%;
+    height: 65vh;
     float: left;
     display: flex;
     flex-direction: column;
@@ -96,7 +100,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 50%;
+        height: 65vh;
         
     }
     
@@ -106,7 +110,7 @@ const BoxTitle = styled(motion.div)`
     height: 20%;
     width: 100%;
     color: aqua;
-    font-size: 36px;
+    font-size: 42px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,6 +119,26 @@ const BoxTitle = styled(motion.div)`
     direction: rtl;
     @media screen and (max-width: 768px){
         font-size: 16px;
+        height: 10%;
+    }
+    
+`;
+
+const BoxTitleRight = styled(motion.div)`
+    height: 15vh;
+    width: 100%;
+    color: aqua;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    direction: rtl;
+    line-height: 35px;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        height: 10%;
     }
     
 `;
@@ -133,15 +157,48 @@ const Subtitle = styled(motion.div)`
     direction: rtl;
     line-height: 35px;
     span{
-        margin: 0 5px;
+        margin: 0 8px;
+        font-size: 18px;
     }
     a{
         text-decoration: none;
         color: aqua;
+        font-size: 18px;
+        margin: 0 5px;
     }
     @media screen and (max-width: 768px){
-        font-size: 14px;
-        width: 90%;
+        font-size: 18px;
+        width: 95%;
+        text-align: center;
+        
+    }
+`;
+
+const SubtitleRight = styled(motion.div)`
+    width: 90%;
+    height: 30vh;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    line-height: 30px;
+    span{
+        margin: 0 8px;
+        font-size: 18px;
+    }
+    a{
+        text-decoration: none;
+        color: aqua;
+        font-size: 18px;
+        margin: 0 5px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 18px;
+        width: 95%;
         text-align: center;
         
     }
@@ -149,7 +206,7 @@ const Subtitle = styled(motion.div)`
 
 const IconHolder = styled.div`
     width: 100%;
-    height: 40%;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,7 +323,7 @@ const PurposeSection = () => {
     useEffect(() => {
         if(inView){
             animationThree.start({
-                opacity: 1, y: '20px',
+                opacity: 1, y: 0,
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -287,11 +344,11 @@ const PurposeSection = () => {
             <Wrapper>
                 <ColumnLeft>
                 <BoxTitle animate={animationTwo} ><p><t>قاعدة متنامية</t></p></BoxTitle>
-                <Subtitle animate={animationTwo} ><p><t>تيلوس هي موطن لأكثر من 30 مطورًا أساسيًا ، وأكثر من 50 فريقًا للتحقق من الصحة ، وعشرات من المنتجات المبتكرة ، يكملها 100 من المساهمين النشطين في المجتمع. يضم مجتمع تيلوس الأوسع أكثر من 900000 حساب مستخدم على الشبكة ، وأكثر من 6000 متابع على مجموعات تيليغرام والقنوات الاجتماعية الأخرى ، وأكثر من 150 شركة من أكثر من 180 دولة ، يعمل المطورون على بناء أكثر من 100 تطبيق موزع على تيلوس اعتبارًا من أوائل عام 2021 ، بما في ذلك منصة تداول حقوق الموسيقى</t><span><a href="https://zeptagram.com/" target="_blank" rel="noreferrer">Zeptagram</a></span><t>، ومنصة الألعاب</t><span><a href="https://qudo.io/" target="_blank" rel="noreferrer">QUDO</a></span><t>، ومنصة الوسائط الاجتماعية</t><span><a href="https://appics.com/" target="_blank" rel="noreferrer">Appics</a></span><t>، وحل التخزين اللامركزي</t><span>dStor</span><t>ونظام المدفوعات</t><span><a href="https://sesacash.com/" target="_blank" rel="noreferrer">Sesacash</a>.</span><t>قائمة كاملة من</t><span>dApps</span><t>على تيلوس متاحة هنا</t></p></Subtitle>
+                <Subtitle animate={animationTwo} ><p><t>تيلوس هي موطن لأكثر من</t><span>30</span><t>مطورًا أساسيًا ، وأكثر من</t><span>50</span><t>فريقًا للتحقق من الصحة ، وعشرات من المنتجات المبتكرة ، يكملها</t><span>100</span><t>من المساهمين النشطين في المجتمع. يضم مجتمع تيلوس الأوسع أكثر من</t><span>900000</span><t>حساب مستخدم على الشبكة ، وأكثر من</t><span>6000</span><t>متابع على مجموعات تيليغرام والقنوات الاجتماعية الأخرى ، وأكثر من</t><span>150</span><t>شركة من أكثر من</t><span>180</span><t>دولة ، يعمل المطورون على بناء أكثر من</t><span>100</span><t>تطبيق موزع على تيلوس اعتبارًا من أوائل عام</t><span>2021,</span><t>بما في ذلك منصة تداول حقوق الموسيقى</t><span><a href="https://zeptagram.com/" target="_blank" rel="noreferrer">Zeptagram,</a></span><t>ومنصة الألعاب</t><span><a href="https://qudo.io/" target="_blank" rel="noreferrer">QUDO,</a></span><t>ومنصة الوسائط الاجتماعية</t><span><a href="https://appics.com/" target="_blank" rel="noreferrer">Appics,</a></span><t>وحل التخزين اللامركزي</t><span>dStor</span><t>ونظام المدفوعات</t><span><a href="https://sesacash.com/" target="_blank" rel="noreferrer">Sesacash,</a></span><t>قائمة كاملة من</t><span>dApps</span><t>على تيلوس متاحة هنا.</t></p></Subtitle>
                 </ColumnLeft>
                 <ColumnRight>
-                <BoxTitle animate={animationThree}>شبكة لا مركزية حقًا يديرها أصحاب الرؤى والتقنيون والبناؤون والسائقون وأصحاب المصلحة النشطون</BoxTitle>
-                <Subtitle animate={animationThree}><p><t>يمهد نظام تيلوس البيئي الطريق إلى ويب 3.0 منذ بدء تشغيل الشبكة الرئيسية في عام 2018. وقد سمح الإطلاق بدون تمويل</t><span>ICO</span><t>أو</t><span>VC</span><t>للشبكة بالنمو بطريقة لا مركزية حقًا. تعمل بنية الحوكمة القوية لشركة تيلوس ، التي تكملها مجموعة من أدوات تيلوس</t><span>Decide</span><t>القوية ، على تمكين حاملي الرموز المميزة. تيلوس هي شبكة مفتوحة ، حيث يتمتع كل فرد بفرصة متساوية للمساهمة والتأثير في اتجاه السلسلة.</t></p></Subtitle>
+                <BoxTitleRight animate={animationThree}><p><t>شبكة لا مركزية حقًا يديرها أصحاب الرؤى والتقنيون والبناؤون والسائقون وأصحاب المصلحة النشطون</t></p></BoxTitleRight>
+                <SubtitleRight animate={animationThree}><p><t>يمهد نظام تيلوس البيئي الطريق إلى ويب</t><span>3.0</span><t>منذ بدء تشغيل الشبكة الرئيسية في عام</t><span>2018.</span><t>وقد سمح الإطلاق بدون تمويل</t><span>ICO</span><t>أو</t><span>VC</span><t>للشبكة بالنمو بطريقة لا مركزية حقًا. تعمل بنية الحوكمة القوية لشركة تيلوس ، التي تكملها مجموعة من أدوات تيلوس</t><span>Decide</span><t>القوية ، على تمكين حاملي الرموز المميزة. تيلوس هي شبكة مفتوحة ، حيث يتمتع كل فرد بفرصة متساوية للمساهمة والتأثير في اتجاه السلسلة.</t></p></SubtitleRight>
                 <IconHolder>
                     <IconRow animate={animationTwo}>
                         <Icon><img src={Qudo} alt="icon1" /></Icon>

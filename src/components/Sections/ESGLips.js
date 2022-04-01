@@ -176,13 +176,14 @@ const GridTitle = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const Articles = styled.div`
     width: 100%;
     height: 40vh;
-    transform: translate(-10%, 0);
+    transform: translate(-10%, -12.5%);
     @media screen and (max-width: 768px){
         transform: translate(0, 0);
     } 
@@ -200,10 +201,15 @@ const Video = styled.div`
 const Article = styled.div`
     color: white; 
     width: 100%;
-    font-size: 14px;
+    font-size: 20px;
     display: flex;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 24px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 16px;
+    }
     @media screen and (max-width: 768px){
         text-align: center;
         width: 95%;
@@ -271,6 +277,7 @@ const InnerGrid = styled.div`
     width: 100%;
     height: 40%;
     display: flex;
+    transform: translate(-5%, -10%);
 `;
 
 const Column = styled.ol`
@@ -288,16 +295,17 @@ const Column = styled.ol`
 `;
 
 const Item = styled.li`
-    width: 85%;
+    width: 95%;
     height: 33%;
     color: white;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
     text-align: right;
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 25px;
     span{
         margin: 0 8px;
-        font-size: 20px;
+        font-size: 18px;
         @media screen and (max-width: 768px){
         font-size: 14px;
         }
@@ -340,7 +348,7 @@ const Second = styled.div`
     width: 50%;
     background-image: url(${Lips});
     background-repeat: no-repeat;
-    background-size: (70px, auto);
+    background-size: (50px, auto);
     background-position: center left;
     @media screen and (max-width: 768px){
         transform: scale(0.7) translate(-20%, 0);
@@ -432,12 +440,13 @@ const ESGLips = () => {
                         <InnerGrid>
                             <Column>
                                 <Item><t>أكثر من</t><span>10000</span><t>مستخدم جديد في الشهر الأول</t></Item>
-                                <Item><t>الفائز بجائزة دمج</t><span>LGBTQ+</span><t>في التكنولوجيا</t></Item>
+                                <Item>دعم المجتمعات المهمشة تاريخياً</Item>
                                 <Item>ظهرت في ماشابل ، ديلي بيست ، فوربس ، هافينغتون بوست</Item>
                             </Column>
                             <Column>
+                                
+                                <Item><t>الفائز بجائزة دمج</t><span>LGBTQ+</span><t>في التكنولوجيا</t></Item>
                                 <Item>تطبيق شامل للأصوات المهمشة</Item>
-                                <Item>دعم المجتمعات المهمشة تاريخياً</Item>
                                 <Item>كسب الدخل / الإيرادات للمشاركة</Item>
                             </Column>
                         </InnerGrid>
@@ -453,10 +462,10 @@ const ESGLips = () => {
                 </Row>
                 </ColumnLeft>
                 <ColumnRight>
-                    <GridTitle>Social Case Study: Lips</GridTitle>
+                    <GridTitle><p><t>دراسة الحالة الاجتماعية: الشفاه</t></p></GridTitle>
                     <Articles>
-                    <Article>Lips is a recent addition to the Telos ecosystem with a powerful and timely social mission. Lips partnered with Telos after an exhaustive search of blockchain networks that could eliminate the risk of deplatforming.</Article>
-                    <Article>The platform is reshaping the social media landscape in a way that empowers women, non-binary folks, and the LGBTQIA+ community. The creators of this platform set out to create an environment which combats the censorship, harassment and plagiarism that these marginalized communities face on major social media platforms. The platform also gathers data surrounding important social topics which can be integrated into other platforms, creating a more inclusive internet across the board. </Article>
+                    <Article><p><t>ليبس هي إضافة حديثة إلى نظام تيلوس البيئي مع مهمة اجتماعية قوية وفي الوقت المناسب. دخلت</t><span>Lips</span><t>في شراكة مع تيلوس بعد بحث شامل عن شبكات بلوكشين التي يمكن أن تقضي على مخاطر نزع النظام الأساسي.</t></p></Article>
+                    <Article><p><t>تعمل المنصة على إعادة تشكيل مشهد وسائل التواصل الاجتماعي بطريقة تمكّن النساء والأشخاص غير الثنائيين ومجتمع</t><span>LGBTQIA +.</span><t>شرع مبتكرو هذه المنصة في خلق بيئة تكافح الرقابة والمضايقات والانتحال الأدبي الذي تواجهه هذه المجتمعات المهمشة على منصات التواصل الاجتماعي الرئيسية. تجمع المنصة أيضًا البيانات المحيطة بالمواضيع الاجتماعية المهمة والتي يمكن دمجها في الأنظمة الأساسية الأخرى ، مما يؤدي إلى إنشاء المزيد بما في ذلك الإنترنت في جميع المجالات.</t></p> </Article>
                     </Articles>  
                     <Video><VideoOne /></Video> 
                 </ColumnRight>

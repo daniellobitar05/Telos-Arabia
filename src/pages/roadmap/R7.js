@@ -123,8 +123,8 @@ const Title = styled(motion.div)`
 
 
 const Article = styled(motion.div)`
-    width: 70vw;
-    font-size: 24px;
+    width: 80vw;
+    font-size: 26px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -136,7 +136,7 @@ const Article = styled(motion.div)`
     line-height: 35px;
     span{
         margin: 0 8px;
-        font-size: 20px;
+        font-size: 22px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 5px;

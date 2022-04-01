@@ -756,7 +756,7 @@ const DropDownMenu = () => {
         <CSSTransition in={activeMenu === 'evm-native'} unmountOnExit timeout={500} classNames="menu-secondary">
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='main'></DropDownItem>
-            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="evm"><strong>EVM  </strong><t>منصة</t></DropDownItem>
+            <DropDownItem leftIcon={<KeyboardArrowLeftIcon />} rightIcon={<Image src={EVM} alt="" style={{height: '23px', width: '23px', paddingRight: '1px'}}/>} goToMenu="evm"><strong>EVM  </strong><t>منصة</t></DropDownItem>
             <DropDownItem leftIcon={<KeyboardArrowLeftIcon/>} rightIcon={<Image src={TelosRoundLogo} alt="" style={{height: '23px', width: '23px', paddingRight: '4px'}}/>} goToMenu="native"><strong>Native  </strong><t>  منصة</t></DropDownItem>
             </Menu>
             </CSSTransition>
@@ -779,7 +779,7 @@ const DropDownMenu = () => {
             <Menu>
             <DropDownItem middleIcon={<KeyboardArrowRightIcon/>} goToMenu='evm-native'></DropDownItem>
             <LinkR to="/NativeEcosystem"><DropDownItem rightIcon={<EcoIcon/>}>النظام البيئي</DropDownItem></LinkR>
-            <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>WEB WALLET</DropDownItem></a>
+            <a href="https://wallet.telos.net/balance" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<Wallet/>}>محفظة تيلوس</DropDownItem></a>
             <a href="https://telos.eosauthority.com/" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMExplorer/>}>ألمنصة</DropDownItem></a>
             <a href="https://dapp.ptokens.io/swap?asset=btc&from=btc&to=eth" target="_blank" rel="noreferrer"><DropDownItem rightIcon={<EVMBridge/>}>تحاويل خارجية</DropDownItem></a>
             <LinkRS to="/#getstarted" smooth={true} duration={1000} spy={true} exact="true"><DropDownItem rightIcon={<GetStarted/>}>البدء</DropDownItem></LinkRS>

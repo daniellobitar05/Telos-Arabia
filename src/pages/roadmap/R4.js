@@ -122,21 +122,49 @@ const Title = styled(motion.div)`
 `;
 
 
-const Article = styled(motion.div)`
-    width: 70vw;
-    font-size: 24px;
+const BigArticle = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 20px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 30px;
+    line-height: 35px;
+    height: 35vh;
     direction: rtl;
     span{
         margin: 0 8px;
+        font-size: 22px;
+        @media screen and (max-width: 768px){
         font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        line-height: 30px;
+        padding: 0;
+    }
+`;
+
+const Article = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
+    height: 15vh;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 22px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -146,7 +174,7 @@ const Article = styled(motion.div)`
         color: aqua;
         text-decoration: none;
         margin: 0 10px;
-        font-size: 20px;
+        font-size: 22px;
         @media screen and (max-width: 768px){
         font-size: 18px;
         }
@@ -214,7 +242,7 @@ const R1 = () => {
             
            <Grid>
                 <Title animate={animation}><span>dStor</span></Title>
-                <Article animate={animationTwo}><p><span>dStor</span> هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة <span>GoodBlock Technologies.</span> كأحد أعمدة الويب 3.0 ، يبسط <span>dStor</span> استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة <span>dStor</span> على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول <span>NFT</span> الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</p></Article>
+                <BigArticle animate={animationTwo}><p><span>dStor</span> هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة <span>GoodBlock Technologies.</span> كأحد أعمدة الويب 3.0 ، يبسط <span>dStor</span> استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة <span>dStor</span> على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول <span>NFT</span> الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</p></BigArticle>
                 <Title animate={animation}><span>Telos Web Wallet 2.0</span></Title>
                 <Article  animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
                

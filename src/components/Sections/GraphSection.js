@@ -54,7 +54,8 @@ const LeftTitle = styled(motion.div)`
     direction: rtl;
     z-index: 100;
     @media screen and (max-width: 768px){
-        font-size: 18px;
+        font-size: 24px;
+        width: 80%;
     }
 `;
 
@@ -65,11 +66,14 @@ const ImageWrapper = styled.div`
         width: 100%;
         z-index: 0;
         transform: translate(20%, -40%);
+        @media screen and (max-width: 768px){
+            transform: translate(0%, -30%);
+        }
     }
 
 `;
 
-const Columns = styled.div`v
+const Columns = styled.div`
     width: 100%;
     height: 90vh;
     @media screen and (max-width: 768px){
@@ -119,7 +123,7 @@ const GraphWrapper = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
-    
+    z-index: 100;
 `;
 
 const PositionRow = styled.div`
@@ -368,7 +372,7 @@ const GraphSection = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: 0, scale: 1, x: '-5vw',
+                opacity: 1, y: 0, scale: 1,
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -376,7 +380,7 @@ const GraphSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '100px', scale: 0.6, x: '-5vw',
+                opacity: 0, y: '100px', scale: 0.6,
             })
         }
         

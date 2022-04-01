@@ -24,7 +24,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 240vh;
+        height: 260vh;
     }
 `;
 
@@ -66,7 +66,7 @@ const Wrapper = styled.div`
     height: 65vh;
     @media screen and (max-width: 768px){
         
-        height: 180vh;
+        height: 200vh;
     }
 `;
 
@@ -80,7 +80,7 @@ const ColumnLeft = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 105vh;
+        height: 125vh;
         justify-content: center;
         align-items: center;
         

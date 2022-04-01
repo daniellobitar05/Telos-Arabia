@@ -47,9 +47,9 @@ const Title = styled(motion.div)`
     direction: rtl;
     z-index: 10;
     @media screen and (max-width: 768px) {
-        font-size: 42px;
-        height: 20vh;
-        line-height: 50px;
+        font-size: 36px;
+        height: 15vh;
+        line-height: 40px;
         
     }
     
@@ -81,7 +81,7 @@ const Subtitle = styled(motion.div)`
     
     @media screen and (max-width: 768px) {
         font-size: 24px;
-        height: 50vh;
+        height: 55vh;
         line-height: 30px;
         flex-direction: column;
         justify-content: center;
@@ -113,6 +113,7 @@ const IconColumn = styled.div`
     background: transparent;
     @media screen and (max-width: 768px) {
         height: 10vh;
+        transform: translate(0, -50%);
     }
 `;
 

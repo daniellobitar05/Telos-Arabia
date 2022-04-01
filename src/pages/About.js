@@ -80,8 +80,8 @@ const Subtitle = styled(motion.div)`
     z-index: 10;
     
     @media screen and (max-width: 768px) {
-        font-size: 24px;
-        height: 55vh;
+        font-size: 20px;
+        height: 45vh;
         line-height: 30px;
         flex-direction: column;
         justify-content: center;
@@ -113,7 +113,7 @@ const IconColumn = styled.div`
     background: transparent;
     @media screen and (max-width: 768px) {
         height: 10vh;
-        transform: translate(0, -50%);
+        
     }
 `;
 

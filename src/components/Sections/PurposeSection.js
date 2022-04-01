@@ -66,7 +66,7 @@ const Wrapper = styled.div`
     height: 65vh;
     @media screen and (max-width: 768px){
         
-        height: 200vh;
+        height: 220vh;
     }
 `;
 
@@ -138,7 +138,7 @@ const BoxTitleRight = styled.div`
     line-height: 35px;
     @media screen and (max-width: 768px){
         font-size: 24px;
-        height: 10vh;
+        height: 30vh;
         
     }
     

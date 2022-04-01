@@ -100,7 +100,7 @@ const ColumnRight = styled(motion.div)`
     @media screen and (max-width: 768px){
         float: none;
         width: 100%;
-        height: 75vh;
+        height: 95vh;
         
     }
     

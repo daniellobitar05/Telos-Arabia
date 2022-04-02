@@ -20,7 +20,7 @@ const Section = styled.div`
     justify-content: center;
     width: 100%;
     background: ${props => props.theme.back2};
-    height: 150vh;
+    height: 180vh;
 `;
 
 const HeaderText = styled(motion.div)`
@@ -52,8 +52,8 @@ const TextContainer = styled.div`
     grid-template-rows: 1fr 1fr;
     padding: 10px;
     @media screen and (max-width: 768px){
-        width: 95%;
-        height: 120vh;
+        width: 90%;
+        height: 140vh;
     }
     @media screen and (max-width: 660px){
         grid-template-columns: 1fr 1fr;

@@ -87,6 +87,7 @@ const ColumnSubTitle = styled(motion.div)`
     h1{
         font-size: 32px;
         color: white;
+        
     }
 `;
 
@@ -158,10 +159,16 @@ const InnerTitle = styled(motion.div)`
     span{
         margin: 0 8px;
         font-size: 28px;
+        @media screen and (max-width: 768px){
+            font-size: 20px;
+        }
     }
     h1{
         font-size: 32px;
         color: white;
+        @media screen and (max-width: 768px){
+            font-size: 24px;
+        }
     }
 `;
 
@@ -176,10 +183,16 @@ const InnerArticle = styled(motion.div)`
     span{
         margin: 0 8px;
         font-size: 24px;
+        @media screen and (max-width: 768px){
+            font-size: 18px;
+        }
     }
     h1{
         font-size: 28px;
         color: white;
+        @media screen and (max-width: 768px){
+            font-size: 22px;
+        }
     }
     a{
         color: aqua;
@@ -442,7 +455,7 @@ const StartedSection = () => {
                     }} href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer">
                     <img src={DEX} alt="cex" />
                     </Icon>
-                    <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} animate={animationTwo}>أرسل من محقظة<span>DEX</span></InnerSubtititle></a>
+                    <a href="https://help.telos.net/en_US/getting-started/how-to-bridge-tlos-between-different-blockchains" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} >أرسل من محقظة<span>DEX</span></InnerSubtititle></a>
                     </IconColumn>
                     <IconColumn>
                     <Icon whileHover={{
@@ -452,7 +465,7 @@ const StartedSection = () => {
                     }} href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer">
                     <img src={CEX} alt="dex" />
                     </Icon>
-                    <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} animate={animationTwo}>رسل من محقظة<span>CEX</span></InnerSubtititle></a>
+                    <a href="https://help.telos.net/en_US/getting-started/how-to-buy-tlos" target="_blank" rel="noreferrer"><InnerSubtititle style={{width: '100%'}} >رسل من محقظة<span>CEX</span></InnerSubtititle></a>
                     </IconColumn>
                 </IconHolder >
                 <InnerArticle></InnerArticle>

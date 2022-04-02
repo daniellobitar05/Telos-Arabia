@@ -182,7 +182,7 @@ const About = () => {
             </Empty>
         </Section>
         <PurposeSection />
-        <ChartSection />
+        {/* <ChartSection />
         <FeaturesSection />
         <GraphSection />
         <UtilitySection />
@@ -190,7 +190,7 @@ const About = () => {
         <UtilitySectionThree />
         <UtilisedSection />
         <ConclusionSection />
-        <Footer />
+        <Footer /> */}
         </ThemeProvider>
     );
 }

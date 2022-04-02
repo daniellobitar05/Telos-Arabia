@@ -20,17 +20,21 @@ const Section = styled.div`
     justify-content: center;
     width: 100%;
     background: ${props => props.theme.back2};
-    height: 140vh;
+    height: 150vh;
 `;
 
 const HeaderText = styled(motion.div)`
     font-size: 100px;
     color: ${props => props.theme.text};
-    padding: 80px 50px;
+    height: 30vh;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 660px){
         font-size: 58px;
+        height: 40vh;
     }
 `;
 
@@ -46,10 +50,10 @@ const TextContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     grid-template-rows: 1fr 1fr;
-    margin-bottom: 50px;
+    
     @media screen and (max-width: 768px){
         width: 95%;
-        height: 700px;
+        height: 120vh;
         
     }
     @media screen and (max-width: 660px){
@@ -137,7 +141,7 @@ const GroundSection = () => {
         }
         if(!inView){
             animationTwo.start({
-                opacity: 0, y: '40px',
+                opacity: 0, y: '100px',
             })
         }
         

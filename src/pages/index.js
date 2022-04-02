@@ -25,7 +25,7 @@ const Home = (props) => {
         <HeroSection />
          <GroundSection />
         <Protocol />
-        <GetStartedSection />
+        <GetStartedSection /> 
         {/*<OutpacingSection /> */}
         <Footer />
         

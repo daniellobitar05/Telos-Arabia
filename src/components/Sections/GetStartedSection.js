@@ -26,6 +26,7 @@ const Section = styled.div`
         align-items: center;
         justify-content: center;
         height: 490vh;
+        
     }
 `;
 
@@ -40,7 +41,7 @@ const ColumnLeft = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    border: 2px solid white;
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;

@@ -131,7 +131,7 @@ const Anim = styled.div`
     background-size: contain, 650px auto;
     @media screen and (max-width: 768px){
         height: 90vh;
-        
+        background-size: contain, 300px auto;
     }
     
 `;

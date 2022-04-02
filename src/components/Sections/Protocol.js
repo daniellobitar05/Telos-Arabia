@@ -8,11 +8,11 @@ import SOLID from "../SVG/solidity.svg";
 
 const Section = styled.div`
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     background: ${props => props.theme.back3};
     @media screen and (max-width: 768px){
        
-        height: 160vh;
+        height: 180vh;
     }
 
 `;
@@ -22,7 +22,7 @@ const Title = styled(motion.div)`
     color: white;
     font-size: 80px;
     display: flex;
-    padding-top: 80px;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -31,91 +31,145 @@ const Title = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 42px;
         height: 40vh;
-        padding-top: 20px;
-    }
-`;
-
-const EmptyColumn = styled.div`
-    width: 10%;
-    height: 70vh;
-    
-    float: left;
-    @media screen and (max-width: 768px){
-        display: none;
-    }
-`;
-
-const ColumnLeft = styled.div`
-    width: 40%;
-    height: 70vh;
-    
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @media screen and (max-width: 768px){
-        float: none;
-        width: 100%;
-        height: 50vh;
-    }
-`;
-
-const ColumnRight = styled.div`
-    width: 40%;
-    height: 70vh;
-    
-    float: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @media screen and (max-width: 768px){
-        float: none;
-        width: 100%;
-        height: 70vh;
-    }
-`;
-
-const ColumnTitle = styled(motion.div)`
-    font-size: 48px;
-    padding-bottom: 40px;
-    color: ${props => props.theme.text};
-    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    
-    @media screen and (max-width: 768px){
-        font-size: 42px;
         
     }
+`;
+
+const Wrapper = styled.div`
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 140vh;
+    }
+`;
+
+
+
+const ColumnLeft = styled(motion.div)`
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid purple;
+    @media screen and (max-width: 768px){
+        width: 90%;
+        height: 68vh;
+    }
+
+    img{
+        transform: scale(1.2) translate(0, 20%);
+    }
+`;
+
+const ColumnRight = styled(motion.div)`
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid purple;
+    @media screen and (max-width: 768px){
+        
+        width: 90%;
+        height: 68vh;
+    }
+`;
+
+const ColumnTitle = styled.div`
+    font-size: 48px;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${props => props.theme.text};
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    span{
+        margin: 0 8px;
+        font-size: 44px;
+    }
+    @media screen and (max-width: 768px){
+        font-size: 42px;
+    }
+
     
 `;
 
-const Image = styled(motion.img)`
-    padding-bottom: 30px;   
+const Image = styled.div`
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 20%;
+    }
 
+`;
+
+const ImageHolder = styled.div`
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        @media screen and (max-width: 768px){
+        width: 80%;
+        }
+    }
 `;
 
 const BigTitle = styled(motion.div)`
-    font-size: 24px;
+    font-size: 32px;
     color: ${props => props.theme.text};
-    padding-bottom: 30px;
+    height: 10%;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px){
+        height: 20%;
+    }
     span{
-        font-weight: bold;
+        margin: 0 8px;
+        font-size: 28px;
         
     }
 `;
 
 const Description = styled(motion.div)`
-    font-size: 24px;
+    font-size: 26px;
     color: ${props => props.theme.text};
-    padding: 0 50px;
+    height: 40%;
+    width: 80%;
     text-align: center;
     line-height: 30px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        margin: 0 8px;
+        font-size: 22px;
+        @media screen and (max-width: 768px){
+        font-size: 18px;
+        }
+    }
     @media screen and (max-width: 768px){
-        padding: 0 40px;
+        width: 90%;
         font-size: 22px;
     }
 `;
@@ -184,23 +238,20 @@ const Protocol = () => {
     return(
         <Section ref={ref}>
             <Title animate={animationThree}>دعم بروتوكولي العقد الذكي الرائدين</Title>
-            <EmptyColumn></EmptyColumn>
-            <ColumnLeft>
-                <ColumnTitle animate={animationTwo}>تيلوس ناتيف</ColumnTitle>
-                <Image src={CPLUS} alt="" animate={animation} />
-                <BigTitle animate={animationTwo}>C++<span>ناتيف</span> </BigTitle>
-                <Description animate={animationTwo}>تدير تيلوس في الأصل تقنية العقد الذكي ++ C EOSIO المكدس اللامركزي الرائد للتطبيقات اللامركزية عالية الإنتاجية</Description>
+            <Wrapper>
+            <ColumnLeft animate={animationThree}>
+                <ColumnTitle >تيلوس ناتيف</ColumnTitle>
+                <Image><ImageHolder><img src={CPLUS} alt="icon1" /></ImageHolder></Image>
+                <BigTitle ><p><t>ناتيف</t><span>C++</span></p></BigTitle>
+                <Description ><p><t>تدير تيلوس في الأصل تقنية العقد الذكي</t><span>EOSIO ++C</span><t>المكدس اللامركزي الرائد للتطبيقات اللامركزية عالية الإنتاجية</t></p></Description>
             </ColumnLeft>
-            <ColumnRight>
-                <ColumnTitle animate={animationTwo}>EVM تيلوس </ColumnTitle>
-                <Image src={SOLID} alt=""  animate={animation} />
-                <BigTitle animate={animationTwo}><span>EVM</span> صلابة</BigTitle>
-                 <Description animate={animationTwo}>تيلوس هو أول بلوكشين متوافق مع EVM مبني على
-EOSIO .قم بنشر وتشغيل تطبيقات ايثيريوم باستخدام
-ًء وأماناً تيلوس EVM للحصول على DeFi الأكثر ادا
-المتاح اليوم</Description>
+            <ColumnRight animate={animationThree}>
+                <ColumnTitle ><p><t>تيلوس</t><span>EVM</span></p></ColumnTitle>
+                <Image><ImageHolder><img src={SOLID} alt="icon2" /></ImageHolder></Image>
+                <BigTitle ><p><t>تيلوس</t><span>EVM</span></p></BigTitle>
+                 <Description ><p><t>تيلوس هو أول بلوكشين متوافق مع</t><span>EVM</span><t>مبني على</t><span>EOSIO.</span><t>قم بنشر وتشغيل تطبيقات ايثيريوم باستخدام ًء وأماناً تيلوس</t><span>EVM</span><t>للحصول على</t><span>DeFi</span><t>الأكثر ادا المتاح اليوم</t></p></Description>
             </ColumnRight>
-            <EmptyColumn></EmptyColumn>
+            </Wrapper>
         </Section>
     );
 }

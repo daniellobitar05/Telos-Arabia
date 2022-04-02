@@ -182,10 +182,10 @@ const About = () => {
             </Empty>
         </Section>
         <PurposeSection />
-        {/* <ChartSection />
+        <ChartSection />
         <FeaturesSection />
         <GraphSection />
-        <UtilitySection />
+        {/* <UtilitySection />
         <UtilitySectionTwo />
         <UtilitySectionThree />
         <UtilisedSection />

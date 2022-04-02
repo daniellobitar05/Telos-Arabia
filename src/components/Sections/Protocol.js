@@ -12,7 +12,7 @@ const Section = styled.div`
     background: ${props => props.theme.back3};
     @media screen and (max-width: 768px){
        
-        height: 180vh;
+        height: 190vh;
     }
 
 `;
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
         flex-direction: column;
-        height: 140vh;
+        height: 150vh;
     }
 `;
 
@@ -78,7 +78,7 @@ const ColumnRight = styled(motion.div)`
     @media screen and (max-width: 768px){
         
         width: 90%;
-        height: 68vh;
+        height: 78vh;
     }
 `;
 
@@ -94,9 +94,12 @@ const ColumnTitle = styled.div`
     span{
         margin: 0 8px;
         font-size: 44px;
+        @media screen and (max-width: 768px){
+        font-size: 32px;
+        }
     }
     @media screen and (max-width: 768px){
-        font-size: 42px;
+        font-size: 36px;
     }
 
     
@@ -141,6 +144,7 @@ const BigTitle = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         height: 20%;
+        font-size: 26px;
     }
     span{
         margin: 0 8px;
@@ -171,6 +175,7 @@ const Description = styled(motion.div)`
     @media screen and (max-width: 768px){
         width: 90%;
         font-size: 22px;
+        line-height: 25px;
     }
 `;
 

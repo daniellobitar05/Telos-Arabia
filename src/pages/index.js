@@ -9,8 +9,8 @@ import TopSection from "../components/Sections/TopSection";
 import Protocol from "../components/Sections/Protocol";
 import GetStartedSection from "../components/Sections/GetStartedSection";
 import OutpacingSection from "../components/Sections/OutpacingSection";
-import GroundSection from "../components/Sections/GroundSection";
 import StartedSection from "../components/Sections/StartedSection";
+import NewGround from "../components/Sections/NewGround";
 import Footer from "../components/Sections/Footer";
 import { animationTwo, transitionTwo } from "../animations";
 
@@ -24,7 +24,8 @@ const Home = (props) => {
         <Header theme={theme} setTheme={setTheme} />
         {/* <TopSection /> */}
         <HeroSection />
-         <GroundSection />
+        <NewGround />
+        
         <Protocol />
         <StartedSection />
         {/* <GetStartedSection />  */}

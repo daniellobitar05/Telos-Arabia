@@ -50,11 +50,10 @@ const TextContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     grid-template-rows: 1fr 1fr;
-    
+    padding: 10px;
     @media screen and (max-width: 768px){
         width: 95%;
         height: 120vh;
-        
     }
     @media screen and (max-width: 660px){
         grid-template-columns: 1fr 1fr;
@@ -72,23 +71,46 @@ const Column = styled.div`
     
 `;
 
-const Image = styled(motion.img)`
-    width: 35%;
-
+const Image = styled.div`
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 660px){
-        width: 35%;
+        height: 30%;     
     }
+`;
 
+const ImageHolder = styled.div`
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 660px){
+        width: 50px;
+        height: 50px;     
+    }
+    img{
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        @media screen and (max-width: 660px){
+            
+        }
+    }
 `;
 
 const Title = styled(motion.h1)`
     font-size: 30px;
     color: aqua;
     text-align: center;
+    height: 25%;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
-    @media screen and (max-width: 660px){
+    @media screen and (max-width: 768px){
         font-size: 24px;
-        
+        height: 20%;
     }
 `;
 
@@ -96,11 +118,14 @@ const Subtitle = styled(motion.div)`
     font-size: 22px;
     color: white;
     text-align: center;
-    padding: 0 20px;
+    height: 40%;
+    width: 70%;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 660px){
         font-size: 18px;
         padding: 0px;
+        width: 95%;
+        height: 50%;
     }
 `;
 
@@ -152,7 +177,7 @@ const GroundSection = () => {
             <HeaderText animate={animation}>بلوكتشين تهد الارض</HeaderText>
             <TextContainer>
                 <Column>
-                    <Image src={NoFront} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                    <Image><ImageHolder><img src={NoFront} alt="nofront" style={{transform: 'scale(0.8)'}}/></ImageHolder></Image>
                     <Title animate={animationTwo}>
                          لا تشغيل أمامي  
                     </Title>
@@ -161,7 +186,7 @@ const GroundSection = () => {
                     </Subtitle>
                 </Column>
                 <Column>
-                        <Image src={NoGas} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                <Image><ImageHolder><img src={NoGas} alt="noGas" /></ImageHolder></Image>
                         <Title animate={animationTwo}>
                         بدون رسوم : 
                         </Title>
@@ -170,7 +195,7 @@ const GroundSection = () => {
                         </Subtitle>
                         </Column>
                         <Column>
-                        <Image src={Fast} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                        <Image><ImageHolder><img src={Fast} alt="Fast" /></ImageHolder></Image>
                         <Title animate={animationTwo}>
                         سريع وقابل للتحجيم
                         </Title>
@@ -179,7 +204,7 @@ const GroundSection = () => {
                         </Subtitle>
                         </Column>
                         <Column>
-                        <Image src={Comm} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                        <Image><ImageHolder><img src={Comm} alt="Comm" style={{transform: 'scale(0.8)'}}/></ImageHolder></Image>
                         <Title animate={animationTwo}>
                         حكم المجتمع
                         </Title>
@@ -188,7 +213,7 @@ const GroundSection = () => {
                         </Subtitle>
                         </Column>
                         <Column>
-                        <Image src={Eco} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                        <Image><ImageHolder><img src={Eco} alt="Eco" /></ImageHolder></Image>
                         <Title animate={animationTwo}>
                         صديقة للبيئة
                         </Title>
@@ -197,7 +222,7 @@ const GroundSection = () => {
                         </Subtitle>
                         </Column>
                         <Column>
-                        <Image src={Decent} alt="" animate={animationTwo} whileHover={{scale: 1.1}}/>
+                        <Image><ImageHolder><img src={Decent} alt="Decent" /></ImageHolder></Image>
                         <Title animate={animationTwo}>
                         لامركزية
                         </Title>

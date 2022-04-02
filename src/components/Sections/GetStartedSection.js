@@ -16,8 +16,8 @@ import Tick from "../SVG/tick.svg"
 
 const Section = styled.div`
     width: 100%;
-    height: 270vh;
-    
+    height: 290vh;
+    background: ${props => props.theme.back4};
     display: flex;
     
     overflow: hidden;
@@ -35,13 +35,9 @@ const Section = styled.div`
 const ColumnLeft = styled.div`
     width: 40%;
     height: 100%;
-    float: left;
-    align-self: center;
-    background: ${props => props.theme.back4};
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid white;
     @media screen and (max-width: 660px){
         float: none;
         width: 100%;
@@ -52,9 +48,8 @@ const ColumnLeft = styled.div`
 const ColumnRight = styled.div`
     width: 40%;
     height: 100%;
-    float: left;
-    align-self: center;
-    background: ${props => props.theme.back4};
+    
+    
     display: flex;
     flex-direction: column;
     align-items: center;

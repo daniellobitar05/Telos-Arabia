@@ -22,6 +22,9 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const HeaderText = styled(motion.div)`
@@ -43,7 +46,7 @@ const HeaderText = styled(motion.div)`
     }
 `;
 
-const Column = styled(motion.div)`
+const Column = styled.div`
     width: 80%;
     height: 50vh;
     display: flex;
@@ -51,6 +54,9 @@ const Column = styled(motion.div)`
     justify-content: center;
     align-items: center;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    @media screen and (max-width: 768px) {
+        
+    }
 `;
 
 const Row = styled.div`

@@ -185,11 +185,11 @@ const About = () => {
         <ChartSection />
         <FeaturesSection />
         <GraphSection />
-        {/* <UtilitySection />
+        <UtilitySection />
         <UtilitySectionTwo />
         <UtilitySectionThree />
         <UtilisedSection />
-        <ConclusionSection />
+        {/*<ConclusionSection />
         <Footer /> */}
         </ThemeProvider>
     );

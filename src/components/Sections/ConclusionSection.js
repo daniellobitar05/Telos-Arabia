@@ -20,7 +20,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;;
+        height: 290vh;;
     }
 `;
 
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 280vh;
     }
 `;
 
@@ -46,9 +46,9 @@ const Article = styled(motion.div)`
     align-items: center;
     text-align: right;
     direction: rtl;
-    
     @media screen and (max-width: 768px){
-        height: 20vh;
+        height: 40vh;
+        font-size: 22px;
         line-height: 25px;
     }
     
@@ -71,8 +71,9 @@ const BigArticle = styled(motion.div)`
     text-align: right;
     direction: rtl;
     @media screen and (max-width: 768px){
-        height: 40vh;
+        height: 60vh;
         line-height: 25px;
+        font-size: 22px;
     }
     span{
         margin: 0 8px;
@@ -101,7 +102,7 @@ const Title = styled(motion.div)`
         margin: 0 8px;
     }
     @media screen and (max-width: 768px){
-        height: 20vh;;
+        height: 20vh;
     }
 `;
 

@@ -21,7 +21,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+        height: 160vh;
     }
 `;
 
@@ -35,8 +35,9 @@ const PageTitle = styled(motion.div)`
     justify-content: center;
     text-align: right;
     @media screen and (max-width: 768px) {
-        
-        height: 15vh;
+        line-height: 50px;
+        width: 90%;
+        height: 35vh;
     }
     
 `;
@@ -52,8 +53,12 @@ const Subtitle = styled(motion.div)`
     text-align: right;
     direction: rtl;
     @media screen and (max-width: 768px) {
-        font-size: 18px;
-        height: 20vh;
+        font-size: 20px;
+        line-height: 30px;
+        height: 50vh;
+    }
+    span{
+        margin: 0 8px;
     }
     a{
         color: aqua;
@@ -68,7 +73,9 @@ const RowWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     @media screen and (max-width: 768px) {
-        height: 55vh;
+        height: 65vh;
+        width: 95%;
+        justify-content: center;
     }
 `;
 
@@ -79,7 +86,8 @@ const Row = styled(motion.div)`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px) {
-        height: 27.50vh;
+        height: 40%;
+        justify-content: center;
     }
     
 `;
@@ -100,15 +108,21 @@ const InnerRow = styled.div`
     justify-content: center;
     direction: rtl;
     text-align: center;
+    
     h1{
         font-size: 24px;
         color: white;
         @media screen and (max-width: 768px) {
-        font-size: 18px;
+        font-size: 16px;
+        
+        line-height: 15px;
         }
     }
     span{
         font-size: 20px;
+        @media screen and (max-width: 768px) {
+        font-size: 16px;
+        }
     }
 `;
 

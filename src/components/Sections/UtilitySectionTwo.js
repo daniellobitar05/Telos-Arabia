@@ -22,7 +22,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 160vh; 
+        height: 210vh; 
     }
 `;
 
@@ -53,15 +53,20 @@ const ArticleUp = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
     direction: rtl;
     z-index: 10;
     span{
         margin: 0 8px;
+        @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
     }
     @media screen and (max-width: 768px) {
-        font-size: 16px;
+        font-size: 20px;
+        height: 30vh;
     }
     a{
         color: aqua;
@@ -76,7 +81,8 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
     direction: rtl;
     z-index: 10;
@@ -87,7 +93,7 @@ const Article = styled(motion.div)`
     @media screen and (max-width: 768px) {
         font-size: 20px;
         line-height: 30px;
-        height: 50vh;
+        height: 60vh;
     }
     a{
         color: aqua;
@@ -104,22 +110,25 @@ const List = styled.ul`
     transform: translate(25%, 0);
     height: 17.5vh;
     @media screen and (max-width: 768px) {
-        height: 22.5vh;
-        transform: translate(10%, -10%);
+        height: 25vh;
+        transform: translate(0%, 0%);
+        li{
+            transform: translate(10%, 0);
+        }
     }
 `;
 
 const ListBottom = styled.ul`
     list-style-type: circle;
     list-style-position: outside;
-    transform: translate(25%, 25%);
+    
     display: flex;
     flex-direction: column;
     z-index: 100;
     height: 17.5vh;
     @media screen and (max-width: 768px) {
-        height: 17.5vh;
-        transform: translate(0%, 0);
+        height: 25vh;
+        
         align-items: center;
         justify-content: center;
     }
@@ -139,14 +148,7 @@ const ListItem = styled.li`
     }
 `;
 
-const ListItemBottom = styled.li`
-    height: 33%;
-    color: white;
-    font-size: 20px;
-    direction: rtl;
-    text-align: right;
-    z-index: 100;
-`;
+
 
 const InnerTitle = styled.div`
     width: 100%;
@@ -156,10 +158,16 @@ const InnerTitle = styled.div`
     font-size: 28px;
     font-weight: bold;
     direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media screen and (max-width: 768px) {
-        height: 15vh;
-        transform: translate(-10%, 0);
-        
+        height: 20vh;
+        transform: translate(0%, 0%);
+        font-size: 24px;
+        width: 80%;
+        text-align: center;
+        margin: 0 10%;
     }
 `;
 

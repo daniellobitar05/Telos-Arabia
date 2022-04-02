@@ -189,8 +189,8 @@ const About = () => {
         <UtilitySectionTwo />
         <UtilitySectionThree />
         <UtilisedSection />
-        {/* <ConclusionSection />
-        <Footer /> */}
+        <ConclusionSection />
+        <Footer />
         </ThemeProvider>
     );
 }

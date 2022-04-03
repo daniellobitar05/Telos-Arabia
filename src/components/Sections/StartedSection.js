@@ -15,7 +15,7 @@ import {Button} from "@mui/material";
 
 const Section = styled.div`
     width: 100vw;
-    height: 280vh;
+    height: 300vh;
     display: flex;
     align-items: center;
     background: ${props => props.theme.back4};
@@ -24,6 +24,12 @@ const Section = styled.div`
         height: 560vh;
     }
     
+`;
+
+const EmptyRow = styled.div`
+    width: 100%;
+    height: 20vh;
+    background: rgba(41,12,98,1);
 `;
 
 const EmptyColumn = styled.div`
@@ -426,6 +432,8 @@ const StartedSection = () => {
     }, [inView])
 
     return(
+        <>
+        <EmptyRow />
         <Section id="getstarted">
             <EmptyColumn />
             <ColumnLeft>
@@ -534,6 +542,7 @@ const StartedSection = () => {
             </ColumnRight>
             <EmptyColumn />
         </Section>
+        </>
     )
 }
 

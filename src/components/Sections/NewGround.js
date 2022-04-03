@@ -19,10 +19,16 @@ const Section = styled.div`
     align-items: center;
     width: 100vw;
     background: ${props => props.theme.back2};
-    height: 100vh;
+    height: 130vh;
     @media screen and (max-width: 768px){
         height: 290vh;
     }
+`;
+
+const Empty = styled.div`
+    width: 100%;
+    height: 30vh;
+    background: rgba(30,20,136,1);
 `;
 
 const HeaderText = styled(motion.div)`
@@ -186,6 +192,8 @@ const NewGround = () => {
     }, [inView])
 
     return(
+        <>
+        <Empty />
         <Section ref={ref} id="ground">
             <HeaderText animate={animationTwo}>بلوكتشين تهد الارض</HeaderText>
             <Grid>
@@ -237,6 +245,7 @@ const NewGround = () => {
                 </Row>
             </Grid>
         </Section>
+        </>
     )
 }
 

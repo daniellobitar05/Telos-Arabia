@@ -9,6 +9,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import Back from "../../components/images/rou10.png";
+
 
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -98,7 +100,7 @@ const Grid = styled.div`
 
 
 const Title = styled(motion.div)`
-    height: 15vh;
+    height: 12.5vh;
     width: 90%;
     font-size: 48px;
     color: white;
@@ -190,6 +192,23 @@ const ArticleTop = styled(motion.div)`
     }
 `;
 
+const Image = styled.div`
+    width: 100%;
+    height: 5vh;
+    img{
+        transform: translate(10%, -75%) scale(0.65);
+        z-index: 1;
+        @media screen and (max-width: 768px){
+            transform: translate(0%, 4%) scale(0.3);
+        }
+    }
+    @media screen and (max-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
+
 
 
 const R1 = () => {
@@ -245,6 +264,7 @@ const R1 = () => {
            <Grid>
                 <Title animate={animation}><span>Telos EVM</span></Title>
                 <ArticleTop  animate={animationTwo}><p><t>كان إطلاق</t><span>Telos EVM</span><t>أحد أهم الإنجازات لنظام</t><span>Telos</span><t>البيئي منذ إطلاق شبكته الرئيسية. أطلقت</t><span>Telos</span><t>جهازًا ظاهريًا من الطبقة الأولى من</t><span>Ethereum</span><t>بدون تشغيل أمامي ، ورسوم الغاز المسطحة ، وكفاءة الطاقة ، والسرعة القصوى والقوة! مع بدء نشر التطبيقات ، يستمر التطوير في ضمان الإعداد السلس مع تكافؤ الميزات.</t></p><p><t>يمكنك قراءة المزيد عن</t><span>Telos EVM</span><a href="http://teloscan.io/" target="_blank" rel="noreferrer">في وثائقنا هنا.</a></p></ArticleTop>
+                <Image><img src={Back} alt="" /></Image>
                 <Title animate={animation}><p><t>تحديد تطبيق</t><span>Voter Mobile</span></p></Title>
                 <Article  animate={animationTwo}><p><t>يتيح تطبيق</t><span>Decide Voter</span><t>للجوال من</t><span>GoodBlock Technologies</span><t>استخدام محرك</t><span>Telos Decide</span><t> في العالم الحقيقي. متوفر على</t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer"> Google Play</a><t> و </t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer">Apple Store</a><t> ، هذا التطبيق البديهي يجعل الإدارة اللامركزية الشفافة والفعالة في متناول الجميع</t></p></Article>
            </Grid>

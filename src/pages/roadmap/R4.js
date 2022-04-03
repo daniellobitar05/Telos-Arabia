@@ -9,6 +9,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
+import Back from "../../components/images/pyr14.png";
+
 
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
@@ -98,7 +100,7 @@ const Grid = styled.div`
 
 
 const Title = styled(motion.div)`
-    height: 20vh;
+    height: 17.5vh;
     width: 80%;
     font-size: 48px;
     color: white;
@@ -106,6 +108,7 @@ const Title = styled(motion.div)`
     align-items: center;
     direction: rtl;
     text-align: right;
+    z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     transform: translate(0, 20%);
     span{
@@ -134,6 +137,7 @@ const BigArticle = styled(motion.div)`
     line-height: 35px;
     height: 35vh;
     direction: rtl;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -163,6 +167,7 @@ const Article = styled(motion.div)`
     line-height: 35px;
     height: 15vh;
     direction: rtl;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -189,7 +194,22 @@ const Article = styled(motion.div)`
     }
 `;
 
-
+const Image = styled.div`
+    width: 100%;
+    height: 5vh;
+    img{
+        transform: translate(-10%, -40%) scale(0.65);
+        z-index: 1;
+        @media screen and (max-width: 768px){
+            transform: translate(0%, 4%) scale(0.3);
+        }
+    }
+    @media screen and (max-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
 
 
 const R1 = () => {
@@ -245,6 +265,7 @@ const R1 = () => {
            <Grid>
                 <Title animate={animation}><span>dStor</span></Title>
                 <BigArticle animate={animationTwo}><p><span>dStor</span> هي خدمة تخزين بيانات لامركزية تتمتع بمستويات عالية من المرونة والأمان يتم تطويرها حاليًا بواسطة <span>GoodBlock Technologies.</span> كأحد أعمدة الويب 3.0 ، يبسط <span>dStor</span> استخدام التخزين السحابي اللامركزي من خلال السماح للمدفوعات الورقية وإدارة البيانات عبر الشبكة لزيادة السرعة والتكرار دون الحاجة إلى إدارة العملاء ، كما تفعل منصات التخزين اللامركزية الأخرى. بفضل قدرة <span>dStor</span> على إيجاد عقد تخزين عالية الجودة داخل المنطقة الجغرافية للمستخدم ، تكون السرعة بنفس سرعة المنصات المركزية. يتيح ذلك فرصًا رائدة لصناعة التشفير بما في ذلك الألعاب اللامركزية القابلة للتطوير ، وأصول <span>NFT</span> الآمنة ، ووثائق الحوكمة غير القابلة للتلاعب ، والمزيد.</p></BigArticle>
+                <Image><img src={Back} alt="" /></Image>
                 <Title animate={animation}><span>Telos Web Wallet 2.0</span></Title>
                 <Article  animate={animationTwo}><p><t>قدم إصدار</t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer">Telos Web Wallet 2.0</a><t>واجهة سهلة للتنقل للمستخدمين لإدارة أصول التشفير المستندة إلى</t><span>Telos</span><t>في تطبيق حدسي. سيوفر التطوير المستمر مزيدًا من الوظائف وسهولة الاستخدام لحل محفظة الويب متعدد الإمكانات</t></p></Article>
                

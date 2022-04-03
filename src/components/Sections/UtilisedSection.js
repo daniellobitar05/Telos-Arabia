@@ -23,7 +23,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px) {
-        display: none;
+        height: 130vh;
     }
 `;
 
@@ -37,12 +37,19 @@ const HeaderText = styled(motion.div)`
     align-items: center;
     justify-content: center;
     direction: rtl;
+    @media screen and (max-width: 768px) {
+        font-size: 36px; 
+        line-height: 40px;
+    }
     span{
         margin: 0 10px;
     }
     a{
         color: aqua;
         text-decoration: none;
+        @media screen and (max-width: 768px) {
+        font-size: 32px; 
+    }
     }
 `;
 
@@ -55,7 +62,8 @@ const Column = styled.div`
     align-items: center;
     background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
     @media screen and (max-width: 768px) {
-        
+        width: 90%;
+        height: 80vh;
     }
 `;
 
@@ -63,6 +71,79 @@ const Row = styled.div`
     height: 10vh;
     width: 100%;
     display: inline-flex;
+    @media screen and (max-width: 768px) {
+       display: none;
+    }
+`;
+
+const TopRowSmartphone = styled.div`
+    height: 15vh;
+    width: 100%;
+    display: inline-flex;
+    @media screen and (min-width: 768px) {
+       display: none;
+    }
+`;
+
+const RowSmartphone = styled.div`
+    height: 10vh;
+    width: 100%;
+    display: inline-flex;
+    @media screen and (min-width: 768px) {
+       display: none;
+    }
+`;
+
+const Small = styled.div`
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-size: 28px;
+        color: white;
+    }
+    span{
+        margin: 0 3px;
+        color: white;
+    }
+    strong{
+        color: white;
+        font-size: 20px;
+    }
+`;
+
+
+const SmallTop = styled.div`
+    height: 100%;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Logo = styled.div`
+    width: 40px;
+    height: 40px;
+    img{
+        width: 100%;
+        display: block;
+        object-fit: contain;
+    }
+`;
+
+const SmartTextTop = styled.div`
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+        color: white;
+        font-size: 20px;
+    }
 `;
 
 const TopSmallItem = styled.div`
@@ -295,8 +376,48 @@ const UtilisedSection = () => {
                     <BigItem><Text className="utilcounter" data-target="32217207"> </Text></BigItem>
                     <SmallItem><span>$</span><Text className="utilcounter" data-target="0.014"> </Text><span>B</span></SmallItem>
                     <SmallItem><Text className="utilcounter" data-target="77843"> </Text></SmallItem>
-                    <TopSmallItem>متوسط</TopSmallItem>
+                    <TopSmallItem>قليل</TopSmallItem>
                 </Row>
+                <TopRowSmartphone>
+                    <SmallTop>
+                        <Logo><img src={EOS} alt="" /></Logo>
+                        <SmartTextTop><h1>EOS</h1></SmartTextTop>
+                    </SmallTop>
+                    <SmallTop>
+                        <Logo><img src={Telos} alt="" /></Logo>
+                        <SmartTextTop><h1>TLOS</h1></SmartTextTop>
+                    </SmallTop>
+                </TopRowSmartphone>
+                <RowSmartphone>
+                    <Small><Text className="utilcounter" data-target="61004936"> </Text></Small>
+                    <Small><Text className="utilcounter" data-target="3539683"> </Text></Small>
+                    <Small><h1>اسم</h1></Small>
+                </RowSmartphone>
+                <RowSmartphone>
+                    <Small><Text className="utilcounter" data-target="60036560"> </Text></Small>
+                    <Small><Text className="utilcounter" data-target="5600876"> </Text></Small>
+                    <Small><h1>معدل</h1></Small>
+                </RowSmartphone>
+                <RowSmartphone>
+                    <Small><Text className="utilcounter" data-target="74567958"> </Text></Small>
+                    <Small><Text className="utilcounter" data-target="32217207"> </Text></Small>
+                    <Small><h1>سجل</h1></Small>
+                </RowSmartphone>
+                <RowSmartphone>
+                    <Small><span>$</span><Text className="utilcounter" data-target="2.8"> </Text><span>B</span></Small>
+                    <Small><span>$</span><Text className="utilcounter" data-target="0.014"> </Text><span>B</span></Small>
+                    <Small><h1><strong>قيمة السوقية</strong></h1></Small>
+                </RowSmartphone>
+                <RowSmartphone>
+                    <Small><Text className="utilcounter" data-target="6541"></Text></Small>
+                    <Small><Text className="utilcounter" data-target="77843"> </Text></Small>
+                    <Small><h1><strong>AVI</strong></h1></Small>
+                </RowSmartphone>
+                <RowSmartphone>
+                    <Small><h1>متوسط</h1></Small>
+                    <Small><h1>قليل</h1></Small>
+                    <Small><h1><strong>UNI</strong></h1></Small>
+                </RowSmartphone>
             </Column>
             <Empty>
                 <IconColumnLeft to="conclusion" smooth={true} duration={1000} spy={true} exact="true">

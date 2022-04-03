@@ -1090,7 +1090,7 @@ const Header = (props) => {
             </NavMenu>
             <NavMenu>
                 <LearnIcon />
-                <Text>اكتشف</Text> 
+                <Text>تعلم</Text> 
                 <motion.div >
                 <Arrow onClick={switchLearnEnter}/>
                 </motion.div>

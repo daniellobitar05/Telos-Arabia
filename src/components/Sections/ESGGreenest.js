@@ -27,7 +27,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        
+        height: 180vh;
     }
 `;
 
@@ -102,7 +102,7 @@ const Grid = styled(motion.div)`
     justify-content: center;
     box-shadow: 6px 6px 20px limegreen;
     @media screen and (max-width: 768px){
-        display: none; 
+        height: 170vh;
     }
 `;
 
@@ -116,8 +116,15 @@ const GridTitle = styled.div`
     text-align: right;
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px){
+        font-size: 26px;
+        height: 10vh;
+    }
     span {
         margin: 0 8px;
+        @media screen and (max-width: 768px){
+            font-size: 20px;
+        }
     }
 `;
 
@@ -127,6 +134,28 @@ const GridWrapper = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+`;
+
+const GridWrapperSmart = styled.div`
+    width: 95%;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+`;
+
+const RowSmart = styled.div`
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
 `;
 
 const LeftColumn = styled.div`
@@ -155,6 +184,9 @@ const FirstRow = styled.div`
     width: 100%;
     height: 20vh;
     display: inline-flex;
+    @media screen and (min-width: 768px){
+        height: 15vh;
+    }
 
 `;
 
@@ -176,6 +208,9 @@ const RowItem = styled.div`
     color: white;
     font-size: 18px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 14px;
+    }
 `;
 
 const RowItemText = styled.div`
@@ -187,6 +222,10 @@ const RowItemText = styled.div`
     color: white;
     font-size: 22px;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    @media screen and (max-width: 768px){
+        font-size: 16px;
+        text-align: center;
+    }
 `;
 
 const IconHolder = styled.div`
@@ -196,7 +235,9 @@ const IconHolder = styled.div`
     justify-content: center;
     height: 100%;
     width: 25%;
-    
+    @media screen and (max-width: 768px){
+        height: 15vh;
+    }
 
 `;
 
@@ -329,7 +370,7 @@ const ESGGreenest = () => {
                 </LeftColumn>
                 <CenterColumn>
                     <FirstRow>
-                    <IconHolder>
+                        <IconHolder>
                             <Name>ETH 2.0</Name>
                             <Icon><img src={eth} alt="" /></Icon>
                         </IconHolder>
@@ -378,6 +419,105 @@ const ESGGreenest = () => {
                     </Row>
                 </SmallColumn>
             </GridWrapper>
+            <GridWrapperSmart>
+                <RowSmart>
+                    <FirstRow>
+                    <IconHolder>
+                        <Name>ETH 2.0</Name>
+                        <Icon><img src={eth} alt="" /></Icon>
+                    </IconHolder>
+                    <IconHolder>
+                        <Name>ETH</Name>
+                        <Icon><img src={eth} alt="" /></Icon>
+                    </IconHolder>
+                    <IconHolder>
+                        <Name>BTC</Name>
+                        <Icon><img src={btc} alt="" /></Icon>
+                    </IconHolder>
+                    </FirstRow>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.02"></RowItem>
+                        <RowItem className="greencounter" data-target="0.49"></RowItem>
+                        <RowItem className="greencounter" data-target="126"></RowItem> 
+                        <RowItemText>تيراواط ساعة / سنة</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="67640"></RowItem>
+                        <RowItem className="greencounter" data-target="135280911"></RowItem>
+                        <RowItem className="greencounter" data-target="4234777133"></RowItem>
+                        <RowItemText>كيلوواط ساعة / يوم</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.04"></RowItem>
+                        <RowItem className="greencounter" data-target="104"></RowItem>
+                        <RowItem className="greencounter" data-target="1547"></RowItem>
+                        <RowItemText>كيلوواط ساعة / معاملة</RowItemText>
+                    </Row>
+                </RowSmart>
+                <Row></Row>
+                <RowSmart>
+                    <FirstRow>
+                        <IconHolder style={{width: '33%'}}>
+                            <Name>XRP</Name>
+                            <Icon><img src={xrp} alt="" /></Icon>
+                        </IconHolder>
+                        <IconHolder style={{width: '33%'}}>
+                            <Name>TELOS</Name>
+                            <Icon><img src={telos} alt="" /></Icon>
+                        </IconHolder>
+                    </FirstRow>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.4"></RowItem>
+                        <RowItem className="greencounter" data-target="0.0004"></RowItem>
+                        <RowItemText>تيراواط ساعة / سنة</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="1023840"></RowItem>
+                        <RowItem className="greencounter" data-target="1052"></RowItem>
+                        <RowItemText>كيلوواط ساعة / يوم</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.0008"></RowItem>
+                        <RowItem className="greencounter" data-target="0.000001"></RowItem>
+                        <RowItemText>كيلوواط ساعة / معاملة</RowItemText>
+                    </Row>
+                </RowSmart>
+                <Row></Row>
+                <RowSmart>
+                    <FirstRow>
+                        <IconHolder>
+                            <Name>VISA</Name>
+                            <Icon><img src={Visa} alt="" /></Icon>
+                        </IconHolder>
+                        <IconHolder>
+                            <Name>MATIC</Name>
+                            <Icon><img src={Matic} alt="" /></Icon>
+                        </IconHolder>
+                        <IconHolder>
+                            <Name>ADA</Name>
+                            <Icon><img src={ada} alt="" /></Icon>
+                        </IconHolder>
+                    </FirstRow>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.02"></RowItem>
+                        <RowItem className="greencounter" data-target="0.008"></RowItem>
+                        <RowItem className="greencounter" data-target="0.006"></RowItem>
+                        <RowItemText>تيراواط ساعة / سنة</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="562795"></RowItem>
+                        <RowItem className="greencounter" data-target="2159"></RowItem>
+                        <RowItem className="greencounter" data-target="16428"></RowItem>
+                        <RowItemText>كيلوواط ساعة / يوم</RowItemText>
+                    </Row>
+                    <Row>
+                        <RowItem className="greencounter" data-target="0.001"></RowItem>
+                        <RowItem className="greencounter" data-target="0.000003"></RowItem>
+                        <RowItem className="greencounter" data-target="0.0007"></RowItem>
+                        <RowItemText>كيلوواط ساعة / معاملة</RowItemText>
+                    </Row>
+                </RowSmart>
+            </GridWrapperSmart>
             </Grid>
             <Empty>
                 <IconColumnLeft to="esgchart" smooth={true} duration={1000} spy={true} exact="true">

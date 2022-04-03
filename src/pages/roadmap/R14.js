@@ -113,7 +113,7 @@ const Title = styled(motion.div)`
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -145,6 +145,36 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 50vh;
+    }
+`;
+
+const BigArticle = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    text-align: right;
+    height: 25vh;
+    direction: rtl;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
+    span{
+        margin: 0 8px;
+        font-size: 22px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        line-height: 30px;
+        padding: 0;
+        height: 80vh;
     }
 `;
 
@@ -204,7 +234,7 @@ const R14 = () => {
                 <Title animate={animation}><p><t>تحديد المصوت</t><span>+</span></p></Title>
                 <Article  animate={animationTwo} ><p><t>تعد الحوكمة القوية أحد أعمدة نظام</t><span>Telos</span><t>البيئي ، ولكن تتوفر حاليًا ميزات حوكمة معينة فقط للمستخدمين الذين ليس لديهم موارد للمطورين. يحل</t><span>Decide Voter +</span><t>هذا من خلال توفير حوكمة </t><span>blockchain</span><t>المتقدمة لمشاريع العالم الحقيقي. يتضمن ذلك ميزات مثل تعديلات التشريعات وإدارة انتخابات مجلس الإدارة والمزيد.</t></p></Article>
                 <Title animate={animation}><p><t>ملفات تعريف</t><span>Telos 2.0</span></p></Title>
-                <Article  animate={animationTwo} ><p><t>ملفات تعريف</t><span>Telos,</span><t>جواز سفرك إلى الويب 3.0 ، عبارة عن خدمة ملف تعريف مستخدم لامركزية تم إنشاؤها لتسهيل نظام بيئي أكثر جاذبية. يسمح للمستخدمين بتعيين صورة رمزية مخصصة وشخصية عامة مرتبطة بحساباتهم. يمكن للمشاريع بعد ذلك الاستفادة من هذا كحل ملف تعريف على مستوى الشبكة للتجارب المألوفة داخل التطبيق. سوف توفر</t><span>Telos Profiles 2.0</span><t>واجهة مستخدم محدثة وأدوات سهلة للتنقل ، مما يفتح الإمكانات الكاملة لتنميط المستخدم اللامركزي.</t></p></Article>   
+                <BigArticle  animate={animationTwo} ><p><t>ملفات تعريف</t><span>Telos,</span><t>جواز سفرك إلى الويب 3.0 ، عبارة عن خدمة ملف تعريف مستخدم لامركزية تم إنشاؤها لتسهيل نظام بيئي أكثر جاذبية. يسمح للمستخدمين بتعيين صورة رمزية مخصصة وشخصية عامة مرتبطة بحساباتهم. يمكن للمشاريع بعد ذلك الاستفادة من هذا كحل ملف تعريف على مستوى الشبكة للتجارب المألوفة داخل التطبيق. سوف توفر</t><span>Telos Profiles 2.0</span><t>واجهة مستخدم محدثة وأدوات سهلة للتنقل ، مما يفتح الإمكانات الكاملة لتنميط المستخدم اللامركزي.</t></p></BigArticle>   
            </Grid>
            <Empty>
                 <IconColumnLeft to="r12" smooth={true} duration={1000} spy={true} exact="true">

@@ -1011,7 +1011,7 @@ const Header = (props) => {
             <NavMenu>
                 <NavWrapper onClick={switchAboutEnter}>
                 <AboutIcon />
-                <Text>عن</Text>
+                <Text>حول تيلوس</Text>
                 <motion.div >
                 <Arrow  />
                 </motion.div> 
@@ -1037,7 +1037,7 @@ const Header = (props) => {
             </NavMenu>
             <NavMenu>
                 <ExpIcon />
-                <Text>يكتشف</Text> 
+                <Text>اكتشف</Text> 
                 <motion.div>
                 <Arrow onClick={switchExploreEnter}  />
                 </motion.div>
@@ -1090,7 +1090,7 @@ const Header = (props) => {
             </NavMenu>
             <NavMenu>
                 <LearnIcon />
-                <Text>يكتشف</Text> 
+                <Text>اكتشف</Text> 
                 <motion.div >
                 <Arrow onClick={switchLearnEnter}/>
                 </motion.div>
@@ -1123,7 +1123,7 @@ const Header = (props) => {
             </NavMenu>
             <NavMenu>
                 <BuildIcon />
-                <Text>يبني</Text> 
+                <Text>ابني</Text> 
                 <motion.div >
                 <Arrow onClick={switchBuildEnter}/>
                 </motion.div>

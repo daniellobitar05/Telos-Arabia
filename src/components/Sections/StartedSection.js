@@ -426,7 +426,7 @@ const StartedSection = () => {
     }, [inView])
 
     return(
-        <Section >
+        <Section id="getstarted">
             <EmptyColumn />
             <ColumnLeft>
                 <ColumnTitle><h1>تيلوس ناتيف</h1></ColumnTitle>

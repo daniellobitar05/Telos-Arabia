@@ -515,7 +515,8 @@ const SubMenuIcon = styled.div`
     display: inline-flex;
     height: 70px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
     
 `;
 
@@ -548,6 +549,7 @@ const MenuTitle = styled.div`
     direction: rtl;
     span{
         margin: 0 5px;
+        font-size: 24px;
     }
 `;
 

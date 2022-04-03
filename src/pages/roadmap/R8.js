@@ -115,7 +115,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -127,7 +127,7 @@ const Article = styled(motion.div)`
     font-size: 26px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: right;
     height: 25vh;
@@ -147,6 +147,36 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 40vh;
+    }
+`;
+
+const BigArticle = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    height: 25vh;
+    direction: rtl;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 40px;
+    span{
+        margin: 0 8px;
+        font-size: 22px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        line-height: 30px;
+        padding: 0;
+        height: 60vh;
     }
 `;
 
@@ -204,7 +234,7 @@ const R1 = () => {
                 <Title animate={animation}><p><t>برنامج حوافز</t><span>Telos dApp</span></p></Title>
                 <Article  animate={animationTwo}><p>من أجل ضمان أن <span>Telos</span> هي موطن لبعض الاقتصادات الأكثر ابتكارًا وازدهارًا في الصناعة ، فإننا نطلق برنامج حوافز <span>dApp</span> لشبكة <span>Telos.</span> ستقدم هذه المبادرة الدعم المالي والتقني وتطوير الأعمال للمشاريع التي ستلعب دورًا أساسيًا في مستقبل صناعة <span>blockchain.</span></p></Article>
                 <Title animate={animation}><span>Telos SureProfit</span></Title>
-                <Article  animate={animationTwo}><p>تم إعداد هذه الأداة الرائدة لإحداث ثورة في <span>Defi</span> ، وتمكين المتداولين من ضمان نجاح تداولاتهم قبل إجراء المعاملات. سيسمح <span>SureProfit</span> للمستخدمين بالتحقق من أرصدتهم قبل إنهاء المعاملة مباشرة وإلغاء أي معاملة قد تؤدي إلى خسارة صافية للمستخدم النهائي. عند إقرانها بمعاملات شبه محسوسة ، تتيح هذه الأداة القوية البدء في تكوين ثروة بأقل من دولار واحد.</p></Article>
+                <BigArticle  animate={animationTwo}><p>تم إعداد هذه الأداة الرائدة لإحداث ثورة في <span>Defi</span> ، وتمكين المتداولين من ضمان نجاح تداولاتهم قبل إجراء المعاملات. سيسمح <span>SureProfit</span> للمستخدمين بالتحقق من أرصدتهم قبل إنهاء المعاملة مباشرة وإلغاء أي معاملة قد تؤدي إلى خسارة صافية للمستخدم النهائي. عند إقرانها بمعاملات شبه محسوسة ، تتيح هذه الأداة القوية البدء في تكوين ثروة بأقل من دولار واحد.</p></BigArticle>
            </Grid>
            <Empty>
                 <IconColumnLeft to="r9" smooth={true} duration={1000} spy={true} exact="true">

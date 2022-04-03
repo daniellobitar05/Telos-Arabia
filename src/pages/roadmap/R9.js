@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 190vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 180vh;
     }
 `;
 
@@ -114,7 +114,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -129,7 +129,6 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     text-align: right;
-    
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     direction: rtl;
@@ -147,6 +146,7 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 90vh;
     }
 `;
 
@@ -176,6 +176,7 @@ const SmallArticle = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 60vh;
     }
 `;
 

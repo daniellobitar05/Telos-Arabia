@@ -114,7 +114,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -126,10 +126,9 @@ const Article = styled(motion.div)`
     font-size: 26px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
-    
     height: 15vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
@@ -156,6 +155,7 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 45vh;
     }
 `;
 

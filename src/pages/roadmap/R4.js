@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 210vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 190vh;
     }
 `;
 
@@ -115,7 +115,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -147,6 +147,7 @@ const BigArticle = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 120vh;
     }
 `;
 
@@ -184,6 +185,7 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
+        height: 40vh;
     }
 `;
 

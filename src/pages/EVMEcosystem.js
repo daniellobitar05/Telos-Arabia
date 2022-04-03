@@ -22,30 +22,30 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 70vh;
+        height: 100vh;
     }
 `;
 
 const Title = styled.div`
-    font-size: 62px;
+    font-size: 58px;
     width: 80%;
-    height: 10vh;
+    height: 30vh;
     color: ${props => props.theme.text};  
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 
 const Button = styled.button`
     
-    font-size: 18px;
+    font-size: 16px;
     background: transparent;
     color: white;
     border-radius: 1rem;
     border: 2px solid aqua;
-    margin: 3px;
+    padding: 7px 12px;
+    margin: 0 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -141,7 +141,7 @@ function Filter({setActivePlatform, activePlatform, setFiltered, platforms}){
 const Wrapper = styled(motion.a)`
     height: 450px;
     width: 250px;
-    border: 1px solid whitesmoke;
+    border: 1px solid purple;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -236,6 +236,8 @@ function Platforms ({el}){
         <Wrapper animate={{opacity: 1}}
         initial={{opacity: 0}}
         exit={{opacity: 0}}
+        whileHover={{scale: 1.025}}
+        whileTap={{scale: 0.95}}
         layout href={el.link} target="_blank" rel="noreferrer">
             <ImageContainer >
             {/* <TextWrapper>

@@ -147,7 +147,13 @@ const FrontDiv = styled.div`
     
 `;
 
-
+const Empty = styled.div`
+    width: 100%;
+    height: 30vh;
+    @media screen and (max-width: 1100px){
+        display: none;
+    }
+`;
 
 
 const HeroSection = () => {

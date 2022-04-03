@@ -57,6 +57,9 @@ const ColumnLeft = styled(motion.div)`
     align-items: center;
     justify-content: center;
     border: 1px solid purple;
+    &:hover{
+        background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    }
     @media screen and (max-width: 768px){
         width: 90%;
         height: 68vh;
@@ -75,6 +78,9 @@ const ColumnRight = styled(motion.div)`
     align-items: center;
     justify-content: center;
     border: 1px solid purple;
+    &:hover{
+        background: linear-gradient(145deg, rgba(37,38,89,1) 0%, rgba(74,21,131,1) 35%, rgba(37,38,89,1) 100%);
+    }
     @media screen and (max-width: 768px){
         
         width: 90%;

@@ -186,7 +186,7 @@ const NewGround = () => {
     }, [inView])
 
     return(
-        <Section ref={ref}>
+        <Section ref={ref} id="ground">
             <HeaderText animate={animationTwo}>بلوكتشين تهد الارض</HeaderText>
             <Grid>
                 <Row>

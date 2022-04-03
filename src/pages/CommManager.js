@@ -10,7 +10,7 @@ import Avatar from "../components/images/avatar.jpg";
 import EmailIcon from '@mui/icons-material/Email';
 import {IconButton} from "@mui/material";
 import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 
 const Section = styled.div`
@@ -164,7 +164,7 @@ const BoxIcon = styled(motion.a)`
 `;
 
 const Twitter = styled(TwitterIcon)`
-    color: white;
+    color: #00acee;
     
 `;
 
@@ -173,8 +173,8 @@ const Mail = styled(EmailIcon)`
     
 `;
 
-const Linked = styled(LinkedInIcon)`
-    color: white;
+const Linked = styled(TelegramIcon)`
+    color: #0088cc;
 `;
 
 const Expander = styled(IconButton)`
@@ -206,7 +206,7 @@ const CommManager = () => {
                     <Description><h1>مدير تيلوس العرب ومترجم المنصة, من لبنان , دارس الاقتصاد في الجامعة أللبنانية</h1></Description>
                     <IconHolder>
                         <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://twitter.com/DanielloBitar" target="_blank" rel="noreferrer"><Expander><Twitter /></Expander></BoxIcon>
-                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><Expander><Mail /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="mailto:daniello.bitar@telosfoundation.io" target="_blank" rel="noreferrer"><Expander><Mail /></Expander></BoxIcon>
                         <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} ><Expander><Linked /></Expander></BoxIcon>
                     </IconHolder>
                     </Column>
@@ -219,7 +219,7 @@ const CommManager = () => {
                     <IconHolder>
                         <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://twitter.com/VictorR65153076" target="_blank" rel="noreferrer"><Expander><Twitter /></Expander></BoxIcon>
                         <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="mailto:bodegaflamenca666@gmail.com" target="_blank" rel="noreferrer"><Expander><Mail /></Expander></BoxIcon>
-                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}><Expander><Linked /></Expander></BoxIcon>
+                        <BoxIcon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} href="https://t.me/VictorJRamirez" target="_blank" rel="noreferrer"><Expander><Linked /></Expander></BoxIcon>
                     </IconHolder>
                     </Column>
                 </Grid>

@@ -14,6 +14,9 @@ import NewGround from "../components/Sections/NewGround";
 import Footer from "../components/Sections/Footer";
 import { animationTwo, transitionTwo } from "../animations";
 
+
+
+
 const Home = (props) => {
 
     const [theme, setTheme] = useState("dark");

@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 160vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 170vh;
+        height: 150vh;
     }
 `;
 
@@ -102,13 +102,46 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
-    padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     direction: rtl;
     z-index: 100;
+    @media screen and (max-width: 768px) {
+        height: 55vh;
+        font-size: 24px;
+        width: 80%;
+        padding: 0;
+    }
+    span{
+        margin: 0 8px;
+        font-size: 22px;
+        @media screen and (max-width: 768px){
+        font-size: 20px;
+        margin: 0 8px;
+        }
+    }
+    
+`;
+
+const SmallArticle = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
+    direction: rtl;
+    z-index: 100;
+    @media screen and (max-width: 768px) {
+        height: 20vh;
+    }
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -136,6 +169,9 @@ const Bigtitle = styled(motion.div)`
     justify-content: flex-end;
     z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    @media screen and (max-width: 768px) {
+        height: 20vh;
+    }
 `;
 
 const R1 = () => {
@@ -190,7 +226,7 @@ const R1 = () => {
             
            <Grid>
                 <Article animate={animationTwo}>شيء أخير قبل أن نتعمق في خريطة الطريق! المقطع الحالي هو ملخصنا لما نعمل عليه الآن. قسم المستقبل هو ملخصنا لكل شيء نعمل على تحقيقه من أجل مستقبل نظام تيلوس البيئي. ترقبوا هذه التحديثات الأسبوعية لمعرفة ما سنقوم بمعالجته بعد ذلك والحصول على آخر التطورات التقنية في تيلوس</Article>
-                <Article animate={animationTwo}>دعونا نتعمق في خارطة طريق تيلوس الجديدة! اربط حزام الأمان ، إنها رحلة رائعة</Article>
+                <SmallArticle animate={animationTwo}>دعونا نتعمق في خارطة طريق تيلوس الجديدة! اربط حزام الأمان ، إنها رحلة رائعة</SmallArticle>
                 <Bigtitle animate={animation}>الحاضر</Bigtitle>
                 <Article animate={animationTwo}><p>يستمر عمل <span>Telos Core Team</span> حتى بعد منتج مذهل مثل إطلاق <span>Telos EVM.</span> تحقق من المنتجات والمبادرات التي يتم تنفيذها حاليًا داخل نظام <span>Telos</span> البيئي. العديد من هذه الميزات موجودة بالفعل لاستخدامك ، مع قيام الفريق بإضافة ميزات جديدة على أساس منتظم.</p></Article>
            </Grid>

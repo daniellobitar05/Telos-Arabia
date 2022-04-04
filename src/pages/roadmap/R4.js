@@ -165,6 +165,7 @@ const Article = styled(motion.div)`
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
+    background: red;
     height: 15vh;
     direction: rtl;
     z-index: 100;

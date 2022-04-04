@@ -131,7 +131,8 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
     padding: 10px 0;
     line-height: 35px;
@@ -156,7 +157,6 @@ const Article = styled(motion.div)`
         font-size: 24px;
         width: 80%;
         padding: 0;
-        width: 90%;
     }
 `;
 
@@ -202,7 +202,7 @@ const Image = styled.div`
         transform: translate(10%, -75%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(0%, 4%) scale(0.4);
+            transform: translate(0%, 0%) scale(0.35);
         }
     }
     @media screen and (max-width: 768px){

@@ -175,7 +175,7 @@ const Image = styled.div`
         transform: translate(10%, -45%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(0%, 10%) scale(0.5);
+            transform: translate(0%, 10%) scale(0.4);
         }
     }
     @media screen and (max-width: 768px){

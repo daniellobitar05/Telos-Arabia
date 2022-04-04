@@ -201,7 +201,7 @@ const Roadmap = () => {
                 <R1 />
                 <R2 />
                 <R3 />
-                <R4 />
+                {/* <R4 />
                 <R5 />
                 <R6 />
                 <R7 />
@@ -212,7 +212,7 @@ const Roadmap = () => {
                 <R14 />
                 <R12 />
                  <R13 />
-                <Footer />
+                <Footer /> */}
         </ThemeProvider>
     )
 }

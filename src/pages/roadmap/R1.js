@@ -80,7 +80,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 200vh;
+        height: 170vh;
     }
 `;
 
@@ -92,7 +92,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 160vh;
     }
 `;
 
@@ -115,7 +115,7 @@ const Title = styled(motion.div)`
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
-        height: 50vh;
+        height: 30vh;
         transform: translate(0, 0);
     }
 `;

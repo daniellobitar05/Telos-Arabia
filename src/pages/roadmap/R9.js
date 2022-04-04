@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 190vh;
+        height: 210vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 180vh;
+        height: 200vh;
     }
 `;
 
@@ -103,7 +103,9 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: right;
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
@@ -114,8 +116,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 20vh;
-        transform: translate(0, 0);
+        height: 30vh;
         font-size: 32px;
     }
 `;
@@ -128,6 +129,7 @@ const Article = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
@@ -135,7 +137,7 @@ const Article = styled(motion.div)`
     height: 30vh;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 20px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -158,14 +160,14 @@ const SmallArticle = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     text-align: right;
-    
+    justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     direction: rtl;
     height: 20vh;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 20px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;

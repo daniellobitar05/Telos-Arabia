@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 145vh;
+        height: 165vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 135vh;
+        height: 155vh;
     }
 `;
 
@@ -147,7 +147,7 @@ const Article = styled(motion.div)`
         font-size: 24px;
         width: 80%;
         line-height: 30px;
-        height: 40vh;
+        height: 50vh;
     }
 `;
 
@@ -175,7 +175,7 @@ const Image = styled.div`
         transform: translate(10%, -45%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(-1%, 5%) scale(0.3);
+            transform: translate(-1%, 2.5%) scale(0.3);
         }
     }
     @media screen and (max-width: 768px){

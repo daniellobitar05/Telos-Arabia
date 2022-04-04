@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 220vh;
+        height: 210vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 200vh;
     }
 `;
 
@@ -103,8 +103,10 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    text-align: right;
+    justify-content: flex-start;
+    
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
@@ -114,7 +116,7 @@ const Title = styled(motion.div)`
         }
     }
     @media screen and (max-width: 768px){
-        height: 20vh;
+        height: 30vh;
         transform: translate(0, 0);
         font-size: 32px;
     }
@@ -128,6 +130,7 @@ const Article = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: right;
     height: 20vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -146,7 +149,7 @@ const Article = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
-        height: 70vh;
+        height: 60vh;
     }
 `;
 
@@ -157,6 +160,7 @@ const BigArticle = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: right;
     height: 30vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
@@ -175,7 +179,7 @@ const BigArticle = styled(motion.div)`
         width: 80%;
         line-height: 30px;
         padding: 0;
-        height: 100vh;
+        height: 80vh;
     }
 `;
 

@@ -37,7 +37,6 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     
     
     @media screen and (max-width: 768px){
@@ -52,15 +51,14 @@ const PageTitle = styled(motion.div)`
     height: 20vh;
     color: ${props => props.theme.text};  
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
-        flex-direction: column;
-        justify-content: flex-start;
+        height: 40vh;
 
     }
     
@@ -76,7 +74,7 @@ const ImageHolder = styled(motion.div)`
     
     @media screen and (max-width: 768px){
         width: 90%;
-        height: 30vh;
+        height: 35vh;
     }
 
     

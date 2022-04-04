@@ -92,7 +92,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 130vh;
     }
 `;
 
@@ -104,18 +104,17 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     line-height: 50px;
-    justify-content: flex-end;
+    justify-content: center;
     text-align: right;
-    transform: translate(0, 20%);
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
-        height: 30vh;
+        height: 40vh;
         transform: translate(0, 0);
     }
 `;
@@ -127,9 +126,9 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
-    padding: 30px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     span{
@@ -150,6 +149,26 @@ const Article = styled(motion.div)`
         font-size: 24px;
         width: 80%;
         padding: 10px 0;
+        height: 50vh;
+    }
+`;
+
+const SmallArticle = styled(motion.div)`
+    width: 80vw;
+    font-size: 26px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    line-height: 35px;
+    @media screen and (max-width: 768px){
+        font-size: 24px;
+        width: 80%;
+        
+        height: 30vh;
     }
 `;
 
@@ -205,7 +224,7 @@ const R1 = () => {
             <Title animate={animation}> المستقبل يبحث عن ملحمة تيلوس</Title>
            <Grid>
            <Article animate={animationTwo}>مرحبًا بك في خارطة طريق تيلوس الجديدة للسنوات القادمة! كان بعض قرائنا من محبي تيلوس منذ أن تم إطلاق الشبكة الرئيسية قبل ثلاث سنوات قصيرة. يتعلم الآخرون الآن للتو عن حالات الاستخدام المذهلة في العالم الحقيقي وإمكانيات تيلوس. أينما كنت في رحلة تيلوس الخاصة بك ، نعلم أنك ستحب القراءة حول خريطة الطريق الجديدة الخاصة بنا.</Article>
-            <Article animate={animationTwo}>خارطة الطريق هذه هي رؤيتنا التوجيهية لمستقبل تيلوس. أثناء القراءة ، تذكر أنه كان هناك الكثير من عمليات إعادة الهيكلة الرائعة خلف الكواليس. نحن متحمسون لكل ما يحمله المستقبل لشركة تيلوس!</Article>
+            <SmallArticle animate={animationTwo}>خارطة الطريق هذه هي رؤيتنا التوجيهية لمستقبل تيلوس. أثناء القراءة ، تذكر أنه كان هناك الكثير من عمليات إعادة الهيكلة الرائعة خلف الكواليس. نحن متحمسون لكل ما يحمله المستقبل لشركة تيلوس!</SmallArticle>
             <Article animate={animationTwo}><p><t>قد يتم طرح الأسئلة عليك بعد قراءة خارطة الطريق الخاصة بنا. انضم إلى تيلوس تيوزداي مع الفريق الأساسي في</t><a href="https://youtu.be/mLhbdy6CqYM" target="_blank" rel="noreferrer">11 كانون الثاني (يناير) 2022</a>، ومن ذلك الحين فصاعدًا ، سنقوم بإعادة التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة.</p></Article>
            </Grid>
            <Empty>

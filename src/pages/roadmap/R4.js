@@ -131,7 +131,8 @@ const BigArticle = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
+    justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
@@ -161,11 +162,11 @@ const Article = styled(motion.div)`
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: right;
+    justify-content: center;
+    align-items: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
-    background: red;
     height: 15vh;
     direction: rtl;
     z-index: 100;
@@ -202,7 +203,7 @@ const Image = styled.div`
         transform: translate(-10%, -40%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(0%, -10%) scale(0.45);
+            transform: translate(-1%, -4%) scale(0.3);
         }
     }
     @media screen and (max-width: 768px){

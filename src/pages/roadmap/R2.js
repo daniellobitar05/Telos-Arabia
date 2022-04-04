@@ -108,6 +108,7 @@ const Article = styled(motion.div)`
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     direction: rtl;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -133,6 +134,7 @@ const Bigtitle = styled(motion.div)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
 `;
 

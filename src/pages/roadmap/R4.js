@@ -201,7 +201,7 @@ const Image = styled.div`
         transform: translate(-10%, -40%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(0%, 4%) scale(0.3);
+            transform: translate(0%, -10%) scale(0.45);
         }
     }
     @media screen and (max-width: 768px){

@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-
+import Back from "../../components/images/pyr16.png";
 
 const ArrowDown = styled(KeyboardArrowDownIcon)`
     color: white;
@@ -79,7 +79,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 145vh;
     }
 `;
 
@@ -91,7 +91,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 150vh;
+        height: 135vh;
     }
 `;
 
@@ -108,14 +108,16 @@ const Title = styled(motion.div)`
     justify-content: flex-end;
     text-align: right;
     transform: translate(0, 20%);
+    z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
-        height: 15vh;
+        height: 20vh;
         transform: translate(0, 0);
         font-size: 32px;
+        
     }
 `;
 
@@ -128,10 +130,11 @@ const Article = styled(motion.div)`
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 30px 0;
+    height: 22.5vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     line-height: 35px;
     direction: rtl;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -144,12 +147,12 @@ const Article = styled(motion.div)`
         font-size: 24px;
         width: 80%;
         line-height: 30px;
-        padding: 0;
+        height: 40vh;
     }
 `;
 
 const Bigtitle = styled(motion.div)`
-    height: 30vh;
+    height: 25vh;
     width: 80%;
     font-size: 62px;
     font-weight: bold;
@@ -159,7 +162,29 @@ const Bigtitle = styled(motion.div)`
     align-items: center;
     justify-content: flex-end;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
+    z-index: 100;
+    @media screen and (max-width: 768px){
+        height: 20vh;
+    }
 `;
+
+const Image = styled.div`
+    width: 100%;
+    height: 5vh;
+    img{
+        transform: translate(10%, -45%) scale(0.65);
+        z-index: 1;
+        @media screen and (max-width: 768px){
+            transform: translate(0%, 10%) scale(0.5);
+        }
+    }
+    @media screen and (max-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
+
 
 const R1 = () => {
 
@@ -214,6 +239,7 @@ const R1 = () => {
            <Grid>
                 <Bigtitle animate={animation}>مستقبل</Bigtitle>
                 <Article  animate={animationTwo}><p>تمهد <span>Telos</span> الطريق للتبني الجماعي للويب 3.0 من خلال تطوير حلول لامركزية مبتكرة مع تطبيقات العالم الحقيقي. سيحدد مطورو <span>Telos</span> الأساسيون وفريق المنتج أولويات التطوير على أساس ربع سنوي مع مراعاة الاحتياجات والفرص والموارد المتاحة. هذا ما لدينا في متجر <span>Telos</span> في عام 2022 وما بعده!</p></Article>
+                <Image><img src={Back} alt="" /></Image>
                 <Title animate={animation}>أكاديمية تيلوس</Title>
                 <Article  animate={animationTwo}><p>تعرف على كل شيء عن <span>Telos!</span> نظرًا لأن الصناعة تتجه نحو التبني الجماعي ، نريد أن نجعل من السهل قدر الإمكان الترحيب بمشاريع العالم الحقيقي والمستخدمين والمستثمرين في النظام البيئي. سيجد المستخدمون في <span>Telos Academy</span> مواد تعليمية حول الجوانب الرئيسية لـ <span>Telos</span> ، إلى جانب مقدمة أوسع لتقنية <span>blockchain.</span></p></Article>
            </Grid>

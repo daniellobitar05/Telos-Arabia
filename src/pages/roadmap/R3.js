@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
-import Back from "../../components/images/rou10.png";
+import Back from "../../components/images/pyr15.png";
 
 
 
@@ -109,6 +109,7 @@ const Title = styled(motion.div)`
     text-align: right;
     transform: translate(0, 20%);
     direction: rtl;
+    z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
         margin: 0 10px;
@@ -136,6 +137,7 @@ const Article = styled(motion.div)`
     line-height: 35px;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 22px;
@@ -170,6 +172,7 @@ const ArticleTop = styled(motion.div)`
     line-height: 30px;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
+    z-index: 100;
     span{
         margin: 0 8px;
         font-size: 20px;
@@ -199,7 +202,7 @@ const Image = styled.div`
         transform: translate(10%, -75%) scale(0.65);
         z-index: 1;
         @media screen and (max-width: 768px){
-            transform: translate(0%, 4%) scale(0.3);
+            transform: translate(0%, 4%) scale(0.4);
         }
     }
     @media screen and (max-width: 768px){

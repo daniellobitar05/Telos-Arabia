@@ -40,7 +40,7 @@ const Section = styled.div`
     
     
     @media screen and (max-width: 768px){
-        height: 100vh;
+        height: 90vh;
     }
 `; 
 
@@ -58,7 +58,7 @@ const PageTitle = styled(motion.div)`
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     @media screen and (max-width: 768px){
         font-size: 42px;
-        height: 40vh;
+        height: 30vh;
 
     }
     

@@ -80,7 +80,7 @@ const Section = styled.div`
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 768px){
-        height: 210vh;
+        height: 220vh;
     }
 `;
 
@@ -92,7 +92,7 @@ const Grid = styled.div`
     align-items: center;
     justify-content: space-evenly;
     @media screen and (max-width: 768px){
-        height: 160vh;
+        height: 210vh;
     }
 `;
 
@@ -147,8 +147,7 @@ const Article = styled(motion.div)`
     @media screen and (max-width: 768px){
         font-size: 24px;
         width: 80%;
-        padding: 10px 0;
-        height: 60vh;
+        height: 70vh;
     }
 `;
 
@@ -220,8 +219,9 @@ const R1 = () => {
 
     return(
         <Section id="r1" ref={ref}>
-            <Title animate={animation}> المستقبل يبحث عن ملحمة تيلوس</Title>
+            
            <Grid>
+           <Title animate={animation}> المستقبل يبحث عن ملحمة تيلوس</Title>
            <Article animate={animationTwo}>مرحبًا بك في خارطة طريق تيلوس الجديدة للسنوات القادمة! كان بعض قرائنا من محبي تيلوس منذ أن تم إطلاق الشبكة الرئيسية قبل ثلاث سنوات قصيرة. يتعلم الآخرون الآن للتو عن حالات الاستخدام المذهلة في العالم الحقيقي وإمكانيات تيلوس. أينما كنت في رحلة تيلوس الخاصة بك ، نعلم أنك ستحب القراءة حول خريطة الطريق الجديدة الخاصة بنا.</Article>
             <SmallArticle animate={animationTwo}>خارطة الطريق هذه هي رؤيتنا التوجيهية لمستقبل تيلوس. أثناء القراءة ، تذكر أنه كان هناك الكثير من عمليات إعادة الهيكلة الرائعة خلف الكواليس. نحن متحمسون لكل ما يحمله المستقبل لشركة تيلوس!</SmallArticle>
             <Article animate={animationTwo}><p><t>قد يتم طرح الأسئلة عليك بعد قراءة خارطة الطريق الخاصة بنا. انضم إلى تيلوس تيوزداي مع الفريق الأساسي في</t><a href="https://youtu.be/mLhbdy6CqYM" target="_blank" rel="noreferrer">11 كانون الثاني (يناير) 2022</a>، ومن ذلك الحين فصاعدًا ، سنقوم بإعادة التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة.</p></Article>

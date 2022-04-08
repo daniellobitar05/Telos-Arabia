@@ -100,14 +100,13 @@ const Grid = styled.div`
 
 
 const Title = styled(motion.div)`
-    height: 12.5vh;
+    height: 15vh;
     width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
     align-items: center;
     text-align: right;
-    transform: translate(0, 20%);
     direction: rtl;
     z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
@@ -127,21 +126,20 @@ const Title = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
+    height: 15vh;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: right;
-    padding: 10px 0;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     z-index: 100;
     span{
-        margin: 0 8px;
-        font-size: 22px;
+        margin: 0 10px;
+        font-size: 28px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -151,7 +149,7 @@ const Article = styled(motion.div)`
         color: aqua;
         text-decoration: none;
         margin: 0;
-        font-size: 22px;
+        font-size: 28px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -161,21 +159,21 @@ const Article = styled(motion.div)`
 `;
 
 const ArticleTop = styled(motion.div)`
-    width: 70vw;
-    font-size: 24px;
+    width: 80%;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
+    height: 25vh;
     flex-direction: column;
     align-items: right;
     text-align: right;
-    padding: 10px 0;
-    line-height: 30px;
+    line-height: 40px;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     z-index: 100;
     span{
-        margin: 0 8px;
-        font-size: 20px;
+        margin: 0 10px;
+        font-size: 28px;
         @media screen and (max-width: 768px){
         font-size: 18px;
         margin: 0 5px;
@@ -184,8 +182,8 @@ const ArticleTop = styled(motion.div)`
     a{
         color: aqua;
         text-decoration: none;
-        margin: 0 5px;
-        font-size: 24px;
+        margin: 0 10px;
+        font-size: 28px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -266,7 +264,8 @@ const R1 = () => {
             
            <Grid>
                 <Title animate={animation}><span>Telos EVM</span></Title>
-                <ArticleTop  animate={animationTwo}><p><t>كان إطلاق</t><span>Telos EVM</span><t>أحد أهم الإنجازات لنظام</t><span>Telos</span><t>البيئي منذ إطلاق شبكته الرئيسية. أطلقت</t><span>Telos</span><t>جهازًا ظاهريًا من الطبقة الأولى من</t><span>Ethereum</span><t>بدون تشغيل أمامي ، ورسوم الغاز المسطحة ، وكفاءة الطاقة ، والسرعة القصوى والقوة! مع بدء نشر التطبيقات ، يستمر التطوير في ضمان الإعداد السلس مع تكافؤ الميزات.</t></p><p><t>يمكنك قراءة المزيد عن</t><span>Telos EVM</span><a href="http://teloscan.io/" target="_blank" rel="noreferrer">في وثائقنا هنا.</a></p></ArticleTop>
+                <ArticleTop  animate={animationTwo}><p><t>كان إطلاق</t><span>Telos EVM</span><t>أحد أهم الإنجازات لنظام</t><span>Telos</span><t>البيئي منذ إطلاق شبكته الرئيسية. أطلقت</t><span>Telos</span><t>جهازًا ظاهريًا من الطبقة الأولى من</t><span>Ethereum</span><t>بدون تشغيل أمامي ، ورسوم الغاز المسطحة ، وكفاءة الطاقة ، والسرعة القصوى والقوة! مع بدء نشر التطبيقات ، يستمر التطوير في ضمان الإعداد السلس مع تكافؤ الميزات.</t></p></ArticleTop>
+                <Article><p><t>يمكنك قراءة المزيد عن</t><span>Telos EVM</span><a href="http://teloscan.io/" target="_blank" rel="noreferrer">في وثائقنا هنا.</a></p></Article>
                 <Image><img src={Back} alt="" /></Image>
                 <Title animate={animation}><p><t>تحديد تطبيق</t><span>Voter Mobile</span></p></Title>
                 <Article  animate={animationTwo}><p><t>يتيح تطبيق</t><span>Decide Voter</span><t>للجوال من</t><span>GoodBlock Technologies</span><t>استخدام محرك</t><span>Telos Decide</span><t> في العالم الحقيقي. متوفر على</t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer"> Google Play</a><t> و </t><a href="https://play.google.com/store/apps/details?id=com.decidevoter" target="_blank" rel="noreferrer">Apple Store</a><t> ، هذا التطبيق البديهي يجعل الإدارة اللامركزية الشفافة والفعالة في متناول الجميع</t></p></Article>

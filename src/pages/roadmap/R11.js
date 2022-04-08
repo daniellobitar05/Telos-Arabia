@@ -103,13 +103,12 @@ const Title = styled(motion.div)`
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
-    transform: translate(0, 20%);
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
+        font-size: 42px;
         margin: 0 10px;
         @media screen and (max-width: 768px){ 
             font-size: 26px;
@@ -125,7 +124,7 @@ const Title = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -137,7 +136,7 @@ const Article = styled(motion.div)`
     line-height: 40px;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;

@@ -109,6 +109,7 @@ const Title = styled(motion.div)`
     direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
+        font-size: 42px;
         margin: 0 10px;
         @media screen and (max-width: 768px){ 
             font-size: 24px;
@@ -123,7 +124,7 @@ const Title = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -131,12 +132,12 @@ const Article = styled(motion.div)`
     justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     height: 30vh;
     span{
         margin: 0 8px;
-        font-size: 20px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -153,7 +154,7 @@ const Article = styled(motion.div)`
 
 const SmallArticle = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -161,12 +162,12 @@ const SmallArticle = styled(motion.div)`
     text-align: right;
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     height: 20vh;
     span{
         margin: 0 8px;
-        font-size: 20px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;

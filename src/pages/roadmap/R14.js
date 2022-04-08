@@ -99,7 +99,7 @@ const Grid = styled.div`
 
 
 const Title = styled(motion.div)`
-    height: 20vh;
+    height: 17.5vh;
     width: 80%;
     font-size: 48px;
     color: white;
@@ -122,20 +122,20 @@ const Title = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: right;
-    height: 25vh;
+    height: 20vh;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -152,20 +152,18 @@ const Article = styled(motion.div)`
 
 const BigArticle = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: right;
-    height: 25vh;
+    height: 35vh;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;

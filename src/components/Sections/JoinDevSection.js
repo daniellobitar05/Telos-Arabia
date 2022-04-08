@@ -48,19 +48,19 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 32px;
+    font-size: 42px;
     width: 50%;
     color: ${props => props.theme.text};
     text-align: center; 
     height: 25vh;
-    line-height: 30px;
+    line-height: 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        font-size: 28px;
+        font-size: 36px;
         width: 80%;
         height: 45vh;
     }

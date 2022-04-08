@@ -74,7 +74,7 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.back14};
+    background: rgba(16,17,96,1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,18 +99,17 @@ const Grid = styled.div`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    align-items: right;
+    align-items: center;
     text-align: right;
-    padding: 30px 0;
+    height: 30vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 24px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -120,7 +119,7 @@ const Article = styled(motion.div)`
         color: aqua;
         text-decoration: none;
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 24px;
     }
     @media screen and (max-width: 768px){
         font-size: 24px;
@@ -183,9 +182,9 @@ const R1 = () => {
         <Section id="r13" ref={ref}>
             
            <Grid>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>هل أذهلك كل العمل المذهل والمشاريع الرائدة القادمة إلى Telos خلال العام المقبل؟ هناك الكثير من الأشياء التي تجعلك متحمسًا لعشاق NFT ومعالجات DeFi وعشاق اللامركزية.</Article>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}><p><t>تذكر أنه يمكنك ضبط</t><t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer"><t>Telos Tuesday AMA</t><t>مع الفريق الأساسي في 11 يناير 2022</t></a></t><t>والحصول على إجابات لجميع أسئلتك. نحن نفخر بأنفسنا لكوننا شفافين وودودين مع مجتمعنا - ونأمل أن نراك هناك!</t></p></Article>
-                <Article style={{direction: 'rtl'}} animate={animationTwo}>من ذلك الحين فصاعدًا ، سنعيد إليك التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة. ترقبوا المزيد. وشكرًا لكونك أحد مؤسسي شركة Telos - نتمنى لك عامًا رائعًا!</Article>
+                <Article animate={animationTwo}>هل أذهلك كل العمل المذهل والمشاريع الرائدة القادمة إلى Telos خلال العام المقبل؟ هناك الكثير من الأشياء التي تجعلك متحمسًا لعشاق NFT ومعالجات DeFi وعشاق اللامركزية.</Article>
+                <Article animate={animationTwo}><p><t>تذكر أنه يمكنك ضبط</t><t><a href="http://wallet.telos.net/" target="_blank" rel="noreferrer"><t>Telos Tuesday AMA</t><t>مع الفريق الأساسي في 11 يناير 2022</t></a></t><t>والحصول على إجابات لجميع أسئلتك. نحن نفخر بأنفسنا لكوننا شفافين وودودين مع مجتمعنا - ونأمل أن نراك هناك!</t></p></Article>
+                <Article animate={animationTwo}>من ذلك الحين فصاعدًا ، سنعيد إليك التحديثات التقنية مرتين في الشهر حتى تتمكن من البقاء على اطلاع دائم بكل هذه المبادرات الرائعة. ترقبوا المزيد. وشكرًا لكونك أحد مؤسسي شركة Telos - نتمنى لك عامًا رائعًا!</Article>
            </Grid>
            <Empty>
                 <IconColumnLeft to="footer" smooth={true} duration={1000} spy={true} exact="true">

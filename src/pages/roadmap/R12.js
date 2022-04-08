@@ -74,7 +74,7 @@ const Empty = styled.div`
 const Section = styled.div`
     width: 100%;
     height: 100vh;
-    background: ${props => props.theme.back13};
+    background: ${props => props.theme.back14};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,17 +100,16 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 20vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     text-align: right;
-    transform: translate(0, 20%);
+    direction: rtl;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
+        font-size: 42px;
         margin: 0 10px;
     }
     @media screen and (max-width: 768px){
@@ -122,20 +121,19 @@ const Title = styled(motion.div)`
 
 
 const Article = styled(motion.div)`
-    width: 85vw;
-    font-size: 26px;
+    width: 80vw;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
-    align-items: right;
+    height: 30vh;
+    align-items: center;
     text-align: right;
-    padding: 30px 0;
     direction: rtl;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -154,6 +152,7 @@ const DownTitle = styled.div`
     color: white;
     display: flex;
     align-items: center;
+    height: 40vh;
     text-align: right; 
     direction: rtl;
     font-size: 62px;
@@ -213,7 +212,6 @@ const R1 = () => {
 
     return(
         <Section id="r12" ref={ref}>
-            
            <Grid>
                 <Title animate={animation}><p><t>موقع</t><span>Telos</span></p></Title>
                     <Article  animate={animationTwo} ><p><t>يسمح موقع</t><span>Telos</span><t>بإثبات الموقع باستخدام</t><span>Telos blockchain,</span><t>مع تحفيز المستخدمين على إجراء "التنقيب عن الموقع" للنظام. باستخدام هذا المنتج ، سيتمكن أي شخص من التحقق من وجوده في موقع معين في وقت محدد. هذا يفتح عالمًا من الاحتمالات لـ</t><span>dApps</span><t>و</t><span>DAOs</span><t>والمبادرات اللامركزية الأخرى. لاحظ أن موقع</t><span>هو هدف إنمائي طويل المدى ولا يُتوقع أن يكتمل خلال عام 2022.</span></p></Article>

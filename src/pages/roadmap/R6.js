@@ -99,7 +99,7 @@ const Grid = styled.div`
 
 const Title = styled(motion.div)`
     height: 20vh;
-    width: 80%;
+    width: 90%;
     font-size: 48px;
     color: white;
     display: flex;
@@ -107,7 +107,6 @@ const Title = styled(motion.div)`
     align-items: center;
     justify-content: flex-end;
     text-align: right;
-    transform: translate(0, 20%);
     z-index: 100;
     text-shadow: black -1px 2px, #4b0082 -2px 2px, #4b0082 -3px 3px, #4b0082 -4px 4px, black -5px 5px;
     span{
@@ -124,7 +123,7 @@ const Title = styled(motion.div)`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -132,19 +131,19 @@ const Article = styled(motion.div)`
     text-align: right;
     height: 22.5vh;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     z-index: 100;
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 26px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 5px;
         }
     }
     @media screen and (max-width: 768px){
-        font-size: 24px;
+        font-size: 26px;
         width: 80%;
         line-height: 30px;
         height: 50vh;
@@ -153,7 +152,7 @@ const Article = styled(motion.div)`
 
 const Bigtitle = styled(motion.div)`
     height: 25vh;
-    width: 80%;
+    width: 90%;
     font-size: 62px;
     font-weight: bold;
     color: white;

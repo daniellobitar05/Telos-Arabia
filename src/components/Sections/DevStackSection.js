@@ -69,7 +69,7 @@ const Section = styled.div`
 `;
 
 const Title = styled(motion.div)`
-    font-size: 52px;
+    font-size: 62px;
     width: 100%;
     color: ${props => props.theme.text};  
     height: 15vh;
@@ -89,13 +89,13 @@ const Title = styled(motion.div)`
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 24px;
+    font-size: 32px;
     width: 70%;
     color: ${props => props.theme.text};
     text-align: center; 
     float: left;
     height: 15vh;
-    line-height: 30px;
+    line-height: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

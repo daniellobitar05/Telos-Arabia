@@ -98,7 +98,7 @@ const Grid = styled.div`
 
 const Article = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
+    font-size: 32px;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -106,9 +106,10 @@ const Article = styled(motion.div)`
     justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     z-index: 100;
+    height: 20vh;
     @media screen and (max-width: 768px) {
         height: 55vh;
         font-size: 24px;
@@ -117,7 +118,7 @@ const Article = styled(motion.div)`
     }
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 28px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;
@@ -128,23 +129,23 @@ const Article = styled(motion.div)`
 
 const SmallArticle = styled(motion.div)`
     width: 80vw;
-    font-size: 26px;
-    color: whitesmoke;
+    font-size: 32px;
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: right;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
-    line-height: 35px;
+    line-height: 40px;
     direction: rtl;
     z-index: 100;
+    height: 20vh;
     @media screen and (max-width: 768px) {
         height: 20vh;
     }
     span{
         margin: 0 8px;
-        font-size: 22px;
+        font-size: 28px;
         @media screen and (max-width: 768px){
         font-size: 20px;
         margin: 0 8px;

@@ -16,6 +16,8 @@ import ToolkitSection from "../components/Sections/ToolkitSection";
 import JoinDevSection from "../components/Sections/JoinDevSection";
 import Footer from "../components/Sections/Footer";
 
+import BG from "../components/images/pyr17.png";
+
 const Section = styled.div`
     width: 100%;
     height: 100vh;
@@ -25,9 +27,22 @@ const Section = styled.div`
     align-items: center;
 `;
 
+const Wrapper = styled.div`
+    background: url(${BG}), transparent;
+    background-repeat: no-repeat;
+    background-size: 550px auto;
+    background-position: 15% 150%;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const Title = styled(motion.div)`
     font-size: 92px;
     width: 70%;
+    height: 30vh;
     line-height: 50px;
     color: ${props => props.theme.text};  
     text-align: right;
@@ -37,21 +52,24 @@ const Title = styled(motion.div)`
     justify-content: center;
     @media screen and (max-width: 768px){
         font-size: 52px;
-        height: 30vh;
+        height: 20vh;
     }  
 `;
 
 const Subtitle = styled(motion.div)`
-    font-size: 32px;
-    width: 80%;
+    font-size: 42px;
+    width: 70%;
+    height: 30vh;
     color: ${props => props.theme.text};
+    display: flex;
+    align-items: center;
+    direction: rtl;
     text-align: right; 
-    padding: 10px 0;
     text-shadow: black -1px 2px, black -2px 2px, black -3px 3px;
     @media screen and (max-width: 768px){
-        font-size: 24px;
-        height: 30vh;
-        line-height: 30px;
+        font-size: 32px;
+        height: 50vh;
+        line-height: 35px;
     }
     
 `;
@@ -73,7 +91,7 @@ const ArrowDown = styled(KeyboardArrowDownIcon)`
 `;
 
 const IconText = styled.div`
-    font-size: 20px;
+    font-size: 28px;
     color: white;
 
 `;
@@ -136,7 +154,7 @@ const Developers = () => {
     useEffect(() => {
         if(inView){
             animationTwo.start({
-                opacity: 1, y: '-20px',
+                opacity: 1, y: 0,
                 transition: {
                     duration: 1, delay: 0.5,
                 }
@@ -156,8 +174,10 @@ const Developers = () => {
         <ThemeProvider theme={themes[theme]}>
         <HeaderNoHome theme={theme} setTheme={setTheme} />
         <Section id="developers" ref={ref}>
+            <Wrapper>
             <Title animate={animation}><p>فوائد شبكة تيلوس</p></Title>
             <Subtitle animate={animationTwo}><p>توفر شبكة تيلوس للمطورين ورجال الأعمال الأدوات اللازمة لبناء ونشر وتشغيل تطبيقات الجيل التالي عالية الأداء مع اقتصاداتهم الرقمية الخاصة.</p></Subtitle>
+            
             <IconHolder>
                 <IconColumn>
                 <LinkS to="devresources" smooth={true} duration={1000} spy={true} exact="true"><IconButton><ArrowDown /></IconButton></LinkS> 
@@ -170,6 +190,7 @@ const Developers = () => {
                 
                 </IconColumn>
             </IconHolder>
+            </Wrapper>
         </Section>
         <DeveloperSection />
         <DevDocsSection /> 
